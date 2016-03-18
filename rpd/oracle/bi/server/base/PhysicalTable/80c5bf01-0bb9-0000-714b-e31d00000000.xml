@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5bf01-0bb9-0000-714b-e31d00000000" name="Dim_W_INS_CLAIM_F_VW" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" x="396" y="149" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb1-0bd3-0000-714b-e31d00000000.xml#m80c67bb1-0bd3-0000-714b-e31d00000000">
+<Description><![CDATA[For rolling up PAID_AMT from claim elements to the master claim level.]]></Description>
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[select CLAIM_WID as CLAIM_WID, sum(PAID_AMT) as PAID_AMT
+from VALUEOF(OLAPTBO).W_INS_CLAIM_F
+group by CLAIM_WID]]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c5d330-0bbb-0000-714b-e31d00000000" name="CLAIM_WID" dataType="DOUBLE" precision="10" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5d331-0bbb-0000-714b-e31d00000000" name="PAID_AMT" dataType="DOUBLE" scale="7" precision="22" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalKey mdsid="m80c67929-0bc0-0000-714b-e31d00000000" name="CLAIM_WID">
+<RefColumns>
+<RefColumn refId="m80c67929-0bc0-0000-714b-e31d00000000-m80c5d330-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bf01-0bb9-0000-714b-e31d00000000.xml#m80c5d330-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+</PhysicalTable>

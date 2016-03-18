@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5aa7e-07f3-0000-714b-e31d00000000" name="SRM - Fact Campaign Event Relationship" iconIndex="93" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="822" y="482" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c577db-07d6-0000-714b-e31d00000000" name="# Confirmed" isWriteable="false">
+<MeasureDefn mdsid="m80c5b45a-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb89-0802-0000-714b-e31d00000000" name="AggRule_2050:5739601268837679" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-4703-51e600000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."SRM - Fact Campaign Event Relationship"."# Confirmed")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-4703-51e600000000-m80c577db-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa7e-07f3-0000-714b-e31d00000000.xml#m80c577db-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69ced-0f3c-0000-714b-e31d00000000" name="AD_3900:5726601268223943">
+<Expr mdsid="m00000002-01f4-0000-2fbd-c1c900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Confirmed' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Event_Reg_Status"."VAL" = 'Confirmed' THEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact_WC_CAMP_EVENT_REG_F_CampaignEvent"."CONTACT_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-2fbd-c1c900000000-m80c64c31-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c10a-0bb9-0000-714b-e31d00000000.xml#m80c64c31-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-2fbd-c1c900000000-m80c64e34-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c11e-0bb9-0000-714b-e31d00000000.xml#m80c64e34-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c577dc-07d6-0000-714b-e31d00000000" name="# of Entries Cancelled" isWriteable="false">
+<MeasureDefn mdsid="m80c5b45b-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bdfd-0802-0000-714b-e31d00000000" name="AggRule_2050:6144881285828667" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-aa11-d15600000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."SRM - Fact Campaign Event Relationship"."# of Entries Cancelled")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-aa11-d15600000000-m80c577dc-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa7e-07f3-0000-714b-e31d00000000.xml#m80c577dc-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69cee-0f3c-0000-714b-e31d00000000" name="AD_3900:5726661268223943">
+<Expr mdsid="m00000004-01f4-0000-06fe-7c5300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Cancelled' OR "%1" = 'Confirmed - Event Cancelled' OR "%1" = 'Invited - Event Cancelled' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Event_Reg_Status"."VAL" = 'Cancelled' OR "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Event_Reg_Status"."VAL" = 'Confirmed - Event Cancelled' OR "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Event_Reg_Status"."VAL" = 'Invited - Event Cancelled' THEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact_WC_CAMP_EVENT_REG_F_CampaignEvent"."CONTACT_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-06fe-7c5300000000-m80c64c31-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c10a-0bb9-0000-714b-e31d00000000.xml#m80c64c31-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-06fe-7c5300000000-m80c64e34-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c11e-0bb9-0000-714b-e31d00000000.xml#m80c64e34-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c577dd-07d6-0000-714b-e31d00000000" name="Total Pledged Amount" isWriteable="false">
+<MeasureDefn mdsid="m80c5b45c-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb84-0802-0000-714b-e31d00000000" name="AggRule_2050:5726751268223943" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-3519-d58f00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Campaign Event Relationship"."Total Pledged Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-3519-d58f00000000-m80c577dd-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa7e-07f3-0000-714b-e31d00000000.xml#m80c577dd-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69cef-0f3c-0000-714b-e31d00000000" name="AD_3900:5726701268223943">
+<Expr mdsid="m00000006-01f4-0000-ca06-524e00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact_WC_CAMP_EVENT_REG_F_CampaignEvent"."X_SRM_PLEDGE_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-ca06-524e00000000-m80c64e39-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c11e-0bb9-0000-714b-e31d00000000.xml#m80c64e39-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c577de-07d6-0000-714b-e31d00000000" name="# Supporters" isWriteable="false">
+<MeasureDefn mdsid="m80c5b45d-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb8a-0802-0000-714b-e31d00000000" name="AggRule_2050:5739641268837679" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-6919-ddbb00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."SRM - Fact Campaign Event Relationship"."# Supporters")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-6919-ddbb00000000-m80c577de-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa7e-07f3-0000-714b-e31d00000000.xml#m80c577de-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69cf0-0f3c-0000-714b-e31d00000000" name="AD_3900:5726781268223943">
+<Expr mdsid="m00000008-01f4-0000-92f0-ff8000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact_WC_CAMP_EVENT_REG_F_CampaignEvent"."CONTACT_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-92f0-ff8000000000-m80c64e34-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c11e-0bb9-0000-714b-e31d00000000.xml#m80c64e34-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c577df-07d6-0000-714b-e31d00000000" name="# Events" isWriteable="false">
+<MeasureDefn mdsid="m80c5b45e-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb85-0802-0000-714b-e31d00000000" name="AggRule_2050:5726851268223943" isDefault="true">
+<Expr mdsid="m00000009-01f4-0000-6b4c-509300000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."SRM - Fact Campaign Event Relationship"."# Events")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-6b4c-509300000000-m80c577df-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa7e-07f3-0000-714b-e31d00000000.xml#m80c577df-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69cf1-0f3c-0000-714b-e31d00000000" name="AD_3900:5726821268223943">
+<Expr mdsid="m0000000a-01f4-0000-d105-153a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact_WC_CAMP_EVENT_REG_F_CampaignEvent"."EVENT_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-d105-153a00000000-m80c64e32-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c11e-0bb9-0000-714b-e31d00000000.xml#m80c64e32-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c577e0-07d6-0000-714b-e31d00000000" name="Sponsorship Amount" isWriteable="false">
+<MeasureDefn mdsid="m80c5b45f-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb86-0802-0000-714b-e31d00000000" name="AggRule_2050:5726921268223943" isDefault="true">
+<Expr mdsid="m0000000b-01f4-0000-87a2-d83900000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Campaign Event Relationship"."Sponsorship Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-87a2-d83900000000-m80c577e0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa7e-07f3-0000-714b-e31d00000000.xml#m80c577e0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69cf2-0f3c-0000-714b-e31d00000000" name="AD_3900:5726901268223943">
+<Expr mdsid="m0000000c-01f4-0000-8c20-9d9700000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact_WC_CAMP_EVENT_REG_F_CampaignEvent"."SPONS_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-8c20-9d9700000000-m80c64e44-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c11e-0bb9-0000-714b-e31d00000000.xml#m80c64e44-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c577e1-07d6-0000-714b-e31d00000000" name="# Returners" isWriteable="false">
+<MeasureDefn mdsid="m80c5b460-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb8b-0802-0000-714b-e31d00000000" name="AggRule_2050:5739661268837679" isDefault="true">
+<Expr mdsid="m0000000d-01f4-0000-3acb-16c300000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."SRM - Fact Campaign Event Relationship"."# Returners")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-3acb-16c300000000-m80c577e1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa7e-07f3-0000-714b-e31d00000000.xml#m80c577e1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69cf3-0f3c-0000-714b-e31d00000000" name="AD_3900:5726941268223943">
+<Expr mdsid="m0000000e-01f4-0000-9c6f-afa000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  NOT "%1" IS NULL  THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  NOT "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact_WC_CAMP_EVENT_REG_F_CampaignEvent"."SPONS_AMT" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact_WC_CAMP_EVENT_REG_F_CampaignEvent"."SPONS_AMT" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-9c6f-afa000000000-m80c64e44-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c11e-0bb9-0000-714b-e31d00000000.xml#m80c64e44-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c577e8-07d6-0000-714b-e31d00000000" name="% Target Participation" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000000f-01f4-0000-042c-32ee00000000" name="Expr">
+<ExprText><![CDATA["%1" / "%2" * 100]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."SRM - Fact Campaign Event Relationship"."# Confirmed" / "Core"."Fact - CRM - Marketing Source"."Participation Target" * 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-042c-32ee00000000-m80c577db-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa7e-07f3-0000-714b-e31d00000000.xml#m80c577db-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000f-01f4-0000-042c-32ee00000000-m80c57637-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa61-07f3-0000-714b-e31d00000000.xml#m80c57637-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69cfa-0f3c-0000-714b-e31d00000000" name="AD_3900:5732151268316890">
+<Expr mdsid="m00000010-01f4-0000-ea61-d42900000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5780c-07d6-0000-714b-e31d00000000" name="Participation Capacity" isWriteable="false">
+<MeasureDefn mdsid="m80c5b462-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bcda-0802-0000-714b-e31d00000000" name="AggRule_2050:6020781282212256" isDefault="true">
+<Expr mdsid="m00000011-01f4-0000-fa86-7a5900000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Campaign Event Relationship"."Participation Capacity")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-fa86-7a5900000000-m80c5780c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa7e-07f3-0000-714b-e31d00000000.xml#m80c5780c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69d1d-0f3c-0000-714b-e31d00000000" name="AD_3900:5740851268909930">
+<Expr mdsid="m00000012-01f4-0000-dc26-d63a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SOURCE_REL_H"."X_SRM_PRTCPTN_CPCTY"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-dc26-d63a00000000-m80c64ee0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c125-0bb9-0000-714b-e31d00000000.xml#m80c64ee0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5780d-07d6-0000-714b-e31d00000000" name="Participation Target" isWriteable="false">
+<MeasureDefn mdsid="m80c5b463-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bcd9-0802-0000-714b-e31d00000000" name="AggRule_2050:6020771282212256" isDefault="true">
+<Expr mdsid="m00000013-01f4-0000-7367-f66d00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Campaign Event Relationship"."Participation Target")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-7367-f66d00000000-m80c5780d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa7e-07f3-0000-714b-e31d00000000.xml#m80c5780d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69d1e-0f3c-0000-714b-e31d00000000" name="AD_3900:5740861268909930">
+<Expr mdsid="m00000014-01f4-0000-adae-12ee00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SOURCE_REL_H"."X_SRM_PRTCPTN_TGT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-adae-12ee00000000-m80c64ee1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c125-0bb9-0000-714b-e31d00000000.xml#m80c64ee1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5780e-07d6-0000-714b-e31d00000000" name="Sponsorship Target" isWriteable="false">
+<MeasureDefn mdsid="m80c5b464-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bcd8-0802-0000-714b-e31d00000000" name="AggRule_2050:6020761282212256" isDefault="true">
+<Expr mdsid="m00000015-01f4-0000-f61f-221500000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Campaign Event Relationship"."Sponsorship Target")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-f61f-221500000000-m80c5780e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa7e-07f3-0000-714b-e31d00000000.xml#m80c5780e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69d1f-0f3c-0000-714b-e31d00000000" name="AD_3900:5740871268909930">
+<Expr mdsid="m00000016-01f4-0000-1d9d-f07000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SOURCE_REL_H"."X_SRM_SPNSHP_TGT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000016-01f4-0000-1d9d-f07000000000-m80c64ee2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c125-0bb9-0000-714b-e31d00000000.xml#m80c64ee2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5780b-07d6-0000-714b-e31d00000000" name="Raised Amount" isWriteable="false">
+<MeasureDefn mdsid="m80c5b465-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bcd7-0802-0000-714b-e31d00000000" name="AggRule_2050:6020751282212256" isDefault="true">
+<Expr mdsid="m00000017-01f4-0000-e0dd-926600000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Campaign Event Relationship"."Raised Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-e0dd-926600000000-m80c5780b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa7e-07f3-0000-714b-e31d00000000.xml#m80c5780b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69d20-0f3c-0000-714b-e31d00000000" name="AD_3900:5740881268909930">
+<Expr mdsid="m00000018-01f4-0000-393e-450000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SOURCE_REL_H"."X_SRM_RAISED_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000018-01f4-0000-393e-450000000000-m80c64ee3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c125-0bb9-0000-714b-e31d00000000.xml#m80c64ee3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5aa7e-07f3-0000-714b-e31d00000000-m80c5ace1-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ace1-07f5-0000-714b-e31d00000000.xml#m80c5ace1-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c5aa7e-07f3-0000-714b-e31d00000000-m80c5ace5-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ace5-07f5-0000-714b-e31d00000000.xml#m80c5ace5-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

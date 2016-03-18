@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9ac-07f3-0000-714b-e31d00000000" name="Fact - CRM - Household" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1851" y="1180" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c56615-07d6-0000-714b-e31d00000000" name="# Households" isWriteable="false">
+<Description><![CDATA[Total # of households]]></Description>
+<MeasureDefn mdsid="m80c5b0e2-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b800-0802-0000-714b-e31d00000000" name="AggRule_2050:179941074282429" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-7e2e-a3ca00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - CRM - Household"."# Households")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-7e2e-a3ca00000000-m80c56615-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ac-07f3-0000-714b-e31d00000000.xml#m80c56615-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689f2-0f3c-0000-714b-e31d00000000" name="AD_3900:833551074282455">
+<Expr mdsid="m00000002-01f4-0000-3d3c-79a500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_HOUSEHOLD_F"."HOUSEHOLD_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-3d3c-79a500000000-m80c5c387-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea0-0bb9-0000-714b-e31d00000000.xml#m80c5c387-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56616-07d6-0000-714b-e31d00000000" name="# Active Households" isWriteable="false">
+<Description><![CDATA[Total # of Active households]]></Description>
+<MeasureDefn mdsid="m80c5b0e3-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b801-0802-0000-714b-e31d00000000" name="AggRule_2050:179951074282429" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-6f57-835e00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - CRM - Household"."# Active Households")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-6f57-835e00000000-m80c56616-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ac-07f3-0000-714b-e31d00000000.xml#m80c56616-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689f3-0f3c-0000-714b-e31d00000000" name="AD_3900:833561074282455">
+<Expr mdsid="m00000004-01f4-0000-1074-6d4000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" >  VALUEOF("%2")) AND "%3" = 'Y' THEN "%4" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_End_Date"."DAY_DT" IS NULL  OR "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_End_Date"."DAY_DT" >  VALUEOF("Warehouse Refresh Date"."LAST_REFRESH_DT")) AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PERSON_D_Contact"."CON_ACTIVE_FLG" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_HOUSEHOLD_F"."HOUSEHOLD_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-1074-6d4000000000-m80c5cb8f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bed7-0bb9-0000-714b-e31d00000000.xml#m80c5cb8f-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-1074-6d4000000000-m80c67bd7-0bd7-0000-714b-e31d00000000" objectRef="/oracle/bi/server/base/Variable/80c67bd7-0bd7-0000-714b-e31d00000000.xml#m80c67bd7-0bd7-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-1074-6d4000000000-m80c5d1f4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bef5-0bb9-0000-714b-e31d00000000.xml#m80c5d1f4-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-1074-6d4000000000-m80c5c387-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea0-0bb9-0000-714b-e31d00000000.xml#m80c5c387-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56617-07d6-0000-714b-e31d00000000" name="# Active Household Contacts" isWriteable="false">
+<Description><![CDATA[Total # of Active household contacts]]></Description>
+<MeasureDefn mdsid="m80c5b0e4-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b802-0802-0000-714b-e31d00000000" name="AggRule_2050:179961074282429" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-84e4-4f9000000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - CRM - Household"."# Active Household Contacts")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-84e4-4f9000000000-m80c56617-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ac-07f3-0000-714b-e31d00000000.xml#m80c56617-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689f4-0f3c-0000-714b-e31d00000000" name="AD_3900:833571074282455">
+<Expr mdsid="m00000006-01f4-0000-5f36-befd00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" >  VALUEOF("%2")) AND "%3" = 'Y' THEN "%4" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_End_Date"."DAY_DT" IS NULL  OR "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_End_Date"."DAY_DT" >  VALUEOF("Warehouse Refresh Date"."LAST_REFRESH_DT")) AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PERSON_D_Contact"."CON_ACTIVE_FLG" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_HOUSEHOLD_F"."CONTACT_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-5f36-befd00000000-m80c5cb8f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bed7-0bb9-0000-714b-e31d00000000.xml#m80c5cb8f-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-5f36-befd00000000-m80c67bd7-0bd7-0000-714b-e31d00000000" objectRef="/oracle/bi/server/base/Variable/80c67bd7-0bd7-0000-714b-e31d00000000.xml#m80c67bd7-0bd7-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-5f36-befd00000000-m80c5d1f4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bef5-0bb9-0000-714b-e31d00000000.xml#m80c5d1f4-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-5f36-befd00000000-m80c5c37f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea0-0bb9-0000-714b-e31d00000000.xml#m80c5c37f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56618-07d6-0000-714b-e31d00000000" name="Total Household Income" isWriteable="false">
+<Description><![CDATA[Total income of all individuals in a household]]></Description>
+<MeasureDefn mdsid="m80c5b0e5-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b803-0802-0000-714b-e31d00000000" name="AggRule_2050:179971074282429" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-83a9-86b100000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Household"."Total Household Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-83a9-86b100000000-m80c56618-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ac-07f3-0000-714b-e31d00000000.xml#m80c56618-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689f5-0f3c-0000-714b-e31d00000000" name="AD_3900:833581074282455">
+<Expr mdsid="m00000008-01f4-0000-a896-bb1100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" >  VALUEOF("%2") OR "%3" = 0 THEN "%4" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_End_Date"."DAY_DT" >  VALUEOF("Warehouse Refresh Date"."LAST_REFRESH_DT") OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_HOUSEHOLD_F"."END_DT_WID" = 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_HOUSEHOLD_D"."HH_INCOME" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-a896-bb1100000000-m80c5cb8f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bed7-0bb9-0000-714b-e31d00000000.xml#m80c5cb8f-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-a896-bb1100000000-m80c67bd7-0bd7-0000-714b-e31d00000000" objectRef="/oracle/bi/server/base/Variable/80c67bd7-0bd7-0000-714b-e31d00000000.xml#m80c67bd7-0bd7-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-a896-bb1100000000-m80c5c384-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea0-0bb9-0000-714b-e31d00000000.xml#m80c5c384-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-a896-bb1100000000-m80c5c341-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9f-0bb9-0000-714b-e31d00000000.xml#m80c5c341-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56619-07d6-0000-714b-e31d00000000" name="# Household Contacts" isWriteable="false">
+<Description><![CDATA[Total # of contacts via households]]></Description>
+<MeasureDefn mdsid="m80c5b0e6-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b804-0802-0000-714b-e31d00000000" name="AggRule_2050:179981074282429" isDefault="true">
+<Expr mdsid="m00000009-01f4-0000-4b45-7c8c00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - CRM - Household"."# Household Contacts")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-4b45-7c8c00000000-m80c56619-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ac-07f3-0000-714b-e31d00000000.xml#m80c56619-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689f6-0f3c-0000-714b-e31d00000000" name="AD_3900:833591074282455">
+<Expr mdsid="m0000000a-01f4-0000-a62e-150100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_HOUSEHOLD_F"."CONTACT_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-a62e-150100000000-m80c5c37f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea0-0bb9-0000-714b-e31d00000000.xml#m80c5c37f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5661a-07d6-0000-714b-e31d00000000" name="Total Household Net Worth" isWriteable="false">
+<Description><![CDATA[The total of the net worths of the individuals in a household]]></Description>
+<MeasureDefn mdsid="m80c5b0e7-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b805-0802-0000-714b-e31d00000000" name="AggRule_2050:179991074282429" isDefault="true">
+<Expr mdsid="m0000000b-01f4-0000-f795-0e3a00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Household"."Total Household Net Worth")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-f795-0e3a00000000-m80c5661a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ac-07f3-0000-714b-e31d00000000.xml#m80c5661a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689f7-0f3c-0000-714b-e31d00000000" name="AD_3900:833601074282455">
+<Expr mdsid="m0000000c-01f4-0000-5fc3-ed1400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" >  VALUEOF("%2") OR "%3" = 0 THEN "%4" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_End_Date"."DAY_DT" >  VALUEOF("Warehouse Refresh Date"."LAST_REFRESH_DT") OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_HOUSEHOLD_F"."END_DT_WID" = 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_HOUSEHOLD_D"."WEALTH_AMT" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-5fc3-ed1400000000-m80c5cb8f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bed7-0bb9-0000-714b-e31d00000000.xml#m80c5cb8f-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-5fc3-ed1400000000-m80c67bd7-0bd7-0000-714b-e31d00000000" objectRef="/oracle/bi/server/base/Variable/80c67bd7-0bd7-0000-714b-e31d00000000.xml#m80c67bd7-0bd7-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-5fc3-ed1400000000-m80c5c384-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea0-0bb9-0000-714b-e31d00000000.xml#m80c5c384-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-5fc3-ed1400000000-m80c5c343-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9f-0bb9-0000-714b-e31d00000000.xml#m80c5c343-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5661b-07d6-0000-714b-e31d00000000" name="Average Household Net Worth" isDerived="true" isWriteable="false">
+<Description><![CDATA[Average of the net worth of the individuals in a household]]></Description>
+<Expr mdsid="m0000000d-01f4-0000-5ff5-4a9900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN 1.0d * "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Household"."# Households" > 0 THEN 1.0d * "Core"."Fact - CRM - Household"."Total Household Net Worth" / "Core"."Fact - CRM - Household"."# Households" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-5ff5-4a9900000000-m80c56615-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ac-07f3-0000-714b-e31d00000000.xml#m80c56615-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000d-01f4-0000-5ff5-4a9900000000-m80c5661a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ac-07f3-0000-714b-e31d00000000.xml#m80c5661a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<MeasureDefn mdsid="m80c5b0e8-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b806-0802-0000-714b-e31d00000000" name="AggRule_2050:180001074282429" isDefault="true">
+<Expr mdsid="m0000000e-01f4-0000-e3dd-a74900000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core"."Fact - CRM - Household"."Average Household Net Worth")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-e3dd-a74900000000-m80c5661b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ac-07f3-0000-714b-e31d00000000.xml#m80c5661b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689f8-0f3c-0000-714b-e31d00000000" name="AD_3900:833611074282455">
+<Expr mdsid="m0000000f-01f4-0000-d620-64b300000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5661c-07d6-0000-714b-e31d00000000" name="Average Household Income" isDerived="true" isWriteable="false">
+<Description><![CDATA[Average of the incomes of the individuals in a household]]></Description>
+<Expr mdsid="m00000010-01f4-0000-d08b-ef9200000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN 1.0d * "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Household"."# Households" > 0 THEN 1.0d * "Core"."Fact - CRM - Household"."Total Household Income" / "Core"."Fact - CRM - Household"."# Households" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-d08b-ef9200000000-m80c56615-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ac-07f3-0000-714b-e31d00000000.xml#m80c56615-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-d08b-ef9200000000-m80c56618-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ac-07f3-0000-714b-e31d00000000.xml#m80c56618-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<MeasureDefn mdsid="m80c5b0e9-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b807-0802-0000-714b-e31d00000000" name="AggRule_2050:180011074282429" isDefault="true">
+<Expr mdsid="m00000011-01f4-0000-fe54-84ce00000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core"."Fact - CRM - Household"."Average Household Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-fe54-84ce00000000-m80c5661c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ac-07f3-0000-714b-e31d00000000.xml#m80c5661c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689f9-0f3c-0000-714b-e31d00000000" name="AD_3900:833621074282455">
+<Expr mdsid="m00000012-01f4-0000-3a98-c6e800000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5661d-07d6-0000-714b-e31d00000000" name="Average # of Contacts per Household" isDerived="true" isWriteable="false">
+<Description><![CDATA[Average of the # of contacts across households]]></Description>
+<Expr mdsid="m00000013-01f4-0000-d9cf-26ba00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN  NULL  ELSE 1.0d * "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Household"."# Households" = 0 THEN  NULL  ELSE 1.0d * "Core"."Fact - CRM - Household"."# Household Contacts" / "Core"."Fact - CRM - Household"."# Households" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-d9cf-26ba00000000-m80c56615-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ac-07f3-0000-714b-e31d00000000.xml#m80c56615-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000013-01f4-0000-d9cf-26ba00000000-m80c56619-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ac-07f3-0000-714b-e31d00000000.xml#m80c56619-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c689fa-0f3c-0000-714b-e31d00000000" name="AD_3900:833631074282455">
+<Expr mdsid="m00000014-01f4-0000-ac23-762900000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5661e-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80c689fb-0f3c-0000-714b-e31d00000000" name="AD_3900:833641074282455">
+<Expr mdsid="m00000015-01f4-0000-0f91-317500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_HOUSEHOLD_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-0f91-317500000000-m80c5c38d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea0-0bb9-0000-714b-e31d00000000.xml#m80c5c38d-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57709-07d6-0000-714b-e31d00000000" name="Primary Contact Flag" iconIndex="93" isWriteable="false">
+<Description><![CDATA[Marked as 'Y' for primary household supporters, 'N' otherwise.]]></Description>
+<AttrDefn mdsid="m80c69c1b-0f3c-0000-714b-e31d00000000" name="AD_3900:5581681263211153">
+<Expr mdsid="m00000016-01f4-0000-3937-509c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_HOUSEHOLD_F"."PR_CON_FLG"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000016-01f4-0000-3937-509c00000000-m80c5c38f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea0-0bb9-0000-714b-e31d00000000.xml#m80c5c38f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5770a-07d6-0000-714b-e31d00000000" name="Start Date" iconIndex="93" isWriteable="false">
+<Description><![CDATA[Start Date of the Household-Supporter relationship.]]></Description>
+<AttrDefn mdsid="m80c69c1c-0f3c-0000-714b-e31d00000000" name="AD_3900:5581701263211153">
+<Expr mdsid="m00000017-01f4-0000-30b4-85a700000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Common"."CALENDAR_DATE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-30b4-85a700000000-m80c5f4bb-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9e-0bb9-0000-714b-e31d00000000.xml#m80c5f4bb-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5770b-07d6-0000-714b-e31d00000000" name="End Date" iconIndex="93" isWriteable="false">
+<Description><![CDATA[End Date of the Household-Supporter relationship.]]></Description>
+<AttrDefn mdsid="m80c69c1d-0f3c-0000-714b-e31d00000000" name="AD_3900:5581721263211153">
+<Expr mdsid="m00000018-01f4-0000-914b-a55900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_End_Date"."CALENDAR_DATE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000018-01f4-0000-914b-a55900000000-m80c6230d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bed7-0bb9-0000-714b-e31d00000000.xml#m80c6230d-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c577d7-07d6-0000-714b-e31d00000000" name="Implicit Fact" isWriteable="false">
+<AttrDefn mdsid="m80c69ce9-0f3c-0000-714b-e31d00000000" name="AD_3900:5720551266926793">
+<Expr mdsid="m00000019-01f4-0000-2cb6-980500000000" name="Expr">
+<ExprText><![CDATA[1]]></ExprText>
+<ExprTextDesc><![CDATA[1]]></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58c7d-07d8-0000-714b-e31d00000000" name="# Households" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58c7d-07d8-0000-714b-e31d00000000-m80c56615-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9ac-07f3-0000-714b-e31d00000000.xml#m80c56615-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5a9ac-07f3-0000-714b-e31d00000000-m80c5abd2-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5abd2-07f5-0000-714b-e31d00000000.xml#m80c5abd2-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c5a9ac-07f3-0000-714b-e31d00000000-m80c5abd3-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5abd3-07f5-0000-714b-e31d00000000.xml#m80c5abd3-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

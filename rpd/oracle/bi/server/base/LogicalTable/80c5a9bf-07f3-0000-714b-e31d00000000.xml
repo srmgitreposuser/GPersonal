@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9bf-07f3-0000-714b-e31d00000000" name="Fact  Compound - Quote Time Series" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="738" y="333" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c56783-07d6-0000-714b-e31d00000000" name="Chg Year Ago Quote Item Revenue" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000001-01f4-0000-df24-da6400000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Quote Item"."Quote Item Revenue", 0) -  IFNULL("Core"."Fact - CRM - Quote Item"."Year Ago Quote Item Revenue", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-df24-da6400000000-m80c5651a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c5651a-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000001-01f4-0000-df24-da6400000000-m80c5674a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c5674a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b60-0f3c-0000-714b-e31d00000000" name="AD_3900:838551074282455">
+<Expr mdsid="m00000002-01f4-0000-c755-136c00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56784-07d6-0000-714b-e31d00000000" name="% Chg Year Ago Quote Item Revenue" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000003-01f4-0000-0a9a-b9ba00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Quote Item"."Year Ago Quote Item Revenue" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Year Ago Quote Item Revenue" = 0) AND  NOT "Core"."Fact - CRM - Quote Item"."Quote Item Revenue" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Quote Item Revenue" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Quote Item"."Year Ago Quote Item Revenue" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Year Ago Quote Item Revenue" = 0) AND ("Core"."Fact - CRM - Quote Item"."Quote Item Revenue" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quote Item Revenue" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Quote Item"."Quote Item Revenue" IS NULL  AND  NOT "Core"."Fact - CRM - Quote Item"."Year Ago Quote Item Revenue" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Year Ago Quote Item Revenue" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Quote Item"."Quote Item Revenue" - "Core"."Fact - CRM - Quote Item"."Year Ago Quote Item Revenue") / "Core"."Fact - CRM - Quote Item"."Year Ago Quote Item Revenue" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-0a9a-b9ba00000000-m80c5674a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c5674a-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000003-01f4-0000-0a9a-b9ba00000000-m80c5651a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c5651a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b61-0f3c-0000-714b-e31d00000000" name="AD_3900:838561074282455">
+<Expr mdsid="m00000004-01f4-0000-54f5-835000000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56785-07d6-0000-714b-e31d00000000" name="Chg Year Ago Total Quote Revenue" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000005-01f4-0000-1030-8c5800000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Quote Item"."Total Quote Revenue", 0) -  IFNULL("Core"."Fact - CRM - Quote Item"."Year Ago Total Quote Revenue", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-1030-8c5800000000-m80c56535-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56535-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000005-01f4-0000-1030-8c5800000000-m80c5674b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c5674b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b62-0f3c-0000-714b-e31d00000000" name="AD_3900:838571074282455">
+<Expr mdsid="m00000006-01f4-0000-30e2-0dcd00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56786-07d6-0000-714b-e31d00000000" name="% Chg Year Ago Total Quote Revenue" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000007-01f4-0000-bbef-f7e100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Quote Item"."Year Ago Total Quote Revenue" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Year Ago Total Quote Revenue" = 0) AND  NOT "Core"."Fact - CRM - Quote Item"."Total Quote Revenue" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Total Quote Revenue" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Quote Item"."Year Ago Total Quote Revenue" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Year Ago Total Quote Revenue" = 0) AND ("Core"."Fact - CRM - Quote Item"."Total Quote Revenue" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Total Quote Revenue" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Quote Item"."Total Quote Revenue" IS NULL  AND  NOT "Core"."Fact - CRM - Quote Item"."Year Ago Total Quote Revenue" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Year Ago Total Quote Revenue" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Quote Item"."Total Quote Revenue" - "Core"."Fact - CRM - Quote Item"."Year Ago Total Quote Revenue") / "Core"."Fact - CRM - Quote Item"."Year Ago Total Quote Revenue" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-bbef-f7e100000000-m80c5674b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c5674b-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000007-01f4-0000-bbef-f7e100000000-m80c56535-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56535-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b63-0f3c-0000-714b-e31d00000000" name="AD_3900:838581074282455">
+<Expr mdsid="m00000008-01f4-0000-0124-ec4a00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56787-07d6-0000-714b-e31d00000000" name="Chg Year Ago # of Quote Items" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000009-01f4-0000-9045-021f00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Quote Item"."# of Quote Items", 0) -  IFNULL("Core"."Fact - CRM - Quote Item"."Year Ago # of Quote Items", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-9045-021f00000000-m80c5651f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c5651f-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000009-01f4-0000-9045-021f00000000-m80c5674c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c5674c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b64-0f3c-0000-714b-e31d00000000" name="AD_3900:838591074282455">
+<Expr mdsid="m0000000a-01f4-0000-ab56-0ed800000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56788-07d6-0000-714b-e31d00000000" name="% Chg Year Ago # of Quote Items" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000000b-01f4-0000-7174-366700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Quote Item"."Year Ago # of Quote Items" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Year Ago # of Quote Items" = 0) AND  NOT "Core"."Fact - CRM - Quote Item"."# of Quote Items" IS NULL  AND "Core"."Fact - CRM - Quote Item"."# of Quote Items" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Quote Item"."Year Ago # of Quote Items" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Year Ago # of Quote Items" = 0) AND ("Core"."Fact - CRM - Quote Item"."# of Quote Items" IS NULL  OR "Core"."Fact - CRM - Quote Item"."# of Quote Items" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Quote Item"."# of Quote Items" IS NULL  AND  NOT "Core"."Fact - CRM - Quote Item"."Year Ago # of Quote Items" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Year Ago # of Quote Items" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Quote Item"."# of Quote Items" - "Core"."Fact - CRM - Quote Item"."Year Ago # of Quote Items") / "Core"."Fact - CRM - Quote Item"."Year Ago # of Quote Items" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-7174-366700000000-m80c5674c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c5674c-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000b-01f4-0000-7174-366700000000-m80c5651f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c5651f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b65-0f3c-0000-714b-e31d00000000" name="AD_3900:838601074282455">
+<Expr mdsid="m0000000c-01f4-0000-2b59-564300000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56789-07d6-0000-714b-e31d00000000" name="Chg Year Ago Quoted Item Cost" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000000d-01f4-0000-cc16-49eb00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Quote Item"."Quoted Item Cost", 0) -  IFNULL("Core"."Fact - CRM - Quote Item"."Year Ago Quoted Item Cost", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-cc16-49eb00000000-m80c56520-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56520-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000d-01f4-0000-cc16-49eb00000000-m80c5674d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c5674d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b66-0f3c-0000-714b-e31d00000000" name="AD_3900:838611074282455">
+<Expr mdsid="m0000000e-01f4-0000-9052-8a8d00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5678a-07d6-0000-714b-e31d00000000" name="% Chg Year Ago Quoted Item Cost" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000000f-01f4-0000-b848-011800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Quote Item"."Year Ago Quoted Item Cost" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Year Ago Quoted Item Cost" = 0) AND  NOT "Core"."Fact - CRM - Quote Item"."Quoted Item Cost" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Quoted Item Cost" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Quote Item"."Year Ago Quoted Item Cost" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Year Ago Quoted Item Cost" = 0) AND ("Core"."Fact - CRM - Quote Item"."Quoted Item Cost" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quoted Item Cost" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Quote Item"."Quoted Item Cost" IS NULL  AND  NOT "Core"."Fact - CRM - Quote Item"."Year Ago Quoted Item Cost" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Year Ago Quoted Item Cost" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Quote Item"."Quoted Item Cost" - "Core"."Fact - CRM - Quote Item"."Year Ago Quoted Item Cost") / "Core"."Fact - CRM - Quote Item"."Year Ago Quoted Item Cost" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-b848-011800000000-m80c5674d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c5674d-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000f-01f4-0000-b848-011800000000-m80c56520-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56520-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b67-0f3c-0000-714b-e31d00000000" name="AD_3900:838621074282455">
+<Expr mdsid="m00000010-01f4-0000-4dea-2d0b00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5678b-07d6-0000-714b-e31d00000000" name="Chg Year Ago Quote Lost Revenue" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000011-01f4-0000-407f-14bc00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Quote Item"."Quote Lost Revenue", 0) -  IFNULL("Core"."Fact - CRM - Quote Item"."Year Ago Quote Lost Revenue", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-407f-14bc00000000-m80c56522-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56522-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000011-01f4-0000-407f-14bc00000000-m80c5674e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c5674e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b68-0f3c-0000-714b-e31d00000000" name="AD_3900:838631074282455">
+<Expr mdsid="m00000012-01f4-0000-c95c-d3e300000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5678c-07d6-0000-714b-e31d00000000" name="% Chg Year Ago Quote Lost Revenue" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000013-01f4-0000-8517-1dba00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Quote Item"."Year Ago Quote Lost Revenue" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Year Ago Quote Lost Revenue" = 0) AND  NOT "Core"."Fact - CRM - Quote Item"."Quote Lost Revenue" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Quote Lost Revenue" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Quote Item"."Year Ago Quote Lost Revenue" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Year Ago Quote Lost Revenue" = 0) AND ("Core"."Fact - CRM - Quote Item"."Quote Lost Revenue" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quote Lost Revenue" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Quote Item"."Quote Lost Revenue" IS NULL  AND  NOT "Core"."Fact - CRM - Quote Item"."Year Ago Quote Lost Revenue" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Year Ago Quote Lost Revenue" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Quote Item"."Quote Lost Revenue" - "Core"."Fact - CRM - Quote Item"."Year Ago Quote Lost Revenue") / "Core"."Fact - CRM - Quote Item"."Year Ago Quote Lost Revenue" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-8517-1dba00000000-m80c5674e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c5674e-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000013-01f4-0000-8517-1dba00000000-m80c56522-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56522-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b69-0f3c-0000-714b-e31d00000000" name="AD_3900:838641074282455">
+<Expr mdsid="m00000014-01f4-0000-214e-107500000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5678d-07d6-0000-714b-e31d00000000" name="Chg Year Ago Quoted Item Margin" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000015-01f4-0000-fbfe-7d0b00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Quote Item"."Quoted Item Margin", 0) -  IFNULL("Core"."Fact - CRM - Quote Item"."Year Ago Quoted Item Margin", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-fbfe-7d0b00000000-m80c56524-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56524-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000015-01f4-0000-fbfe-7d0b00000000-m80c5674f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c5674f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b6a-0f3c-0000-714b-e31d00000000" name="AD_3900:838651074282455">
+<Expr mdsid="m00000016-01f4-0000-3169-445e00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5678e-07d6-0000-714b-e31d00000000" name="% Chg Year Ago Quoted Item Margin" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000017-01f4-0000-5fa8-e8c800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Quote Item"."Year Ago Quoted Item Margin" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Year Ago Quoted Item Margin" = 0) AND  NOT "Core"."Fact - CRM - Quote Item"."Quoted Item Margin" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Quoted Item Margin" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Quote Item"."Year Ago Quoted Item Margin" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Year Ago Quoted Item Margin" = 0) AND ("Core"."Fact - CRM - Quote Item"."Quoted Item Margin" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quoted Item Margin" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Quote Item"."Quoted Item Margin" IS NULL  AND  NOT "Core"."Fact - CRM - Quote Item"."Year Ago Quoted Item Margin" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Year Ago Quoted Item Margin" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Quote Item"."Quoted Item Margin" - "Core"."Fact - CRM - Quote Item"."Year Ago Quoted Item Margin") / "Core"."Fact - CRM - Quote Item"."Year Ago Quoted Item Margin" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-5fa8-e8c800000000-m80c5674f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c5674f-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000017-01f4-0000-5fa8-e8c800000000-m80c56524-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56524-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b6b-0f3c-0000-714b-e31d00000000" name="AD_3900:838661074282455">
+<Expr mdsid="m00000018-01f4-0000-e02a-0c2d00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5678f-07d6-0000-714b-e31d00000000" name="Chg Quarter Ago Quote Item Revenue" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000019-01f4-0000-baff-38f000000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Quote Item"."Quote Item Revenue", 0) -  IFNULL("Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Revenue", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-baff-38f000000000-m80c5651a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c5651a-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000019-01f4-0000-baff-38f000000000-m80c56750-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56750-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b6c-0f3c-0000-714b-e31d00000000" name="AD_3900:838671074282455">
+<Expr mdsid="m0000001a-01f4-0000-8db0-bbc500000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56790-07d6-0000-714b-e31d00000000" name="% Chg Quarter Ago Quote Item Revenue" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000001b-01f4-0000-ba78-335d00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Revenue" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Revenue" = 0) AND  NOT "Core"."Fact - CRM - Quote Item"."Quote Item Revenue" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Quote Item Revenue" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Revenue" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Revenue" = 0) AND ("Core"."Fact - CRM - Quote Item"."Quote Item Revenue" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quote Item Revenue" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Quote Item"."Quote Item Revenue" IS NULL  AND  NOT "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Revenue" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Revenue" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Quote Item"."Quote Item Revenue" - "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Revenue") / "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Revenue" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001b-01f4-0000-ba78-335d00000000-m80c56750-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56750-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001b-01f4-0000-ba78-335d00000000-m80c5651a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c5651a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b6d-0f3c-0000-714b-e31d00000000" name="AD_3900:838681074282455">
+<Expr mdsid="m0000001c-01f4-0000-d3e3-337100000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56791-07d6-0000-714b-e31d00000000" name="Chg Quarter Ago Total Quote Revenue" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000001d-01f4-0000-40bd-a8d900000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Quote Item"."Total Quote Revenue", 0) -  IFNULL("Core"."Fact - CRM - Quote Item"."Quarter Ago Total Quote Revenue", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001d-01f4-0000-40bd-a8d900000000-m80c56535-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56535-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001d-01f4-0000-40bd-a8d900000000-m80c56751-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56751-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b6e-0f3c-0000-714b-e31d00000000" name="AD_3900:838691074282455">
+<Expr mdsid="m0000001e-01f4-0000-07af-c4ae00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56792-07d6-0000-714b-e31d00000000" name="% Chg Quarter Ago Total Quote Revenue" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000001f-01f4-0000-666f-c4a500000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Quote Item"."Quarter Ago Total Quote Revenue" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quarter Ago Total Quote Revenue" = 0) AND  NOT "Core"."Fact - CRM - Quote Item"."Total Quote Revenue" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Total Quote Revenue" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Quote Item"."Quarter Ago Total Quote Revenue" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quarter Ago Total Quote Revenue" = 0) AND ("Core"."Fact - CRM - Quote Item"."Total Quote Revenue" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Total Quote Revenue" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Quote Item"."Total Quote Revenue" IS NULL  AND  NOT "Core"."Fact - CRM - Quote Item"."Quarter Ago Total Quote Revenue" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Quarter Ago Total Quote Revenue" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Quote Item"."Total Quote Revenue" - "Core"."Fact - CRM - Quote Item"."Quarter Ago Total Quote Revenue") / "Core"."Fact - CRM - Quote Item"."Quarter Ago Total Quote Revenue" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001f-01f4-0000-666f-c4a500000000-m80c56751-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56751-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001f-01f4-0000-666f-c4a500000000-m80c56535-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56535-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b6f-0f3c-0000-714b-e31d00000000" name="AD_3900:838701074282455">
+<Expr mdsid="m00000020-01f4-0000-9234-bd5b00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56793-07d6-0000-714b-e31d00000000" name="Chg Quarter Ago # of Quote Items" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000021-01f4-0000-7077-59e900000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Quote Item"."# of Quote Items", 0) -  IFNULL("Core"."Fact - CRM - Quote Item"."Quarter Ago # of Quote Items", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000021-01f4-0000-7077-59e900000000-m80c5651f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c5651f-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000021-01f4-0000-7077-59e900000000-m80c56752-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56752-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b70-0f3c-0000-714b-e31d00000000" name="AD_3900:838711074282455">
+<Expr mdsid="m00000022-01f4-0000-e816-c42800000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56794-07d6-0000-714b-e31d00000000" name="% Chg Quarter Ago # of Quote Items" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000023-01f4-0000-503a-12e900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Quote Item"."Quarter Ago # of Quote Items" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quarter Ago # of Quote Items" = 0) AND  NOT "Core"."Fact - CRM - Quote Item"."# of Quote Items" IS NULL  AND "Core"."Fact - CRM - Quote Item"."# of Quote Items" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Quote Item"."Quarter Ago # of Quote Items" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quarter Ago # of Quote Items" = 0) AND ("Core"."Fact - CRM - Quote Item"."# of Quote Items" IS NULL  OR "Core"."Fact - CRM - Quote Item"."# of Quote Items" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Quote Item"."# of Quote Items" IS NULL  AND  NOT "Core"."Fact - CRM - Quote Item"."Quarter Ago # of Quote Items" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Quarter Ago # of Quote Items" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Quote Item"."# of Quote Items" - "Core"."Fact - CRM - Quote Item"."Quarter Ago # of Quote Items") / "Core"."Fact - CRM - Quote Item"."Quarter Ago # of Quote Items" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000023-01f4-0000-503a-12e900000000-m80c56752-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56752-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000023-01f4-0000-503a-12e900000000-m80c5651f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c5651f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b71-0f3c-0000-714b-e31d00000000" name="AD_3900:838721074282455">
+<Expr mdsid="m00000024-01f4-0000-97db-19ed00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56795-07d6-0000-714b-e31d00000000" name="Chg Quarter Ago Quoted Item Cost" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000025-01f4-0000-eee2-cd9500000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Quote Item"."Quoted Item Cost", 0) -  IFNULL("Core"."Fact - CRM - Quote Item"."Quarter Ago Quoted Item Cost", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000025-01f4-0000-eee2-cd9500000000-m80c56520-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56520-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000025-01f4-0000-eee2-cd9500000000-m80c56753-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56753-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b72-0f3c-0000-714b-e31d00000000" name="AD_3900:838731074282455">
+<Expr mdsid="m00000026-01f4-0000-81c6-d9d600000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56796-07d6-0000-714b-e31d00000000" name="% Chg Quarter Ago Quoted Item Cost" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000027-01f4-0000-42fe-4c4100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Quote Item"."Quarter Ago Quoted Item Cost" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quarter Ago Quoted Item Cost" = 0) AND  NOT "Core"."Fact - CRM - Quote Item"."Quoted Item Cost" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Quoted Item Cost" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Quote Item"."Quarter Ago Quoted Item Cost" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quarter Ago Quoted Item Cost" = 0) AND ("Core"."Fact - CRM - Quote Item"."Quoted Item Cost" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quoted Item Cost" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Quote Item"."Quoted Item Cost" IS NULL  AND  NOT "Core"."Fact - CRM - Quote Item"."Quarter Ago Quoted Item Cost" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Quarter Ago Quoted Item Cost" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Quote Item"."Quoted Item Cost" - "Core"."Fact - CRM - Quote Item"."Quarter Ago Quoted Item Cost") / "Core"."Fact - CRM - Quote Item"."Quarter Ago Quoted Item Cost" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000027-01f4-0000-42fe-4c4100000000-m80c56753-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56753-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000027-01f4-0000-42fe-4c4100000000-m80c56520-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56520-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b73-0f3c-0000-714b-e31d00000000" name="AD_3900:838741074282455">
+<Expr mdsid="m00000028-01f4-0000-a9ce-c19500000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56797-07d6-0000-714b-e31d00000000" name="Chg Quarter Ago Quote Lost Revenue" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000029-01f4-0000-df45-184d00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Quote Item"."Quote Lost Revenue", 0) -  IFNULL("Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Lost Revenue", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000029-01f4-0000-df45-184d00000000-m80c56522-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56522-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000029-01f4-0000-df45-184d00000000-m80c56754-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56754-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b74-0f3c-0000-714b-e31d00000000" name="AD_3900:838751074282455">
+<Expr mdsid="m0000002a-01f4-0000-7372-b3ae00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56798-07d6-0000-714b-e31d00000000" name="% Chg Quarter Ago Quote Lost Revenue" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000002b-01f4-0000-95ec-e9d300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Lost Revenue" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Lost Revenue" = 0) AND  NOT "Core"."Fact - CRM - Quote Item"."Quote Lost Revenue" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Quote Lost Revenue" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Lost Revenue" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Lost Revenue" = 0) AND ("Core"."Fact - CRM - Quote Item"."Quote Lost Revenue" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quote Lost Revenue" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Quote Item"."Quote Lost Revenue" IS NULL  AND  NOT "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Lost Revenue" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Lost Revenue" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Quote Item"."Quote Lost Revenue" - "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Lost Revenue") / "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Lost Revenue" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002b-01f4-0000-95ec-e9d300000000-m80c56754-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56754-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002b-01f4-0000-95ec-e9d300000000-m80c56522-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56522-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b75-0f3c-0000-714b-e31d00000000" name="AD_3900:838761074282455">
+<Expr mdsid="m0000002c-01f4-0000-4a02-940100000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56799-07d6-0000-714b-e31d00000000" name="Chg Quarter Ago Quoted Item Margin" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000002d-01f4-0000-c486-71ee00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Quote Item"."Quoted Item Margin", 0) -  IFNULL("Core"."Fact - CRM - Quote Item"."Quarter Ago Quoted Item Margin", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002d-01f4-0000-c486-71ee00000000-m80c56524-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56524-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002d-01f4-0000-c486-71ee00000000-m80c56755-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56755-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b76-0f3c-0000-714b-e31d00000000" name="AD_3900:838771074282455">
+<Expr mdsid="m0000002e-01f4-0000-0202-552100000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5679a-07d6-0000-714b-e31d00000000" name="% Chg Quarter Ago Quoted Item Margin" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000002f-01f4-0000-045c-d93600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Quote Item"."Quarter Ago Quoted Item Margin" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quarter Ago Quoted Item Margin" = 0) AND  NOT "Core"."Fact - CRM - Quote Item"."Quoted Item Margin" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Quoted Item Margin" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Quote Item"."Quarter Ago Quoted Item Margin" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quarter Ago Quoted Item Margin" = 0) AND ("Core"."Fact - CRM - Quote Item"."Quoted Item Margin" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quoted Item Margin" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Quote Item"."Quoted Item Margin" IS NULL  AND  NOT "Core"."Fact - CRM - Quote Item"."Quarter Ago Quoted Item Margin" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Quarter Ago Quoted Item Margin" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Quote Item"."Quoted Item Margin" - "Core"."Fact - CRM - Quote Item"."Quarter Ago Quoted Item Margin") / "Core"."Fact - CRM - Quote Item"."Quarter Ago Quoted Item Margin" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002f-01f4-0000-045c-d93600000000-m80c56755-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56755-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002f-01f4-0000-045c-d93600000000-m80c56524-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56524-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b77-0f3c-0000-714b-e31d00000000" name="AD_3900:838781074282455">
+<Expr mdsid="m00000030-01f4-0000-9aa6-3e3900000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5679b-07d6-0000-714b-e31d00000000" name="Chg Quarter Ago Quote Item Average Discount %" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000031-01f4-0000-6b52-caae00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Quote Item"."Quote Item Average Discount %", 0) -  IFNULL("Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Average Discount %", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000031-01f4-0000-6b52-caae00000000-m80c56538-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56538-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000031-01f4-0000-6b52-caae00000000-m80c56756-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56756-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b78-0f3c-0000-714b-e31d00000000" name="AD_3900:838791074282455">
+<Expr mdsid="m00000032-01f4-0000-6698-897300000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5679c-07d6-0000-714b-e31d00000000" name="% Chg Quarter Ago Quote Item Average Discount %" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000033-01f4-0000-42e6-633800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Average Discount %" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Average Discount %" = 0) AND  NOT "Core"."Fact - CRM - Quote Item"."Quote Item Average Discount %" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Quote Item Average Discount %" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Average Discount %" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Average Discount %" = 0) AND ("Core"."Fact - CRM - Quote Item"."Quote Item Average Discount %" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quote Item Average Discount %" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Quote Item"."Quote Item Average Discount %" IS NULL  AND  NOT "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Average Discount %" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Average Discount %" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Quote Item"."Quote Item Average Discount %" - "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Average Discount %") / "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Average Discount %" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000033-01f4-0000-42e6-633800000000-m80c56756-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56756-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000033-01f4-0000-42e6-633800000000-m80c56538-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56538-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b79-0f3c-0000-714b-e31d00000000" name="AD_3900:838801074282455">
+<Expr mdsid="m00000034-01f4-0000-a799-232500000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5679d-07d6-0000-714b-e31d00000000" name="Chg Quarter Ago Quote Item Ordered Revenue" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000035-01f4-0000-6feb-4fd800000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Quote Item"."Quote Item Ordered Revenue", 0) -  IFNULL("Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Ordered Revenue", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000035-01f4-0000-6feb-4fd800000000-m80c56528-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56528-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000035-01f4-0000-6feb-4fd800000000-m80c56757-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56757-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b7a-0f3c-0000-714b-e31d00000000" name="AD_3900:838811074282455">
+<Expr mdsid="m00000036-01f4-0000-7ab7-7f6600000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5679e-07d6-0000-714b-e31d00000000" name="% Chg Quarter Ago Quote Item Ordered Revenue" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000037-01f4-0000-fc9d-ce6100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Ordered Revenue" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Ordered Revenue" = 0) AND  NOT "Core"."Fact - CRM - Quote Item"."Quote Item Ordered Revenue" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Quote Item Ordered Revenue" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Ordered Revenue" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Ordered Revenue" = 0) AND ("Core"."Fact - CRM - Quote Item"."Quote Item Ordered Revenue" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quote Item Ordered Revenue" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Quote Item"."Quote Item Ordered Revenue" IS NULL  AND  NOT "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Ordered Revenue" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Ordered Revenue" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Quote Item"."Quote Item Ordered Revenue" - "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Ordered Revenue") / "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Ordered Revenue" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000037-01f4-0000-fc9d-ce6100000000-m80c56757-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56757-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000037-01f4-0000-fc9d-ce6100000000-m80c56528-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56528-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b7b-0f3c-0000-714b-e31d00000000" name="AD_3900:838821074282455">
+<Expr mdsid="m00000038-01f4-0000-32af-766800000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5679f-07d6-0000-714b-e31d00000000" name="Chg Quarter Ago Quote Item Ordered Margin" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000039-01f4-0000-03cf-6b5700000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Quote Item"."Quote Item Ordered Margin", 0) -  IFNULL("Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Ordered Margin", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000039-01f4-0000-03cf-6b5700000000-m80c5652a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c5652a-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000039-01f4-0000-03cf-6b5700000000-m80c56758-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56758-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b7c-0f3c-0000-714b-e31d00000000" name="AD_3900:838831074282455">
+<Expr mdsid="m0000003a-01f4-0000-1e82-74cc00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c567a0-07d6-0000-714b-e31d00000000" name="% Chg Quarter Ago Quote Item Ordered Margin" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000003b-01f4-0000-738a-d7af00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Ordered Margin" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Ordered Margin" = 0) AND  NOT "Core"."Fact - CRM - Quote Item"."Quote Item Ordered Margin" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Quote Item Ordered Margin" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Ordered Margin" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Ordered Margin" = 0) AND ("Core"."Fact - CRM - Quote Item"."Quote Item Ordered Margin" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quote Item Ordered Margin" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Quote Item"."Quote Item Ordered Margin" IS NULL  AND  NOT "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Ordered Margin" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Ordered Margin" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Quote Item"."Quote Item Ordered Margin" - "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Ordered Margin") / "Core"."Fact - CRM - Quote Item"."Quarter Ago Quote Item Ordered Margin" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003b-01f4-0000-738a-d7af00000000-m80c56758-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56758-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003b-01f4-0000-738a-d7af00000000-m80c5652a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c5652a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b7d-0f3c-0000-714b-e31d00000000" name="AD_3900:838841074282455">
+<Expr mdsid="m0000003c-01f4-0000-ee12-339a00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bf1-07d6-0000-714b-e31d00000000" name="Chg Year Ago # of NRC Quote Items" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000003d-01f4-0000-034a-f59500000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Quote Item"."# of NRC Quote Items", 0) -  IFNULL("Core"."Fact - CRM - Quote Item"."Year Ago # of NRC Quote Items", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003d-01f4-0000-034a-f59500000000-m80c56bee-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56bee-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003d-01f4-0000-034a-f59500000000-m80c56bf0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56bf0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68fcc-0f3c-0000-714b-e31d00000000" name="AD_3900:1603251092935971">
+<Expr mdsid="m0000003e-01f4-0000-e46c-fc7300000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bf2-07d6-0000-714b-e31d00000000" name="% Chg Year Ago # of NRC Quote Items" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000003f-01f4-0000-d467-271800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Quote Item"."Year Ago # of NRC Quote Items" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Year Ago # of NRC Quote Items" = 0) AND  NOT "Core"."Fact - CRM - Quote Item"."# of NRC Quote Items" IS NULL  AND "Core"."Fact - CRM - Quote Item"."# of NRC Quote Items" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Quote Item"."Year Ago # of NRC Quote Items" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Year Ago # of NRC Quote Items" = 0) AND ("Core"."Fact - CRM - Quote Item"."# of NRC Quote Items" IS NULL  OR "Core"."Fact - CRM - Quote Item"."# of NRC Quote Items" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Quote Item"."# of NRC Quote Items" IS NULL  AND  NOT "Core"."Fact - CRM - Quote Item"."Year Ago # of NRC Quote Items" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Year Ago # of NRC Quote Items" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Quote Item"."# of NRC Quote Items" - "Core"."Fact - CRM - Quote Item"."Year Ago # of NRC Quote Items") / "Core"."Fact - CRM - Quote Item"."Year Ago # of NRC Quote Items" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003f-01f4-0000-d467-271800000000-m80c56bf0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56bf0-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003f-01f4-0000-d467-271800000000-m80c56bee-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56bee-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68fcd-0f3c-0000-714b-e31d00000000" name="AD_3900:1603291092935971">
+<Expr mdsid="m00000040-01f4-0000-f81f-6dbd00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bf3-07d6-0000-714b-e31d00000000" name="Chg Quarter Ago # of NRC Quote Items" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000041-01f4-0000-128f-046000000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Quote Item"."# of NRC Quote Items", 0) -  IFNULL("Core"."Fact - CRM - Quote Item"."Quarter Ago # of NRC Quote Items", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000041-01f4-0000-128f-046000000000-m80c56bee-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56bee-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000041-01f4-0000-128f-046000000000-m80c56bef-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56bef-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68fce-0f3c-0000-714b-e31d00000000" name="AD_3900:1603331092936258">
+<Expr mdsid="m00000042-01f4-0000-d01c-2fd600000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bf4-07d6-0000-714b-e31d00000000" name="% Chg Quarter Ago # of NRC Quote Items" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000043-01f4-0000-facb-a7a100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Quote Item"."Quarter Ago # of NRC Quote Items" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quarter Ago # of NRC Quote Items" = 0) AND  NOT "Core"."Fact - CRM - Quote Item"."# of NRC Quote Items" IS NULL  AND "Core"."Fact - CRM - Quote Item"."# of NRC Quote Items" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Quote Item"."Quarter Ago # of NRC Quote Items" IS NULL  OR "Core"."Fact - CRM - Quote Item"."Quarter Ago # of NRC Quote Items" = 0) AND ("Core"."Fact - CRM - Quote Item"."# of NRC Quote Items" IS NULL  OR "Core"."Fact - CRM - Quote Item"."# of NRC Quote Items" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Quote Item"."# of NRC Quote Items" IS NULL  AND  NOT "Core"."Fact - CRM - Quote Item"."Quarter Ago # of NRC Quote Items" IS NULL  AND "Core"."Fact - CRM - Quote Item"."Quarter Ago # of NRC Quote Items" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Quote Item"."# of NRC Quote Items" - "Core"."Fact - CRM - Quote Item"."Quarter Ago # of NRC Quote Items") / "Core"."Fact - CRM - Quote Item"."Quarter Ago # of NRC Quote Items" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000043-01f4-0000-facb-a7a100000000-m80c56bef-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56bef-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000043-01f4-0000-facb-a7a100000000-m80c56bee-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a4-07f3-0000-714b-e31d00000000.xml#m80c56bee-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68fcf-0f3c-0000-714b-e31d00000000" name="AD_3900:1603371092936258">
+<Expr mdsid="m00000044-01f4-0000-d90d-1e1a00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+</LogicalTable>

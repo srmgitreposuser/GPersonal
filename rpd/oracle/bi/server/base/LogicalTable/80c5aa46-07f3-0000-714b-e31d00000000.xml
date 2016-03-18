@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5aa46-07f3-0000-714b-e31d00000000" name="Fact Num Times In A Camp" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="744" y="385" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c572ff-07d6-0000-714b-e31d00000000" name="Number of Contacts" isWriteable="false">
+<Description><![CDATA[Number of Contacts]]></Description>
+<MeasureDefn mdsid="m80c5b3b9-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb25-0802-0000-714b-e31d00000000" name="AggRule_2050:5056871242140320" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-2159-6bda00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact Num Times In A Camp"."Number of Contacts")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-2159-6bda00000000-m80c572ff-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa46-07f3-0000-714b-e31d00000000.xml#m80c572ff-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69811-0f3c-0000-714b-e31d00000000" name="AD_3900:4929561227090452">
+<Expr mdsid="m00000002-01f4-0000-d7d2-bfc000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_CAMP_HIST_F_No_Times_In_Camp"."CONTACT_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-d7d2-bfc000000000-m80c637f8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0a7-0bb9-0000-714b-e31d00000000.xml#m80c637f8-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57300-07d6-0000-714b-e31d00000000" name="Number of Campaigns" isWriteable="false">
+<Description><![CDATA[Number of Campaigns]]></Description>
+<AttrDefn mdsid="m80c69812-0f3c-0000-714b-e31d00000000" name="AD_3900:4929571227090452">
+<Expr mdsid="m00000003-01f4-0000-cf04-941a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_CAMP_HIST_F_No_Times_In_Camp"."NUM_OF_CAMP"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-cf04-941a00000000-m80c637f9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0a7-0bb9-0000-714b-e31d00000000.xml#m80c637f9-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57439-07d6-0000-714b-e31d00000000" name="CONTACT_WID" isWriteable="false">
+<AttrDefn mdsid="m80c6994b-0f3c-0000-714b-e31d00000000" name="AD_3900:5056861242140320">
+<Expr mdsid="m00000004-01f4-0000-c5a9-3a6400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_CAMP_HIST_F_No_Times_In_Camp"."CONTACT_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-c5a9-3a6400000000-m80c637f8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0a7-0bb9-0000-714b-e31d00000000.xml#m80c637f8-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58dfe-07d8-0000-714b-e31d00000000" name="Fact_W_CAMP_HIST_F_No_Times_In_Camp_Key" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58dfe-07d8-0000-714b-e31d00000000-m80c57439-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aa46-07f3-0000-714b-e31d00000000.xml#m80c57439-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5aa46-07f3-0000-714b-e31d00000000-m80c5ac88-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ac88-07f5-0000-714b-e31d00000000.xml#m80c5ac88-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<InitBlock mdsid="m80c67c6c-0bd9-0000-714b-e31d00000000" name="Current Fiscal Date Variables" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isRowWiseCacheEnabled="false" refreshPeriod="3600" baseTime="2003-01-01 00:00:00" connectionPoolRef="/oracle/bi/server/base/ConnectionPool/80c67bbe-0bd5-0000-714b-e31d00000000.xml#m80c67bbe-0bd5-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[select PER_NAME_FSCL_WEEK, PER_NAME_FSCL_MNTH, PER_NAME_FSCL_QTR, 
+PER_NAME_FSCL_YEAR, FSCL_WEEK, FSCL_DAY_OF_YEAR from 
+VALUEOF(OLAPTBO).W_DAY_D WHERE
+to_char(DAY_DT,'yyyymmdd')=to_char(SYSDATE - VALUEOF(TIME_OFFSET),'yyyymmdd')]]></Value>
+</DBMapItem>
+<RefVariables>
+<RefVariable refId="m80c67c6c-0bd9-0000-714b-e31d00000000-m80c67bfe-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67bfe-0bd7-0000-714b-e31d00000000.xml#m80c67bfe-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c6c-0bd9-0000-714b-e31d00000000-m80c67bff-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67bff-0bd7-0000-714b-e31d00000000.xml#m80c67bff-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c6c-0bd9-0000-714b-e31d00000000-m80c67c00-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c00-0bd7-0000-714b-e31d00000000.xml#m80c67c00-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c6c-0bd9-0000-714b-e31d00000000-m80c67c01-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c01-0bd7-0000-714b-e31d00000000.xml#m80c67c01-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c6c-0bd9-0000-714b-e31d00000000-m80caa7e2-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80caa7e2-0bd7-0000-714b-e31d00000000.xml#m80caa7e2-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c6c-0bd9-0000-714b-e31d00000000-m80caa7e4-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80caa7e4-0bd7-0000-714b-e31d00000000.xml#m80caa7e4-0bd7-0000-714b-e31d00000000"/>
+</RefVariables>
+<InitString><![CDATA[select PER_NAME_FSCL_WEEK, PER_NAME_FSCL_MNTH, PER_NAME_FSCL_QTR, 
+PER_NAME_FSCL_YEAR, FSCL_WEEK, FSCL_DAY_OF_YEAR from 
+VALUEOF(OLAPTBO).W_DAY_D WHERE
+to_char(DAY_DT,'yyyymmdd')=to_char(SYSDATE - VALUEOF(TIME_OFFSET),'yyyymmdd')]]></InitString>
+</InitBlock>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ComplexJoin mdsid="m80c7493a-0bc4-0000-714b-e31d00000000" name="Dim_W_DAY_D_Age_Attributes_Fact_WC_EVENT_REG_F_Last_Event_LE" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" table1Ref="/oracle/bi/server/base/PhysicalTable/80c5c106-0bb9-0000-714b-e31d00000000.xml#m80c5c106-0bb9-0000-714b-e31d00000000" table2Ref="/oracle/bi/server/base/PhysicalTable/80c50151-0bb9-0000-714b-e31d00000000.xml#m80c50151-0bb9-0000-714b-e31d00000000">
+<Expr mdsid="m00000001-01f4-0000-9b8a-f0a700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  THEN  CAST ('01-JAN-1801' AS DATE ) ELSE "%1" END  =  CASE  WHEN "%2" IS NULL  THEN  CAST ('01-JAN-1801' AS DATE ) ELSE "%2" END  AND  NOT "%3" IS NULL ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."SRM List Export Tables"."Fact_WC_EVENT_REG_F_Last_Event_LE"."X_SRM_SUPP_BIRTH_DT" IS NULL  THEN  CAST ('01-JAN-1801' AS DATE ) ELSE "Oracle Data Warehouse"."Catalog"."SRM List Export Tables"."Fact_WC_EVENT_REG_F_Last_Event_LE"."X_SRM_SUPP_BIRTH_DT" END  =  CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Age_Attributes"."CALENDAR_DATE" IS NULL  THEN  CAST ('01-JAN-1801' AS DATE ) ELSE "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Age_Attributes"."CALENDAR_DATE" END  AND  NOT "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Age_Attributes"."DAY_DT" IS NULL ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-9b8a-f0a700000000-m80c50154-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c50151-0bb9-0000-714b-e31d00000000.xml#m80c50154-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000001-01f4-0000-9b8a-f0a700000000-m80c64b03-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c106-0bb9-0000-714b-e31d00000000.xml#m80c64b03-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000001-01f4-0000-9b8a-f0a700000000-m80c64b0f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c106-0bb9-0000-714b-e31d00000000.xml#m80c64b0f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ComplexJoin>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTableSource mdsid="m80cb79ae-07f5-0000-714b-e31d00000000" name="Fact_WC_OWN_PARTY_ROLES_F" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isActive="true" logicalTableRef="/oracle/bi/server/base/LogicalTable/80cb78e0-07f3-0000-714b-e31d00000000.xml#m80cb78e0-07f3-0000-714b-e31d00000000">
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000001-01f4-0000-252f-6b4500000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Owning Party - Roles"."# Roles"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-252f-6b4500000000-m80cb794a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb78e0-07f3-0000-714b-e31d00000000.xml#m80cb794a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000002-01f4-0000-7cdb-490600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OWN_PARTY_ROLES_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-7cdb-490600000000-m80cb7904-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb78fc-0bb9-0000-714b-e31d00000000.xml#m80cb7904-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000003-01f4-0000-9ad0-cf6800000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Owning Party - Roles"."Implicit Fact Constant"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-9ad0-cf6800000000-m80cb83c9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb78e0-07f3-0000-714b-e31d00000000.xml#m80cb83c9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000004-01f4-0000-a4b4-b8a900000000" name="Expr">
+<ExprText><![CDATA[1]]></ExprText>
+<ExprTextDesc><![CDATA[1]]></ExprTextDesc>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000005-01f4-0000-b7fc-09ce00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Owning Party - Roles"."# of Organisations (Distinct)"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-b7fc-09ce00000000-m80cbc60e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb78e0-07f3-0000-714b-e31d00000000.xml#m80cbc60e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000006-01f4-0000-b942-b6ea00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OWN_PARTY_ROLES_F"."ACCNT_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OWN_PARTY_ROLES_F"."ACCNT_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-b942-b6ea00000000-m80cb790a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb78fc-0bb9-0000-714b-e31d00000000.xml#m80cb790a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000007-01f4-0000-dc97-9fe400000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Owning Party - Roles"."# of Supporters (Distinct)"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-dc97-9fe400000000-m80cbc60f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb78e0-07f3-0000-714b-e31d00000000.xml#m80cbc60f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000008-01f4-0000-7a70-7f6c00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OWN_PARTY_ROLES_F"."CONTACT_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OWN_PARTY_ROLES_F"."CONTACT_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-7a70-7f6c00000000-m80cb790b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb78fc-0bb9-0000-714b-e31d00000000.xml#m80cb790b-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80cb78fc-0bb9-0000-714b-e31d00000000.xml#m80cb78fc-0bb9-0000-714b-e31d00000000">
+</Link>
+<WhereClause mdsid="m00000009-01f4-0000-94f8-336300000000" name="WhereClause">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</WhereClause>
+<GroupBy mdsid="m0000000a-01f4-0000-b792-cd7700000000" name="GroupBy">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</GroupBy>
+<FragmentContent mdsid="m0000000b-01f4-0000-a6b2-f1a900000000" name="FragmentContent">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</FragmentContent>
+</LogicalTableSource>

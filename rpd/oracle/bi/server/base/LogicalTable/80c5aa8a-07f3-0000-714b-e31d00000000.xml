@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5aa8a-07f3-0000-714b-e31d00000000" name="Fact - MacroSegment Household History" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="930" y="363" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c5794b-07d6-0000-714b-e31d00000000" name="# Households" isWriteable="false">
+<MeasureDefn mdsid="m80c5b46f-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb9f-0802-0000-714b-e31d00000000" name="AggRule_2050:5785891272279371" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-536c-02ab00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - MacroSegment Household History"."# Households")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-536c-02ab00000000-m80c5794b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8a-07f3-0000-714b-e31d00000000.xml#m80c5794b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69e5d-0f3c-0000-714b-e31d00000000" name="AD_3900:5785531272278656">
+<Expr mdsid="m00000002-01f4-0000-6bb6-2c2100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_MACROSEGMENT_HIST_F_Household"."HOUSEHOLD_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-6bb6-2c2100000000-m80c65208-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c133-0bb9-0000-714b-e31d00000000.xml#m80c65208-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5794c-07d6-0000-714b-e31d00000000" name="Current Historical Value" isWriteable="false">
+<AttrDefn mdsid="m80c69e5e-0f3c-0000-714b-e31d00000000" name="AD_3900:5785581272278656">
+<Expr mdsid="m00000003-01f4-0000-79c6-6e8900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_MACROSEGMENT_HIST_F_Household"."CURRENT_HISTORICAL_VALUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-79c6-6e8900000000-m80c6520d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c133-0bb9-0000-714b-e31d00000000.xml#m80c6520d-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5794d-07d6-0000-714b-e31d00000000" name="Current Future Value" isWriteable="false">
+<AttrDefn mdsid="m80c69e5f-0f3c-0000-714b-e31d00000000" name="AD_3900:5785591272278656">
+<Expr mdsid="m00000004-01f4-0000-2601-7e1e00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_MACROSEGMENT_HIST_F_Household"."CURRENT_FUTURE_VALUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-2601-7e1e00000000-m80c6520e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c133-0bb9-0000-714b-e31d00000000.xml#m80c6520e-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5794e-07d6-0000-714b-e31d00000000" name="Current Cost Value" isWriteable="false">
+<AttrDefn mdsid="m80c69e60-0f3c-0000-714b-e31d00000000" name="AD_3900:5785601272278656">
+<Expr mdsid="m00000005-01f4-0000-5325-020300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_MACROSEGMENT_HIST_F_Household"."CURRENT_COST_VALUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-5325-020300000000-m80c6520f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c133-0bb9-0000-714b-e31d00000000.xml#m80c6520f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5794f-07d6-0000-714b-e31d00000000" name="Current Potential Value" isWriteable="false">
+<AttrDefn mdsid="m80c69e61-0f3c-0000-714b-e31d00000000" name="AD_3900:5785611272278656">
+<Expr mdsid="m00000006-01f4-0000-b22f-978100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_MACROSEGMENT_HIST_F_Household"."CURRENT_POTENTIAL_VALUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-b22f-978100000000-m80c65210-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c133-0bb9-0000-714b-e31d00000000.xml#m80c65210-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57950-07d6-0000-714b-e31d00000000" name="Previous Historical Value" isWriteable="false">
+<AttrDefn mdsid="m80c69e62-0f3c-0000-714b-e31d00000000" name="AD_3900:5785621272278656">
+<Expr mdsid="m00000007-01f4-0000-b784-438b00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_MACROSEGMENT_HIST_F_Household"."PREVIOUS_HISTORICAL_VALUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-b784-438b00000000-m80c65211-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c133-0bb9-0000-714b-e31d00000000.xml#m80c65211-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57951-07d6-0000-714b-e31d00000000" name="Previous Potential Value" isWriteable="false">
+<AttrDefn mdsid="m80c69e63-0f3c-0000-714b-e31d00000000" name="AD_3900:5785631272278656">
+<Expr mdsid="m00000008-01f4-0000-7f1c-d7a300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_MACROSEGMENT_HIST_F_Household"."PREVIOUS_POTENTIAL_VALUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-7f1c-d7a300000000-m80c65212-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c133-0bb9-0000-714b-e31d00000000.xml#m80c65212-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57952-07d6-0000-714b-e31d00000000" name="Previous Cost Value" isWriteable="false">
+<AttrDefn mdsid="m80c69e64-0f3c-0000-714b-e31d00000000" name="AD_3900:5785641272278656">
+<Expr mdsid="m00000009-01f4-0000-b012-57b100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_MACROSEGMENT_HIST_F_Household"."PREVIOUS_COST_VALUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-b012-57b100000000-m80c65213-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c133-0bb9-0000-714b-e31d00000000.xml#m80c65213-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57953-07d6-0000-714b-e31d00000000" name="Previous Future Value" isWriteable="false">
+<AttrDefn mdsid="m80c69e65-0f3c-0000-714b-e31d00000000" name="AD_3900:5785651272278656">
+<Expr mdsid="m0000000a-01f4-0000-2402-7f2a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_MACROSEGMENT_HIST_F_Household"."PREVIOUS_FUTURE_VALUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-2402-7f2a00000000-m80c65214-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c133-0bb9-0000-714b-e31d00000000.xml#m80c65214-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57954-07d6-0000-714b-e31d00000000" name="Current Net Value" isWriteable="false">
+<AttrDefn mdsid="m80c69e66-0f3c-0000-714b-e31d00000000" name="AD_3900:5785911272279371">
+<Expr mdsid="m0000000b-01f4-0000-8642-259200000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) +  IFNULL("%2", 0) +  IFNULL("%3", 0) -  IFNULL("%4", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_MACROSEGMENT_HIST_F_Household"."CURRENT_HISTORICAL_VALUE", 0) +  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_MACROSEGMENT_HIST_F_Household"."CURRENT_FUTURE_VALUE", 0) +  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_MACROSEGMENT_HIST_F_Household"."CURRENT_POTENTIAL_VALUE", 0) -  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_MACROSEGMENT_HIST_F_Household"."CURRENT_COST_VALUE", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-8642-259200000000-m80c6520d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c133-0bb9-0000-714b-e31d00000000.xml#m80c6520d-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000b-01f4-0000-8642-259200000000-m80c6520e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c133-0bb9-0000-714b-e31d00000000.xml#m80c6520e-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000b-01f4-0000-8642-259200000000-m80c65210-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c133-0bb9-0000-714b-e31d00000000.xml#m80c65210-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000b-01f4-0000-8642-259200000000-m80c6520f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c133-0bb9-0000-714b-e31d00000000.xml#m80c6520f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57955-07d6-0000-714b-e31d00000000" name="Previous Net Value" isWriteable="false">
+<AttrDefn mdsid="m80c69e67-0f3c-0000-714b-e31d00000000" name="AD_3900:5785951272279371">
+<Expr mdsid="m0000000c-01f4-0000-f35b-322900000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) +  IFNULL("%2", 0) +  IFNULL("%3", 0) -  IFNULL("%4", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_MACROSEGMENT_HIST_F_Household"."PREVIOUS_HISTORICAL_VALUE", 0) +  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_MACROSEGMENT_HIST_F_Household"."PREVIOUS_FUTURE_VALUE", 0) +  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_MACROSEGMENT_HIST_F_Household"."PREVIOUS_POTENTIAL_VALUE", 0) -  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_MACROSEGMENT_HIST_F_Household"."PREVIOUS_COST_VALUE", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-f35b-322900000000-m80c65211-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c133-0bb9-0000-714b-e31d00000000.xml#m80c65211-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-f35b-322900000000-m80c65214-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c133-0bb9-0000-714b-e31d00000000.xml#m80c65214-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-f35b-322900000000-m80c65212-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c133-0bb9-0000-714b-e31d00000000.xml#m80c65212-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-f35b-322900000000-m80c65213-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c133-0bb9-0000-714b-e31d00000000.xml#m80c65213-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5aa8a-07f3-0000-714b-e31d00000000-m80c5acee-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5acee-07f5-0000-714b-e31d00000000.xml#m80c5acee-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a94a-07f3-0000-714b-e31d00000000" name="Dim - Territory" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="858" y="726" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c55b40-07d6-0000-714b-e31d00000000" name="Territory" isWriteable="false">
+<AttrDefn mdsid="m80c67f89-0f3c-0000-714b-e31d00000000" name="AD_3900:802391074282455">
+<Expr mdsid="m00000001-01f4-0000-f527-e63700000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_TERR_D"."TERR_NAME"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-f527-e63700000000-m80c5c7e0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bebb-0bb9-0000-714b-e31d00000000.xml#m80c5c7e0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c55b41-07d6-0000-714b-e31d00000000" name="ROW_ID" isWriteable="false">
+<AttrDefn mdsid="m80c67f8a-0f3c-0000-714b-e31d00000000" name="AD_3900:802401074282455">
+<Expr mdsid="m00000002-01f4-0000-f4d8-219f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_TERR_D"."INTEGRATION_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-f4d8-219f00000000-m80c5c7de-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bebb-0bb9-0000-714b-e31d00000000.xml#m80c5c7de-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c55b42-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80c67f8b-0f3c-0000-714b-e31d00000000" name="AD_3900:802411074282455">
+<Expr mdsid="m00000003-01f4-0000-a025-2af800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_TERR_D"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-a025-2af800000000-m80c5c7df-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bebb-0bb9-0000-714b-e31d00000000.xml#m80c5c7df-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58c00-07d8-0000-714b-e31d00000000" name="ROW_WID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58c00-07d8-0000-714b-e31d00000000-m80c55b42-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a94a-07f3-0000-714b-e31d00000000.xml#m80c55b42-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<LogicalKey mdsid="m80c58c01-07d8-0000-714b-e31d00000000" name="ROW_ID">
+<RefColumns>
+<RefLogicalColumn refId="m80c58c01-07d8-0000-714b-e31d00000000-m80c55b41-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a94a-07f3-0000-714b-e31d00000000.xml#m80c55b41-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5a94a-07f3-0000-714b-e31d00000000-m80c5ab50-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ab50-07f5-0000-714b-e31d00000000.xml#m80c5ab50-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

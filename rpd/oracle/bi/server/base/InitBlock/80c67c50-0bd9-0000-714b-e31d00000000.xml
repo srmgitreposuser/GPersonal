@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<InitBlock mdsid="m80c67c50-0bd9-0000-714b-e31d00000000" name="Authorization" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isSessionVar="true" isRowWiseInit="true" isRowWiseCacheEnabled="false" isEnabled="false" refreshPeriod="86400" connectionPoolRef="/oracle/bi/server/base/ConnectionPool/80c67bc0-0bd5-0000-714b-e31d00000000.xml#m80c67bc0-0bd5-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[Select 'GROUP',  R.NAME
+from VALUEOF(TBO).S_RESP R, VALUEOF(TBO).S_PER_RESP P, VALUEOF(TBO).S_USER U 
+where U.LOGIN=Upper(':USER') and U.ROW_ID=P.PER_ID and P.RESP_ID=R.ROW_ID
+UNION
+select 'GROUP', CASE VALUEOF(NQ_SESSION.HIER_LEVEL)
+ WHEN 0  THEN 'Hierarchy Level (Base)'
+ when 1 then 'Hierarchy Level 1'
+ when 2 then 'Hierarchy Level 2'
+ when 3 then 'Hierarchy Level 3'
+ when 4 then 'Hierarchy Level 4'
+ when 5 then 'Hierarchy Level 5'
+ when 6 then 'Hierarchy Level 6'
+ when 7 then 'Hierarchy Level 7'
+ when 8 then 'Hierarchy Level 8'
+ When 9 then 'Hierarchy Level (Top)'
+  ELSE 'NOGROUP' END from VALUEOF(TBO).S_DUAL]]></Value>
+</DBMapItem>
+<RefPredecessors>
+<RefInitBlock refId="m80c67c50-0bd9-0000-714b-e31d00000000-m80c67c4e-0bd9-0000-714b-e31d00000000" predecessorRef="/oracle/bi/server/base/InitBlock/80c67c4e-0bd9-0000-714b-e31d00000000.xml#m80c67c4e-0bd9-0000-714b-e31d00000000"/>
+<RefInitBlock refId="m80c67c50-0bd9-0000-714b-e31d00000000-m80c67c76-0bd9-0000-714b-e31d00000000" predecessorRef="/oracle/bi/server/base/InitBlock/80c67c76-0bd9-0000-714b-e31d00000000.xml#m80c67c76-0bd9-0000-714b-e31d00000000"/>
+</RefPredecessors>
+<InitString><![CDATA[Select 'GROUP',  R.NAME
+from VALUEOF(TBO).S_RESP R, VALUEOF(TBO).S_PER_RESP P, VALUEOF(TBO).S_USER U 
+where U.LOGIN=Upper(':USER') and U.ROW_ID=P.PER_ID and P.RESP_ID=R.ROW_ID
+UNION
+select 'GROUP', CASE VALUEOF(NQ_SESSION.HIER_LEVEL)
+ WHEN 0  THEN 'Hierarchy Level (Base)'
+ when 1 then 'Hierarchy Level 1'
+ when 2 then 'Hierarchy Level 2'
+ when 3 then 'Hierarchy Level 3'
+ when 4 then 'Hierarchy Level 4'
+ when 5 then 'Hierarchy Level 5'
+ when 6 then 'Hierarchy Level 6'
+ when 7 then 'Hierarchy Level 7'
+ when 8 then 'Hierarchy Level 8'
+ When 9 then 'Hierarchy Level (Top)'
+  ELSE 'NOGROUP' END from VALUEOF(TBO).S_DUAL]]></InitString>
+</InitBlock>

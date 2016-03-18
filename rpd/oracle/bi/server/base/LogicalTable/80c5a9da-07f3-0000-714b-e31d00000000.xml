@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9da-07f3-0000-714b-e31d00000000" name="Fact  Compound - Agree &amp; SR" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="526" y="182" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c568c4-07d6-0000-714b-e31d00000000" name="# of SRs per Agreement" isDerived="true" isWriteable="false">
+<Description><![CDATA[Number of service requests per associated agreement]]></Description>
+<Expr mdsid="m00000001-01f4-0000-242b-f7da00000000" name="Expr">
+<ExprText><![CDATA[1.0d * "%1" / "%2"]]></ExprText>
+<ExprTextDesc><![CDATA[1.0d * "Core"."Fact - CRM - Service Request"."# of SRs with Agreements" / "Core"."Fact - CRM - Agree - DEPRECATED"."# of Agreements"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-242b-f7da00000000-m80c56500-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a3-07f3-0000-714b-e31d00000000.xml#m80c56500-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000001-01f4-0000-242b-f7da00000000-m80c56601-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9aa-07f3-0000-714b-e31d00000000.xml#m80c56601-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<MeasureDefn mdsid="m80c5b218-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b8fd-0802-0000-714b-e31d00000000" name="AggRule_2050:183701074282429" isDefault="true">
+<Expr mdsid="m00000002-01f4-0000-5e28-a99700000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact  Compound - Agree & SR"."# of SRs per Agreement")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-5e28-a99700000000-m80c568c4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9da-07f3-0000-714b-e31d00000000.xml#m80c568c4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68ca1-0f3c-0000-714b-e31d00000000" name="AD_3900:842781074282455">
+<Expr mdsid="m00000003-01f4-0000-3200-49db00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+</LogicalTable>

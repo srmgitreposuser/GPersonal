@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80000000-6c57-1557-99ec-0a3ddf680000" name="Fact_WC_FWS_OPP_A_DistinctCamp" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" cacheExpiry="86400" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb1-0bd3-0000-714b-e31d00000000.xml#m80c67bb1-0bd3-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT DISTINCT CAMP_WID, OPTY_WID FROM WC_FWS_OPP_A]]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80000001-6c57-1557-99ec-0a3ddf680000" name="CAMP_WID" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80000002-6c57-1557-99ec-0a3ddf680000" name="OPTY_WID" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalForeignKey mdsid="m80000003-6c57-1557-99ec-0a3ddf680000" name="Fact_WC_FWS_OPP_A_DistinctCamp_Foreign Key" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c679da-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80000003-6c57-1557-99ec-0a3ddf680000-m80000001-6c57-1557-99ec-0a3ddf680000" columnRef="/oracle/bi/server/base/PhysicalTable/80000000-6c57-1557-99ec-0a3ddf680000.xml#m80000001-6c57-1557-99ec-0a3ddf680000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m00000001-019a-155e-835d-0a0e0f1b0000" name="Fact_WC_FWS_OPP_A_DistinctCamp_Foreign Key#1" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/40000001-e2dc-154b-a39c-0a3defa30000.xml#m40000000-e439-154b-a39c-0a3defa30000">
+<RefColumns>
+<RefColumn refId="m00000001-019a-155e-835d-0a0e0f1b0000-m80000002-6c57-1557-99ec-0a3ddf680000" columnRef="/oracle/bi/server/base/PhysicalTable/80000000-6c57-1557-99ec-0a3ddf680000.xml#m80000002-6c57-1557-99ec-0a3ddf680000"/>
+</RefColumns>
+</PhysicalForeignKey>
+</PhysicalTable>

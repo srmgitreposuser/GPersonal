@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5ab0d-07f3-0000-714b-e31d00000000" name="Fact - Gift Aid Claim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="647" y="305" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c58823-07d6-0000-714b-e31d00000000" name="Total Amount to Claim On" isWriteable="false">
+<MeasureDefn mdsid="m80c5b6eb-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5be4d-0802-0000-714b-e31d00000000" name="AggRule_2050:6373781298910606" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-8eb3-2ff400000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Gift Aid Claim"."Total Amount to Claim On")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-8eb3-2ff400000000-m80c58823-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5ab0d-07f3-0000-714b-e31d00000000.xml#m80c58823-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6ad35-0f3c-0000-714b-e31d00000000" name="AD_3900:6228461291642200">
+<Expr mdsid="m00000002-01f4-0000-88b1-b16c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_CLAIMS_F"."CLAIM_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-88b1-b16c00000000-m80c66d46-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c18f-0bb9-0000-714b-e31d00000000.xml#m80c66d46-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58824-07d6-0000-714b-e31d00000000" name="Total Claimed" isWriteable="false">
+<MeasureDefn mdsid="m80c5b6ec-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c6df39-0802-0000-714b-e31d00000000" name="AggRule_2050:6423011303122016" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-9f9d-5b5d00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Gift Aid Claim"."Total Claimed")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-9f9d-5b5d00000000-m80c58824-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5ab0d-07f3-0000-714b-e31d00000000.xml#m80c58824-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6ad36-0f3c-0000-714b-e31d00000000" name="AD_3900:6228501291642200">
+<Expr mdsid="m00000004-01f4-0000-bfd5-f5a000000000" name="Expr">
+<ExprText><![CDATA["%1" * "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_CLAIMS_F"."CLAIM_AMT" * "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_CLAIMS_F"."GIFTAID_CLAIM_RATE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-bfd5-f5a000000000-m80c66d46-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c18f-0bb9-0000-714b-e31d00000000.xml#m80c66d46-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-bfd5-f5a000000000-m80c6df23-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c18f-0bb9-0000-714b-e31d00000000.xml#m80c6df23-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58911-07d6-0000-714b-e31d00000000" name="# of Transactions" isWriteable="false">
+<MeasureDefn mdsid="m80c5b704-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5be4f-0802-0000-714b-e31d00000000" name="AggRule_2050:6373831298910606" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-e38e-9fd600000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - Gift Aid Claim"."# of Transactions")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-e38e-9fd600000000-m80c58911-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5ab0d-07f3-0000-714b-e31d00000000.xml#m80c58911-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6ae23-0f3c-0000-714b-e31d00000000" name="AD_3900:6373811298910606">
+<Expr mdsid="m00000006-01f4-0000-13dc-fd8a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_CLAIMS_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-13dc-fd8a00000000-m80c66682-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c18f-0bb9-0000-714b-e31d00000000.xml#m80c66682-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5891c-07d6-0000-714b-e31d00000000" name="Potential Gift Aid Amount(can be Claimed)" isDerived="true" isWriteable="false">
+<Description><![CDATA[This OBI field is no longer in use, please refer to the Gift Aid Reporting Guidelines for alternatives (available from Data.Help)]]></Description>
+<Expr mdsid="m00000007-01f4-0000-2395-924700000000" name="Expr">
+<ExprText><![CDATA["%1" - "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Payment"."Donation Amount" - "Core"."Fact - Gift Aid Claim"."Total Amount to Claim On"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-2395-924700000000-m80c57077-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c57077-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000007-01f4-0000-2395-924700000000-m80c58823-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5ab0d-07f3-0000-714b-e31d00000000.xml#m80c58823-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c6ae2e-0f3c-0000-714b-e31d00000000" name="AD_3900:6384271298990150">
+<Expr mdsid="m00000008-01f4-0000-9872-d11000000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c72528-07d6-0000-714b-e31d00000000" name="Claim Line Key" isWriteable="false">
+<AttrDefn mdsid="m80c72529-0f3c-0000-714b-e31d00000000" name="AD_3900:6554381315385915">
+<Expr mdsid="m00000009-01f4-0000-1e4a-983600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_CLAIMS_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-1e4a-983600000000-m80c66682-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c18f-0bb9-0000-714b-e31d00000000.xml#m80c66682-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cad9a3-07d6-0000-714b-e31d00000000" name="--- New Gift Aid Facts ---" iconIndex="86" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000000a-01f4-0000-75ad-14c600000000" name="Expr">
+<ExprText><![CDATA[1]]></ExprText>
+<ExprTextDesc><![CDATA[1]]></ExprTextDesc>
+</Expr>
+<AttrDefn mdsid="m80cad9a5-0f3c-0000-714b-e31d00000000" name="AD_3900:8120451361283963">
+<Expr mdsid="m0000000b-01f4-0000-5f1e-d71000000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cad996-07d6-0000-714b-e31d00000000" name="Processed Gift Aid Amount" isWriteable="false">
+<MeasureDefn mdsid="m80cad99b-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cad99c-0802-0000-714b-e31d00000000" name="AggRule_2050:8120391361283922" isDefault="true">
+<Expr mdsid="m0000000c-01f4-0000-e862-482d00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Gift Aid Claim"."Processed Gift Aid Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-e862-482d00000000-m80cad996-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5ab0d-07f3-0000-714b-e31d00000000.xml#m80cad996-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cad998-0f3c-0000-714b-e31d00000000" name="AD_3900:8120371361283901">
+<Expr mdsid="m0000000d-01f4-0000-b89f-bc7e00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_CLAIMS_F"."X_SRM_PRCS_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-b89f-bc7e00000000-m80ca7d63-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c18f-0bb9-0000-714b-e31d00000000.xml#m80ca7d63-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5ab0d-07f3-0000-714b-e31d00000000-m80c5adc0-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5adc0-07f5-0000-714b-e31d00000000.xml#m80c5adc0-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

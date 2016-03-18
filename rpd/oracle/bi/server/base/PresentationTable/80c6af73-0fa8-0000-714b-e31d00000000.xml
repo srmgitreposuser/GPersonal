@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PresentationTable mdsid="m80c6af73-0fa8-0000-714b-e31d00000000" name="- Calculated Metrics" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationCatalog/80c6aeb8-0fa4-0000-714b-e31d00000000.xml#m80c6aeb8-0fa4-0000-714b-e31d00000000">
+<PresentationColumn mdsid="m80c6b930-0faa-0000-714b-e31d00000000" name="# of Loyalty Responses" iconIndex="68" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9cb-07f3-0000-714b-e31d00000000.xml#m80c572c4-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric counts the number of responsese from campaigns with a type of loyalty. (if campaign.type = loyalty then 1)]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b6c6-0faa-0000-714b-e31d00000000" name="# of Participants (Actual)" iconIndex="68" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c57301-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[this metric counts the number of people who participated in events. (IF event supporter status = 'Attended', 'Confirmed', 'Confirmed - Paid', 'Confirmed - To Pay', 'Entered' then contact_wid)]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b6b2-0faa-0000-714b-e31d00000000" name="# Responses" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9cb-07f3-0000-714b-e31d00000000.xml#m80c5682e-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Total # of Responses. Works at the Program Plan, Program, Stage , Campaign plan and Campaign level]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b64b-0faa-0000-714b-e31d00000000" name="Expenditure (Actual)" hasDispName="false" hasDispDescription="false" overrideLogicalName="true" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9f1-07f3-0000-714b-e31d00000000.xml#m80c569c3-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Actual Marketing Cost]]></Description>
+<Alias name="Marketing Cost (Actual)"/>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6bd46-0faa-0000-714b-e31d00000000" name="Response Rate" iconIndex="99" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9cc-07f3-0000-714b-e31d00000000.xml#m80c5757a-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Response Rate is calculated by Number of Responders against No of Supporters Passed in External Cleansing]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b934-0faa-0000-714b-e31d00000000" name="# Cross Sold to" iconIndex="68" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9ca-07f3-0000-714b-e31d00000000.xml#m80c572be-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[# of Supporters targeted in a Campaign (If campaign.primary purpose = 'Cash Cross-Sell', 'CoG Cross-Sell', 'Cross-sell' then contact_wid)]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6bb51-0faa-0000-714b-e31d00000000" name="# Loaded" iconIndex="93" hasDispName="false" hasDispDescription="false" overrideLogicalName="true" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9ca-07f3-0000-714b-e31d00000000.xml#m80c56818-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Total # of people loaded in a Campaign]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b92f-0faa-0000-714b-e31d00000000" name="# of Loyalty Contacts" iconIndex="68" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9ca-07f3-0000-714b-e31d00000000.xml#m80c572c3-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[# of supporters in a loyalty campaign (if campaign.type = loyalty then 1)]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b545-0faa-0000-714b-e31d00000000" name="# of Responses Loaded" iconIndex="93" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aa00-07f3-0000-714b-e31d00000000.xml#m80c5715b-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[# of Responses Loaded as calculated in the warehouse as opposed to manually entering in Siebel
+]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b660-0faa-0000-714b-e31d00000000" name="# Targeted" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aa00-07f3-0000-714b-e31d00000000.xml#m80c56aa7-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[The above measures calculates the unique number of contacts or accounts that were in a launched campaign. This does not necessarily mean that they were contacted. The information is latest as of the time it was loaded in the Siebel RMW. 
+
+]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b679-0faa-0000-714b-e31d00000000" name="12 month COG ROI %" iconIndex="93" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aa00-07f3-0000-714b-e31d00000000.xml#m80c57279-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the ROI of a campaign based on an estimated 12 month COG value (100* 12 month COG value / Marketing Costs)
+]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b64f-0faa-0000-714b-e31d00000000" name="12 month COG ROI % With GiftAid" iconIndex="68" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aa00-07f3-0000-714b-e31d00000000.xml#m80c572c6-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the ROI of a campaign based on an estimated 12 month COG value with gift aid (IF Giftaid = 'Y' then 12 month COG value * 1+(Gift Aid) ELSE 12 month COG value)
+]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b67a-0faa-0000-714b-e31d00000000" name="5 Year COG ROI %" iconIndex="93" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aa00-07f3-0000-714b-e31d00000000.xml#m80c5727a-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the ROI of a campaign based on an estimated 5 year COG value (100* 5 Year COG value / Marketing Costs)
+]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b677-0faa-0000-714b-e31d00000000" name="5 Year COG ROI % with GiftAid" iconIndex="68" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aa00-07f3-0000-714b-e31d00000000.xml#m80c57314-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the ROI % of COG campaigns based on a modelled 5 year future value including Gift Aid. This metric is used to more accuraretly predict the inital cost ratio of a COG campaign rather than using individual donations. (100*(if Gift aid = Y then 5 Year COG value * (1+gift Aid) else 5 Year COG value) / Marketing Costs
+]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b650-0faa-0000-714b-e31d00000000" name="5 Year Cost Ratio with GiftAid" iconIndex="68" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aa00-07f3-0000-714b-e31d00000000.xml#m80c572c7-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the cost ratio of COG campaigns based on a modelled 5 year future value with gift aid. This metric is used to more accuraretly predict the inital cost ratio of a COG campaign rather than using individual donations. ( Marketing Costs / (if Gift aid = Y then 5 Year COG value * (1+gift Aid) else 5 Year COG value)
+]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b505-0faa-0000-714b-e31d00000000" name="Average Donation (Gift Aid)" iconIndex="93" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aa00-07f3-0000-714b-e31d00000000.xml#m80c57156-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b506-0faa-0000-714b-e31d00000000" name="Average Donation (No Gift Aid)" iconIndex="93" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aa00-07f3-0000-714b-e31d00000000.xml#m80c57155-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the average donation excluding the tax amount (donation.amount)]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b675-0faa-0000-714b-e31d00000000" name="Cost Ratio with GiftAid" iconIndex="68" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aa00-07f3-0000-714b-e31d00000000.xml#m80c572bd-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b64c-0faa-0000-714b-e31d00000000" name="Income (calculated)" iconIndex="93" hasDispName="false" hasDispDescription="false" overrideLogicalName="true" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aa00-07f3-0000-714b-e31d00000000.xml#m80c57154-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the sum of individual donations (donation.amount)
+]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b648-0faa-0000-714b-e31d00000000" name="ROI %" iconIndex="93" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aa00-07f3-0000-714b-e31d00000000.xml#m80c56ab1-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the ROI of a campaign based on donations received (100* donation.amount / Marketing Costs)
+]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b3da-0faa-0000-714b-e31d00000000" name="ROI Amount" iconIndex="93" dispName="VALUEOF(NQ_SESSION.CN_Marketing_Planning_-_Goal_Achievement_ROI_Amount)" hasDispName="true" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aa00-07f3-0000-714b-e31d00000000.xml#m80c56ab0-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the ROI amount of a campaign based on donations received (donation.amount - Marketing Costs)
+]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b931-0faa-0000-714b-e31d00000000" name="# Cross-Sold" iconIndex="68" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c572c5-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the number of donations that were created as a result of an cross-sell campaign (If campaign.primary purpose = 'Cash Cross-Sell', 'CoG Cross-Sell', 'Cross-sell' then 1)]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b932-0faa-0000-714b-e31d00000000" name="# Up-Sold" iconIndex="68" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c572c1-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the number of donations that were created as a result of an up-sell campaign (If campaign.primary purpose = 'Up-sell' then 1)]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b651-0faa-0000-714b-e31d00000000" name="12 Month Average COG with GiftAid" iconIndex="68" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c572cb-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the average of the estimated monthly equivalant COG values including the gift aid calculation (12 month COG * (1+gift aid)]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b82f-0faa-0000-714b-e31d00000000" name="12 Month COG Revenue" iconIndex="62" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c570af-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates and sums estimated COG income for the next 12 months based on the frequency and frequency amount.  (IF order.type = 'Any Covenanted Payment', 'Direct Debit', 'Standing Order' then 12 month value)]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b82e-0faa-0000-714b-e31d00000000" name="12 Month COG Revenue with GiftAid" iconIndex="68" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c57313-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the average of the estimated 12 month COG values including Gift Aid. (12 month COG * (1+gift aid)]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b64a-0faa-0000-714b-e31d00000000" name="Average Transaction Value (No Gift Aid)" iconIndex="93" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c57157-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the average donation value without gift aid]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b652-0faa-0000-714b-e31d00000000" name="Avg Cash Gift (with GiftAid)" iconIndex="32836" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c572bc-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b64d-0faa-0000-714b-e31d00000000" name="Gift Aid Amount (Calculated)" iconIndex="93" hasDispName="false" hasDispDescription="false" overrideLogicalName="true" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c572bb-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the amount of gift aid associated with donations (donation.gift aid amount)]]></Description>
+<Alias name="Gift Aid Amount"/>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6b933-0faa-0000-714b-e31d00000000" name="Up-Sold %" iconIndex="68" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c572c2-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[this metric calculates the number of up sold donations vs the number of people targeted in a campaign (# up-sold / # of supporters)]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80ca83e4-0faa-0000-714b-e31d00000000" name="--- New Gift Aid Facts ---" iconIndex="86" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80ca8182-07d6-0000-714b-e31d00000000">
+<Alias name="--- New Gift Aid Attributes ---"/>
+</PresentationColumn>
+<PresentationColumn mdsid="m80ca83f2-0faa-0000-714b-e31d00000000" name="Potential Amount with Gift Aid" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80ca81b7-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+<PresentationColumn mdsid="m80ca83f4-0faa-0000-714b-e31d00000000" name="Potential Amount with Gift Aid (Average)" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80ca81d7-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+<PresentationColumn mdsid="m80ca83f0-0faa-0000-714b-e31d00000000" name="Potential Gift Aid Amount" iconIndex="32768" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80ca81bd-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+<PresentationColumn mdsid="m80cac218-0faa-0000-714b-e31d00000000" name="Cost/Income Ratio inc. Potential Gift Aid Amount" iconIndex="32836" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aa00-07f3-0000-714b-e31d00000000.xml#m80cac213-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This is the ratio of the Cost of a campaign vs. the income, including Potential Gift Aid regardless of whether it has been claimed.]]></Description>
+</PresentationColumn>
+</PresentationTable>

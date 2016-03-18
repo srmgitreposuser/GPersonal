@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80000000-1448-159a-9805-0a5bd40b0000" name="Fact - Opportunity Instalments" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55249-07d0-0000-714b-e31d00000000.xml#m80c55249-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="mc000000b-1464-159a-9805-0a5bd40b0000" name="Net Amount" isWriteable="false">
+<MeasureDefn mdsid="m40000040-e9c8-15a9-806e-0a0e2da00000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m40000041-e9c8-15a9-806e-0a0e2da00000" name="AggRule_2050:1474381453827873" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-89ad-f54a00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Marketing Contact List"."Fact - Opportunity Instalments"."Net Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-89ad-f54a00000000-mc000000b-1464-159a-9805-0a5bd40b0000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80000000-1448-159a-9805-0a5bd40b0000.xml#mc000000b-1464-159a-9805-0a5bd40b0000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m00000000-e9ca-15a9-806e-0a0e2da00000" name="AD_3900:1474451453827880">
+<Expr mdsid="m00000002-01f4-0000-2564-63f800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ORDER_F_Opportunity_Instalment"."TOTAL_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-2564-63f800000000-m80c8dcc2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c8dcb2-0bb9-0000-714b-e31d00000000.xml#m80c8dcc2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc000000c-1464-159a-9805-0a5bd40b0000" name="Gross Amount" isWriteable="false">
+<MeasureDefn mdsid="m40000042-e9c8-15a9-806e-0a0e2da00000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m40000043-e9c8-15a9-806e-0a0e2da00000" name="AggRule_2050:1474401453827873" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-26bb-b6ed00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Marketing Contact List"."Fact - Opportunity Instalments"."Gross Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-26bb-b6ed00000000-mc000000c-1464-159a-9805-0a5bd40b0000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80000000-1448-159a-9805-0a5bd40b0000.xml#mc000000c-1464-159a-9805-0a5bd40b0000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m00000001-e9ca-15a9-806e-0a0e2da00000" name="AD_3900:1474461453827880">
+<Expr mdsid="m00000004-01f4-0000-0481-d09600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ORDER_F_Opportunity_Instalment"."X_SRM_GROSS_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-0481-d09600000000-m80c8dcd6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c8dcb2-0bb9-0000-714b-e31d00000000.xml#m80c8dcd6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc000000d-1464-159a-9805-0a5bd40b0000" name="No of Instalment Donations" isWriteable="false">
+<MeasureDefn mdsid="m40000044-e9c8-15a9-806e-0a0e2da00000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m40000045-e9c8-15a9-806e-0a0e2da00000" name="AggRule_2050:1474421453827873" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-66e5-953400000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Marketing Contact List"."Fact - Opportunity Instalments"."No of Instalment Donations")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-66e5-953400000000-mc000000d-1464-159a-9805-0a5bd40b0000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80000000-1448-159a-9805-0a5bd40b0000.xml#mc000000d-1464-159a-9805-0a5bd40b0000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m00000002-e9ca-15a9-806e-0a0e2da00000" name="AD_3900:1474471453827880">
+<Expr mdsid="m00000006-01f4-0000-f373-356d00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ORDER_F_Opportunity_Instalment"."X_SRM_TOTAL_DONATION_CNT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-f373-356d00000000-m80c8f649-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c8dcb2-0bb9-0000-714b-e31d00000000.xml#m80c8f649-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc000000e-1464-159a-9805-0a5bd40b0000" name="Gift Aid Amount Received" isWriteable="false">
+<MeasureDefn mdsid="m40000019-e9c8-15a9-806e-0a0e2da00000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m4000001a-e9c8-15a9-806e-0a0e2da00000" name="AggRule_2050:1473991453827873" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-4938-38df00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Marketing Contact List"."Fact - Opportunity Instalments"."Gift Aid Amount Received")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-4938-38df00000000-mc000000e-1464-159a-9805-0a5bd40b0000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80000000-1448-159a-9805-0a5bd40b0000.xml#mc000000e-1464-159a-9805-0a5bd40b0000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m000000fb-e9ca-15a9-806e-0a0e2da00000" name="AD_3900:1476961453827880">
+<Expr mdsid="m00000008-01f4-0000-2768-3d3a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ORDER_F_Opportunity_Instalment"."X_SRM_TOTAL_GIFTAID_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-2768-3d3a00000000-m80c92822-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c8dcb2-0bb9-0000-714b-e31d00000000.xml#m80c92822-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc000000f-1464-159a-9805-0a5bd40b0000" name="Net Amount Donated" isWriteable="false">
+<MeasureDefn mdsid="m4000001b-e9c8-15a9-806e-0a0e2da00000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m4000001c-e9c8-15a9-806e-0a0e2da00000" name="AggRule_2050:1474011453827873" isDefault="true">
+<Expr mdsid="m00000009-01f4-0000-175b-d21e00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Marketing Contact List"."Fact - Opportunity Instalments"."Net Amount Donated")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-175b-d21e00000000-mc000000f-1464-159a-9805-0a5bd40b0000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80000000-1448-159a-9805-0a5bd40b0000.xml#mc000000f-1464-159a-9805-0a5bd40b0000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m000000fc-e9ca-15a9-806e-0a0e2da00000" name="AD_3900:1476971453827880">
+<Expr mdsid="m0000000a-01f4-0000-ba6a-0a7000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ORDER_F_Opportunity_Instalment"."X_SRM_TOTAL_PAY_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-ba6a-0a7000000000-m80c8f641-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c8dcb2-0bb9-0000-714b-e31d00000000.xml#m80c8f641-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m40000000-14b6-159a-9805-0a5bd40b0000" name="Gross Amount Donated" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000000b-01f4-0000-b694-d40a00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) +  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Marketing Contact List"."Fact - Opportunity Instalments"."Net Amount Donated", 0) +  IFNULL("Marketing Contact List"."Fact - Opportunity Instalments"."Gift Aid Amount Received", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-b694-d40a00000000-mc000000f-1464-159a-9805-0a5bd40b0000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80000000-1448-159a-9805-0a5bd40b0000.xml#mc000000f-1464-159a-9805-0a5bd40b0000"/>
+<RefObject refId="m0000000b-01f4-0000-b694-d40a00000000-mc000000e-1464-159a-9805-0a5bd40b0000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80000000-1448-159a-9805-0a5bd40b0000.xml#mc000000e-1464-159a-9805-0a5bd40b0000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m000000fd-e9ca-15a9-806e-0a0e2da00000" name="AD_3900:1476981453827880">
+<Expr mdsid="m0000000c-01f4-0000-36c2-1d7200000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m40000000-14ca-159a-9805-0a5bd40b0000" name="Balance Outstanding" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000000d-01f4-0000-b5a8-323600000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Marketing Contact List"."Fact - Opportunity Instalments"."Gross Amount", 0) -  IFNULL("Marketing Contact List"."Fact - Opportunity Instalments"."Gross Amount Donated", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-b5a8-323600000000-mc000000c-1464-159a-9805-0a5bd40b0000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80000000-1448-159a-9805-0a5bd40b0000.xml#mc000000c-1464-159a-9805-0a5bd40b0000"/>
+<RefObject refId="m0000000d-01f4-0000-b5a8-323600000000-m40000000-14b6-159a-9805-0a5bd40b0000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80000000-1448-159a-9805-0a5bd40b0000.xml#m40000000-14b6-159a-9805-0a5bd40b0000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m000000fe-e9ca-15a9-806e-0a0e2da00000" name="AD_3900:1476991453827880">
+<Expr mdsid="m0000000e-01f4-0000-e540-53ad00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80000000-1448-159a-9805-0a5bd40b0000-mc0000015-1464-159a-9805-0a5bd40b0000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/c0000015-1464-159a-9805-0a5bd40b0000.xml#mc0000015-1464-159a-9805-0a5bd40b0000"/>
+</RefTableSources>
+</LogicalTable>

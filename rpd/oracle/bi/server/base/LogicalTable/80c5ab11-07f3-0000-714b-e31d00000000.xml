@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5ab11-07f3-0000-714b-e31d00000000" name="Fact - CRM - Campaign Workload" iconIndex="93" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1167" y="398" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c5884c-07d6-0000-714b-e31d00000000" name="Estimated Days" isWriteable="false">
+<MeasureDefn mdsid="m80c5b6ef-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5be36-0802-0000-714b-e31d00000000" name="AggRule_2050:6253641295028168" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-8ee7-466e00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Campaign Workload"."Estimated Days")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-8ee7-466e00000000-m80c5884c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5ab11-07f3-0000-714b-e31d00000000.xml#m80c5884c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6ad5e-0f3c-0000-714b-e31d00000000" name="AD_3900:6252861295028168">
+<Expr mdsid="m00000002-01f4-0000-2d03-e99a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SOURCE_F"."X_SRM_EST_DAYS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-2d03-e99a00000000-m80c667aa-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c11f-0bb9-0000-714b-e31d00000000.xml#m80c667aa-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5884d-07d6-0000-714b-e31d00000000" name="File Sent Date" isWriteable="false">
+<AttrDefn mdsid="m80c6ad5f-0f3c-0000-714b-e31d00000000" name="AD_3900:6252871295028168">
+<Expr mdsid="m00000003-01f4-0000-b3dc-42af00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SOURCE_F"."X_SRM_FILESENT_DT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-b3dc-42af00000000-m80c667ac-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c11f-0bb9-0000-714b-e31d00000000.xml#m80c667ac-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5884e-07d6-0000-714b-e31d00000000" name="First Counts Date" isWriteable="false">
+<AttrDefn mdsid="m80c6ad60-0f3c-0000-714b-e31d00000000" name="AD_3900:6252881295028168">
+<Expr mdsid="m00000004-01f4-0000-05cb-7dbd00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SOURCE_F"."X_SRM_FSTCOUNTS_DT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-05cb-7dbd00000000-m80c667ae-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c11f-0bb9-0000-714b-e31d00000000.xml#m80c667ae-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5884f-07d6-0000-714b-e31d00000000" name="Selection Owner" isWriteable="false">
+<AttrDefn mdsid="m80c6ad61-0f3c-0000-714b-e31d00000000" name="AD_3900:6252891295028168">
+<Expr mdsid="m00000005-01f4-0000-91b4-d90f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SOURCE_F"."X_SRM_SELECTION_OWNER"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-91b4-d90f00000000-m80c667b0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c11f-0bb9-0000-714b-e31d00000000.xml#m80c667b0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58850-07d6-0000-714b-e31d00000000" name="Actual Days" isWriteable="false">
+<MeasureDefn mdsid="m80c5b6f0-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5be38-0802-0000-714b-e31d00000000" name="AggRule_2050:6253831295445400" isDefault="true">
+<Expr mdsid="m00000006-01f4-0000-4afc-d7e900000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Campaign Workload"."Actual Days")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-4afc-d7e900000000-m80c58850-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5ab11-07f3-0000-714b-e31d00000000.xml#m80c58850-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6ad62-0f3c-0000-714b-e31d00000000" name="AD_3900:6252901295028168">
+<Expr mdsid="m00000007-01f4-0000-042f-920700000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SOURCE_F"."X_SRM_ACTL_DAYS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-042f-920700000000-m80c667b2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c11f-0bb9-0000-714b-e31d00000000.xml#m80c667b2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58851-07d6-0000-714b-e31d00000000" name="Last Counts Date" isWriteable="false">
+<AttrDefn mdsid="m80c6ad63-0f3c-0000-714b-e31d00000000" name="AD_3900:6252911295028168">
+<Expr mdsid="m00000008-01f4-0000-92d0-c86b00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SOURCE_F"."X_SRM_LSTCOUNTS_DT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-92d0-c86b00000000-m80c667b4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c11f-0bb9-0000-714b-e31d00000000.xml#m80c667b4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58854-07d6-0000-714b-e31d00000000" name="# of Tasks" isWriteable="false">
+<MeasureDefn mdsid="m80c5b6ee-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5be37-0802-0000-714b-e31d00000000" name="AggRule_2050:6253651295028168" isDefault="true">
+<Expr mdsid="m00000009-01f4-0000-5bf2-04e800000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Campaign Workload"."# of Tasks")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-5bf2-04e800000000-m80c58854-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5ab11-07f3-0000-714b-e31d00000000.xml#m80c58854-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6ad66-0f3c-0000-714b-e31d00000000" name="AD_3900:6253481295028168">
+<Expr mdsid="m0000000a-01f4-0000-aa00-978000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SOURCE_F"."SELECTION_START_DT_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SOURCE_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-aa00-978000000000-m80c667a1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c11f-0bb9-0000-714b-e31d00000000.xml#m80c667a1-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000a-01f4-0000-aa00-978000000000-m80c64e5b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c11f-0bb9-0000-714b-e31d00000000.xml#m80c64e5b-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5ab11-07f3-0000-714b-e31d00000000-m80c5adc3-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5adc3-07f5-0000-714b-e31d00000000.xml#m80c5adc3-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

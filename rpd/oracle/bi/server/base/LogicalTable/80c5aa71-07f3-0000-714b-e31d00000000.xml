@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5aa71-07f3-0000-714b-e31d00000000" name="Dim - Age Attributes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1468" y="1330" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c5773f-07d6-0000-714b-e31d00000000" name="Age Attributes Key" isWriteable="false">
+<AttrDefn mdsid="m80c69c51-0f3c-0000-714b-e31d00000000" name="AD_3900:5609971263468547">
+<Expr mdsid="m00000001-01f4-0000-7c86-b3d400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Age_Attributes"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-7c86-b3d400000000-m80c64b02-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c106-0bb9-0000-714b-e31d00000000.xml#m80c64b02-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57740-07d6-0000-714b-e31d00000000" name="Age" isWriteable="false">
+<Description><![CDATA[Supporter's Age]]></Description>
+<AttrDefn mdsid="m80c69c52-0f3c-0000-714b-e31d00000000" name="AD_3900:5611241263468547">
+<Expr mdsid="m00000002-01f4-0000-ee5a-1cd600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Age_Attributes"."X_SRM_AGE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-ee5a-1cd600000000-m80c64b81-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c106-0bb9-0000-714b-e31d00000000.xml#m80c64b81-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57741-07d6-0000-714b-e31d00000000" name="Age Range" isWriteable="false">
+<Description><![CDATA[Supporter's Age Group. e.g <16, 16-24, 25-34, 35-54, 55+]]></Description>
+<AttrDefn mdsid="m80c69c53-0f3c-0000-714b-e31d00000000" name="AD_3900:5611251263468547">
+<Expr mdsid="m00000003-01f4-0000-f256-e9c500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Age_Attributes"."X_SRM_AGE_GROUP"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-f256-e9c500000000-m80c64b82-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c106-0bb9-0000-714b-e31d00000000.xml#m80c64b82-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57742-07d6-0000-714b-e31d00000000" name="Age Group Sort Column" isWriteable="false">
+<Description><![CDATA[This column is used to sort Age Groups in the right order.]]></Description>
+<AttrDefn mdsid="m80c69c54-0f3c-0000-714b-e31d00000000" name="AD_3900:5611261263468547">
+<Expr mdsid="m00000004-01f4-0000-e590-d39d00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Age_Attributes"."X_SRM_AGE_GROUP_SORT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-e590-d39d00000000-m80c64b83-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c106-0bb9-0000-714b-e31d00000000.xml#m80c64b83-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58e26-07d8-0000-714b-e31d00000000" name="Age Attributes Key" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58e26-07d8-0000-714b-e31d00000000-m80c5773f-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aa71-07f3-0000-714b-e31d00000000.xml#m80c5773f-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5aa71-07f3-0000-714b-e31d00000000-m80c5acce-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5acce-07f5-0000-714b-e31d00000000.xml#m80c5acce-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

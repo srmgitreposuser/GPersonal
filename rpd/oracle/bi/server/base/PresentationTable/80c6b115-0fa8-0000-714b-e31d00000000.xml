@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PresentationTable mdsid="m80c6b115-0fa8-0000-714b-e31d00000000" name="- Order Facts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationCatalog/80c6aec7-0fa4-0000-714b-e31d00000000.xml#m80c6aec7-0fa4-0000-714b-e31d00000000">
+<PresentationColumn mdsid="m80c6cac0-0faa-0000-714b-e31d00000000" name="12 month COG ROI %" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aaf2-07f3-0000-714b-e31d00000000.xml#m80c58638-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the ROI of a campaign based on an estimated 12 month COG value (100* 12 month COG value / Marketing Costs)
+]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cac3-0faa-0000-714b-e31d00000000" name="5 Year COG Cost Ratio" iconIndex="93" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aaf2-07f3-0000-714b-e31d00000000.xml#m80c5863b-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the 5 Year COG income vs the amount spent aquiring the income.  (marketing cost / Donation.5 Year COG income)
+]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cac1-0faa-0000-714b-e31d00000000" name="5 Year COG ROI %" iconIndex="68" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aaf2-07f3-0000-714b-e31d00000000.xml#m80c58639-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the ROI of a campaign based on an estimated 5 year COG value (100* 5 Year COG value / Marketing Costs)
+]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cac4-0faa-0000-714b-e31d00000000" name="5 Year Cost Ratio (No Gift Aid)" iconIndex="68" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aaf2-07f3-0000-714b-e31d00000000.xml#m80c5863f-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the cost ratio of COG campaigns based on a modelled 5 year future value. This metric is used to more accuraretly predict the inital cost ratio of a COG campaign rather than using individual donations. ( Marketing Costs / 5 Year COG value )
+]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cac2-0faa-0000-714b-e31d00000000" name="COG Cost Ratio" iconIndex="93" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aaf2-07f3-0000-714b-e31d00000000.xml#m80c5863a-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the 12month COG income vs the amount spent aquiring the income.  (marketing cost / Donation.12 month COG income)
+]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cabf-0faa-0000-714b-e31d00000000" name="Cost Ratio" iconIndex="93" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aaf2-07f3-0000-714b-e31d00000000.xml#m80c58637-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the income vs the amount spent aquiring the income.  (marketing cost / Donation.amount)
+]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6d30b-0faa-0000-714b-e31d00000000" name="# of Active COG Supporters" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5ab19-07f3-0000-714b-e31d00000000.xml#m80c588de-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6d30c-0faa-0000-714b-e31d00000000" name="# of Lapsed COG Supporters" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5ab19-07f3-0000-714b-e31d00000000.xml#m80c588df-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cac5-0faa-0000-714b-e31d00000000" name="# Cancelled COGS" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f084-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric counts the number of COGs with a status of cancelled (COG order is not lapsed and has a cancelled flag)]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cac6-0faa-0000-714b-e31d00000000" name="# Never Paid" iconIndex="68" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f086-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric is calcules the number of COG orders that have been recoreded as neverpaid. This is calculated in the ETL and is flagged on the order (Orders.Never paid Flag = Y)]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cac7-0faa-0000-714b-e31d00000000" name="# of COG Orders" iconIndex="93" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f0ee-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric counts the # of COG Orders (count orders.type = 'Any Covenanted Payment', 'Direct Debit', 'Standing Order')]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cac8-0faa-0000-714b-e31d00000000" name="# of Donation Headers" iconIndex="93" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f044-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the # of Orders (Order_wid)]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6d30d-0faa-0000-714b-e31d00000000" name="# of Household with COGS" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c588e0-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cac9-0faa-0000-714b-e31d00000000" name="# of Lapsed" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f08a-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric is calcules the number of COG orders that have lapsed. This is calculated in the ETL and is flagged on the order (Orders.Lapse Flag = Y)]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6d30e-0faa-0000-714b-e31d00000000" name="# of Orders" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f032-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric measures the # of Orders.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6caca-0faa-0000-714b-e31d00000000" name="# of Products with Donations" iconIndex="93" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f046-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Total # of Products with at least one order  (donations.product_wid)
+
+
+Changed Now to Look at Prod Wid rather than Root Line Prod Wid..Have to Rollback when we return to Vanilla]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6d30f-0faa-0000-714b-e31d00000000" name="# of Supporters with COGS" iconIndex="93" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f0f0-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Total # of Supporters with Orders (Distinct Supporters where order.type = 'Any Covenanted Payment', 'Direct Debit', 'Standing Order')]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cacb-0faa-0000-714b-e31d00000000" name="# Upgraded by Call (Historical)" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f0c8-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the number of people that have been upgraded by call based on source codes]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cacd-0faa-0000-714b-e31d00000000" name="# Upgraded by Email (Historical)" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f0cc-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the number of people that have been upgraded by email based on source codes]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cacc-0faa-0000-714b-e31d00000000" name="# Upgraded by Mail (Historical)" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f0ca-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the number of people that have been upgraded by mail based on source codes]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cad7-0faa-0000-714b-e31d00000000" name="% Never Paid" iconIndex="98" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f106-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cad0-0faa-0000-714b-e31d00000000" name="12 Month Average COG Gift" iconIndex="62" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f078-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the average of the estimated 12 month COG values]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cace-0faa-0000-714b-e31d00000000" name="12 Month COG Revenue" iconIndex="62" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f050-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates and sums estimated COG income for the next 12 months based on the frequency and frequency amount.  (IF order.type = 'Any Covenanted Payment', 'Direct Debit', 'Standing Order' then 12 month value)]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cae5-0faa-0000-714b-e31d00000000" name="12 month Gift Aid Income (projected)" iconIndex="98" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f13a-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6dcfb-0faa-0000-714b-e31d00000000" name="12 Month Upgraded Original Order Revenue" iconIndex="93" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c6dcf2-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This is the 12 Month COG Revenue from which the Order has been updated from.The Upgrade campaigns contains any of MUP, MOU. MTU, MHM, MHT. ]]></Description>
+<Alias name="Order Annual Upgraded Original Amount"/>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cad1-0faa-0000-714b-e31d00000000" name="5 Year Cog Income(Old)" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f080-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric estimates the 5 year value of a COG based on a lapse rate of 30% (12 month COG value * 5 * 0.7)]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cad2-0faa-0000-714b-e31d00000000" name="5 Year Net COG Income" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f092-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric is an estimate of the 5 year value of COG orders less the marketing cost of the campaign. This metric should only be used with a campaign.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cacf-0faa-0000-714b-e31d00000000" name="AVG Monthly COG Amount" iconIndex="62" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f076-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the average of the estimated monthly equivalant COG values]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cada-0faa-0000-714b-e31d00000000" name="COG Average Gift Aid Take Up %" iconIndex="98" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f110-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cae0-0faa-0000-714b-e31d00000000" name="COG Lapse Year 1" iconIndex="98" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f11c-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cae1-0faa-0000-714b-e31d00000000" name="COG Lapse Year 2" iconIndex="98" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f11e-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cae2-0faa-0000-714b-e31d00000000" name="COG Lapse Year 3" iconIndex="98" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f120-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cae3-0faa-0000-714b-e31d00000000" name="COG Lapse Year 4" iconIndex="98" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f122-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cae4-0faa-0000-714b-e31d00000000" name="COG Lapse Year 5" iconIndex="98" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f124-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cad4-0faa-0000-714b-e31d00000000" name="Frequency Amount" iconIndex="93" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f0c6-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This attribute is the donation amount regularly given as part of a COG order.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cad5-0faa-0000-714b-e31d00000000" name="Max 12 Month COG Revenue" iconIndex="62" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f0fe-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates and sums estimated COG income for the next 12 months based on the frequency and frequency amount.  (IF order.type = 'Any Covenanted Payment', 'Direct Debit', 'Standing Order' then 12 month value)]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cad8-0faa-0000-714b-e31d00000000" name="Month of First CoG Gift" iconIndex="98" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f108-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cae6-0faa-0000-714b-e31d00000000" name="Month of First GiftAidable CoG Gift" iconIndex="98" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f13c-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cad9-0faa-0000-714b-e31d00000000" name="New COG GA Declarations" iconIndex="98" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f10a-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cad6-0faa-0000-714b-e31d00000000" name="Order Last COG Payment Amount" iconIndex="98" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f100-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cad3-0faa-0000-714b-e31d00000000" name="Order Total Amount" iconIndex="93" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f072-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric calculates the total order value based on information from Care Contacts (Order number of payments * Frequency value)]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cadb-0faa-0000-714b-e31d00000000" name="Total COGs Lapsed Year 1" iconIndex="98" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f112-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cadc-0faa-0000-714b-e31d00000000" name="Total COGs Lapsed Year 2" iconIndex="98" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f114-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cadd-0faa-0000-714b-e31d00000000" name="Total COGs Lapsed Year 3" iconIndex="98" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f116-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cade-0faa-0000-714b-e31d00000000" name="Total COGs Lapsed Year 4" iconIndex="98" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f118-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+<PresentationColumn mdsid="m80c6cadf-0faa-0000-714b-e31d00000000" name="Total COGs Lapsed Year 5" iconIndex="98" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c4f02c-07f3-0000-714b-e31d00000000.xml#m80c4f11a-07d6-0000-714b-e31d00000000">
+</PresentationColumn>
+</PresentationTable>

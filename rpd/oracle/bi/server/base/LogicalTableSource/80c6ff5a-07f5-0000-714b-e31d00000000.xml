@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTableSource mdsid="m80c6ff5a-07f5-0000-714b-e31d00000000" name="Fact_W_ACTIVITY_F_Planned_Start_Date" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isActive="true" allowUnmappedTable="true" logicalTableRef="/oracle/bi/server/base/LogicalTable/80c5a9cd-07f3-0000-714b-e31d00000000.xml#m80c5a9cd-07f3-0000-714b-e31d00000000">
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000001-01f4-0000-cb20-802000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Activity"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-cb20-802000000000-m80c56875-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9cd-07f3-0000-714b-e31d00000000.xml#m80c56875-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000002-01f4-0000-f1d4-788800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ACTIVITY_F_Planned_Start_Date"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-f1d4-788800000000-m80c5f416-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfe1-0bb9-0000-714b-e31d00000000.xml#m80c5f416-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000003-01f4-0000-2da2-28d100000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Activity"."# Meetings"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-2da2-28d100000000-m80c6fa5f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9cd-07f3-0000-714b-e31d00000000.xml#m80c6fa5f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000004-01f4-0000-d523-f29000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Meeting' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Activity_Type"."VAL" = 'Meeting' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ACTIVITY_F_Planned_Start_Date"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-d523-f29000000000-m80c5c3ce-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea4-0bb9-0000-714b-e31d00000000.xml#m80c5c3ce-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-d523-f29000000000-m80c5f416-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfe1-0bb9-0000-714b-e31d00000000.xml#m80c5f416-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000005-01f4-0000-52f4-e2dc00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Activity"."# Outbound Phone Calls"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-52f4-e2dc00000000-m80c6fa5e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9cd-07f3-0000-714b-e31d00000000.xml#m80c6fa5e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000006-01f4-0000-9d8a-82a100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Phone - Outbound' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Activity_Type"."VAL" = 'Phone - Outbound' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ACTIVITY_F_Planned_Start_Date"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-9d8a-82a100000000-m80c5c3ce-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea4-0bb9-0000-714b-e31d00000000.xml#m80c5c3ce-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-9d8a-82a100000000-m80c5f416-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfe1-0bb9-0000-714b-e31d00000000.xml#m80c5f416-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000007-01f4-0000-d28f-442200000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Activity"."# Outbound Mails"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-d28f-442200000000-m80c6fd7b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9cd-07f3-0000-714b-e31d00000000.xml#m80c6fd7b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000008-01f4-0000-497c-957e00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IN ('Mail - Outbound', 'Correspondence') THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Activity_Type"."VAL" IN ('Mail - Outbound', 'Correspondence') THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ACTIVITY_F_Planned_Start_Date"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-497c-957e00000000-m80c5c3ce-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea4-0bb9-0000-714b-e31d00000000.xml#m80c5c3ce-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-497c-957e00000000-m80c5f416-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfe1-0bb9-0000-714b-e31d00000000.xml#m80c5f416-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000009-01f4-0000-015b-49a700000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Activity"."# Email – Outbound (Manual)"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-015b-49a700000000-m80c6fd7c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9cd-07f3-0000-714b-e31d00000000.xml#m80c6fd7c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000a-01f4-0000-5676-4a6d00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Email - Outbound (manual)' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Activity_Type"."VAL" = 'Email - Outbound (manual)' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ACTIVITY_F_Planned_Start_Date"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-5676-4a6d00000000-m80c5c3ce-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea4-0bb9-0000-714b-e31d00000000.xml#m80c5c3ce-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000a-01f4-0000-5676-4a6d00000000-m80c5f416-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfe1-0bb9-0000-714b-e31d00000000.xml#m80c5f416-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000000b-01f4-0000-f54b-ca6b00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Activity"."# Materials"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-f54b-ca6b00000000-m80c72c41-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9cd-07f3-0000-714b-e31d00000000.xml#m80c72c41-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000c-01f4-0000-5281-1ddf00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Materials' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Activity_Type"."VAL" = 'Materials' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ACTIVITY_F_Planned_Start_Date"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-5281-1ddf00000000-m80c5c3ce-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea4-0bb9-0000-714b-e31d00000000.xml#m80c5c3ce-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-5281-1ddf00000000-m80c5f416-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfe1-0bb9-0000-714b-e31d00000000.xml#m80c5f416-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5bea4-0bb9-0000-714b-e31d00000000.xml#m80c5bea4-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5bea4-0bb9-0000-714b-e31d00000000.xml#m80c5bea4-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5bfe1-0bb9-0000-714b-e31d00000000.xml#m80c5bfe1-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5bfe1-0bb9-0000-714b-e31d00000000.xml#m80c67449-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5bec2-0bb9-0000-714b-e31d00000000.xml#m80c5bec2-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5bec2-0bb9-0000-714b-e31d00000000.xml#m80c5bec2-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5bfe1-0bb9-0000-714b-e31d00000000.xml#m80c5bfe1-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5bfe1-0bb9-0000-714b-e31d00000000.xml#m80c6744d-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5bfe1-0bb9-0000-714b-e31d00000000.xml#m80c5bfe1-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5bfe1-0bb9-0000-714b-e31d00000000.xml#m80c5bfe1-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5bea4-0bb9-0000-714b-e31d00000000.xml#m80c5bea4-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5bfe1-0bb9-0000-714b-e31d00000000.xml#m80c67449-0bbe-0000-714b-e31d00000000"/>
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5bfe1-0bb9-0000-714b-e31d00000000.xml#m80c5bfe1-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5bec2-0bb9-0000-714b-e31d00000000.xml#m80c5bec2-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5bfe1-0bb9-0000-714b-e31d00000000.xml#m80c6744d-0bbe-0000-714b-e31d00000000"/>
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5bfe1-0bb9-0000-714b-e31d00000000.xml#m80c5bfe1-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5c146-0bb9-0000-714b-e31d00000000.xml#m80c5c146-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5bfe1-0bb9-0000-714b-e31d00000000.xml#m80c67865-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5c146-0bb9-0000-714b-e31d00000000.xml#m80c5c146-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5c146-0bb9-0000-714b-e31d00000000.xml#m80c5c146-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5bfe1-0bb9-0000-714b-e31d00000000.xml#m80c5bfe1-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5bfe1-0bb9-0000-714b-e31d00000000.xml#m80c67865-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<WhereClause mdsid="m0000000d-01f4-0000-a844-6f9500000000" name="WhereClause">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</WhereClause>
+<GroupBy mdsid="m0000000e-01f4-0000-600e-dcec00000000" name="GroupBy">
+<ExprText><![CDATA[ GROUPBYLEVEL("%1", "%2", "%3", "%4", "%5", "%6", "%7", "%8", "%9", "%10", "%11", "%12", "%13", "%14", "%15", "%16", "%17", "%18")]]></ExprText>
+<ExprTextDesc><![CDATA[ GROUPBYLEVEL("Core"."Opportunity"."Opty Detail", "Core"."Dim - Relationship CanvasserDim"."Dim - Relationship Canvasser Total", "Core"."Dim - LOV - Activity Subcategory"."Detail", "Core"."Dim - LOV - Actioned To"."Detail", "Core"."Event"."Detail", "Core"."Activity"."Activity Detail", "Core"."Dim - LOV - Activity Priority"."Detail", "Core"."Date"."Day Detail", "Core"."Employee"."Employee Detail", "Core"."Dim - LOV - Activity Status"."Detail", "Core"."Dim - Account Canvasser RelationshipDim"."Detail", "Core"."Customer"."Account Detail", "Core"."Dim - LOV - Action Code"."Detail", "Core"."Dim - LOV - Activity Type"."Detail", "Core"."Contact (W_PERSON_D)"."Detail", "Core"."Dim - Supporter Canvasser RelationshipDim"."Detail", "Core"."Dim - LOV - Activity Category"."Detail", "Core"."Household"."Detail")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-600e-dcec00000000-m80c5a1dc-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a09b-07e3-0000-714b-e31d00000000.xml#m80c5a1dc-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-600e-dcec00000000-m80c72640-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c7263e-07e3-0000-714b-e31d00000000.xml#m80c72640-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-600e-dcec00000000-m80c5a4ee-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a14c-07e3-0000-714b-e31d00000000.xml#m80c5a4ee-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-600e-dcec00000000-m80c5a594-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a180-07e3-0000-714b-e31d00000000.xml#m80c5a594-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-600e-dcec00000000-m80c5a4b9-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a134-07e3-0000-714b-e31d00000000.xml#m80c5a4b9-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-600e-dcec00000000-m80c5a224-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0b1-07e3-0000-714b-e31d00000000.xml#m80c5a224-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-600e-dcec00000000-m80c5a4e4-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a147-07e3-0000-714b-e31d00000000.xml#m80c5a4e4-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-600e-dcec00000000-m80c5a1b8-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a098-07e3-0000-714b-e31d00000000.xml#m80c5a1b8-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-600e-dcec00000000-m80c5a214-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0ab-07e3-0000-714b-e31d00000000.xml#m80c5a214-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-600e-dcec00000000-m80c5a4e6-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a148-07e3-0000-714b-e31d00000000.xml#m80c5a4e6-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-600e-dcec00000000-m80c8b493-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c8b492-07e3-0000-714b-e31d00000000.xml#m80c8b493-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-600e-dcec00000000-m80c5a1be-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a099-07e3-0000-714b-e31d00000000.xml#m80c5a1be-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-600e-dcec00000000-m80c5a592-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a17f-07e3-0000-714b-e31d00000000.xml#m80c5a592-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-600e-dcec00000000-m80c5a4e8-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a149-07e3-0000-714b-e31d00000000.xml#m80c5a4e8-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-600e-dcec00000000-m80c5a278-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0c7-07e3-0000-714b-e31d00000000.xml#m80c5a278-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-600e-dcec00000000-m80c8b4c5-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c8b4c4-07e3-0000-714b-e31d00000000.xml#m80c8b4c5-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-600e-dcec00000000-m80c5a4e2-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a146-07e3-0000-714b-e31d00000000.xml#m80c5a4e2-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-600e-dcec00000000-m80c5a4bf-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a137-07e3-0000-714b-e31d00000000.xml#m80c5a4bf-07e9-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</GroupBy>
+<FragmentContent mdsid="m0000000f-01f4-0000-2fb4-4a4500000000" name="FragmentContent">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</FragmentContent>
+</LogicalTableSource>

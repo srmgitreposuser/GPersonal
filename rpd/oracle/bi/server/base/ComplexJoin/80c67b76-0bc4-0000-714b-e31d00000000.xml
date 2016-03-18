@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ComplexJoin mdsid="m80c67b76-0bc4-0000-714b-e31d00000000" name="Relationship Period (Week)_W_ASSET_D (Active Assets (Churn Analytics))" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" table1Ref="/oracle/bi/server/base/PhysicalTable/80c5bf2f-0bb9-0000-714b-e31d00000000.xml#m80c5bf2f-0bb9-0000-714b-e31d00000000" table2Ref="/oracle/bi/server/base/PhysicalTable/80c5bf71-0bb9-0000-714b-e31d00000000.xml#m80c5bf71-0bb9-0000-714b-e31d00000000">
+<Expr mdsid="m00000001-01f4-0000-dd67-1c8000000000" name="Expr">
+<ExprText><![CDATA["%1" <= "%2" AND ("%3" IS NULL  OR "%3" >= "%4")]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_ASSET_D_Active_Assets_Churn_Analytics"."START_DT" <= "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Relationship_Period_Week"."WEEK_END_DT" AND ("Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_ASSET_D_Active_Assets_Churn_Analytics"."END_DT" IS NULL  OR "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_ASSET_D_Active_Assets_Churn_Analytics"."END_DT" >= "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Relationship_Period_Week"."WEEK_START_DT")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-dd67-1c8000000000-m80c5da8b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf2f-0bb9-0000-714b-e31d00000000.xml#m80c5da8b-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000001-01f4-0000-dd67-1c8000000000-m80c5e773-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf71-0bb9-0000-714b-e31d00000000.xml#m80c5e773-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000001-01f4-0000-dd67-1c8000000000-m80c5da7e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf2f-0bb9-0000-714b-e31d00000000.xml#m80c5da7e-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000001-01f4-0000-dd67-1c8000000000-m80c5e774-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf71-0bb9-0000-714b-e31d00000000.xml#m80c5e774-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ComplexJoin>

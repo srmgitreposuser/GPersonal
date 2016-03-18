@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTableSource mdsid="m80c713e0-07f5-0000-714b-e31d00000000" name="Fact_W_MKTG_GOAL_F_Event_Event Series" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isActive="true" logicalTableRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c710b0-07f3-0000-714b-e31d00000000">
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000001-01f4-0000-944c-4bc700000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-944c-4bc700000000-m80c710de-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c710de-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000002-01f4-0000-33fa-8a2e00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event_Event Series"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-33fa-8a2e00000000-m80c6620e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16d-0bb9-0000-714b-e31d00000000.xml#m80c6620e-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000003-01f4-0000-e9ec-035f00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Series Drop Off Rate"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-e9ec-035f00000000-m80c711c1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711c1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000004-01f4-0000-d0e2-5bdf00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Series Drop Off Rate' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event_Event Series"."X_SRM_TYPE" = 'Response' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event_Event Series"."X_SRM_GOAL_SUB" = 'Series Drop Off Rate' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event_Event Series"."ACTL_QTY" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-d0e2-5bdf00000000-m80c66229-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16d-0bb9-0000-714b-e31d00000000.xml#m80c66229-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-d0e2-5bdf00000000-m80c66228-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16d-0bb9-0000-714b-e31d00000000.xml#m80c66228-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-d0e2-5bdf00000000-m80c66226-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16d-0bb9-0000-714b-e31d00000000.xml#m80c66226-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000005-01f4-0000-15f2-4a3400000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Budgeted Series Drop Off Rate (Event Level)"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-15f2-4a3400000000-m80c71242-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c71242-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000006-01f4-0000-adfe-46fe00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Series Drop Off Rate' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event_Event Series"."X_SRM_TYPE" = 'Response' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event_Event Series"."X_SRM_GOAL_SUB" = 'Series Drop Off Rate' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event_Event Series"."TGT_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-adfe-46fe00000000-m80c66229-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16d-0bb9-0000-714b-e31d00000000.xml#m80c66229-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-adfe-46fe00000000-m80c66228-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16d-0bb9-0000-714b-e31d00000000.xml#m80c66228-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-adfe-46fe00000000-m80c6621d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16d-0bb9-0000-714b-e31d00000000.xml#m80c6621d-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5c0f4-0bb9-0000-714b-e31d00000000.xml#m80c5c0f4-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5c0f4-0bb9-0000-714b-e31d00000000.xml#m80c5c0f4-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5c16c-0bb9-0000-714b-e31d00000000.xml#m80c5c16c-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5c0f4-0bb9-0000-714b-e31d00000000.xml#m80c67804-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5c16c-0bb9-0000-714b-e31d00000000.xml#m80c5c16c-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5c16c-0bb9-0000-714b-e31d00000000.xml#m80c5c16c-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5c0f4-0bb9-0000-714b-e31d00000000.xml#m80c5c0f4-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5c0f4-0bb9-0000-714b-e31d00000000.xml#m80c67804-0bbe-0000-714b-e31d00000000"/>
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5c16c-0bb9-0000-714b-e31d00000000.xml#m80c5c16c-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5c16d-0bb9-0000-714b-e31d00000000.xml#m80c5c16d-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5c16d-0bb9-0000-714b-e31d00000000.xml#m80c67810-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5c16d-0bb9-0000-714b-e31d00000000.xml#m80c5c16d-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5c16d-0bb9-0000-714b-e31d00000000.xml#m80c5c16d-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5c16c-0bb9-0000-714b-e31d00000000.xml#m80c5c16c-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5c16d-0bb9-0000-714b-e31d00000000.xml#m80c67810-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<WhereClause mdsid="m00000007-01f4-0000-d881-7beb00000000" name="WhereClause">
+<ExprText><![CDATA["%1" = 'EVENT']]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_EVENT_D"."SRC_TYPE" = 'EVENT']]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-d881-7beb00000000-m80c6466a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0f4-0bb9-0000-714b-e31d00000000.xml#m80c6466a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</WhereClause>
+<GroupBy mdsid="m00000008-01f4-0000-d749-a5a000000000" name="GroupBy">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</GroupBy>
+<FragmentContent mdsid="m00000009-01f4-0000-90cf-7fef00000000" name="FragmentContent">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</FragmentContent>
+</LogicalTableSource>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80000000-fee0-157e-9bbc-0a0e2d3b0000" name="Fact - Owning Party - Addresses" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80000008-fee0-157e-9bbc-0a0e2d3b0000" name="# of Addresses" isWriteable="false">
+<MeasureDefn mdsid="m400002eb-e77d-158b-806e-0a0e2d540000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m40000000-c82f-158e-806e-0a0e2d6d0000" name="AggRule_2050:1437321446715628" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-7714-c76600000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core 2"."Fact - Owning Party - Addresses"."# of Addresses")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-7714-c76600000000-m80000008-fee0-157e-9bbc-0a0e2d3b0000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80000000-fee0-157e-9bbc-0a0e2d3b0000.xml#m80000008-fee0-157e-9bbc-0a0e2d3b0000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="mc0000000-e77d-158b-806e-0a0e2d540000" name="AD_3900:1436231445961207">
+<Expr mdsid="m00000002-01f4-0000-4922-ce6100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OP_ADDR_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-4922-ce6100000000-mc0000006-fb5a-157e-9bbc-0a0e2d3b0000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000000-fb5a-157e-9bbc-0a0e2d3b0000.xml#mc0000006-fb5a-157e-9bbc-0a0e2d3b0000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80000000-fee0-157e-9bbc-0a0e2d3b0000-m80000002-fee0-157e-9bbc-0a0e2d3b0000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80000002-fee0-157e-9bbc-0a0e2d3b0000.xml#m80000002-fee0-157e-9bbc-0a0e2d3b0000"/>
+</RefTableSources>
+</LogicalTable>

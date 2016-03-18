@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTableSource mdsid="m80cab073-07f5-0000-714b-e31d00000000" name="Fact_WC_EVENT_PAYMENT_F_Previous" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isActive="true" logicalTableRef="/oracle/bi/server/base/LogicalTable/80caa747-07f3-0000-714b-e31d00000000.xml#m80caa747-07f3-0000-714b-e31d00000000">
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000001-01f4-0000-624b-8d9200000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Owning Party - Event Payments - Previous"."Previous Event Own Place Income"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-624b-8d9200000000-m80cb4653-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa747-07f3-0000-714b-e31d00000000.xml#m80cb4653-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000002-01f4-0000-913a-949c00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  THEN "%2" WHEN "%1" <> 30 THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_F_Previous"."PAY_AMT_OWN_PLACE" WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" <> 30 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_F_Previous"."PAY_AMT_OWN_PLACE" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-913a-949c00000000-m80ca8612-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80ca8612-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-913a-949c00000000-m80caac23-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80caac15-0bb9-0000-714b-e31d00000000.xml#m80caac23-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000003-01f4-0000-f27b-d5c700000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Owning Party - Event Payments - Previous"."Previous Event Guaranteed Place Income"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-f27b-d5c700000000-m80cb4663-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa747-07f3-0000-714b-e31d00000000.xml#m80cb4663-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000004-01f4-0000-a913-d55f00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  THEN "%2" WHEN "%1" <> 30 THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_F_Previous"."PAY_AMT_GUARANTEED_PLACE" WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" <> 30 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_F_Previous"."PAY_AMT_GUARANTEED_PLACE" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-a913-d55f00000000-m80ca8612-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80ca8612-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-a913-d55f00000000-m80caac24-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80caac15-0bb9-0000-714b-e31d00000000.xml#m80caac24-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000005-01f4-0000-5c13-ca3b00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Owning Party - Event Payments - Previous"."Previous Event Online Income"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-5c13-ca3b00000000-m80caa74f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa747-07f3-0000-714b-e31d00000000.xml#m80caa74f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000006-01f4-0000-2f83-968500000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  AND "%2" = 'Online' THEN "%3" WHEN "%1" <> 30 AND "%2" = 'Online' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" IS NULL  AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CHANNEL" = 'Online' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_F_Previous"."PAY_AMT" WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" <> 30 AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CHANNEL" = 'Online' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_F_Previous"."PAY_AMT" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-2f83-968500000000-m80ca8612-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80ca8612-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-2f83-968500000000-m80ca860b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80ca860b-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-2f83-968500000000-m80caac3c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80caac15-0bb9-0000-714b-e31d00000000.xml#m80caac3c-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000007-01f4-0000-6a00-efd000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Owning Party - Event Payments - Previous"."Previous Event Offline Income"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-6a00-efd000000000-m80caa751-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa747-07f3-0000-714b-e31d00000000.xml#m80caa751-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000008-01f4-0000-5e9b-014700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  AND "%2" = 'Offline' THEN "%3" WHEN "%1" <> 30 AND "%2" = 'Offline' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" IS NULL  AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CHANNEL" = 'Offline' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_F_Previous"."PAY_AMT" WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" <> 30 AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CHANNEL" = 'Offline' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_F_Previous"."PAY_AMT" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-5e9b-014700000000-m80ca8612-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80ca8612-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-5e9b-014700000000-m80ca860b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80ca860b-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-5e9b-014700000000-m80caac3c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80caac15-0bb9-0000-714b-e31d00000000.xml#m80caac3c-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000009-01f4-0000-d92a-d1e100000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Owning Party - Event Payments - Previous"."Previous Event Net Sponsorship Amount"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-d92a-d1e100000000-m80caa753-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa747-07f3-0000-714b-e31d00000000.xml#m80caa753-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000a-01f4-0000-2603-82b300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  THEN "%2" WHEN "%1" <> 30 THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_F_Previous"."PAY_AMT" WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" <> 30 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_F_Previous"."PAY_AMT" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-2603-82b300000000-m80ca8612-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80ca8612-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000a-01f4-0000-2603-82b300000000-m80caac3c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80caac15-0bb9-0000-714b-e31d00000000.xml#m80caac3c-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000000b-01f4-0000-8059-6f1000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Owning Party - Event Payments - Previous"."Previous Event Gross Sponsorship Amount"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-8059-6f1000000000-m80cb4693-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa747-07f3-0000-714b-e31d00000000.xml#m80cb4693-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000c-01f4-0000-dbf4-d0de00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  THEN "%2" WHEN "%1" <> 30 THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_F_Previous"."X_GROSS_PAY_AMT" WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" <> 30 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_F_Previous"."X_GROSS_PAY_AMT" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-dbf4-d0de00000000-m80ca8612-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80ca8612-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-dbf4-d0de00000000-m80caac29-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80caac15-0bb9-0000-714b-e31d00000000.xml#m80caac29-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000000d-01f4-0000-ebb5-0ea100000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Owning Party - Event Payments - Previous"."Previous Event Entry Fee Income"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-ebb5-0ea100000000-m80cb469f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa747-07f3-0000-714b-e31d00000000.xml#m80cb469f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000e-01f4-0000-45fd-105e00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 30 THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" = 30 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_F_Previous"."PAY_AMT" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-45fd-105e00000000-m80ca8612-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80ca8612-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-45fd-105e00000000-m80caac3c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80caac15-0bb9-0000-714b-e31d00000000.xml#m80caac3c-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000000f-01f4-0000-dcc3-252f00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Owning Party - Event Payments - Previous"."Previous Event # Donations"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-dcc3-252f00000000-m80cb46ab-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa747-07f3-0000-714b-e31d00000000.xml#m80cb46ab-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000010-01f4-0000-8638-a70c00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  THEN "%2" WHEN "%1" <> '30' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_F_Previous"."NUM_DONATIONS" WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" <> '30' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_F_Previous"."NUM_DONATIONS" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-8638-a70c00000000-m80ca8612-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80ca8612-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-8638-a70c00000000-m80caac21-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80caac15-0bb9-0000-714b-e31d00000000.xml#m80caac21-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000011-01f4-0000-132b-8d3d00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Owning Party - Event Payments - Previous"."Previous Event Income"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-132b-8d3d00000000-m80caa79c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa747-07f3-0000-714b-e31d00000000.xml#m80caa79c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000012-01f4-0000-2a8e-060f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_F_Previous"."PAY_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-2a8e-060f00000000-m80caac3c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80caac15-0bb9-0000-714b-e31d00000000.xml#m80caac3c-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000013-01f4-0000-3cba-3afe00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Owning Party - Event Payments - Previous"."Previous Event # of Gift Aidable Sponsorship Donations"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-3cba-3afe00000000-m80cb46c3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa747-07f3-0000-714b-e31d00000000.xml#m80cb46c3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000014-01f4-0000-33d3-a8a600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  AND "%2" = 'Y' THEN 1 WHEN "%1" <> 30 AND "%2" = 'Y' THEN 1 ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" IS NULL  AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_F_Previous"."X_GIFT_AIDABLE_FLG" = 'Y' THEN 1 WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" <> 30 AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_F_Previous"."X_GIFT_AIDABLE_FLG" = 'Y' THEN 1 ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-33d3-a8a600000000-m80ca8612-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80ca8612-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000014-01f4-0000-33d3-a8a600000000-m80caac28-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80caac15-0bb9-0000-714b-e31d00000000.xml#m80caac28-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000015-01f4-0000-86d0-ec7f00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Owning Party - Event Payments - Previous"."# of Previous Event Donors (Distinct)"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-86d0-ec7f00000000-m80cbc607-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa747-07f3-0000-714b-e31d00000000.xml#m80cbc607-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000016-01f4-0000-8027-25a800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_F_Previous"."OWN_PARTY_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_F_Previous"."OWN_PARTY_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000016-01f4-0000-8027-25a800000000-m80caac34-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80caac15-0bb9-0000-714b-e31d00000000.xml#m80caac34-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80c5beae-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80c5beae-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80caac15-0bb9-0000-714b-e31d00000000.xml#m80caac15-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80caac15-0bb9-0000-714b-e31d00000000.xml#m80caac40-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80caac15-0bb9-0000-714b-e31d00000000.xml#m80caac15-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80caac15-0bb9-0000-714b-e31d00000000.xml#m80caac15-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80c5beae-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80caac15-0bb9-0000-714b-e31d00000000.xml#m80caac40-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<WhereClause mdsid="m00000017-01f4-0000-d0d4-e73400000000" name="WhereClause">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</WhereClause>
+<GroupBy mdsid="m00000018-01f4-0000-a259-a50100000000" name="GroupBy">
+<ExprText><![CDATA[ GROUPBYLEVEL("%1", "%2", "%3", "%4", "%5", "%6", "%7", "%8", "%9", "%10", "%11")]]></ExprText>
+<ExprTextDesc><![CDATA[ GROUPBYLEVEL("Core 2"."Dim - Owning PartyDim"."Detail", "Core 2"."Dim - DateDim"."Dim - Date Detail", "Core 2"."Dim - EventDim"."Dim - Event Detail", "Core 2"."Dim - Event Registration DateDim"."Dim - Event Registration Date Detail", "Core 2"."Dim - Event RegistrationDim"."Dim - Event Registration Detail", "Core 2"."Dim - Event Weeks To GoDim"."Dim - Event Weeks To Go Detail", "Core 2"."Dim - LOV - Attend StatusDim"."Dim - LOV - Attend Status Detail", "Core 2"."Dim - LOV - Cancer TypeDim"."Dim - LOV - Cancer Type Detail", "Core 2"."Dim - LOV - MotivationDim"."Dim - LOV - Motivation Detail", "Core 2"."Dim - LOV - Place TypeDim"."Dim - LOV - Place Type Detail", "Core 2"."Dim - ProductDim"."Product Detail")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000018-01f4-0000-a259-a50100000000-m80c9b7ac-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c940f4-07e3-0000-714b-e31d00000000.xml#m80c9b7ac-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-a259-a50100000000-m80cab8e0-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cab8df-07e3-0000-714b-e31d00000000.xml#m80cab8e0-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-a259-a50100000000-m80cab5a6-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cab5a5-07e3-0000-714b-e31d00000000.xml#m80cab5a6-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-a259-a50100000000-m80cabd08-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cabd07-07e3-0000-714b-e31d00000000.xml#m80cabd08-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-a259-a50100000000-m80cac03c-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cac03b-07e3-0000-714b-e31d00000000.xml#m80cac03c-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-a259-a50100000000-m80cb3cf6-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cb3cf5-07e3-0000-714b-e31d00000000.xml#m80cb3cf6-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-a259-a50100000000-m80cab930-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cab92f-07e3-0000-714b-e31d00000000.xml#m80cab930-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-a259-a50100000000-m80cab980-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cab97f-07e3-0000-714b-e31d00000000.xml#m80cab980-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-a259-a50100000000-m80cab314-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cab313-07e3-0000-714b-e31d00000000.xml#m80cab314-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-a259-a50100000000-m80cab9d0-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cab9cf-07e3-0000-714b-e31d00000000.xml#m80cab9d0-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-a259-a50100000000-m80c9b08e-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c93f42-07e3-0000-714b-e31d00000000.xml#m80c9b08e-07e9-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</GroupBy>
+<FragmentContent mdsid="m00000019-01f4-0000-b36c-2dbf00000000" name="FragmentContent">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</FragmentContent>
+</LogicalTableSource>

@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTableSource mdsid="m80c713df-07f5-0000-714b-e31d00000000" name="Fact_W_MKTG_GOAL_F_Event Series" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isActive="true" logicalTableRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c710b0-07f3-0000-714b-e31d00000000">
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000001-01f4-0000-abde-daa200000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-abde-daa200000000-m80c710de-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c710de-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000002-01f4-0000-0adf-1c6200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-0adf-1c6200000000-m80c6619d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c6619d-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000003-01f4-0000-dc45-50bf00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Merchandising Income"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-dc45-50bf00000000-m80c711ba-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711ba-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000004-01f4-0000-2db4-5f9a00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Merchandise Income' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_TYPE" = 'Income' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_GOAL_SUB" = 'Merchandise Income' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."ACTL_AMT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-2db4-5f9a00000000-m80c661b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-2db4-5f9a00000000-m80c661b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-2db4-5f9a00000000-m80c661b4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000005-01f4-0000-abd6-bb8300000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Corporate / Third Party Income"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-abd6-bb8300000000-m80c711bb-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711bb-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000006-01f4-0000-55cd-6a3700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Corporate / Third Party Income' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_TYPE" = 'Income' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_GOAL_SUB" = 'Corporate / Third Party Income' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."ACTL_AMT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-55cd-6a3700000000-m80c661b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-55cd-6a3700000000-m80c661b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-55cd-6a3700000000-m80c661b4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000007-01f4-0000-2e89-944300000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Potential Participation Registrations"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-2e89-944300000000-m80c711bc-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711bc-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000008-01f4-0000-e054-1e7f00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Potential Participation Registrations' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_TYPE" = 'Response' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_GOAL_SUB" = 'Potential Participation Registrations' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."ACTL_QTY" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-e054-1e7f00000000-m80c661b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-e054-1e7f00000000-m80c661b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-e054-1e7f00000000-m80c661b5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000009-01f4-0000-c05d-295700000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Central equipment & logistics cost"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-c05d-295700000000-m80c711bd-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711bd-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000a-01f4-0000-e878-6af300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Expenditure' AND "%2" = 'Central Equip & Logistics Cost' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_TYPE" = 'Expenditure' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_GOAL_SUB" = 'Central Equip & Logistics Cost' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."ACTL_AMT" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-e878-6af300000000-m80c661b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000a-01f4-0000-e878-6af300000000-m80c661b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000a-01f4-0000-e878-6af300000000-m80c661b4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000000b-01f4-0000-27c4-f99400000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Regional equipment& logistics cost"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-27c4-f99400000000-m80c711be-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711be-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000c-01f4-0000-fb5c-ef6a00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Expenditure' AND "%2" = 'Regionl Equip & Logistics Cost' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_TYPE" = 'Expenditure' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_GOAL_SUB" = 'Regionl Equip & Logistics Cost' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."ACTL_AMT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-fb5c-ef6a00000000-m80c661b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-fb5c-ef6a00000000-m80c661b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-fb5c-ef6a00000000-m80c661b4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000000d-01f4-0000-7241-62c200000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."National Marketing costs"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-7241-62c200000000-m80c711bf-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711bf-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000e-01f4-0000-ff12-7c0300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Expenditure' AND "%2" = 'National Marketing Cost' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_TYPE" = 'Expenditure' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_GOAL_SUB" = 'National Marketing Cost' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."ACTL_AMT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-ff12-7c0300000000-m80c661b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-ff12-7c0300000000-m80c661b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-ff12-7c0300000000-m80c661b4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000000f-01f4-0000-6c42-51fc00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Regional marketing cost"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-6c42-51fc00000000-m80c711c0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711c0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000010-01f4-0000-e4e9-18a900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Expenditure' AND "%2" = 'Regional Marketing Cost' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_TYPE" = 'Expenditure' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_GOAL_SUB" = 'Regional Marketing Cost' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."ACTL_AMT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-e4e9-18a900000000-m80c661b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-e4e9-18a900000000-m80c661b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-e4e9-18a900000000-m80c661b4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000011-01f4-0000-3e31-753e00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Budgeted Number of Events"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-3e31-753e00000000-m80c711c2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711c2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000012-01f4-0000-f1f9-bce800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Volume' AND "%2" = 'Number of Events' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_TYPE" = 'Volume' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_GOAL_SUB" = 'Number of Events' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."TGT_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-f1f9-bce800000000-m80c661b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000012-01f4-0000-f1f9-bce800000000-m80c661b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000012-01f4-0000-f1f9-bce800000000-m80c661ac-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661ac-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000013-01f4-0000-5a0f-469a00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Budgeted Participant Registrations"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-5a0f-469a00000000-m80c711c3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711c3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000014-01f4-0000-67f8-29bf00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Participant Registrations' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_TYPE" = 'Response' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_GOAL_SUB" = 'Participant Registrations' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."TGT_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-67f8-29bf00000000-m80c661b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000014-01f4-0000-67f8-29bf00000000-m80c661b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000014-01f4-0000-67f8-29bf00000000-m80c661ac-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661ac-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000015-01f4-0000-6efc-2d2700000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Budgeted Entrance Fee Income per entry"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-6efc-2d2700000000-m80c711c4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711c4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000016-01f4-0000-1be3-c50700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Entrance Fee Income per Entry' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_TYPE" = 'Income' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_GOAL_SUB" = 'Entrance Fee Income per Entry' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."TGT_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000016-01f4-0000-1be3-c50700000000-m80c661b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000016-01f4-0000-1be3-c50700000000-m80c661b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000016-01f4-0000-1be3-c50700000000-m80c661ac-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661ac-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000017-01f4-0000-eeed-bdfe00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Budgeted Online average sponsorship value £"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-eeed-bdfe00000000-m80c711c5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711c5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000018-01f4-0000-bf5d-096600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Online Avg Sponsorship Val £' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_TYPE" = 'Income' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_GOAL_SUB" = 'Online Avg Sponsorship Val £' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."TGT_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000018-01f4-0000-bf5d-096600000000-m80c661b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-bf5d-096600000000-m80c661b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-bf5d-096600000000-m80c661ac-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661ac-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000019-01f4-0000-a2ff-eaa900000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Budgeted Offline average sponsorship value £"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-a2ff-eaa900000000-m80c711c6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711c6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000001a-01f4-0000-4edb-573800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Offline Avg Sponsorship Val £' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_TYPE" = 'Income' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_GOAL_SUB" = 'Offline Avg Sponsorship Val £' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."TGT_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001a-01f4-0000-4edb-573800000000-m80c661b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001a-01f4-0000-4edb-573800000000-m80c661b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001a-01f4-0000-4edb-573800000000-m80c661ac-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661ac-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000001b-01f4-0000-e78f-2ad600000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Budgeted Online return rate %"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001b-01f4-0000-e78f-2ad600000000-m80c711c7-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711c7-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000001c-01f4-0000-036a-c69800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Online Return Rate %' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_TYPE" = 'Response' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_GOAL_SUB" = 'Online Return Rate %' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."TGT_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001c-01f4-0000-036a-c69800000000-m80c661b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001c-01f4-0000-036a-c69800000000-m80c661b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001c-01f4-0000-036a-c69800000000-m80c661ac-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661ac-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000001d-01f4-0000-47c2-8e6100000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Budgeted Offline return rate %"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001d-01f4-0000-47c2-8e6100000000-m80c711c8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711c8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000001e-01f4-0000-e19a-79fa00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Offline Return Rate %' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_TYPE" = 'Response' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_GOAL_SUB" = 'Offline Return Rate %' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."TGT_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001e-01f4-0000-e19a-79fa00000000-m80c661b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001e-01f4-0000-e19a-79fa00000000-m80c661b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001e-01f4-0000-e19a-79fa00000000-m80c661ac-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661ac-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000001f-01f4-0000-63c9-a43200000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Budgeted Merchandise Income"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001f-01f4-0000-63c9-a43200000000-m80c711cb-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711cb-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000020-01f4-0000-2c30-2dfa00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Merchandise Income' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_TYPE" = 'Income' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_GOAL_SUB" = 'Merchandise Income' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."TGT_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000020-01f4-0000-2c30-2dfa00000000-m80c661b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000020-01f4-0000-2c30-2dfa00000000-m80c661b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000020-01f4-0000-2c30-2dfa00000000-m80c661ac-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661ac-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000021-01f4-0000-908c-333000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Budgeted Corporate / Third Party Income"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000021-01f4-0000-908c-333000000000-m80c711cc-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711cc-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000022-01f4-0000-2e61-9f6600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Corporate / Third Party Income' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_TYPE" = 'Income' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_GOAL_SUB" = 'Corporate / Third Party Income' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."TGT_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000022-01f4-0000-2e61-9f6600000000-m80c661b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000022-01f4-0000-2e61-9f6600000000-m80c661b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000022-01f4-0000-2e61-9f6600000000-m80c661ac-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661ac-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000023-01f4-0000-8b14-0bf400000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Budgeted Online Gift Aid take up %"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000023-01f4-0000-8b14-0bf400000000-m80c711cd-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711cd-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000024-01f4-0000-cf97-806000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Online Gift Aid Take Up %' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_TYPE" = 'Response' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_GOAL_SUB" = 'Online Gift Aid Take Up %' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."TGT_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000024-01f4-0000-cf97-806000000000-m80c661b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000024-01f4-0000-cf97-806000000000-m80c661b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000024-01f4-0000-cf97-806000000000-m80c661ac-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661ac-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000025-01f4-0000-ad54-b14f00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Budgeted Offline Gift Aid take up %"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000025-01f4-0000-ad54-b14f00000000-m80c711ce-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711ce-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000026-01f4-0000-53b4-8b4d00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Offline Gift Aid Take Up %' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_TYPE" = 'Response' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_GOAL_SUB" = 'Offline Gift Aid Take Up %' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."TGT_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000026-01f4-0000-53b4-8b4d00000000-m80c661b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000026-01f4-0000-53b4-8b4d00000000-m80c661b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000026-01f4-0000-53b4-8b4d00000000-m80c661ac-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661ac-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000027-01f4-0000-916b-af9100000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Budgeted Central equipment & logistics cost"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000027-01f4-0000-916b-af9100000000-m80c711d2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711d2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000028-01f4-0000-db5e-50c800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Expenditure' AND "%2" = 'Central Equip & Logistics Cost' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_TYPE" = 'Expenditure' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_GOAL_SUB" = 'Central Equip & Logistics Cost' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."TGT_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000028-01f4-0000-db5e-50c800000000-m80c661b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000028-01f4-0000-db5e-50c800000000-m80c661b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000028-01f4-0000-db5e-50c800000000-m80c661ac-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661ac-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000029-01f4-0000-91f6-1f2900000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Budgeted Regional equipment& logistics cost"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000029-01f4-0000-91f6-1f2900000000-m80c711d3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711d3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000002a-01f4-0000-b648-fbdc00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Expenditure' AND "%2" = 'Regionl Equip & Logistics Cost' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_TYPE" = 'Expenditure' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_GOAL_SUB" = 'Regionl Equip & Logistics Cost' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."TGT_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002a-01f4-0000-b648-fbdc00000000-m80c661b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002a-01f4-0000-b648-fbdc00000000-m80c661b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002a-01f4-0000-b648-fbdc00000000-m80c661ac-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661ac-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000002b-01f4-0000-db5c-afc300000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Budgeted National Marketing costs"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002b-01f4-0000-db5c-afc300000000-m80c711d4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711d4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000002c-01f4-0000-ec6e-4dae00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Expenditure' AND "%2" = 'National Marketing Cost' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_TYPE" = 'Expenditure' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_GOAL_SUB" = 'National Marketing Cost' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."TGT_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002c-01f4-0000-ec6e-4dae00000000-m80c661b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002c-01f4-0000-ec6e-4dae00000000-m80c661b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002c-01f4-0000-ec6e-4dae00000000-m80c661ac-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661ac-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000002d-01f4-0000-3df9-db1600000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Budgeted Regional marketing cost"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002d-01f4-0000-3df9-db1600000000-m80c711d5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711d5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000002e-01f4-0000-a32e-df2000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Expenditure' AND "%2" = 'Regional Marketing Cost' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_TYPE" = 'Expenditure' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_GOAL_SUB" = 'Regional Marketing Cost' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."TGT_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002e-01f4-0000-a32e-df2000000000-m80c661b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002e-01f4-0000-a32e-df2000000000-m80c661b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002e-01f4-0000-a32e-df2000000000-m80c661ac-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661ac-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000002f-01f4-0000-8095-5c5600000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Budgeted Series Drop off rate"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002f-01f4-0000-8095-5c5600000000-m80c711d6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711d6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000030-01f4-0000-3c42-f1ce00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Series Drop Off Rate' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_TYPE" = 'Response' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_GOAL_SUB" = 'Series Drop Off Rate' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."TGT_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000030-01f4-0000-3c42-f1ce00000000-m80c661b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000030-01f4-0000-3c42-f1ce00000000-m80c661b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000030-01f4-0000-3c42-f1ce00000000-m80c661ac-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661ac-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000031-01f4-0000-5831-767400000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Budgeted Event Series Participation Target"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000031-01f4-0000-5831-767400000000-m80c711d7-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711d7-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000032-01f4-0000-f107-c00e00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Participation Target' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_TYPE" = 'Response' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_GOAL_SUB" = 'Participation Target' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."TGT_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000032-01f4-0000-f107-c00e00000000-m80c661b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000032-01f4-0000-f107-c00e00000000-m80c661b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000032-01f4-0000-f107-c00e00000000-m80c661ac-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661ac-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000033-01f4-0000-0d5a-c2b300000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - Marketing - Goal"."Series Drop Off Rate (Series Level)"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000033-01f4-0000-0d5a-c2b300000000-m80c711d9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c710b0-07f3-0000-714b-e31d00000000.xml#m80c711d9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000034-01f4-0000-2b05-e77100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Series Drop Off Rate' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_TYPE" = 'Response' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."X_SRM_GOAL_SUB" = 'Series Drop Off Rate' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_GOAL_F_Event Series"."ACTL_QTY" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000034-01f4-0000-2b05-e77100000000-m80c661b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000034-01f4-0000-2b05-e77100000000-m80c661b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000034-01f4-0000-2b05-e77100000000-m80c661b5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c661b5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5c0f4-0bb9-0000-714b-e31d00000000.xml#m80c5c0f4-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5c0f4-0bb9-0000-714b-e31d00000000.xml#m80c5c0f4-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c5c16b-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c6780f-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c5c16b-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c5c16b-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5c0f4-0bb9-0000-714b-e31d00000000.xml#m80c5c0f4-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5c16b-0bb9-0000-714b-e31d00000000.xml#m80c6780f-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<WhereClause mdsid="m00000035-01f4-0000-07ec-7a7d00000000" name="WhereClause">
+<ExprText><![CDATA["%1" = 'PAREVENT']]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_EVENT_D"."SRC_TYPE" = 'PAREVENT']]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000035-01f4-0000-07ec-7a7d00000000-m80c6466a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0f4-0bb9-0000-714b-e31d00000000.xml#m80c6466a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</WhereClause>
+<GroupBy mdsid="m00000036-01f4-0000-ca53-8c9900000000" name="GroupBy">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</GroupBy>
+<FragmentContent mdsid="m00000037-01f4-0000-9fde-a5b000000000" name="FragmentContent">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</FragmentContent>
+</LogicalTableSource>

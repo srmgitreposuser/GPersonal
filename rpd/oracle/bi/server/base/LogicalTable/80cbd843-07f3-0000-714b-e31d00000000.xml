@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80cbd843-07f3-0000-714b-e31d00000000" name="Fact  - Received File" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1244" y="605" subjectAreaRef="/oracle/bi/server/base/BusinessModel/00001e2e-07d0-0000-714b-e31d00000000.xml#m00001e2e-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80cbd855-07d6-0000-714b-e31d00000000" name="# Files" isWriteable="false">
+<MeasureDefn mdsid="m80cbd86f-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbf686-0802-0000-714b-e31d00000000" name="AggRule_2050:8562151416392324" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-b169-1e8b00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Data Integration Reporting"."Fact  - Received File"."# Files")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-b169-1e8b00000000-m80cbd855-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbd855-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbd89f-0f3c-0000-714b-e31d00000000" name="AD_3900:8568761416392324">
+<Expr mdsid="m00000002-01f4-0000-718d-ecbc00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EVENT_F_DIFile"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-718d-ecbc00000000-m00000557-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000556-0bb9-0000-714b-e31d00000000.xml#m00000557-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbd857-07d6-0000-714b-e31d00000000" name="# Files Parsed" isWriteable="false">
+<MeasureDefn mdsid="m80cbd871-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbe98c-0802-0000-714b-e31d00000000" name="AggRule_2050:8562161416392324" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-a193-c9e500000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Data Integration Reporting"."Fact  - Received File"."# Files Parsed")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-a193-c9e500000000-m80cbd857-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbd857-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbd8a1-0f3c-0000-714b-e31d00000000" name="AD_3900:8568771416392324">
+<Expr mdsid="m00000004-01f4-0000-f793-cf6600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  NOT "%1" IS NULL  THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  NOT "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."PARSED_DT" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-f793-cf6600000000-m00000d2c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m00000d2c-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-f793-cf6600000000-m000004e6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m000004e6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf651-07d6-0000-714b-e31d00000000" name="% Files Parsed" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000005-01f4-0000-6d1e-ddbe00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN 0 ELSE "%1" * 100.0d / "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Data Integration Reporting"."Fact  - Received File"."# Files Parsed" = 0 THEN 0 ELSE "Data Integration Reporting"."Fact  - Received File"."# Files Parsed" * 100.0d / "Data Integration Reporting"."Fact  - Received File"."# Files" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-6d1e-ddbe00000000-m80cbd857-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbd857-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000005-01f4-0000-6d1e-ddbe00000000-m80cbd855-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbd855-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80cbf657-0f3c-0000-714b-e31d00000000" name="AD_3900:8568781416392324">
+<Expr mdsid="m00000006-01f4-0000-07b5-7eb300000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbd859-07d6-0000-714b-e31d00000000" name="# Files Errored" isWriteable="false">
+<MeasureDefn mdsid="m80cbd873-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbf14e-0802-0000-714b-e31d00000000" name="AggRule_2050:8562171416392324" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-435b-ffc000000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Data Integration Reporting"."Fact  - Received File"."# Files Errored")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-435b-ffc000000000-m80cbd859-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbd859-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbd8a3-0f3c-0000-714b-e31d00000000" name="AD_3900:8568791416392324">
+<Expr mdsid="m00000008-01f4-0000-9782-105f00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Error' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."EVENT_STATUS_NAME" = 'Error' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EVENT_F_DIFile"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-9782-105f00000000-m000004f2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m000004f2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-9782-105f00000000-m00000557-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000556-0bb9-0000-714b-e31d00000000.xml#m00000557-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf65f-07d6-0000-714b-e31d00000000" name="% Files Errored" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000009-01f4-0000-a818-0cfb00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN 0 ELSE "%1" * 100.0d / "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Data Integration Reporting"."Fact  - Received File"."# Files Errored" = 0 THEN 0 ELSE "Data Integration Reporting"."Fact  - Received File"."# Files Errored" * 100.0d / "Data Integration Reporting"."Fact  - Received File"."# Files" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-a818-0cfb00000000-m80cbd859-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbd859-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000009-01f4-0000-a818-0cfb00000000-m80cbd855-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbd855-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80cbf661-0f3c-0000-714b-e31d00000000" name="AD_3900:8568801416392324">
+<Expr mdsid="m0000000a-01f4-0000-0dbf-9e4400000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbd85b-07d6-0000-714b-e31d00000000" name="# Files Processed" isWriteable="false">
+<MeasureDefn mdsid="m80cbd875-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbf823-0802-0000-714b-e31d00000000" name="AggRule_2050:8562181416392324" isDefault="true">
+<Expr mdsid="m0000000b-01f4-0000-3597-56ec00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Data Integration Reporting"."Fact  - Received File"."# Files Processed")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-3597-56ec00000000-m80cbd85b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbd85b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbd8a5-0f3c-0000-714b-e31d00000000" name="AD_3900:8568811416392324">
+<Expr mdsid="m0000000c-01f4-0000-15d8-2fe200000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Processed' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."PROCESSING_STATUS" = 'Processed' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-15d8-2fe200000000-m000004e5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m000004e5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-15d8-2fe200000000-m000004e6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m000004e6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf144-07d6-0000-714b-e31d00000000" name="# of Files Rejected" isWriteable="false">
+<MeasureDefn mdsid="m80cbf146-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbf58b-0802-0000-714b-e31d00000000" name="AggRule_2050:8562191416392324" isDefault="true">
+<Expr mdsid="m0000000d-01f4-0000-e579-21de00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Data Integration Reporting"."Fact  - Received File"."# of Files Rejected")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-e579-21de00000000-m80cbf144-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf144-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbf14a-0f3c-0000-714b-e31d00000000" name="AD_3900:8568821416392324">
+<Expr mdsid="m0000000e-01f4-0000-ffa6-a51800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  AND "%2" = 'Error' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."PARSED_DT" IS NULL  AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."EVENT_STATUS_NAME" = 'Error' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-ffa6-a51800000000-m00000d2c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m00000d2c-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-ffa6-a51800000000-m000004f2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m000004f2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-ffa6-a51800000000-m000004e6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m000004e6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf665-07d6-0000-714b-e31d00000000" name="% Files Rejected" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000000f-01f4-0000-af99-dd6300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN 0 ELSE "%1" * 100.0d / "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Data Integration Reporting"."Fact  - Received File"."# of Files Rejected" = 0 THEN 0 ELSE "Data Integration Reporting"."Fact  - Received File"."# of Files Rejected" * 100.0d / "Data Integration Reporting"."Fact  - Received File"."# Files" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-af99-dd6300000000-m80cbf144-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf144-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000f-01f4-0000-af99-dd6300000000-m80cbd855-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbd855-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80cbf667-0f3c-0000-714b-e31d00000000" name="AD_3900:8568831416392324">
+<Expr mdsid="m00000010-01f4-0000-3a05-959400000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf67b-07d6-0000-714b-e31d00000000" name="Avg # Files Per Day" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000011-01f4-0000-eb16-245300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  THEN 0 WHEN "%1" = 0 THEN 0 ELSE 1.0d * "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Data Integration Reporting"."Fact  - Received File"."internal # days with Files" IS NULL  THEN 0 WHEN "Data Integration Reporting"."Fact  - Received File"."internal # days with Files" = 0 THEN 0 ELSE 1.0d * "Data Integration Reporting"."Fact  - Received File"."# Files" / "Data Integration Reporting"."Fact  - Received File"."internal # days with Files" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-eb16-245300000000-m80cbf66d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf66d-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000011-01f4-0000-eb16-245300000000-m80cbd855-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbd855-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80cbf681-0f3c-0000-714b-e31d00000000" name="AD_3900:8568841416392324">
+<Expr mdsid="m00000012-01f4-0000-568b-b1f000000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf40c-07d6-0000-714b-e31d00000000" name="Avg Days Receipt to Complete" isWriteable="false">
+<MeasureDefn mdsid="m80cbf40e-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbfd09-0802-0000-714b-e31d00000000" name="AggRule_2050:8562201416392324" isDefault="true">
+<Expr mdsid="m00000013-01f4-0000-1fda-bb0400000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Data Integration Reporting"."Fact  - Received File"."Avg Days Receipt to Complete")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-1fda-bb0400000000-m80cbf40c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf40c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbf412-0f3c-0000-714b-e31d00000000" name="AD_3900:8568851416392324">
+<Expr mdsid="m00000014-01f4-0000-a288-027100000000" name="Expr">
+<ExprText><![CDATA[ TIMESTAMPDIFF( SQL_TSI_DAY , "%1", "%2")]]></ExprText>
+<ExprTextDesc><![CDATA[ TIMESTAMPDIFF( SQL_TSI_DAY , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."CREATED_ON_DT", "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."PROCESSED_DT")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-a288-027100000000-m000004ea-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m000004ea-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000014-01f4-0000-a288-027100000000-m00000d2b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m00000d2b-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf66d-07d6-0000-714b-e31d00000000" name="internal # days with Files" iconIndex="92" isWriteable="false">
+<MeasureDefn mdsid="m80cbf66f-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbf675-0802-0000-714b-e31d00000000" name="AggRule_2050:8562211416392324" isDefault="true">
+<Expr mdsid="m00000015-01f4-0000-9b77-122300000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Data Integration Reporting"."Fact  - Received File"."internal # days with Files")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-9b77-122300000000-m80cbf66d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf66d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbf673-0f3c-0000-714b-e31d00000000" name="AD_3900:8568861416392324">
+<Expr mdsid="m00000016-01f4-0000-c8dc-ecba00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EVENT_F_DIFile"."CREATED_ON_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000016-01f4-0000-c8dc-ecba00000000-m0000055b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000556-0bb9-0000-714b-e31d00000000.xml#m0000055b-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf593-07d6-0000-714b-e31d00000000" name="--------------------------------Time Series Month Ago--------------------------------------" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000017-01f4-0000-2013-3b5500000000" name="Expr">
+<ExprText><![CDATA['Internal Use Only']]></ExprText>
+<ExprTextDesc><![CDATA['Internal Use Only']]></ExprTextDesc>
+</Expr>
+<AttrDefn mdsid="m80cbf594-0f3c-0000-714b-e31d00000000" name="AD_3900:8568871416392324">
+<Expr mdsid="m00000018-01f4-0000-2c77-a3fa00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf4a5-07d6-0000-714b-e31d00000000" name="# Files Month Ago" isWriteable="false">
+<MeasureDefn mdsid="m80cbf4a7-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbf4a9-0802-0000-714b-e31d00000000" name="AggRule_2050:8562221416392324" isDefault="true">
+<Expr mdsid="m00000019-01f4-0000-9c90-ff6600000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Data Integration Reporting"."Fact  - Received File"."# Files Month Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-9c90-ff6600000000-m80cbf4a5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf4a5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbf4ab-0f3c-0000-714b-e31d00000000" name="AD_3900:8568881416392324">
+<Expr mdsid="m0000001a-01f4-0000-46dc-d0cc00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EVENT_F_DIFile_MonthAgo"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001a-01f4-0000-46dc-d0cc00000000-m80cbe823-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbe821-0bb9-0000-714b-e31d00000000.xml#m80cbe823-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf4b1-07d6-0000-714b-e31d00000000" name="# Files Parsed Month Ago" isWriteable="false">
+<MeasureDefn mdsid="m80cbf4b3-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbf4b5-0802-0000-714b-e31d00000000" name="AggRule_2050:8562231416392324" isDefault="true">
+<Expr mdsid="m0000001b-01f4-0000-f8ed-d7e600000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Data Integration Reporting"."Fact  - Received File"."# Files Parsed Month Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001b-01f4-0000-f8ed-d7e600000000-m80cbf4b1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf4b1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbf4b7-0f3c-0000-714b-e31d00000000" name="AD_3900:8568891416392324">
+<Expr mdsid="m0000001c-01f4-0000-69e7-b31900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  NOT "%1" IS NULL  THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  NOT "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."PARSED_DT" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001c-01f4-0000-69e7-b31900000000-m00000d2c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m00000d2c-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001c-01f4-0000-69e7-b31900000000-m000004e6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m000004e6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf4bd-07d6-0000-714b-e31d00000000" name="# Files Errored Month Ago" isWriteable="false">
+<MeasureDefn mdsid="m80cbf4bf-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbf4c1-0802-0000-714b-e31d00000000" name="AggRule_2050:8562241416392324" isDefault="true">
+<Expr mdsid="m0000001d-01f4-0000-1b15-6a1800000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Data Integration Reporting"."Fact  - Received File"."# Files Errored Month Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001d-01f4-0000-1b15-6a1800000000-m80cbf4bd-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf4bd-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbf4c3-0f3c-0000-714b-e31d00000000" name="AD_3900:8568901416392324">
+<Expr mdsid="m0000001e-01f4-0000-ee2c-03bf00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Error' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."EVENT_STATUS_NAME" = 'Error' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EVENT_F_DIFile_MonthAgo"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001e-01f4-0000-ee2c-03bf00000000-m000004f2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m000004f2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001e-01f4-0000-ee2c-03bf00000000-m80cbe823-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbe821-0bb9-0000-714b-e31d00000000.xml#m80cbe823-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf4c9-07d6-0000-714b-e31d00000000" name="# Files Processed Month Ago" isWriteable="false">
+<MeasureDefn mdsid="m80cbf4cb-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbf4cd-0802-0000-714b-e31d00000000" name="AggRule_2050:8562251416392324" isDefault="true">
+<Expr mdsid="m0000001f-01f4-0000-d832-2cda00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Data Integration Reporting"."Fact  - Received File"."# Files Processed Month Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001f-01f4-0000-d832-2cda00000000-m80cbf4c9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf4c9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbf4cf-0f3c-0000-714b-e31d00000000" name="AD_3900:8568911416392324">
+<Expr mdsid="m00000020-01f4-0000-d4d5-5b5000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Processed' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."PROCESSING_STATUS" = 'Processed' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000020-01f4-0000-d4d5-5b5000000000-m000004e5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m000004e5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000020-01f4-0000-d4d5-5b5000000000-m000004e6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m000004e6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf4d5-07d6-0000-714b-e31d00000000" name="# Files Failed Parsing Month Ago" isWriteable="false">
+<MeasureDefn mdsid="m80cbf4d7-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbf4d9-0802-0000-714b-e31d00000000" name="AggRule_2050:8562261416392324" isDefault="true">
+<Expr mdsid="m00000021-01f4-0000-6379-185800000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Data Integration Reporting"."Fact  - Received File"."# Files Failed Parsing Month Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000021-01f4-0000-6379-185800000000-m80cbf4d5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf4d5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbf4db-0f3c-0000-714b-e31d00000000" name="AD_3900:8568921416392324">
+<Expr mdsid="m00000022-01f4-0000-e35a-841400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  AND "%2" = 'Error' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."PARSED_DT" IS NULL  AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."EVENT_STATUS_NAME" = 'Error' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000022-01f4-0000-e35a-841400000000-m00000d2c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m00000d2c-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000022-01f4-0000-e35a-841400000000-m000004f2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m000004f2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000022-01f4-0000-e35a-841400000000-m000004e6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m000004e6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf4e1-07d6-0000-714b-e31d00000000" name="Avg Duration Receipt to Processed Month Ago(Days)" isWriteable="false">
+<MeasureDefn mdsid="m80cbf4e3-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbf8bc-0802-0000-714b-e31d00000000" name="AggRule_2050:8562271416392324" isDefault="true">
+<Expr mdsid="m00000023-01f4-0000-3c16-be7300000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Data Integration Reporting"."Fact  - Received File"."Avg Duration Receipt to Processed Month Ago(Days)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000023-01f4-0000-3c16-be7300000000-m80cbf4e1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf4e1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbf4e7-0f3c-0000-714b-e31d00000000" name="AD_3900:8568931416392324">
+<Expr mdsid="m00000024-01f4-0000-d5db-e0aa00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EVENT_F_DIFile_MonthAgo"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000024-01f4-0000-d5db-e0aa00000000-m80cbe823-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbe821-0bb9-0000-714b-e31d00000000.xml#m80cbe823-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf63d-07d6-0000-714b-e31d00000000" name="% Change Month Ago # Files" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000025-01f4-0000-e4e5-7e2100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Data Integration Reporting"."Fact  - Received File"."# Files Month Ago" IS NULL  OR "Data Integration Reporting"."Fact  - Received File"."# Files Month Ago" = 0) AND  NOT "Data Integration Reporting"."Fact  - Received File"."# Files" IS NULL  AND "Data Integration Reporting"."Fact  - Received File"."# Files" <> 0 THEN 100.0d WHEN ("Data Integration Reporting"."Fact  - Received File"."# Files Month Ago" IS NULL  OR "Data Integration Reporting"."Fact  - Received File"."# Files Month Ago" = 0) AND ("Data Integration Reporting"."Fact  - Received File"."# Files" IS NULL  OR "Data Integration Reporting"."Fact  - Received File"."# Files" = 0) THEN 0.0d WHEN "Data Integration Reporting"."Fact  - Received File"."# Files" IS NULL  AND  NOT "Data Integration Reporting"."Fact  - Received File"."# Files Month Ago" IS NULL  AND "Data Integration Reporting"."Fact  - Received File"."# Files Month Ago" <> 0 THEN -(100.0d) ELSE 100.0d * ("Data Integration Reporting"."Fact  - Received File"."# Files" - "Data Integration Reporting"."Fact  - Received File"."# Files Month Ago") / "Data Integration Reporting"."Fact  - Received File"."# Files Month Ago" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000025-01f4-0000-e4e5-7e2100000000-m80cbf4a5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf4a5-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000025-01f4-0000-e4e5-7e2100000000-m80cbd855-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbd855-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80cbf63f-0f3c-0000-714b-e31d00000000" name="AD_3900:8568941416392324">
+<Expr mdsid="m00000026-01f4-0000-7655-a76700000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf643-07d6-0000-714b-e31d00000000" name="% Change Month Ago # Files Failed Parsing" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000027-01f4-0000-2cc5-7a8f00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Data Integration Reporting"."Fact  - Received File"."# Files Failed Parsing Month Ago" IS NULL  OR "Data Integration Reporting"."Fact  - Received File"."# Files Failed Parsing Month Ago" = 0) AND  NOT "Data Integration Reporting"."Fact  - Received File"."# of Files Rejected" IS NULL  AND "Data Integration Reporting"."Fact  - Received File"."# of Files Rejected" <> 0 THEN 100.0d WHEN ("Data Integration Reporting"."Fact  - Received File"."# Files Failed Parsing Month Ago" IS NULL  OR "Data Integration Reporting"."Fact  - Received File"."# Files Failed Parsing Month Ago" = 0) AND ("Data Integration Reporting"."Fact  - Received File"."# of Files Rejected" IS NULL  OR "Data Integration Reporting"."Fact  - Received File"."# of Files Rejected" = 0) THEN 0.0d WHEN "Data Integration Reporting"."Fact  - Received File"."# of Files Rejected" IS NULL  AND  NOT "Data Integration Reporting"."Fact  - Received File"."# Files Failed Parsing Month Ago" IS NULL  AND "Data Integration Reporting"."Fact  - Received File"."# Files Failed Parsing Month Ago" <> 0 THEN -(100.0d) ELSE 100.0d * ("Data Integration Reporting"."Fact  - Received File"."# of Files Rejected" - "Data Integration Reporting"."Fact  - Received File"."# Files Failed Parsing Month Ago") / "Data Integration Reporting"."Fact  - Received File"."# Files Failed Parsing Month Ago" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000027-01f4-0000-2cc5-7a8f00000000-m80cbf4d5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf4d5-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000027-01f4-0000-2cc5-7a8f00000000-m80cbf144-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf144-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80cbf645-0f3c-0000-714b-e31d00000000" name="AD_3900:8568951416392324">
+<Expr mdsid="m00000028-01f4-0000-2506-53a800000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf598-07d6-0000-714b-e31d00000000" name="--------------------------------Time Series Quarter Ago--------------------------------------" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000029-01f4-0000-a15f-f55f00000000" name="Expr">
+<ExprText><![CDATA['Internal Use Only']]></ExprText>
+<ExprTextDesc><![CDATA['Internal Use Only']]></ExprTextDesc>
+</Expr>
+<AttrDefn mdsid="m80cbf59a-0f3c-0000-714b-e31d00000000" name="AD_3900:8568961416392324">
+<Expr mdsid="m0000002a-01f4-0000-4914-92d200000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf4f1-07d6-0000-714b-e31d00000000" name="# Files Quarter Ago" isWriteable="false">
+<MeasureDefn mdsid="m80cbf4f3-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbf4f5-0802-0000-714b-e31d00000000" name="AggRule_2050:8562281416392324" isDefault="true">
+<Expr mdsid="m0000002b-01f4-0000-dfda-e99c00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Data Integration Reporting"."Fact  - Received File"."# Files Quarter Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002b-01f4-0000-dfda-e99c00000000-m80cbf4f1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf4f1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbf4f7-0f3c-0000-714b-e31d00000000" name="AD_3900:8568971416392324">
+<Expr mdsid="m0000002c-01f4-0000-4118-b00100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EVENT_F_DIFile_YearAgo"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002c-01f4-0000-4118-b00100000000-m80cbea74-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbea72-0bb9-0000-714b-e31d00000000.xml#m80cbea74-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf4fd-07d6-0000-714b-e31d00000000" name="# Files Parsed Quarter Ago" isWriteable="false">
+<MeasureDefn mdsid="m80cbf4ff-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbf501-0802-0000-714b-e31d00000000" name="AggRule_2050:8562291416392324" isDefault="true">
+<Expr mdsid="m0000002d-01f4-0000-3171-ec2a00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Data Integration Reporting"."Fact  - Received File"."# Files Parsed Quarter Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002d-01f4-0000-3171-ec2a00000000-m80cbf4fd-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf4fd-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbf503-0f3c-0000-714b-e31d00000000" name="AD_3900:8568981416392324">
+<Expr mdsid="m0000002e-01f4-0000-ad84-4bfb00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  NOT "%1" IS NULL  THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  NOT "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."PARSED_DT" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002e-01f4-0000-ad84-4bfb00000000-m00000d2c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m00000d2c-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002e-01f4-0000-ad84-4bfb00000000-m000004e6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m000004e6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf509-07d6-0000-714b-e31d00000000" name="# Files Errored Quarter Ago" isWriteable="false">
+<MeasureDefn mdsid="m80cbf50b-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbf50d-0802-0000-714b-e31d00000000" name="AggRule_2050:8562301416392324" isDefault="true">
+<Expr mdsid="m0000002f-01f4-0000-5b05-d8cf00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Data Integration Reporting"."Fact  - Received File"."# Files Errored Quarter Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002f-01f4-0000-5b05-d8cf00000000-m80cbf509-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf509-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbf50f-0f3c-0000-714b-e31d00000000" name="AD_3900:8568991416392324">
+<Expr mdsid="m00000030-01f4-0000-ada4-fbf700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Error' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."EVENT_STATUS_NAME" = 'Error' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EVENT_F_DIFile_YearAgo"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000030-01f4-0000-ada4-fbf700000000-m000004f2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m000004f2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000030-01f4-0000-ada4-fbf700000000-m80cbea74-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbea72-0bb9-0000-714b-e31d00000000.xml#m80cbea74-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf515-07d6-0000-714b-e31d00000000" name="# Files Processed Quarter Ago" isWriteable="false">
+<MeasureDefn mdsid="m80cbf517-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbf519-0802-0000-714b-e31d00000000" name="AggRule_2050:8562311416392324" isDefault="true">
+<Expr mdsid="m00000031-01f4-0000-60ef-742e00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Data Integration Reporting"."Fact  - Received File"."# Files Processed Quarter Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000031-01f4-0000-60ef-742e00000000-m80cbf515-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf515-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbf51b-0f3c-0000-714b-e31d00000000" name="AD_3900:8569001416392324">
+<Expr mdsid="m00000032-01f4-0000-ea4d-54b100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Processed' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."PROCESSING_STATUS" = 'Processed' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000032-01f4-0000-ea4d-54b100000000-m000004e5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m000004e5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000032-01f4-0000-ea4d-54b100000000-m000004e6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m000004e6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf521-07d6-0000-714b-e31d00000000" name="# Files Failed Parsing Quarter Ago" isWriteable="false">
+<MeasureDefn mdsid="m80cbf523-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbf525-0802-0000-714b-e31d00000000" name="AggRule_2050:8562321416392324" isDefault="true">
+<Expr mdsid="m00000033-01f4-0000-e764-e75400000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Data Integration Reporting"."Fact  - Received File"."# Files Failed Parsing Quarter Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000033-01f4-0000-e764-e75400000000-m80cbf521-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf521-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbf527-0f3c-0000-714b-e31d00000000" name="AD_3900:8569011416392324">
+<Expr mdsid="m00000034-01f4-0000-e205-e94700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  AND "%2" = 'Error' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."PARSED_DT" IS NULL  AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."EVENT_STATUS_NAME" = 'Error' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000034-01f4-0000-e205-e94700000000-m00000d2c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m00000d2c-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000034-01f4-0000-e205-e94700000000-m000004f2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m000004f2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000034-01f4-0000-e205-e94700000000-m000004e6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m000004e6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf52d-07d6-0000-714b-e31d00000000" name="Avg Duration Receipt to Processed Quarter Ago(Days)" isWriteable="false">
+<MeasureDefn mdsid="m80cbf52f-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbfea2-0802-0000-714b-e31d00000000" name="AggRule_2050:8562331416392324" isDefault="true">
+<Expr mdsid="m00000035-01f4-0000-95e8-7d4700000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Data Integration Reporting"."Fact  - Received File"."Avg Duration Receipt to Processed Quarter Ago(Days)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000035-01f4-0000-95e8-7d4700000000-m80cbf52d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf52d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbf533-0f3c-0000-714b-e31d00000000" name="AD_3900:8569021416392324">
+<Expr mdsid="m00000036-01f4-0000-ed07-12da00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EVENT_F_DIFile_QuarterAgo"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000036-01f4-0000-ed07-12da00000000-m80cbe853-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbe851-0bb9-0000-714b-e31d00000000.xml#m80cbe853-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf59e-07d6-0000-714b-e31d00000000" name="--------------------------------Time Series Year Ago--------------------------------------" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000037-01f4-0000-11f4-895e00000000" name="Expr">
+<ExprText><![CDATA['Internal Use Only']]></ExprText>
+<ExprTextDesc><![CDATA['Internal Use Only']]></ExprTextDesc>
+</Expr>
+<AttrDefn mdsid="m80cbf5a0-0f3c-0000-714b-e31d00000000" name="AD_3900:8569031416392324">
+<Expr mdsid="m00000038-01f4-0000-fadf-649600000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf53c-07d6-0000-714b-e31d00000000" name="# Files Quarter Year Ago" isWriteable="false">
+<MeasureDefn mdsid="m80cbf53e-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbf540-0802-0000-714b-e31d00000000" name="AggRule_2050:8562341416392324" isDefault="true">
+<Expr mdsid="m00000039-01f4-0000-23d8-535600000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Data Integration Reporting"."Fact  - Received File"."# Files Quarter Year Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000039-01f4-0000-23d8-535600000000-m80cbf53c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf53c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbf542-0f3c-0000-714b-e31d00000000" name="AD_3900:8569041416392324">
+<Expr mdsid="m0000003a-01f4-0000-a655-382f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EVENT_F_DIFile_YearAgo"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003a-01f4-0000-a655-382f00000000-m80cbea74-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbea72-0bb9-0000-714b-e31d00000000.xml#m80cbea74-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf548-07d6-0000-714b-e31d00000000" name="# Files Parsed Year Ago" isWriteable="false">
+<MeasureDefn mdsid="m80cbf54a-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbf54c-0802-0000-714b-e31d00000000" name="AggRule_2050:8562351416392324" isDefault="true">
+<Expr mdsid="m0000003b-01f4-0000-92cb-a8c100000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Data Integration Reporting"."Fact  - Received File"."# Files Parsed Year Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003b-01f4-0000-92cb-a8c100000000-m80cbf548-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf548-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbf54e-0f3c-0000-714b-e31d00000000" name="AD_3900:8569051416392324">
+<Expr mdsid="m0000003c-01f4-0000-f28f-efe000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  NOT "%1" IS NULL  THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  NOT "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."PARSED_DT" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003c-01f4-0000-f28f-efe000000000-m00000d2c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m00000d2c-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003c-01f4-0000-f28f-efe000000000-m000004e6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m000004e6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf554-07d6-0000-714b-e31d00000000" name="# Files Errored Year Ago" isWriteable="false">
+<MeasureDefn mdsid="m80cbf556-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbf558-0802-0000-714b-e31d00000000" name="AggRule_2050:8562361416392324" isDefault="true">
+<Expr mdsid="m0000003d-01f4-0000-e656-478200000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Data Integration Reporting"."Fact  - Received File"."# Files Errored Year Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003d-01f4-0000-e656-478200000000-m80cbf554-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf554-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbf55a-0f3c-0000-714b-e31d00000000" name="AD_3900:8569061416392324">
+<Expr mdsid="m0000003e-01f4-0000-dcbe-5a2d00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Error' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."EVENT_STATUS_NAME" = 'Error' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EVENT_F_DIFile_YearAgo"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003e-01f4-0000-dcbe-5a2d00000000-m000004f2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m000004f2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003e-01f4-0000-dcbe-5a2d00000000-m80cbea74-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbea72-0bb9-0000-714b-e31d00000000.xml#m80cbea74-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf560-07d6-0000-714b-e31d00000000" name="# Files Processed Year Ago" isWriteable="false">
+<MeasureDefn mdsid="m80cbf562-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbf564-0802-0000-714b-e31d00000000" name="AggRule_2050:8562371416392324" isDefault="true">
+<Expr mdsid="m0000003f-01f4-0000-2353-591100000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Data Integration Reporting"."Fact  - Received File"."# Files Processed Year Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003f-01f4-0000-2353-591100000000-m80cbf560-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf560-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbf566-0f3c-0000-714b-e31d00000000" name="AD_3900:8569071416392324">
+<Expr mdsid="m00000040-01f4-0000-2489-f0aa00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Processed' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."PROCESSING_STATUS" = 'Processed' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000040-01f4-0000-2489-f0aa00000000-m000004e5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m000004e5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000040-01f4-0000-2489-f0aa00000000-m000004e6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m000004e6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf56c-07d6-0000-714b-e31d00000000" name="# Files Failed Parsing Year Ago" isWriteable="false">
+<MeasureDefn mdsid="m80cbf56e-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbf570-0802-0000-714b-e31d00000000" name="AggRule_2050:8562381416392324" isDefault="true">
+<Expr mdsid="m00000041-01f4-0000-9371-b1fc00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Data Integration Reporting"."Fact  - Received File"."# Files Failed Parsing Year Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000041-01f4-0000-9371-b1fc00000000-m80cbf56c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf56c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbf572-0f3c-0000-714b-e31d00000000" name="AD_3900:8569081416392324">
+<Expr mdsid="m00000042-01f4-0000-a796-a55b00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  AND "%2" = 'Error' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."PARSED_DT" IS NULL  AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."EVENT_STATUS_NAME" = 'Error' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_EVENT_D_DIFile"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000042-01f4-0000-a796-a55b00000000-m00000d2c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m00000d2c-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000042-01f4-0000-a796-a55b00000000-m000004f2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m000004f2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000042-01f4-0000-a796-a55b00000000-m000004e6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/000004e4-0bb9-0000-714b-e31d00000000.xml#m000004e6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbf578-07d6-0000-714b-e31d00000000" name="Avg Duration Receipt to Processed Year Ago(Days)" isWriteable="false">
+<MeasureDefn mdsid="m80cbf57a-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbfea9-0802-0000-714b-e31d00000000" name="AggRule_2050:8562391416392324" isDefault="true">
+<Expr mdsid="m00000043-01f4-0000-2ee0-5d2300000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Data Integration Reporting"."Fact  - Received File"."Avg Duration Receipt to Processed Year Ago(Days)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000043-01f4-0000-2ee0-5d2300000000-m80cbf578-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd843-07f3-0000-714b-e31d00000000.xml#m80cbf578-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbf57e-0f3c-0000-714b-e31d00000000" name="AD_3900:8569091416392324">
+<Expr mdsid="m00000044-01f4-0000-d0c0-b4aa00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EVENT_F_DIFile_YearAgo"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000044-01f4-0000-d0c0-b4aa00000000-m80cbea74-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbea72-0bb9-0000-714b-e31d00000000.xml#m80cbea74-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cc0230-07d6-0000-714b-e31d00000000" name="Implicit Fact" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000045-01f4-0000-cc73-646f00000000" name="Expr">
+<ExprText><![CDATA[1]]></ExprText>
+<ExprTextDesc><![CDATA[1]]></ExprTextDesc>
+</Expr>
+<AttrDefn mdsid="m80cc0232-0f3c-0000-714b-e31d00000000" name="AD_3900:8573261416479239">
+<Expr mdsid="m00000046-01f4-0000-486a-0ece00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80cbd843-07f3-0000-714b-e31d00000000-m80cbd8a7-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cbd8a7-07f5-0000-714b-e31d00000000.xml#m80cbd8a7-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80cbd843-07f3-0000-714b-e31d00000000-m80cbf49f-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cbf49f-07f5-0000-714b-e31d00000000.xml#m80cbf49f-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80cbd843-07f3-0000-714b-e31d00000000-m80cbf4eb-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cbf4eb-07f5-0000-714b-e31d00000000.xml#m80cbf4eb-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80cbd843-07f3-0000-714b-e31d00000000-m80cbf536-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cbf536-07f5-0000-714b-e31d00000000.xml#m80cbf536-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

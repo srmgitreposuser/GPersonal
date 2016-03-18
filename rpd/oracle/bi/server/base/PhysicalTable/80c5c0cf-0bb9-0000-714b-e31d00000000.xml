@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5c0cf-0bb9-0000-714b-e31d00000000" name="Dim_Race_for_Life" iconIndex="93" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" isCacheable="false" x="174" y="50" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb1-0bd3-0000-714b-e31d00000000.xml#m80c67bb1-0bd3-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT  F.CONTACT_WID "CONTACT_WID", 
+MAX(D.X_SRM_DT_LAG) "LAST_YEAR"
+FROM 
+WC_EVENT_REG_F F, 
+WC_EVENT_D D, 
+W_LOV_D LOV
+WHERE 
+F.SRC_EVT_WID = D.ROW_WID AND 
+F.EVT_REG_STATUS_WID = LOV.ROW_WID AND 
+((SUBSTR(D.X_SRM_EVENT_SRC_NUM,1,4) IN ('NE5L','NE6L','NE7L','NE8L','NE9L') AND LOV.VAL = 'Confirmed')
+OR  (SUBSTR(D.X_SRM_EVENT_SRC_NUM,1,6) IN ('NE99RL','NE00RL','NE01RL','NE02RL','NE03RL','NE04RL') AND LOV.VAL = 'Entered'))
+GROUP BY F.CONTACT_WID]]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c63cd8-0bbb-0000-714b-e31d00000000" name="CONTACT_WID" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c63cd9-0bbb-0000-714b-e31d00000000" name="LAST_YEAR" dataType="INT" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalKey mdsid="m80c67ab3-0bc0-0000-714b-e31d00000000" name="CONTACT_WID">
+<RefColumns>
+<RefColumn refId="m80c67ab3-0bc0-0000-714b-e31d00000000-m80c63cd8-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5c0cf-0bb9-0000-714b-e31d00000000.xml#m80c63cd8-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+</PhysicalTable>

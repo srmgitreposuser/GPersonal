@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5aaa8-07f3-0000-714b-e31d00000000" name="Fact - Event Venue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1161" y="328" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c57dfb-07d6-0000-714b-e31d00000000" name="Number of Venues" isWriteable="false">
+<MeasureDefn mdsid="m80c5b5de-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c6efd8-0802-0000-714b-e31d00000000" name="AggRule_2050:6454901305801754" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-daef-762f00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - Event Venue"."Number of Venues")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-daef-762f00000000-m80c57dfb-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aaa8-07f3-0000-714b-e31d00000000.xml#m80c57dfb-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a30d-0f3c-0000-714b-e31d00000000" name="AD_3900:6045031282832315">
+<Expr mdsid="m00000002-01f4-0000-c17f-140900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVT_VENUE_F_Event_Venue"."VENUE_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-c17f-140900000000-m80c66412-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c179-0bb9-0000-714b-e31d00000000.xml#m80c66412-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57dfc-07d6-0000-714b-e31d00000000" name="Venue Cost" isWriteable="false">
+<MeasureDefn mdsid="m80c5b5df-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c6efd9-0802-0000-714b-e31d00000000" name="AggRule_2050:6454911305801754" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-6900-0eee00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Event Venue"."Venue Cost")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-6900-0eee00000000-m80c57dfc-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aaa8-07f3-0000-714b-e31d00000000.xml#m80c57dfc-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a30e-0f3c-0000-714b-e31d00000000" name="AD_3900:6045251282832908">
+<Expr mdsid="m00000004-01f4-0000-303b-6f8800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVT_VENUE_F_Event_Venue"."VENUE_COST"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-303b-6f8800000000-m80c66417-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c179-0bb9-0000-714b-e31d00000000.xml#m80c66417-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57dfd-07d6-0000-714b-e31d00000000" name="Venue Rating (Numeric)" isWriteable="false">
+<AttrDefn mdsid="m80c6a30f-0f3c-0000-714b-e31d00000000" name="AD_3900:6045351282837299">
+<Expr mdsid="m00000005-01f4-0000-5598-678e00000000" name="Expr">
+<ExprText><![CDATA[ CAST ( SUBSTRING("%1" FROM 1 FOR 1) AS INTEGER )]]></ExprText>
+<ExprTextDesc><![CDATA[ CAST ( SUBSTRING("Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVT_VENUE_F_Event_Venue"."X_SRM_VENUE_RATING" FROM 1 FOR 1) AS INTEGER )]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-5598-678e00000000-m80c66415-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c179-0bb9-0000-714b-e31d00000000.xml#m80c66415-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57e05-07d6-0000-714b-e31d00000000" name="Avg Venue Rating" iconIndex="91" isWriteable="false">
+<MeasureDefn mdsid="m80c5b5e1-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c6efda-0802-0000-714b-e31d00000000" name="AggRule_2050:6454921305801754" isDefault="true">
+<Expr mdsid="m00000006-01f4-0000-307d-d05a00000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core"."Fact - Event Venue"."Avg Venue Rating")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-307d-d05a00000000-m80c57e05-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aaa8-07f3-0000-714b-e31d00000000.xml#m80c57e05-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a317-0f3c-0000-714b-e31d00000000" name="AD_3900:6049201283520701">
+<Expr mdsid="m00000007-01f4-0000-f4b2-591f00000000" name="Expr">
+<ExprText><![CDATA[ CAST ( SUBSTRING("%1" FROM 1 FOR 1) AS INTEGER )]]></ExprText>
+<ExprTextDesc><![CDATA[ CAST ( SUBSTRING("Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVT_VENUE_F_Event_Venue"."X_SRM_VENUE_RATING" FROM 1 FOR 1) AS INTEGER )]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-f4b2-591f00000000-m80c66415-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c179-0bb9-0000-714b-e31d00000000.xml#m80c66415-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57e07-07d6-0000-714b-e31d00000000" name="Venue Rating" isWriteable="false">
+<AttrDefn mdsid="m80c6a319-0f3c-0000-714b-e31d00000000" name="AD_3900:6049351283774865">
+<Expr mdsid="m00000008-01f4-0000-1b41-151800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVT_VENUE_F_Event_Venue"."X_SRM_VENUE_RATING"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-1b41-151800000000-m80c66415-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c179-0bb9-0000-714b-e31d00000000.xml#m80c66415-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5868e-07d6-0000-714b-e31d00000000" name="Number of Events" isWriteable="false">
+<MeasureDefn mdsid="m80c5b6c7-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c6efdb-0802-0000-714b-e31d00000000" name="AggRule_2050:6454931305801754" isDefault="true">
+<Expr mdsid="m00000009-01f4-0000-1393-a4a200000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - Event Venue"."Number of Events")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-1393-a4a200000000-m80c5868e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aaa8-07f3-0000-714b-e31d00000000.xml#m80c5868e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6aba0-0f3c-0000-714b-e31d00000000" name="AD_3900:6134221284114729">
+<Expr mdsid="m0000000a-01f4-0000-274a-e50500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVT_VENUE_F_Event_Venue"."EVENT_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-274a-e50500000000-m80c66414-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c179-0bb9-0000-714b-e31d00000000.xml#m80c66414-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5aaa8-07f3-0000-714b-e31d00000000-m80c5ad29-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ad29-07f5-0000-714b-e31d00000000.xml#m80c5ad29-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

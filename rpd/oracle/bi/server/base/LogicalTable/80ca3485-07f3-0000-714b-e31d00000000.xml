@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80ca3485-07f3-0000-714b-e31d00000000" name="Fact - Owning Party - Hobbies and Interests" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="734" y="434" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80ca34a1-07d6-0000-714b-e31d00000000" name="# Hobbies and Interests" isWriteable="false">
+<MeasureDefn mdsid="m80ca3531-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80ca3532-0802-0000-714b-e31d00000000" name="AggRule_2050:7845141353596736" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-6445-663200000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core 2"."Fact - Owning Party - Hobbies and Interests"."# Hobbies and Interests")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-6445-663200000000-m80ca34a1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80ca3485-07f3-0000-714b-e31d00000000.xml#m80ca34a1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80ca34ad-0f3c-0000-714b-e31d00000000" name="AD_3900:7844261353596331">
+<Expr mdsid="m00000002-01f4-0000-f598-05ee00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_HOBBY_INTRST_D"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-f598-05ee00000000-m80ca345e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca3450-0bb9-0000-714b-e31d00000000.xml#m80ca345e-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbc609-07d6-0000-714b-e31d00000000" name="# of Owning Parties (Distinct)" isWriteable="false">
+<MeasureDefn mdsid="m80cbc621-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbc63b-0802-0000-714b-e31d00000000" name="AggRule_2050:8517871404314539" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-52f6-495e00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Owning Party - Hobbies and Interests"."# of Owning Parties (Distinct)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-52f6-495e00000000-m80cbc609-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80ca3485-07f3-0000-714b-e31d00000000.xml#m80cbc609-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbc652-0f3c-0000-714b-e31d00000000" name="AD_3900:8517821404314539">
+<Expr mdsid="m00000004-01f4-0000-aaf7-fca800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_HOBBY_INTRST_D"."OWNING_PARTY_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_HOBBY_INTRST_D"."OWNING_PARTY_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-aaf7-fca800000000-m80ca345d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca3450-0bb9-0000-714b-e31d00000000.xml#m80ca345d-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80ca3485-07f3-0000-714b-e31d00000000-m80ca34c5-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80ca34c5-07f5-0000-714b-e31d00000000.xml#m80ca34c5-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

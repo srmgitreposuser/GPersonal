@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5bf73-0bb9-0000-714b-e31d00000000" name="Dim_W_DAY_D_Relationship_Period_Month" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" x="229" y="434" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb1-0bd3-0000-714b-e31d00000000.xml#m80c67bb1-0bd3-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[select 
+CAL_HALF, CAL_MONTH, CAL_QTR, CAL_YEAR, 
+JULIAN_MONTH_NUM, JULIAN_QTR_NUM, JULIAN_YEAR_NUM, 
+MONTH_NAME, 
+PER_NAME_HALF, PER_NAME_MONTH, PER_NAME_QTR, PER_NAME_YEAR, 
+min(DAY_DT) MONTH_START_DT,
+max(DAY_DT) MONTH_END_DT
+from VALUEOF(OLAPTBO).W_DAY_D
+group by 
+CAL_HALF, CAL_MONTH, CAL_QTR, CAL_YEAR, 
+JULIAN_MONTH_NUM, JULIAN_QTR_NUM, JULIAN_YEAR_NUM, 
+MONTH_NAME, 
+PER_NAME_HALF, PER_NAME_MONTH, PER_NAME_QTR, PER_NAME_YEAR]]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c5e7a3-0bbb-0000-714b-e31d00000000" name="CAL_HALF" dataType="TINYINT" precision="2" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5e7a4-0bbb-0000-714b-e31d00000000" name="CAL_MONTH" dataType="TINYINT" precision="2" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5e7a5-0bbb-0000-714b-e31d00000000" name="CAL_QTR" dataType="TINYINT" precision="1" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5e7a6-0bbb-0000-714b-e31d00000000" name="CAL_YEAR" dataType="SMALLINT" precision="4" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5e7a7-0bbb-0000-714b-e31d00000000" name="JULIAN_MONTH_NUM" dataType="DOUBLE" precision="10" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5e7a8-0bbb-0000-714b-e31d00000000" name="JULIAN_QTR_NUM" dataType="DOUBLE" precision="10" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5e7a9-0bbb-0000-714b-e31d00000000" name="JULIAN_YEAR_NUM" dataType="DOUBLE" precision="10" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5e7aa-0bbb-0000-714b-e31d00000000" name="MONTH_NAME" dataType="VARCHAR" precision="30" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5e7ab-0bbb-0000-714b-e31d00000000" name="PER_NAME_HALF" dataType="VARCHAR" precision="50" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5e7ac-0bbb-0000-714b-e31d00000000" name="PER_NAME_MONTH" dataType="VARCHAR" precision="50" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5e7ad-0bbb-0000-714b-e31d00000000" name="PER_NAME_QTR" dataType="VARCHAR" precision="50" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5e7ae-0bbb-0000-714b-e31d00000000" name="PER_NAME_YEAR" dataType="VARCHAR" precision="50" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5e7af-0bbb-0000-714b-e31d00000000" name="MONTH_END_DT" dataType="DATETIME" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5e7b0-0bbb-0000-714b-e31d00000000" name="MONTH_START_DT" dataType="DATETIME" specialType="none">
+</PhysicalColumn>
+</PhysicalTable>

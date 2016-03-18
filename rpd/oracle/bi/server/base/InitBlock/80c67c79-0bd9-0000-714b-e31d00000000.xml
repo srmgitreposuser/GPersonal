@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<InitBlock mdsid="m80c67c79-0bd9-0000-714b-e31d00000000" name="CRUK Dates" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" refreshPeriod="3600" baseTime="2008-08-04 17:01:57" connectionPoolRef="/oracle/bi/server/base/ConnectionPool/80c67bbe-0bd5-0000-714b-e31d00000000.xml#m80c67bbe-0bd5-0000-714b-e31d00000000">
+<DBMapItem name="Oracle81">
+<Value><![CDATA[select
+--Current Year
+CAL_YEAR,
+--Previous_Year
+CAL_YEAR-1,
+--2_YEARS_AGO
+CAL_YEAR-2, 
+--3_YEARS_AGO
+CAL_YEAR-3, 
+--4_YEARS_AGO
+CAL_YEAR-4, 
+--5_YEARS_AGO
+CAL_YEAR-5, 
+--CURRENT_MONTH
+PER_NAME_MONTH AS "Current Month", 
+--CURRENT_MONTH_START
+last_day(add_months(sysdate,-1))+1 AS "Current Month Start",
+--PREVIOUS MONTH
+TO_CHAR(CAL_YEAR)||' / '||to_char(add_months(sysdate,-1),'mm') AS "Previous Month",
+--PREVIOUS_MONTH_START
+last_day(add_months(sysdate,-2))+1 AS "Previous Month Start",
+--6_MONTHS_AGO
+to_char(add_months(sysdate,-6),'YYYY')||' / '||to_char(add_months(sysdate,-6),'MM') AS "6 Months Ago",
+--6_MONTHS_AGO_START
+last_day(add_months(sysdate,-7))+1 AS "6 Months Ago Start", 
+--9_MONTHS_AGO
+to_char(add_months(sysdate,-9),'YYYY')||' / '||to_char(add_months(sysdate,-9),'MM') AS "9 Months Ago",
+--9_MONTHS_AGO_START
+last_day(add_months(sysdate,-10))+1 AS "9 Months Ago Start", 
+--12_MONTHS_AGO
+to_char(add_months(sysdate,-12),'YYYY')||' / '||to_char(add_months(sysdate,-12),'MM') AS "12 Months Ago",
+--12_MONTHS_AGO_START
+last_day(add_months(sysdate,-13))+1 AS "12 Months Ago Start",
+--24_MONTHS_AGO
+to_char(add_months(sysdate,-24),'YYYY')||' / '||to_char(add_months(sysdate,-24),'MM') AS "24 Months Ago",
+--24_MONTHS_AGO_START
+last_day(add_months(sysdate,-25))+1 AS "24 Months Ago Start",
+--36_MONTHS_AGO
+to_char(add_months(sysdate,-36),'YYYY')||' / '||to_char(add_months(sysdate,-36),'MM') AS "36 Months Ago",
+--36_MONTHS_AGO_START
+last_day(add_months(sysdate,-37))+1 AS "36 Months Ago Start",
+--48_MONTHS_AGO
+to_char(add_months(sysdate,-48),'YYYY')||' / '||to_char(add_months(sysdate,-48),'MM') AS "48 Months Ago",
+--48_MONTHS_AGO_START
+last_day(add_months(sysdate,-49))+1 AS "48 Months Ago Start",
+--DATE_5_MONTHS_AGO
+add_months(sysdate,-5) AS "Date 5 Months Ago",
+--DATE_6_MONTHS_AGO
+add_months(sysdate,-6) AS "Date 6 Months Ago",
+--DATE_9_MONTHS_AGO
+add_months(sysdate,-9) AS "Date 9 Months Ago",
+--DATE_12_MONTHS_AGO
+add_months(sysdate,-12) AS "Date 12 Months Ago",
+--DATE_13_MONTHS_AGO
+add_months(sysdate,-13) AS "Date 13 Months Ago",
+--DATE_18_MONTHS_AGO
+add_months(sysdate,-18) AS "Date 18 Months Ago",
+--DATE_24_MONTHS_AGO
+add_months(sysdate,-24) AS "Date 24 Months Ago",
+--DATE_36_MONTHS_AGO
+add_months(sysdate,-36) AS "Date 36 Months Ago",
+--DATE_48_MONTHS_AGO
+add_months(sysdate,-48) AS "Date 48 Months Ago",
+--Start of year
+trunc(sysdate, 'YEAR') AS "Start of Current Year",
+--DATE_60_MONTHS_AGO
+add_months(sysdate,-60) AS "Date 60 Months Ago",
+--DATE_72_MONTHS_AGO
+add_months(sysdate,-72) AS "Date 72 Months Ago",
+--3_MONTHS_AGO
+to_char(add_months(sysdate,-3),'YYYY')||' / '||to_char(add_months(sysdate,-3),'MM') AS "3 Months Ago",
+--3_MONTHS_AGO_START
+last_day(add_months(sysdate,-4))+1 AS "3 Months Ago Start", 
+--DATE_3_MONTHS_AGO
+add_months(sysdate,-3) AS "Date 3 Months Ago",
+--DATE_1_MONTH_AGO
+add_months(sysdate,-1) AS "Date 1 Month Ago",
+--DATE_10_YEARS_AGO
+add_months(sysdate,-120) AS "Date 10 years Ago",
+--10_YEARS_AGO
+CAL_YEAR-10,
+--Current Week
+cal_week AS "Current Week"
+from w_day_d where calendar_date = to_char(SYSDATE,'DD-MON-YYYY')
+--row_wid=to_number(to_char(sysdate,'YYYYMMDD'));]]></Value>
+</DBMapItem>
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[select
+--Current Year
+CAL_YEAR,
+--Previous_Year
+CAL_YEAR-1,
+--2_YEARS_AGO
+CAL_YEAR-2, 
+--3_YEARS_AGO
+CAL_YEAR-3, 
+--4_YEARS_AGO
+CAL_YEAR-4, 
+--5_YEARS_AGO
+CAL_YEAR-5, 
+--CURRENT_MONTH
+PER_NAME_MONTH AS "Current Month", 
+--CURRENT_MONTH_START
+last_day(add_months(sysdate,-1))+1 AS "Current Month Start",
+--PREVIOUS MONTH
+TO_CHAR(CAL_YEAR)||' / '||to_char(add_months(sysdate,-1),'mm') AS "Previous Month",
+--PREVIOUS_MONTH_START
+last_day(add_months(sysdate,-2))+1 AS "Previous Month Start",
+--6_MONTHS_AGO
+to_char(add_months(sysdate,-6),'YYYY')||' / '||to_char(add_months(sysdate,-6),'MM') AS "6 Months Ago",
+--6_MONTHS_AGO_START
+last_day(add_months(sysdate,-7))+1 AS "6 Months Ago Start", 
+--9_MONTHS_AGO
+to_char(add_months(sysdate,-9),'YYYY')||' / '||to_char(add_months(sysdate,-9),'MM') AS "9 Months Ago",
+--9_MONTHS_AGO_START
+last_day(add_months(sysdate,-10))+1 AS "9 Months Ago Start", 
+--12_MONTHS_AGO
+to_char(add_months(sysdate,-12),'YYYY')||' / '||to_char(add_months(sysdate,-6),'MM') AS "12 Months Ago",
+--12_MONTHS_AGO_START
+last_day(add_months(sysdate,-13))+1 AS "12 Months Ago Start",
+--24_MONTHS_AGO
+to_char(add_months(sysdate,-24),'YYYY')||' / '||to_char(add_months(sysdate,-6),'MM') AS "24 Months Ago",
+--24_MONTHS_AGO_START
+last_day(add_months(sysdate,-25))+1 AS "24 Months Ago Start",
+--36_MONTHS_AGO
+to_char(add_months(sysdate,-36),'YYYY')||' / '||to_char(add_months(sysdate,-6),'MM') AS "36 Months Ago",
+--36_MONTHS_AGO_START
+last_day(add_months(sysdate,-37))+1 AS "36 Months Ago Start",
+--48_MONTHS_AGO
+to_char(add_months(sysdate,-48),'YYYY')||' / '||to_char(add_months(sysdate,-6),'MM') AS "48 Months Ago",
+--48_MONTHS_AGO_START
+last_day(add_months(sysdate,-49))+1 AS "48 Months Ago Start",
+--DATE_6_MONTHS_AGO
+add_months(sysdate,-6) AS "Date 6 Months Ago",
+--DATE_9_MONTHS_AGO
+add_months(sysdate,-9) AS "Date 9 Months Ago",
+--DATE_12_MONTHS_AGO
+add_months(sysdate,-12) AS "Date 12 Months Ago",
+--DATE_18_MONTHS_AGO
+add_months(sysdate,-18) AS "Date 18 Months Ago",
+--DATE_24_MONTHS_AGO
+add_months(sysdate,-24) AS "Date 24 Months Ago",
+--DATE_36_MONTHS_AGO
+add_months(sysdate,-36) AS "Date 36 Months Ago",
+--DATE_48_MONTHS_AGO
+add_months(sysdate,-48) AS "Date 48 Months Ago",
+--Start of year
+trunc(sysdate, 'YEAR') AS "Start of Current Year",
+--DATE_60_MONTHS_AGO
+add_months(sysdate,-60) AS "Date 60 Months Ago",
+--DATE_72_MONTHS_AGO
+add_months(sysdate,-72) AS "Date 72 Months Ago",
+--3_MONTHS_AGO
+to_char(add_months(sysdate,-3),'YYYY')||' / '||to_char(add_months(sysdate,-3),'MM') AS "3 Months Ago",
+--3_MONTHS_AGO_START
+last_day(add_months(sysdate,-4))+1 AS "3 Months Ago Start", 
+--DATE_3_MONTHS_AGO
+add_months(sysdate,-3) AS "Date 3 Months Ago",
+--Current Week
+cal_week AS "Current Week"
+from w_day_d where row_wid=to_number(to_char(sysdate,'YYYYMMDD'));]]></Value>
+</DBMapItem>
+<RefVariables>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c20-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c20-0bd7-0000-714b-e31d00000000.xml#m80c67c20-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c22-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c22-0bd7-0000-714b-e31d00000000.xml#m80c67c22-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c2c-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c2c-0bd7-0000-714b-e31d00000000.xml#m80c67c2c-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c2d-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c2d-0bd7-0000-714b-e31d00000000.xml#m80c67c2d-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c2e-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c2e-0bd7-0000-714b-e31d00000000.xml#m80c67c2e-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c2f-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c2f-0bd7-0000-714b-e31d00000000.xml#m80c67c2f-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c24-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c24-0bd7-0000-714b-e31d00000000.xml#m80c67c24-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c30-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c30-0bd7-0000-714b-e31d00000000.xml#m80c67c30-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c26-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c26-0bd7-0000-714b-e31d00000000.xml#m80c67c26-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c31-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c31-0bd7-0000-714b-e31d00000000.xml#m80c67c31-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c32-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c32-0bd7-0000-714b-e31d00000000.xml#m80c67c32-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c33-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c33-0bd7-0000-714b-e31d00000000.xml#m80c67c33-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c29-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c29-0bd7-0000-714b-e31d00000000.xml#m80c67c29-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c2a-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c2a-0bd7-0000-714b-e31d00000000.xml#m80c67c2a-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c34-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c34-0bd7-0000-714b-e31d00000000.xml#m80c67c34-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c35-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c35-0bd7-0000-714b-e31d00000000.xml#m80c67c35-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c36-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c36-0bd7-0000-714b-e31d00000000.xml#m80c67c36-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c37-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c37-0bd7-0000-714b-e31d00000000.xml#m80c67c37-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c38-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c38-0bd7-0000-714b-e31d00000000.xml#m80c67c38-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c39-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c39-0bd7-0000-714b-e31d00000000.xml#m80c67c39-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c3a-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c3a-0bd7-0000-714b-e31d00000000.xml#m80c67c3a-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c3b-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c3b-0bd7-0000-714b-e31d00000000.xml#m80c67c3b-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m00000000-e3e6-15a3-806e-0a0e2d440000" variableRef="/oracle/bi/server/base/Variable/00000000-e3e6-15a3-806e-0a0e2d440000.xml#m00000000-e3e6-15a3-806e-0a0e2d440000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c1f-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c1f-0bd7-0000-714b-e31d00000000.xml#m80c67c1f-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c2b-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c2b-0bd7-0000-714b-e31d00000000.xml#m80c67c2b-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c21-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c21-0bd7-0000-714b-e31d00000000.xml#m80c67c21-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c4d-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c4d-0bd7-0000-714b-e31d00000000.xml#m80c67c4d-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c23-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c23-0bd7-0000-714b-e31d00000000.xml#m80c67c23-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c25-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c25-0bd7-0000-714b-e31d00000000.xml#m80c67c25-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c27-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c27-0bd7-0000-714b-e31d00000000.xml#m80c67c27-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c28-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c28-0bd7-0000-714b-e31d00000000.xml#m80c67c28-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c3c-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c3c-0bd7-0000-714b-e31d00000000.xml#m80c67c3c-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c40-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c40-0bd7-0000-714b-e31d00000000.xml#m80c67c40-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c41-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c41-0bd7-0000-714b-e31d00000000.xml#m80c67c41-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c49-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c49-0bd7-0000-714b-e31d00000000.xml#m80c67c49-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c4a-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c4a-0bd7-0000-714b-e31d00000000.xml#m80c67c4a-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c4b-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c4b-0bd7-0000-714b-e31d00000000.xml#m80c67c4b-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80cb9bb6-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80cb9bb6-0bd7-0000-714b-e31d00000000.xml#m80cb9bb6-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80cb9bb7-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80cb9bb7-0bd7-0000-714b-e31d00000000.xml#m80cb9bb7-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80cb9bb5-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80cb9bb5-0bd7-0000-714b-e31d00000000.xml#m80cb9bb5-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c79-0bd9-0000-714b-e31d00000000-m80c67c4c-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c4c-0bd7-0000-714b-e31d00000000.xml#m80c67c4c-0bd7-0000-714b-e31d00000000"/>
+</RefVariables>
+<InitString><![CDATA[select
+--Current Year
+CAL_YEAR,
+--Previous_Year
+CAL_YEAR-1,
+--2_YEARS_AGO
+CAL_YEAR-2, 
+--3_YEARS_AGO
+CAL_YEAR-3, 
+--4_YEARS_AGO
+CAL_YEAR-4, 
+--5_YEARS_AGO
+CAL_YEAR-5, 
+--CURRENT_MONTH
+PER_NAME_MONTH AS "Current Month", 
+--CURRENT_MONTH_START
+last_day(add_months(sysdate,-1))+1 AS "Current Month Start",
+--PREVIOUS MONTH
+TO_CHAR(CAL_YEAR)||' / '||to_char(add_months(sysdate,-1),'mm') AS "Previous Month",
+--PREVIOUS_MONTH_START
+last_day(add_months(sysdate,-2))+1 AS "Previous Month Start",
+--6_MONTHS_AGO
+to_char(add_months(sysdate,-6),'YYYY')||' / '||to_char(add_months(sysdate,-6),'MM') AS "6 Months Ago",
+--6_MONTHS_AGO_START
+last_day(add_months(sysdate,-7))+1 AS "6 Months Ago Start", 
+--9_MONTHS_AGO
+to_char(add_months(sysdate,-9),'YYYY')||' / '||to_char(add_months(sysdate,-9),'MM') AS "9 Months Ago",
+--9_MONTHS_AGO_START
+last_day(add_months(sysdate,-10))+1 AS "9 Months Ago Start", 
+--12_MONTHS_AGO
+to_char(add_months(sysdate,-12),'YYYY')||' / '||to_char(add_months(sysdate,-12),'MM') AS "12 Months Ago",
+--12_MONTHS_AGO_START
+last_day(add_months(sysdate,-13))+1 AS "12 Months Ago Start",
+--24_MONTHS_AGO
+to_char(add_months(sysdate,-24),'YYYY')||' / '||to_char(add_months(sysdate,-24),'MM') AS "24 Months Ago",
+--24_MONTHS_AGO_START
+last_day(add_months(sysdate,-25))+1 AS "24 Months Ago Start",
+--36_MONTHS_AGO
+to_char(add_months(sysdate,-36),'YYYY')||' / '||to_char(add_months(sysdate,-36),'MM') AS "36 Months Ago",
+--36_MONTHS_AGO_START
+last_day(add_months(sysdate,-37))+1 AS "36 Months Ago Start",
+--48_MONTHS_AGO
+to_char(add_months(sysdate,-48),'YYYY')||' / '||to_char(add_months(sysdate,-48),'MM') AS "48 Months Ago",
+--48_MONTHS_AGO_START
+last_day(add_months(sysdate,-49))+1 AS "48 Months Ago Start",
+--DATE_5_MONTHS_AGO
+add_months(sysdate,-5) AS "Date 5 Months Ago",
+--DATE_6_MONTHS_AGO
+add_months(sysdate,-6) AS "Date 6 Months Ago",
+--DATE_9_MONTHS_AGO
+add_months(sysdate,-9) AS "Date 9 Months Ago",
+--DATE_12_MONTHS_AGO
+add_months(sysdate,-12) AS "Date 12 Months Ago",
+--DATE_13_MONTHS_AGO
+add_months(sysdate,-13) AS "Date 13 Months Ago",
+--DATE_18_MONTHS_AGO
+add_months(sysdate,-18) AS "Date 18 Months Ago",
+--DATE_24_MONTHS_AGO
+add_months(sysdate,-24) AS "Date 24 Months Ago",
+--DATE_36_MONTHS_AGO
+add_months(sysdate,-36) AS "Date 36 Months Ago",
+--DATE_48_MONTHS_AGO
+add_months(sysdate,-48) AS "Date 48 Months Ago",
+--Start of year
+trunc(sysdate, 'YEAR') AS "Start of Current Year",
+--DATE_60_MONTHS_AGO
+add_months(sysdate,-60) AS "Date 60 Months Ago",
+--DATE_72_MONTHS_AGO
+add_months(sysdate,-72) AS "Date 72 Months Ago",
+--3_MONTHS_AGO
+to_char(add_months(sysdate,-3),'YYYY')||' / '||to_char(add_months(sysdate,-3),'MM') AS "3 Months Ago",
+--3_MONTHS_AGO_START
+last_day(add_months(sysdate,-4))+1 AS "3 Months Ago Start", 
+--DATE_3_MONTHS_AGO
+add_months(sysdate,-3) AS "Date 3 Months Ago",
+--DATE_1_MONTH_AGO
+add_months(sysdate,-1) AS "Date 1 Month Ago",
+--DATE_10_YEARS_AGO
+add_months(sysdate,-120) AS "Date 10 years Ago",
+--10_YEARS_AGO
+CAL_YEAR-10,
+--Current Week
+cal_week AS "Current Week"
+from w_day_d where calendar_date = to_char(SYSDATE,'DD-MON-YYYY')
+--row_wid=to_number(to_char(sysdate,'YYYYMMDD'));]]></InitString>
+</InitBlock>

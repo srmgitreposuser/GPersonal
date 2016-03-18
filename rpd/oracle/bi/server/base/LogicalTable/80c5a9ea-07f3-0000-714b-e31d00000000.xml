@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9ea-07f3-0000-714b-e31d00000000" name="Fact - CRM - Account Transaction Last 6 Months" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1052" y="1030" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c568ed-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80c68cc9-0f3c-0000-714b-e31d00000000" name="AD_3900:843311074282455">
+<Expr mdsid="m00000001-01f4-0000-4bfe-44b400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-4bfe-44b400000000-m80c5e8f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568ee-07d6-0000-714b-e31d00000000" name="INTEGRATION_ID" isWriteable="false">
+<AttrDefn mdsid="m80c68cca-0f3c-0000-714b-e31d00000000" name="AD_3900:843321074282455">
+<Expr mdsid="m00000002-01f4-0000-4af7-d17800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."INTEGRATION_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-4af7-d17800000000-m80c5e8f4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568ef-07d6-0000-714b-e31d00000000" name="Total Transaction Amount Last 6 Months" isWriteable="false">
+<Description><![CDATA[This column calculates the total transaction amount of all transactions in the last 6 months, for the customer. The Debit type transaction amount is deducted from the Credit type to calculate this value.]]></Description>
+<MeasureDefn mdsid="m80c5b21a-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b8ff-0802-0000-714b-e31d00000000" name="AggRule_2050:183791074282429" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-5231-26f000000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Account Transaction Last 6 Months"."Total Transaction Amount Last 6 Months")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-5231-26f000000000-m80c568ef-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568ef-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68ccb-0f3c-0000-714b-e31d00000000" name="AD_3900:843331074282455">
+<Expr mdsid="m00000004-01f4-0000-9278-225400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Debit' THEN -("%2") WHEN "%1" = 'Credit' THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_TYPE_I" = 'Debit' THEN -("Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_AMT") WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_TYPE_I" = 'Credit' THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_AMT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-9278-225400000000-m80c5e8e8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8e8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-9278-225400000000-m80c5e8f7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568f0-07d6-0000-714b-e31d00000000" name="Total Transaction Fee Last 6 Months" isWriteable="false">
+<Description><![CDATA[Total Transaction Fee Last 6 Months]]></Description>
+<MeasureDefn mdsid="m80c5b21b-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b900-0802-0000-714b-e31d00000000" name="AggRule_2050:183801074282429" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-132f-9c6d00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Account Transaction Last 6 Months"."Total Transaction Fee Last 6 Months")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-132f-9c6d00000000-m80c568f0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568f0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68ccc-0f3c-0000-714b-e31d00000000" name="AD_3900:843341074282455">
+<Expr mdsid="m00000006-01f4-0000-9826-fd1200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_FEE_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-9826-fd1200000000-m80c5e8f9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f9-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568f1-07d6-0000-714b-e31d00000000" name="Account Balance" isWriteable="false">
+<MeasureDefn mdsid="m80c5b21c-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b901-0802-0000-714b-e31d00000000" name="AggRule_2050:183811074282429" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-fb6e-9d7300000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Account Transaction Last 6 Months"."Account Balance")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-fb6e-9d7300000000-m80c568f1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568f1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+<AggrRule mdsid="m80c5b902-0802-0000-714b-e31d00000000" name="AggRule_2050:183821074282429" basedOnDimensionRef="/oracle/bi/server/base/Dimension/80c5a0ed-07e3-0000-714b-e31d00000000.xml#m80c5a0ed-07e3-0000-714b-e31d00000000">
+<Expr mdsid="m00000008-01f4-0000-8fac-e7ab00000000" name="Expr">
+<ExprText><![CDATA[ LAST("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ LAST("Core"."Fact - CRM - Account Transaction Last 6 Months"."Account Balance")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-8fac-e7ab00000000-m80c568f1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568f1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68ccd-0f3c-0000-714b-e31d00000000" name="AD_3900:843351074282455">
+<Expr mdsid="m00000009-01f4-0000-6b1b-1c5200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."BALANCE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-6b1b-1c5200000000-m80c5e8f8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f8-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568f2-07d6-0000-714b-e31d00000000" name="# TXNs Last 6 Months" isWriteable="false">
+<Description><![CDATA[# TXNs Last 6 Months]]></Description>
+<MeasureDefn mdsid="m80c5b21d-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b903-0802-0000-714b-e31d00000000" name="AggRule_2050:183831074282429" isDefault="true">
+<Expr mdsid="m0000000a-01f4-0000-8681-971700000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs Last 6 Months")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-8681-971700000000-m80c568f2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568f2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68cce-0f3c-0000-714b-e31d00000000" name="AD_3900:843361074282455">
+<Expr mdsid="m0000000b-01f4-0000-3aca-c29c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-3aca-c29c00000000-m80c5e8f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568f3-07d6-0000-714b-e31d00000000" name="TXN Amount StdDev 1 Month Ago" isWriteable="false">
+<MeasureDefn mdsid="m80c5b21e-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b904-0802-0000-714b-e31d00000000" name="AggRule_2050:183841074282429" isDefault="true">
+<Expr mdsid="m0000000c-01f4-0000-ba85-3aef00000000" name="Expr">
+<ExprText><![CDATA[ STDDEV_POP("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ STDDEV_POP("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 1 Month Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-ba85-3aef00000000-m80c568f3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568f3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68ccf-0f3c-0000-714b-e31d00000000" name="AD_3900:843371074282455">
+<Expr mdsid="m0000000d-01f4-0000-8b5c-905d00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "%1",  CURRENT_DATE ) = 1 THEN  CASE  WHEN "%2" = 'Debit' THEN -("%3") WHEN "%2" = 'Credit' THEN "%3" ELSE 0 END  ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 1 THEN  CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_TYPE_I" = 'Debit' THEN -("Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_AMT") WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_TYPE_I" = 'Credit' THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_AMT" ELSE 0 END  ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-8b5c-905d00000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000d-01f4-0000-8b5c-905d00000000-m80c5e8e8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8e8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000d-01f4-0000-8b5c-905d00000000-m80c5e8f7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568f4-07d6-0000-714b-e31d00000000" name="TXN Amount StdDev 2 Months Ago" isWriteable="false">
+<MeasureDefn mdsid="m80c5b21f-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b905-0802-0000-714b-e31d00000000" name="AggRule_2050:183851074282429" isDefault="true">
+<Expr mdsid="m0000000e-01f4-0000-f80e-256b00000000" name="Expr">
+<ExprText><![CDATA[ STDDEV_POP("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ STDDEV_POP("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 2 Months Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-f80e-256b00000000-m80c568f4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568f4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68cd0-0f3c-0000-714b-e31d00000000" name="AD_3900:843381074282455">
+<Expr mdsid="m0000000f-01f4-0000-a0a4-eab000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "%1",  CURRENT_DATE ) = 2 THEN  CASE  WHEN "%2" = 'Debit' THEN -("%3") WHEN "%2" = 'Credit' THEN "%3" ELSE 0 END  ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 2 THEN  CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_TYPE_I" = 'Debit' THEN -("Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_AMT") WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_TYPE_I" = 'Credit' THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_AMT" ELSE 0 END  ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-a0a4-eab000000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000f-01f4-0000-a0a4-eab000000000-m80c5e8e8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8e8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000f-01f4-0000-a0a4-eab000000000-m80c5e8f7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568f5-07d6-0000-714b-e31d00000000" name="TXN Amount StdDev 3 Months Ago" isWriteable="false">
+<MeasureDefn mdsid="m80c5b220-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b906-0802-0000-714b-e31d00000000" name="AggRule_2050:183861074282429" isDefault="true">
+<Expr mdsid="m00000010-01f4-0000-dbfc-721100000000" name="Expr">
+<ExprText><![CDATA[ STDDEV_POP("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ STDDEV_POP("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 3 Months Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-dbfc-721100000000-m80c568f5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568f5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68cd1-0f3c-0000-714b-e31d00000000" name="AD_3900:843391074282455">
+<Expr mdsid="m00000011-01f4-0000-6341-41ce00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "%1",  CURRENT_DATE ) = 3 THEN  CASE  WHEN "%2" = 'Debit' THEN -("%3") WHEN "%2" = 'Credit' THEN "%3" ELSE 0 END  ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 3 THEN  CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_TYPE_I" = 'Debit' THEN -("Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_AMT") WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_TYPE_I" = 'Credit' THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_AMT" ELSE 0 END  ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-6341-41ce00000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000011-01f4-0000-6341-41ce00000000-m80c5e8e8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8e8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000011-01f4-0000-6341-41ce00000000-m80c5e8f7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568f6-07d6-0000-714b-e31d00000000" name="# of POS TXNs Last 6 Months" isWriteable="false">
+<MeasureDefn mdsid="m80c5b221-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b907-0802-0000-714b-e31d00000000" name="AggRule_2050:183871074282429" isDefault="true">
+<Expr mdsid="m00000012-01f4-0000-fe5a-597400000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Account Transaction Last 6 Months"."# of POS TXNs Last 6 Months")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-fe5a-597400000000-m80c568f6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568f6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68cd2-0f3c-0000-714b-e31d00000000" name="AD_3900:843401074282455">
+<Expr mdsid="m00000013-01f4-0000-7413-5eef00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'POS' THEN 1 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_CATGRY_I" = 'POS' THEN 1 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-7413-5eef00000000-m80c5e8ea-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8ea-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568f7-07d6-0000-714b-e31d00000000" name="# of POS TXNs 1 Month Ago" isWriteable="false">
+<MeasureDefn mdsid="m80c5b222-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b908-0802-0000-714b-e31d00000000" name="AggRule_2050:183881074282429" isDefault="true">
+<Expr mdsid="m00000014-01f4-0000-da02-552c00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Account Transaction Last 6 Months"."# of POS TXNs 1 Month Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-da02-552c00000000-m80c568f7-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568f7-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68cd3-0f3c-0000-714b-e31d00000000" name="AD_3900:843411074282455">
+<Expr mdsid="m00000015-01f4-0000-5d26-79e800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'POS' AND  TIMESTAMPDIFF( SQL_TSI_MONTH , "%2",  CURRENT_DATE ) = 1 THEN 1 ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_CATGRY_I" = 'POS' AND  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 1 THEN 1 ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-5d26-79e800000000-m80c5e8ea-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8ea-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000015-01f4-0000-5d26-79e800000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568f8-07d6-0000-714b-e31d00000000" name="# of POS TXNs 2 Months Ago" isWriteable="false">
+<MeasureDefn mdsid="m80c5b223-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b909-0802-0000-714b-e31d00000000" name="AggRule_2050:183891074282429" isDefault="true">
+<Expr mdsid="m00000016-01f4-0000-d2a5-014000000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Account Transaction Last 6 Months"."# of POS TXNs 2 Months Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000016-01f4-0000-d2a5-014000000000-m80c568f8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568f8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68cd4-0f3c-0000-714b-e31d00000000" name="AD_3900:843421074282455">
+<Expr mdsid="m00000017-01f4-0000-e56d-1b2900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'POS' AND  TIMESTAMPDIFF( SQL_TSI_MONTH , "%2",  CURRENT_DATE ) = 2 THEN 1 ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_CATGRY_I" = 'POS' AND  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 2 THEN 1 ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-e56d-1b2900000000-m80c5e8ea-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8ea-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000017-01f4-0000-e56d-1b2900000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568f9-07d6-0000-714b-e31d00000000" name="# of POS TXNs 3 Months Ago" isWriteable="false">
+<MeasureDefn mdsid="m80c5b224-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b90a-0802-0000-714b-e31d00000000" name="AggRule_2050:183901074282429" isDefault="true">
+<Expr mdsid="m00000018-01f4-0000-8e3f-7b3900000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Account Transaction Last 6 Months"."# of POS TXNs 3 Months Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000018-01f4-0000-8e3f-7b3900000000-m80c568f9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568f9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68cd5-0f3c-0000-714b-e31d00000000" name="AD_3900:843431074282455">
+<Expr mdsid="m00000019-01f4-0000-2412-b77c00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'POS' AND  TIMESTAMPDIFF( SQL_TSI_MONTH , "%2",  CURRENT_DATE ) = 3 THEN 1 ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_CATGRY_I" = 'POS' AND  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 3 THEN 1 ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-2412-b77c00000000-m80c5e8ea-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8ea-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000019-01f4-0000-2412-b77c00000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568fa-07d6-0000-714b-e31d00000000" name="% of POS Transactions Last 6 Months" isDerived="true" isWriteable="false">
+<Description><![CDATA[This column calculates the % of Transaction in the Last 6 months that were at a Point of Sale. Since a Credit Card may have other transactions like payments, transfers etc. this measure shows the Point of Sale transaction that directly relate to usage.]]></Description>
+<Expr mdsid="m0000001a-01f4-0000-ea8f-2aa600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 OR "%1" IS NULL  THEN  NULL  ELSE 100.0d * "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs Last 6 Months" = 0 OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs Last 6 Months" IS NULL  THEN  NULL  ELSE 100.0d * "Core"."Fact - CRM - Account Transaction Last 6 Months"."# of POS TXNs Last 6 Months" / "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs Last 6 Months" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001a-01f4-0000-ea8f-2aa600000000-m80c568f2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568f2-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001a-01f4-0000-ea8f-2aa600000000-m80c568f6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568f6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68cd6-0f3c-0000-714b-e31d00000000" name="AD_3900:843441074282455">
+<Expr mdsid="m0000001b-01f4-0000-76bf-b43700000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568fb-07d6-0000-714b-e31d00000000" name="% of POS Transactions 1 Month Ago" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000001c-01f4-0000-ebdd-275300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  OR "%1" = 0 THEN  NULL  ELSE 100.0d * "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 1 Month Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 1 Month Ago" = 0 THEN  NULL  ELSE 100.0d * "Core"."Fact - CRM - Account Transaction Last 6 Months"."# of POS TXNs 1 Month Ago" / "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 1 Month Ago" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001c-01f4-0000-ebdd-275300000000-m80c56907-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56907-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001c-01f4-0000-ebdd-275300000000-m80c568f7-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568f7-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68cd7-0f3c-0000-714b-e31d00000000" name="AD_3900:843451074282455">
+<Expr mdsid="m0000001d-01f4-0000-fbe8-451500000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568fc-07d6-0000-714b-e31d00000000" name="% of POS Transactions 2 Months Ago" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000001e-01f4-0000-74b6-b7a700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  OR "%1" = 0 THEN  NULL  ELSE 100.0d * "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 2 Months Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 2 Months Ago" = 0 THEN  NULL  ELSE 100.0d * "Core"."Fact - CRM - Account Transaction Last 6 Months"."# of POS TXNs 2 Months Ago" / "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 2 Months Ago" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001e-01f4-0000-74b6-b7a700000000-m80c56908-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56908-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001e-01f4-0000-74b6-b7a700000000-m80c568f8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568f8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68cd8-0f3c-0000-714b-e31d00000000" name="AD_3900:843461074282455">
+<Expr mdsid="m0000001f-01f4-0000-b06c-fe7200000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568fd-07d6-0000-714b-e31d00000000" name="% of POS Transactions 3 Months Ago" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000020-01f4-0000-3562-0de900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  OR "%1" = 0 THEN  NULL  ELSE 100.0d * "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 3 Months Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 3 Months Ago" = 0 THEN  NULL  ELSE 100.0d * "Core"."Fact - CRM - Account Transaction Last 6 Months"."# of POS TXNs 3 Months Ago" / "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 3 Months Ago" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000020-01f4-0000-3562-0de900000000-m80c56909-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56909-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000020-01f4-0000-3562-0de900000000-m80c568f9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568f9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68cd9-0f3c-0000-714b-e31d00000000" name="AD_3900:843471074282455">
+<Expr mdsid="m00000021-01f4-0000-6bd6-1c7e00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568fe-07d6-0000-714b-e31d00000000" name="TXN Fee 1 Month Ago" isWriteable="false">
+<MeasureDefn mdsid="m80c5b225-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b90b-0802-0000-714b-e31d00000000" name="AggRule_2050:183911074282429" isDefault="true">
+<Expr mdsid="m00000022-01f4-0000-f11f-b71d00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 1 Month Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000022-01f4-0000-f11f-b71d00000000-m80c568fe-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568fe-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68cda-0f3c-0000-714b-e31d00000000" name="AD_3900:843481074282455">
+<Expr mdsid="m00000023-01f4-0000-8beb-cf1700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "%1",  CURRENT_DATE ) = 1 THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 1 THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_FEE_AMT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000023-01f4-0000-8beb-cf1700000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000023-01f4-0000-8beb-cf1700000000-m80c5e8f9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f9-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568ff-07d6-0000-714b-e31d00000000" name="TXN Fee 3 Months Ago" isWriteable="false">
+<MeasureDefn mdsid="m80c5b226-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b90c-0802-0000-714b-e31d00000000" name="AggRule_2050:183921074282429" isDefault="true">
+<Expr mdsid="m00000024-01f4-0000-b444-ecd100000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 3 Months Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000024-01f4-0000-b444-ecd100000000-m80c568ff-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568ff-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68cdb-0f3c-0000-714b-e31d00000000" name="AD_3900:843491074282455">
+<Expr mdsid="m00000025-01f4-0000-4d64-aef000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "%1",  CURRENT_DATE ) = 3 THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 3 THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_FEE_AMT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000025-01f4-0000-4d64-aef000000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000025-01f4-0000-4d64-aef000000000-m80c5e8f9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f9-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56900-07d6-0000-714b-e31d00000000" name="TXN Fee 6 Months Ago" isWriteable="false">
+<MeasureDefn mdsid="m80c5b227-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b90d-0802-0000-714b-e31d00000000" name="AggRule_2050:183931074282429" isDefault="true">
+<Expr mdsid="m00000026-01f4-0000-60a5-2bbc00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 6 Months Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000026-01f4-0000-60a5-2bbc00000000-m80c56900-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56900-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68cdc-0f3c-0000-714b-e31d00000000" name="AD_3900:843501074282455">
+<Expr mdsid="m00000027-01f4-0000-e9cc-16dc00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "%1",  CURRENT_DATE ) = 6 THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 6 THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_FEE_AMT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000027-01f4-0000-e9cc-16dc00000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000027-01f4-0000-e9cc-16dc00000000-m80c5e8f9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f9-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56901-07d6-0000-714b-e31d00000000" name="Total Penalties Last 6 Months" isWriteable="false">
+<Description><![CDATA[Total Penalties Last 6 Months]]></Description>
+<MeasureDefn mdsid="m80c5b228-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b90e-0802-0000-714b-e31d00000000" name="AggRule_2050:183941074282429" isDefault="true">
+<Expr mdsid="m00000028-01f4-0000-bcfa-56d500000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Account Transaction Last 6 Months"."Total Penalties Last 6 Months")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000028-01f4-0000-bcfa-56d500000000-m80c56901-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56901-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68cdd-0f3c-0000-714b-e31d00000000" name="AD_3900:843511074282455">
+<Expr mdsid="m00000029-01f4-0000-1bdd-016600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Penalty' THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_CATGRY_I" = 'Penalty' THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_AMT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000029-01f4-0000-1bdd-016600000000-m80c5e8ea-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8ea-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000029-01f4-0000-1bdd-016600000000-m80c5e8f7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56902-07d6-0000-714b-e31d00000000" name="Penalties 1 Month Ago" isWriteable="false">
+<MeasureDefn mdsid="m80c5b229-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b90f-0802-0000-714b-e31d00000000" name="AggRule_2050:183951074282429" isDefault="true">
+<Expr mdsid="m0000002a-01f4-0000-9124-944100000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 1 Month Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002a-01f4-0000-9124-944100000000-m80c56902-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56902-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68cde-0f3c-0000-714b-e31d00000000" name="AD_3900:843521074282455">
+<Expr mdsid="m0000002b-01f4-0000-3c60-9d4000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Penalty' AND  TIMESTAMPDIFF( SQL_TSI_MONTH , "%2",  CURRENT_DATE ) = 1 THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_CATGRY_I" = 'Penalty' AND  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 1 THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_AMT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002b-01f4-0000-3c60-9d4000000000-m80c5e8ea-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8ea-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002b-01f4-0000-3c60-9d4000000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002b-01f4-0000-3c60-9d4000000000-m80c5e8f7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56903-07d6-0000-714b-e31d00000000" name="Penalties 2 Months Ago" isWriteable="false">
+<MeasureDefn mdsid="m80c5b22a-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b910-0802-0000-714b-e31d00000000" name="AggRule_2050:183961074282429" isDefault="true">
+<Expr mdsid="m0000002c-01f4-0000-637f-6c6200000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 2 Months Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002c-01f4-0000-637f-6c6200000000-m80c56903-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56903-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68cdf-0f3c-0000-714b-e31d00000000" name="AD_3900:843531074282455">
+<Expr mdsid="m0000002d-01f4-0000-d7de-38dd00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Penalty' AND  TIMESTAMPDIFF( SQL_TSI_MONTH , "%2",  CURRENT_DATE ) = 2 THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_CATGRY_I" = 'Penalty' AND  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 2 THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_AMT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002d-01f4-0000-d7de-38dd00000000-m80c5e8ea-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8ea-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002d-01f4-0000-d7de-38dd00000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002d-01f4-0000-d7de-38dd00000000-m80c5e8f7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56904-07d6-0000-714b-e31d00000000" name="Penalties 3 Months Ago" isWriteable="false">
+<MeasureDefn mdsid="m80c5b22b-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b911-0802-0000-714b-e31d00000000" name="AggRule_2050:183971074282429" isDefault="true">
+<Expr mdsid="m0000002e-01f4-0000-8ab0-18a500000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 3 Months Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002e-01f4-0000-8ab0-18a500000000-m80c56904-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56904-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68ce0-0f3c-0000-714b-e31d00000000" name="AD_3900:843541074282455">
+<Expr mdsid="m0000002f-01f4-0000-db33-ae9100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Penalty' AND  TIMESTAMPDIFF( SQL_TSI_MONTH , "%2",  CURRENT_DATE ) = 3 THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_CATGRY_I" = 'Penalty' AND  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 3 THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_AMT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002f-01f4-0000-db33-ae9100000000-m80c5e8ea-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8ea-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002f-01f4-0000-db33-ae9100000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002f-01f4-0000-db33-ae9100000000-m80c5e8f7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56905-07d6-0000-714b-e31d00000000" name="# of ATM TXNs Last 6 Months" isWriteable="false">
+<Description><![CDATA[This column calculates what #  of Transactions in the Last 6 months were ATM transactions. This calculation can get affected by selected Product and-or Asset in the query.]]></Description>
+<MeasureDefn mdsid="m80c5b22c-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b912-0802-0000-714b-e31d00000000" name="AggRule_2050:183981074282429" isDefault="true">
+<Expr mdsid="m00000030-01f4-0000-22bc-d34e00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Account Transaction Last 6 Months"."# of ATM TXNs Last 6 Months")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000030-01f4-0000-22bc-d34e00000000-m80c56905-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56905-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68ce1-0f3c-0000-714b-e31d00000000" name="AD_3900:843551074282455">
+<Expr mdsid="m00000031-01f4-0000-e928-13e000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'ATM' THEN 1 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_CATGRY_I" = 'ATM' THEN 1 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000031-01f4-0000-e928-13e000000000-m80c5e8ea-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8ea-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56906-07d6-0000-714b-e31d00000000" name="% of ATM Transactions Last 6 Months" isDerived="true" isWriteable="false">
+<Description><![CDATA[This column calculates what % of Transactions in the Last 6 months were ATM transactions. This calculation can get affected by selected Product and-or Asset in the query.]]></Description>
+<Expr mdsid="m00000032-01f4-0000-bfd4-500500000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 OR "%1" IS NULL  THEN  NULL  ELSE 100.0d * "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs Last 6 Months" = 0 OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs Last 6 Months" IS NULL  THEN  NULL  ELSE 100.0d * "Core"."Fact - CRM - Account Transaction Last 6 Months"."# of ATM TXNs Last 6 Months" / "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs Last 6 Months" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000032-01f4-0000-bfd4-500500000000-m80c568f2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568f2-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000032-01f4-0000-bfd4-500500000000-m80c56905-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56905-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68ce2-0f3c-0000-714b-e31d00000000" name="AD_3900:843561074282455">
+<Expr mdsid="m00000033-01f4-0000-50fc-570700000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56907-07d6-0000-714b-e31d00000000" name="# TXNs 1 Month Ago" isWriteable="false">
+<MeasureDefn mdsid="m80c5b22d-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b913-0802-0000-714b-e31d00000000" name="AggRule_2050:183991074282429" isDefault="true">
+<Expr mdsid="m00000034-01f4-0000-37a0-ba8c00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 1 Month Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000034-01f4-0000-37a0-ba8c00000000-m80c56907-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56907-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68ce3-0f3c-0000-714b-e31d00000000" name="AD_3900:843571074282455">
+<Expr mdsid="m00000035-01f4-0000-ae86-297100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "%1",  CURRENT_DATE ) = 1 THEN 1 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 1 THEN 1 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000035-01f4-0000-ae86-297100000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56908-07d6-0000-714b-e31d00000000" name="# TXNs 2 Months Ago" isWriteable="false">
+<MeasureDefn mdsid="m80c5b22e-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b914-0802-0000-714b-e31d00000000" name="AggRule_2050:184001074282429" isDefault="true">
+<Expr mdsid="m00000036-01f4-0000-b7cf-53de00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 2 Months Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000036-01f4-0000-b7cf-53de00000000-m80c56908-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56908-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68ce4-0f3c-0000-714b-e31d00000000" name="AD_3900:843581074282455">
+<Expr mdsid="m00000037-01f4-0000-62e1-30d000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "%1",  CURRENT_DATE ) = 2 THEN 1 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 2 THEN 1 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000037-01f4-0000-62e1-30d000000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56909-07d6-0000-714b-e31d00000000" name="# TXNs 3 Months Ago" isWriteable="false">
+<MeasureDefn mdsid="m80c5b22f-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b915-0802-0000-714b-e31d00000000" name="AggRule_2050:184011074282429" isDefault="true">
+<Expr mdsid="m00000038-01f4-0000-fcbc-836700000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 3 Months Ago")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000038-01f4-0000-fcbc-836700000000-m80c56909-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56909-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68ce5-0f3c-0000-714b-e31d00000000" name="AD_3900:843591074282455">
+<Expr mdsid="m00000039-01f4-0000-a53a-fbe200000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "%1",  CURRENT_DATE ) = 3 THEN 1 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 3 THEN 1 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000039-01f4-0000-a53a-fbe200000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58c9d-07d8-0000-714b-e31d00000000" name="ROW_WID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58c9d-07d8-0000-714b-e31d00000000-m80c568ed-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568ed-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5a9ea-07f3-0000-714b-e31d00000000-m80c5abfb-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5abfb-07f5-0000-714b-e31d00000000.xml#m80c5abfb-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

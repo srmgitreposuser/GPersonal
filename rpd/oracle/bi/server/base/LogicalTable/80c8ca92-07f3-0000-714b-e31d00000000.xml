@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c8ca92-07f3-0000-714b-e31d00000000" name="Fact - Fundraising Registration" iconIndex="93" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1300" y="432" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55249-07d0-0000-714b-e31d00000000.xml#m80c55249-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c8cb11-07d6-0000-714b-e31d00000000" name="# Registrations" isWriteable="false">
+<MeasureDefn mdsid="m80c8cb6b-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c8cb6d-0802-0000-714b-e31d00000000" name="AggRule_2050:7240301340201495" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-3295-37bc00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Marketing Contact List"."Fact - Fundraising Registration"."# Registrations")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-3295-37bc00000000-m80c8cb11-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c8ca92-07f3-0000-714b-e31d00000000.xml#m80c8cb11-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c8cbef-0f3c-0000-714b-e31d00000000" name="AD_3900:7240201340201495">
+<Expr mdsid="m00000002-01f4-0000-a4f3-d8ab00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FUNDRAISING_REG_F_Fundraising_Registration"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-a4f3-d8ab00000000-m80c6f6c8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c6f6be-0bb9-0000-714b-e31d00000000.xml#m80c6f6c8-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c8cb12-07d6-0000-714b-e31d00000000" name="# Fundraising Events" isWriteable="false">
+<MeasureDefn mdsid="m80c8cb6c-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c8d33c-0802-0000-714b-e31d00000000" name="AggRule_2050:7254221340352444" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-7e4a-f5ae00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Marketing Contact List"."Fact - Fundraising Registration"."# Fundraising Events")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-7e4a-f5ae00000000-m80c8cb12-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c8ca92-07f3-0000-714b-e31d00000000.xml#m80c8cb12-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c8cbf0-0f3c-0000-714b-e31d00000000" name="AD_3900:7240211340201495">
+<Expr mdsid="m00000004-01f4-0000-6373-425200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_FUNDRAISING_ACT_D_Fundraising_Activity"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-6373-425200000000-m80c6f6c2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c6f6bd-0bb9-0000-714b-e31d00000000.xml#m80c6f6c2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c8ca92-07f3-0000-714b-e31d00000000-m80c8cc4b-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c8cc4b-07f5-0000-714b-e31d00000000.xml#m80c8cc4b-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

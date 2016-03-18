@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80caa0d8-07f3-0000-714b-e31d00000000" name="Fact - Owning Party - Event Registrations - Previous" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="581" y="1345" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80cb4541-07d6-0000-714b-e31d00000000" name="Previous Event # Registrations" isWriteable="false">
+<Description><![CDATA[The number of Registrations for the previous event. This includes all Registrations and does not exclude Cancelled Registrations.]]></Description>
+<MeasureDefn mdsid="m80cb4543-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb45f1-0802-0000-714b-e31d00000000" name="AggRule_2050:8308051366894059" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-e700-21f900000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Event Registrations - Previous"."Previous Event # Registrations")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-e700-21f900000000-m80cb4541-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa0d8-07f3-0000-714b-e31d00000000.xml#m80cb4541-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb4547-0f3c-0000-714b-e31d00000000" name="AD_3900:8306941366893804">
+<Expr mdsid="m00000002-01f4-0000-292b-839f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_FA_Previous"."REG_CNT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-292b-839f00000000-m80cb3d2c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb3d26-0bb9-0000-714b-e31d00000000.xml#m80cb3d2c-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb4551-07d6-0000-714b-e31d00000000" name="Previous Event # Confirmed Registrations excluding Survivors" isWriteable="false">
+<Description><![CDATA[The number of Confirmed Registrations where the 'Participation Type' is NOT "Survivor" for the previous event.]]></Description>
+<MeasureDefn mdsid="m80cb4553-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb45f3-0802-0000-714b-e31d00000000" name="AggRule_2050:8308061366894067" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-103b-86f200000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Event Registrations - Previous"."Previous Event # Confirmed Registrations excluding Survivors")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-103b-86f200000000-m80cb4551-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa0d8-07f3-0000-714b-e31d00000000.xml#m80cb4551-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb4557-0f3c-0000-714b-e31d00000000" name="AD_3900:8307041366893804">
+<Expr mdsid="m00000004-01f4-0000-594a-f3f100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_FA_Previous"."REG_CONF_EXCLSVR_CNT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-594a-f3f100000000-m80cb3d34-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb3d26-0bb9-0000-714b-e31d00000000.xml#m80cb3d34-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb455d-07d6-0000-714b-e31d00000000" name="Previous Event # Guaranteed Place Confirmed Registrations" isWriteable="false">
+<Description><![CDATA[The number of Confirmed Registrations where the 'Place Type' is "Guaranteed Place" for the previous event.]]></Description>
+<MeasureDefn mdsid="m80cb455f-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb45f5-0802-0000-714b-e31d00000000" name="AggRule_2050:8308071366894074" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-2d56-f52700000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Event Registrations - Previous"."Previous Event # Guaranteed Place Confirmed Registrations")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-2d56-f52700000000-m80cb455d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa0d8-07f3-0000-714b-e31d00000000.xml#m80cb455d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb4563-0f3c-0000-714b-e31d00000000" name="AD_3900:8307121366893804">
+<Expr mdsid="m00000006-01f4-0000-f3af-c70d00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_FA_Previous"."REG_CONF_GP_CNT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-f3af-c70d00000000-m80cb3d30-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb3d26-0bb9-0000-714b-e31d00000000.xml#m80cb3d30-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb4569-07d6-0000-714b-e31d00000000" name="Previous Event # Returners" isWriteable="false">
+<Description><![CDATA[The number of Participants who have given at least 1 donation for the previous event.]]></Description>
+<MeasureDefn mdsid="m80cb456b-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb460d-0802-0000-714b-e31d00000000" name="AggRule_2050:8308191366894123" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-ca08-10bf00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Event Registrations - Previous"."Previous Event # Returners")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-ca08-10bf00000000-m80cb4569-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa0d8-07f3-0000-714b-e31d00000000.xml#m80cb4569-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb456f-0f3c-0000-714b-e31d00000000" name="AD_3900:8307201366893805">
+<Expr mdsid="m00000008-01f4-0000-33bf-723e00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_FA_Previous"."RETURN_CNT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-33bf-723e00000000-m80cb3d35-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb3d26-0bb9-0000-714b-e31d00000000.xml#m80cb3d35-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb4575-07d6-0000-714b-e31d00000000" name="Previous Event # Confirmed Survivor Registrations" isWriteable="false">
+<Description><![CDATA[The number of Confirmed Registrations where the 'Participation Type' contains "Survivor" for the previous event.]]></Description>
+<MeasureDefn mdsid="m80cb4577-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb460f-0802-0000-714b-e31d00000000" name="AggRule_2050:8308201366894163" isDefault="true">
+<Expr mdsid="m00000009-01f4-0000-c3b4-d9be00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Event Registrations - Previous"."Previous Event # Confirmed Survivor Registrations")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-c3b4-d9be00000000-m80cb4575-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa0d8-07f3-0000-714b-e31d00000000.xml#m80cb4575-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb457b-0f3c-0000-714b-e31d00000000" name="AD_3900:8307281366893805">
+<Expr mdsid="m0000000a-01f4-0000-80d3-e82600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_FA_Previous"."REG_CONF_SRVR_CNT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-80d3-e82600000000-m80cb3d31-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb3d26-0bb9-0000-714b-e31d00000000.xml#m80cb3d31-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb4581-07d6-0000-714b-e31d00000000" name="Previous Event # Online Returners" isWriteable="false">
+<Description><![CDATA[The number of Participants who have given at least 1 donation through an online channel for the previous event.]]></Description>
+<MeasureDefn mdsid="m80cb4583-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb4611-0802-0000-714b-e31d00000000" name="AggRule_2050:8308211366894231" isDefault="true">
+<Expr mdsid="m0000000b-01f4-0000-5eb9-6cfc00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Event Registrations - Previous"."Previous Event # Online Returners")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-5eb9-6cfc00000000-m80cb4581-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa0d8-07f3-0000-714b-e31d00000000.xml#m80cb4581-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb4587-0f3c-0000-714b-e31d00000000" name="AD_3900:8307361366893805">
+<Expr mdsid="m0000000c-01f4-0000-58ae-a21b00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_FA_Previous"."RETURN_ONLINE_CNT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-58ae-a21b00000000-m80cb3d36-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb3d26-0bb9-0000-714b-e31d00000000.xml#m80cb3d36-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80caa150-07d6-0000-714b-e31d00000000" name="Previous Event # Confirmed Registrations" isWriteable="false">
+<Description><![CDATA[The number of Confirmed Registrations for the Previous Event.]]></Description>
+<MeasureDefn mdsid="m80caa16c-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb45fd-0802-0000-714b-e31d00000000" name="AggRule_2050:8308111366894091" isDefault="true">
+<Expr mdsid="m0000000d-01f4-0000-6ca0-c7cd00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Event Registrations - Previous"."Previous Event # Confirmed Registrations")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-6ca0-c7cd00000000-m80caa150-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa0d8-07f3-0000-714b-e31d00000000.xml#m80caa150-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80caa20c-0f3c-0000-714b-e31d00000000" name="AD_3900:8029461359214519">
+<Expr mdsid="m0000000e-01f4-0000-f1e5-3e5b00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_FA_Previous"."REG_CONF_CNT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-f1e5-3e5b00000000-m80cb3d2d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb3d26-0bb9-0000-714b-e31d00000000.xml#m80cb3d2d-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80caa152-07d6-0000-714b-e31d00000000" name="Previous Event # Confirmed Team Registrations" isWriteable="false">
+<Description><![CDATA[The number of Confirmed Registrations where the 'Participation Type' contains "Team Captain" for the Previous Event.]]></Description>
+<MeasureDefn mdsid="m80caa16e-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb45ff-0802-0000-714b-e31d00000000" name="AggRule_2050:8308121366894095" isDefault="true">
+<Expr mdsid="m0000000f-01f4-0000-aa7f-9b9a00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Event Registrations - Previous"."Previous Event # Confirmed Team Registrations")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-aa7f-9b9a00000000-m80caa152-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa0d8-07f3-0000-714b-e31d00000000.xml#m80caa152-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80caa20e-0f3c-0000-714b-e31d00000000" name="AD_3900:8029471359214519">
+<Expr mdsid="m00000010-01f4-0000-6d8c-84fe00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_FA_Previous"."REG_CONF_TEAM_CNT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-6d8c-84fe00000000-m80cb3d32-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb3d26-0bb9-0000-714b-e31d00000000.xml#m80cb3d32-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb45a5-07d6-0000-714b-e31d00000000" name="Previous Event # Offline Returners" isWriteable="false">
+<Description><![CDATA[The number of Participants who have given at least 1 donation through an offline channel for the previous event.]]></Description>
+<MeasureDefn mdsid="m80cb45a7-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb4613-0802-0000-714b-e31d00000000" name="AggRule_2050:8308221366894240" isDefault="true">
+<Expr mdsid="m00000011-01f4-0000-c668-cc9700000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Event Registrations - Previous"."Previous Event # Offline Returners")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-c668-cc9700000000-m80cb45a5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa0d8-07f3-0000-714b-e31d00000000.xml#m80cb45a5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb45ab-0f3c-0000-714b-e31d00000000" name="AD_3900:8307601366893805">
+<Expr mdsid="m00000012-01f4-0000-51d3-298100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_FA_Previous"."RETURN_OFFLINE_CNT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-51d3-298100000000-m80cb3d27-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb3d26-0bb9-0000-714b-e31d00000000.xml#m80cb3d27-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb45b1-07d6-0000-714b-e31d00000000" name="Previous Event # Cancelled Registrations" isWriteable="false">
+<Description><![CDATA[The number of Cancelled Registrations for the previous event.]]></Description>
+<MeasureDefn mdsid="m80cb45b3-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb4618-0802-0000-714b-e31d00000000" name="AggRule_2050:8308261366894304" isDefault="true">
+<Expr mdsid="m00000013-01f4-0000-ebb5-18f900000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Event Registrations - Previous"."Previous Event # Cancelled Registrations")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-ebb5-18f900000000-m80cb45b1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa0d8-07f3-0000-714b-e31d00000000.xml#m80cb45b1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb45b7-0f3c-0000-714b-e31d00000000" name="AD_3900:8307681366893805">
+<Expr mdsid="m00000014-01f4-0000-0c1d-b5d400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_FA_Previous"."REG_CANC_CNT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-0c1d-b5d400000000-m80cb3d2e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb3d26-0bb9-0000-714b-e31d00000000.xml#m80cb3d2e-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80caa158-07d6-0000-714b-e31d00000000" name="Previous Event # Confirmed Team Member Registrations" isWriteable="false">
+<Description><![CDATA[The number of Confirmed Registrations where the 'Participation Type' contains "Team Member" for the Previous Event.]]></Description>
+<MeasureDefn mdsid="m80caa174-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb461a-0802-0000-714b-e31d00000000" name="AggRule_2050:8308271366894331" isDefault="true">
+<Expr mdsid="m00000015-01f4-0000-e4aa-489800000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Event Registrations - Previous"."Previous Event # Confirmed Team Member Registrations")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-e4aa-489800000000-m80caa158-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa0d8-07f3-0000-714b-e31d00000000.xml#m80caa158-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80caa214-0f3c-0000-714b-e31d00000000" name="AD_3900:8029501359214519">
+<Expr mdsid="m00000016-01f4-0000-9228-1f5300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_FA_Previous"."REG_CONF_TEAMMBR_CNT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000016-01f4-0000-9228-1f5300000000-m80cb3d33-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb3d26-0bb9-0000-714b-e31d00000000.xml#m80cb3d33-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb45c9-07d6-0000-714b-e31d00000000" name="Previous Event # Own Place Confirmed Registrations" isWriteable="false">
+<Description><![CDATA[The number of Confirmed Registrations where the 'Place Type' is "Own Place" for the previous event.]]></Description>
+<MeasureDefn mdsid="m80cb45cb-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb461c-0802-0000-714b-e31d00000000" name="AggRule_2050:8308281366894357" isDefault="true">
+<Expr mdsid="m00000017-01f4-0000-c76c-27a400000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Event Registrations - Previous"."Previous Event # Own Place Confirmed Registrations")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-c76c-27a400000000-m80cb45c9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa0d8-07f3-0000-714b-e31d00000000.xml#m80cb45c9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb45cf-0f3c-0000-714b-e31d00000000" name="AD_3900:8307841366893805">
+<Expr mdsid="m00000018-01f4-0000-e669-8a0800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_FA_Previous"."REG_CONF_OP_CNT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000018-01f4-0000-e669-8a0800000000-m80cb3d2f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb3d26-0bb9-0000-714b-e31d00000000.xml#m80cb3d2f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb45d5-07d6-0000-714b-e31d00000000" name="Previous Event Pledged Amount" isWriteable="false">
+<Description><![CDATA[The sum of all Pledged Amounts for Confirmed Registrations for the previous event.]]></Description>
+<MeasureDefn mdsid="m80cb45d7-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb461e-0802-0000-714b-e31d00000000" name="AggRule_2050:8308291366894394" isDefault="true">
+<Expr mdsid="m00000019-01f4-0000-9bc7-3b5d00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Event Registrations - Previous"."Previous Event Pledged Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-9bc7-3b5d00000000-m80cb45d5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa0d8-07f3-0000-714b-e31d00000000.xml#m80cb45d5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb45db-0f3c-0000-714b-e31d00000000" name="AD_3900:8307921366893805">
+<Expr mdsid="m0000001a-01f4-0000-22a2-9ba500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F_Previous"."PLEDGE_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001a-01f4-0000-22a2-9ba500000000-m80caaca7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80caac8c-0bb9-0000-714b-e31d00000000.xml#m80caaca7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb45e1-07d6-0000-714b-e31d00000000" name="Previous Event # Guests" isWriteable="false">
+<Description><![CDATA[The sum of all ‘Guests’ for Confirmed Registrations for the previous event.]]></Description>
+<MeasureDefn mdsid="m80cb45e3-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbc636-0802-0000-714b-e31d00000000" name="AggRule_2050:8517511404314539" isDefault="true">
+<Expr mdsid="m0000001b-01f4-0000-8626-7c6b00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Event Registrations - Previous"."Previous Event # Guests")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001b-01f4-0000-8626-7c6b00000000-m80cb45e1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa0d8-07f3-0000-714b-e31d00000000.xml#m80cb45e1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb45e7-0f3c-0000-714b-e31d00000000" name="AD_3900:8308001366893805">
+<Expr mdsid="m0000001c-01f4-0000-1b49-493700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Confirmed' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Event_Reg_Status"."NAME" = 'Confirmed' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F_Previous"."NUM_GUESTS" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001c-01f4-0000-1b49-493700000000-m80c64c2e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c10a-0bb9-0000-714b-e31d00000000.xml#m80c64c2e-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001c-01f4-0000-1b49-493700000000-m80caacc6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80caac8c-0bb9-0000-714b-e31d00000000.xml#m80caacc6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbc605-07d6-0000-714b-e31d00000000" name="# of Previous Registrants (Distinct)" isWriteable="false">
+<MeasureDefn mdsid="m80cbc61d-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbc637-0802-0000-714b-e31d00000000" name="AggRule_2050:8517561404314539" isDefault="true">
+<Expr mdsid="m0000001d-01f4-0000-50b6-862800000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Owning Party - Event Registrations - Previous"."# of Previous Registrants (Distinct)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001d-01f4-0000-50b6-862800000000-m80cbc605-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa0d8-07f3-0000-714b-e31d00000000.xml#m80cbc605-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbc64e-0f3c-0000-714b-e31d00000000" name="AD_3900:8517501404314539">
+<Expr mdsid="m0000001e-01f4-0000-1b18-d81700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F_Previous"."OWN_PARTY_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F_Previous"."OWN_PARTY_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001e-01f4-0000-1b18-d81700000000-m80caac99-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80caac8c-0bb9-0000-714b-e31d00000000.xml#m80caac99-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80caa0d8-07f3-0000-714b-e31d00000000-m80caaf6d-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80caaf6d-07f5-0000-714b-e31d00000000.xml#m80caaf6d-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80caa0d8-07f3-0000-714b-e31d00000000-m80cb3d91-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cb3d91-07f5-0000-714b-e31d00000000.xml#m80cb3d91-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

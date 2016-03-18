@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5aa35-07f3-0000-714b-e31d00000000" name="Fact - Event Attendance" iconIndex="93" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1003" y="698" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c5714b-07d6-0000-714b-e31d00000000" name="Row Wid" isWriteable="false">
+<AttrDefn mdsid="m80c6965d-0f3c-0000-714b-e31d00000000" name="AD_3900:4865581220004661">
+<Expr mdsid="m00000001-01f4-0000-7d6d-0c6700000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-7d6d-0c6700000000-m80c631c5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c096-0bb9-0000-714b-e31d00000000.xml#m80c631c5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5714c-07d6-0000-714b-e31d00000000" name="Implicit Fact" isWriteable="false">
+<MeasureDefn mdsid="m80c5b6fe-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5be44-0802-0000-714b-e31d00000000" name="AggRule_2050:6359711297765170" isDefault="true">
+<Expr mdsid="m00000002-01f4-0000-d649-c43600000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - Event Attendance"."Implicit Fact")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-d649-c43600000000-m80c5714c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c5714c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6965e-0f3c-0000-714b-e31d00000000" name="AD_3900:4865591220004661">
+<Expr mdsid="m00000003-01f4-0000-13e4-ecac00000000" name="Expr">
+<ExprText><![CDATA[1]]></ExprText>
+<ExprTextDesc><![CDATA[1]]></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c572d6-07d6-0000-714b-e31d00000000" name="# Supporters" iconIndex="93" isWriteable="false">
+<Description><![CDATA[This metric counts the number of supporters that have attended events]]></Description>
+<MeasureDefn mdsid="m80c5b3b7-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c72543-0802-0000-714b-e31d00000000" name="AggRule_2050:6554431315498389" isDefault="true">
+<Expr mdsid="m00000004-01f4-0000-5574-794000000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - Event Attendance"."# Supporters")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-5574-794000000000-m80c572d6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c572d6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c697e8-0f3c-0000-714b-e31d00000000" name="AD_3900:4928261226404372">
+<Expr mdsid="m00000005-01f4-0000-9960-15f000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."CONTACT_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-9960-15f000000000-m80c631db-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c096-0bb9-0000-714b-e31d00000000.xml#m80c631db-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c572d7-07d6-0000-714b-e31d00000000" name="# Events" iconIndex="93" isWriteable="false">
+<Description><![CDATA[this metric counts the number of events]]></Description>
+<MeasureDefn mdsid="m80c5b3b8-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c72544-0802-0000-714b-e31d00000000" name="AggRule_2050:6554441315498389" isDefault="true">
+<Expr mdsid="m00000006-01f4-0000-5da1-b2e700000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - Event Attendance"."# Events")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-5da1-b2e700000000-m80c572d7-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c572d7-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c697e9-0f3c-0000-714b-e31d00000000" name="AD_3900:4928271226404372">
+<Expr mdsid="m00000007-01f4-0000-01c3-a1fa00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."SRC_EVT_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-01c3-a1fa00000000-m80c631ca-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c096-0bb9-0000-714b-e31d00000000.xml#m80c631ca-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57301-07d6-0000-714b-e31d00000000" name="# of Participants (Actual)" iconIndex="68" isDerived="true" isWriteable="false">
+<Description><![CDATA[this metric counts the number of people who participated in events. (IF event supporter status = 'Attended', 'Confirmed', 'Confirmed - Paid', 'Confirmed - To Pay', 'Entered' then contact_wid)]]></Description>
+<Expr mdsid="m00000008-01f4-0000-f4d7-99ef00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - Event Attendance"."# of Participants (Actual) - Base Registration Count"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-f4d7-99ef00000000-m80c5875d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c5875d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69813-0f3c-0000-714b-e31d00000000" name="AD_3900:4929591227090452">
+<Expr mdsid="m00000009-01f4-0000-908d-6ebb00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57302-07d6-0000-714b-e31d00000000" name="# of Registrations" iconIndex="68" isDerived="true" isWriteable="false">
+<Description><![CDATA[this metric counts the number of people that regiestered for an event]]></Description>
+<Expr mdsid="m0000000a-01f4-0000-98d0-219d00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - Event Attendance"."# of Registrations - Base Registration Count"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-98d0-219d00000000-m80c5875e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c5875e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69814-0f3c-0000-714b-e31d00000000" name="AD_3900:4929611227090452">
+<Expr mdsid="m0000000b-01f4-0000-eff7-367a00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57303-07d6-0000-714b-e31d00000000" name="# Of Entires Cancelled" iconIndex="68" isDerived="true" isWriteable="false">
+<Description><![CDATA[this metric counts the number of people who cancelled]]></Description>
+<Expr mdsid="m0000000c-01f4-0000-2711-ae9c00000000" name="Expr">
+<ExprText><![CDATA["%1" +  FILTER("%2" USING "%3" IN ('Invited - Event Cancelled', 'Cancelled', 'Confirmed - Event Cancelled'))]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - Event Attendance"."# Of Entires Cancelled - Base Registration Count)" +  FILTER("Core"."Fact - Event Attendance"."Number of Guests" USING "Core"."Dim - Event Attendance"."Supporter Event Status" IN ('Invited - Event Cancelled', 'Cancelled', 'Confirmed - Event Cancelled'))]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-2711-ae9c00000000-m80c5875f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c5875f-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-2711-ae9c00000000-m80c5875b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c5875b-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-2711-ae9c00000000-m80c57159-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa36-07f3-0000-714b-e31d00000000.xml#m80c57159-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69815-0f3c-0000-714b-e31d00000000" name="AD_3900:4929621227090452">
+<Expr mdsid="m0000000d-01f4-0000-72ee-16a400000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57304-07d6-0000-714b-e31d00000000" name="# Confirmed" iconIndex="68" isDerived="true" isWriteable="false">
+<Description><![CDATA[this metric counts the number of people that confirmed for an event]]></Description>
+<Expr mdsid="m0000000e-01f4-0000-2cc3-de4200000000" name="Expr">
+<ExprText><![CDATA["%1" +  FILTER("%2" USING "%3" = 'Confirmed')]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - Event Attendance"."# Confirmed (Base Registration Count)" +  FILTER("Core"."Fact - Event Attendance"."Number of Guests" USING "Core"."Dim - Event Attendance"."Supporter Event Status" = 'Confirmed')]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-2cc3-de4200000000-m80c5875c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c5875c-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-2cc3-de4200000000-m80c5875b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c5875b-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-2cc3-de4200000000-m80c57159-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa36-07f3-0000-714b-e31d00000000.xml#m80c57159-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69816-0f3c-0000-714b-e31d00000000" name="AD_3900:4929631227090452">
+<Expr mdsid="m0000000f-01f4-0000-1507-ca5800000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5769f-07d6-0000-714b-e31d00000000" name="# of Entries Last Week" iconIndex="93" isDerived="true" isWriteable="false">
+<Description><![CDATA[Count of Event Registrations in the Last week]]></Description>
+<Expr mdsid="m00000010-01f4-0000-8fbd-b7d800000000" name="Expr">
+<ExprText><![CDATA["%1" + "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - Event Attendance"."# of Entries Last Week - Base Registration Count)" + "Core"."Fact - Event Attendance"."Number of Guests Last Week"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-8fbd-b7d800000000-m80c58761-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c58761-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-8fbd-b7d800000000-m80c58760-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c58760-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bb1-0f3c-0000-714b-e31d00000000" name="AD_3900:5435091258745012">
+<Expr mdsid="m00000011-01f4-0000-19fe-c81a00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576a0-07d6-0000-714b-e31d00000000" name="# of Entries Last Week(Previous Year)" iconIndex="93" isDerived="true" isWriteable="false">
+<Description><![CDATA[Count of Event Registrations in the Same Event for the Last week of the Previous Year]]></Description>
+<Expr mdsid="m00000012-01f4-0000-606c-1a2900000000" name="Expr">
+<ExprText><![CDATA["%1" + "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - Event Attendance"."# of Entries Last Week(Previous Year) - Base Registration Count" + "Core"."Fact - Event Attendance"."Number of Guests Last Week Previous Year"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-606c-1a2900000000-m80c58762-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c58762-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000012-01f4-0000-606c-1a2900000000-m80c58765-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c58765-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bb2-0f3c-0000-714b-e31d00000000" name="AD_3900:5437981258981761">
+<Expr mdsid="m00000013-01f4-0000-9dce-26ef00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576a3-07d6-0000-714b-e31d00000000" name="# of Confirmed(Previous Year)" iconIndex="93" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000014-01f4-0000-0b77-e84900000000" name="Expr">
+<ExprText><![CDATA["%1" +  FILTER("%2" USING "%3" = 'Confirmed')]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - Event Attendance"."# of Confirmed(Previous Year) - Base Registration Count" +  FILTER("Core"."Fact - Event Attendance"."Number of Guests Previous Year" USING "Core"."Dim - Event Attendance"."Supporter Event Status" = 'Confirmed')]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-0b77-e84900000000-m80c58763-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c58763-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000014-01f4-0000-0b77-e84900000000-m80c58764-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c58764-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000014-01f4-0000-0b77-e84900000000-m80c57159-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa36-07f3-0000-714b-e31d00000000.xml#m80c57159-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bb5-0f3c-0000-714b-e31d00000000" name="AD_3900:5444241258984600">
+<Expr mdsid="m00000015-01f4-0000-0d0d-347d00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576a4-07d6-0000-714b-e31d00000000" name="Forecasted Participants(By Last Week Entries)" iconIndex="93" isDerived="true" isWriteable="false">
+<Description><![CDATA[This Metric Calculates the Forecasted Participants based on (Current Confirmed Participants + (Entries in Last Week * No of Weeks to Event Start date))]]></Description>
+<Expr mdsid="m00000016-01f4-0000-9f0c-2a8000000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) +  IFNULL("%2", 0) *  IFNULL("%3", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - Event Attendance"."# Confirmed (Base Registration Count)", 0) +  IFNULL("Core"."Dim - Event"."Weeks to Event", 0) *  IFNULL("Core"."Fact - Event Attendance"."# of Entries Last Week - Base Registration Count)", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000016-01f4-0000-9f0c-2a8000000000-m80c5875c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c5875c-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000016-01f4-0000-9f0c-2a8000000000-m80c576a5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa65-07f3-0000-714b-e31d00000000.xml#m80c576a5-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000016-01f4-0000-9f0c-2a8000000000-m80c58761-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c58761-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bb6-0f3c-0000-714b-e31d00000000" name="AD_3900:5444321258986400">
+<Expr mdsid="m00000017-01f4-0000-84d0-624b00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576ce-07d6-0000-714b-e31d00000000" name="Forecasted Participants(By Average for an Event)" iconIndex="93" isDerived="true" isWriteable="false">
+<Description><![CDATA[This Metric Calculates the Forecasted Participants for an event based on (Average No of Participants per day since Event Plan Start date) *  (No of days between Evt Plan Start date and Event Start date)
+
+]]></Description>
+<Expr mdsid="m00000018-01f4-0000-fa79-20c400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  IFNULL("%1", 0) = 0 OR  IFNULL("%2", 0) = 0 THEN  IFNULL("%3", 0) ELSE  IFNULL("%3", 0) +  IFNULL("%3", 0) / "%1" *  IFNULL("%2", 0) END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  IFNULL("Core"."Dim - Event"."Days since Launch", 0) = 0 OR  IFNULL("Core"."Dim - Event"."Days till Event", 0) = 0 THEN  IFNULL("Core"."Fact - Event Attendance"."# Confirmed (Base Registration Count)", 0) ELSE  IFNULL("Core"."Fact - Event Attendance"."# Confirmed (Base Registration Count)", 0) +  IFNULL("Core"."Fact - Event Attendance"."# Confirmed (Base Registration Count)", 0) / "Core"."Dim - Event"."Days since Launch" *  IFNULL("Core"."Dim - Event"."Days till Event", 0) END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000018-01f4-0000-fa79-20c400000000-m80c576cf-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa65-07f3-0000-714b-e31d00000000.xml#m80c576cf-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-fa79-20c400000000-m80c576cd-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa65-07f3-0000-714b-e31d00000000.xml#m80c576cd-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-fa79-20c400000000-m80c5875c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c5875c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69be0-0f3c-0000-714b-e31d00000000" name="AD_3900:5533031259578006">
+<Expr mdsid="m00000019-01f4-0000-3404-48ff00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5774b-07d6-0000-714b-e31d00000000" name="Total Pledged Amount" iconIndex="90" isWriteable="false">
+<Description><![CDATA[Sum of Pledge Amounts from Each Supporter Registration Record]]></Description>
+<MeasureDefn mdsid="m80c5b453-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c72545-0802-0000-714b-e31d00000000" name="AggRule_2050:6554451315498389" isDefault="true">
+<Expr mdsid="m0000001a-01f4-0000-d00a-7aa300000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Event Attendance"."Total Pledged Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001a-01f4-0000-d00a-7aa300000000-m80c5774b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c5774b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69c5d-0f3c-0000-714b-e31d00000000" name="AD_3900:5620571264051160">
+<Expr mdsid="m0000001b-01f4-0000-4564-d18d00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."X_SRM_PLEDGE_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001b-01f4-0000-4564-d18d00000000-m80c64c03-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c096-0bb9-0000-714b-e31d00000000.xml#m80c64c03-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c577d5-07d6-0000-714b-e31d00000000" name="# Confirmed (Household)" isWriteable="false">
+<MeasureDefn mdsid="m80c5b458-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c72546-0802-0000-714b-e31d00000000" name="AggRule_2050:6554461315498389" isDefault="true">
+<Expr mdsid="m0000001c-01f4-0000-9239-ad5100000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - Event Attendance"."# Confirmed (Household)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001c-01f4-0000-9239-ad5100000000-m80c577d5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c577d5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69ce7-0f3c-0000-714b-e31d00000000" name="AD_3900:5718371266509475">
+<Expr mdsid="m0000001d-01f4-0000-480d-7f6800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Confirmed' AND "%2" > 0 THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Event_Reg_Status"."VAL" = 'Confirmed' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."X_SRM_HSHLD_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."X_SRM_HSHLD_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001d-01f4-0000-480d-7f6800000000-m80c64c31-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c10a-0bb9-0000-714b-e31d00000000.xml#m80c64c31-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001d-01f4-0000-480d-7f6800000000-m80c64e00-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c096-0bb9-0000-714b-e31d00000000.xml#m80c64e00-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c577d6-07d6-0000-714b-e31d00000000" name="# Entries Cancelled (Household)" isWriteable="false">
+<MeasureDefn mdsid="m80c5b459-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c72547-0802-0000-714b-e31d00000000" name="AggRule_2050:6554471315498389" isDefault="true">
+<Expr mdsid="m0000001e-01f4-0000-4f98-708300000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - Event Attendance"."# Entries Cancelled (Household)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001e-01f4-0000-4f98-708300000000-m80c577d6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c577d6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69ce8-0f3c-0000-714b-e31d00000000" name="AD_3900:5718501266509475">
+<Expr mdsid="m0000001f-01f4-0000-ab62-854200000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Cancelled' AND "%2" > 0 THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Event_Reg_Status"."VAL" = 'Cancelled' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."X_SRM_HSHLD_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."X_SRM_HSHLD_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001f-01f4-0000-ab62-854200000000-m80c64c31-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c10a-0bb9-0000-714b-e31d00000000.xml#m80c64c31-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001f-01f4-0000-ab62-854200000000-m80c64e00-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c096-0bb9-0000-714b-e31d00000000.xml#m80c64e00-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5875b-07d6-0000-714b-e31d00000000" name="Number of Guests" isWriteable="false">
+<MeasureDefn mdsid="m80c5b6cf-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c72548-0802-0000-714b-e31d00000000" name="AggRule_2050:6554481315498389" isDefault="true">
+<Expr mdsid="m00000020-01f4-0000-aac4-258b00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Event Attendance"."Number of Guests")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000020-01f4-0000-aac4-258b00000000-m80c5875b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c5875b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6ac6d-0f3c-0000-714b-e31d00000000" name="AD_3900:6144991285854867">
+<Expr mdsid="m00000021-01f4-0000-3b3f-b86a00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."INVITER_WID" = 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."NUM_GUESTS" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000021-01f4-0000-3b3f-b86a00000000-m80c6650c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c096-0bb9-0000-714b-e31d00000000.xml#m80c6650c-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000021-01f4-0000-3b3f-b86a00000000-m80c664aa-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c096-0bb9-0000-714b-e31d00000000.xml#m80c664aa-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5875c-07d6-0000-714b-e31d00000000" name="# Confirmed (Base Registration Count)" iconIndex="68" isWriteable="false">
+<Description><![CDATA[this metric counts the number of people that confirmed for an event]]></Description>
+<MeasureDefn mdsid="m80c5b6d0-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c72549-0802-0000-714b-e31d00000000" name="AggRule_2050:6554491315498389" isDefault="true">
+<Expr mdsid="m00000022-01f4-0000-0a93-a43f00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - Event Attendance"."# Confirmed (Base Registration Count)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000022-01f4-0000-0a93-a43f00000000-m80c5875c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c5875c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6ac6e-0f3c-0000-714b-e31d00000000" name="AD_3900:6145111285858384">
+<Expr mdsid="m00000023-01f4-0000-7cb3-32bf00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Confirmed' AND "%2" = 0 THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Event_Reg_Status"."VAL" = 'Confirmed' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."INVITER_WID" = 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."CONTACT_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000023-01f4-0000-7cb3-32bf00000000-m80c64c31-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c10a-0bb9-0000-714b-e31d00000000.xml#m80c64c31-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000023-01f4-0000-7cb3-32bf00000000-m80c6650c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c096-0bb9-0000-714b-e31d00000000.xml#m80c6650c-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000023-01f4-0000-7cb3-32bf00000000-m80c631db-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c096-0bb9-0000-714b-e31d00000000.xml#m80c631db-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5875d-07d6-0000-714b-e31d00000000" name="# of Participants (Actual) - Base Registration Count" iconIndex="68" isWriteable="false">
+<Description><![CDATA[this metric counts the number of people who participated in events. (IF event supporter status = 'Attended', 'Confirmed', 'Confirmed - Paid', 'Confirmed - To Pay', 'Entered' then contact_wid)]]></Description>
+<MeasureDefn mdsid="m80c5b6d1-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c7254a-0802-0000-714b-e31d00000000" name="AggRule_2050:6554501315498389" isDefault="true">
+<Expr mdsid="m00000024-01f4-0000-f6fe-e81100000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - Event Attendance"."# of Participants (Actual) - Base Registration Count")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000024-01f4-0000-f6fe-e81100000000-m80c5875d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c5875d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6ac6f-0f3c-0000-714b-e31d00000000" name="AD_3900:6145251285858384">
+<Expr mdsid="m00000025-01f4-0000-3b7b-49e100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN  CASE  WHEN "%2" IN ('Attended', 'Entered', 'Confirmed - To Pay', 'Confirmed - Paid', 'Confirmed') THEN "%3" END  ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."INVITER_WID" = 0 THEN  CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Event_Reg_Status"."VAL" IN ('Attended', 'Entered', 'Confirmed - To Pay', 'Confirmed - Paid', 'Confirmed') THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."CONTACT_WID" END  ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000025-01f4-0000-3b7b-49e100000000-m80c6650c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c096-0bb9-0000-714b-e31d00000000.xml#m80c6650c-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000025-01f4-0000-3b7b-49e100000000-m80c64c31-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c10a-0bb9-0000-714b-e31d00000000.xml#m80c64c31-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000025-01f4-0000-3b7b-49e100000000-m80c631db-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c096-0bb9-0000-714b-e31d00000000.xml#m80c631db-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5875e-07d6-0000-714b-e31d00000000" name="# of Registrations - Base Registration Count" iconIndex="68" isWriteable="false">
+<Description><![CDATA[this metric counts the number of people that regiestered for an event]]></Description>
+<MeasureDefn mdsid="m80c5b6d2-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c7254b-0802-0000-714b-e31d00000000" name="AggRule_2050:6554511315498389" isDefault="true">
+<Expr mdsid="m00000026-01f4-0000-39d9-6e7d00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - Event Attendance"."# of Registrations - Base Registration Count")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000026-01f4-0000-39d9-6e7d00000000-m80c5875e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c5875e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6ac70-0f3c-0000-714b-e31d00000000" name="AD_3900:6145351285858384">
+<Expr mdsid="m00000027-01f4-0000-99b9-6fb700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN  CASE  WHEN "%2" IN ('Entered', 'Confirmed - To Pay', 'Confirmed - Paid', 'Confirmed', 'Waiting List', 'Interested') THEN "%3" END  ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."INVITER_WID" = 0 THEN  CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Event_Reg_Status"."VAL" IN ('Entered', 'Confirmed - To Pay', 'Confirmed - Paid', 'Confirmed', 'Waiting List', 'Interested') THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."CONTACT_WID" END  ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000027-01f4-0000-99b9-6fb700000000-m80c6650c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c096-0bb9-0000-714b-e31d00000000.xml#m80c6650c-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000027-01f4-0000-99b9-6fb700000000-m80c64c31-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c10a-0bb9-0000-714b-e31d00000000.xml#m80c64c31-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000027-01f4-0000-99b9-6fb700000000-m80c631db-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c096-0bb9-0000-714b-e31d00000000.xml#m80c631db-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5875f-07d6-0000-714b-e31d00000000" name="# Of Entires Cancelled - Base Registration Count)" iconIndex="68" isWriteable="false">
+<Description><![CDATA[this metric counts the number of people who cancelled]]></Description>
+<MeasureDefn mdsid="m80c5b6d3-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c7254c-0802-0000-714b-e31d00000000" name="AggRule_2050:6554521315498389" isDefault="true">
+<Expr mdsid="m00000028-01f4-0000-77b7-412a00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - Event Attendance"."# Of Entires Cancelled - Base Registration Count)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000028-01f4-0000-77b7-412a00000000-m80c5875f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c5875f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6ac71-0f3c-0000-714b-e31d00000000" name="AD_3900:6145441285858384">
+<Expr mdsid="m00000029-01f4-0000-b94c-a85900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN  CASE  WHEN "%2" = 'Cancelled' OR "%2" = 'Confirmed - Event Cancelled' OR "%2" = 'Invited - Event Cancelled' THEN "%3" END  ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."INVITER_WID" = 0 THEN  CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Event_Reg_Status"."VAL" = 'Cancelled' OR "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Event_Reg_Status"."VAL" = 'Confirmed - Event Cancelled' OR "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Event_Reg_Status"."VAL" = 'Invited - Event Cancelled' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."CONTACT_WID" END  ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000029-01f4-0000-b94c-a85900000000-m80c6650c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c096-0bb9-0000-714b-e31d00000000.xml#m80c6650c-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000029-01f4-0000-b94c-a85900000000-m80c64c31-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c10a-0bb9-0000-714b-e31d00000000.xml#m80c64c31-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000029-01f4-0000-b94c-a85900000000-m80c631db-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c096-0bb9-0000-714b-e31d00000000.xml#m80c631db-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58760-07d6-0000-714b-e31d00000000" name="Number of Guests Last Week" isWriteable="false">
+<MeasureDefn mdsid="m80c5b6d4-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c7254d-0802-0000-714b-e31d00000000" name="AggRule_2050:6554531315498389" isDefault="true">
+<Expr mdsid="m0000002a-01f4-0000-ef1d-1ccb00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Event Attendance"."Number of Guests Last Week")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002a-01f4-0000-ef1d-1ccb00000000-m80c58760-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c58760-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6ac72-0f3c-0000-714b-e31d00000000" name="AD_3900:6145551285858384">
+<Expr mdsid="m0000002b-01f4-0000-010a-60ec00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" =  VALUEOF("%2") - 1 AND "%3" =  VALUEOF("%4") AND "%5" = 'Confirmed' AND "%6" = 0 THEN "%7" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Event_Registered_Date"."CAL_WEEK" =  VALUEOF("CRUK Dates"."CURRENT_CAL_WEEK") - 1 AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Event_Registered_Date"."CAL_YEAR" =  VALUEOF("Warehouse Refresh Date"."CURRENT_CALENDAR_YEAR") AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Event_Reg_Status"."VAL" = 'Confirmed' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."INVITER_WID" = 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."NUM_GUESTS" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002b-01f4-0000-010a-60ec00000000-m80c631d0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c097-0bb9-0000-714b-e31d00000000.xml#m80c631d0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002b-01f4-0000-010a-60ec00000000-m80c67c4c-0bd7-0000-714b-e31d00000000" objectRef="/oracle/bi/server/base/Variable/80c67c4c-0bd7-0000-714b-e31d00000000.xml#m80c67c4c-0bd7-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002b-01f4-0000-010a-60ec00000000-m80c631d1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c097-0bb9-0000-714b-e31d00000000.xml#m80c631d1-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002b-01f4-0000-010a-60ec00000000-m80c67be5-0bd7-0000-714b-e31d00000000" objectRef="/oracle/bi/server/base/Variable/80c67be5-0bd7-0000-714b-e31d00000000.xml#m80c67be5-0bd7-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002b-01f4-0000-010a-60ec00000000-m80c64c31-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c10a-0bb9-0000-714b-e31d00000000.xml#m80c64c31-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002b-01f4-0000-010a-60ec00000000-m80c6650c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c096-0bb9-0000-714b-e31d00000000.xml#m80c6650c-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002b-01f4-0000-010a-60ec00000000-m80c664aa-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c096-0bb9-0000-714b-e31d00000000.xml#m80c664aa-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58761-07d6-0000-714b-e31d00000000" name="# of Entries Last Week - Base Registration Count)" iconIndex="93" isWriteable="false">
+<Description><![CDATA[Count of Event Registrations in the Last week]]></Description>
+<MeasureDefn mdsid="m80c5b6d5-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c7253e-0802-0000-714b-e31d00000000" name="AggRule_2050:6554541315498389" isDefault="true">
+<Expr mdsid="m0000002c-01f4-0000-124f-f6e700000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - Event Attendance"."# of Entries Last Week - Base Registration Count)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002c-01f4-0000-124f-f6e700000000-m80c58761-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c58761-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6ac73-0f3c-0000-714b-e31d00000000" name="AD_3900:6145681285858384">
+<Expr mdsid="m0000002d-01f4-0000-71ed-75f700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" =  VALUEOF("%2") - 1 AND "%3" =  VALUEOF("%4") AND "%5" = 'Confirmed' AND "%6" = 0 THEN "%7" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Event_Registered_Date"."CAL_WEEK" =  VALUEOF("CRUK Dates"."CURRENT_CAL_WEEK") - 1 AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Event_Registered_Date"."CAL_YEAR" =  VALUEOF("Warehouse Refresh Date"."CURRENT_CALENDAR_YEAR") AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Event_Reg_Status"."VAL" = 'Confirmed' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."INVITER_WID" = 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."CONTACT_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002d-01f4-0000-71ed-75f700000000-m80c631d0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c097-0bb9-0000-714b-e31d00000000.xml#m80c631d0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002d-01f4-0000-71ed-75f700000000-m80c67c4c-0bd7-0000-714b-e31d00000000" objectRef="/oracle/bi/server/base/Variable/80c67c4c-0bd7-0000-714b-e31d00000000.xml#m80c67c4c-0bd7-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002d-01f4-0000-71ed-75f700000000-m80c631d1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c097-0bb9-0000-714b-e31d00000000.xml#m80c631d1-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002d-01f4-0000-71ed-75f700000000-m80c67be5-0bd7-0000-714b-e31d00000000" objectRef="/oracle/bi/server/base/Variable/80c67be5-0bd7-0000-714b-e31d00000000.xml#m80c67be5-0bd7-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002d-01f4-0000-71ed-75f700000000-m80c64c31-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c10a-0bb9-0000-714b-e31d00000000.xml#m80c64c31-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002d-01f4-0000-71ed-75f700000000-m80c6650c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c096-0bb9-0000-714b-e31d00000000.xml#m80c6650c-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002d-01f4-0000-71ed-75f700000000-m80c631db-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c096-0bb9-0000-714b-e31d00000000.xml#m80c631db-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58762-07d6-0000-714b-e31d00000000" name="# of Entries Last Week(Previous Year) - Base Registration Count" iconIndex="93" isWriteable="false">
+<Description><![CDATA[Count of Event Registrations in the Same Event for the Last week of the Previous Year]]></Description>
+<MeasureDefn mdsid="m80c5b6d6-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c7253f-0802-0000-714b-e31d00000000" name="AggRule_2050:6554551315498389" isDefault="true">
+<Expr mdsid="m0000002e-01f4-0000-8cb9-155500000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - Event Attendance"."# of Entries Last Week(Previous Year) - Base Registration Count")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002e-01f4-0000-8cb9-155500000000-m80c58762-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c58762-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6ac74-0f3c-0000-714b-e31d00000000" name="AD_3900:6145781285861534">
+<Expr mdsid="m0000002f-01f4-0000-5b53-d3f400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" =  VALUEOF("%2") - 1 AND "%3" =  VALUEOF("%4") - 1 AND "%5" = 'Confirmed' AND "%6" = 0 THEN "%7" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Event_Registered_Date"."CAL_WEEK" =  VALUEOF("CRUK Dates"."CURRENT_CAL_WEEK") - 1 AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Event_Registered_Date"."CAL_YEAR" =  VALUEOF("Warehouse Refresh Date"."CURRENT_CALENDAR_YEAR") - 1 AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Event_Reg_Status"."VAL" = 'Confirmed' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F_Last_Event"."INVITER_WID" = 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F_Last_Event"."CONTACT_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002f-01f4-0000-5b53-d3f400000000-m80c631d0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c097-0bb9-0000-714b-e31d00000000.xml#m80c631d0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002f-01f4-0000-5b53-d3f400000000-m80c67c4c-0bd7-0000-714b-e31d00000000" objectRef="/oracle/bi/server/base/Variable/80c67c4c-0bd7-0000-714b-e31d00000000.xml#m80c67c4c-0bd7-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002f-01f4-0000-5b53-d3f400000000-m80c631d1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c097-0bb9-0000-714b-e31d00000000.xml#m80c631d1-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002f-01f4-0000-5b53-d3f400000000-m80c67be5-0bd7-0000-714b-e31d00000000" objectRef="/oracle/bi/server/base/Variable/80c67be5-0bd7-0000-714b-e31d00000000.xml#m80c67be5-0bd7-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002f-01f4-0000-5b53-d3f400000000-m80c64c31-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c10a-0bb9-0000-714b-e31d00000000.xml#m80c64c31-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002f-01f4-0000-5b53-d3f400000000-m80c6650d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0f5-0bb9-0000-714b-e31d00000000.xml#m80c6650d-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002f-01f4-0000-5b53-d3f400000000-m80c6468d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0f5-0bb9-0000-714b-e31d00000000.xml#m80c6468d-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58763-07d6-0000-714b-e31d00000000" name="# of Confirmed(Previous Year) - Base Registration Count" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b6d7-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c72540-0802-0000-714b-e31d00000000" name="AggRule_2050:6554561315498389" isDefault="true">
+<Expr mdsid="m00000030-01f4-0000-64c3-21e400000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - Event Attendance"."# of Confirmed(Previous Year) - Base Registration Count")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000030-01f4-0000-64c3-21e400000000-m80c58763-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c58763-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6ac75-0f3c-0000-714b-e31d00000000" name="AD_3900:6145861285861534">
+<Expr mdsid="m00000031-01f4-0000-ba5e-ed1c00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Confirmed' AND "%2" = 0 THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Event_Reg_Status"."VAL" = 'Confirmed' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F_Last_Event"."INVITER_WID" = 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F_Last_Event"."CONTACT_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000031-01f4-0000-ba5e-ed1c00000000-m80c64c31-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c10a-0bb9-0000-714b-e31d00000000.xml#m80c64c31-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000031-01f4-0000-ba5e-ed1c00000000-m80c6650d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0f5-0bb9-0000-714b-e31d00000000.xml#m80c6650d-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000031-01f4-0000-ba5e-ed1c00000000-m80c6468d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0f5-0bb9-0000-714b-e31d00000000.xml#m80c6468d-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58764-07d6-0000-714b-e31d00000000" name="Number of Guests Previous Year" isWriteable="false">
+<MeasureDefn mdsid="m80c5b6d8-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c72541-0802-0000-714b-e31d00000000" name="AggRule_2050:6554571315498389" isDefault="true">
+<Expr mdsid="m00000032-01f4-0000-c878-eb6000000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Event Attendance"."Number of Guests Previous Year")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000032-01f4-0000-c878-eb6000000000-m80c58764-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c58764-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6ac76-0f3c-0000-714b-e31d00000000" name="AD_3900:6145951285861534">
+<Expr mdsid="m00000033-01f4-0000-c7b4-2cfc00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F_Last_Event"."INVITER_WID" = 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F_Last_Event"."NUM_GUESTS" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000033-01f4-0000-c7b4-2cfc00000000-m80c6650d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0f5-0bb9-0000-714b-e31d00000000.xml#m80c6650d-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000033-01f4-0000-c7b4-2cfc00000000-m80c664ab-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0f5-0bb9-0000-714b-e31d00000000.xml#m80c664ab-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58765-07d6-0000-714b-e31d00000000" name="Number of Guests Last Week Previous Year" isWriteable="false">
+<MeasureDefn mdsid="m80c5b6d9-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c72542-0802-0000-714b-e31d00000000" name="AggRule_2050:6554581315498389" isDefault="true">
+<Expr mdsid="m00000034-01f4-0000-64df-ab5000000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Event Attendance"."Number of Guests Last Week Previous Year")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000034-01f4-0000-64df-ab5000000000-m80c58765-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c58765-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6ac77-0f3c-0000-714b-e31d00000000" name="AD_3900:6146031285861534">
+<Expr mdsid="m00000035-01f4-0000-8b36-9bd200000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" =  VALUEOF("%2") - 1 AND "%3" =  VALUEOF("%4") AND "%5" = 'Confirmed' AND "%6" = 0 THEN "%7" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Event_Registered_Date"."CAL_WEEK" =  VALUEOF("CRUK Dates"."CURRENT_CAL_WEEK") - 1 AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Event_Registered_Date"."CAL_YEAR" =  VALUEOF("Warehouse Refresh Date"."CURRENT_CALENDAR_YEAR") AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Event_Reg_Status"."VAL" = 'Confirmed' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F_Last_Event"."INVITER_WID" = 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F_Last_Event"."NUM_GUESTS" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000035-01f4-0000-8b36-9bd200000000-m80c631d0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c097-0bb9-0000-714b-e31d00000000.xml#m80c631d0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000035-01f4-0000-8b36-9bd200000000-m80c67c4c-0bd7-0000-714b-e31d00000000" objectRef="/oracle/bi/server/base/Variable/80c67c4c-0bd7-0000-714b-e31d00000000.xml#m80c67c4c-0bd7-0000-714b-e31d00000000"/>
+<RefObject refId="m00000035-01f4-0000-8b36-9bd200000000-m80c631d1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c097-0bb9-0000-714b-e31d00000000.xml#m80c631d1-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000035-01f4-0000-8b36-9bd200000000-m80c67be5-0bd7-0000-714b-e31d00000000" objectRef="/oracle/bi/server/base/Variable/80c67be5-0bd7-0000-714b-e31d00000000.xml#m80c67be5-0bd7-0000-714b-e31d00000000"/>
+<RefObject refId="m00000035-01f4-0000-8b36-9bd200000000-m80c64c31-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c10a-0bb9-0000-714b-e31d00000000.xml#m80c64c31-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000035-01f4-0000-8b36-9bd200000000-m80c6650d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0f5-0bb9-0000-714b-e31d00000000.xml#m80c6650d-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000035-01f4-0000-8b36-9bd200000000-m80c664ab-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0f5-0bb9-0000-714b-e31d00000000.xml#m80c664ab-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c587eb-07d6-0000-714b-e31d00000000" name="# of Participants (Actual)(Includes Number of Guests)" iconIndex="68" isDerived="true" isWriteable="false">
+<Description><![CDATA[this metric counts the number of people who participated in events. (IF event supporter status = 'Attended', 'Confirmed', 'Confirmed - Paid', 'Confirmed - To Pay', 'Entered' then contact_wid)]]></Description>
+<Expr mdsid="m00000036-01f4-0000-cc52-0be400000000" name="Expr">
+<ExprText><![CDATA["%1" +  FILTER("%2" USING "%3" IN ('Attended', 'Confirmed', 'Confirmed - Paid', 'Confirmed - To Pay', 'Entered'))]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - Event Attendance"."# of Participants (Actual) - Base Registration Count" +  FILTER("Core"."Fact - Event Attendance"."Number of Guests" USING "Core"."Dim - Event Attendance"."Supporter Event Status" IN ('Attended', 'Confirmed', 'Confirmed - Paid', 'Confirmed - To Pay', 'Entered'))]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000036-01f4-0000-cc52-0be400000000-m80c5875d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c5875d-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000036-01f4-0000-cc52-0be400000000-m80c5875b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c5875b-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000036-01f4-0000-cc52-0be400000000-m80c57159-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa36-07f3-0000-714b-e31d00000000.xml#m80c57159-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c6acfd-0f3c-0000-714b-e31d00000000" name="AD_3900:6203301286982821">
+<Expr mdsid="m00000037-01f4-0000-411a-ba8e00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c587ec-07d6-0000-714b-e31d00000000" name="# of Registrations(Includes Number of Guests)" iconIndex="68" isDerived="true" isWriteable="false">
+<Description><![CDATA[this metric counts the number of people that regiestered for an event]]></Description>
+<Expr mdsid="m00000038-01f4-0000-d812-71c200000000" name="Expr">
+<ExprText><![CDATA["%1" +  FILTER("%2" USING "%3" IN ('Confirmed', 'Confirmed - Paid', 'Confirmed - To Pay', 'Entered', 'Interested', 'Waiting List'))]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - Event Attendance"."# of Registrations - Base Registration Count" +  FILTER("Core"."Fact - Event Attendance"."Number of Guests" USING "Core"."Dim - Event Attendance"."Supporter Event Status" IN ('Confirmed', 'Confirmed - Paid', 'Confirmed - To Pay', 'Entered', 'Interested', 'Waiting List'))]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000038-01f4-0000-d812-71c200000000-m80c5875e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c5875e-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000038-01f4-0000-d812-71c200000000-m80c5875b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c5875b-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000038-01f4-0000-d812-71c200000000-m80c57159-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa36-07f3-0000-714b-e31d00000000.xml#m80c57159-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c6acfe-0f3c-0000-714b-e31d00000000" name="AD_3900:6203341286982821">
+<Expr mdsid="m00000039-01f4-0000-11c3-932b00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c72d72-07d6-0000-714b-e31d00000000" name="# Confirmed (Organisation)" isWriteable="false">
+<MeasureDefn mdsid="m80c72d73-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c72d74-0802-0000-714b-e31d00000000" name="AggRule_2050:6568221317910198" isDefault="true">
+<Expr mdsid="m0000003a-01f4-0000-d174-06a000000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - Event Attendance"."# Confirmed (Organisation)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003a-01f4-0000-d174-06a000000000-m80c72d72-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c72d72-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c72d75-0f3c-0000-714b-e31d00000000" name="AD_3900:6568211317910198">
+<Expr mdsid="m0000003b-01f4-0000-1d26-f5bd00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Confirmed' AND "%2" > 0 THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Event_Reg_Status"."VAL" = 'Confirmed' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."X_SRM_ORG_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."X_SRM_ORG_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003b-01f4-0000-1d26-f5bd00000000-m80c64c31-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c10a-0bb9-0000-714b-e31d00000000.xml#m80c64c31-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003b-01f4-0000-1d26-f5bd00000000-m80c71ac3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c096-0bb9-0000-714b-e31d00000000.xml#m80c71ac3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbc8b8-07d6-0000-714b-e31d00000000" name="# Distinct Confirmed (Base Registration Count)" iconIndex="68" isWriteable="false">
+<Description><![CDATA[this metric counts the number of people that confirmed for an event]]></Description>
+<MeasureDefn mdsid="m80cbc8ba-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbc8cc-0802-0000-714b-e31d00000000" name="AggRule_2050:8522931405941772" isDefault="true">
+<Expr mdsid="m0000003c-01f4-0000-4b0f-87b100000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - Event Attendance"."# Distinct Confirmed (Base Registration Count)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003c-01f4-0000-4b0f-87b100000000-m80cbc8b8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80cbc8b8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbc8be-0f3c-0000-714b-e31d00000000" name="AD_3900:8522841405941338">
+<Expr mdsid="m0000003d-01f4-0000-2c94-527000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Confirmed' AND "%2" = 0 THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Event_Reg_Status"."VAL" = 'Confirmed' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."INVITER_WID" = 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_REG_F"."CONTACT_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003d-01f4-0000-2c94-527000000000-m80c64c31-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c10a-0bb9-0000-714b-e31d00000000.xml#m80c64c31-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003d-01f4-0000-2c94-527000000000-m80c6650c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c096-0bb9-0000-714b-e31d00000000.xml#m80c6650c-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003d-01f4-0000-2c94-527000000000-m80c631db-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c096-0bb9-0000-714b-e31d00000000.xml#m80c631db-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbc8c5-07d6-0000-714b-e31d00000000" name="# of Distinct Confirmed" iconIndex="68" isDerived="true" isWriteable="false">
+<Description><![CDATA[this metric counts the number of people that confirmed for an event]]></Description>
+<Expr mdsid="m0000003e-01f4-0000-a1e7-500e00000000" name="Expr">
+<ExprText><![CDATA["%1" +  FILTER("%2" USING "%3" = 'Confirmed')]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - Event Attendance"."# Distinct Confirmed (Base Registration Count)" +  FILTER("Core"."Fact - Event Attendance"."Number of Guests" USING "Core"."Dim - Event Attendance"."Supporter Event Status" = 'Confirmed')]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003e-01f4-0000-a1e7-500e00000000-m80cbc8b8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80cbc8b8-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003e-01f4-0000-a1e7-500e00000000-m80c5875b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c5875b-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003e-01f4-0000-a1e7-500e00000000-m80c57159-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa36-07f3-0000-714b-e31d00000000.xml#m80c57159-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80cbc8c7-0f3c-0000-714b-e31d00000000" name="AD_3900:8522901405941415">
+<Expr mdsid="m0000003f-01f4-0000-030e-ba2e00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58dd2-07d8-0000-714b-e31d00000000" name="Row Wid" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58dd2-07d8-0000-714b-e31d00000000-m80c5714b-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c5714b-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5aa35-07f3-0000-714b-e31d00000000-m80c5ac75-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ac75-07f5-0000-714b-e31d00000000.xml#m80c5ac75-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c5aa35-07f3-0000-714b-e31d00000000-m80c5acbf-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5acbf-07f5-0000-714b-e31d00000000.xml#m80c5acbf-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

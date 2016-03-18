@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ComplexJoin mdsid="m80c67b70-0bc4-0000-714b-e31d00000000" name="Open_Day Survey SR (W_DAY_D)_W_SRVREQ_D (for Open SR Data for W_SURVEY_F)" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" table1Ref="/oracle/bi/server/base/PhysicalTable/80c5bf5f-0bb9-0000-714b-e31d00000000.xml#m80c5bf5f-0bb9-0000-714b-e31d00000000" table2Ref="/oracle/bi/server/base/PhysicalTable/80c5bf43-0bb9-0000-714b-e31d00000000.xml#m80c5bf43-0bb9-0000-714b-e31d00000000">
+<Expr mdsid="m00000001-01f4-0000-9227-ea2400000000" name="Expr">
+<ExprText><![CDATA[ EXTRACT( YEAR  FROM "%1") =  EXTRACT( YEAR  FROM "%2") AND  EXTRACT( MONTH  FROM "%1") =  EXTRACT( MONTH  FROM "%2") AND  DAYOFMONTH("%1") =  DAYOFMONTH("%2")]]></ExprText>
+<ExprTextDesc><![CDATA[ EXTRACT( YEAR  FROM "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Open_Day_Survey_SR"."DAY_DT") =  EXTRACT( YEAR  FROM "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SRVREQ_D_for_Open_SR_Date_for_W_SURVEY_F"."OPEN_DT") AND  EXTRACT( MONTH  FROM "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Open_Day_Survey_SR"."DAY_DT") =  EXTRACT( MONTH  FROM "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SRVREQ_D_for_Open_SR_Date_for_W_SURVEY_F"."OPEN_DT") AND  DAYOFMONTH("Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Open_Day_Survey_SR"."DAY_DT") =  DAYOFMONTH("Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SRVREQ_D_for_Open_SR_Date_for_W_SURVEY_F"."OPEN_DT")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-9227-ea2400000000-m80c5df6f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf43-0bb9-0000-714b-e31d00000000.xml#m80c5df6f-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000001-01f4-0000-9227-ea2400000000-m80c5e39b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf5f-0bb9-0000-714b-e31d00000000.xml#m80c5e39b-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ComplexJoin>

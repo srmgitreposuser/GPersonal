@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5aa17-07f3-0000-714b-e31d00000000" name="Fact - CRM - Offered Products" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="893" y="502" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c567ee-07d6-0000-714b-e31d00000000" name="# Offered Products" isWriteable="false">
+<MeasureDefn mdsid="m80c5b1c0-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b982-0802-0000-714b-e31d00000000" name="AggRule_2050:1221081076356718" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-e511-aea000000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Offered Products"."# Offered Products")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-e511-aea000000000-m80c567ee-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa17-07f3-0000-714b-e31d00000000.xml#m80c567ee-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68bcb-0f3c-0000-714b-e31d00000000" name="AD_3900:840341074282455">
+<Expr mdsid="m00000002-01f4-0000-2160-d37500000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_OFR_PROD_F"."PRODUCT_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_OFR_PROD_F"."PRODUCT_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-2160-d37500000000-m80c5c3d7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea5-0bb9-0000-714b-e31d00000000.xml#m80c5c3d7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56c4c-07d6-0000-714b-e31d00000000" name="Implicit Fact Column" isWriteable="false">
+<Description><![CDATA[Implicit constant fact to identify this fact table as the join path between two conforming dimensions.]]></Description>
+<AttrDefn mdsid="m80c68fe9-0f3c-0000-714b-e31d00000000" name="AD_3900:1683581118800619">
+<Expr mdsid="m00000003-01f4-0000-d990-e43a00000000" name="Expr">
+<ExprText><![CDATA[1]]></ExprText>
+<ExprTextDesc><![CDATA[1]]></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5aa17-07f3-0000-714b-e31d00000000-m80c5ac29-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ac29-07f5-0000-714b-e31d00000000.xml#m80c5ac29-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

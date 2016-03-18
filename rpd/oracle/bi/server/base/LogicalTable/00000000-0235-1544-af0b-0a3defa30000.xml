@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m00000000-0235-1544-af0b-0a3defa30000" name="Fact - Owning Party - FWS Opportunity" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="mc0000000-074e-1544-af0b-0a3defa30000" name="# Opportunities" isWriteable="false">
+<Description><![CDATA[Number of Opportunities that represent a usage of the Free Will Service]]></Description>
+<MeasureDefn mdsid="mc0000000-0758-1544-af0b-0a3defa30000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m00000000-0b1a-1561-9e03-0a3ddf680000" name="AggRule_2050:8712321434725591" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-b666-e5aa00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Owning Party - FWS Opportunity"."# Opportunities")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-b666-e5aa00000000-mc0000000-074e-1544-af0b-0a3defa30000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00000000-0235-1544-af0b-0a3defa30000.xml#mc0000000-074e-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="mc0000001-074e-1544-af0b-0a3defa30000" name="AD_3900:8598901427119661">
+<Expr mdsid="m00000002-01f4-0000-a858-06dd00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_WC_FWS_OPP_A"."OPTY_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-a858-06dd00000000-m00000006-008f-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-008f-1544-af0b-0a3defa30000.xml#m00000006-008f-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80000000-0761-1544-af0b-0a3defa30000" name="# Opportunities with Value" isWriteable="false">
+<Description><![CDATA[Number of Opportunities with Target Amount or Agreed Amount above 0]]></Description>
+<MeasureDefn mdsid="mc0000000-0763-1544-af0b-0a3defa30000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80000000-3d06-1567-9805-0a0e0f1c0000" name="AggRule_2050:8843111436349470" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-7b03-ea6c00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Owning Party - FWS Opportunity"."# Opportunities with Value")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-7b03-ea6c00000000-m80000000-0761-1544-af0b-0a3defa30000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00000000-0235-1544-af0b-0a3defa30000.xml#m80000000-0761-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+<OverrideAggrRule mdsid="m40000000-6071-1544-835d-0a3defa30000" name="OvAggRule_2054:8615911427210711" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/c0000000-02f0-1544-af0b-0a3defa30000.xml#mc0000000-02f0-1544-af0b-0a3defa30000">
+<Expr mdsid="m00000004-01f4-0000-8e91-f24000000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - FWS Opportunity"."# Opportunities with Value")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-8e91-f24000000000-m80000000-0761-1544-af0b-0a3defa30000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00000000-0235-1544-af0b-0a3defa30000.xml#m80000000-0761-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</OverrideAggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80000001-0761-1544-af0b-0a3defa30000" name="AD_3900:8598961427119661">
+<Expr mdsid="m00000005-01f4-0000-723f-b65d00000000" name="Expr">
+<ExprText><![CDATA["%1" ]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_WC_FWS_OPP_A"."NUM_OPTY_W_PLEDGE" ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-723f-b65d00000000-m00000004-008f-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-008f-1544-af0b-0a3defa30000.xml#m00000004-008f-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc0000000-077d-1544-af0b-0a3defa30000" name="Inclusion %" isDerived="true" isWriteable="false">
+<Description><![CDATA[Percentage of opportunities that have a pledge]]></Description>
+<Expr mdsid="m00000006-01f4-0000-9fef-a75a00000000" name="Expr">
+<ExprText><![CDATA[100.0 * "%1" / "%2" ]]></ExprText>
+<ExprTextDesc><![CDATA[100.0 * "Core 2"."Fact - Owning Party - FWS Opportunity"."# Opportunities with Value" / "Core 2"."Fact - Owning Party - FWS Opportunity"."# Opportunities" ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-9fef-a75a00000000-m80000000-0761-1544-af0b-0a3defa30000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00000000-0235-1544-af0b-0a3defa30000.xml#m80000000-0761-1544-af0b-0a3defa30000"/>
+<RefObject refId="m00000006-01f4-0000-9fef-a75a00000000-mc0000000-074e-1544-af0b-0a3defa30000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00000000-0235-1544-af0b-0a3defa30000.xml#mc0000000-074e-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m00000000-077e-1544-af0b-0a3defa30000" name="AD_3900:8599021427119661">
+<Expr mdsid="m00000007-01f4-0000-adfa-512f00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m00000003-0235-1544-af0b-0a3defa30000" name="Agreed Amount" isWriteable="false">
+<Description><![CDATA[Total known pledge amount]]></Description>
+<MeasureDefn mdsid="m40000000-0290-1544-af0b-0a3defa30000" name="Measure" isCommutative="false">
+<AggrRule mdsid="mc0000000-0b1d-1561-9e03-0a3ddf680000" name="AggRule_2050:8712331434725591" isDefault="true">
+<Expr mdsid="m00000008-01f4-0000-94c2-946d00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - FWS Opportunity"."Agreed Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-94c2-946d00000000-m00000003-0235-1544-af0b-0a3defa30000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00000000-0235-1544-af0b-0a3defa30000.xml#m00000003-0235-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m00000013-0235-1544-af0b-0a3defa30000" name="AD_3900:8598061427114196">
+<Expr mdsid="m00000009-01f4-0000-c244-78ab00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_WC_FWS_OPP_A"."AGREE_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-c244-78ab00000000-m00000001-008f-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-008f-1544-af0b-0a3defa30000.xml#m00000001-008f-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m0000000f-0235-1544-af0b-0a3defa30000" name="Estimated Amount" isWriteable="false">
+<Description><![CDATA[Total estimated pledge amount]]></Description>
+<MeasureDefn mdsid="m00000000-0292-1544-af0b-0a3defa30000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80000000-0b1f-1561-9e03-0a3ddf680000" name="AggRule_2050:8712341434725591" isDefault="true">
+<Expr mdsid="m0000000a-01f4-0000-a6aa-67df00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - FWS Opportunity"."Estimated Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-a6aa-67df00000000-m0000000f-0235-1544-af0b-0a3defa30000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00000000-0235-1544-af0b-0a3defa30000.xml#m0000000f-0235-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m0000001f-0235-1544-af0b-0a3defa30000" name="AD_3900:8598181427114196">
+<Expr mdsid="m0000000b-01f4-0000-faef-874c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_WC_FWS_OPP_A"."TARGET_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-faef-874c00000000-m00000009-008f-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-008f-1544-af0b-0a3defa30000.xml#m00000009-008f-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m00000000-0737-1544-af0b-0a3defa30000" name="Average Estimated Amount" isWriteable="false">
+<Description><![CDATA[Average estimated pledge amount]]></Description>
+<MeasureDefn mdsid="mc0000000-0738-1544-af0b-0a3defa30000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m00000000-0b21-1561-9e03-0a3ddf680000" name="AggRule_2050:8712351434725591" isDefault="true">
+<Expr mdsid="m0000000c-01f4-0000-09d1-b88700000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core 2"."Fact - Owning Party - FWS Opportunity"."Average Estimated Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-09d1-b88700000000-m00000000-0737-1544-af0b-0a3defa30000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00000000-0235-1544-af0b-0a3defa30000.xml#m00000000-0737-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m00000001-0737-1544-af0b-0a3defa30000" name="AD_3900:8598821427119661">
+<Expr mdsid="m0000000d-01f4-0000-e1be-8c8900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_WC_FWS_OPP_A"."TARGET_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-e1be-8c8900000000-m00000009-008f-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-008f-1544-af0b-0a3defa30000.xml#m00000009-008f-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80000000-073f-1544-af0b-0a3defa30000" name="Average Agreed Amount" isWriteable="false">
+<Description><![CDATA[Average known pledge amount]]></Description>
+<MeasureDefn mdsid="m00000000-074c-1544-af0b-0a3defa30000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m00000001-074c-1544-af0b-0a3defa30000" name="AggRule_2050:8598881427119661" isDefault="true">
+<Expr mdsid="m0000000e-01f4-0000-1ba1-bbfd00000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core 2"."Fact - Owning Party - FWS Opportunity"."Average Agreed Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-1ba1-bbfd00000000-m80000000-073f-1544-af0b-0a3defa30000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00000000-0235-1544-af0b-0a3defa30000.xml#m80000000-073f-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80000001-073f-1544-af0b-0a3defa30000" name="AD_3900:8598861427119661">
+<Expr mdsid="m0000000f-01f4-0000-1d38-456b00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_WC_FWS_OPP_A"."AGREE_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-1d38-456b00000000-m00000001-008f-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-008f-1544-af0b-0a3defa30000.xml#m00000001-008f-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m00000000-078c-1544-af0b-0a3defa30000" name="# Solicitors" isWriteable="false">
+<Description><![CDATA[Distinct number of solicitors]]></Description>
+<MeasureDefn mdsid="m80000000-078e-1544-af0b-0a3defa30000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80000001-078e-1544-af0b-0a3defa30000" name="AggRule_2050:8599061427119708" isDefault="true">
+<Expr mdsid="m00000010-01f4-0000-26f1-fd6700000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Owning Party - FWS Opportunity"."# Solicitors")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-26f1-fd6700000000-m00000000-078c-1544-af0b-0a3defa30000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00000000-0235-1544-af0b-0a3defa30000.xml#m00000000-078c-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m40000000-078c-1544-af0b-0a3defa30000" name="AD_3900:8599041427119708">
+<Expr mdsid="m00000011-01f4-0000-8608-940c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_WC_FWS_OPP_A"."SOLICITOR_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-8608-940c00000000-m00000008-008f-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-008f-1544-af0b-0a3defa30000.xml#m00000008-008f-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m40000000-d8ad-154f-9eed-0a3defa30000" name="Pledge Amount" isWriteable="false">
+<Description><![CDATA[For each Opportunity Product, this is the Agreed Amount if populated or the Estimated Amount otherwise]]></Description>
+<MeasureDefn mdsid="m00000000-d8b7-154f-9eed-0a3defa30000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m40000001-d922-156b-95ca-0a3ddf680000" name="AggRule_2050:8845201437558015" isDefault="true">
+<Expr mdsid="m00000012-01f4-0000-fc37-aabf00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - FWS Opportunity"."Pledge Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-fc37-aabf00000000-m40000000-d8ad-154f-9eed-0a3defa30000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00000000-0235-1544-af0b-0a3defa30000.xml#m40000000-d8ad-154f-9eed-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m40000001-d8ad-154f-9eed-0a3defa30000" name="AD_3900:8701821430217439">
+<Expr mdsid="m00000013-01f4-0000-f8bf-484200000000" name="Expr">
+<ExprText><![CDATA[CASE WHEN "%1" > 0.0 THEN "%1" WHEN "%2" > 0.0 THEN "%2" ELSE 0.0 END]]></ExprText>
+<ExprTextDesc><![CDATA[CASE WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_OPP_F"."AGREE_AMT" > 0.0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_OPP_F"."AGREE_AMT" WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_OPP_F"."TARGET_AMT" > 0.0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_OPP_F"."TARGET_AMT" ELSE 0.0 END]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-f8bf-484200000000-m80000001-fe24-1543-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80000000-fe24-1543-af0b-0a3defa30000.xml#m80000001-fe24-1543-af0b-0a3defa30000"/>
+<RefObject refId="m00000013-01f4-0000-f8bf-484200000000-m8000000c-fe24-1543-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80000000-fe24-1543-af0b-0a3defa30000.xml#m8000000c-fe24-1543-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m00000000-0235-1544-af0b-0a3defa30000-m00000002-0235-1544-af0b-0a3defa30000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/00000002-0235-1544-af0b-0a3defa30000.xml#m00000002-0235-1544-af0b-0a3defa30000"/>
+<RefLogicalTableSource refId="m00000000-0235-1544-af0b-0a3defa30000-mc0000000-02f0-1544-af0b-0a3defa30000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/c0000000-02f0-1544-af0b-0a3defa30000.xml#mc0000000-02f0-1544-af0b-0a3defa30000"/>
+</RefTableSources>
+</LogicalTable>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80cb53cb-07f3-0000-714b-e31d00000000" name="Fact - Owning Party - Sales Order Items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="831" y="478" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80cb544d-07d6-0000-714b-e31d00000000" name="# Sales Order Items" isWriteable="false">
+<Description><![CDATA[The total number of Sales Order Items for the Owning party]]></Description>
+<MeasureDefn mdsid="m80cb5452-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb56ce-0802-0000-714b-e31d00000000" name="AggRule_2050:8327811375347486" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-43d9-b11600000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core 2"."Fact - Owning Party - Sales Order Items"."# Sales Order Items")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-43d9-b11600000000-m80cb544d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb53cb-07f3-0000-714b-e31d00000000.xml#m80cb544d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb544e-0f3c-0000-714b-e31d00000000" name="AD_3900:8322051373283078">
+<Expr mdsid="m00000002-01f4-0000-5d23-8b6100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SALES_ORDER_ITEM_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-5d23-8b6100000000-m80cb4b5f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb4b11-0bb9-0000-714b-e31d00000000.xml#m80cb4b5f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb5458-07d6-0000-714b-e31d00000000" name="# Sales Orders" isWriteable="false">
+<Description><![CDATA[The number of Sales Orders for the Owning party]]></Description>
+<MeasureDefn mdsid="m80cb5459-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb56d0-0802-0000-714b-e31d00000000" name="AggRule_2050:8327821375347501" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-b80b-ed5200000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Owning Party - Sales Order Items"."# Sales Orders")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-b80b-ed5200000000-m80cb5458-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb53cb-07f3-0000-714b-e31d00000000.xml#m80cb5458-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb545b-0f3c-0000-714b-e31d00000000" name="AD_3900:8322101373283174">
+<Expr mdsid="m00000004-01f4-0000-4026-6d6200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SALES_ORDER_ITEM_F"."SALES_ORDER_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-4026-6d6200000000-m80cb4b61-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb4b11-0bb9-0000-714b-e31d00000000.xml#m80cb4b61-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb5462-07d6-0000-714b-e31d00000000" name="# Products" isWriteable="false">
+<Description><![CDATA[Quantity of Products ordered]]></Description>
+<MeasureDefn mdsid="m80cb5463-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb56d6-0802-0000-714b-e31d00000000" name="AggRule_2050:8327851378199395" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-010b-298a00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Sales Order Items"."# Products")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-010b-298a00000000-m80cb5462-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb53cb-07f3-0000-714b-e31d00000000.xml#m80cb5462-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb5465-0f3c-0000-714b-e31d00000000" name="AD_3900:8322151373283225">
+<Expr mdsid="m00000006-01f4-0000-d265-1f3000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SALES_ORDER_ITEM_F"."QTY_REQ"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-d265-1f3000000000-m80cb4b5d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb4b11-0bb9-0000-714b-e31d00000000.xml#m80cb4b5d-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb546a-07d6-0000-714b-e31d00000000" name="Value of Sales Order Items" isWriteable="false">
+<Description><![CDATA[The total amount of Sales Order Items for the Owning party (excl. refunds)]]></Description>
+<MeasureDefn mdsid="m80cb546b-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb56d4-0802-0000-714b-e31d00000000" name="AggRule_2050:8327841375347539" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-af10-3fef00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Sales Order Items"."Value of Sales Order Items")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-af10-3fef00000000-m80cb546a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb53cb-07f3-0000-714b-e31d00000000.xml#m80cb546a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb546d-0f3c-0000-714b-e31d00000000" name="AD_3900:8322191373283278">
+<Expr mdsid="m00000008-01f4-0000-2b55-399c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SALES_ORDER_ITEM_F"."ORDER_ITEM_VAL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-2b55-399c00000000-m80cb4b55-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb4b11-0bb9-0000-714b-e31d00000000.xml#m80cb4b55-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb5472-07d6-0000-714b-e31d00000000" name="Implicit Fact Constant" isWriteable="false">
+<MeasureDefn mdsid="m80cb5473-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m00000000-8f1d-154b-8243-0a3ddf680000" name="AggRule_2050:8697601429093839" isDefault="true">
+<Expr mdsid="m00000009-01f4-0000-b3f6-fb9800000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Sales Order Items"."Implicit Fact Constant")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-b3f6-fb9800000000-m80cb5472-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb53cb-07f3-0000-714b-e31d00000000.xml#m80cb5472-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb5475-0f3c-0000-714b-e31d00000000" name="AD_3900:8322231373283319">
+<Expr mdsid="m0000000a-01f4-0000-e5d5-2eac00000000" name="Expr">
+<ExprText><![CDATA[1]]></ExprText>
+<ExprTextDesc><![CDATA[1]]></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbc610-07d6-0000-714b-e31d00000000" name="# of Owning Parties (Distinct)" isWriteable="false">
+<MeasureDefn mdsid="m80cbc628-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbc642-0802-0000-714b-e31d00000000" name="AggRule_2050:8518501404314539" isDefault="true">
+<Expr mdsid="m0000000b-01f4-0000-a92c-68bc00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Owning Party - Sales Order Items"."# of Owning Parties (Distinct)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-a92c-68bc00000000-m80cbc610-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb53cb-07f3-0000-714b-e31d00000000.xml#m80cbc610-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbc659-0f3c-0000-714b-e31d00000000" name="AD_3900:8518441404314539">
+<Expr mdsid="m0000000c-01f4-0000-9f6e-dad400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SALES_ORDER_ITEM_F"."OWN_PARTY_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SALES_ORDER_ITEM_F"."OWN_PARTY_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-9f6e-dad400000000-m80cb4b59-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb4b11-0bb9-0000-714b-e31d00000000.xml#m80cb4b59-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80cb53cb-07f3-0000-714b-e31d00000000-m80cb544a-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cb544a-07f5-0000-714b-e31d00000000.xml#m80cb544a-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

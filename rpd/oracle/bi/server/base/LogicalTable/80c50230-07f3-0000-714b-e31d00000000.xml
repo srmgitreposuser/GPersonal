@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c50230-07f3-0000-714b-e31d00000000" name="SRM - Dim - Sponsorship Channel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="287" y="488" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55249-07d0-0000-714b-e31d00000000.xml#m80c55249-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c50232-07d6-0000-714b-e31d00000000" name="Donation Channel" isWriteable="false">
+<Description><![CDATA[The Donation Channel based on Various types of Channels defined across NED Events]]></Description>
+<AttrDefn mdsid="m80c5023e-0f3c-0000-714b-e31d00000000" name="AD_3900:6806391338386342">
+<Expr mdsid="m00000001-01f4-0000-d8e0-d1a400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."SRM List Export Tables"."Fact - WC_Sponsorship - Last Event_LE"."DONATION_CHANNEL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-d8e0-d1a400000000-m80c5011c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5010a-0bb9-0000-714b-e31d00000000.xml#m80c5011c-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c50234-07d6-0000-714b-e31d00000000" name="Payment Channel" isWriteable="false">
+<AttrDefn mdsid="m80c50240-0f3c-0000-714b-e31d00000000" name="AD_3900:6806401338386342">
+<Expr mdsid="m00000002-01f4-0000-8da2-60f400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."SRM List Export Tables"."Fact - WC_Sponsorship - Last Event_LE"."PAYMENT_MEDIUM"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-8da2-60f400000000-m80c5011d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5010a-0bb9-0000-714b-e31d00000000.xml#m80c5011d-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c50236-07d6-0000-714b-e31d00000000" name="Online/Offline Sponsorship" isWriteable="false">
+<AttrDefn mdsid="m80c50242-0f3c-0000-714b-e31d00000000" name="AD_3900:6806411338386342">
+<Expr mdsid="m00000003-01f4-0000-196c-a57f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."SRM List Export Tables"."Fact - WC_Sponsorship - Last Event_LE"."ON_OFF_SPONS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-196c-a57f00000000-m80c50121-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5010a-0bb9-0000-714b-e31d00000000.xml#m80c50121-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c50238-07d6-0000-714b-e31d00000000" name="Row_Wid" isWriteable="false">
+<AttrDefn mdsid="m80c50244-0f3c-0000-714b-e31d00000000" name="AD_3900:6806421338386342">
+<Expr mdsid="m00000004-01f4-0000-ab6c-713a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."SRM List Export Tables"."Fact - WC_Sponsorship - Last Event_LE"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-ab6c-713a00000000-m80c5010f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5010a-0bb9-0000-714b-e31d00000000.xml#m80c5010f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c5023c-07d8-0000-714b-e31d00000000" name="Row_Wid" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c5023c-07d8-0000-714b-e31d00000000-m80c50238-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c50230-07f3-0000-714b-e31d00000000.xml#m80c50238-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c50230-07f3-0000-714b-e31d00000000-m80c50257-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c50257-07f5-0000-714b-e31d00000000.xml#m80c50257-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c50230-07f3-0000-714b-e31d00000000-m80c50260-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c50260-07f5-0000-714b-e31d00000000.xml#m80c50260-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c50230-07f3-0000-714b-e31d00000000-m80c50269-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c50269-07f5-0000-714b-e31d00000000.xml#m80c50269-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c50230-07f3-0000-714b-e31d00000000-m80c502f6-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c502f6-07f5-0000-714b-e31d00000000.xml#m80c502f6-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c50230-07f3-0000-714b-e31d00000000-m80c502f9-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c502f9-07f5-0000-714b-e31d00000000.xml#m80c502f9-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

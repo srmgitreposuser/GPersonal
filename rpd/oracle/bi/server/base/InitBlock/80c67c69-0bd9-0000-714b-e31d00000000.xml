@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<InitBlock mdsid="m80c67c69-0bd9-0000-714b-e31d00000000" name="NEXT_YEAR" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isRowWiseCacheEnabled="false" refreshPeriod="3600" baseTime="2003-01-01 00:00:00" connectionPoolRef="/oracle/bi/server/base/ConnectionPool/80c67bbe-0bd5-0000-714b-e31d00000000.xml#m80c67bbe-0bd5-0000-714b-e31d00000000">
+<DBMapItem name="SQLServer70">
+<Value><![CDATA[SELECT NXT.CAL_YEAR FROM VALUEOF(OLAPTBO).W_DAY_D NXT  WHERE convert(char(12),NXT.YEAR_AGO_DT)=convert(char(12),getdate()-valueof(time_offset))
+]]></Value>
+</DBMapItem>
+<DBMapItem name="Oracle9i">
+<Value><![CDATA[SELECT NXT.CAL_YEAR FROM VALUEOF(OLAPTBO).W_DAY_D NXT  WHERE to_char(NXT.YEAR_AGO_DT,'yyyymmdd')=to_char(SYSDATE - VALUEOF(TIME_OFFSET),'yyyymmdd')]]></Value>
+</DBMapItem>
+<DBMapItem name="DB2V8">
+<Value><![CDATA[SELECT NXT.CAL_YEAR FROM VALUEOF(OLAPTBO).W_DAY_D NXT  WHERE date(NXT.YEAR_AGO_DT)=date(current date - VALUEOF(TIME_OFFSET) DAYS)]]></Value>
+</DBMapItem>
+<DBMapItem name="TeradataV2R5">
+<Value><![CDATA[SELECT NXT.CAL_YEAR FROM VALUEOF(OLAPTBO).W_DAY_D NXT  WHERE cast(NXT.YEAR_AGO_DT as timestamp)=cast((current_date - interval 'VALUEOF(TIME_OFFSET)' day) as timestamp)
+]]></Value>
+</DBMapItem>
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT NXT.CAL_YEAR FROM VALUEOF(OLAPTBO).W_DAY_D NXT  WHERE to_date(NXT.YEAR_AGO_DT)=to_date(sysdate - VALUEOF(TIME_OFFSET))]]></Value>
+</DBMapItem>
+<RefVariables>
+<RefVariable refId="m80c67c69-0bd9-0000-714b-e31d00000000-m80c67bfc-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67bfc-0bd7-0000-714b-e31d00000000.xml#m80c67bfc-0bd7-0000-714b-e31d00000000"/>
+</RefVariables>
+<InitString><![CDATA[SELECT NXT.CAL_YEAR FROM VALUEOF(OLAPTBO).W_DAY_D NXT  WHERE to_char(NXT.YEAR_AGO_DT,'yyyymmdd')=to_char(SYSDATE - VALUEOF(TIME_OFFSET),'yyyymmdd')]]></InitString>
+</InitBlock>

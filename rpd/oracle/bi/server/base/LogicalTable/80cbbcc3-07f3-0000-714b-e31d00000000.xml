@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80cbbcc3-07f3-0000-714b-e31d00000000" name="Dim - Gift Aid Claim Header" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="462" y="232" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80cbbcca-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80cbbcce-0f3c-0000-714b-e31d00000000" name="AD_3900:8501191401703111">
+<Expr mdsid="m00000001-01f4-0000-92d4-743000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_INS_CLAIM_D"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-92d4-743000000000-m80c66688-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c190-0bb9-0000-714b-e31d00000000.xml#m80c66688-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbbcd4-07d6-0000-714b-e31d00000000" name="Gift Aid Claim Number" isWriteable="false">
+<Description><![CDATA[Gift Aid Claim Number: The unique Siebel claim number.]]></Description>
+<AttrDefn mdsid="m80cbbcd5-0f3c-0000-714b-e31d00000000" name="AD_3900:8501251401703300">
+<Expr mdsid="m00000002-01f4-0000-0ed0-f21300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_INS_CLAIM_D"."X_SRM_CLAIM_NUM"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-0ed0-f21300000000-m80c66d15-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c190-0bb9-0000-714b-e31d00000000.xml#m80c66d15-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbbcd8-07d6-0000-714b-e31d00000000" name="SRM Claim Number" isWriteable="false">
+<Description><![CDATA[SRM Claim Number: The claim number given to claims that were run in old crm systems. Theses are historical and will be null from the point they were decomissioned.]]></Description>
+<AttrDefn mdsid="m80cbbcd9-0f3c-0000-714b-e31d00000000" name="AD_3900:8501271401703322">
+<Expr mdsid="m00000003-01f4-0000-4c30-72d100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_INS_CLAIM_D"."INSCLAIM_NUM"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-4c30-72d100000000-m80c66686-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c190-0bb9-0000-714b-e31d00000000.xml#m80c66686-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbbcdd-07d6-0000-714b-e31d00000000" name="Claim Type" isWriteable="false">
+<Description><![CDATA[Claim Type: The type of donations within the claim (either Personal or Special Modified).]]></Description>
+<AttrDefn mdsid="m80cbbcdf-0f3c-0000-714b-e31d00000000" name="AD_3900:8501311401703395">
+<Expr mdsid="m00000004-01f4-0000-69ba-09f100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_INS_CLAIM_D"."X_SRM_CLAIM_TYPE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-69ba-09f100000000-m80c66d0f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c190-0bb9-0000-714b-e31d00000000.xml#m80c66d0f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbbce3-07d6-0000-714b-e31d00000000" name="Claim Status" isWriteable="false">
+<Description><![CDATA[Claim Status: The stage the claim is at.]]></Description>
+<AttrDefn mdsid="m80cbbce5-0f3c-0000-714b-e31d00000000" name="AD_3900:8501351401703426">
+<Expr mdsid="m00000005-01f4-0000-29ed-ec7500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_INS_CLAIM_D"."STATUS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-29ed-ec7500000000-m80c6669d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c190-0bb9-0000-714b-e31d00000000.xml#m80c6669d-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbbce9-07d6-0000-714b-e31d00000000" name="Claim Group" isWriteable="false">
+<Description><![CDATA[Claim Group: How the donations within the claim are grouped, as defined in the Product Table.]]></Description>
+<AttrDefn mdsid="m80cbbceb-0f3c-0000-714b-e31d00000000" name="AD_3900:8501391401703493">
+<Expr mdsid="m00000006-01f4-0000-2f89-50d900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_INS_CLAIM_D"."X_SRM_COST_CENTER"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-2f89-50d900000000-m80c66d13-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c190-0bb9-0000-714b-e31d00000000.xml#m80c66d13-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbbcef-07d6-0000-714b-e31d00000000" name="Claim Special Modified Type" isWriteable="false">
+<Description><![CDATA[Claim Special Modified Type: Where the 'Claim Type' equals 'Special Modified', this is a subtype detailing which type of Special Modified it is.]]></Description>
+<AttrDefn mdsid="m80cbbcf1-0f3c-0000-714b-e31d00000000" name="AD_3900:8501431401703522">
+<Expr mdsid="m00000007-01f4-0000-77a8-04c000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_INS_CLAIM_D"."X_SRM_SPCL_MDFD_TYPE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-77a8-04c000000000-m80c66d11-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c190-0bb9-0000-714b-e31d00000000.xml#m80c66d11-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbbcf5-07d6-0000-714b-e31d00000000" name="Claim Start Date" isWriteable="false">
+<Description><![CDATA[Claim Start Date: The donations captured in a claim will not have a Donation Date earlier than this.]]></Description>
+<AttrDefn mdsid="m80cbbcf7-0f3c-0000-714b-e31d00000000" name="AD_3900:8501471401703573">
+<Expr mdsid="m00000008-01f4-0000-f23e-11ac00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_INS_CLAIM_D"."X_SRM_START_DT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-f23e-11ac00000000-m80c66d09-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c190-0bb9-0000-714b-e31d00000000.xml#m80c66d09-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbbcfb-07d6-0000-714b-e31d00000000" name="Claim End Date" isWriteable="false">
+<Description><![CDATA[Claim End Date: The donations captured in a claim will not have a Donation Date later than this.]]></Description>
+<AttrDefn mdsid="m80cbbcfd-0f3c-0000-714b-e31d00000000" name="AD_3900:8501511401703587">
+<Expr mdsid="m00000009-01f4-0000-da38-244400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_INS_CLAIM_D"."X_SRM_END_DT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-da38-244400000000-m80c66d0b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c190-0bb9-0000-714b-e31d00000000.xml#m80c66d0b-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbbd01-07d6-0000-714b-e31d00000000" name="Claim Tax Year" isWriteable="false">
+<Description><![CDATA[Claim Tax Year: In order to calculate the percentage of Gift Aid generated in a claim, the tax year must be added to match the Start and End Dates of a claim.]]></Description>
+<AttrDefn mdsid="m80cbbd03-0f3c-0000-714b-e31d00000000" name="AD_3900:8501551401703627">
+<Expr mdsid="m0000000a-01f4-0000-622a-e3af00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_INS_CLAIM_D"."X_SRM_TAX_YEAR"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-622a-e3af00000000-m80c6df1a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c190-0bb9-0000-714b-e31d00000000.xml#m80c6df1a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbbd07-07d6-0000-714b-e31d00000000" name="Claim Error Message" isWriteable="false">
+<Description><![CDATA[Claim Error Message: The error message provided when a claim has a Status of 'Error'.]]></Description>
+<AttrDefn mdsid="m80cbbd09-0f3c-0000-714b-e31d00000000" name="AD_3900:8501591401703670">
+<Expr mdsid="m0000000b-01f4-0000-8264-916100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_INS_CLAIM_D"."X_SRM_ERR_MSG"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-8264-916100000000-m80cb9fac-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c190-0bb9-0000-714b-e31d00000000.xml#m80cb9fac-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbbd0d-07d6-0000-714b-e31d00000000" name="Claim Run By" isWriteable="false">
+<Description><![CDATA[Claim Run By: The name of the user who initiated the claim.]]></Description>
+<AttrDefn mdsid="m80cbbd0f-0f3c-0000-714b-e31d00000000" name="AD_3900:8501631401703703">
+<Expr mdsid="m0000000c-01f4-0000-fb39-290a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_INS_CLAIM_D"."X_SRM_RUN_BY"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-fb39-290a00000000-m80cb9fae-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c190-0bb9-0000-714b-e31d00000000.xml#m80cb9fae-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbbd13-07d6-0000-714b-e31d00000000" name="Claim Run Date" isWriteable="false">
+<Description><![CDATA[Claim Run Date: The date the claim was run.]]></Description>
+<AttrDefn mdsid="m80cbbd15-0f3c-0000-714b-e31d00000000" name="AD_3900:8501671401703727">
+<Expr mdsid="m0000000d-01f4-0000-d1ee-49b900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_INS_CLAIM_D"."X_SRM_RUN_DT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-d1ee-49b900000000-m80c66d0d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c190-0bb9-0000-714b-e31d00000000.xml#m80c66d0d-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbbd19-07d6-0000-714b-e31d00000000" name="Created By" isWriteable="false">
+<Description><![CDATA[Created By: The login of the user who created the claim header.]]></Description>
+<AttrDefn mdsid="m80cbbd1b-0f3c-0000-714b-e31d00000000" name="AD_3900:8501711401703755">
+<Expr mdsid="m0000000e-01f4-0000-cbd6-2f6200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_INS_CLAIM_D"."X_SRM_CREATED_BY"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-cbd6-2f6200000000-m80cb9fb0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c190-0bb9-0000-714b-e31d00000000.xml#m80cb9fb0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbbd33-07d6-0000-714b-e31d00000000" name="Created Date" isWriteable="false">
+<Description><![CDATA[Created Date: The date the claim header was created]]></Description>
+<AttrDefn mdsid="m80cbbd37-0f3c-0000-714b-e31d00000000" name="AD_3900:8501911401703919">
+<Expr mdsid="m0000000f-01f4-0000-ee2e-51d800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_INS_CLAIM_D"."CREATED_ON_DT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-ee2e-51d800000000-m80cbbd2b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c190-0bb9-0000-714b-e31d00000000.xml#m80cbbd2b-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbbd1f-07d6-0000-714b-e31d00000000" name="Updated By" isWriteable="false">
+<Description><![CDATA[Updated By: The login of the user who last updated the claim.]]></Description>
+<AttrDefn mdsid="m80cbbd21-0f3c-0000-714b-e31d00000000" name="AD_3900:8501751401703801">
+<Expr mdsid="m00000010-01f4-0000-83e9-ad6000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_INS_CLAIM_D"."X_SRM_UPDATED_BY"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-83e9-ad6000000000-m80cb9fb2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c190-0bb9-0000-714b-e31d00000000.xml#m80cb9fb2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbbd31-07d6-0000-714b-e31d00000000" name="Updated Date" isWriteable="false">
+<Description><![CDATA[Updated Date: The date the claim was last updated.]]></Description>
+<AttrDefn mdsid="m80cbbd35-0f3c-0000-714b-e31d00000000" name="AD_3900:8501901401703919">
+<Expr mdsid="m00000011-01f4-0000-ca64-67d800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_INS_CLAIM_D"."CHANGED_ON_DT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-ca64-67d800000000-m80cbbd29-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c190-0bb9-0000-714b-e31d00000000.xml#m80cbbd29-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80cbbccc-07d8-0000-714b-e31d00000000" name="Dim_W_INS_CLAIM_D_Key" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80cbbccc-07d8-0000-714b-e31d00000000-m80cbbcca-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cbbcc3-07f3-0000-714b-e31d00000000.xml#m80cbbcca-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80cbbcc3-07f3-0000-714b-e31d00000000-m80cbbcd0-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cbbcd0-07f5-0000-714b-e31d00000000.xml#m80cbbcd0-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

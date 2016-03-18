@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTableSource mdsid="m40000009-0d82-1544-af0b-0a3defa30000" name="Fact_WC_FWS_INCOME_F" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isActive="true" logicalTableRef="/oracle/bi/server/base/LogicalTable/c0000000-0d7c-1544-af0b-0a3defa30000.xml#mc0000000-0d7c-1544-af0b-0a3defa30000">
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000001-01f4-0000-050e-1aaa00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Dim - Income (FWS)"."Income Banding"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-050e-1aaa00000000-m40000005-0d82-1544-af0b-0a3defa30000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/c0000000-0d7c-1544-af0b-0a3defa30000.xml#m40000005-0d82-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000002-01f4-0000-2607-724000000000" name="Expr">
+<ExprText><![CDATA[CASE WHEN 
+	"%1" = 0
+THEN
+	'0'
+ELSE
+	CASE WHEN 
+		"%1" < 100
+	THEN
+		'<£100'
+	ELSE
+		CASE WHEN
+			"%1" < 5000
+		THEN
+			'£100 - £5k'
+		ELSE
+			CASE WHEN
+				"%1" < 25000
+			THEN
+				'£5k - £25k'
+			ELSE
+				CASE WHEN
+					"%1" < 100000
+				THEN
+					'£25k - £100k'
+				ELSE
+					CASE WHEN
+						"%1" < 500000
+					THEN
+						'£100k - £500k'
+					ELSE
+						CASE WHEN
+							"%1" < 1000000
+						THEN
+							'£500k - £1m'
+						ELSE
+							CASE WHEN
+								"%1" >= 1000000
+							THEN
+								'>£1m'
+							END
+						END
+					END
+				END
+			END
+		END
+	END
+END]]></ExprText>
+<ExprTextDesc><![CDATA[CASE WHEN 
+	"Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_INCOME_F"."AMOUNT" = 0
+THEN
+	'0'
+ELSE
+	CASE WHEN 
+		"Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_INCOME_F"."AMOUNT" < 100
+	THEN
+		'<£100'
+	ELSE
+		CASE WHEN
+			"Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_INCOME_F"."AMOUNT" < 5000
+		THEN
+			'£100 - £5k'
+		ELSE
+			CASE WHEN
+				"Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_INCOME_F"."AMOUNT" < 25000
+			THEN
+				'£5k - £25k'
+			ELSE
+				CASE WHEN
+					"Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_INCOME_F"."AMOUNT" < 100000
+				THEN
+					'£25k - £100k'
+				ELSE
+					CASE WHEN
+						"Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_INCOME_F"."AMOUNT" < 500000
+					THEN
+						'£100k - £500k'
+					ELSE
+						CASE WHEN
+							"Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_INCOME_F"."AMOUNT" < 1000000
+						THEN
+							'£500k - £1m'
+						ELSE
+							CASE WHEN
+								"Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_INCOME_F"."AMOUNT" >= 1000000
+							THEN
+								'>£1m'
+							END
+						END
+					END
+				END
+			END
+		END
+	END
+END]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-2607-724000000000-m00000001-00c7-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-00c7-1544-af0b-0a3defa30000.xml#m00000001-00c7-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000003-01f4-0000-fccd-3af200000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Dim - Income (FWS)"."Income Date"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-fccd-3af200000000-m40000006-0d82-1544-af0b-0a3defa30000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/c0000000-0d7c-1544-af0b-0a3defa30000.xml#m40000006-0d82-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000004-01f4-0000-82b6-c29400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_INCOME_F"."INCOME_DT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-82b6-c29400000000-m00000004-00c7-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-00c7-1544-af0b-0a3defa30000.xml#m00000004-00c7-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000005-01f4-0000-0a9a-1c9300000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Dim - Income (FWS)"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-0a9a-1c9300000000-m40000002-0df3-1544-af0b-0a3defa30000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/c0000000-0d7c-1544-af0b-0a3defa30000.xml#m40000002-0df3-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000006-01f4-0000-1156-256a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_INCOME_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-1156-256a00000000-m0000000b-00c7-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-00c7-1544-af0b-0a3defa30000.xml#m0000000b-00c7-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/00000000-00c7-1544-af0b-0a3defa30000.xml#m00000000-00c7-1544-af0b-0a3defa30000">
+</Link>
+<WhereClause mdsid="m00000007-01f4-0000-be95-f74000000000" name="WhereClause">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</WhereClause>
+<GroupBy mdsid="m00000008-01f4-0000-b4e6-d72900000000" name="GroupBy">
+<ExprText><![CDATA[ GROUPBYLEVEL("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ GROUPBYLEVEL("Core 2"."Dim - IncomeDim"."Dim - Income Detail")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-b4e6-d72900000000-m40000001-0d99-1544-af0b-0a3defa30000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/40000000-0d99-1544-af0b-0a3defa30000.xml#m40000001-0d99-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</GroupBy>
+<FragmentContent mdsid="m00000009-01f4-0000-c2fe-384200000000" name="FragmentContent">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</FragmentContent>
+</LogicalTableSource>

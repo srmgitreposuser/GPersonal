@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9a6-07f3-0000-714b-e31d00000000" name="Fact - CRM - KPI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="591" y="193" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c565dd-07d6-0000-714b-e31d00000000" name="Account Attrition" isWriteable="false">
+<Description><![CDATA[The number of accounts that have become inactive or have been  deleted since the last time the data warehouse was refreshed.]]></Description>
+<MeasureDefn mdsid="m80c5b0be-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b7e0-0802-0000-714b-e31d00000000" name="AggRule_2050:179491074282429" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-3944-17eb00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - KPI"."Account Attrition")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-3944-17eb00000000-m80c565dd-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a6-07f3-0000-714b-e31d00000000.xml#m80c565dd-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689ba-0f3c-0000-714b-e31d00000000" name="AD_3900:832991074282455">
+<Expr mdsid="m00000002-01f4-0000-cd04-f78300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_KPI_F"."ACCNT_ATTRITION"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-cd04-f78300000000-m80c5c3bf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea3-0bb9-0000-714b-e31d00000000.xml#m80c5c3bf-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c565de-07d6-0000-714b-e31d00000000" name="Contact Attrition" isWriteable="false">
+<Description><![CDATA[The number of contacts that have become inactive or have been  deleted since the last time the data warehouse was refreshed.]]></Description>
+<MeasureDefn mdsid="m80c5b0bf-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b7e1-0802-0000-714b-e31d00000000" name="AggRule_2050:179501074282429" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-615d-d1f800000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - KPI"."Contact Attrition")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-615d-d1f800000000-m80c565de-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a6-07f3-0000-714b-e31d00000000.xml#m80c565de-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689bb-0f3c-0000-714b-e31d00000000" name="AD_3900:833001074282455">
+<Expr mdsid="m00000004-01f4-0000-f0fd-73c000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_KPI_F"."CON_ATTRITION"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-f0fd-73c000000000-m80c5c3c0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea3-0bb9-0000-714b-e31d00000000.xml#m80c5c3c0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c565df-07d6-0000-714b-e31d00000000" name="Employee Attrition" isWriteable="false">
+<Description><![CDATA[The number of employees that have become inactive or have been  deleted since the last time the data warehouse was refreshed.]]></Description>
+<MeasureDefn mdsid="m80c5b0c0-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b7e2-0802-0000-714b-e31d00000000" name="AggRule_2050:179511074282429" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-d09a-0b6b00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - KPI"."Employee Attrition")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-d09a-0b6b00000000-m80c565df-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a6-07f3-0000-714b-e31d00000000.xml#m80c565df-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689bc-0f3c-0000-714b-e31d00000000" name="AD_3900:833011074282455">
+<Expr mdsid="m00000006-01f4-0000-9bf4-fde000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_KPI_F"."EMP_ATTRITION"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-9bf4-fde000000000-m80c5c3c1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea3-0bb9-0000-714b-e31d00000000.xml#m80c5c3c1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c565e0-07d6-0000-714b-e31d00000000" name="# of New Accounts" isWriteable="false">
+<Description><![CDATA[Number of additional accounts created since the time of the last ETL  incremental update.]]></Description>
+<MeasureDefn mdsid="m80c5b0c1-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b7e3-0802-0000-714b-e31d00000000" name="AggRule_2050:179521074282429" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-bb5e-f3c700000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - KPI"."# of New Accounts")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-bb5e-f3c700000000-m80c565e0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a6-07f3-0000-714b-e31d00000000.xml#m80c565e0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689bd-0f3c-0000-714b-e31d00000000" name="AD_3900:833021074282455">
+<Expr mdsid="m00000008-01f4-0000-96ad-b0f500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_KPI_F"."NEW_NUM_ACCNT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-96ad-b0f500000000-m80c5c3c2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea3-0bb9-0000-714b-e31d00000000.xml#m80c5c3c2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c565e1-07d6-0000-714b-e31d00000000" name="# of New Contacts" isWriteable="false">
+<Description><![CDATA[Number of additional contacts created since the time of the last ETL  incremental update.]]></Description>
+<MeasureDefn mdsid="m80c5b0c2-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b7e4-0802-0000-714b-e31d00000000" name="AggRule_2050:179531074282429" isDefault="true">
+<Expr mdsid="m00000009-01f4-0000-4409-754400000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - KPI"."# of New Contacts")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-4409-754400000000-m80c565e1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a6-07f3-0000-714b-e31d00000000.xml#m80c565e1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689be-0f3c-0000-714b-e31d00000000" name="AD_3900:833031074282455">
+<Expr mdsid="m0000000a-01f4-0000-7ffe-c65100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_KPI_F"."NEW_NUM_CON"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-7ffe-c65100000000-m80c5c3c3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea3-0bb9-0000-714b-e31d00000000.xml#m80c5c3c3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c565e2-07d6-0000-714b-e31d00000000" name="# of New Employees" isWriteable="false">
+<Description><![CDATA[Number of additional employees created since the time of the last ETL  incremental update.]]></Description>
+<MeasureDefn mdsid="m80c5b0c3-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b7e5-0802-0000-714b-e31d00000000" name="AggRule_2050:179541074282429" isDefault="true">
+<Expr mdsid="m0000000b-01f4-0000-83b6-c1d600000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - KPI"."# of New Employees")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-83b6-c1d600000000-m80c565e2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a6-07f3-0000-714b-e31d00000000.xml#m80c565e2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689bf-0f3c-0000-714b-e31d00000000" name="AD_3900:833041074282455">
+<Expr mdsid="m0000000c-01f4-0000-5e95-b15500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_KPI_F"."NEW_NUM_EMP"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-5e95-b15500000000-m80c5c3c4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea3-0bb9-0000-714b-e31d00000000.xml#m80c5c3c4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c565e3-07d6-0000-714b-e31d00000000" name="Total Number of Accounts" isWriteable="false">
+<MeasureDefn mdsid="m80c5b2ad-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b98a-0802-0000-714b-e31d00000000" name="AggRule_2050:1276111077261269" isDefault="true">
+<Expr mdsid="m0000000d-01f4-0000-df54-bda100000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - KPI"."Total Number of Accounts")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-df54-bda100000000-m80c565e3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a6-07f3-0000-714b-e31d00000000.xml#m80c565e3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689c0-0f3c-0000-714b-e31d00000000" name="AD_3900:833051074282455">
+<Expr mdsid="m0000000e-01f4-0000-57d6-979700000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_KPI_F"."TOTL_NUM_ACCNT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-57d6-979700000000-m80c5c3c5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea3-0bb9-0000-714b-e31d00000000.xml#m80c5c3c5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c565e4-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80c689c1-0f3c-0000-714b-e31d00000000" name="AD_3900:833061074282455">
+<Expr mdsid="m0000000f-01f4-0000-6fbe-b92d00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_KPI_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-6fbe-b92d00000000-m80c5c3bd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea3-0bb9-0000-714b-e31d00000000.xml#m80c5c3bd-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58c77-07d8-0000-714b-e31d00000000" name="ROW_WID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58c77-07d8-0000-714b-e31d00000000-m80c565e4-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9a6-07f3-0000-714b-e31d00000000.xml#m80c565e4-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5a9a6-07f3-0000-714b-e31d00000000-m80c5abcc-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5abcc-07f5-0000-714b-e31d00000000.xml#m80c5abcc-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

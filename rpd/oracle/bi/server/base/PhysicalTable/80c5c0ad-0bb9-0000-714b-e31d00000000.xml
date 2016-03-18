@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5c0ad-0bb9-0000-714b-e31d00000000" name="WC_SUPP_OVERLAP_AVAIL_F" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" x="259" y="462" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb1-0bd3-0000-714b-e31d00000000.xml#m80c67bb1-0bd3-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT X.MONTH_WID,Y.CAMP_NAME,X.OVERLAP_SUPPORTERS,Y.NO_SUPP_IN_CAMPAIGN FROM
+(SELECT   A.MONTH_WID, A.CAMP_WID, SUM (A.NUM_OVRLP_ACCNTS) OVERLAP_SUPPORTERS
+    FROM (SELECT   OVERLAP.MONTH_WID, OVERLAP.CAMP_WID,
+                   COUNT (DISTINCT OVERLAP.CONTACT_WID) AS NUM_OVRLP_ACCNTS
+              FROM (SELECT DISTINCT CHF.MONTH_WID,
+                                    CHF.CONTACT_WID AS CONTACT_WID,
+                                    SRC.ROW_WID AS CAMP_WID,
+                                    OSRC.ROW_WID AS OVRLP_CAMP_WID
+                               FROM (SELECT   A.CONTACT_WID, A.SOURCE_WID,
+                                              B.MONTH_WID
+                                         FROM W_CAMP_HIST_F A, W_DAY_D  B 
+                                        WHERE A.CAMP_ST_DT_WID = B.ROW_WID
+										  AND A.LAUNCH_DT_WID = 0
+                                          AND A.SOURCE_WID > 0
+                                          AND A.CONTACT_WID > 0
+                                          AND A.CAMP_ST_DT_WID != 0
+                                     GROUP BY A.CONTACT_WID,
+                                              A.SOURCE_WID,
+                                              B.MONTH_WID
+                                                      ) CHF,
+                                    (SELECT   A.CONTACT_WID, A.SOURCE_WID,
+                                              B.MONTH_WID
+                                         FROM W_CAMP_HIST_F A, W_DAY_D  B
+                                        WHERE 
+										  A.CAMP_ST_DT_WID = B.ROW_WID
+										  AND A.LAUNCH_DT_WID = 0
+                                          AND A.SOURCE_WID > 0
+                                          AND A.CONTACT_WID > 0
+                                          AND A.CAMP_ST_DT_WID != 0
+                                     GROUP BY A.CONTACT_WID,
+                                              A.SOURCE_WID,
+                                              B.MONTH_WID) OCHF,
+                                    W_SOURCE_D SRC,
+                                    W_SOURCE_D OSRC
+                              WHERE CHF.SOURCE_WID = SRC.ROW_WID
+                                AND OCHF.SOURCE_WID = OSRC.ROW_WID
+                                AND CHF.SOURCE_WID <> OCHF.SOURCE_WID
+                                AND CHF.CONTACT_WID = OCHF.CONTACT_WID
+                                AND CHF.MONTH_WID = OCHF.MONTH_WID
+                                AND SRC.SRC_TYPE = 'Campaign'
+                                AND OSRC.SRC_TYPE = 'Campaign') OVERLAP
+          GROUP BY OVERLAP.MONTH_WID, OVERLAP.CAMP_WID) A
+GROUP BY A.MONTH_WID, A.CAMP_WID ) X ,
+(SELECT SOURCE_WID,MONTH_WID,CAMP_NAME  ,COUNT(CONTACT_WID) NO_SUPP_IN_CAMPAIGN  FROM W_CAMP_HIST_F A , W_SOURCE_D B , W_DAY_D C
+WHERE A.SOURCE_WID = B.ROW_WID AND A.CAMP_ST_DT_WID = C.ROW_WID AND A.CAMP_ST_DT_WID != 0
+GROUP BY SOURCE_WID,MONTH_WID,CAMP_NAME) Y
+WHERE 
+X.CAMP_WID = Y.SOURCE_WID AND
+X.MONTH_WID = Y.MONTH_WID 
+ORDER BY 1, 2
+]]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c638fd-0bbb-0000-714b-e31d00000000" name="CAMP_NAME" dataType="VARCHAR" precision="2000" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c638fe-0bbb-0000-714b-e31d00000000" name="MONTH_WID" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c638ff-0bbb-0000-714b-e31d00000000" name="OVERLAP_SUPPORTERS" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c63900-0bbb-0000-714b-e31d00000000" name="NO_SUPP_IN_CAMPAIGN" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalKey mdsid="m80c67a99-0bc0-0000-714b-e31d00000000" name="MONTH_WID">
+<RefColumns>
+<RefColumn refId="m80c67a99-0bc0-0000-714b-e31d00000000-m80c638fe-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5c0ad-0bb9-0000-714b-e31d00000000.xml#m80c638fe-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+<PhysicalForeignKey mdsid="m80c6764b-0bbe-0000-714b-e31d00000000" name="WC_SUPP_OVERLAP_AVAIL_F_FKey" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5bfe3-0bb9-0000-714b-e31d00000000.xml#m80c67a4d-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c6764b-0bbe-0000-714b-e31d00000000-m80c638fe-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5c0ad-0bb9-0000-714b-e31d00000000.xml#m80c638fe-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+</PhysicalTable>

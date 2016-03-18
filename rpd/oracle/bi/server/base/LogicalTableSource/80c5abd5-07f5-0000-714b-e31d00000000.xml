@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTableSource mdsid="m80c5abd5-07f5-0000-714b-e31d00000000" name="W_INS_CLAIM_F_Claim Header" iconIndex="69" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isActive="true" logicalTableRef="/oracle/bi/server/base/LogicalTable/80c5a9ad-07f3-0000-714b-e31d00000000.xml#m80c5a9ad-07f3-0000-714b-e31d00000000">
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000001-01f4-0000-e62b-324b00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Ins Claim"."Total Delay in Reporting Loss (Hours)"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-e62b-324b00000000-m80c5662d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ad-07f3-0000-714b-e31d00000000.xml#m80c5662d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000002-01f4-0000-37b3-56be00000000" name="Expr">
+<ExprText><![CDATA[ TIMESTAMPDIFF( SQL_TSI_HOUR , "%1", "%2")]]></ExprText>
+<ExprTextDesc><![CDATA[ TIMESTAMPDIFF( SQL_TSI_HOUR , "Oracle Data Warehouse"."Catalog"."dbo"."W_INS_CLAIM_D"."LOSS_DT", "Oracle Data Warehouse"."Catalog"."dbo"."W_INS_CLAIM_D"."REPORTED_DT")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-37b3-56be00000000-m80c5d10a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bef2-0bb9-0000-714b-e31d00000000.xml#m80c5d10a-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-37b3-56be00000000-m80c5d10e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bef2-0bb9-0000-714b-e31d00000000.xml#m80c5d10e-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000003-01f4-0000-6813-93b100000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Ins Claim"."Average Delay in Reporting Loss (Hours)"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-6813-93b100000000-m80c5662e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ad-07f3-0000-714b-e31d00000000.xml#m80c5662e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000004-01f4-0000-4fde-14c000000000" name="Expr">
+<ExprText><![CDATA[ TIMESTAMPDIFF( SQL_TSI_HOUR , "%1", "%2")]]></ExprText>
+<ExprTextDesc><![CDATA[ TIMESTAMPDIFF( SQL_TSI_HOUR , "Oracle Data Warehouse"."Catalog"."dbo"."W_INS_CLAIM_D"."LOSS_DT", "Oracle Data Warehouse"."Catalog"."dbo"."W_INS_CLAIM_D"."REPORTED_DT")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-4fde-14c000000000-m80c5d10a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bef2-0bb9-0000-714b-e31d00000000.xml#m80c5d10a-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-4fde-14c000000000-m80c5d10e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bef2-0bb9-0000-714b-e31d00000000.xml#m80c5d10e-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000005-01f4-0000-f34e-950100000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Ins Claim"."Total Delay in First Response (Hours)"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-f34e-950100000000-m80c5662f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ad-07f3-0000-714b-e31d00000000.xml#m80c5662f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000006-01f4-0000-ff4f-f0ff00000000" name="Expr">
+<ExprText><![CDATA[ TIMESTAMPDIFF( SQL_TSI_HOUR , "%1",  IFNULL("%2",  CURRENT_TIMESTAMP(0)))]]></ExprText>
+<ExprTextDesc><![CDATA[ TIMESTAMPDIFF( SQL_TSI_HOUR , "Oracle Data Warehouse"."Catalog"."dbo"."W_INS_CLAIM_D"."REPORTED_DT",  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ACTIVITY_F_First_Claim_Activity_Response_TS"."FIRST_ACT_TS",  CURRENT_TIMESTAMP(0)))]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-ff4f-f0ff00000000-m80c5d10e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bef2-0bb9-0000-714b-e31d00000000.xml#m80c5d10e-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-ff4f-f0ff00000000-m80c5d623-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf1d-0bb9-0000-714b-e31d00000000.xml#m80c5d623-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000007-01f4-0000-0ac4-2a1f00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Ins Claim"."Average Delay in First Response (Hours)"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-0ac4-2a1f00000000-m80c56630-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ad-07f3-0000-714b-e31d00000000.xml#m80c56630-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000008-01f4-0000-85d8-64cd00000000" name="Expr">
+<ExprText><![CDATA[ TIMESTAMPDIFF( SQL_TSI_HOUR , "%1",  IFNULL("%2",  CURRENT_TIMESTAMP(0)))]]></ExprText>
+<ExprTextDesc><![CDATA[ TIMESTAMPDIFF( SQL_TSI_HOUR , "Oracle Data Warehouse"."Catalog"."dbo"."W_INS_CLAIM_D"."REPORTED_DT",  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ACTIVITY_F_First_Claim_Activity_Response_TS"."FIRST_ACT_TS",  CURRENT_TIMESTAMP(0)))]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-85d8-64cd00000000-m80c5d10e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bef2-0bb9-0000-714b-e31d00000000.xml#m80c5d10e-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-85d8-64cd00000000-m80c5d623-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf1d-0bb9-0000-714b-e31d00000000.xml#m80c5d623-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000009-01f4-0000-d1e9-75f400000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Ins Claim"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-d1e9-75f400000000-m80c5663d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ad-07f3-0000-714b-e31d00000000.xml#m80c5663d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000a-01f4-0000-0459-80ba00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."W_INS_CLAIM_D"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-0459-80ba00000000-m80c5d108-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bef2-0bb9-0000-714b-e31d00000000.xml#m80c5d108-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5bef2-0bb9-0000-714b-e31d00000000.xml#m80c5bef2-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5bef2-0bb9-0000-714b-e31d00000000.xml#m80c5bef2-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5bfaf-0bb9-0000-714b-e31d00000000.xml#m80c5bfaf-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5bfaf-0bb9-0000-714b-e31d00000000.xml#m80c673e0-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5bf1d-0bb9-0000-714b-e31d00000000.xml#m80c5bf1d-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5bf1d-0bb9-0000-714b-e31d00000000.xml#m80c5bf1d-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5bfaf-0bb9-0000-714b-e31d00000000.xml#m80c5bfaf-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5bfaf-0bb9-0000-714b-e31d00000000.xml#m80c673e8-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5bfaf-0bb9-0000-714b-e31d00000000.xml#m80c5bfaf-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5bfaf-0bb9-0000-714b-e31d00000000.xml#m80c5bfaf-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5bef2-0bb9-0000-714b-e31d00000000.xml#m80c5bef2-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5bfaf-0bb9-0000-714b-e31d00000000.xml#m80c673e0-0bbe-0000-714b-e31d00000000"/>
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5bfaf-0bb9-0000-714b-e31d00000000.xml#m80c5bfaf-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5bf1d-0bb9-0000-714b-e31d00000000.xml#m80c5bf1d-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5bfaf-0bb9-0000-714b-e31d00000000.xml#m80c673e8-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<WhereClause mdsid="m0000000b-01f4-0000-9602-d77500000000" name="WhereClause">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</WhereClause>
+<GroupBy mdsid="m0000000c-01f4-0000-34e2-f71f00000000" name="GroupBy">
+<ExprText><![CDATA[ GROUPBYLEVEL("%1", "%2", "%3", "%4", "%5", "%6", "%7", "%8", "%9", "%10")]]></ExprText>
+<ExprTextDesc><![CDATA[ GROUPBYLEVEL("Core"."Customer"."Account Detail", "Core"."Asset"."Asset Detail", "Core"."Claim"."Claim Detail", "Core"."Claim: Loss Date"."Day", "Core"."Claim: Paid Date"."Date", "Core"."Claim: Received Date"."Day", "Core"."Claim: Service Date"."Day", "Core"."Contact (W_PERSON_D)"."Detail", "Core"."Industry"."Industry Detail", "Core"."Product"."Product Detail")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-34e2-f71f00000000-m80c5a1be-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a099-07e3-0000-714b-e31d00000000.xml#m80c5a1be-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-34e2-f71f00000000-m80c5a22b-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0b3-07e3-0000-714b-e31d00000000.xml#m80c5a22b-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-34e2-f71f00000000-m80c5a2ab-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0cd-07e3-0000-714b-e31d00000000.xml#m80c5a2ab-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-34e2-f71f00000000-m80c5a28e-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0c9-07e3-0000-714b-e31d00000000.xml#m80c5a28e-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-34e2-f71f00000000-m80c5a296-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0ca-07e3-0000-714b-e31d00000000.xml#m80c5a296-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-34e2-f71f00000000-m80c5a29e-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0cb-07e3-0000-714b-e31d00000000.xml#m80c5a29e-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-34e2-f71f00000000-m80c5a2a6-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0cc-07e3-0000-714b-e31d00000000.xml#m80c5a2a6-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-34e2-f71f00000000-m80c5a278-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0c7-07e3-0000-714b-e31d00000000.xml#m80c5a278-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-34e2-f71f00000000-m80c5a1ec-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0a2-07e3-0000-714b-e31d00000000.xml#m80c5a1ec-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-34e2-f71f00000000-m80c5a1af-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a097-07e3-0000-714b-e31d00000000.xml#m80c5a1af-07e9-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</GroupBy>
+<FragmentContent mdsid="m0000000d-01f4-0000-c333-358d00000000" name="FragmentContent">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</FragmentContent>
+</LogicalTableSource>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c71580-07f3-0000-714b-e31d00000000" name="Fact - Supporter Volunteer Details" iconIndex="93" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1070" y="792" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c71583-07d6-0000-714b-e31d00000000" name="# Supporter Volunteers" isWriteable="false">
+<MeasureDefn mdsid="m80c7158b-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c7158c-0802-0000-714b-e31d00000000" name="AggRule_2050:6518691313664600" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-370a-7cf300000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - Supporter Volunteer Details"."# Supporter Volunteers")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-370a-7cf300000000-m80c71583-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c71580-07f3-0000-714b-e31d00000000.xml#m80c71583-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c71596-0f3c-0000-714b-e31d00000000" name="AD_3900:6518671313664600">
+<Expr mdsid="m00000002-01f4-0000-82a7-a27100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SUPP_VOL_DTLS_D_Volunteering_Details"."CONTACT_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-82a7-a27100000000-m80c70552-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c70546-0bb9-0000-714b-e31d00000000.xml#m80c70552-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c71580-07f3-0000-714b-e31d00000000-m80c7159e-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c7159e-07f5-0000-714b-e31d00000000.xml#m80c7159e-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

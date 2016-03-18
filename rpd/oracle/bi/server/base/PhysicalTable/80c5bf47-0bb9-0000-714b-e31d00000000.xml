@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5bf47-0bb9-0000-714b-e31d00000000" name="Fact_W_ORDERITEM_F_PRODUCTS_SAME_ACCOUNT_OV_F" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" x="433" y="974" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb1-0bd3-0000-714b-e31d00000000.xml#m80c67bb1-0bd3-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT  F.PROD_WID AS PROD_WID, F2.PROD_WID AS NEXTORDER_PROD_WID,  F.ACCNT_WID AS ACCT_WID,  F.ORDER_WID, F2.ORDER_WID AS NEXTORDER_WID
+FROM VALUEOF(OLAPTBO).W_ORDERITEM_F F, VALUEOF(OLAPTBO).W_ORDERITEM_F F2
+WHERE
+    F.ACCNT_WID = F2.ACCNT_WID and F.PROD_WID <>0 and F2.PROD_WID <>0
+AND F2.ORDER_WID = (SELECT MIN(ORDER_WID)
+     FROM VALUEOF(OLAPTBO).W_ORDERITEM_F FIN
+     WHERE FIN.ACCNT_WID = F.ACCNT_WID
+     AND   FIN.ORDER_WID > F.ORDER_WID
+    )
+AND F.ACCNT_WID <> 0]]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c5e015-0bbb-0000-714b-e31d00000000" name="PROD_WID" dataType="INT" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5e016-0bbb-0000-714b-e31d00000000" name="NEXTORDER_PROD_WID" dataType="INT" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5e017-0bbb-0000-714b-e31d00000000" name="ACCT_WID" dataType="INT" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5e018-0bbb-0000-714b-e31d00000000" name="ORDER_WID" dataType="INT" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5e019-0bbb-0000-714b-e31d00000000" name="NEXTORDER_WID" dataType="INT" specialType="none">
+</PhysicalColumn>
+<PhysicalForeignKey mdsid="m80c671e1-0bbe-0000-714b-e31d00000000" name="W_PRODUCTS_SAME_PURCHASER_OV_F_FKey" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80c678b0-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c671e1-0bbe-0000-714b-e31d00000000-m80c5e015-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bf47-0bb9-0000-714b-e31d00000000.xml#m80c5e015-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m80c671e2-0bbe-0000-714b-e31d00000000" name="W_PRODUCTS_SAME_PURCHASER_OV_F_FKey2" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5bf44-0bb9-0000-714b-e31d00000000.xml#m80c6797f-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c671e2-0bbe-0000-714b-e31d00000000-m80c5e016-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bf47-0bb9-0000-714b-e31d00000000.xml#m80c5e016-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m80c671e3-0bbe-0000-714b-e31d00000000" name="W_PRODUCTS_SAME_ACCOUNT_OV_F_FKey" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5beaa-0bb9-0000-714b-e31d00000000.xml#m80c678ac-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c671e3-0bbe-0000-714b-e31d00000000-m80c5e017-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bf47-0bb9-0000-714b-e31d00000000.xml#m80c5e017-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m80c671e4-0bbe-0000-714b-e31d00000000" name="W_PRODUCTS_SAME_ACCOUNT_OV_F_FKey1" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5bea9-0bb9-0000-714b-e31d00000000.xml#m80c678ab-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c671e4-0bbe-0000-714b-e31d00000000-m80c5e018-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bf47-0bb9-0000-714b-e31d00000000.xml#m80c5e018-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+</PhysicalTable>

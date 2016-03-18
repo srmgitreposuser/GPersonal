@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PresentationTable mdsid="m80cbaa4b-0fa8-0000-714b-e31d00000000" name="Volunteering Record" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationCatalog/80cbaa43-0fa4-0000-714b-e31d00000000.xml#m80cbaa43-0fa4-0000-714b-e31d00000000">
+<PresentationColumn mdsid="m80cba9ee-0faa-0000-714b-e31d00000000" name="Volunteering Record Applied Date" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cba6a3-07f3-0000-714b-e31d00000000.xml#m80cba6c3-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[The earliest Applied Date within a group of Volunteering Activities of the same 'Type'.  Note: For a Type of 'Trading' there are no Applied Dates and so will always be null.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cba9e9-0faa-0000-714b-e31d00000000" name="Volunteering Record End Date" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cba6a3-07f3-0000-714b-e31d00000000.xml#m80cba6c1-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Within a group of Volunteering Activities of the same 'Type', if any End Dates are null then Volunteering Record End Date is null. Otherwise this will be the latest End Date Within the group of Volunteering Activities.
+
+End Date for Volunteer Fundraising, Office, Other volunteers this is their Volunteering End Date.
+For Trading  volunteers this is the Organisation Supporters End Date
+For Event volunteers this will be 18 months after the last Event start date (from Event header)
+This field will show null (blanks) if the volunteer is active.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cba9eb-0faa-0000-714b-e31d00000000" name="Volunteering Record Estimated Hours Flag" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cba6a3-07f3-0000-714b-e31d00000000.xml#m80cba6c2-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Indicates that the Estimated Hours field has been updated (if null then 'N', if not null then 'Y').]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cba9f4-0faa-0000-714b-e31d00000000" name="Volunteering Record Length of Service Range" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cba6a3-07f3-0000-714b-e31d00000000.xml#m80cba6bd-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Within a group of Volunteering Activities of the same 'Type'. The time between the Start Date of earliest Activity and End Date of the most recent Activity (or if still Active, between earliest Start Date and Today).  1 - 2 years would be anything one year or more and less than two years.
+Note: If Start Date is null the the Created Date is used.]]></Description>
+<Alias name="Volunteering Activity Length of Service Range"/>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cba9e8-0faa-0000-714b-e31d00000000" name="Volunteering Record Start Date" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cba6a3-07f3-0000-714b-e31d00000000.xml#m80cba6c0-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[The earliest Start Date within a group of Volunteering Activities of the same 'Type'. 
+
+
+For Volunteer Fundraising, Office, Other volunteers this is their Volunteering Start Date.
+For Trading  volunteers this is the Organisation Supporters Start Date
+For Event volunteers this is the Event date (taken from Event header).]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cba9f1-0faa-0000-714b-e31d00000000" name="Volunteering Record Status" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cba6a3-07f3-0000-714b-e31d00000000.xml#m80cba6c5-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Indicates which stage the Volunteering Record is at (Active, Lapsed) - if at least one Volunteering Activity is Active then Volunteering Record Status is Active, otherwise it is Lapsed.]]></Description>
+</PresentationColumn>
+</PresentationTable>

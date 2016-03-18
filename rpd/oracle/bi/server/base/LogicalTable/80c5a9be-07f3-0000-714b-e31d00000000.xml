@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9be-07f3-0000-714b-e31d00000000" name="Fact  Compound - Balance History Time Series" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="397" y="682" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c56773-07d6-0000-714b-e31d00000000" name="Chg Year Ago Average Historical Balance" iconIndex="69" isDerived="true" isWriteable="false">
+<Description><![CDATA["This is the change in amount from  ""Year Ago Average Historical Balance"". To be used in combination with End date period date information"]]></Description>
+<Expr mdsid="m00000001-01f4-0000-2e48-82d100000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Balance History"."Average Historical Balance", 0) -  IFNULL("Core"."Fact - CRM - Balance History Year Ago"."Year Ago Average Historical Balance", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-2e48-82d100000000-m80c565f8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a9-07f3-0000-714b-e31d00000000.xml#m80c565f8-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000001-01f4-0000-2e48-82d100000000-m80c5666b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b2-07f3-0000-714b-e31d00000000.xml#m80c5666b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b50-0f3c-0000-714b-e31d00000000" name="AD_3900:838391074282455">
+<Expr mdsid="m00000002-01f4-0000-2252-488b00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56774-07d6-0000-714b-e31d00000000" name="% Chg Year Ago Average Historical Balance" iconIndex="69" isDerived="true" isWriteable="false">
+<Description><![CDATA["This is the % change from  ""Year Ago Average Historical Balance"". To be used in combination with End date period date information"]]></Description>
+<Expr mdsid="m00000003-01f4-0000-04f9-5e2600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Balance History Year Ago"."Year Ago Average Historical Balance" IS NULL  OR "Core"."Fact - CRM - Balance History Year Ago"."Year Ago Average Historical Balance" = 0) AND  NOT "Core"."Fact - CRM - Balance History"."Average Historical Balance" IS NULL  AND "Core"."Fact - CRM - Balance History"."Average Historical Balance" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Balance History Year Ago"."Year Ago Average Historical Balance" IS NULL  OR "Core"."Fact - CRM - Balance History Year Ago"."Year Ago Average Historical Balance" = 0) AND ("Core"."Fact - CRM - Balance History"."Average Historical Balance" IS NULL  OR "Core"."Fact - CRM - Balance History"."Average Historical Balance" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Balance History"."Average Historical Balance" IS NULL  AND  NOT "Core"."Fact - CRM - Balance History Year Ago"."Year Ago Average Historical Balance" IS NULL  AND "Core"."Fact - CRM - Balance History Year Ago"."Year Ago Average Historical Balance" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Balance History"."Average Historical Balance" - "Core"."Fact - CRM - Balance History Year Ago"."Year Ago Average Historical Balance") / "Core"."Fact - CRM - Balance History Year Ago"."Year Ago Average Historical Balance" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-04f9-5e2600000000-m80c5666b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b2-07f3-0000-714b-e31d00000000.xml#m80c5666b-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000003-01f4-0000-04f9-5e2600000000-m80c565f8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a9-07f3-0000-714b-e31d00000000.xml#m80c565f8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b51-0f3c-0000-714b-e31d00000000" name="AD_3900:838401074282455">
+<Expr mdsid="m00000004-01f4-0000-fa03-d9fa00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56775-07d6-0000-714b-e31d00000000" name="Chg Year Ago Ending Balance" iconIndex="69" isDerived="true" isWriteable="false">
+<Description><![CDATA["This is the change in amount from  ""Year Ago Ending Balance"""]]></Description>
+<Expr mdsid="m00000005-01f4-0000-2064-3b6500000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Balance History"."Ending Balance", 0) -  IFNULL("Core"."Fact - CRM - Balance History Year Ago"."Year Ago Ending Balance", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-2064-3b6500000000-m80c565f9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a9-07f3-0000-714b-e31d00000000.xml#m80c565f9-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000005-01f4-0000-2064-3b6500000000-m80c5666c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b2-07f3-0000-714b-e31d00000000.xml#m80c5666c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b52-0f3c-0000-714b-e31d00000000" name="AD_3900:838411074282455">
+<Expr mdsid="m00000006-01f4-0000-46b9-509e00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56776-07d6-0000-714b-e31d00000000" name="% Chg Year Ago Ending Balance" iconIndex="69" isDerived="true" isWriteable="false">
+<Description><![CDATA["This is the % change from  ""Year Ago Ending Balance"""]]></Description>
+<Expr mdsid="m00000007-01f4-0000-db36-876400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Balance History Year Ago"."Year Ago Ending Balance" IS NULL  OR "Core"."Fact - CRM - Balance History Year Ago"."Year Ago Ending Balance" = 0) AND  NOT "Core"."Fact - CRM - Balance History"."Ending Balance" IS NULL  AND "Core"."Fact - CRM - Balance History"."Ending Balance" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Balance History Year Ago"."Year Ago Ending Balance" IS NULL  OR "Core"."Fact - CRM - Balance History Year Ago"."Year Ago Ending Balance" = 0) AND ("Core"."Fact - CRM - Balance History"."Ending Balance" IS NULL  OR "Core"."Fact - CRM - Balance History"."Ending Balance" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Balance History"."Ending Balance" IS NULL  AND  NOT "Core"."Fact - CRM - Balance History Year Ago"."Year Ago Ending Balance" IS NULL  AND "Core"."Fact - CRM - Balance History Year Ago"."Year Ago Ending Balance" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Balance History"."Ending Balance" - "Core"."Fact - CRM - Balance History Year Ago"."Year Ago Ending Balance") / "Core"."Fact - CRM - Balance History Year Ago"."Year Ago Ending Balance" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-db36-876400000000-m80c5666c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b2-07f3-0000-714b-e31d00000000.xml#m80c5666c-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000007-01f4-0000-db36-876400000000-m80c565f9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a9-07f3-0000-714b-e31d00000000.xml#m80c565f9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b53-0f3c-0000-714b-e31d00000000" name="AD_3900:838421074282455">
+<Expr mdsid="m00000008-01f4-0000-406a-0fa700000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56777-07d6-0000-714b-e31d00000000" name="Chg Quarter Ago Average Historical Balance" iconIndex="69" isDerived="true" isWriteable="false">
+<Description><![CDATA["This is the change in amount from  ""Quarter Ago Average Historical Balance"". To be used in combination with End date period date information"]]></Description>
+<Expr mdsid="m00000009-01f4-0000-017e-a72000000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Balance History"."Average Historical Balance", 0) -  IFNULL("Core"."Fact - CRM - Balance History Quarter Ago"."Quarter Ago Average Historical Balance", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-017e-a72000000000-m80c565f8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a9-07f3-0000-714b-e31d00000000.xml#m80c565f8-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000009-01f4-0000-017e-a72000000000-m80c56681-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b3-07f3-0000-714b-e31d00000000.xml#m80c56681-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b54-0f3c-0000-714b-e31d00000000" name="AD_3900:838431074282455">
+<Expr mdsid="m0000000a-01f4-0000-527f-afbe00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56778-07d6-0000-714b-e31d00000000" name="% Chg Quarter Ago Average Historical Balance" iconIndex="69" isDerived="true" isWriteable="false">
+<Description><![CDATA["This is the % change from  ""Quarter Ago Average Historical Balance"". To be used in combination with End date period date information"]]></Description>
+<Expr mdsid="m0000000b-01f4-0000-e38f-21a700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Balance History Quarter Ago"."Quarter Ago Average Historical Balance" IS NULL  OR "Core"."Fact - CRM - Balance History Quarter Ago"."Quarter Ago Average Historical Balance" = 0) AND  NOT "Core"."Fact - CRM - Balance History"."Average Historical Balance" IS NULL  AND "Core"."Fact - CRM - Balance History"."Average Historical Balance" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Balance History Quarter Ago"."Quarter Ago Average Historical Balance" IS NULL  OR "Core"."Fact - CRM - Balance History Quarter Ago"."Quarter Ago Average Historical Balance" = 0) AND ("Core"."Fact - CRM - Balance History"."Average Historical Balance" IS NULL  OR "Core"."Fact - CRM - Balance History"."Average Historical Balance" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Balance History"."Average Historical Balance" IS NULL  AND  NOT "Core"."Fact - CRM - Balance History Quarter Ago"."Quarter Ago Average Historical Balance" IS NULL  AND "Core"."Fact - CRM - Balance History Quarter Ago"."Quarter Ago Average Historical Balance" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Balance History"."Average Historical Balance" - "Core"."Fact - CRM - Balance History Quarter Ago"."Quarter Ago Average Historical Balance") / "Core"."Fact - CRM - Balance History Quarter Ago"."Quarter Ago Average Historical Balance" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-e38f-21a700000000-m80c56681-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b3-07f3-0000-714b-e31d00000000.xml#m80c56681-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000b-01f4-0000-e38f-21a700000000-m80c565f8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a9-07f3-0000-714b-e31d00000000.xml#m80c565f8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b55-0f3c-0000-714b-e31d00000000" name="AD_3900:838441074282455">
+<Expr mdsid="m0000000c-01f4-0000-5aa9-17a400000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56779-07d6-0000-714b-e31d00000000" name="Chg Quarter Ago Ending Balance" iconIndex="69" isDerived="true" isWriteable="false">
+<Description><![CDATA["This is the change in amount from  ""Quarter Ago Ending Balance"""]]></Description>
+<Expr mdsid="m0000000d-01f4-0000-e5af-255e00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Balance History"."Ending Balance", 0) -  IFNULL("Core"."Fact - CRM - Balance History Quarter Ago"."Quarter Ago Ending Balance", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-e5af-255e00000000-m80c565f9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a9-07f3-0000-714b-e31d00000000.xml#m80c565f9-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000d-01f4-0000-e5af-255e00000000-m80c56682-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b3-07f3-0000-714b-e31d00000000.xml#m80c56682-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b56-0f3c-0000-714b-e31d00000000" name="AD_3900:838451074282455">
+<Expr mdsid="m0000000e-01f4-0000-1998-fb3c00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5677a-07d6-0000-714b-e31d00000000" name="% Chg Quarter Ago Ending Balance" iconIndex="69" isDerived="true" isWriteable="false">
+<Description><![CDATA["This is the % change from  ""Quarter Ago Ending Balance"""]]></Description>
+<Expr mdsid="m0000000f-01f4-0000-03ed-9b7700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Balance History Quarter Ago"."Quarter Ago Ending Balance" IS NULL  OR "Core"."Fact - CRM - Balance History Quarter Ago"."Quarter Ago Ending Balance" = 0) AND  NOT "Core"."Fact - CRM - Balance History"."Ending Balance" IS NULL  AND "Core"."Fact - CRM - Balance History"."Ending Balance" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Balance History Quarter Ago"."Quarter Ago Ending Balance" IS NULL  OR "Core"."Fact - CRM - Balance History Quarter Ago"."Quarter Ago Ending Balance" = 0) AND ("Core"."Fact - CRM - Balance History"."Ending Balance" IS NULL  OR "Core"."Fact - CRM - Balance History"."Ending Balance" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Balance History"."Ending Balance" IS NULL  AND  NOT "Core"."Fact - CRM - Balance History Quarter Ago"."Quarter Ago Ending Balance" IS NULL  AND "Core"."Fact - CRM - Balance History Quarter Ago"."Quarter Ago Ending Balance" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Balance History"."Ending Balance" - "Core"."Fact - CRM - Balance History Quarter Ago"."Quarter Ago Ending Balance") / "Core"."Fact - CRM - Balance History Quarter Ago"."Quarter Ago Ending Balance" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-03ed-9b7700000000-m80c56682-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b3-07f3-0000-714b-e31d00000000.xml#m80c56682-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000f-01f4-0000-03ed-9b7700000000-m80c565f9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a9-07f3-0000-714b-e31d00000000.xml#m80c565f9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b57-0f3c-0000-714b-e31d00000000" name="AD_3900:838461074282455">
+<Expr mdsid="m00000010-01f4-0000-1991-d01a00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5677b-07d6-0000-714b-e31d00000000" name="Chg 3 Months Ago Average Balance" iconIndex="69" isDerived="true" isWriteable="false">
+<Description><![CDATA[ This column gives the difference between the Average Balance 3 months ago column and the Average Balance 1 Month Ago column. This shows the trend in the average balance of the assets owned by the customer thereby indicating usage trend.]]></Description>
+<Expr mdsid="m00000011-01f4-0000-167d-a8bf00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 1 Month Ago", 0) -  IFNULL("Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 3 Months Ago", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-167d-a8bf00000000-m80c56913-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9eb-07f3-0000-714b-e31d00000000.xml#m80c56913-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000011-01f4-0000-167d-a8bf00000000-m80c56914-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9eb-07f3-0000-714b-e31d00000000.xml#m80c56914-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b58-0f3c-0000-714b-e31d00000000" name="AD_3900:838471074282455">
+<Expr mdsid="m00000012-01f4-0000-e56b-e7cc00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5677c-07d6-0000-714b-e31d00000000" name="% Chg 3 Months Ago Average Balance" iconIndex="69" isDerived="true" isWriteable="false">
+<Description><![CDATA[ The column calculates the % Change in the Average Balance 3 months Ago to the Average Balance 1 Month ago. If both these columns are zero, a zero is returned. If the value 3 Months ago is zero and the value 1 Month ago is not zero then 100 % is returned. If value 3 Months ago is not zero and 1 Month ago is zero then -100% is returned.]]></Description>
+<Expr mdsid="m00000013-01f4-0000-0d8f-243700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 3 Months Ago" IS NULL  OR "Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 3 Months Ago" = 0) AND  NOT "Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 1 Month Ago" IS NULL  AND "Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 1 Month Ago" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 3 Months Ago" IS NULL  OR "Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 3 Months Ago" = 0) AND ("Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 1 Month Ago" IS NULL  OR "Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 1 Month Ago" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 1 Month Ago" IS NULL  AND  NOT "Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 3 Months Ago" IS NULL  AND "Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 3 Months Ago" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 1 Month Ago" - "Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 3 Months Ago") / "Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 3 Months Ago" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-0d8f-243700000000-m80c56914-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9eb-07f3-0000-714b-e31d00000000.xml#m80c56914-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000013-01f4-0000-0d8f-243700000000-m80c56913-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9eb-07f3-0000-714b-e31d00000000.xml#m80c56913-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b59-0f3c-0000-714b-e31d00000000" name="AD_3900:838481074282455">
+<Expr mdsid="m00000014-01f4-0000-8e55-59b200000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5677d-07d6-0000-714b-e31d00000000" name="Chg 6 Months Ago Average Balance" iconIndex="69" isDerived="true" isWriteable="false">
+<Description><![CDATA[ This column gives the difference between the Average Balance 6 months ago column and the Average Balance 1 Month Ago column. This shows the trend in the average balance of the assets owned by the customer thereby indicating usage trend.]]></Description>
+<Expr mdsid="m00000015-01f4-0000-a342-e7ce00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 1 Month Ago", 0) -  IFNULL("Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 6 Months Ago", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-a342-e7ce00000000-m80c56913-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9eb-07f3-0000-714b-e31d00000000.xml#m80c56913-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000015-01f4-0000-a342-e7ce00000000-m80c56915-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9eb-07f3-0000-714b-e31d00000000.xml#m80c56915-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b5a-0f3c-0000-714b-e31d00000000" name="AD_3900:838491074282455">
+<Expr mdsid="m00000016-01f4-0000-5443-92d200000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5677e-07d6-0000-714b-e31d00000000" name="% Chg 6 Months Ago Average Balance" iconIndex="69" isDerived="true" isWriteable="false">
+<Description><![CDATA[ The column calculates the % Change in the Average Balance 6 months Ago to the Average Balance 1 Month ago. If both these columns are zero or null, a zero is returned. If the value 6 Months ago is zero and the value 1 Month ago is not zero then 100 % is returned. If value 6 Months ago is not zero and 1 Month ago is zero then -100% is returned.]]></Description>
+<Expr mdsid="m00000017-01f4-0000-32bf-ac2900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 6 Months Ago" IS NULL  OR "Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 6 Months Ago" = 0) AND  NOT "Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 1 Month Ago" IS NULL  AND "Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 1 Month Ago" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 6 Months Ago" IS NULL  OR "Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 6 Months Ago" = 0) AND ("Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 1 Month Ago" IS NULL  OR "Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 1 Month Ago" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 1 Month Ago" IS NULL  AND  NOT "Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 6 Months Ago" IS NULL  AND "Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 6 Months Ago" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 1 Month Ago" - "Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 6 Months Ago") / "Core"."Fact - CRM - Balance History Last 6 Months"."Average Balance 6 Months Ago" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-32bf-ac2900000000-m80c56915-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9eb-07f3-0000-714b-e31d00000000.xml#m80c56915-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000017-01f4-0000-32bf-ac2900000000-m80c56913-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9eb-07f3-0000-714b-e31d00000000.xml#m80c56913-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b5b-0f3c-0000-714b-e31d00000000" name="AD_3900:838501074282455">
+<Expr mdsid="m00000018-01f4-0000-d244-4b5b00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5677f-07d6-0000-714b-e31d00000000" name="Chg 3 Months Ago Ending Balance" iconIndex="69" isDerived="true" isWriteable="false">
+<Description><![CDATA[ This column gives the difference between the Ending Balance 3 months ago column and the Ending Balance 1 Month Ago column. This shows the trend in the Ending balance of the assets owned by the customer thereby indicating usage trend.]]></Description>
+<Expr mdsid="m00000019-01f4-0000-c1fc-df2300000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 1 Month Ago", 0) -  IFNULL("Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 3 Months Ago", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-c1fc-df2300000000-m80c56916-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9eb-07f3-0000-714b-e31d00000000.xml#m80c56916-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000019-01f4-0000-c1fc-df2300000000-m80c56917-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9eb-07f3-0000-714b-e31d00000000.xml#m80c56917-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b5c-0f3c-0000-714b-e31d00000000" name="AD_3900:838511074282455">
+<Expr mdsid="m0000001a-01f4-0000-f81d-d15e00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56780-07d6-0000-714b-e31d00000000" name="% Chg 3 Months Ago Ending Balance" iconIndex="69" isDerived="true" isWriteable="false">
+<Description><![CDATA[ The column calculates the % Change in the Ending Balance 3 months Ago to the Ending Balance 1 Month ago. If both these columns are zero, a zero is returned. If the value 3 Months ago is zero and the value 1 Month ago is not zero then 100 % is returned. If value 3 Months ago is not zero and 1 Month ago is zero then -100% is returned.]]></Description>
+<Expr mdsid="m0000001b-01f4-0000-7d25-58e400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 3 Months Ago" IS NULL  OR "Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 3 Months Ago" = 0) AND  NOT "Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 1 Month Ago" IS NULL  AND "Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 1 Month Ago" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 3 Months Ago" IS NULL  OR "Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 3 Months Ago" = 0) AND ("Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 1 Month Ago" IS NULL  OR "Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 1 Month Ago" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 1 Month Ago" IS NULL  AND  NOT "Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 3 Months Ago" IS NULL  AND "Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 3 Months Ago" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 1 Month Ago" - "Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 3 Months Ago") / "Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 3 Months Ago" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001b-01f4-0000-7d25-58e400000000-m80c56917-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9eb-07f3-0000-714b-e31d00000000.xml#m80c56917-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001b-01f4-0000-7d25-58e400000000-m80c56916-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9eb-07f3-0000-714b-e31d00000000.xml#m80c56916-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b5d-0f3c-0000-714b-e31d00000000" name="AD_3900:838521074282455">
+<Expr mdsid="m0000001c-01f4-0000-59c0-b59000000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56781-07d6-0000-714b-e31d00000000" name="Chg 6 Months Ago Ending Balance" iconIndex="69" isDerived="true" isWriteable="false">
+<Description><![CDATA[ This column gives the difference between the Ending Balance 6 months ago column and the Ending Balance 1 Month Ago column. This shows the trend in the Ending balance of the assets owned by the customer thereby indicating usage trend.]]></Description>
+<Expr mdsid="m0000001d-01f4-0000-2b7c-536300000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 1 Month Ago", 0) -  IFNULL("Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 6 Months Ago", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001d-01f4-0000-2b7c-536300000000-m80c56916-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9eb-07f3-0000-714b-e31d00000000.xml#m80c56916-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001d-01f4-0000-2b7c-536300000000-m80c56918-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9eb-07f3-0000-714b-e31d00000000.xml#m80c56918-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b5e-0f3c-0000-714b-e31d00000000" name="AD_3900:838531074282455">
+<Expr mdsid="m0000001e-01f4-0000-8c65-818300000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56782-07d6-0000-714b-e31d00000000" name="% Chg 6 Months Ago Ending Balance" iconIndex="69" isDerived="true" isWriteable="false">
+<Description><![CDATA[ The column calculates the % Change in the Ending Balance 6 months Ago to the Ending Balance 1 Month ago. If both these columns are zero, a zero is returned. If the value 6 Months ago is zero and the value 1 Month ago is not zero then 100 % is returned. If value 3 Months ago is not zero and 1 Month ago is zero then -100% is returned.]]></Description>
+<Expr mdsid="m0000001f-01f4-0000-edc4-1ed300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 6 Months Ago" IS NULL  OR "Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 6 Months Ago" = 0) AND  NOT "Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 1 Month Ago" IS NULL  AND "Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 1 Month Ago" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 6 Months Ago" IS NULL  OR "Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 6 Months Ago" = 0) AND ("Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 1 Month Ago" IS NULL  OR "Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 1 Month Ago" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 1 Month Ago" IS NULL  AND  NOT "Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 6 Months Ago" IS NULL  AND "Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 6 Months Ago" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 1 Month Ago" - "Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 6 Months Ago") / "Core"."Fact - CRM - Balance History Last 6 Months"."End Balance 6 Months Ago" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001f-01f4-0000-edc4-1ed300000000-m80c56918-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9eb-07f3-0000-714b-e31d00000000.xml#m80c56918-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001f-01f4-0000-edc4-1ed300000000-m80c56916-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9eb-07f3-0000-714b-e31d00000000.xml#m80c56916-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b5f-0f3c-0000-714b-e31d00000000" name="AD_3900:838541074282455">
+<Expr mdsid="m00000020-01f4-0000-845c-b9bf00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+</LogicalTable>

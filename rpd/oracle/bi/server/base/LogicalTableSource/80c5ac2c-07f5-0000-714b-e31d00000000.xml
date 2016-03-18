@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTableSource mdsid="m80c5ac2c-07f5-0000-714b-e31d00000000" name="Fact_W_MKTG_COST_F_Campaign_Contact_Cost" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" logicalTableRef="/oracle/bi/server/base/LogicalTable/80c5a9f1-07f3-0000-714b-e31d00000000.xml#m80c5a9f1-07f3-0000-714b-e31d00000000">
+<Description><![CDATA[This Logical Table Source is at the grain of Campaign, Contact, Campaign Cost, and can be analyzed by campaign, Contact and Account Dimensions]]></Description>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5bfca-0bb9-0000-714b-e31d00000000.xml#m80c5bfca-0bb9-0000-714b-e31d00000000">
+</Link>
+<WhereClause mdsid="m00000001-01f4-0000-e8fc-39f700000000" name="WhereClause">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</WhereClause>
+<GroupBy mdsid="m00000002-01f4-0000-1a65-75c500000000" name="GroupBy">
+<ExprText><![CDATA[ GROUPBYLEVEL("%1", "%2", "%3")]]></ExprText>
+<ExprTextDesc><![CDATA[ GROUPBYLEVEL("Core"."Customer"."Account Detail", "Core"."Contact (W_PERSON_D)"."Detail", "Core"."Marketing Source"."Detail")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-1a65-75c500000000-m80c5a1be-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a099-07e3-0000-714b-e31d00000000.xml#m80c5a1be-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-1a65-75c500000000-m80c5a278-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0c7-07e3-0000-714b-e31d00000000.xml#m80c5a278-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-1a65-75c500000000-m80c5a3a6-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a104-07e3-0000-714b-e31d00000000.xml#m80c5a3a6-07e9-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</GroupBy>
+<FragmentContent mdsid="m00000003-01f4-0000-338b-5c0900000000" name="FragmentContent">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</FragmentContent>
+</LogicalTableSource>

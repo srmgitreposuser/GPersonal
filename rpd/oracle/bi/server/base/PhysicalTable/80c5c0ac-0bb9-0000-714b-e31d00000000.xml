@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5c0ac-0bb9-0000-714b-e31d00000000" name="WC_PERSON_AVAIL_F" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" x="1038" y="208" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb1-0bd3-0000-714b-e31d00000000.xml#m80c67bb1-0bd3-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT   (AVAIL_SUPP_AFTER_SUPP - UNAVAILABLE_SUPPORTERS) AVAILABLE_SUPPORTERS, MONTH_WID, UNAVAILABLE_SUPPORTERS
+    FROM (SELECT   MONTH_WID,
+                   COUNT (DISTINCT CONTACT_WID) UNAVAILABLE_SUPPORTERS,
+                   (  (SELECT COUNT (ROW_WID)
+                         FROM W_PERSON_D)
+                    - (SELECT COUNT (DISTINCT CONTACT_WID)
+                         FROM WC_SUPPRESSIONS_D
+                        WHERE TYPE_CD = 'Suppression (Opt-Out)'
+                          AND CHANNEL_CD = 'Contact')
+                   ) AVAIL_SUPP_AFTER_SUPP
+              FROM (SELECT   A.CONTACT_WID, MONTH_WID,
+                             COUNT (A.CONTACT_WID) NO_OF_COMM_PER_MONTH
+                        FROM W_CAMP_HIST_F A, W_DAY_D B, WC_SUPPRESSIONS_D C
+                       WHERE A.CAMP_ST_DT_WID = B.ROW_WID
+                         AND A.CONTACT_WID = C.CONTACT_WID
+                         AND A.CAMP_ST_DT_WID != 0
+                         AND C.TYPE_CD = 'Suppression (Opt-Out)'
+                         AND C.CHANNEL_CD <> 'Contact'
+                    GROUP BY A.CONTACT_WID, MONTH_WID
+                      HAVING COUNT (A.CONTACT_WID) >= 4)
+          GROUP BY MONTH_WID)
+ORDER BY 1]]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c638f3-0bbb-0000-714b-e31d00000000" name="AVAILABLE_SUPPORTERS" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c638f4-0bbb-0000-714b-e31d00000000" name="MONTH_WID" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c638f5-0bbb-0000-714b-e31d00000000" name="UNAVAILABLE_SUPPORTERS" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalKey mdsid="m80c67a98-0bc0-0000-714b-e31d00000000" name="MONTH_WID">
+<RefColumns>
+<RefColumn refId="m80c67a98-0bc0-0000-714b-e31d00000000-m80c638f4-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5c0ac-0bb9-0000-714b-e31d00000000.xml#m80c638f4-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+<PhysicalForeignKey mdsid="m80c67648-0bbe-0000-714b-e31d00000000" name="WC_PERSON_AVAIL_F_FKey" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5bfe3-0bb9-0000-714b-e31d00000000.xml#m80c67a4d-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c67648-0bbe-0000-714b-e31d00000000-m80c638f4-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5c0ac-0bb9-0000-714b-e31d00000000.xml#m80c638f4-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+</PhysicalTable>

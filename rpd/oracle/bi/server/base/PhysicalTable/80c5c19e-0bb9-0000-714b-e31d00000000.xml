@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5c19e-0bb9-0000-714b-e31d00000000" name="Event Fulfilment Extract" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" isCacheable="false" x="846" y="57" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb3-0bd3-0000-714b-e31d00000000.xml#m80c67bb3-0bd3-0000-714b-e31d00000000">
+<Description><![CDATA[Script to Support Real Time Extract]]></Description>
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[/*select 
+reg.person_id Contact_Row_Id ,
+comm.comm_date Communication_Date,
+comm.evt_reg_id Event_Reg_Row_Id,
+reg.src_evt_id Event_Row_Id,
+comm.resp_type_cd Response_Type,
+evt.evt_format_cd Event_Type,
+NVL(reg.X_SRM_PLACEMENT,reg.evt_reg_status_cd) Place_Type,
+comm.x_srm_src_cd Communication_Source,
+comm.subject_text Fulfilment_Notes,
+reg.X_SRM_PLEDGE_AMT Pledge_Amount,
+comm.row_id Communication_Row_Id
+from 
+s_communication comm,
+s_src_evt_reg reg,
+s_src_evt evt
+where comm.evt_reg_id = reg.row_id 
+and reg.src_evt_id = evt.row_id
+and reg.evt_reg_status_cd = 'Confirmed'
+and comm.resp_type_cd in ('Confirmed','Repeat Pack Request','Additional Material Request' )*/
+
+Select 
+Contact_Row_Id  ,
+Communication_Date ,
+Event_Reg_Row_Id ,
+Event_Row_Id,
+Response_Type,
+Event_Type,
+Place_Type,
+Communication_Source,
+Fulfilment_Notes,
+Pledge_Amount,
+Communication_Row_Id
+From
+(select 
+reg.person_id Contact_Row_Id ,
+comm.comm_date Communication_Date,
+comm.evt_reg_id Event_Reg_Row_Id,
+reg.src_evt_id Event_Row_Id,
+comm.resp_type_cd Response_Type,
+evt.evt_format_cd Event_Type,
+NVL(reg.X_SRM_PLACEMENT,reg.evt_reg_status_cd) Place_Type,
+comm.x_srm_src_cd Communication_Source,
+comm.subject_text Fulfilment_Notes,
+reg.X_SRM_PLEDGE_AMT Pledge_Amount,
+comm.row_id Communication_Row_Id,
+row_number() over (partition by reg.person_id , comm.evt_reg_id ORDER BY comm.comm_date desc ) latest
+from 
+siebel.s_communication comm,
+siebel.s_src_evt_reg reg,
+siebel.s_src_evt evt
+where comm.evt_reg_id = reg.row_id 
+and reg.src_evt_id = evt.row_id
+and reg.evt_reg_status_cd = 'Confirmed'
+and comm.resp_type_cd in ('Confirmed','Repeat Pack Request' )) Dedup
+where Dedup.latest = 1
+UNION
+select 
+reg.person_id Contact_Row_Id ,
+comm.comm_date Communication_Date,
+comm.evt_reg_id Event_Reg_Row_Id,
+reg.src_evt_id Event_Row_Id,
+comm.resp_type_cd Response_Type,
+evt.evt_format_cd Event_Type,
+NVL(reg.X_SRM_PLACEMENT,reg.evt_reg_status_cd) Place_Type,
+comm.x_srm_src_cd Communication_Source,
+comm.subject_text Fulfilment_Notes,
+reg.X_SRM_PLEDGE_AMT Pledge_Amount,
+comm.row_id Communication_Row_Id
+from 
+siebel.s_communication comm,
+siebel.s_src_evt_reg reg,
+siebel.s_src_evt evt
+where comm.evt_reg_id = reg.row_id 
+and reg.src_evt_id = evt.row_id
+and reg.evt_reg_status_cd = 'Confirmed'
+and comm.resp_type_cd in ('Additional Material Request' )
+]]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c66a85-0bbb-0000-714b-e31d00000000" name="Contact_Row_Id" dataType="VARCHAR" precision="30" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c66a86-0bbb-0000-714b-e31d00000000" name="Communication_Date" dataType="DATE" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c66a87-0bbb-0000-714b-e31d00000000" name="Event_Reg_Row_Id" dataType="VARCHAR" precision="30" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c66a88-0bbb-0000-714b-e31d00000000" name="Event_Row_Id" dataType="VARCHAR" precision="30" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c66a89-0bbb-0000-714b-e31d00000000" name="Response_Type" dataType="VARCHAR" precision="30" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c66a8a-0bbb-0000-714b-e31d00000000" name="Event_Type" dataType="VARCHAR" precision="30" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c66a8b-0bbb-0000-714b-e31d00000000" name="Place_Type" dataType="VARCHAR" precision="30" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c66a8c-0bbb-0000-714b-e31d00000000" name="Communication_Source" dataType="VARCHAR" precision="30" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c66a8d-0bbb-0000-714b-e31d00000000" name="Fulfilment_Notes" dataType="VARCHAR" precision="255" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c66a8e-0bbb-0000-714b-e31d00000000" name="Pledge_Amount" dataType="DOUBLE" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c66a8f-0bbb-0000-714b-e31d00000000" name="Communication_Row_Id" dataType="VARCHAR" precision="30" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalForeignKey mdsid="m80c6785c-0bbe-0000-714b-e31d00000000" name="Event Fulfilment Extract_FKey" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5c166-0bb9-0000-714b-e31d00000000.xml#m80c67b4a-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c6785c-0bbe-0000-714b-e31d00000000-m80c66a88-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5c19e-0bb9-0000-714b-e31d00000000.xml#m80c66a88-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m80c6785d-0bbe-0000-714b-e31d00000000" name="Event Fulfilment Extract_FKey#1" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5bfb8-0bb9-0000-714b-e31d00000000.xml#m80c67a01-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c6785d-0bbe-0000-714b-e31d00000000-m80c66a85-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5c19e-0bb9-0000-714b-e31d00000000.xml#m80c66a85-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+</PhysicalTable>

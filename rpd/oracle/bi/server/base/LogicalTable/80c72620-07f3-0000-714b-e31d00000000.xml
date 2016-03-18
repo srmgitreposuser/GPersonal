@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c72620-07f3-0000-714b-e31d00000000" name="Fact - SRM Canvasser - Organisation Linkage" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="626" y="1503" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c72622-07d6-0000-714b-e31d00000000" name="INTEGRATION_ID" isWriteable="false">
+<AttrDefn mdsid="m80c72631-0f3c-0000-714b-e31d00000000" name="AD_3900:6556081315567647">
+<Expr mdsid="m00000001-01f4-0000-f28c-b43f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AFFL_AC_H_Canvasser"."INTEGRATION_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-f28c-b43f00000000-m80c725bf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c725b5-0bb9-0000-714b-e31d00000000.xml#m80c725bf-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c72623-07d6-0000-714b-e31d00000000" name="# Canvassers" isWriteable="false">
+<Description><![CDATA[Warning: This attribute may not be functioning according to definition and should be used with caution. This has been earmarked for removal in the near future]]></Description>
+<MeasureDefn mdsid="m80c72651-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb38f7-0802-0000-714b-e31d00000000" name="AggRule_2050:8285231365520960" isDefault="true">
+<Expr mdsid="m00000002-01f4-0000-dc2c-080d00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - SRM Canvasser - Organisation Linkage"."# Canvassers")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-dc2c-080d00000000-m80c72623-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c72620-07f3-0000-714b-e31d00000000.xml#m80c72623-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c72632-0f3c-0000-714b-e31d00000000" name="AD_3900:6556091315567647">
+<Expr mdsid="m00000003-01f4-0000-9ea8-8caa00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AFFL_AC_H_Canvasser"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-9ea8-8caa00000000-m80c725c0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c725b5-0bb9-0000-714b-e31d00000000.xml#m80c725c0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c72624-07d6-0000-714b-e31d00000000" name="Relationship Code" isWriteable="false">
+<AttrDefn mdsid="m80c7262d-0f3c-0000-714b-e31d00000000" name="AD_3900:6556141315567647">
+<Expr mdsid="m00000004-01f4-0000-cf02-228000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AFFL_AC_H_Canvasser"."PROF_ROLE_CD"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-cf02-228000000000-m80c725b6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c725b5-0bb9-0000-714b-e31d00000000.xml#m80c725b6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c72626-07d6-0000-714b-e31d00000000" name="Primary Relationship Flag" isWriteable="false">
+<Description><![CDATA[Warning: This attribute may not be functioning according to definition and should be used with caution. This has been earmarked for removal in the near future]]></Description>
+<AttrDefn mdsid="m80c7262f-0f3c-0000-714b-e31d00000000" name="AD_3900:6556181315567647">
+<Expr mdsid="m00000005-01f4-0000-a198-6c5b00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AFFL_AC_H_Canvasser"."X_SRM_PRI_REL_FLG"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-a198-6c5b00000000-m80c725ba-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c725b5-0bb9-0000-714b-e31d00000000.xml#m80c725ba-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c72627-07d6-0000-714b-e31d00000000" name="Reciprocal Relationship Code" isWriteable="false">
+<AttrDefn mdsid="m80c72630-0f3c-0000-714b-e31d00000000" name="AD_3900:6556191315567647">
+<Expr mdsid="m00000006-01f4-0000-b873-c13f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AFFL_AC_H_Canvasser"."X_SRM_RECPRCL_CD"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-b873-c13f00000000-m80c725bb-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c725b5-0bb9-0000-714b-e31d00000000.xml#m80c725bb-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c7262a-07d8-0000-714b-e31d00000000" name="ROW_WID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c7262a-07d8-0000-714b-e31d00000000-m80c72623-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c72620-07f3-0000-714b-e31d00000000.xml#m80c72623-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c72620-07f3-0000-714b-e31d00000000-m80c72633-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c72633-07f5-0000-714b-e31d00000000.xml#m80c72633-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

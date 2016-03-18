@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c9945a-07f3-0000-714b-e31d00000000" name="Fact - Owning Party - Activities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="836" y="544" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c9945e-07d6-0000-714b-e31d00000000" name="# Activities" isWriteable="false">
+<MeasureDefn mdsid="m80c9a3ec-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cadd65-0802-0000-714b-e31d00000000" name="AggRule_2050:8127431363786469" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-3cde-742200000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core 2"."Fact - Owning Party - Activities"."# Activities")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-3cde-742200000000-m80c9945e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c9945a-07f3-0000-714b-e31d00000000.xml#m80c9945e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80ca1c4c-0f3c-0000-714b-e31d00000000" name="AD_3900:7807781350385392">
+<Expr mdsid="m00000002-01f4-0000-2699-4c5600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ACTIVITY_F_Actual_Start_Date"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-2699-4c5600000000-m80c5c1c6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be98-0bb9-0000-714b-e31d00000000.xml#m80c5c1c6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbc615-07d6-0000-714b-e31d00000000" name="# of Owning Parties (Distinct)" isWriteable="false">
+<MeasureDefn mdsid="m80cbc62d-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbc647-0802-0000-714b-e31d00000000" name="AggRule_2050:8516951404314539" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-21ba-2b4000000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Owning Party - Activities"."# of Owning Parties (Distinct)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-21ba-2b4000000000-m80cbc615-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c9945a-07f3-0000-714b-e31d00000000.xml#m80cbc615-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbc65e-0f3c-0000-714b-e31d00000000" name="AD_3900:8516901404314539">
+<Expr mdsid="m00000004-01f4-0000-cfe2-9b6a00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ACTIVITY_F_Actual_Start_Date"."X_SRM_OWN_PARTY_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ACTIVITY_F_Actual_Start_Date"."X_SRM_OWN_PARTY_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-cfe2-9b6a00000000-m80c91ae3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be98-0bb9-0000-714b-e31d00000000.xml#m80c91ae3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m00000000-1a25-1540-835d-0a3defa30000" name="# FWS Forms" isWriteable="false">
+<Description><![CDATA[For Legacies, this is the number of FWS forms that have been sent to the solcitor as part of this activity]]></Description>
+<MeasureDefn mdsid="m00000000-1a30-1540-835d-0a3defa30000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m00000001-1a30-1540-835d-0a3defa30000" name="AggRule_2050:8590081426090181" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-65f3-edbb00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Activities"."# FWS Forms")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-65f3-edbb00000000-m00000000-1a25-1540-835d-0a3defa30000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c9945a-07f3-0000-714b-e31d00000000.xml#m00000000-1a25-1540-835d-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m00000001-1a25-1540-835d-0a3defa30000" name="AD_3900:8590061426090181">
+<Expr mdsid="m00000006-01f4-0000-e493-69be00000000" name="Expr">
+<ExprText><![CDATA["%1" ]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ACTIVITY_F_Actual_Start_Date"."X_NUM_FWS_FORMS" ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-e493-69be00000000-m40000000-18a1-1540-835d-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be98-0bb9-0000-714b-e31d00000000.xml#m40000000-18a1-1540-835d-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc0000006-8f12-154b-8243-0a3ddf680000" name="Implicit Fact Constant" isWriteable="false">
+<MeasureDefn mdsid="mc0000007-8f12-154b-8243-0a3ddf680000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m40000000-8f14-154b-8243-0a3ddf680000" name="AggRule_2050:8697591429093839" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-af12-46aa00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Activities"."Implicit Fact Constant")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-af12-46aa00000000-mc0000006-8f12-154b-8243-0a3ddf680000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c9945a-07f3-0000-714b-e31d00000000.xml#mc0000006-8f12-154b-8243-0a3ddf680000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="mc0000009-8f12-154b-8243-0a3ddf680000" name="AD_3900:8697571429093839">
+<Expr mdsid="m00000008-01f4-0000-6064-08ca00000000" name="Expr">
+<ExprText><![CDATA[1]]></ExprText>
+<ExprTextDesc><![CDATA[1]]></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c9945a-07f3-0000-714b-e31d00000000-m80ca20e2-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80ca20e2-07f5-0000-714b-e31d00000000.xml#m80ca20e2-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

@@ -1,0 +1,1147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9a8-07f3-0000-714b-e31d00000000" name="Fact - CRM - Person" iconIndex="99" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1157" y="606" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c565ee-07d6-0000-714b-e31d00000000" name="# Accounts For All Contacts" isWriteable="false">
+<MeasureDefn mdsid="m80c5b0ca-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b7ec-0802-0000-714b-e31d00000000" name="AggRule_2050:179611074282429" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-2be2-c42800000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - CRM - Person"."# Accounts For All Contacts")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-2be2-c42800000000-m80c565ee-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c565ee-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689cb-0f3c-0000-714b-e31d00000000" name="AD_3900:833161074282455">
+<Expr mdsid="m00000002-01f4-0000-a8ac-010d00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ACCNT_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-a8ac-010d00000000-m80c5c59d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c59d-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c565ef-07d6-0000-714b-e31d00000000" name="# Supporters" iconIndex="93" isWriteable="false">
+<Description><![CDATA[This metric counts the number of supporters]]></Description>
+<MeasureDefn mdsid="m80c5b0cb-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb0b-0802-0000-714b-e31d00000000" name="AggRule_2050:4961251233932880" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-84f2-4b1300000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# Supporters")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-84f2-4b1300000000-m80c565ef-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c565ef-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689cc-0f3c-0000-714b-e31d00000000" name="AD_3900:833171074282455">
+<Expr mdsid="m00000004-01f4-0000-a70b-eeab00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."CONTACT_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-a70b-eeab00000000-m80c5c5a0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c565f0-07d6-0000-714b-e31d00000000" name="Total # of Profile Contacts" isWriteable="false">
+<MeasureDefn mdsid="m80c5b0cc-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b7ed-0802-0000-714b-e31d00000000" name="AggRule_2050:179631074282429" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-8ead-8be800000000" name="Expr">
+<ExprText><![CDATA[ MAX("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ MAX("Core"."Fact - CRM - Person"."Total # of Profile Contacts")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-8ead-8be800000000-m80c565f0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c565f0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689cd-0f3c-0000-714b-e31d00000000" name="AD_3900:833181074282455">
+<Expr mdsid="m00000006-01f4-0000-b49c-a38c00000000" name="Expr">
+<ExprText><![CDATA[ VALUEOF("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ VALUEOF("Total Contact Count")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-b49c-a38c00000000-m80c67bd8-0bd7-0000-714b-e31d00000000" objectRef="/oracle/bi/server/base/Variable/80c67bd8-0bd7-0000-714b-e31d00000000.xml#m80c67bd8-0bd7-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c565f1-07d6-0000-714b-e31d00000000" name="# Accounts For All Persons" isWriteable="false">
+<MeasureDefn mdsid="m80c5b0cd-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b7ee-0802-0000-714b-e31d00000000" name="AggRule_2050:179641074282429" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-061f-5c9f00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - CRM - Person"."# Accounts For All Persons")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-061f-5c9f00000000-m80c565f1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c565f1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689ce-0f3c-0000-714b-e31d00000000" name="AD_3900:833191074282455">
+<Expr mdsid="m00000008-01f4-0000-6d8f-827500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ACCNT_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-6d8f-827500000000-m80c5c59d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c59d-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c565f2-07d6-0000-714b-e31d00000000" name="# Persons for All Accounts" isWriteable="false">
+<MeasureDefn mdsid="m80c5b0ce-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b7ef-0802-0000-714b-e31d00000000" name="AggRule_2050:179651074282429" isDefault="true">
+<Expr mdsid="m00000009-01f4-0000-e186-c6b100000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - CRM - Person"."# Persons for All Accounts")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-e186-c6b100000000-m80c565f2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c565f2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689cf-0f3c-0000-714b-e31d00000000" name="AD_3900:833201074282455">
+<Expr mdsid="m0000000a-01f4-0000-839c-3abc00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."CONTACT_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-839c-3abc00000000-m80c5c5a0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c565f3-07d6-0000-714b-e31d00000000" name="# Contacts Share Base (Person Geo.country) Use for calc only" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000000b-01f4-0000-99d5-152f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Person"."# Supporters"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-99d5-152f00000000-m80c565ef-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c565ef-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c689d0-0f3c-0000-714b-e31d00000000" name="AD_3900:833211074282455">
+<Expr mdsid="m0000000c-01f4-0000-01ec-44ed00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c565f4-07d6-0000-714b-e31d00000000" name="# Contacts Share Base (Person Geo.all) Use for calc only" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000000d-01f4-0000-27b6-8f9900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Person"."# Supporters"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-27b6-8f9900000000-m80c565ef-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c565ef-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c689d1-0f3c-0000-714b-e31d00000000" name="AD_3900:833221074282455">
+<Expr mdsid="m0000000e-01f4-0000-f21a-cd1600000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c565f5-07d6-0000-714b-e31d00000000" name="% of Contacts Geo for All Accounts" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000000f-01f4-0000-9150-254300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN  NULL  ELSE 100.0d * "%2" / (1.0d * "%1") END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Person"."# Contacts Share Base (Person Geo.country) Use for calc only" = 0 THEN  NULL  ELSE 100.0d * "Core"."Fact - CRM - Person"."# Supporters" / (1.0d * "Core"."Fact - CRM - Person"."# Contacts Share Base (Person Geo.country) Use for calc only") END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-9150-254300000000-m80c565f3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c565f3-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000f-01f4-0000-9150-254300000000-m80c565ef-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c565ef-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c689d2-0f3c-0000-714b-e31d00000000" name="AD_3900:833231074282455">
+<Expr mdsid="m00000010-01f4-0000-0d4e-5cfb00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c565f6-07d6-0000-714b-e31d00000000" name="% of Total Contacts for All Accounts" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000011-01f4-0000-4cb0-87fd00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN  NULL  ELSE 100.0d * "%2" / (1.0d * "%1") END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Person"."# Contacts Share Base (Person Geo.all) Use for calc only" = 0 THEN  NULL  ELSE 100.0d * "Core"."Fact - CRM - Person"."# Supporters" / (1.0d * "Core"."Fact - CRM - Person"."# Contacts Share Base (Person Geo.all) Use for calc only") END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-4cb0-87fd00000000-m80c565f4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c565f4-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000011-01f4-0000-4cb0-87fd00000000-m80c565ef-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c565ef-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c689d3-0f3c-0000-714b-e31d00000000" name="AD_3900:833241074282455">
+<Expr mdsid="m00000012-01f4-0000-3215-69ed00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c565f7-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80c689d4-0f3c-0000-714b-e31d00000000" name="AD_3900:833251074282455">
+<Expr mdsid="m00000013-01f4-0000-1f9d-564100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-1f9d-564100000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56b9e-07d6-0000-714b-e31d00000000" name="Implicit Fact Count Row Wid" isWriteable="false">
+<MeasureDefn mdsid="m80c5b298-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b97d-0802-0000-714b-e31d00000000" name="AggRule_2050:1197241074453741" isDefault="true">
+<Expr mdsid="m00000014-01f4-0000-6ac9-0d6700000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."Implicit Fact Count Row Wid")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-6ac9-0d6700000000-m80c56b9e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c56b9e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68f7a-0f3c-0000-714b-e31d00000000" name="AD_3900:1197221074453717">
+<Expr mdsid="m00000015-01f4-0000-e611-bd9500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-e611-bd9500000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56c50-07d6-0000-714b-e31d00000000" name="Implicit Constant Fact" isWriteable="false">
+<Description><![CDATA[Implicit constant fact to identify this fact table as the join path between two conforming dimensions.   ]]></Description>
+<AttrDefn mdsid="m80c68fed-0f3c-0000-714b-e31d00000000" name="AD_3900:1683621118800619">
+<Expr mdsid="m00000016-01f4-0000-7667-148e00000000" name="Expr">
+<ExprText><![CDATA[1]]></ExprText>
+<ExprTextDesc><![CDATA[1]]></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5735a-07d6-0000-714b-e31d00000000" name="# of Supporters with GA Declarations" iconIndex="93" isWriteable="false">
+<Description><![CDATA[This metric calculates the number of supporters with a gift aid declerations]]></Description>
+<MeasureDefn mdsid="m80c5b3c9-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb0c-0802-0000-714b-e31d00000000" name="AggRule_2050:4961291233932880" isDefault="true">
+<Expr mdsid="m00000017-01f4-0000-2c15-5f2000000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters with GA Declarations")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-2c15-5f2000000000-m80c5735a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c5735a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6986a-0f3c-0000-714b-e31d00000000" name="AD_3900:4950861231264711">
+<Expr mdsid="m00000018-01f4-0000-ed18-ac5400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PERSON_D_Contact"."X_SRM_GIFT_AID_FLG" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."CONTACT_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000018-01f4-0000-ed18-ac5400000000-m80c638b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bef5-0bb9-0000-714b-e31d00000000.xml#m80c638b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-ed18-ac5400000000-m80c5c5a0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57359-07d6-0000-714b-e31d00000000" name="% Current Gift Aid (Supporters)" iconIndex="93" isDerived="true" isWriteable="false">
+<Description><![CDATA[This metric calculates the % of supporters with a gift aid declerations]]></Description>
+<Expr mdsid="m00000019-01f4-0000-cee3-4b8400000000" name="Expr">
+<ExprText><![CDATA[100 *  CAST ("%1" AS DOUBLE PRECISION ) / "%2"]]></ExprText>
+<ExprTextDesc><![CDATA[100 *  CAST ("Core"."Fact - CRM - Person"."# of Supporters with GA Declarations" AS DOUBLE PRECISION ) / "Core"."Fact - CRM - Person"."# Supporters"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-cee3-4b8400000000-m80c5735a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c5735a-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000019-01f4-0000-cee3-4b8400000000-m80c565ef-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c565ef-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69888-0f3c-0000-714b-e31d00000000" name="AD_3900:4951401231264723">
+<Expr mdsid="m0000001a-01f4-0000-13bd-9cf700000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c573bc-07d6-0000-714b-e31d00000000" name="# of Gift Aid Declarations" iconIndex="93" isWriteable="false">
+<Description><![CDATA[This metric counts the number of gift aid declerations]]></Description>
+<MeasureDefn mdsid="m80c5b3f2-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb08-0802-0000-714b-e31d00000000" name="AggRule_2050:4958221233574186" isDefault="true">
+<Expr mdsid="m0000001b-01f4-0000-712e-407d00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Person"."# of Gift Aid Declarations")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001b-01f4-0000-712e-407d00000000-m80c573bc-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c573bc-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c698ce-0f3c-0000-714b-e31d00000000" name="AD_3900:4958181233574186">
+<Expr mdsid="m0000001c-01f4-0000-20f3-6e3800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_GA_DCL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001c-01f4-0000-20f3-6e3800000000-m80c6399e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c6399e-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c573bf-07d6-0000-714b-e31d00000000" name="# of Active COG Supporters" isWriteable="false">
+<Description><![CDATA[This metric counts the number of supporters that are active]]></Description>
+<MeasureDefn mdsid="m80c5b3f5-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb22-0802-0000-714b-e31d00000000" name="AggRule_2050:5026021236350498" isDefault="true">
+<Expr mdsid="m0000001d-01f4-0000-ac9b-c9e900000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Active COG Supporters")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001d-01f4-0000-ac9b-c9e900000000-m80c573bf-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c573bf-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c698d1-0f3c-0000-714b-e31d00000000" name="AD_3900:4995151234432278">
+<Expr mdsid="m0000001e-01f4-0000-c925-66bb00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Active' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PERSON_D_Contact"."X_SRM_COG_STATUS" = 'Active' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001e-01f4-0000-c925-66bb00000000-m80c63990-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bef5-0bb9-0000-714b-e31d00000000.xml#m80c63990-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001e-01f4-0000-c925-66bb00000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c573c0-07d6-0000-714b-e31d00000000" name="# of Lapsed COG Supporters" isWriteable="false">
+<Description><![CDATA[This metric counts the number of supporters who have lapsed]]></Description>
+<MeasureDefn mdsid="m80c5b3f6-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb23-0802-0000-714b-e31d00000000" name="AggRule_2050:5026041236350508" isDefault="true">
+<Expr mdsid="m0000001f-01f4-0000-cf45-f75700000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Lapsed COG Supporters")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001f-01f4-0000-cf45-f75700000000-m80c573c0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c573c0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c698d2-0f3c-0000-714b-e31d00000000" name="AD_3900:4995191234432285">
+<Expr mdsid="m00000020-01f4-0000-1a1a-679200000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Lapsed' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PERSON_D_Contact"."X_SRM_COG_STATUS" = 'Lapsed' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000020-01f4-0000-1a1a-679200000000-m80c63990-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bef5-0bb9-0000-714b-e31d00000000.xml#m80c63990-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000020-01f4-0000-1a1a-679200000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5756c-07d6-0000-714b-e31d00000000" name="# of Distinct Supporters" iconIndex="93" isWriteable="false">
+<Description><![CDATA[This metric counts the number of supporters]]></Description>
+<MeasureDefn mdsid="m80c5b401-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb2b-0802-0000-714b-e31d00000000" name="AggRule_2050:5136151248088911" isDefault="true">
+<Expr mdsid="m00000021-01f4-0000-c38e-f58600000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - CRM - Person"."# of Distinct Supporters")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000021-01f4-0000-c38e-f58600000000-m80c5756c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c5756c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69a7e-0f3c-0000-714b-e31d00000000" name="AD_3900:5136131248088911">
+<Expr mdsid="m00000022-01f4-0000-b42b-178500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."CONTACT_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000022-01f4-0000-b42b-178500000000-m80c5c5a0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57588-07d6-0000-714b-e31d00000000" name="Historical Value" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b405-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb2c-0802-0000-714b-e31d00000000" name="AggRule_2050:5163991250693625" isDefault="true">
+<Expr mdsid="m00000023-01f4-0000-5b81-2fe300000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Person"."Historical Value")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000023-01f4-0000-5b81-2fe300000000-m80c57588-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c57588-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69a9a-0f3c-0000-714b-e31d00000000" name="AD_3900:5163951250693625">
+<Expr mdsid="m00000024-01f4-0000-f67c-52d500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_HISTORICAL_VALUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000024-01f4-0000-f67c-52d500000000-m80c63ca0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63ca0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57589-07d6-0000-714b-e31d00000000" name="Potential Value" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b406-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb2d-0802-0000-714b-e31d00000000" name="AggRule_2050:5164011250693625" isDefault="true">
+<Expr mdsid="m00000025-01f4-0000-52ca-a73100000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Person"."Potential Value")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000025-01f4-0000-52ca-a73100000000-m80c57589-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c57589-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69a9b-0f3c-0000-714b-e31d00000000" name="AD_3900:5163961250693625">
+<Expr mdsid="m00000026-01f4-0000-daab-3f8f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_POTENTIAL_VALUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000026-01f4-0000-daab-3f8f00000000-m80c63ca2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63ca2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5758a-07d6-0000-714b-e31d00000000" name="Future Value" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b407-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb2e-0802-0000-714b-e31d00000000" name="AggRule_2050:5164031250693625" isDefault="true">
+<Expr mdsid="m00000027-01f4-0000-775d-553c00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Person"."Future Value")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000027-01f4-0000-775d-553c00000000-m80c5758a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c5758a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69a9c-0f3c-0000-714b-e31d00000000" name="AD_3900:5163971250693625">
+<Expr mdsid="m00000028-01f4-0000-fc4f-43cb00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_FUTURE_VALUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000028-01f4-0000-fc4f-43cb00000000-m80c63ca4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63ca4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c575a7-07d6-0000-714b-e31d00000000" name="Cost Value" iconIndex="93" isWriteable="false">
+<AttrDefn mdsid="m80c69ab9-0f3c-0000-714b-e31d00000000" name="AD_3900:5168241251291404">
+<Expr mdsid="m00000029-01f4-0000-269e-420b00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_COST_VALUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000029-01f4-0000-269e-420b00000000-m80c63cb0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63cb0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5758b-07d6-0000-714b-e31d00000000" name="Net Value" iconIndex="93" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000002a-01f4-0000-7e3c-a57d00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) +  IFNULL("%2", 0) +  IFNULL("%3", 0) -  IFNULL("%4", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Person"."Historical Value", 0) +  IFNULL("Core"."Fact - CRM - Person"."Potential Value", 0) +  IFNULL("Core"."Fact - CRM - Person"."Future Value", 0) -  IFNULL("Core"."Fact - CRM - Person"."Cost Value", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002a-01f4-0000-7e3c-a57d00000000-m80c57588-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c57588-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002a-01f4-0000-7e3c-a57d00000000-m80c57589-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c57589-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002a-01f4-0000-7e3c-a57d00000000-m80c5758a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c5758a-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002a-01f4-0000-7e3c-a57d00000000-m80c575a7-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c575a7-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69a9d-0f3c-0000-714b-e31d00000000" name="AD_3900:5164051250693625">
+<Expr mdsid="m0000002b-01f4-0000-19fc-77c200000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5758c-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 1" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b408-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb2f-0802-0000-714b-e31d00000000" name="AggRule_2050:5167671251197702" isDefault="true">
+<Expr mdsid="m0000002c-01f4-0000-5961-fc4100000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 1")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002c-01f4-0000-5961-fc4100000000-m80c5758c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c5758c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69a9e-0f3c-0000-714b-e31d00000000" name="AD_3900:5164931251193596">
+<Expr mdsid="m0000002d-01f4-0000-0578-d53900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA1" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002d-01f4-0000-0578-d53900000000-m80c63ad4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63ad4-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002d-01f4-0000-0578-d53900000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5758d-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 2" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b409-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb30-0802-0000-714b-e31d00000000" name="AggRule_2050:5167691251197702" isDefault="true">
+<Expr mdsid="m0000002e-01f4-0000-8340-409a00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 2")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002e-01f4-0000-8340-409a00000000-m80c5758d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c5758d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69a9f-0f3c-0000-714b-e31d00000000" name="AD_3900:5165031251193596">
+<Expr mdsid="m0000002f-01f4-0000-b4b4-cb5b00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA2" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002f-01f4-0000-b4b4-cb5b00000000-m80c63ace-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63ace-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002f-01f4-0000-b4b4-cb5b00000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5758e-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 3" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b40a-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb31-0802-0000-714b-e31d00000000" name="AggRule_2050:5167711251197702" isDefault="true">
+<Expr mdsid="m00000030-01f4-0000-360d-a7d200000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 3")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000030-01f4-0000-360d-a7d200000000-m80c5758e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c5758e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69aa0-0f3c-0000-714b-e31d00000000" name="AD_3900:5165121251193596">
+<Expr mdsid="m00000031-01f4-0000-39b5-0f0000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA3" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000031-01f4-0000-39b5-0f0000000000-m80c63ad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63ad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000031-01f4-0000-39b5-0f0000000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5758f-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 4" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b40b-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb32-0802-0000-714b-e31d00000000" name="AggRule_2050:5167731251197702" isDefault="true">
+<Expr mdsid="m00000032-01f4-0000-e51e-63eb00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 4")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000032-01f4-0000-e51e-63eb00000000-m80c5758f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c5758f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69aa1-0f3c-0000-714b-e31d00000000" name="AD_3900:5165201251193596">
+<Expr mdsid="m00000033-01f4-0000-bae4-3b2f00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA4" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000033-01f4-0000-bae4-3b2f00000000-m80c63ad2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63ad2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000033-01f4-0000-bae4-3b2f00000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57590-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 5" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b40c-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb33-0802-0000-714b-e31d00000000" name="AggRule_2050:5167751251197702" isDefault="true">
+<Expr mdsid="m00000034-01f4-0000-637f-1bcd00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 5")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000034-01f4-0000-637f-1bcd00000000-m80c57590-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c57590-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69aa2-0f3c-0000-714b-e31d00000000" name="AD_3900:5165281251193596">
+<Expr mdsid="m00000035-01f4-0000-04a3-36cf00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA5" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000035-01f4-0000-04a3-36cf00000000-m80c63ad5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63ad5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000035-01f4-0000-04a3-36cf00000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57591-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 6" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b40d-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb34-0802-0000-714b-e31d00000000" name="AggRule_2050:5167771251197702" isDefault="true">
+<Expr mdsid="m00000036-01f4-0000-d56e-ebc200000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 6")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000036-01f4-0000-d56e-ebc200000000-m80c57591-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c57591-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69aa3-0f3c-0000-714b-e31d00000000" name="AD_3900:5165361251193596">
+<Expr mdsid="m00000037-01f4-0000-ce72-50d500000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA6" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000037-01f4-0000-ce72-50d500000000-m80c63acf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63acf-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000037-01f4-0000-ce72-50d500000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57592-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 7" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b40e-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb35-0802-0000-714b-e31d00000000" name="AggRule_2050:5167791251197702" isDefault="true">
+<Expr mdsid="m00000038-01f4-0000-05b9-e6cd00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 7")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000038-01f4-0000-05b9-e6cd00000000-m80c57592-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c57592-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69aa4-0f3c-0000-714b-e31d00000000" name="AD_3900:5165441251193596">
+<Expr mdsid="m00000039-01f4-0000-041d-00e800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA7" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000039-01f4-0000-041d-00e800000000-m80c63ad1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63ad1-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000039-01f4-0000-041d-00e800000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57593-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 8" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b40f-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb36-0802-0000-714b-e31d00000000" name="AggRule_2050:5167811251197702" isDefault="true">
+<Expr mdsid="m0000003a-01f4-0000-a1c1-17fc00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 8")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003a-01f4-0000-a1c1-17fc00000000-m80c57593-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c57593-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69aa5-0f3c-0000-714b-e31d00000000" name="AD_3900:5165521251193596">
+<Expr mdsid="m0000003b-01f4-0000-fb68-5b5b00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA8" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003b-01f4-0000-fb68-5b5b00000000-m80c63ad3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63ad3-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003b-01f4-0000-fb68-5b5b00000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57594-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 9" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b410-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb37-0802-0000-714b-e31d00000000" name="AggRule_2050:5167831251197702" isDefault="true">
+<Expr mdsid="m0000003c-01f4-0000-b2f5-691200000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 9")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003c-01f4-0000-b2f5-691200000000-m80c57594-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c57594-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69aa6-0f3c-0000-714b-e31d00000000" name="AD_3900:5165601251193596">
+<Expr mdsid="m0000003d-01f4-0000-cb96-88c700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA9" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003d-01f4-0000-cb96-88c700000000-m80c63acd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63acd-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003d-01f4-0000-cb96-88c700000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57595-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 10" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b411-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb38-0802-0000-714b-e31d00000000" name="AggRule_2050:5167851251197702" isDefault="true">
+<Expr mdsid="m0000003e-01f4-0000-5462-4bf300000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 10")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003e-01f4-0000-5462-4bf300000000-m80c57595-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c57595-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69aa7-0f3c-0000-714b-e31d00000000" name="AD_3900:5165681251193596">
+<Expr mdsid="m0000003f-01f4-0000-6f7a-37bf00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA10" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003f-01f4-0000-6f7a-37bf00000000-m80c63afb-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63afb-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003f-01f4-0000-6f7a-37bf00000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57596-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 11" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b412-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb39-0802-0000-714b-e31d00000000" name="AggRule_2050:5167871251197702" isDefault="true">
+<Expr mdsid="m00000040-01f4-0000-92db-165000000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 11")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000040-01f4-0000-92db-165000000000-m80c57596-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c57596-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69aa8-0f3c-0000-714b-e31d00000000" name="AD_3900:5165781251193596">
+<Expr mdsid="m00000041-01f4-0000-f335-49b200000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA11" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000041-01f4-0000-f335-49b200000000-m80c63aec-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63aec-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000041-01f4-0000-f335-49b200000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57597-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 12" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b413-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb3a-0802-0000-714b-e31d00000000" name="AggRule_2050:5167891251197702" isDefault="true">
+<Expr mdsid="m00000042-01f4-0000-e091-f12800000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 12")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000042-01f4-0000-e091-f12800000000-m80c57597-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c57597-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69aa9-0f3c-0000-714b-e31d00000000" name="AD_3900:5165861251193596">
+<Expr mdsid="m00000043-01f4-0000-bfb0-bda400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA12" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000043-01f4-0000-bfb0-bda400000000-m80c63aef-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63aef-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000043-01f4-0000-bfb0-bda400000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57598-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 13" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b414-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb3b-0802-0000-714b-e31d00000000" name="AggRule_2050:5167911251197702" isDefault="true">
+<Expr mdsid="m00000044-01f4-0000-19bb-4fde00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 13")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000044-01f4-0000-19bb-4fde00000000-m80c57598-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c57598-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69aaa-0f3c-0000-714b-e31d00000000" name="AD_3900:5165941251193596">
+<Expr mdsid="m00000045-01f4-0000-6a24-283500000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA13" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000045-01f4-0000-6a24-283500000000-m80c63af1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63af1-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000045-01f4-0000-6a24-283500000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57599-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 14" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b415-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb3c-0802-0000-714b-e31d00000000" name="AggRule_2050:5167931251197702" isDefault="true">
+<Expr mdsid="m00000046-01f4-0000-80a7-37cc00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 14")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000046-01f4-0000-80a7-37cc00000000-m80c57599-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c57599-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69aab-0f3c-0000-714b-e31d00000000" name="AD_3900:5166021251193596">
+<Expr mdsid="m00000047-01f4-0000-c427-d98c00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA14" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000047-01f4-0000-c427-d98c00000000-m80c63af3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63af3-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000047-01f4-0000-c427-d98c00000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5759a-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 15" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b416-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb3d-0802-0000-714b-e31d00000000" name="AggRule_2050:5167951251197702" isDefault="true">
+<Expr mdsid="m00000048-01f4-0000-f793-791000000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 15")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000048-01f4-0000-f793-791000000000-m80c5759a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c5759a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69aac-0f3c-0000-714b-e31d00000000" name="AD_3900:5166101251193596">
+<Expr mdsid="m00000049-01f4-0000-7bfd-21e100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA15" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000049-01f4-0000-7bfd-21e100000000-m80c63af5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63af5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000049-01f4-0000-7bfd-21e100000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5759b-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 16" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b417-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb3e-0802-0000-714b-e31d00000000" name="AggRule_2050:5167971251197702" isDefault="true">
+<Expr mdsid="m0000004a-01f4-0000-bf56-1dd500000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 16")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000004a-01f4-0000-bf56-1dd500000000-m80c5759b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c5759b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69aad-0f3c-0000-714b-e31d00000000" name="AD_3900:5166181251193596">
+<Expr mdsid="m0000004b-01f4-0000-8efc-fb8d00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA16" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000004b-01f4-0000-8efc-fb8d00000000-m80c63af7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63af7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000004b-01f4-0000-8efc-fb8d00000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5759c-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 17" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b418-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb3f-0802-0000-714b-e31d00000000" name="AggRule_2050:5167991251197702" isDefault="true">
+<Expr mdsid="m0000004c-01f4-0000-5c32-e40400000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 17")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000004c-01f4-0000-5c32-e40400000000-m80c5759c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c5759c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69aae-0f3c-0000-714b-e31d00000000" name="AD_3900:5166261251193596">
+<Expr mdsid="m0000004d-01f4-0000-f5f1-6e4100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA17" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000004d-01f4-0000-f5f1-6e4100000000-m80c63af9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63af9-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000004d-01f4-0000-f5f1-6e4100000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5759d-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 18" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b419-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb40-0802-0000-714b-e31d00000000" name="AggRule_2050:5168011251197702" isDefault="true">
+<Expr mdsid="m0000004e-01f4-0000-fe4d-e0f900000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 18")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000004e-01f4-0000-fe4d-e0f900000000-m80c5759d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c5759d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69aaf-0f3c-0000-714b-e31d00000000" name="AD_3900:5166341251193596">
+<Expr mdsid="m0000004f-01f4-0000-a874-97b700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA18" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000004f-01f4-0000-a874-97b700000000-m80c63afc-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63afc-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000004f-01f4-0000-a874-97b700000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5759e-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 19" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b41a-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb41-0802-0000-714b-e31d00000000" name="AggRule_2050:5168031251197702" isDefault="true">
+<Expr mdsid="m00000050-01f4-0000-7ad3-9eec00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 19")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000050-01f4-0000-7ad3-9eec00000000-m80c5759e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c5759e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69ab0-0f3c-0000-714b-e31d00000000" name="AD_3900:5166421251193596">
+<Expr mdsid="m00000051-01f4-0000-780f-757300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA19" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000051-01f4-0000-780f-757300000000-m80c63aed-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63aed-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000051-01f4-0000-780f-757300000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5759f-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 20" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b41b-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb42-0802-0000-714b-e31d00000000" name="AggRule_2050:5168051251197702" isDefault="true">
+<Expr mdsid="m00000052-01f4-0000-2cd5-088700000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 20")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000052-01f4-0000-2cd5-088700000000-m80c5759f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c5759f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69ab1-0f3c-0000-714b-e31d00000000" name="AD_3900:5166521251193596">
+<Expr mdsid="m00000053-01f4-0000-f427-c6e400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA20" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000053-01f4-0000-f427-c6e400000000-m80c63af0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63af0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000053-01f4-0000-f427-c6e400000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c575a0-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 21" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b41c-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb43-0802-0000-714b-e31d00000000" name="AggRule_2050:5168071251197702" isDefault="true">
+<Expr mdsid="m00000054-01f4-0000-c11a-b91200000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 21")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000054-01f4-0000-c11a-b91200000000-m80c575a0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c575a0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69ab2-0f3c-0000-714b-e31d00000000" name="AD_3900:5166601251193596">
+<Expr mdsid="m00000055-01f4-0000-5c28-075e00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA21" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000055-01f4-0000-5c28-075e00000000-m80c63af2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63af2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000055-01f4-0000-5c28-075e00000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c575a1-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 22" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b41d-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb44-0802-0000-714b-e31d00000000" name="AggRule_2050:5168091251197702" isDefault="true">
+<Expr mdsid="m00000056-01f4-0000-e432-21c600000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 22")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000056-01f4-0000-e432-21c600000000-m80c575a1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c575a1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69ab3-0f3c-0000-714b-e31d00000000" name="AD_3900:5166681251193596">
+<Expr mdsid="m00000057-01f4-0000-ab85-e72300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA22" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000057-01f4-0000-ab85-e72300000000-m80c63af4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63af4-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000057-01f4-0000-ab85-e72300000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c575a2-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 23" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b41e-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb45-0802-0000-714b-e31d00000000" name="AggRule_2050:5168111251197702" isDefault="true">
+<Expr mdsid="m00000058-01f4-0000-e2a2-49ff00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 23")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000058-01f4-0000-e2a2-49ff00000000-m80c575a2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c575a2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69ab4-0f3c-0000-714b-e31d00000000" name="AD_3900:5166761251193596">
+<Expr mdsid="m00000059-01f4-0000-778c-15ad00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA23" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000059-01f4-0000-778c-15ad00000000-m80c63af6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63af6-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000059-01f4-0000-778c-15ad00000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c575a3-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 24" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b41f-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb46-0802-0000-714b-e31d00000000" name="AggRule_2050:5168131251197702" isDefault="true">
+<Expr mdsid="m0000005a-01f4-0000-14b7-572d00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 24")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000005a-01f4-0000-14b7-572d00000000-m80c575a3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c575a3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69ab5-0f3c-0000-714b-e31d00000000" name="AD_3900:5166841251193596">
+<Expr mdsid="m0000005b-01f4-0000-6acd-c2c700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA24" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000005b-01f4-0000-6acd-c2c700000000-m80c63af8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63af8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000005b-01f4-0000-6acd-c2c700000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c575a4-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 25" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b420-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb47-0802-0000-714b-e31d00000000" name="AggRule_2050:5168151251197702" isDefault="true">
+<Expr mdsid="m0000005c-01f4-0000-3c14-584f00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 25")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000005c-01f4-0000-3c14-584f00000000-m80c575a4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c575a4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69ab6-0f3c-0000-714b-e31d00000000" name="AD_3900:5166921251193596">
+<Expr mdsid="m0000005d-01f4-0000-d32e-23ef00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA25" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000005d-01f4-0000-d32e-23ef00000000-m80c63afa-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63afa-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000005d-01f4-0000-d32e-23ef00000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c575a5-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 26" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b421-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb48-0802-0000-714b-e31d00000000" name="AggRule_2050:5168171251197702" isDefault="true">
+<Expr mdsid="m0000005e-01f4-0000-1a27-1cfa00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 26")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000005e-01f4-0000-1a27-1cfa00000000-m80c575a5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c575a5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69ab7-0f3c-0000-714b-e31d00000000" name="AD_3900:5167001251193596">
+<Expr mdsid="m0000005f-01f4-0000-9ff1-229200000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA26" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000005f-01f4-0000-9ff1-229200000000-m80c63afd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63afd-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000005f-01f4-0000-9ff1-229200000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c575a6-07d6-0000-714b-e31d00000000" name="# of Supporters in Supp Audience 27" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b422-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb49-0802-0000-714b-e31d00000000" name="AggRule_2050:5168191251197702" isDefault="true">
+<Expr mdsid="m00000060-01f4-0000-002c-0b5200000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in Supp Audience 27")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000060-01f4-0000-002c-0b5200000000-m80c575a6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c575a6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69ab8-0f3c-0000-714b-e31d00000000" name="AD_3900:5167081251193596">
+<Expr mdsid="m00000061-01f4-0000-35bf-7d3e00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA27" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000061-01f4-0000-35bf-7d3e00000000-m80c63aee-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63aee-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000061-01f4-0000-35bf-7d3e00000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c575a8-07d6-0000-714b-e31d00000000" name="# of Supporters in at least one Supp Audience" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b423-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb4a-0802-0000-714b-e31d00000000" name="AggRule_2050:5168351251292735" isDefault="true">
+<Expr mdsid="m00000062-01f4-0000-653c-09bf00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# of Supporters in at least one Supp Audience")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000062-01f4-0000-653c-09bf00000000-m80c575a8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c575a8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69aba-0f3c-0000-714b-e31d00000000" name="AD_3900:5168341251292735">
+<Expr mdsid="m00000063-01f4-0000-7bfb-b0ec00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' OR "%2" = 'Y' OR "%3" = 'Y' OR "%4" = 'Y' OR "%5" = 'Y' OR "%6" = 'Y' OR "%7" = 'Y' OR "%8" = 'Y' OR "%9" = 'Y' OR "%10" = 'Y' OR "%11" = 'Y' OR "%12" = 'Y' OR "%13" = 'Y' OR "%14" = 'Y' OR "%15" = 'Y' OR "%16" = 'Y' OR "%17" = 'Y' OR "%18" = 'Y' OR "%19" = 'Y' OR "%20" = 'Y' OR "%21" = 'Y' OR "%22" = 'Y' OR "%23" = 'Y' OR "%24" = 'Y' OR "%25" = 'Y' THEN "%26" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA1" = 'Y' OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA2" = 'Y' OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA3" = 'Y' OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA4" = 'Y' OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA5" = 'Y' OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA6" = 'Y' OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA7" = 'Y' OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA8" = 'Y' OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA9" = 'Y' OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA10" = 'Y' OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA11" = 'Y' OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA12" = 'Y' OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA13" = 'Y' OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA14" = 'Y' OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA15" = 'Y' OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA16" = 'Y' OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA17" = 'Y' OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA18" = 'Y' OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA19" = 'Y' OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA20" = 'Y' OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA21" = 'Y' OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA22" = 'Y' OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA23" = 'Y' OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA24" = 'Y' OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."X_SRM_CUSTOM_SA25" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c63ad4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63ad4-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c63ace-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63ace-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c63ad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63ad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c63ad2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63ad2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c63ad5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63ad5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c63acf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63acf-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c63ad1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63ad1-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c63ad3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63ad3-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c63acd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63acd-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c63afb-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63afb-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c63aec-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63aec-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c63aef-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63aef-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c63af1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63af1-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c63af3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63af3-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c63af5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63af5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c63af7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63af7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c63af9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63af9-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c63afc-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63afc-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c63aed-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63aed-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c63af0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63af0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c63af2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63af2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c63af4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63af4-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c63af6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63af6-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c63af8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63af8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c63afa-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c63afa-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-7bfb-b0ec00000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58910-07d6-0000-714b-e31d00000000" name="# Supporters with GAD" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b703-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5be4c-0802-0000-714b-e31d00000000" name="AggRule_2050:6372711298907502" isDefault="true">
+<Expr mdsid="m00000064-01f4-0000-1320-fc5000000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Person"."# Supporters with GAD")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000064-01f4-0000-1320-fc5000000000-m80c58910-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c58910-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6ae22-0f3c-0000-714b-e31d00000000" name="AD_3900:6372691298907502">
+<Expr mdsid="m00000065-01f4-0000-fa43-d9d500000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PERSON_D_Contact"."X_SRM_GIFT_AID_FLG" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."CONTACT_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000065-01f4-0000-fa43-d9d500000000-m80c638b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bef5-0bb9-0000-714b-e31d00000000.xml#m80c638b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000065-01f4-0000-fa43-d9d500000000-m80c5c5a0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58c79-07d8-0000-714b-e31d00000000" name="ROW_WID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58c79-07d8-0000-714b-e31d00000000-m80c565f7-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9a8-07f3-0000-714b-e31d00000000.xml#m80c565f7-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5a9a8-07f3-0000-714b-e31d00000000-m80c5abce-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5abce-07f5-0000-714b-e31d00000000.xml#m80c5abce-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

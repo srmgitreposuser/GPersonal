@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80cbba1b-07f3-0000-714b-e31d00000000" name="Fact - Owning Party - Soft Credits" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="548" y="771" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80cbc35d-07d6-0000-714b-e31d00000000" name="# of Soft Credits" isWriteable="false">
+<Description><![CDATA[# of Soft Credits: The number of Soft Credits.]]></Description>
+<MeasureDefn mdsid="m80cbc35e-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbc4a3-0802-0000-714b-e31d00000000" name="AggRule_2050:8515581403793222" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-73e8-d73200000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core 2"."Fact - Owning Party - Soft Credits"."# of Soft Credits")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-73e8-d73200000000-m80cbc35d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbba1b-07f3-0000-714b-e31d00000000.xml#m80cbc35d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbc361-0f3c-0000-714b-e31d00000000" name="AD_3900:8513111401980528">
+<Expr mdsid="m00000002-01f4-0000-7c32-894000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SOFT_CREDIT_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-7c32-894000000000-m80cbb585-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb584-0bb9-0000-714b-e31d00000000.xml#m80cbb585-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbba5b-07d6-0000-714b-e31d00000000" name="Soft Credit Amount" isWriteable="false">
+<Description><![CDATA[Soft Credit Amount: The value of the Soft Credit.]]></Description>
+<MeasureDefn mdsid="m80cbba8f-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbc4a1-0802-0000-714b-e31d00000000" name="AggRule_2050:8515571403793215" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-ef85-cb3f00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Soft Credits"."Soft Credit Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-ef85-cb3f00000000-m80cbba5b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbba1b-07f3-0000-714b-e31d00000000.xml#m80cbba5b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbba7f-0f3c-0000-714b-e31d00000000" name="AD_3900:8497111401461881">
+<Expr mdsid="m00000004-01f4-0000-715d-0a9500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SOFT_CREDIT_F"."SC_AMOUNT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-715d-0a9500000000-m80cbb586-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb584-0bb9-0000-714b-e31d00000000.xml#m80cbb586-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbc3e3-07d6-0000-714b-e31d00000000" name="SC Donation Source Donation Amount" isWriteable="false">
+<Description><![CDATA[SC Donation Source Donation Amount: 'Donation' Soft Credit's only.  This is the Amount of the donation from which this Soft Credit derives.]]></Description>
+<MeasureDefn mdsid="m80cbc3e4-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbc49f-0802-0000-714b-e31d00000000" name="AggRule_2050:8515561403793190" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-fa21-f72500000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Soft Credits"."SC Donation Source Donation Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-fa21-f72500000000-m80cbc3e3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbba1b-07f3-0000-714b-e31d00000000.xml#m80cbc3e3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbc3e6-0f3c-0000-714b-e31d00000000" name="AD_3900:8514121402411251">
+<Expr mdsid="m00000006-01f4-0000-b93b-15a400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SOFT_CREDIT_F"."DON_AMOUNT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-b93b-15a400000000-m80cbc3dc-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb584-0bb9-0000-714b-e31d00000000.xml#m80cbc3dc-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbc601-07d6-0000-714b-e31d00000000" name="# of Soft Creditors (Distinct)" isWriteable="false">
+<MeasureDefn mdsid="m80cbc619-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbc632-0802-0000-714b-e31d00000000" name="AggRule_2050:8517191404314539" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-6945-212a00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Owning Party - Soft Credits"."# of Soft Creditors (Distinct)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-6945-212a00000000-m80cbc601-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbba1b-07f3-0000-714b-e31d00000000.xml#m80cbc601-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbc64a-0f3c-0000-714b-e31d00000000" name="AD_3900:8517131404314539">
+<Expr mdsid="m00000008-01f4-0000-16f5-781600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SOFT_CREDIT_F"."SC_OWNING_PARTY_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SOFT_CREDIT_F"."SC_OWNING_PARTY_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-16f5-781600000000-m80cbb58a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb584-0bb9-0000-714b-e31d00000000.xml#m80cbb58a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80cbba1b-07f3-0000-714b-e31d00000000-m80cbba8b-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cbba8b-07f5-0000-714b-e31d00000000.xml#m80cbba8b-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

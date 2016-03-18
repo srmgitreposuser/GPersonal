@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5c0af-0bb9-0000-714b-e31d00000000" name="WC_MACRO_SEG_AVAIL_F" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" x="621" y="368" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb1-0bd3-0000-714b-e31d00000000.xml#m80c67bb1-0bd3-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT (Y.TOTAL_AVAIL_SUPP_BY_MACROSEG
+       - X.UNAVAILABLE_SUPPORTERS) AVAILABLE_SUPPORTERS , 
+       Y.CAMP_NAME , 
+       Y.MONTH_WID ,
+       X.ROW_WID ,
+       Y.TOTAL_AVAIL_SUPP_BY_MACROSEG ,
+       X.UNAVAILABLE_SUPPORTERS 
+  FROM (SELECT   C.ROW_WID,
+                 COUNT (DISTINCT A.CONTACT_WID) UNAVAILABLE_SUPPORTERS
+            FROM (SELECT   CONTACT_WID, COUNT (CONTACT_WID)
+                      FROM W_CAMP_HIST_F A, W_DAY_D B
+                     WHERE A.CAMP_ST_DT_WID = B.ROW_WID
+                       AND B.PER_NAME_MONTH  = 'VALUEOF(PER_NAME_MONTH)'
+                  GROUP BY CONTACT_WID
+                    HAVING COUNT (CONTACT_WID) >= 4) A,
+                 W_CAMP_HIST_F B,
+                 W_SOURCE_D C
+           WHERE B.SOURCE_WID = C.ROW_WID
+             AND A.CONTACT_WID = B.CONTACT_WID
+             AND C.CAMP_TYPE = 'Macro Segment'
+        GROUP BY C.ROW_WID) X,
+       (SELECT   A.SOURCE_WID,B.CAMP_NAME,C.MONTH_WID,
+                 COUNT (DISTINCT A.CONTACT_WID) TOTAL_AVAIL_SUPP_BY_MACROSEG
+            FROM W_CAMP_HIST_F A, W_SOURCE_D B, W_DAY_D C,
+                 WC_SUPPRESSIONS_D D
+           WHERE A.SOURCE_WID = B.ROW_WID
+             AND A.CONTACT_WID = D.CONTACT_WID
+             AND D.CHANNEL_CD <> 'Contact'
+             AND A.CAMP_ST_DT_WID = C.ROW_WID
+             AND D.TYPE_CD = 'Suppression (Opt-Out)'
+             AND C.PER_NAME_MONTH = 'VALUEOF(PER_NAME_MONTH)'
+             AND B.CAMP_TYPE = 'Macro Segment'
+        GROUP BY A.SOURCE_WID,B.CAMP_NAME,C.MONTH_WID) Y
+ WHERE X.ROW_WID = Y.SOURCE_WID
+ ORDER BY 2]]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c63906-0bbb-0000-714b-e31d00000000" name="ROW_WID" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c63907-0bbb-0000-714b-e31d00000000" name="CAMP_NAME" dataType="VARCHAR" precision="200" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c63908-0bbb-0000-714b-e31d00000000" name="TOTAL_AVAIL_SUPP_BY_MACROSEG" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c63909-0bbb-0000-714b-e31d00000000" name="UNAVAILABLE_SUPPORTERS" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c6390a-0bbb-0000-714b-e31d00000000" name="AVAILABLE_SUPPORTERS" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c6390b-0bbb-0000-714b-e31d00000000" name="MONTH_WID" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalKey mdsid="m80c67a9b-0bc0-0000-714b-e31d00000000" name="MONTH_WID">
+<RefColumns>
+<RefColumn refId="m80c67a9b-0bc0-0000-714b-e31d00000000-m80c6390b-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5c0af-0bb9-0000-714b-e31d00000000.xml#m80c6390b-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+<PhysicalForeignKey mdsid="m80c67649-0bbe-0000-714b-e31d00000000" name="WC_MACRO_SEG_AVAIL_F_FKey" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5bfe3-0bb9-0000-714b-e31d00000000.xml#m80c67a4d-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c67649-0bbe-0000-714b-e31d00000000-m80c6390b-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5c0af-0bb9-0000-714b-e31d00000000.xml#m80c6390b-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+</PhysicalTable>

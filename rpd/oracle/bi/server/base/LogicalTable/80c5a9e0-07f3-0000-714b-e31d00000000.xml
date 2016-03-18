@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9e0-07f3-0000-714b-e31d00000000" name="Fact  Compound - Pipeline Rollup and Prior" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="908" y="731" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c568cc-07d6-0000-714b-e31d00000000" name="Change in Rollup Expected Revenue (000)" isDerived="true" isWriteable="false">
+<Description><![CDATA[This metric displays the change in the combined Expected Revenue in 1000s between a given Pipeline Snapshot Date and the immediately previous Snapshot Date for a given employee and all her positional subordinates as defined in W_POSITION_H.]]></Description>
+<Expr mdsid="m00000001-01f4-0000-963f-914500000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1" / 1000.0d, 0) -  IFNULL("%2" / 1000.0d, 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Pipeline"."Rollup Historical Expected Revenue" / 1000.0d, 0) -  IFNULL("Core"."Fact - CRM - Pipeline"."Rollup Prior Historical Expected Revenue" / 1000.0d, 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-963f-914500000000-m80c56669-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c56669-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000001-01f4-0000-963f-914500000000-m80c5666a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c5666a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68ca9-0f3c-0000-714b-e31d00000000" name="AD_3900:842911074282455">
+<Expr mdsid="m00000002-01f4-0000-d15d-ec7700000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56ec0-07d6-0000-714b-e31d00000000" name="Change in Expected Revenue (000)" isDerived="true" isWriteable="false">
+<Description><![CDATA[This metric displays the change in the combined Expected Revenue in 1000s between a given Pipeline Snapshot Date and the immediately previous Snapshot Date for a given employee.  ]]></Description>
+<Expr mdsid="m00000003-01f4-0000-071b-7d6400000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1" / 1000.0d, 0) -  IFNULL("%2" / 1000.0d, 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Pipeline"."Historical Expected Revenue" / 1000.0d, 0) -  IFNULL("Core"."Fact - CRM - Pipeline"."Prior Historical Expected Revenue" / 1000.0d, 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-071b-7d6400000000-m80c5663f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c5663f-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000003-01f4-0000-071b-7d6400000000-m80c56ebf-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c56ebf-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c693d2-0f3c-0000-714b-e31d00000000" name="AD_3900:3453231145639506">
+<Expr mdsid="m00000004-01f4-0000-ff6c-e00300000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+</LogicalTable>

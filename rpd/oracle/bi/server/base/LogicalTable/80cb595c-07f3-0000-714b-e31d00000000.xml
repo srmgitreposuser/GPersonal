@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80cb595c-07f3-0000-714b-e31d00000000" name="Fact - Crossover Volume" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="461" y="304" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80cb596b-07d6-0000-714b-e31d00000000" name="Audience Count (Crossover)" isWriteable="false">
+<MeasureDefn mdsid="m80cb5972-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb5974-0802-0000-714b-e31d00000000" name="AggRule_2050:8332731384771958" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-d834-5b1d00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Crossover Volume"."Audience Count (Crossover)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-d834-5b1d00000000-m80cb596b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb595c-07f3-0000-714b-e31d00000000.xml#m80cb596b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb59e8-0f3c-0000-714b-e31d00000000" name="AD_3900:8331651384771958">
+<Expr mdsid="m00000002-01f4-0000-81a5-55ed00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_CROSSOVER_VOL_FA"."NUM_ROWS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-81a5-55ed00000000-m80cb59b4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb5993-0bb9-0000-714b-e31d00000000.xml#m80cb59b4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m40000000-4802-15a6-806e-0a0e2d820000" name="Distinct Audience Count (Crossover)" isWriteable="false">
+<MeasureDefn mdsid="m4000002c-e9c8-15a9-806e-0a0e2da00000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m4000002d-e9c8-15a9-806e-0a0e2da00000" name="AggRule_2050:1474181453827873" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-e47c-037f00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Crossover Volume"."Distinct Audience Count (Crossover)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-e47c-037f00000000-m40000000-4802-15a6-806e-0a0e2d820000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb595c-07f3-0000-714b-e31d00000000.xml#m40000000-4802-15a6-806e-0a0e2d820000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+<OverrideAggrRule mdsid="m4000002e-e9c8-15a9-806e-0a0e2da00000" name="OvAggRule_2054:1474191453827873" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cb59f2-07f5-0000-714b-e31d00000000.xml#m80cb59f2-07f5-0000-714b-e31d00000000">
+<Expr mdsid="m00000004-01f4-0000-bb83-7d6200000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Crossover Volume"."Distinct Audience Count (Crossover)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-bb83-7d6200000000-m40000000-4802-15a6-806e-0a0e2d820000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb595c-07f3-0000-714b-e31d00000000.xml#m40000000-4802-15a6-806e-0a0e2d820000"/>
+</ObjectRefList>
+</Expr>
+</OverrideAggrRule>
+<OverrideAggrRule mdsid="m4000002f-e9c8-15a9-806e-0a0e2da00000" name="OvAggRule_2054:1474201453827873" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80000000-47f0-15a6-806e-0a0e2d820000.xml#m80000000-47f0-15a6-806e-0a0e2d820000">
+<Expr mdsid="m00000005-01f4-0000-9b93-f47900000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Crossover Volume"."Distinct Audience Count (Crossover)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-9b93-f47900000000-m40000000-4802-15a6-806e-0a0e2d820000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb595c-07f3-0000-714b-e31d00000000.xml#m40000000-4802-15a6-806e-0a0e2d820000"/>
+</ObjectRefList>
+</Expr>
+</OverrideAggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m000000f6-e9ca-15a9-806e-0a0e2da00000" name="AD_3900:1476911453827880">
+<Expr mdsid="m00000006-01f4-0000-8629-045200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_CROSSOVER_VOL_FA"."DISTINCT_ROWS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-8629-045200000000-m00000000-480c-15a6-806e-0a0e2d820000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb5993-0bb9-0000-714b-e31d00000000.xml#m00000000-480c-15a6-806e-0a0e2d820000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80cb595c-07f3-0000-714b-e31d00000000-m80cb59f1-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cb59f1-07f5-0000-714b-e31d00000000.xml#m80cb59f1-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80cb595c-07f3-0000-714b-e31d00000000-m80cb59f2-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cb59f2-07f5-0000-714b-e31d00000000.xml#m80cb59f2-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80cb595c-07f3-0000-714b-e31d00000000-m80000000-47f0-15a6-806e-0a0e2d820000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80000000-47f0-15a6-806e-0a0e2d820000.xml#m80000000-47f0-15a6-806e-0a0e2d820000"/>
+</RefTableSources>
+</LogicalTable>

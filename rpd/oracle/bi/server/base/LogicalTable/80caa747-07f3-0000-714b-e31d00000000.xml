@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80caa747-07f3-0000-714b-e31d00000000" name="Fact - Owning Party - Event Payments - Previous" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1456" y="572" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80cb4653-07d6-0000-714b-e31d00000000" name="Previous Event Own Place Income" isWriteable="false">
+<Description><![CDATA[The sum of all donations linked to this event where the Event Registration 'Place Type' is "Own Place".]]></Description>
+<MeasureDefn mdsid="m80cb4655-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb46d8-0802-0000-714b-e31d00000000" name="AggRule_2050:8309571366967632" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-70c7-8ca000000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Event Payments - Previous"."Previous Event Own Place Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-70c7-8ca000000000-m80cb4653-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa747-07f3-0000-714b-e31d00000000.xml#m80cb4653-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb4659-0f3c-0000-714b-e31d00000000" name="AD_3900:8308711366967209">
+<Expr mdsid="m00000002-01f4-0000-9a62-0a1f00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  THEN "%2" WHEN "%1" <> 30 THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_FA"."PAY_AMT_OWN_PLACE" WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" <> 30 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_FA"."PAY_AMT_OWN_PLACE" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-9a62-0a1f00000000-m80ca8612-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80ca8612-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-9a62-0a1f00000000-m80cab0da-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cab0d3-0bb9-0000-714b-e31d00000000.xml#m80cab0da-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb4663-07d6-0000-714b-e31d00000000" name="Previous Event Guaranteed Place Income" isWriteable="false">
+<Description><![CDATA[The sum of all donations linked to this event where the Event Registration 'Place Type' is "Guaranteed Place".]]></Description>
+<MeasureDefn mdsid="m80cb4665-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb46de-0802-0000-714b-e31d00000000" name="AggRule_2050:8309601366967691" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-7b6b-8f1400000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Event Payments - Previous"."Previous Event Guaranteed Place Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-7b6b-8f1400000000-m80cb4663-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa747-07f3-0000-714b-e31d00000000.xml#m80cb4663-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb4669-0f3c-0000-714b-e31d00000000" name="AD_3900:8308811366967209">
+<Expr mdsid="m00000004-01f4-0000-949a-f36900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  THEN "%2" WHEN "%1" <> 30 THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_FA"."PAY_AMT_GUARANTEED_PLACE" WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" <> 30 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_FA"."PAY_AMT_GUARANTEED_PLACE" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-949a-f36900000000-m80ca8612-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80ca8612-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-949a-f36900000000-m80cab0db-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cab0d3-0bb9-0000-714b-e31d00000000.xml#m80cab0db-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80caa74f-07d6-0000-714b-e31d00000000" name="Previous Event Online Income" isWriteable="false">
+<Description><![CDATA[The sum of all donations linked to this event where the Product Channel is 'Online'. The 'Previous Event' is the most recent previous event with the same 'Event Master'.]]></Description>
+<MeasureDefn mdsid="m80caa763-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb46da-0802-0000-714b-e31d00000000" name="AggRule_2050:8309581366967635" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-fa7a-76d800000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Event Payments - Previous"."Previous Event Online Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-fa7a-76d800000000-m80caa74f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa747-07f3-0000-714b-e31d00000000.xml#m80caa74f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80caa789-0f3c-0000-714b-e31d00000000" name="AD_3900:8037951359228038">
+<Expr mdsid="m00000006-01f4-0000-ca63-adf700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  AND "%2" = 'Online' THEN "%3" WHEN "%1" <> 30 AND "%2" = 'Online' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" IS NULL  AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CHANNEL" = 'Online' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_FA_Previous"."PAY_AMT" WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" <> 30 AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CHANNEL" = 'Online' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_FA_Previous"."PAY_AMT" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-ca63-adf700000000-m80ca8612-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80ca8612-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-ca63-adf700000000-m80ca860b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80ca860b-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-ca63-adf700000000-m80cb3d12-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb3d07-0bb9-0000-714b-e31d00000000.xml#m80cb3d12-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80caa751-07d6-0000-714b-e31d00000000" name="Previous Event Offline Income" isWriteable="false">
+<Description><![CDATA[The sum of all donations linked to this event where the Product Channel is 'Offline'. The 'Previous Event' is the most recent previous event with the same 'Event Master'.]]></Description>
+<MeasureDefn mdsid="m80caa765-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb46e3-0802-0000-714b-e31d00000000" name="AggRule_2050:8309631366982487" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-bd57-9ad800000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Event Payments - Previous"."Previous Event Offline Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-bd57-9ad800000000-m80caa751-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa747-07f3-0000-714b-e31d00000000.xml#m80caa751-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80caa78b-0f3c-0000-714b-e31d00000000" name="AD_3900:8037961359228038">
+<Expr mdsid="m00000008-01f4-0000-55e2-2e0a00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  AND "%2" = 'Offline' THEN "%3" WHEN "%1" <> 30 AND "%2" = 'Offline' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" IS NULL  AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CHANNEL" = 'Offline' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_FA_Previous"."PAY_AMT" WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" <> 30 AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CHANNEL" = 'Offline' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_FA_Previous"."PAY_AMT" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-55e2-2e0a00000000-m80ca8612-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80ca8612-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-55e2-2e0a00000000-m80ca860b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80ca860b-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-55e2-2e0a00000000-m80cb3d12-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb3d07-0bb9-0000-714b-e31d00000000.xml#m80cb3d12-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80caa753-07d6-0000-714b-e31d00000000" name="Previous Event Net Sponsorship Amount" isWriteable="false">
+<Description><![CDATA[The sum of all donations linked to this event excluding entry fees and not including Gift Aid. The 'Previous Event' is the most recent previous event with the same 'Event Master'.]]></Description>
+<MeasureDefn mdsid="m80caa767-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb46e1-0802-0000-714b-e31d00000000" name="AggRule_2050:8309621366982484" isDefault="true">
+<Expr mdsid="m00000009-01f4-0000-45f1-b52700000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Event Payments - Previous"."Previous Event Net Sponsorship Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-45f1-b52700000000-m80caa753-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa747-07f3-0000-714b-e31d00000000.xml#m80caa753-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80caa78d-0f3c-0000-714b-e31d00000000" name="AD_3900:8037971359228038">
+<Expr mdsid="m0000000a-01f4-0000-4209-21d000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  THEN "%2" WHEN "%1" <> 30 THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_FA_Previous"."PAY_AMT" WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" <> 30 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_FA_Previous"."PAY_AMT" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-4209-21d000000000-m80ca8612-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80ca8612-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000a-01f4-0000-4209-21d000000000-m80cb3d12-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb3d07-0bb9-0000-714b-e31d00000000.xml#m80cb3d12-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb4693-07d6-0000-714b-e31d00000000" name="Previous Event Gross Sponsorship Amount" isWriteable="false">
+<Description><![CDATA[The sum of all donations linked to this event excluding entry fees and including Gift Aid that has been processed (Actual Completed).]]></Description>
+<MeasureDefn mdsid="m80cb4695-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb46e5-0802-0000-714b-e31d00000000" name="AggRule_2050:8309641366982547" isDefault="true">
+<Expr mdsid="m0000000b-01f4-0000-9c77-204900000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Event Payments - Previous"."Previous Event Gross Sponsorship Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-9c77-204900000000-m80cb4693-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa747-07f3-0000-714b-e31d00000000.xml#m80cb4693-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb4699-0f3c-0000-714b-e31d00000000" name="AD_3900:8309131366967210">
+<Expr mdsid="m0000000c-01f4-0000-0e3e-011400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  THEN "%2" WHEN "%1" <> 30 THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_FA"."X_GROSS_PAY_AMT" WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" <> 30 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_FA"."X_GROSS_PAY_AMT" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-0e3e-011400000000-m80ca8612-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80ca8612-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-0e3e-011400000000-m80cac3a3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cab0d3-0bb9-0000-714b-e31d00000000.xml#m80cac3a3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb469f-07d6-0000-714b-e31d00000000" name="Previous Event Entry Fee Income" isWriteable="false">
+<Description><![CDATA[The sum of all donations classed as Entry Fee income.]]></Description>
+<MeasureDefn mdsid="m80cb46a1-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb46ea-0802-0000-714b-e31d00000000" name="AggRule_2050:8309671366982641" isDefault="true">
+<Expr mdsid="m0000000d-01f4-0000-b351-38d700000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Event Payments - Previous"."Previous Event Entry Fee Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-b351-38d700000000-m80cb469f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa747-07f3-0000-714b-e31d00000000.xml#m80cb469f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb46a5-0f3c-0000-714b-e31d00000000" name="AD_3900:8309211366967210">
+<Expr mdsid="m0000000e-01f4-0000-0c64-e21e00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 30 THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" = 30 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_FA"."PAY_AMT" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-0c64-e21e00000000-m80ca8612-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80ca8612-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-0c64-e21e00000000-m80cab0d5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cab0d3-0bb9-0000-714b-e31d00000000.xml#m80cab0d5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb46ab-07d6-0000-714b-e31d00000000" name="Previous Event # Donations" isWriteable="false">
+<Description><![CDATA[The number of donations (not including Entry Fee payments).]]></Description>
+<MeasureDefn mdsid="m80cb46ad-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb46ee-0802-0000-714b-e31d00000000" name="AggRule_2050:8309691366982716" isDefault="true">
+<Expr mdsid="m0000000f-01f4-0000-2db2-3a6500000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Event Payments - Previous"."Previous Event # Donations")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-2db2-3a6500000000-m80cb46ab-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa747-07f3-0000-714b-e31d00000000.xml#m80cb46ab-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb46b1-0f3c-0000-714b-e31d00000000" name="AD_3900:8309291366967210">
+<Expr mdsid="m00000010-01f4-0000-a991-4e5e00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  THEN "%2" WHEN "%1" <> '30' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_FA"."NUM_DONATIONS" WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" <> '30' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_FA"."NUM_DONATIONS" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-a991-4e5e00000000-m80ca8612-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80ca8612-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-a991-4e5e00000000-m80cab0d8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cab0d3-0bb9-0000-714b-e31d00000000.xml#m80cab0d8-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80caa79c-07d6-0000-714b-e31d00000000" name="Previous Event Income" isWriteable="false">
+<Description><![CDATA[The sum of all donations linked to this event including entry fees. This does not include Gift Aid. The 'Previous Event' is the most recent previous event with the same 'Event Master'.]]></Description>
+<MeasureDefn mdsid="m80caa7ab-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cad945-0802-0000-714b-e31d00000000" name="AggRule_2050:8119861361205387" isDefault="true">
+<Expr mdsid="m00000011-01f4-0000-3e62-60ce00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Event Payments - Previous"."Previous Event Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-3e62-60ce00000000-m80caa79c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa747-07f3-0000-714b-e31d00000000.xml#m80caa79c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80caa79e-0f3c-0000-714b-e31d00000000" name="AD_3900:8038091359228329">
+<Expr mdsid="m00000012-01f4-0000-500f-2afc00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_FA_Previous"."PAY_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-500f-2afc00000000-m80cb3d12-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb3d07-0bb9-0000-714b-e31d00000000.xml#m80cb3d12-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb46c3-07d6-0000-714b-e31d00000000" name="Previous Event # of Gift Aidable Sponsorship Donations" isWriteable="false">
+<Description><![CDATA[The number of donation lines (not including Entry Fee payments) that are eligible for Gift Aid.]]></Description>
+<MeasureDefn mdsid="m80cb46c5-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb46f0-0802-0000-714b-e31d00000000" name="AggRule_2050:8309701366982786" isDefault="true">
+<Expr mdsid="m00000013-01f4-0000-4cea-886c00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Event Payments - Previous"."Previous Event # of Gift Aidable Sponsorship Donations")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-4cea-886c00000000-m80cb46c3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa747-07f3-0000-714b-e31d00000000.xml#m80cb46c3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb46c9-0f3c-0000-714b-e31d00000000" name="AD_3900:8309451366967210">
+<Expr mdsid="m00000014-01f4-0000-74ed-1eb900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  THEN "%2" WHEN "%1" <> 30 THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_FA"."X_GA_PT_CNT" WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."X_PROD_CAT6" <> 30 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_FA"."X_GA_PT_CNT" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-74ed-1eb900000000-m80ca8612-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80ca8612-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000014-01f4-0000-74ed-1eb900000000-m80cac3b0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cab0d3-0bb9-0000-714b-e31d00000000.xml#m80cac3b0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbc607-07d6-0000-714b-e31d00000000" name="# of Previous Event Donors (Distinct)" isWriteable="false">
+<MeasureDefn mdsid="m80cbc61f-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbc639-0802-0000-714b-e31d00000000" name="AggRule_2050:8517721404314539" isDefault="true">
+<Expr mdsid="m00000015-01f4-0000-4fd3-fb4400000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Owning Party - Event Payments - Previous"."# of Previous Event Donors (Distinct)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-4fd3-fb4400000000-m80cbc607-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caa747-07f3-0000-714b-e31d00000000.xml#m80cbc607-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbc650-0f3c-0000-714b-e31d00000000" name="AD_3900:8517671404314539">
+<Expr mdsid="m00000016-01f4-0000-41a2-4c5300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_F_Previous"."OWN_PARTY_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVENT_PAYMENT_F_Previous"."OWN_PARTY_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000016-01f4-0000-41a2-4c5300000000-m80caac34-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80caac15-0bb9-0000-714b-e31d00000000.xml#m80caac34-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80caa747-07f3-0000-714b-e31d00000000-m80cab073-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cab073-07f5-0000-714b-e31d00000000.xml#m80cab073-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80caa747-07f3-0000-714b-e31d00000000-m80cb3d97-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cb3d97-07f5-0000-714b-e31d00000000.xml#m80cb3d97-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80caa747-07f3-0000-714b-e31d00000000-m80cb465b-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cb465b-07f5-0000-714b-e31d00000000.xml#m80cb465b-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80caa747-07f3-0000-714b-e31d00000000-m80cb465d-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cb465d-07f5-0000-714b-e31d00000000.xml#m80cb465d-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

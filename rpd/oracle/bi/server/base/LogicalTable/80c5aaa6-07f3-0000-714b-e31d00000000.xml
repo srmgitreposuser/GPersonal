@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5aaa6-07f3-0000-714b-e31d00000000" name="Fact - Event Partner" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1186" y="700" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c57dee-07d6-0000-714b-e31d00000000" name="Number of Partners" isWriteable="false">
+<MeasureDefn mdsid="m80c5b5dd-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c6efd5-0802-0000-714b-e31d00000000" name="AggRule_2050:6454871305801754" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-0a31-2f0b00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - Event Partner"."Number of Partners")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-0a31-2f0b00000000-m80c57dee-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aaa6-07f3-0000-714b-e31d00000000.xml#m80c57dee-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a300-0f3c-0000-714b-e31d00000000" name="AD_3900:6043141282823848">
+<Expr mdsid="m00000002-01f4-0000-cdd1-87b100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVT_PARTNER_F_Event_Partner"."ORG_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-cdd1-87b100000000-m80c663fe-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c177-0bb9-0000-714b-e31d00000000.xml#m80c663fe-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57e06-07d6-0000-714b-e31d00000000" name="Average Partner Rating" isWriteable="false">
+<MeasureDefn mdsid="m80c5b5e2-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c6efd6-0802-0000-714b-e31d00000000" name="AggRule_2050:6454881305801754" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-376e-4b5a00000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core"."Fact - Event Partner"."Average Partner Rating")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-376e-4b5a00000000-m80c57e06-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aaa6-07f3-0000-714b-e31d00000000.xml#m80c57e06-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a318-0f3c-0000-714b-e31d00000000" name="AD_3900:6049281283773004">
+<Expr mdsid="m00000004-01f4-0000-08a8-013100000000" name="Expr">
+<ExprText><![CDATA[ CAST ( SUBSTRING("%1" FROM 1 FOR 1) AS DOUBLE PRECISION )]]></ExprText>
+<ExprTextDesc><![CDATA[ CAST ( SUBSTRING("Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVT_PARTNER_F_Event_Partner"."X_SRM_RATING" FROM 1 FOR 1) AS DOUBLE PRECISION )]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-08a8-013100000000-m80c6640b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c177-0bb9-0000-714b-e31d00000000.xml#m80c6640b-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5868f-07d6-0000-714b-e31d00000000" name="Number of Events" isWriteable="false">
+<MeasureDefn mdsid="m80c5b6c8-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c6efd7-0802-0000-714b-e31d00000000" name="AggRule_2050:6454891305801754" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-bbda-1b3d00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - Event Partner"."Number of Events")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-bbda-1b3d00000000-m80c5868f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aaa6-07f3-0000-714b-e31d00000000.xml#m80c5868f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6aba1-0f3c-0000-714b-e31d00000000" name="AD_3900:6134411284129405">
+<Expr mdsid="m00000006-01f4-0000-eb49-b87700000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVT_PARTNER_F_Event_Partner"."SOURCE_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-eb49-b87700000000-m80c66400-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c177-0bb9-0000-714b-e31d00000000.xml#m80c66400-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57def-07d6-0000-714b-e31d00000000" name="Partner Role Type" isWriteable="false">
+<AttrDefn mdsid="m80c6a301-0f3c-0000-714b-e31d00000000" name="AD_3900:6612851328202319">
+<Expr mdsid="m00000007-01f4-0000-f253-4be900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVT_PARTNER_F_Event_Partner"."X_SRM_PARTNER_ROLE_TYPE_CD"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-f253-4be900000000-m80c66402-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c177-0bb9-0000-714b-e31d00000000.xml#m80c66402-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57df0-07d6-0000-714b-e31d00000000" name="Partner Status" isWriteable="false">
+<AttrDefn mdsid="m80c6a302-0f3c-0000-714b-e31d00000000" name="AD_3900:6612861328202319">
+<Expr mdsid="m00000008-01f4-0000-9ffa-70f700000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVT_PARTNER_F_Event_Partner"."STATUS_CD"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-9ffa-70f700000000-m80c66401-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c177-0bb9-0000-714b-e31d00000000.xml#m80c66401-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57df1-07d6-0000-714b-e31d00000000" name="Partner Commitment" isWriteable="false">
+<AttrDefn mdsid="m80c6a303-0f3c-0000-714b-e31d00000000" name="AD_3900:6612871328202319">
+<Expr mdsid="m00000009-01f4-0000-dc39-e5d100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVT_PARTNER_F_Event_Partner"."COMMITMENT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-dc39-e5d100000000-m80c66407-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c177-0bb9-0000-714b-e31d00000000.xml#m80c66407-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57df2-07d6-0000-714b-e31d00000000" name="Partner Rating" isWriteable="false">
+<AttrDefn mdsid="m80c6a304-0f3c-0000-714b-e31d00000000" name="AD_3900:6612881328202319">
+<Expr mdsid="m0000000a-01f4-0000-abc0-700700000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVT_PARTNER_F_Event_Partner"."X_SRM_RATING"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-abc0-700700000000-m80c6640b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c177-0bb9-0000-714b-e31d00000000.xml#m80c6640b-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57df3-07d6-0000-714b-e31d00000000" name="Partner Comments" isWriteable="false">
+<AttrDefn mdsid="m80c6a305-0f3c-0000-714b-e31d00000000" name="AD_3900:6612891328202319">
+<Expr mdsid="m0000000b-01f4-0000-5067-b5c800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVT_PARTNER_F_Event_Partner"."COMMENTS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-5067-b5c800000000-m80c66409-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c177-0bb9-0000-714b-e31d00000000.xml#m80c66409-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5aaa6-07f3-0000-714b-e31d00000000-m80c5ad27-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ad27-07f5-0000-714b-e31d00000000.xml#m80c5ad27-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5ab0e-07f3-0000-714b-e31d00000000" name="Fact - Campaign Contact Rules" iconIndex="93" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="538" y="306" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c5882a-07d6-0000-714b-e31d00000000" name="Contact Rules" isWriteable="false">
+<AttrDefn mdsid="m80c6ad3d-0f3c-0000-714b-e31d00000000" name="AD_3900:6247281294660490">
+<Expr mdsid="m00000001-01f4-0000-d159-454000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'ASK_EMAIL' THEN 'Ask & Email' WHEN "%1" = 'ASK_TELEMARKETING' THEN 'Ask & Telemarketing' WHEN "%1" = 'ASK_MAIL' THEN 'Ask & Mail' WHEN "%1" = 'ASK_GENERAL' THEN 'Ask & General' END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_CONTACT_RULES"."RULE" = 'ASK_EMAIL' THEN 'Ask & Email' WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_CONTACT_RULES"."RULE" = 'ASK_TELEMARKETING' THEN 'Ask & Telemarketing' WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_CONTACT_RULES"."RULE" = 'ASK_MAIL' THEN 'Ask & Mail' WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_CONTACT_RULES"."RULE" = 'ASK_GENERAL' THEN 'Ask & General' END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-d159-454000000000-m80c66754-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c193-0bb9-0000-714b-e31d00000000.xml#m80c66754-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5882b-07d6-0000-714b-e31d00000000" name="Week Start Date" isWriteable="false">
+<AttrDefn mdsid="m80c6ad3e-0f3c-0000-714b-e31d00000000" name="AD_3900:6247291294660490">
+<Expr mdsid="m00000002-01f4-0000-a41d-480400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_CONTACT_RULES"."WEEK_START_DT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-a41d-480400000000-m80c66755-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c193-0bb9-0000-714b-e31d00000000.xml#m80c66755-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5882c-07d6-0000-714b-e31d00000000" name="Rule Value" isWriteable="false">
+<AttrDefn mdsid="m80c6ad3c-0f3c-0000-714b-e31d00000000" name="AD_3900:6247271294660490">
+<Expr mdsid="m00000003-01f4-0000-f50e-f3dd00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_CONTACT_RULES"."VALUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-f50e-f3dd00000000-m80c66756-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c193-0bb9-0000-714b-e31d00000000.xml#m80c66756-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5882d-07d6-0000-714b-e31d00000000" name="Active Cash Givers" isWriteable="false">
+<AttrDefn mdsid="m80c6ad51-0f3c-0000-714b-e31d00000000" name="AD_3900:6248251294660490">
+<Expr mdsid="m00000004-01f4-0000-5295-c60800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_SUPPORTER_AUDIENCE"."X_SRM_CUSTOM_SA1"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-5295-c60800000000-m80c66772-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c195-0bb9-0000-714b-e31d00000000.xml#m80c66772-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5882e-07d6-0000-714b-e31d00000000" name="Active COG" isWriteable="false">
+<AttrDefn mdsid="m80c6ad52-0f3c-0000-714b-e31d00000000" name="AD_3900:6248261294660490">
+<Expr mdsid="m00000005-01f4-0000-ba66-588500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_SUPPORTER_AUDIENCE"."X_SRM_CUSTOM_SA2"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-ba66-588500000000-m80c66773-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c195-0bb9-0000-714b-e31d00000000.xml#m80c66773-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5882f-07d6-0000-714b-e31d00000000" name="Cancer Campaigners" isWriteable="false">
+<AttrDefn mdsid="m80c6ad53-0f3c-0000-714b-e31d00000000" name="AD_3900:6248271294660490">
+<Expr mdsid="m00000006-01f4-0000-a85f-77ab00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_SUPPORTER_AUDIENCE"."X_SRM_CUSTOM_SA3"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-a85f-77ab00000000-m80c66774-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c195-0bb9-0000-714b-e31d00000000.xml#m80c66774-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58830-07d6-0000-714b-e31d00000000" name="Catalogue Shoppers" isWriteable="false">
+<AttrDefn mdsid="m80c6ad54-0f3c-0000-714b-e31d00000000" name="AD_3900:6248281294660490">
+<Expr mdsid="m00000007-01f4-0000-df3a-492f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_SUPPORTER_AUDIENCE"."X_SRM_CUSTOM_SA4"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-df3a-492f00000000-m80c66775-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c195-0bb9-0000-714b-e31d00000000.xml#m80c66775-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58831-07d6-0000-714b-e31d00000000" name="Community F/R individuals - current and/or future years" isWriteable="false">
+<AttrDefn mdsid="m80c6ad55-0f3c-0000-714b-e31d00000000" name="AD_3900:6248291294660490">
+<Expr mdsid="m00000008-01f4-0000-d403-8a2500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_SUPPORTER_AUDIENCE"."X_SRM_CUSTOM_SA5"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-d403-8a2500000000-m80c66776-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c195-0bb9-0000-714b-e31d00000000.xml#m80c66776-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58832-07d6-0000-714b-e31d00000000" name="Community F/R individuals - last year and older" isWriteable="false">
+<AttrDefn mdsid="m80c6ad56-0f3c-0000-714b-e31d00000000" name="AD_3900:6248301294660490">
+<Expr mdsid="m00000009-01f4-0000-692e-f48400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_SUPPORTER_AUDIENCE"."X_SRM_CUSTOM_SA6"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-692e-f48400000000-m80c66777-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c195-0bb9-0000-714b-e31d00000000.xml#m80c66777-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58833-07d6-0000-714b-e31d00000000" name="Credit Card" isWriteable="false">
+<AttrDefn mdsid="m80c6ad57-0f3c-0000-714b-e31d00000000" name="AD_3900:6248311294660490">
+<Expr mdsid="m0000000a-01f4-0000-08e1-223400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_SUPPORTER_AUDIENCE"."X_SRM_CUSTOM_SA7"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-08e1-223400000000-m80c66778-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c195-0bb9-0000-714b-e31d00000000.xml#m80c66778-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58834-07d6-0000-714b-e31d00000000" name="HV Cash/Cog Givers" isWriteable="false">
+<AttrDefn mdsid="m80c6ad3f-0f3c-0000-714b-e31d00000000" name="AD_3900:6248071294660490">
+<Expr mdsid="m0000000b-01f4-0000-c5e9-fec600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_SUPPORTER_AUDIENCE"."X_SRM_CUSTOM_SA8"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-c5e9-fec600000000-m80c66779-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c195-0bb9-0000-714b-e31d00000000.xml#m80c66779-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58835-07d6-0000-714b-e31d00000000" name="HV Cash/Cog Profiled" isWriteable="false">
+<AttrDefn mdsid="m80c6ad40-0f3c-0000-714b-e31d00000000" name="AD_3900:6248081294660490">
+<Expr mdsid="m0000000c-01f4-0000-ff65-98f500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_SUPPORTER_AUDIENCE"."X_SRM_CUSTOM_SA9"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-ff65-98f500000000-m80c6677a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c195-0bb9-0000-714b-e31d00000000.xml#m80c6677a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58836-07d6-0000-714b-e31d00000000" name="Just Giving Sponsors" isWriteable="false">
+<AttrDefn mdsid="m80c6ad41-0f3c-0000-714b-e31d00000000" name="AD_3900:6248091294660490">
+<Expr mdsid="m0000000d-01f4-0000-4ce5-865500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_SUPPORTER_AUDIENCE"."X_SRM_CUSTOM_SA10"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-4ce5-865500000000-m80c6677b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c195-0bb9-0000-714b-e31d00000000.xml#m80c6677b-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58837-07d6-0000-714b-e31d00000000" name="Lapsed Cash" isWriteable="false">
+<AttrDefn mdsid="m80c6ad42-0f3c-0000-714b-e31d00000000" name="AD_3900:6248101294660490">
+<Expr mdsid="m0000000e-01f4-0000-98a5-cf1400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_SUPPORTER_AUDIENCE"."X_SRM_CUSTOM_SA11"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-98a5-cf1400000000-m80c6677c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c195-0bb9-0000-714b-e31d00000000.xml#m80c6677c-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58838-07d6-0000-714b-e31d00000000" name="Lapsed CoG" isWriteable="false">
+<AttrDefn mdsid="m80c6ad43-0f3c-0000-714b-e31d00000000" name="AD_3900:6248111294660490">
+<Expr mdsid="m0000000f-01f4-0000-3ac3-5ef400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_SUPPORTER_AUDIENCE"."X_SRM_CUSTOM_SA12"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-3ac3-5ef400000000-m80c6677d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c195-0bb9-0000-714b-e31d00000000.xml#m80c6677d-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58839-07d6-0000-714b-e31d00000000" name="Legacy (Prospects)" isWriteable="false">
+<AttrDefn mdsid="m80c6ad44-0f3c-0000-714b-e31d00000000" name="AD_3900:6248121294660490">
+<Expr mdsid="m00000010-01f4-0000-75d2-d01b00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_SUPPORTER_AUDIENCE"."X_SRM_CUSTOM_SA13"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-75d2-d01b00000000-m80c6677e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c195-0bb9-0000-714b-e31d00000000.xml#m80c6677e-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5883a-07d6-0000-714b-e31d00000000" name="Offline Sponsors" isWriteable="false">
+<AttrDefn mdsid="m80c6ad45-0f3c-0000-714b-e31d00000000" name="AD_3900:6248131294660490">
+<Expr mdsid="m00000011-01f4-0000-d34a-cdbd00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_SUPPORTER_AUDIENCE"."X_SRM_CUSTOM_SA14"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-d34a-cdbd00000000-m80c6677f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c195-0bb9-0000-714b-e31d00000000.xml#m80c6677f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5883b-07d6-0000-714b-e31d00000000" name="Prospects" isWriteable="false">
+<AttrDefn mdsid="m80c6ad46-0f3c-0000-714b-e31d00000000" name="AD_3900:6248141294660490">
+<Expr mdsid="m00000012-01f4-0000-2d3b-136700000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_SUPPORTER_AUDIENCE"."X_SRM_CUSTOM_SA15"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-2d3b-136700000000-m80c66780-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c195-0bb9-0000-714b-e31d00000000.xml#m80c66780-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5883c-07d6-0000-714b-e31d00000000" name="Race for Life non sponsorship returners - current year" isWriteable="false">
+<AttrDefn mdsid="m80c6ad47-0f3c-0000-714b-e31d00000000" name="AD_3900:6248151294660490">
+<Expr mdsid="m00000013-01f4-0000-89f3-885b00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_SUPPORTER_AUDIENCE"."X_SRM_CUSTOM_SA16"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-89f3-885b00000000-m80c66781-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c195-0bb9-0000-714b-e31d00000000.xml#m80c66781-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5883d-07d6-0000-714b-e31d00000000" name="Race for Life non sponsorship returners - last year and older" isWriteable="false">
+<AttrDefn mdsid="m80c6ad48-0f3c-0000-714b-e31d00000000" name="AD_3900:6248161294660490">
+<Expr mdsid="m00000014-01f4-0000-2339-f8a200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_SUPPORTER_AUDIENCE"."X_SRM_CUSTOM_SA17"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-2339-f8a200000000-m80c66782-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c195-0bb9-0000-714b-e31d00000000.xml#m80c66782-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5883e-07d6-0000-714b-e31d00000000" name="Race for Life sponsorship returners - current year" isWriteable="false">
+<AttrDefn mdsid="m80c6ad49-0f3c-0000-714b-e31d00000000" name="AD_3900:6248171294660490">
+<Expr mdsid="m00000015-01f4-0000-f093-649d00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_SUPPORTER_AUDIENCE"."X_SRM_CUSTOM_SA18"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-f093-649d00000000-m80c66783-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c195-0bb9-0000-714b-e31d00000000.xml#m80c66783-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5883f-07d6-0000-714b-e31d00000000" name="Race for Life sponsorship returners - last year and older" isWriteable="false">
+<AttrDefn mdsid="m80c6ad4a-0f3c-0000-714b-e31d00000000" name="AD_3900:6248181294660490">
+<Expr mdsid="m00000016-01f4-0000-fe52-537400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_SUPPORTER_AUDIENCE"."X_SRM_CUSTOM_SA19"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000016-01f4-0000-fe52-537400000000-m80c66784-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c195-0bb9-0000-714b-e31d00000000.xml#m80c66784-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58840-07d6-0000-714b-e31d00000000" name="Relay - current year" isWriteable="false">
+<AttrDefn mdsid="m80c6ad4b-0f3c-0000-714b-e31d00000000" name="AD_3900:6248191294660490">
+<Expr mdsid="m00000017-01f4-0000-ec82-82c900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_SUPPORTER_AUDIENCE"."X_SRM_CUSTOM_SA20"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-ec82-82c900000000-m80c66785-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c195-0bb9-0000-714b-e31d00000000.xml#m80c66785-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58841-07d6-0000-714b-e31d00000000" name="Relay - last year and older" isWriteable="false">
+<AttrDefn mdsid="m80c6ad4c-0f3c-0000-714b-e31d00000000" name="AD_3900:6248201294660490">
+<Expr mdsid="m00000018-01f4-0000-3aea-29e400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_SUPPORTER_AUDIENCE"."X_SRM_CUSTOM_SA21"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000018-01f4-0000-3aea-29e400000000-m80c66786-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c195-0bb9-0000-714b-e31d00000000.xml#m80c66786-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58842-07d6-0000-714b-e31d00000000" name="Run 10k - current year" isWriteable="false">
+<AttrDefn mdsid="m80c6ad4d-0f3c-0000-714b-e31d00000000" name="AD_3900:6248211294660490">
+<Expr mdsid="m00000019-01f4-0000-f1e4-e76c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_SUPPORTER_AUDIENCE"."X_SRM_CUSTOM_SA22"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-f1e4-e76c00000000-m80c66787-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c195-0bb9-0000-714b-e31d00000000.xml#m80c66787-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58843-07d6-0000-714b-e31d00000000" name="Run 10k - last year and older" isWriteable="false">
+<AttrDefn mdsid="m80c6ad4e-0f3c-0000-714b-e31d00000000" name="AD_3900:6248221294660490">
+<Expr mdsid="m0000001a-01f4-0000-eafc-fdb800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_SUPPORTER_AUDIENCE"."X_SRM_CUSTOM_SA23"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001a-01f4-0000-eafc-fdb800000000-m80c66788-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c195-0bb9-0000-714b-e31d00000000.xml#m80c66788-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58844-07d6-0000-714b-e31d00000000" name="Running/Sports - current and/or future years" isWriteable="false">
+<AttrDefn mdsid="m80c6ad4f-0f3c-0000-714b-e31d00000000" name="AD_3900:6248231294660490">
+<Expr mdsid="m0000001b-01f4-0000-328b-fe0b00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_SUPPORTER_AUDIENCE"."X_SRM_CUSTOM_SA24"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001b-01f4-0000-328b-fe0b00000000-m80c66789-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c195-0bb9-0000-714b-e31d00000000.xml#m80c66789-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58845-07d6-0000-714b-e31d00000000" name="Running/Sports - last year and older" isWriteable="false">
+<AttrDefn mdsid="m80c6ad50-0f3c-0000-714b-e31d00000000" name="AD_3900:6248241294660490">
+<Expr mdsid="m0000001c-01f4-0000-44b5-e32f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_SUPPORTER_AUDIENCE"."X_SRM_CUSTOM_SA25"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001c-01f4-0000-44b5-e32f00000000-m80c6678a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c195-0bb9-0000-714b-e31d00000000.xml#m80c6678a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5ab0e-07f3-0000-714b-e31d00000000-m80c5adc1-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5adc1-07f5-0000-714b-e31d00000000.xml#m80c5adc1-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a99f-07f3-0000-714b-e31d00000000" name="Dim - Maturity Date (Consumer Accounts)" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="492" y="943" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c5642e-07d6-0000-714b-e31d00000000" name="Maturity Date Consumer Accounts" isWriteable="false">
+<AttrDefn mdsid="m80c6880b-0f3c-0000-714b-e31d00000000" name="AD_3900:828541074282455">
+<Expr mdsid="m00000001-01f4-0000-f94c-796500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."DAY_DT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-f94c-796500000000-m80c5e4e0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4e0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5642f-07d6-0000-714b-e31d00000000" name="Maturity Date Category Consumer Accounts" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000002-01f4-0000-f02f-940c00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  VALUEOF("%1") > "%2" THEN 'Matured' WHEN  TIMESTAMPDIFF( SQL_TSI_DAY ,  VALUEOF("%1"), "%2") <= 30 THEN 'A: 0-30 days' WHEN  TIMESTAMPDIFF( SQL_TSI_DAY ,  VALUEOF("%1"), "%2") <= 60 THEN 'B: 31-60 days' WHEN  TIMESTAMPDIFF( SQL_TSI_DAY ,  VALUEOF("%1"), "%2") <= 90 THEN 'C: 61-90 days' ELSE 'D: >90 days' END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  VALUEOF("Warehouse Refresh Date"."LAST_REFRESH_DT") > "Core"."Dim - Maturity Date (Consumer Accounts)"."Maturity Date Consumer Accounts" THEN 'Matured' WHEN  TIMESTAMPDIFF( SQL_TSI_DAY ,  VALUEOF("Warehouse Refresh Date"."LAST_REFRESH_DT"), "Core"."Dim - Maturity Date (Consumer Accounts)"."Maturity Date Consumer Accounts") <= 30 THEN 'A: 0-30 days' WHEN  TIMESTAMPDIFF( SQL_TSI_DAY ,  VALUEOF("Warehouse Refresh Date"."LAST_REFRESH_DT"), "Core"."Dim - Maturity Date (Consumer Accounts)"."Maturity Date Consumer Accounts") <= 60 THEN 'B: 31-60 days' WHEN  TIMESTAMPDIFF( SQL_TSI_DAY ,  VALUEOF("Warehouse Refresh Date"."LAST_REFRESH_DT"), "Core"."Dim - Maturity Date (Consumer Accounts)"."Maturity Date Consumer Accounts") <= 90 THEN 'C: 61-90 days' ELSE 'D: >90 days' END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-f02f-940c00000000-m80c67bd7-0bd7-0000-714b-e31d00000000" objectRef="/oracle/bi/server/base/Variable/80c67bd7-0bd7-0000-714b-e31d00000000.xml#m80c67bd7-0bd7-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-f02f-940c00000000-m80c5642e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a99f-07f3-0000-714b-e31d00000000.xml#m80c5642e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c6880c-0f3c-0000-714b-e31d00000000" name="AD_3900:828551074282455">
+<Expr mdsid="m00000003-01f4-0000-5ba9-d8ad00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56430-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80c6880d-0f3c-0000-714b-e31d00000000" name="AD_3900:828561074282455">
+<Expr mdsid="m00000004-01f4-0000-cd41-9b5100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-cd41-9b5100000000-m80c5e4da-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4da-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56431-07d6-0000-714b-e31d00000000" name="CAL_HALF" isWriteable="false">
+<AttrDefn mdsid="m80c6880e-0f3c-0000-714b-e31d00000000" name="AD_3900:828571074282455">
+<Expr mdsid="m00000005-01f4-0000-8e82-0e7400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."CAL_HALF"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-8e82-0e7400000000-m80c5e4db-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4db-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56432-07d6-0000-714b-e31d00000000" name="CAL_MONTH" isWriteable="false">
+<AttrDefn mdsid="m80c6880f-0f3c-0000-714b-e31d00000000" name="AD_3900:828581074282455">
+<Expr mdsid="m00000006-01f4-0000-d471-094700000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."CAL_MONTH"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-d471-094700000000-m80c5e4dc-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4dc-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56433-07d6-0000-714b-e31d00000000" name="CAL_QTR" isWriteable="false">
+<AttrDefn mdsid="m80c68810-0f3c-0000-714b-e31d00000000" name="AD_3900:828591074282455">
+<Expr mdsid="m00000007-01f4-0000-6619-a15b00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."CAL_QTR"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-6619-a15b00000000-m80c5e4dd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4dd-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56434-07d6-0000-714b-e31d00000000" name="CAL_WEEK" isWriteable="false">
+<AttrDefn mdsid="m80c68811-0f3c-0000-714b-e31d00000000" name="AD_3900:828601074282455">
+<Expr mdsid="m00000008-01f4-0000-a9cd-8bcb00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."CAL_WEEK"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-a9cd-8bcb00000000-m80c5e4de-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4de-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56435-07d6-0000-714b-e31d00000000" name="CAL_YEAR" isWriteable="false">
+<AttrDefn mdsid="m80c68812-0f3c-0000-714b-e31d00000000" name="AD_3900:828611074282455">
+<Expr mdsid="m00000009-01f4-0000-42ca-e08b00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."CAL_YEAR"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-42ca-e08b00000000-m80c5e4df-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4df-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56436-07d6-0000-714b-e31d00000000" name="DAY_OF_MONTH" isWriteable="false">
+<AttrDefn mdsid="m80c68813-0f3c-0000-714b-e31d00000000" name="AD_3900:828621074282455">
+<Expr mdsid="m0000000a-01f4-0000-e45c-89dc00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."DAY_OF_MONTH"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-e45c-89dc00000000-m80c5e4e1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4e1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56437-07d6-0000-714b-e31d00000000" name="DAY_OF_WEEK" isWriteable="false">
+<AttrDefn mdsid="m80c68814-0f3c-0000-714b-e31d00000000" name="AD_3900:828631074282455">
+<Expr mdsid="m0000000b-01f4-0000-7416-688c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."DAY_OF_WEEK"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-7416-688c00000000-m80c5e4e2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4e2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56438-07d6-0000-714b-e31d00000000" name="DAY_OF_YEAR" isWriteable="false">
+<AttrDefn mdsid="m80c68815-0f3c-0000-714b-e31d00000000" name="AD_3900:828641074282455">
+<Expr mdsid="m0000000c-01f4-0000-f573-7b5e00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."DAY_OF_YEAR"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-f573-7b5e00000000-m80c5e4e3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4e3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56439-07d6-0000-714b-e31d00000000" name="FSCL_HALF" isWriteable="false">
+<AttrDefn mdsid="m80c68816-0f3c-0000-714b-e31d00000000" name="AD_3900:828651074282455">
+<Expr mdsid="m0000000d-01f4-0000-4c38-7f6100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."FSCL_HALF"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-4c38-7f6100000000-m80c5e4e4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4e4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5643a-07d6-0000-714b-e31d00000000" name="FSCL_MONTH" isWriteable="false">
+<AttrDefn mdsid="m80c68817-0f3c-0000-714b-e31d00000000" name="AD_3900:828661074282455">
+<Expr mdsid="m0000000e-01f4-0000-53bf-146200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."FSCL_MONTH"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-53bf-146200000000-m80c5e4e5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4e5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5643b-07d6-0000-714b-e31d00000000" name="FSCL_QTR" isWriteable="false">
+<AttrDefn mdsid="m80c68818-0f3c-0000-714b-e31d00000000" name="AD_3900:828671074282455">
+<Expr mdsid="m0000000f-01f4-0000-a273-6ab000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."FSCL_QTR"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-a273-6ab000000000-m80c5e4e6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4e6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5643c-07d6-0000-714b-e31d00000000" name="FSCL_WEEK" isWriteable="false">
+<AttrDefn mdsid="m80c68819-0f3c-0000-714b-e31d00000000" name="AD_3900:828681074282455">
+<Expr mdsid="m00000010-01f4-0000-d058-fe1f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."FSCL_WEEK"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-d058-fe1f00000000-m80c5e4e7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4e7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5643d-07d6-0000-714b-e31d00000000" name="FSCL_YEAR" isWriteable="false">
+<AttrDefn mdsid="m80c6881a-0f3c-0000-714b-e31d00000000" name="AD_3900:828691074282455">
+<Expr mdsid="m00000011-01f4-0000-05c0-35dd00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."FSCL_YEAR"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-05c0-35dd00000000-m80c5e4e8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4e8-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5643e-07d6-0000-714b-e31d00000000" name="JULIAN_DAY_NUM" isWriteable="false">
+<AttrDefn mdsid="m80c6881b-0f3c-0000-714b-e31d00000000" name="AD_3900:828701074282455">
+<Expr mdsid="m00000012-01f4-0000-5f34-84f800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."JULIAN_DAY_NUM"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-5f34-84f800000000-m80c5e4e9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4e9-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5643f-07d6-0000-714b-e31d00000000" name="JULIAN_MONTH_NUM" isWriteable="false">
+<AttrDefn mdsid="m80c6881c-0f3c-0000-714b-e31d00000000" name="AD_3900:828711074282455">
+<Expr mdsid="m00000013-01f4-0000-a961-785400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."JULIAN_MONTH_NUM"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-a961-785400000000-m80c5e4ea-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4ea-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56440-07d6-0000-714b-e31d00000000" name="JULIAN_QTR_NUM" isWriteable="false">
+<AttrDefn mdsid="m80c6881d-0f3c-0000-714b-e31d00000000" name="AD_3900:828721074282455">
+<Expr mdsid="m00000014-01f4-0000-1020-828900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."JULIAN_QTR_NUM"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-1020-828900000000-m80c5e4eb-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4eb-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56441-07d6-0000-714b-e31d00000000" name="JULIAN_WEEK_NUM" isWriteable="false">
+<AttrDefn mdsid="m80c6881e-0f3c-0000-714b-e31d00000000" name="AD_3900:828731074282455">
+<Expr mdsid="m00000015-01f4-0000-a6e9-2a8a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."JULIAN_WEEK_NUM"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-a6e9-2a8a00000000-m80c5e4ec-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4ec-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56442-07d6-0000-714b-e31d00000000" name="JULIAN_YEAR_NUM" isWriteable="false">
+<AttrDefn mdsid="m80c6881f-0f3c-0000-714b-e31d00000000" name="AD_3900:828741074282455">
+<Expr mdsid="m00000016-01f4-0000-9fd3-27fc00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."JULIAN_YEAR_NUM"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000016-01f4-0000-9fd3-27fc00000000-m80c5e4ed-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4ed-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56443-07d6-0000-714b-e31d00000000" name="DAY_NAME" isWriteable="false">
+<AttrDefn mdsid="m80c68820-0f3c-0000-714b-e31d00000000" name="AD_3900:828751074282455">
+<Expr mdsid="m00000017-01f4-0000-a59e-2ac500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."DAY_NAME"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-a59e-2ac500000000-m80c5e4ee-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4ee-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56444-07d6-0000-714b-e31d00000000" name="MONTH_NAME" isWriteable="false">
+<AttrDefn mdsid="m80c68821-0f3c-0000-714b-e31d00000000" name="AD_3900:828761074282455">
+<Expr mdsid="m00000018-01f4-0000-29af-33b500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."MONTH_NAME"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000018-01f4-0000-29af-33b500000000-m80c5e4f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56445-07d6-0000-714b-e31d00000000" name="PER_NAME_HALF" isWriteable="false">
+<AttrDefn mdsid="m80c68822-0f3c-0000-714b-e31d00000000" name="AD_3900:828771074282455">
+<Expr mdsid="m00000019-01f4-0000-e150-094c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."PER_NAME_HALF"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-e150-094c00000000-m80c5e4f1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4f1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56446-07d6-0000-714b-e31d00000000" name="PER_NAME_MONTH" isWriteable="false">
+<AttrDefn mdsid="m80c68823-0f3c-0000-714b-e31d00000000" name="AD_3900:828781074282455">
+<Expr mdsid="m0000001a-01f4-0000-15db-d5cb00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."PER_NAME_MONTH"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001a-01f4-0000-15db-d5cb00000000-m80c5e4f2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4f2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56447-07d6-0000-714b-e31d00000000" name="PER_NAME_QTR" isWriteable="false">
+<AttrDefn mdsid="m80c68824-0f3c-0000-714b-e31d00000000" name="AD_3900:828791074282455">
+<Expr mdsid="m0000001b-01f4-0000-aea8-16e500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."PER_NAME_QTR"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001b-01f4-0000-aea8-16e500000000-m80c5e4f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56448-07d6-0000-714b-e31d00000000" name="PER_NAME_WEEK" isWriteable="false">
+<AttrDefn mdsid="m80c68825-0f3c-0000-714b-e31d00000000" name="AD_3900:828801074282455">
+<Expr mdsid="m0000001c-01f4-0000-3aba-f11a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."PER_NAME_WEEK"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001c-01f4-0000-3aba-f11a00000000-m80c5e4f4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4f4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56449-07d6-0000-714b-e31d00000000" name="PER_NAME_YEAR" isWriteable="false">
+<AttrDefn mdsid="m80c68826-0f3c-0000-714b-e31d00000000" name="AD_3900:828811074282455">
+<Expr mdsid="m0000001d-01f4-0000-140b-a9f900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."PER_NAME_YEAR"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001d-01f4-0000-140b-a9f900000000-m80c5e4f5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4f5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5644a-07d6-0000-714b-e31d00000000" name="PERIOD_KEY" isWriteable="false">
+<AttrDefn mdsid="m80c68827-0f3c-0000-714b-e31d00000000" name="AD_3900:828821074282455">
+<Expr mdsid="m0000001e-01f4-0000-1143-162600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."PERIOD_KEY"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001e-01f4-0000-1143-162600000000-m80c5e4fc-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e4fc-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5644b-07d6-0000-714b-e31d00000000" name="CAL_TRIMESTER" isWriteable="false">
+<AttrDefn mdsid="m80c68828-0f3c-0000-714b-e31d00000000" name="AD_3900:828831074282455">
+<Expr mdsid="m0000001f-01f4-0000-0218-ab6000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."CAL_TRIMESTER"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001f-01f4-0000-0218-ab6000000000-m80c5e503-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e503-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5644c-07d6-0000-714b-e31d00000000" name="FSCL_TRIMESTER" isWriteable="false">
+<AttrDefn mdsid="m80c68829-0f3c-0000-714b-e31d00000000" name="AD_3900:828841074282455">
+<Expr mdsid="m00000020-01f4-0000-ded7-483000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."FSCL_TRIMESTER"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000020-01f4-0000-ded7-483000000000-m80c5e504-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e504-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5644d-07d6-0000-714b-e31d00000000" name="JULIAN_TER_NUM" isWriteable="false">
+<AttrDefn mdsid="m80c6882a-0f3c-0000-714b-e31d00000000" name="AD_3900:828851074282455">
+<Expr mdsid="m00000021-01f4-0000-aaa7-b95300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."JULIAN_TER_NUM"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000021-01f4-0000-aaa7-b95300000000-m80c5e505-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e505-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5644e-07d6-0000-714b-e31d00000000" name="PER_NAME_TER" isWriteable="false">
+<AttrDefn mdsid="m80c6882b-0f3c-0000-714b-e31d00000000" name="AD_3900:828861074282455">
+<Expr mdsid="m00000022-01f4-0000-c75d-751b00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Maturity_Date_Consumer_Accounts"."PER_NAME_TER"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000022-01f4-0000-c75d-751b00000000-m80c5e506-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf65-0bb9-0000-714b-e31d00000000.xml#m80c5e506-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58c6e-07d8-0000-714b-e31d00000000" name="W_DAY_D_Key" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58c6e-07d8-0000-714b-e31d00000000-m80c56430-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a99f-07f3-0000-714b-e31d00000000.xml#m80c56430-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<LogicalKey mdsid="m80c58c6f-07d8-0000-714b-e31d00000000" name="DAY_DT">
+<RefColumns>
+<RefLogicalColumn refId="m80c58c6f-07d8-0000-714b-e31d00000000-m80c5642e-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a99f-07f3-0000-714b-e31d00000000.xml#m80c5642e-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5a99f-07f3-0000-714b-e31d00000000-m80c5abba-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5abba-07f5-0000-714b-e31d00000000.xml#m80c5abba-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9b9-07f3-0000-714b-e31d00000000" name="Fact - CRM - Acquired Customer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="589" y="823" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c56766-07d6-0000-714b-e31d00000000" name="# Customers Acquired" iconIndex="69" isWriteable="false">
+<Description><![CDATA["This is the count of  new customers you have acquired witin a ""Customer relationship measurement period"" (based on Customer Start Date)"]]></Description>
+<MeasureDefn mdsid="m80c5b1a1-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b8b1-0802-0000-714b-e31d00000000" name="AggRule_2050:182091074282429" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-302d-0d3800000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - CRM - Acquired Customer"."# Customers Acquired")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-302d-0d3800000000-m80c56766-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b9-07f3-0000-714b-e31d00000000.xml#m80c56766-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68b43-0f3c-0000-714b-e31d00000000" name="AD_3900:838241074282455">
+<Expr mdsid="m00000002-01f4-0000-4ec6-150700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  NOT "%1" IS NULL  THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  NOT "Oracle Data Warehouse"."Catalog"."dbo"."Fact_Secondary_ W_PERSON_D_ Active_Cust_Acquisition_Analytics_wrt_Assets"."CUSTOMER_SINCE_DT" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_Secondary_ W_PERSON_D_ Active_Cust_Acquisition_Analytics_wrt_Assets"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-4ec6-150700000000-m80c5db83-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf30-0bb9-0000-714b-e31d00000000.xml#m80c5db83-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-4ec6-150700000000-m80c5dad9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf30-0bb9-0000-714b-e31d00000000.xml#m80c5dad9-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56767-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80c68b44-0f3c-0000-714b-e31d00000000" name="AD_3900:838251074282455">
+<Expr mdsid="m00000003-01f4-0000-5429-801f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_Secondary_ W_PERSON_D_ Active_Cust_Acquisition_Analytics_wrt_Assets"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-5429-801f00000000-m80c5dad9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf30-0bb9-0000-714b-e31d00000000.xml#m80c5dad9-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58c88-07d8-0000-714b-e31d00000000" name="ROW_WID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58c88-07d8-0000-714b-e31d00000000-m80c56767-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9b9-07f3-0000-714b-e31d00000000.xml#m80c56767-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5a9b9-07f3-0000-714b-e31d00000000-m80c5abe4-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5abe4-07f5-0000-714b-e31d00000000.xml#m80c5abe4-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

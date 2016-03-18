@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9c5-07f3-0000-714b-e31d00000000" name="Fact - CRM - Active Asset History" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1701" y="851" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c567e8-07d6-0000-714b-e31d00000000" name="# Active Assets" iconIndex="69" isWriteable="false">
+<Description><![CDATA[This is the count of assets (Insurance Policies/ Financial Accounts)  that are active at any time during a specified period. To be used in combination with Relationship period date information]]></Description>
+<MeasureDefn mdsid="m80c5b1bc-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b8ca-0802-0000-714b-e31d00000000" name="AggRule_2050:182511074282429" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-527e-514e00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Active Asset History"."# Active Assets")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-527e-514e00000000-m80c567e8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9c5-07f3-0000-714b-e31d00000000.xml#m80c567e8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68bc5-0f3c-0000-714b-e31d00000000" name="AD_3900:840281074282455">
+<Expr mdsid="m00000002-01f4-0000-74c0-ff0400000000" name="Expr">
+<ExprText><![CDATA[1]]></ExprText>
+<ExprTextDesc><![CDATA[1]]></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c567e9-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80c68bc6-0f3c-0000-714b-e31d00000000" name="AD_3900:840291074282455">
+<Expr mdsid="m00000003-01f4-0000-adbc-387000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-adbc-387000000000-m80c5c2ab-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2ab-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58c90-07d8-0000-714b-e31d00000000" name="ROW_WID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58c90-07d8-0000-714b-e31d00000000-m80c567e9-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9c5-07f3-0000-714b-e31d00000000.xml#m80c567e9-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5a9c5-07f3-0000-714b-e31d00000000-m80c5abed-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5abed-07f5-0000-714b-e31d00000000.xml#m80c5abed-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

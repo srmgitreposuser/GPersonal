@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<InitBlock mdsid="m80c67c5e-0bd9-0000-714b-e31d00000000" name="Total Contact Count from W_PERSON_F (Marketing)" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isRowWiseCacheEnabled="false" refreshPeriod="3600" baseTime="2000-01-01 00:00:00" connectionPoolRef="/oracle/bi/server/base/ConnectionPool/80c67bb8-0bd5-0000-714b-e31d00000000.xml#m80c67bb8-0bd5-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[select count(ROW_WID) 
+from VALUEOF(OLAPTBO).W_PERSON_D
+where EMP_FLG = 'N']]></Value>
+</DBMapItem>
+<InitString><![CDATA[select count(ROW_WID) 
+from VALUEOF(OLAPTBO).W_PERSON_D
+where EMP_FLG = 'N']]></InitString>
+</InitBlock>

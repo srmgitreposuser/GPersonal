@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80cbad33-07f3-0000-714b-e31d00000000" name="Fact - Owning Party - Rewards" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="784" y="478" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80cbad3e-07d6-0000-714b-e31d00000000" name="Created By" isWriteable="false">
+<AttrDefn mdsid="m80cbada5-0f3c-0000-714b-e31d00000000" name="AD_3900:8475421401187240">
+<Expr mdsid="m00000001-01f4-0000-0cb9-584000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_REWARDS_F"."CREATED_BY"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-0cb9-584000000000-m80cbad63-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbad54-0bb9-0000-714b-e31d00000000.xml#m80cbad63-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbad3f-07d6-0000-714b-e31d00000000" name="Comments" isWriteable="false">
+<AttrDefn mdsid="m80cbada6-0f3c-0000-714b-e31d00000000" name="AD_3900:8475521401187240">
+<Expr mdsid="m00000002-01f4-0000-3c97-39e900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_REWARDS_F"."COMMENTS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-3c97-39e900000000-m80cbad6d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbad54-0bb9-0000-714b-e31d00000000.xml#m80cbad6d-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbad40-07d6-0000-714b-e31d00000000" name="# of Rewards and Recognitions" isWriteable="false">
+<MeasureDefn mdsid="m80cbad41-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbad42-0802-0000-714b-e31d00000000" name="AggRule_2050:8475901401187240" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-254f-567300000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core 2"."Fact - Owning Party - Rewards"."# of Rewards and Recognitions")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-254f-567300000000-m80cbad40-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbad33-07f3-0000-714b-e31d00000000.xml#m80cbad40-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbada7-0f3c-0000-714b-e31d00000000" name="AD_3900:8475861401187240">
+<Expr mdsid="m00000004-01f4-0000-8502-53e000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_REWARDS_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-8502-53e000000000-m80cbad5e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbad54-0bb9-0000-714b-e31d00000000.xml#m80cbad5e-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbc616-07d6-0000-714b-e31d00000000" name="# of Owning Parties (Distinct)" isWriteable="false">
+<MeasureDefn mdsid="m80cbc62e-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbc648-0802-0000-714b-e31d00000000" name="AggRule_2050:8518921404314539" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-c970-455500000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Owning Party - Rewards"."# of Owning Parties (Distinct)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-c970-455500000000-m80cbc616-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbad33-07f3-0000-714b-e31d00000000.xml#m80cbc616-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbc65f-0f3c-0000-714b-e31d00000000" name="AD_3900:8518871404314539">
+<Expr mdsid="m00000006-01f4-0000-b6fd-b01000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_REWARDS_F"."OWN_PARTY_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_REWARDS_F"."OWN_PARTY_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-b6fd-b01000000000-m80cbad68-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbad54-0bb9-0000-714b-e31d00000000.xml#m80cbad68-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80cbad33-07f3-0000-714b-e31d00000000-m80cbadab-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cbadab-07f5-0000-714b-e31d00000000.xml#m80cbadab-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

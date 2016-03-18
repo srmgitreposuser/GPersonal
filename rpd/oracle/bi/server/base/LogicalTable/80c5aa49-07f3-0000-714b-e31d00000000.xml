@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5aa49-07f3-0000-714b-e31d00000000" name="Fact - CRM- Supporter Availabilty" iconIndex="93" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1564" y="540" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c57331-07d6-0000-714b-e31d00000000" name="MONTH_WID" isWriteable="false">
+<AttrDefn mdsid="m80c69843-0f3c-0000-714b-e31d00000000" name="AD_3900:4939581229615551">
+<Expr mdsid="m00000001-01f4-0000-2d65-fc8c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."WC_PERSON_AVAIL_F"."MONTH_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-2d65-fc8c00000000-m80c638f4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ac-0bb9-0000-714b-e31d00000000.xml#m80c638f4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57332-07d6-0000-714b-e31d00000000" name="# of Un-Available Supporters" iconIndex="93" isWriteable="false">
+<Description><![CDATA[# of Un-Available Supporters]]></Description>
+<AttrDefn mdsid="m80c69844-0f3c-0000-714b-e31d00000000" name="AD_3900:4939591229615551">
+<Expr mdsid="m00000002-01f4-0000-c80d-413d00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."WC_PERSON_AVAIL_F"."UNAVAILABLE_SUPPORTERS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-c80d-413d00000000-m80c638f5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ac-0bb9-0000-714b-e31d00000000.xml#m80c638f5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57333-07d6-0000-714b-e31d00000000" name="# of Available Supporters" iconIndex="93" isWriteable="false">
+<Description><![CDATA[# of Available Supporters]]></Description>
+<AttrDefn mdsid="m80c69845-0f3c-0000-714b-e31d00000000" name="AD_3900:4939601229615551">
+<Expr mdsid="m00000003-01f4-0000-2b4a-570f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."WC_PERSON_AVAIL_F"."AVAILABLE_SUPPORTERS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-2b4a-570f00000000-m80c638f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ac-0bb9-0000-714b-e31d00000000.xml#m80c638f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58deb-07d8-0000-714b-e31d00000000" name="MONTH_WID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58deb-07d8-0000-714b-e31d00000000-m80c57331-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aa49-07f3-0000-714b-e31d00000000.xml#m80c57331-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5aa49-07f3-0000-714b-e31d00000000-m80c5ac8a-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ac8a-07f5-0000-714b-e31d00000000.xml#m80c5ac8a-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

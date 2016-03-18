@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5c0a7-0bb9-0000-714b-e31d00000000" name="Fact_W_CAMP_HIST_F_No_Times_In_Camp" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" isCacheable="false" x="525" y="297" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb1-0bd3-0000-714b-e31d00000000.xml#m80c67bb1-0bd3-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT F.CONTACT_WID AS CONTACT_WID, COUNT(F.SOURCE_WID) AS NUM_OF_CAMP FROM 
+W_CAMP_HIST_F F, W_DAY_D D WHERE
+F.CAMP_ST_DT_WID=D.ROW_WID
+AND D.CAL_YEAR>=2006
+GROUP BY F.CONTACT_WID]]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c637f8-0bbb-0000-714b-e31d00000000" name="CONTACT_WID" dataType="DOUBLE" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c637f9-0bbb-0000-714b-e31d00000000" name="NUM_OF_CAMP" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalKey mdsid="m80c67aa8-0bc0-0000-714b-e31d00000000" name="Fact_W_CAMP_HIST_F_No_Times_In_Camp_Key">
+<RefColumns>
+<RefColumn refId="m80c67aa8-0bc0-0000-714b-e31d00000000-m80c637f8-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5c0a7-0bb9-0000-714b-e31d00000000.xml#m80c637f8-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+</PhysicalTable>

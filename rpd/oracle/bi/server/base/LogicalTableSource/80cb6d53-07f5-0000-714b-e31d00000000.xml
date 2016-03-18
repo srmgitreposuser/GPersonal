@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTableSource mdsid="m80cb6d53-07f5-0000-714b-e31d00000000" name="Fact_Agg_WC_CAMP_HIST_A" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isActive="true" logicalTableRef="/oracle/bi/server/base/LogicalTable/80cb6c9c-07f3-0000-714b-e31d00000000.xml#m80cb6c9c-07f3-0000-714b-e31d00000000">
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000001-01f4-0000-5da1-f7e600000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Owning Party - Campaign History"."# of Parties Targeted"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-5da1-f7e600000000-m80cb6ca0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6c9c-07f3-0000-714b-e31d00000000.xml#m80cb6ca0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000002-01f4-0000-891e-3d3600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_WC_CAMP_HIST_A"."CAMP_CON_CNT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-891e-3d3600000000-m80cb6916-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb6915-0bb9-0000-714b-e31d00000000.xml#m80cb6916-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000003-01f4-0000-9063-89f300000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Owning Party - Campaign History"."# Parties Contacted - Passed"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-9063-89f300000000-m80cb6ca2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6c9c-07f3-0000-714b-e31d00000000.xml#m80cb6ca2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000004-01f4-0000-4340-708c00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Passed' THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Contact_Outcome"."VAL" = 'Passed' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_WC_CAMP_HIST_A"."CAMP_CON_CNT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-4340-708c00000000-m80c5f2bd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfd3-0bb9-0000-714b-e31d00000000.xml#m80c5f2bd-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-4340-708c00000000-m80cb6916-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb6915-0bb9-0000-714b-e31d00000000.xml#m80cb6916-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000005-01f4-0000-291d-f9c300000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Owning Party - Campaign History"."# Parties Contacted - Failed"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-291d-f9c300000000-m80cb77c8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6c9c-07f3-0000-714b-e31d00000000.xml#m80cb77c8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000006-01f4-0000-e9e7-0f6700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Failed' THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Contact_Outcome"."VAL" = 'Failed' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_WC_CAMP_HIST_A"."CAMP_CON_CNT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-e9e7-0f6700000000-m80c5f2bd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfd3-0bb9-0000-714b-e31d00000000.xml#m80c5f2bd-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-e9e7-0f6700000000-m80cb6916-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb6915-0bb9-0000-714b-e31d00000000.xml#m80cb6916-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000007-01f4-0000-88d8-911f00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Owning Party - Campaign History"."# Parties Contacted - Unable to reach contact"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-88d8-911f00000000-m80cb77e6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6c9c-07f3-0000-714b-e31d00000000.xml#m80cb77e6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000008-01f4-0000-7e3d-6df400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Unable to reach contact' THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Contact_Outcome"."VAL" = 'Unable to reach contact' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_WC_CAMP_HIST_A"."CAMP_CON_CNT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-7e3d-6df400000000-m80c5f2bd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfd3-0bb9-0000-714b-e31d00000000.xml#m80c5f2bd-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-7e3d-6df400000000-m80cb6916-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb6915-0bb9-0000-714b-e31d00000000.xml#m80cb6916-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000009-01f4-0000-69c5-b09b00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Owning Party - Campaign History"."# Parties Contacted - Awaiting Data Cleansing"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-69c5-b09b00000000-m80cb77f4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6c9c-07f3-0000-714b-e31d00000000.xml#m80cb77f4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000a-01f4-0000-f19f-a56a00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Awaiting External Cleansing' THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Contact_Outcome"."VAL" = 'Awaiting External Cleansing' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_WC_CAMP_HIST_A"."CAMP_CON_CNT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-f19f-a56a00000000-m80c5f2bd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfd3-0bb9-0000-714b-e31d00000000.xml#m80c5f2bd-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000a-01f4-0000-f19f-a56a00000000-m80cb6916-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb6915-0bb9-0000-714b-e31d00000000.xml#m80cb6916-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5bfd3-0bb9-0000-714b-e31d00000000.xml#m80c5bfd3-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5bfd3-0bb9-0000-714b-e31d00000000.xml#m80c5bfd3-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80cb6915-0bb9-0000-714b-e31d00000000.xml#m80cb6915-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80cb6915-0bb9-0000-714b-e31d00000000.xml#m80cb695e-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80cb6915-0bb9-0000-714b-e31d00000000.xml#m80cb6915-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80cb6915-0bb9-0000-714b-e31d00000000.xml#m80cb6915-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5bfd3-0bb9-0000-714b-e31d00000000.xml#m80c5bfd3-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80cb6915-0bb9-0000-714b-e31d00000000.xml#m80cb695e-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<WhereClause mdsid="m0000000b-01f4-0000-2325-956e00000000" name="WhereClause">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</WhereClause>
+<GroupBy mdsid="m0000000c-01f4-0000-2178-3fbb00000000" name="GroupBy">
+<ExprText><![CDATA[ GROUPBYLEVEL("%1", "%2", "%3", "%4")]]></ExprText>
+<ExprTextDesc><![CDATA[ GROUPBYLEVEL("Core 2"."Dim - Source (Version or Offer) Dim"."Detail", "Core 2"."Dim - CampaignDim"."Dim - Campaign Detail", "Core 2"."Dim - Campaign End DateDim"."Dim - Campaign End Date Detail", "Core 2"."Dim - Campaign Start DateDim"."Dim - Campaign Start Date Detail")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-2178-3fbb00000000-m80c9b7d4-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c94104-07e3-0000-714b-e31d00000000.xml#m80c9b7d4-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-2178-3fbb00000000-m80cb0555-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cb0554-07e3-0000-714b-e31d00000000.xml#m80cb0555-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-2178-3fbb00000000-m80cb6ed0-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cb6ecf-07e3-0000-714b-e31d00000000.xml#m80cb6ed0-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-2178-3fbb00000000-m80cb6ed4-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cb6ed3-07e3-0000-714b-e31d00000000.xml#m80cb6ed4-07e9-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</GroupBy>
+<FragmentContent mdsid="m0000000d-01f4-0000-3fea-1a1900000000" name="FragmentContent">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</FragmentContent>
+</LogicalTableSource>

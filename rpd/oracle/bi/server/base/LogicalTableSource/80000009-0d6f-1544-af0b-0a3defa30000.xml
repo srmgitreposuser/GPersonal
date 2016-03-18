@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTableSource mdsid="m80000009-0d6f-1544-af0b-0a3defa30000" name="Fact_WC_INVOICE_F" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isActive="true" logicalTableRef="/oracle/bi/server/base/LogicalTable/80000000-0d62-1544-af0b-0a3defa30000.xml#m80000000-0d62-1544-af0b-0a3defa30000">
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000001-01f4-0000-dab6-409d00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Dim - Invoice (FWS)"."Invoice Date"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-dab6-409d00000000-m80000005-0d6f-1544-af0b-0a3defa30000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80000000-0d62-1544-af0b-0a3defa30000.xml#m80000005-0d6f-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000002-01f4-0000-d256-9ab700000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_INVOICE_F"."INVOICE_DT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-d256-9ab700000000-m00000005-00f9-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-00f9-1544-af0b-0a3defa30000.xml#m00000005-00f9-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000003-01f4-0000-00d5-fc7400000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Dim - Invoice (FWS)"."Invoice Number"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-00d5-fc7400000000-m80000006-0d6f-1544-af0b-0a3defa30000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80000000-0d62-1544-af0b-0a3defa30000.xml#m80000006-0d6f-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000004-01f4-0000-37ba-a08c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_INVOICE_F"."INVOICE_NUM"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-37ba-a08c00000000-m00000006-00f9-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-00f9-1544-af0b-0a3defa30000.xml#m00000006-00f9-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000005-01f4-0000-abab-ea2200000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Dim - Invoice (FWS)"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-abab-ea2200000000-mc0000002-0df1-1544-af0b-0a3defa30000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80000000-0d62-1544-af0b-0a3defa30000.xml#mc0000002-0df1-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000006-01f4-0000-0ced-330500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_INVOICE_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-0ced-330500000000-m0000000c-00f9-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-00f9-1544-af0b-0a3defa30000.xml#m0000000c-00f9-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/00000000-00f9-1544-af0b-0a3defa30000.xml#m00000000-00f9-1544-af0b-0a3defa30000">
+</Link>
+<WhereClause mdsid="m00000007-01f4-0000-b6a3-fb7300000000" name="WhereClause">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</WhereClause>
+<GroupBy mdsid="m00000008-01f4-0000-1f49-7cdf00000000" name="GroupBy">
+<ExprText><![CDATA[ GROUPBYLEVEL("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ GROUPBYLEVEL("Core 2"."Dim - InvoiceDim"."Dim - Invoice Detail")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-1f49-7cdf00000000-m00000001-0d9a-1544-af0b-0a3defa30000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/00000000-0d9a-1544-af0b-0a3defa30000.xml#m00000001-0d9a-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</GroupBy>
+<FragmentContent mdsid="m00000009-01f4-0000-aea5-504400000000" name="FragmentContent">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</FragmentContent>
+</LogicalTableSource>

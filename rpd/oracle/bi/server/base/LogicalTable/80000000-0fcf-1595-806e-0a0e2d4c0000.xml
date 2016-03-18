@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80000000-0fcf-1595-806e-0a0e2d4c0000" name="Dim - Opportunity Canvasser" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m4000000b-0fec-1595-806e-0a0e2d4c0000" name="Opportunity Canvasser Login" isWriteable="false">
+<AttrDefn mdsid="m00000154-e9ca-15a9-806e-0a0e2da00000" name="AD_3900:1477851453827880">
+<Expr mdsid="m00000001-01f4-0000-26d0-407000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_EMPLOYEE_D_Opportunity_Canvasser"."LOGIN"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-26d0-407000000000-m80c8dad9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c8da2f-0bb9-0000-714b-e31d00000000.xml#m80c8dad9-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m4000000a-0fec-1595-806e-0a0e2d4c0000" name="Opportunity Canvasser Name" isWriteable="false">
+<AttrDefn mdsid="m00000156-e9ca-15a9-806e-0a0e2da00000" name="AD_3900:1477871453827880">
+<Expr mdsid="m00000002-01f4-0000-2cd1-e25000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_EMPLOYEE_D_Opportunity_Canvasser"."FULL_NAME"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-2cd1-e25000000000-m80c8da93-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c8da2f-0bb9-0000-714b-e31d00000000.xml#m80c8da93-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m4000000d-0fec-1595-806e-0a0e2d4c0000" name="Opportunity Canvasser Team" isWriteable="false">
+<AttrDefn mdsid="m00000052-e9ca-15a9-806e-0a0e2da00000" name="AD_3900:1475271453827880">
+<Expr mdsid="m00000003-01f4-0000-81c4-b16900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_EMPLOYEE_D_Opportunity_Canvasser"."X_SRM_CANVASSER_TEAM"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-81c4-b16900000000-m80c8db5c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c8da2f-0bb9-0000-714b-e31d00000000.xml#m80c8db5c-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m4000000c-0fec-1595-806e-0a0e2d4c0000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m00000053-e9ca-15a9-806e-0a0e2da00000" name="AD_3900:1475281453827880">
+<Expr mdsid="m00000004-01f4-0000-0833-c54100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_EMPLOYEE_D_Opportunity_Canvasser"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-0833-c54100000000-m80c8da8f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c8da2f-0bb9-0000-714b-e31d00000000.xml#m80c8da8f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m00000000-2590-1595-806e-0a0e2d4c0000" name="Opportunity Canvasser Full Name" isDerived="true" isWriteable="false">
+<Description><![CDATA[First Name Space Last Name format]]></Description>
+<Expr mdsid="m00000005-01f4-0000-6fa5-3db900000000" name="Expr">
+<ExprText><![CDATA["%1" || ' ' || "%2" ]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Dim - Opportunity Canvasser"."Opportunity Canvasser First Name" || ' ' || "Core"."Dim - Opportunity Canvasser"."Opportunity Canvasser Last Name" ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-6fa5-3db900000000-mc0000004-259f-1595-806e-0a0e2d4c0000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80000000-0fcf-1595-806e-0a0e2d4c0000.xml#mc0000004-259f-1595-806e-0a0e2d4c0000"/>
+<RefObject refId="m00000005-01f4-0000-6fa5-3db900000000-mc0000005-259f-1595-806e-0a0e2d4c0000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80000000-0fcf-1595-806e-0a0e2d4c0000.xml#mc0000005-259f-1595-806e-0a0e2d4c0000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m40000001-75fc-15af-806e-0a0e2d8d0000" name="AD_3900:1478481455282161">
+<Expr mdsid="m00000006-01f4-0000-1c3f-cc1400000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc0000004-259f-1595-806e-0a0e2d4c0000" name="Opportunity Canvasser First Name" isWriteable="false">
+<AttrDefn mdsid="m00000153-e9ca-15a9-806e-0a0e2da00000" name="AD_3900:1477841453827880">
+<Expr mdsid="m00000007-01f4-0000-f50a-582f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_EMPLOYEE_D_Opportunity_Canvasser"."FST_NAME"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-f50a-582f00000000-m80c8da90-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c8da2f-0bb9-0000-714b-e31d00000000.xml#m80c8da90-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc0000005-259f-1595-806e-0a0e2d4c0000" name="Opportunity Canvasser Last Name" isWriteable="false">
+<AttrDefn mdsid="m00000155-e9ca-15a9-806e-0a0e2da00000" name="AD_3900:1477861453827880">
+<Expr mdsid="m00000008-01f4-0000-e6e1-91f900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_EMPLOYEE_D_Opportunity_Canvasser"."LAST_NAME"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-e6e1-91f900000000-m80c8da92-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c8da2f-0bb9-0000-714b-e31d00000000.xml#m80c8da92-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m4000000e-0fec-1595-806e-0a0e2d4c0000" name="Dim_W_EMPLOYEE_D (Proposal Canvasser)_Key" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m4000000e-0fec-1595-806e-0a0e2d4c0000-m4000000c-0fec-1595-806e-0a0e2d4c0000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80000000-0fcf-1595-806e-0a0e2d4c0000.xml#m4000000c-0fec-1595-806e-0a0e2d4c0000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80000000-0fcf-1595-806e-0a0e2d4c0000-m40000013-0fec-1595-806e-0a0e2d4c0000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/40000013-0fec-1595-806e-0a0e2d4c0000.xml#m40000013-0fec-1595-806e-0a0e2d4c0000"/>
+</RefTableSources>
+</LogicalTable>

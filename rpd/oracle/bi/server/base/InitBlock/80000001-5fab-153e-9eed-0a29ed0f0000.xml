@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<InitBlock mdsid="m80000001-5fab-153e-9eed-0a29ed0f0000" name="CRUK High Profile User" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isSessionVar="true" refreshPeriod="86400" connectionPoolRef="/oracle/bi/server/base/ConnectionPool/80c67bb8-0bd5-0000-714b-e31d00000000.xml#m80c67bb8-0bd5-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT CASE WHEN 'ComponentRole - High Profile Support' IN
+(SELECT regexp_substr('VALUEOF(NQ_SESSION.ROLES)','[^' || ';' || ']+', 1, level) items
+      FROM dual
+      CONNECT BY regexp_substr('VALUEOF(NQ_SESSION.ROLES)', '[^' || ';' || ']+', 1, level) is not null) THEN 'Y' ELSE 'N' END FROM DUAL
+]]></Value>
+</DBMapItem>
+<RefVariables>
+<RefVariable refId="m80000001-5fab-153e-9eed-0a29ed0f0000-m80c72c49-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c72c49-0bd7-0000-714b-e31d00000000.xml#m80c72c49-0bd7-0000-714b-e31d00000000"/>
+</RefVariables>
+<InitString><![CDATA[SELECT CASE WHEN 'ComponentRole - High Profile Support' IN
+(SELECT regexp_substr('VALUEOF(NQ_SESSION.ROLES)','[^' || ';' || ']+', 1, level) items
+      FROM dual
+      CONNECT BY regexp_substr('VALUEOF(NQ_SESSION.ROLES)', '[^' || ';' || ']+', 1, level) is not null) THEN 'Y' ELSE 'N' END FROM DUAL
+]]></InitString>
+</InitBlock>

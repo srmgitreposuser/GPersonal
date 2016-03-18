@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<InitBlock mdsid="m80c67c75-0bd9-0000-714b-e31d00000000" name="internal - Session_DSN_NAME" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isSessionVar="true" isRowWiseCacheEnabled="false" isEnabled="false" refreshPeriod="86400" connectionPoolRef="/oracle/bi/server/base/ConnectionPool/80c67bbe-0bd5-0000-714b-e31d00000000.xml#m80c67bbe-0bd5-0000-714b-e31d00000000">
+<DBMapItem name="Oracle9i">
+<Value><![CDATA[select case when ':USER' = 'RDG10' then 'octopus2.CORP.SIEBEL.COM' else 
+CASE WHEN ':USER' = 'CEWDEV' THEN 'xcrmc.corp.siebel.com' ELSE
+'xcrm.corp.siebel.com' END end from dual]]></Value>
+</DBMapItem>
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[select CASE ]]></Value>
+</DBMapItem>
+<RefVariables>
+<RefVariable refId="m80c67c75-0bd9-0000-714b-e31d00000000-m80c67c12-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c12-0bd7-0000-714b-e31d00000000.xml#m80c67c12-0bd7-0000-714b-e31d00000000"/>
+</RefVariables>
+<InitString><![CDATA[select case when ':USER' = 'RDG10' then 'octopus2.CORP.SIEBEL.COM' else 
+CASE WHEN ':USER' = 'CEWDEV' THEN 'xcrmc.corp.siebel.com' ELSE
+'xcrm.corp.siebel.com' END end from dual]]></InitString>
+</InitBlock>

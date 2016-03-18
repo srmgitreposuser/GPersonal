@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTableSource mdsid="m80c5abe9-07f5-0000-714b-e31d00000000" name="Fact_Agg_W_SR_AMT_A_Close_Date" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isActive="true" logicalTableRef="/oracle/bi/server/base/LogicalTable/80c5a9c2-07f3-0000-714b-e31d00000000.xml#m80c5a9c2-07f3-0000-714b-e31d00000000">
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000001-01f4-0000-78f5-2ea300000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Service Request Amount"."Service Price Non-Billable"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-78f5-2ea300000000-m80c567c9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9c2-07f3-0000-714b-e31d00000000.xml#m80c567c9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000002-01f4-0000-5217-4aba00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN  IFNULL("%2", 0) +  IFNULL("%3", 0) +  IFNULL("%4", 0) +  IFNULL("%5", 0) ELSE 0.0d END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."SR_WID" > 0 THEN  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."NB_PART_PRICE", 0) +  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."NB_TS_PRICE", 0) +  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."NB_EXP_PRICE", 0) +  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."NB_ORD_AMT", 0) ELSE 0.0d END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-5217-4aba00000000-m80c5d562-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d562-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-5217-4aba00000000-m80c5d570-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d570-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-5217-4aba00000000-m80c5d572-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d572-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-5217-4aba00000000-m80c5d56c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d56c-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-5217-4aba00000000-m80c5d57a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d57a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000003-01f4-0000-e82f-b4a700000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Service Request Amount"."Service Price Billable"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-e82f-b4a700000000-m80c567ca-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9c2-07f3-0000-714b-e31d00000000.xml#m80c567ca-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000004-01f4-0000-2273-61eb00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN  IFNULL("%2", 0) +  IFNULL("%3", 0) +  IFNULL("%4", 0) +  IFNULL("%5", 0) ELSE 0.0d END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."SR_WID" > 0 THEN  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."B_PART_PRICE", 0) +  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."B_TS_PRICE", 0) +  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."B_EXP_PRICE", 0) +  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."B_ORD_AMT", 0) ELSE 0.0d END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-2273-61eb00000000-m80c5d562-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d562-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-2273-61eb00000000-m80c5d56f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d56f-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-2273-61eb00000000-m80c5d571-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d571-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-2273-61eb00000000-m80c5d56b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d56b-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-2273-61eb00000000-m80c5d579-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d579-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000005-01f4-0000-6a69-9e7600000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Service Request Amount"."Service Billable Expense Cost"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-6a69-9e7600000000-m80c567cb-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9c2-07f3-0000-714b-e31d00000000.xml#m80c567cb-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000006-01f4-0000-bffc-235900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN  IFNULL("%2", 0) ELSE 0.0d END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."SR_WID" > 0 THEN  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."B_EXP_COST", 0) ELSE 0.0d END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-bffc-235900000000-m80c5d562-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d562-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-bffc-235900000000-m80c5d576-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d576-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000007-01f4-0000-b656-a69200000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Service Request Amount"."Service Billable Order Cost"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-b656-a69200000000-m80c567cc-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9c2-07f3-0000-714b-e31d00000000.xml#m80c567cc-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000008-01f4-0000-536b-4adc00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN  IFNULL("%2", 0) ELSE 0.0d END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."SR_WID" > 0 THEN  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."B_ORD_COST", 0) ELSE 0.0d END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-536b-4adc00000000-m80c5d562-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d562-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-536b-4adc00000000-m80c5d57b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d57b-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000009-01f4-0000-a5fe-99bc00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Service Request Amount"."Service Billable Parts Cost"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-a5fe-99bc00000000-m80c567cd-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9c2-07f3-0000-714b-e31d00000000.xml#m80c567cd-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000a-01f4-0000-a215-44ca00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN  IFNULL("%2", 0) ELSE 0.0d END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."SR_WID" > 0 THEN  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."B_PART_COST", 0) ELSE 0.0d END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-a215-44ca00000000-m80c5d562-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d562-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000a-01f4-0000-a215-44ca00000000-m80c5d569-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d569-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000000b-01f4-0000-87cb-b43700000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Service Request Amount"."Service Billable Time Cost"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-87cb-b43700000000-m80c567ce-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9c2-07f3-0000-714b-e31d00000000.xml#m80c567ce-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000c-01f4-0000-9d5d-3a7500000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN  IFNULL("%2", 0) ELSE 0.0d END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."SR_WID" > 0 THEN  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."B_TS_COST", 0) ELSE 0.0d END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-9d5d-3a7500000000-m80c5d562-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d562-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-9d5d-3a7500000000-m80c5d56a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d56a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000000d-01f4-0000-c054-5f1c00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Service Request Amount"."Service Non-Billable Expense Cost"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-c054-5f1c00000000-m80c567cf-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9c2-07f3-0000-714b-e31d00000000.xml#m80c567cf-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000e-01f4-0000-07e9-3edd00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN  IFNULL("%2", 0) ELSE 0.0d END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."SR_WID" > 0 THEN  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."NB_EXP_COST", 0) ELSE 0.0d END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-07e9-3edd00000000-m80c5d562-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d562-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-07e9-3edd00000000-m80c5d577-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d577-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000000f-01f4-0000-6688-e00900000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Service Request Amount"."Service Non-Billable Order Cost"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-6688-e00900000000-m80c567d0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9c2-07f3-0000-714b-e31d00000000.xml#m80c567d0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000010-01f4-0000-6de7-089c00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN  IFNULL("%2", 0) ELSE 0.0d END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."SR_WID" > 0 THEN  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."NB_ORD_COST", 0) ELSE 0.0d END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-6de7-089c00000000-m80c5d562-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d562-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-6de7-089c00000000-m80c5d57c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d57c-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000011-01f4-0000-5d53-493700000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Service Request Amount"."Service Non-Billable Parts Cost"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-5d53-493700000000-m80c567d1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9c2-07f3-0000-714b-e31d00000000.xml#m80c567d1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000012-01f4-0000-b7b8-b44100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN  IFNULL("%2", 0) ELSE 0.0d END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."SR_WID" > 0 THEN  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."NB_PART_COST", 0) ELSE 0.0d END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-b7b8-b44100000000-m80c5d562-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d562-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000012-01f4-0000-b7b8-b44100000000-m80c5d56d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d56d-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000013-01f4-0000-9532-a6fc00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Service Request Amount"."Service Non-Billable Time Cost"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-9532-a6fc00000000-m80c567d2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9c2-07f3-0000-714b-e31d00000000.xml#m80c567d2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000014-01f4-0000-03fe-961200000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN  IFNULL("%2", 0) ELSE 0.0d END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."SR_WID" > 0 THEN  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."NB_TS_COST", 0) ELSE 0.0d END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-03fe-961200000000-m80c5d562-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d562-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000014-01f4-0000-03fe-961200000000-m80c5d56e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d56e-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000015-01f4-0000-d9eb-253200000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Service Request Amount"."Service Time Hours Billable"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-d9eb-253200000000-m80c567d3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9c2-07f3-0000-714b-e31d00000000.xml#m80c567d3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000016-01f4-0000-f184-ec7200000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN  IFNULL("%2", 0) / 60 ELSE 0.0d END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."SR_WID" > 0 THEN  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."B_TS_TIME", 0) / 60 ELSE 0.0d END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000016-01f4-0000-f184-ec7200000000-m80c5d562-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d562-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000016-01f4-0000-f184-ec7200000000-m80c5d574-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d574-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000017-01f4-0000-e98e-357b00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Service Request Amount"."Service Time Hours Non-Billable"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-e98e-357b00000000-m80c567d4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9c2-07f3-0000-714b-e31d00000000.xml#m80c567d4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000018-01f4-0000-6f83-fe7500000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN  IFNULL("%2", 0) / 60 ELSE 0.0d END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."SR_WID" > 0 THEN  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."NB_TS_TIME", 0) / 60 ELSE 0.0d END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000018-01f4-0000-6f83-fe7500000000-m80c5d562-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d562-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-6f83-fe7500000000-m80c5d575-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d575-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000019-01f4-0000-a4cb-91bc00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Service Request Amount"."SR_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-a4cb-91bc00000000-m80c567db-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9c2-07f3-0000-714b-e31d00000000.xml#m80c567db-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000001a-01f4-0000-f001-96f500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_SR_AMT_A_Close_Date"."SR_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001a-01f4-0000-f001-96f500000000-m80c5d562-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5d562-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5bf17-0bb9-0000-714b-e31d00000000.xml#m80c5bf17-0bb9-0000-714b-e31d00000000">
+</Link>
+<WhereClause mdsid="m0000001b-01f4-0000-460b-49ac00000000" name="WhereClause">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</WhereClause>
+<GroupBy mdsid="m0000001c-01f4-0000-6dad-979100000000" name="GroupBy">
+<ExprText><![CDATA[ GROUPBYLEVEL("%1", "%2", "%3", "%4", "%5", "%6")]]></ExprText>
+<ExprTextDesc><![CDATA[ GROUPBYLEVEL("Core"."Date"."Day Detail", "Core"."Entitlements"."Detail", "Core"."Service Request"."Service Request Detail", "Core"."Customer"."Account Detail", "Core"."Open Date"."Day Detail", "Core"."Agreements"."Detail")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001c-01f4-0000-6dad-979100000000-m80c5a1b8-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a098-07e3-0000-714b-e31d00000000.xml#m80c5a1b8-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001c-01f4-0000-6dad-979100000000-m80c5a393-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0ff-07e3-0000-714b-e31d00000000.xml#m80c5a393-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001c-01f4-0000-6dad-979100000000-m80c5a228-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0b2-07e3-0000-714b-e31d00000000.xml#m80c5a228-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001c-01f4-0000-6dad-979100000000-m80c5a1be-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a099-07e3-0000-714b-e31d00000000.xml#m80c5a1be-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001c-01f4-0000-6dad-979100000000-m80c5a221-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0b0-07e3-0000-714b-e31d00000000.xml#m80c5a221-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001c-01f4-0000-6dad-979100000000-m80c5a2d4-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0da-07e3-0000-714b-e31d00000000.xml#m80c5a2d4-07e9-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</GroupBy>
+<FragmentContent mdsid="m0000001d-01f4-0000-c125-94a300000000" name="FragmentContent">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</FragmentContent>
+</LogicalTableSource>

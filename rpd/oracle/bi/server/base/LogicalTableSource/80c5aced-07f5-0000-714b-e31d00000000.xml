@@ -1,0 +1,1490 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTableSource mdsid="m80c5aced-07f5-0000-714b-e31d00000000" name="Camp_Metrics_Real_Time" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isActive="true" logicalTableRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c5aa89-07f3-0000-714b-e31d00000000">
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000001-01f4-0000-7a56-fa6700000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Standard Gift Aid Rate"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-7a56-fa6700000000-m80c57a1f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c57a1f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000002-01f4-0000-3179-3ace00000000" name="Expr">
+<ExprText><![CDATA[0.28d]]></ExprText>
+<ExprTextDesc><![CDATA[0.28d]]></ExprTextDesc>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000003-01f4-0000-a1c9-c16300000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Audience Volume"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-a1c9-c16300000000-m80c5794a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c5794a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000004-01f4-0000-74cc-817d00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Audience Volume' AND "%2" = 'Audience Volume' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Audience Volume' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Audience Volume' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-74cc-817d00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-74cc-817d00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-74cc-817d00000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000005-01f4-0000-2c04-802700000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Audience Volume - CoG"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-2c04-802700000000-m80c579bf-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579bf-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000006-01f4-0000-4cc1-df6b00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Audience Volume' AND "%2" = 'Audience Volume - CoG' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Audience Volume' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Audience Volume - CoG' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-4cc1-df6b00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-4cc1-df6b00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-4cc1-df6b00000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000007-01f4-0000-bcae-c4f000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Audience Volume - Cash"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-bcae-c4f000000000-m80c579c1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579c1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000008-01f4-0000-561f-fbe600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Audience Volume' AND "%2" = 'Audience Volume - Cash' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Audience Volume' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Audience Volume - Cash' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-561f-fbe600000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-561f-fbe600000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-561f-fbe600000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000009-01f4-0000-0410-a5f000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Audience Volume"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-0410-a5f000000000-m80c57999-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c57999-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000a-01f4-0000-5c54-fff200000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Audience Volume' AND "%2" = 'Audience Volume' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Audience Volume' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Audience Volume' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-5c54-fff200000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000a-01f4-0000-5c54-fff200000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000a-01f4-0000-5c54-fff200000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000000b-01f4-0000-99e6-8e2a00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Audience Volume - CoG"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-99e6-8e2a00000000-m80c579c0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579c0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000c-01f4-0000-031d-c89800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Audience Volume' AND "%2" = 'Audience Volume - CoG' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Audience Volume' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Audience Volume - CoG' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-031d-c89800000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-031d-c89800000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-031d-c89800000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000000d-01f4-0000-0f1f-267100000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Audience Volume - Cash"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-0f1f-267100000000-m80c579c2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579c2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000e-01f4-0000-9d77-2a9500000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Audience Volume' AND "%2" = 'Audience Volume - Cash' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Audience Volume' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Audience Volume - Cash' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-9d77-2a9500000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-9d77-2a9500000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-9d77-2a9500000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000000f-01f4-0000-79f1-a56400000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Income"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-79f1-a56400000000-m80c579ed-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579ed-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000010-01f4-0000-d38c-296000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Income' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Income' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Income' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-d38c-296000000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-d38c-296000000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-d38c-296000000000-m80c651f1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000011-01f4-0000-591b-895a00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Average Annual CoG Donation"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-591b-895a00000000-m80c579b5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579b5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000012-01f4-0000-2f16-6bbb00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Average Annual CoG Donation' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Income' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Average Annual CoG Donation' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-2f16-6bbb00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000012-01f4-0000-2f16-6bbb00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000012-01f4-0000-2f16-6bbb00000000-m80c651f1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000013-01f4-0000-5638-7ec800000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Average Cash Donation"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-5638-7ec800000000-m80c579b7-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579b7-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000014-01f4-0000-0334-64e300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Average Cash Donation' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Income' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Average Cash Donation' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-0334-64e300000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000014-01f4-0000-0334-64e300000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000014-01f4-0000-0334-64e300000000-m80c651f1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000015-01f4-0000-3308-96db00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted CoG Average Value"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-3308-96db00000000-m80c579c3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579c3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000016-01f4-0000-6124-64eb00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'CoG Average Value' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Income' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'CoG Average Value' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000016-01f4-0000-6124-64eb00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000016-01f4-0000-6124-64eb00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000016-01f4-0000-6124-64eb00000000-m80c651f1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000017-01f4-0000-51f3-8b0200000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Cash Average Value"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-51f3-8b0200000000-m80c579c5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579c5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000018-01f4-0000-8c98-5adc00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Cash Average Value' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Income' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Cash Average Value' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000018-01f4-0000-8c98-5adc00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-8c98-5adc00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-8c98-5adc00000000-m80c651f1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000019-01f4-0000-40c3-d87d00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Entrance Fee Income per Entry"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-40c3-d87d00000000-m80c579db-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579db-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000001a-01f4-0000-cc67-2a3800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Entrance Fee Income per Entry' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Income' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Entrance Fee Income per Entry' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001a-01f4-0000-cc67-2a3800000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001a-01f4-0000-cc67-2a3800000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001a-01f4-0000-cc67-2a3800000000-m80c651f1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000001b-01f4-0000-f546-809800000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Online Avg Sponsorship Val £"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001b-01f4-0000-f546-809800000000-m80c579dd-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579dd-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000001c-01f4-0000-0fcc-152100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Online Avg Sponsorship Val £' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Income' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Online Avg Sponsorship Val £' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001c-01f4-0000-0fcc-152100000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001c-01f4-0000-0fcc-152100000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001c-01f4-0000-0fcc-152100000000-m80c651f1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000001d-01f4-0000-7d58-01f500000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Offline Avg Sponsorship Val £"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001d-01f4-0000-7d58-01f500000000-m80c579df-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579df-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000001e-01f4-0000-c965-02ab00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Offline Avg Sponsorship Val £' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Income' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Offline Avg Sponsorship Val £' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001e-01f4-0000-c965-02ab00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001e-01f4-0000-c965-02ab00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001e-01f4-0000-c965-02ab00000000-m80c651f1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000001f-01f4-0000-dc51-11c000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Income - Merchandise"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001f-01f4-0000-dc51-11c000000000-m80c579e1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579e1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000020-01f4-0000-7ae0-c53f00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Income - Merchandise' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Income' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Income - Merchandise' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000020-01f4-0000-7ae0-c53f00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000020-01f4-0000-7ae0-c53f00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000020-01f4-0000-7ae0-c53f00000000-m80c651f1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000021-01f4-0000-a08d-701f00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Corporate / Third Party Income"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000021-01f4-0000-a08d-701f00000000-m80c579e3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579e3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000022-01f4-0000-4a61-f73900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Corporate / Third Party Income' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Income' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Corporate / Third Party Income' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000022-01f4-0000-4a61-f73900000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000022-01f4-0000-4a61-f73900000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000022-01f4-0000-4a61-f73900000000-m80c651f1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000023-01f4-0000-2325-e07900000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Income"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000023-01f4-0000-2325-e07900000000-m80c579ee-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579ee-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000024-01f4-0000-dff7-43cb00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Income' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Income' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Income' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000024-01f4-0000-dff7-43cb00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000024-01f4-0000-dff7-43cb00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000024-01f4-0000-dff7-43cb00000000-m80c651ef-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651ef-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000025-01f4-0000-ebb1-18b000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Average Annual CoG Donation"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000025-01f4-0000-ebb1-18b000000000-m80c579b6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579b6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000026-01f4-0000-2bef-350600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Average Annual CoG Donation' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Income' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Average Annual CoG Donation' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000026-01f4-0000-2bef-350600000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000026-01f4-0000-2bef-350600000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000026-01f4-0000-2bef-350600000000-m80c651ef-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651ef-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000027-01f4-0000-4d10-edb000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Average Cash Donation"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000027-01f4-0000-4d10-edb000000000-m80c579b8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579b8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000028-01f4-0000-718e-925c00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Average Cash Donation' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Income' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Average Cash Donation' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000028-01f4-0000-718e-925c00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000028-01f4-0000-718e-925c00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000028-01f4-0000-718e-925c00000000-m80c651ef-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651ef-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000029-01f4-0000-596c-244d00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted CoG Average Value"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000029-01f4-0000-596c-244d00000000-m80c579c4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579c4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000002a-01f4-0000-7d99-f93200000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'CoG Average Value' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Income' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'CoG Average Value' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002a-01f4-0000-7d99-f93200000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002a-01f4-0000-7d99-f93200000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002a-01f4-0000-7d99-f93200000000-m80c651ef-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651ef-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000002b-01f4-0000-a48b-2f1800000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Cash Average Value"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002b-01f4-0000-a48b-2f1800000000-m80c579c6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579c6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000002c-01f4-0000-5c29-557900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Cash Average Value' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Income' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Cash Average Value' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002c-01f4-0000-5c29-557900000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002c-01f4-0000-5c29-557900000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002c-01f4-0000-5c29-557900000000-m80c651ef-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651ef-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000002d-01f4-0000-de61-1f1500000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Entrance Fee Income per Entry"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002d-01f4-0000-de61-1f1500000000-m80c579dc-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579dc-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000002e-01f4-0000-9f20-88df00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Entrance Fee Income per Entry' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Income' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Entrance Fee Income per Entry' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002e-01f4-0000-9f20-88df00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002e-01f4-0000-9f20-88df00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002e-01f4-0000-9f20-88df00000000-m80c651ef-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651ef-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000002f-01f4-0000-3f50-0a7400000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Online Avg Sponsorship Val £"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002f-01f4-0000-3f50-0a7400000000-m80c579de-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579de-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000030-01f4-0000-4e05-20ac00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Online Avg Sponsorship Val £' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Income' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Online Avg Sponsorship Val £' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000030-01f4-0000-4e05-20ac00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000030-01f4-0000-4e05-20ac00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000030-01f4-0000-4e05-20ac00000000-m80c651ef-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651ef-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000031-01f4-0000-1f8e-61bb00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Offline Avg Sponsorship Val £"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000031-01f4-0000-1f8e-61bb00000000-m80c579e0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579e0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000032-01f4-0000-280c-cc4700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Offline Avg Sponsorship Val £' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Income' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Offline Avg Sponsorship Val £' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000032-01f4-0000-280c-cc4700000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000032-01f4-0000-280c-cc4700000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000032-01f4-0000-280c-cc4700000000-m80c651ef-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651ef-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000033-01f4-0000-233e-941500000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Income - Merchandise"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000033-01f4-0000-233e-941500000000-m80c579e2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579e2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000034-01f4-0000-3681-3ae600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Income - Merchandise' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Income' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Income - Merchandise' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000034-01f4-0000-3681-3ae600000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000034-01f4-0000-3681-3ae600000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000034-01f4-0000-3681-3ae600000000-m80c651ef-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651ef-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000035-01f4-0000-ffb6-bcbc00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Corporate / Third Party Income"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000035-01f4-0000-ffb6-bcbc00000000-m80c579e4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579e4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000036-01f4-0000-bcf2-25dd00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Corporate / Third Party Income' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Income' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Corporate / Third Party Income' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000036-01f4-0000-bcf2-25dd00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000036-01f4-0000-bcf2-25dd00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000036-01f4-0000-bcf2-25dd00000000-m80c651ef-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651ef-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000037-01f4-0000-4de0-b56e00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Expenditure"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000037-01f4-0000-4de0-b56e00000000-m80c579a4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579a4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000038-01f4-0000-eeba-64cd00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Expenditure' AND "%2" = 'Expenditure' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Expenditure' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Expenditure' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000038-01f4-0000-eeba-64cd00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000038-01f4-0000-eeba-64cd00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000038-01f4-0000-eeba-64cd00000000-m80c651f1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000039-01f4-0000-a3f2-950d00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Expenditure"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000039-01f4-0000-a3f2-950d00000000-m80c579a5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579a5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000003a-01f4-0000-26aa-56d300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Expenditure' AND "%2" = 'Expenditure' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Expenditure' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Expenditure' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003a-01f4-0000-26aa-56d300000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003a-01f4-0000-26aa-56d300000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003a-01f4-0000-26aa-56d300000000-m80c651ef-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651ef-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000003b-01f4-0000-5e49-5cfc00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted % Never Paids"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003b-01f4-0000-5e49-5cfc00000000-m80c579ac-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579ac-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000003c-01f4-0000-307b-3a9200000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Attrition' AND "%2" = '% Never Paids' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Attrition' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = '% Never Paids' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003c-01f4-0000-307b-3a9200000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003c-01f4-0000-307b-3a9200000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003c-01f4-0000-307b-3a9200000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000003d-01f4-0000-ef04-840900000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted CoG Attrition Rate Year 1"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003d-01f4-0000-ef04-840900000000-m80c5799a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c5799a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000003e-01f4-0000-43d9-773400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Attrition' AND "%2" = 'CoG Attrition Rate Year 1' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Attrition' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'CoG Attrition Rate Year 1' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003e-01f4-0000-43d9-773400000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003e-01f4-0000-43d9-773400000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003e-01f4-0000-43d9-773400000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000003f-01f4-0000-918d-199300000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted CoG Attrition Rate Year 2"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003f-01f4-0000-918d-199300000000-m80c5799c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c5799c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000040-01f4-0000-b389-28da00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Attrition' AND "%2" = 'CoG Attrition Rate Year 2' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Attrition' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'CoG Attrition Rate Year 2' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000040-01f4-0000-b389-28da00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000040-01f4-0000-b389-28da00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000040-01f4-0000-b389-28da00000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000041-01f4-0000-6b57-ac3200000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted CoG Attrition Rate Year 3"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000041-01f4-0000-6b57-ac3200000000-m80c5799e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c5799e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000042-01f4-0000-a819-d06300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Attrition' AND "%2" = 'CoG Attrition Rate Year 3' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Attrition' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'CoG Attrition Rate Year 3' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000042-01f4-0000-a819-d06300000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000042-01f4-0000-a819-d06300000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000042-01f4-0000-a819-d06300000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000043-01f4-0000-fe8f-f57000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted CoG Attrition Rate Year 4"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000043-01f4-0000-fe8f-f57000000000-m80c579a0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579a0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000044-01f4-0000-f114-688500000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Attrition' AND "%2" = 'CoG Attrition Rate Year 4' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Attrition' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'CoG Attrition Rate Year 4' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000044-01f4-0000-f114-688500000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000044-01f4-0000-f114-688500000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000044-01f4-0000-f114-688500000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000045-01f4-0000-8e87-1b8f00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted CoG Attrition Rate Year 5"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000045-01f4-0000-8e87-1b8f00000000-m80c579a2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579a2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000046-01f4-0000-d472-d11c00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Attrition' AND "%2" = 'CoG Attrition Rate Year 5' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Attrition' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'CoG Attrition Rate Year 5' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000046-01f4-0000-d472-d11c00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000046-01f4-0000-d472-d11c00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000046-01f4-0000-d472-d11c00000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000047-01f4-0000-bcc9-375600000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Annual CoG Lapse"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000047-01f4-0000-bcc9-375600000000-m80c579cb-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579cb-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000048-01f4-0000-053e-28ce00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Attrition' AND "%2" = 'Annual CoG Lapse' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Attrition' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Annual CoG Lapse' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000048-01f4-0000-053e-28ce00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000048-01f4-0000-053e-28ce00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000048-01f4-0000-053e-28ce00000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000049-01f4-0000-a972-bfa600000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted % Never Paids"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000049-01f4-0000-a972-bfa600000000-m80c579ad-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579ad-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000004a-01f4-0000-f637-375900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Attrition' AND "%2" = '% Never Paids' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Attrition' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = '% Never Paids' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000004a-01f4-0000-f637-375900000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000004a-01f4-0000-f637-375900000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000004a-01f4-0000-f637-375900000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000004b-01f4-0000-9baa-4af500000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted CoG Attrition Rate Year 1"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000004b-01f4-0000-9baa-4af500000000-m80c5799b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c5799b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000004c-01f4-0000-be6b-184f00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Attrition' AND "%2" = 'CoG Attrition Rate Year 1' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Attrition' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'CoG Attrition Rate Year 1' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000004c-01f4-0000-be6b-184f00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000004c-01f4-0000-be6b-184f00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000004c-01f4-0000-be6b-184f00000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000004d-01f4-0000-1b65-e45a00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted CoG Attrition Rate Year 2"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000004d-01f4-0000-1b65-e45a00000000-m80c5799d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c5799d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000004e-01f4-0000-526c-ccb300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Attrition' AND "%2" = 'CoG Attrition Rate Year 2' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Attrition' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'CoG Attrition Rate Year 2' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000004e-01f4-0000-526c-ccb300000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000004e-01f4-0000-526c-ccb300000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000004e-01f4-0000-526c-ccb300000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000004f-01f4-0000-67c4-052c00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted CoG Attrition Rate Year 3"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000004f-01f4-0000-67c4-052c00000000-m80c5799f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c5799f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000050-01f4-0000-47d6-d1fd00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Attrition' AND "%2" = 'CoG Attrition Rate Year 3' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Attrition' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'CoG Attrition Rate Year 3' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000050-01f4-0000-47d6-d1fd00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000050-01f4-0000-47d6-d1fd00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000050-01f4-0000-47d6-d1fd00000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000051-01f4-0000-96c8-da0000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted CoG Attrition Rate Year 4"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000051-01f4-0000-96c8-da0000000000-m80c579a1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579a1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000052-01f4-0000-9485-27f200000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Attrition' AND "%2" = 'CoG Attrition Rate Year 4' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Attrition' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'CoG Attrition Rate Year 4' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000052-01f4-0000-9485-27f200000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000052-01f4-0000-9485-27f200000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000052-01f4-0000-9485-27f200000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000053-01f4-0000-8a3d-7fbb00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted CoG Attrition Rate Year 5"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000053-01f4-0000-8a3d-7fbb00000000-m80c579a3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579a3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000054-01f4-0000-fbdb-b34200000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Attrition' AND "%2" = 'CoG Attrition Rate Year 5' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Attrition' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'CoG Attrition Rate Year 5' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000054-01f4-0000-fbdb-b34200000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000054-01f4-0000-fbdb-b34200000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000054-01f4-0000-fbdb-b34200000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000055-01f4-0000-65a7-e89000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Annual CoG Lapse"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000055-01f4-0000-65a7-e89000000000-m80c579cc-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579cc-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000056-01f4-0000-aa46-30fb00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Attrition' AND "%2" = 'Annual CoG Lapse' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Attrition' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Annual CoG Lapse' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000056-01f4-0000-aa46-30fb00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000056-01f4-0000-aa46-30fb00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000056-01f4-0000-aa46-30fb00000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000057-01f4-0000-e2db-172400000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Response Rate - CoG"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000057-01f4-0000-e2db-172400000000-m80c579a6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579a6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000058-01f4-0000-496d-c93100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Response Rate - CoG' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Response Rate - CoG' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000058-01f4-0000-496d-c93100000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000058-01f4-0000-496d-c93100000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000058-01f4-0000-496d-c93100000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000059-01f4-0000-bcbd-5aef00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Response Rate - Cash"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000059-01f4-0000-bcbd-5aef00000000-m80c579a8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579a8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000005a-01f4-0000-058f-2d0800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Response Rate - Cash' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Response Rate - Cash' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000005a-01f4-0000-058f-2d0800000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000005a-01f4-0000-058f-2d0800000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000005a-01f4-0000-058f-2d0800000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000005b-01f4-0000-9e6c-3c5f00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Response Rate - Other"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000005b-01f4-0000-9e6c-3c5f00000000-m80c579aa-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579aa-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000005c-01f4-0000-a618-3ee800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Response Rate - Other' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Response Rate - Other' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000005c-01f4-0000-a618-3ee800000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000005c-01f4-0000-a618-3ee800000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000005c-01f4-0000-a618-3ee800000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000005d-01f4-0000-c4ca-885400000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Cash Avg Gift Aid Take Up %"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000005d-01f4-0000-c4ca-885400000000-m80c579b9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579b9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000005e-01f4-0000-0131-98c300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Cash Avg Gift Aid Take Up %' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Cash Avg Gift Aid Take Up %' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000005e-01f4-0000-0131-98c300000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000005e-01f4-0000-0131-98c300000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000005e-01f4-0000-0131-98c300000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000005f-01f4-0000-3a83-c21c00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted CoG Avg Gift Aid Take Up %"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000005f-01f4-0000-3a83-c21c00000000-m80c579bb-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579bb-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000060-01f4-0000-a774-26a700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'CoG Avg Gift Aid Take Up %' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'CoG Avg Gift Aid Take Up %' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000060-01f4-0000-a774-26a700000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000060-01f4-0000-a774-26a700000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000060-01f4-0000-a774-26a700000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000061-01f4-0000-5711-8d9300000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Resp Rate - GA on CoG Donor"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000061-01f4-0000-5711-8d9300000000-m80c579c7-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579c7-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000062-01f4-0000-378d-0ce400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Resp Rate - GA on CoG Donor' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Resp Rate - GA on CoG Donor' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000062-01f4-0000-378d-0ce400000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000062-01f4-0000-378d-0ce400000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000062-01f4-0000-378d-0ce400000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000063-01f4-0000-3c61-a89e00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Resp Rate - GA on Cash Donor"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000063-01f4-0000-3c61-a89e00000000-m80c579c9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579c9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000064-01f4-0000-a20f-571300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Resp Rate - GA on Cash Donor' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Resp Rate - GA on Cash Donor' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000064-01f4-0000-a20f-571300000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000064-01f4-0000-a20f-571300000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000064-01f4-0000-a20f-571300000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000065-01f4-0000-9b76-ca3900000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Participant Registrations"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000065-01f4-0000-9b76-ca3900000000-m80c579d1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579d1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000066-01f4-0000-4452-127200000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Participant Registrations' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Participant Registrations' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000066-01f4-0000-4452-127200000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000066-01f4-0000-4452-127200000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000066-01f4-0000-4452-127200000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000067-01f4-0000-cffd-0a5d00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Online Return Rate %"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000067-01f4-0000-cffd-0a5d00000000-m80c579d3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579d3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000068-01f4-0000-5ec6-460100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Online Return Rate %' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Online Return Rate %' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000068-01f4-0000-5ec6-460100000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000068-01f4-0000-5ec6-460100000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000068-01f4-0000-5ec6-460100000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000069-01f4-0000-67d3-0c4e00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Offline Return Rate %"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000069-01f4-0000-67d3-0c4e00000000-m80c579d5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579d5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000006a-01f4-0000-5f67-b0cd00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Offline Return Rate %' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Offline Return Rate %' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000006a-01f4-0000-5f67-b0cd00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000006a-01f4-0000-5f67-b0cd00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000006a-01f4-0000-5f67-b0cd00000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000006b-01f4-0000-dac1-82a300000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Online Gift Aid Take Up %"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000006b-01f4-0000-dac1-82a300000000-m80c579d7-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579d7-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000006c-01f4-0000-d529-694a00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Online Gift Aid Take Up %' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Online Gift Aid Take Up %' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000006c-01f4-0000-d529-694a00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000006c-01f4-0000-d529-694a00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000006c-01f4-0000-d529-694a00000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000006d-01f4-0000-beac-48fa00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Offline Gift Aid Take Up %"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000006d-01f4-0000-beac-48fa00000000-m80c579d9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579d9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000006e-01f4-0000-6a20-9f9400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Offline Gift Aid Take Up %' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Offline Gift Aid Take Up %' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000006e-01f4-0000-6a20-9f9400000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000006e-01f4-0000-6a20-9f9400000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000006e-01f4-0000-6a20-9f9400000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000006f-01f4-0000-718e-699200000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Response Rate - CoG"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000006f-01f4-0000-718e-699200000000-m80c579a7-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579a7-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000070-01f4-0000-b6ea-46bf00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Response Rate - CoG' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Response Rate - CoG' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000070-01f4-0000-b6ea-46bf00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000070-01f4-0000-b6ea-46bf00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000070-01f4-0000-b6ea-46bf00000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000071-01f4-0000-8733-a5c200000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Response Rate - Cash"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000071-01f4-0000-8733-a5c200000000-m80c579a9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579a9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000072-01f4-0000-273b-df9100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Response Rate - Cash' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Response Rate - Cash' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000072-01f4-0000-273b-df9100000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000072-01f4-0000-273b-df9100000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000072-01f4-0000-273b-df9100000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000073-01f4-0000-a1e0-35a400000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Response Rate - Other"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000073-01f4-0000-a1e0-35a400000000-m80c579ab-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579ab-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000074-01f4-0000-d756-a35a00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Response Rate - Other' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Response Rate - Other' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000074-01f4-0000-d756-a35a00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000074-01f4-0000-d756-a35a00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000074-01f4-0000-d756-a35a00000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000075-01f4-0000-dd0c-37b100000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Cash Avg Gift Aid Take Up %"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000075-01f4-0000-dd0c-37b100000000-m80c579ba-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579ba-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000076-01f4-0000-4b46-9fa800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Cash Avg Gift Aid Take Up %' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Cash Avg Gift Aid Take Up %' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000076-01f4-0000-4b46-9fa800000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000076-01f4-0000-4b46-9fa800000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000076-01f4-0000-4b46-9fa800000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000077-01f4-0000-4395-166800000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted CoG Avg Gift Aid Take Up %"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000077-01f4-0000-4395-166800000000-m80c579bc-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579bc-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000078-01f4-0000-882c-2ecb00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'CoG Avg Gift Aid Take Up %' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'CoG Avg Gift Aid Take Up %' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000078-01f4-0000-882c-2ecb00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000078-01f4-0000-882c-2ecb00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000078-01f4-0000-882c-2ecb00000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000079-01f4-0000-69ed-e24e00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Resp Rate - GA on CoG Donor"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000079-01f4-0000-69ed-e24e00000000-m80c579c8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579c8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000007a-01f4-0000-53cf-e72e00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Resp Rate - GA on CoG Donor' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Resp Rate - GA on CoG Donor' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000007a-01f4-0000-53cf-e72e00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000007a-01f4-0000-53cf-e72e00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000007a-01f4-0000-53cf-e72e00000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000007b-01f4-0000-2944-734f00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Resp Rate - GA on Cash Donor"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000007b-01f4-0000-2944-734f00000000-m80c579ca-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579ca-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000007c-01f4-0000-6561-961000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Resp Rate - GA on Cash Donor' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Resp Rate - GA on Cash Donor' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000007c-01f4-0000-6561-961000000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000007c-01f4-0000-6561-961000000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000007c-01f4-0000-6561-961000000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000007d-01f4-0000-91f6-d26b00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Participant Registrations"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000007d-01f4-0000-91f6-d26b00000000-m80c579d2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579d2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000007e-01f4-0000-8c19-6d4700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Participant Registrations' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Participant Registrations' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000007e-01f4-0000-8c19-6d4700000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000007e-01f4-0000-8c19-6d4700000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000007e-01f4-0000-8c19-6d4700000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000007f-01f4-0000-34bc-7cec00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Online Return Rate %"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000007f-01f4-0000-34bc-7cec00000000-m80c579d4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579d4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000080-01f4-0000-f6bb-c63b00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Online Return Rate %' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Online Return Rate %' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000080-01f4-0000-f6bb-c63b00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000080-01f4-0000-f6bb-c63b00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000080-01f4-0000-f6bb-c63b00000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000081-01f4-0000-94b9-2ef300000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Offline Return Rate %"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000081-01f4-0000-94b9-2ef300000000-m80c579d6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579d6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000082-01f4-0000-6917-9cda00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Offline Return Rate %' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Offline Return Rate %' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000082-01f4-0000-6917-9cda00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000082-01f4-0000-6917-9cda00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000082-01f4-0000-6917-9cda00000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000083-01f4-0000-52b7-20f400000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Online Gift Aid Take Up %"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000083-01f4-0000-52b7-20f400000000-m80c579d8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579d8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000084-01f4-0000-cac0-6dca00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Online Gift Aid Take Up %' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Online Gift Aid Take Up %' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000084-01f4-0000-cac0-6dca00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000084-01f4-0000-cac0-6dca00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000084-01f4-0000-cac0-6dca00000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000085-01f4-0000-2991-70ca00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Offline Gift Aid Take Up %"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000085-01f4-0000-2991-70ca00000000-m80c579da-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579da-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000086-01f4-0000-3f3c-e77f00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Offline Gift Aid Take Up %' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Offline Gift Aid Take Up %' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000086-01f4-0000-3f3c-e77f00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000086-01f4-0000-3f3c-e77f00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000086-01f4-0000-3f3c-e77f00000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000087-01f4-0000-d9c2-53a000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Month of First CoG Gift"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000087-01f4-0000-d9c2-53a000000000-m80c579bd-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579bd-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000088-01f4-0000-b442-da7600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Timing' AND "%2" = 'Month of First CoG Gift' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Timing' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Month of First CoG Gift' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000088-01f4-0000-b442-da7600000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000088-01f4-0000-b442-da7600000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000088-01f4-0000-b442-da7600000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000089-01f4-0000-528c-02ba00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Month of First GA CoG Gift"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000089-01f4-0000-528c-02ba00000000-m80c579cd-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579cd-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000008a-01f4-0000-243b-bc7d00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Timing' AND "%2" = 'Month of First GA CoG Gift' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Timing' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Month of First GA CoG Gift' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000008a-01f4-0000-243b-bc7d00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000008a-01f4-0000-243b-bc7d00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000008a-01f4-0000-243b-bc7d00000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000008b-01f4-0000-3885-e54300000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Month of First CoG Gift"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000008b-01f4-0000-3885-e54300000000-m80c579be-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579be-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000008c-01f4-0000-4a11-c64c00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Timing' AND "%2" = 'Month of First CoG Gift' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Timing' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Month of First CoG Gift' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000008c-01f4-0000-4a11-c64c00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000008c-01f4-0000-4a11-c64c00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000008c-01f4-0000-4a11-c64c00000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000008d-01f4-0000-d451-3fb000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Month of First GA CoG Gift"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000008d-01f4-0000-d451-3fb000000000-m80c579ce-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579ce-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000008e-01f4-0000-2bf2-a9d200000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Timing' AND "%2" = 'Month of First GA CoG Gift' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Timing' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Month of First GA CoG Gift' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000008e-01f4-0000-2bf2-a9d200000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000008e-01f4-0000-2bf2-a9d200000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000008e-01f4-0000-2bf2-a9d200000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000008f-01f4-0000-fe70-859c00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted # Events"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000008f-01f4-0000-fe70-859c00000000-m80c579cf-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579cf-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000090-01f4-0000-15bb-26c800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'General' AND "%2" = '# Events' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'General' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = '# Events' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000090-01f4-0000-15bb-26c800000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000090-01f4-0000-15bb-26c800000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000090-01f4-0000-15bb-26c800000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000091-01f4-0000-8cf8-921100000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted # Events"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000091-01f4-0000-8cf8-921100000000-m80c579d0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c579d0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000092-01f4-0000-aaed-15ff00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'General' AND "%2" = '# Events' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'General' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = '# Events' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000092-01f4-0000-aaed-15ff00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000092-01f4-0000-aaed-15ff00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000092-01f4-0000-aaed-15ff00000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000093-01f4-0000-d4c6-80fa00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Income - Online"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000093-01f4-0000-d4c6-80fa00000000-m80c57a77-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c57a77-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000094-01f4-0000-81c3-c8d700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Income - Online' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Income' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Income - Online' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000094-01f4-0000-81c3-c8d700000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000094-01f4-0000-81c3-c8d700000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000094-01f4-0000-81c3-c8d700000000-m80c651f1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000095-01f4-0000-9f8c-516400000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Income - Offline"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000095-01f4-0000-9f8c-516400000000-m80c57a79-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c57a79-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000096-01f4-0000-5796-151800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Income - Offline' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Income' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Income - Offline' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000096-01f4-0000-5796-151800000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000096-01f4-0000-5796-151800000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000096-01f4-0000-5796-151800000000-m80c651f1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000097-01f4-0000-de8d-2b9300000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Response Rate - General"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000097-01f4-0000-de8d-2b9300000000-m80c57a7c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c57a7c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000098-01f4-0000-d06a-740100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Response Rate - General' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Response Rate - General' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000098-01f4-0000-d06a-740100000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000098-01f4-0000-d06a-740100000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000098-01f4-0000-d06a-740100000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000099-01f4-0000-77f7-aafb00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Budgeted Conversion Rate - Campaign"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000099-01f4-0000-77f7-aafb00000000-m80c57a7e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c57a7e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000009a-01f4-0000-9392-788200000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Conversion Rate - Campaign' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Conversion Rate - Campaign' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000009a-01f4-0000-9392-788200000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000009a-01f4-0000-9392-788200000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000009a-01f4-0000-9392-788200000000-m80c651f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000009b-01f4-0000-8360-bd6800000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Income - Online"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000009b-01f4-0000-8360-bd6800000000-m80c57a78-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c57a78-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000009c-01f4-0000-49ed-692300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Income - Online' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Income' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Income - Online' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000009c-01f4-0000-49ed-692300000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000009c-01f4-0000-49ed-692300000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000009c-01f4-0000-49ed-692300000000-m80c651ef-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651ef-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000009d-01f4-0000-da8f-d04100000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Income - Offline"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000009d-01f4-0000-da8f-d04100000000-m80c57a7a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c57a7a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000009e-01f4-0000-2e90-ce6f00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' AND "%2" = 'Income - Offline' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Income' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Income - Offline' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000009e-01f4-0000-2e90-ce6f00000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000009e-01f4-0000-2e90-ce6f00000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000009e-01f4-0000-2e90-ce6f00000000-m80c651ef-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651ef-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000009f-01f4-0000-30c6-1bae00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Response Rate - General"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000009f-01f4-0000-30c6-1bae00000000-m80c57a7d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c57a7d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m000000a0-01f4-0000-f13e-ad4900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Response Rate - General' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Response Rate - General' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m000000a0-01f4-0000-f13e-ad4900000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m000000a0-01f4-0000-f13e-ad4900000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m000000a0-01f4-0000-f13e-ad4900000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m000000a1-01f4-0000-8b42-dd0000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Forecasted Conversion Rate - Campaign"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m000000a1-01f4-0000-8b42-dd0000000000-m80c57a7f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c57a7f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m000000a2-01f4-0000-67d5-f82900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Conversion Rate - Campaign' THEN "%3" ELSE 0 END  / 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Conversion Rate - Campaign' THEN "Real Time OLTP".""."SIEBEL"."Camp_Metrics_Real_Time"."FCST_GOAL_OTHER" ELSE 0 END  / 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m000000a2-01f4-0000-67d5-f82900000000-m80c65204-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65204-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m000000a2-01f4-0000-67d5-f82900000000-m80c65203-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c65203-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m000000a2-01f4-0000-67d5-f82900000000-m80c651f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c651f0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m000000a3-01f4-0000-409b-951e00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Camp_Metrics_Real_Time"."Financial Date Factor"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m000000a3-01f4-0000-409b-951e00000000-m80c57b55-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa89-07f3-0000-714b-e31d00000000.xml#m80c57b55-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m000000a4-01f4-0000-bbe7-c22000000000" name="Expr">
+<ExprText><![CDATA[ TIMESTAMPDIFF( SQL_TSI_DAY ,  IFNULL("%1",  CAST ('6-APR-1899' AS TIMESTAMP )),  CAST ( CONCAT('6-APR-',  TRIM(BOTH ' ' FROM  CAST ( CASE  WHEN  EXTRACT( MONTH  FROM "%1") < 4 THEN  EXTRACT( YEAR  FROM "%1") WHEN  EXTRACT( MONTH  FROM "%1") = 4 AND  DAYOFMONTH("%1") <= 6 THEN  EXTRACT( YEAR  FROM "%1") WHEN  EXTRACT( MONTH  FROM "%1") = 4 AND  DAYOFMONTH("%1") > 6 THEN  EXTRACT( YEAR  FROM "%1") + 1 WHEN  EXTRACT( MONTH  FROM "%1") > 4 THEN  EXTRACT( YEAR  FROM "%1") + 1 ELSE 1899 END  AS CHARACTER ( 30 )))) AS TIMESTAMP )) * 0.0027397d]]></ExprText>
+<ExprTextDesc><![CDATA[ TIMESTAMPDIFF( SQL_TSI_DAY ,  IFNULL("Real Time OLTP".""."SIEBEL"."S_SRC"."PROG_START_DT",  CAST ('6-APR-1899' AS TIMESTAMP )),  CAST ( CONCAT('6-APR-',  TRIM(BOTH ' ' FROM  CAST ( CASE  WHEN  EXTRACT( MONTH  FROM "Real Time OLTP".""."SIEBEL"."S_SRC"."PROG_START_DT") < 4 THEN  EXTRACT( YEAR  FROM "Real Time OLTP".""."SIEBEL"."S_SRC"."PROG_START_DT") WHEN  EXTRACT( MONTH  FROM "Real Time OLTP".""."SIEBEL"."S_SRC"."PROG_START_DT") = 4 AND  DAYOFMONTH("Real Time OLTP".""."SIEBEL"."S_SRC"."PROG_START_DT") <= 6 THEN  EXTRACT( YEAR  FROM "Real Time OLTP".""."SIEBEL"."S_SRC"."PROG_START_DT") WHEN  EXTRACT( MONTH  FROM "Real Time OLTP".""."SIEBEL"."S_SRC"."PROG_START_DT") = 4 AND  DAYOFMONTH("Real Time OLTP".""."SIEBEL"."S_SRC"."PROG_START_DT") > 6 THEN  EXTRACT( YEAR  FROM "Real Time OLTP".""."SIEBEL"."S_SRC"."PROG_START_DT") + 1 WHEN  EXTRACT( MONTH  FROM "Real Time OLTP".""."SIEBEL"."S_SRC"."PROG_START_DT") > 4 THEN  EXTRACT( YEAR  FROM "Real Time OLTP".""."SIEBEL"."S_SRC"."PROG_START_DT") + 1 ELSE 1899 END  AS CHARACTER ( 30 )))) AS TIMESTAMP )) * 0.0027397d]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m000000a4-01f4-0000-bbe7-c22000000000-m80c63338-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c099-0bb9-0000-714b-e31d00000000.xml#m80c63338-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5c099-0bb9-0000-714b-e31d00000000.xml#m80c5c099-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5c099-0bb9-0000-714b-e31d00000000.xml#m80c5c099-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c5c132-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c6774b-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c5c132-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c5c132-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5c099-0bb9-0000-714b-e31d00000000.xml#m80c5c099-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5c132-0bb9-0000-714b-e31d00000000.xml#m80c6774b-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<WhereClause mdsid="m000000a5-01f4-0000-1bc2-d47900000000" name="WhereClause">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</WhereClause>
+<GroupBy mdsid="m000000a6-01f4-0000-4469-915000000000" name="GroupBy">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</GroupBy>
+<FragmentContent mdsid="m000000a7-01f4-0000-fd13-548500000000" name="FragmentContent">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</FragmentContent>
+</LogicalTableSource>

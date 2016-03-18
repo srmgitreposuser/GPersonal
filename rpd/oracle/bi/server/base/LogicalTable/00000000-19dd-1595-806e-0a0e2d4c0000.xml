@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m00000000-19dd-1595-806e-0a0e2d4c0000" name="Fact - Opportunity Campaign History" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m00000000-1a18-1595-806e-0a0e2d4c0000" name="Audience Volume" isWriteable="false">
+<Description><![CDATA[The total number of Supporters that were associated to the Campaign and passed data cleanse]]></Description>
+<MeasureDefn mdsid="m40000021-e9c8-15a9-806e-0a0e2da00000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m40000022-e9c8-15a9-806e-0a0e2da00000" name="AggRule_2050:1474071453827873" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-c8fd-240600000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - Opportunity Campaign History"."Audience Volume")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-c8fd-240600000000-m00000000-1a18-1595-806e-0a0e2d4c0000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00000000-19dd-1595-806e-0a0e2d4c0000.xml#m00000000-1a18-1595-806e-0a0e2d4c0000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+<OverrideAggrRule mdsid="m40000023-e9c8-15a9-806e-0a0e2da00000" name="OvAggRule_2054:1474081453827873" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/c0000015-20dc-1595-806e-0a0e2d4c0000.xml#mc0000015-20dc-1595-806e-0a0e2d4c0000">
+<Expr mdsid="m00000002-01f4-0000-3fbf-1efc00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Opportunity Campaign History"."Audience Volume")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-3fbf-1efc00000000-m00000000-1a18-1595-806e-0a0e2d4c0000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00000000-19dd-1595-806e-0a0e2d4c0000.xml#m00000000-1a18-1595-806e-0a0e2d4c0000"/>
+</ObjectRefList>
+</Expr>
+</OverrideAggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m00000101-e9ca-15a9-806e-0a0e2da00000" name="AD_3900:1477021453827880">
+<Expr mdsid="m00000003-01f4-0000-e6bf-601900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Passed' THEN  "%2"  ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Contact_Outcome"."VAL" = 'Passed' THEN  "Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_WC_CAMP_HIST_A"."CAMP_CON_PARTY_CNT"  ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-e6bf-601900000000-m80c5f2bd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfd3-0bb9-0000-714b-e31d00000000.xml#m80c5f2bd-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000003-01f4-0000-e6bf-601900000000-m80cb6917-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb6915-0bb9-0000-714b-e31d00000000.xml#m80cb6917-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m00000000-19dd-1595-806e-0a0e2d4c0000-m00000000-19e8-1595-806e-0a0e2d4c0000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/00000000-19e8-1595-806e-0a0e2d4c0000.xml#m00000000-19e8-1595-806e-0a0e2d4c0000"/>
+<RefLogicalTableSource refId="m00000000-19dd-1595-806e-0a0e2d4c0000-mc0000015-20dc-1595-806e-0a0e2d4c0000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/c0000015-20dc-1595-806e-0a0e2d4c0000.xml#mc0000015-20dc-1595-806e-0a0e2d4c0000"/>
+</RefTableSources>
+</LogicalTable>

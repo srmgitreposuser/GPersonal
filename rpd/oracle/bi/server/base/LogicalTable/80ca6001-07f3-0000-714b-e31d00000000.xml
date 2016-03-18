@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80ca6001-07f3-0000-714b-e31d00000000" name="Dim - Related Employee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="195" y="356" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80000000-9796-1585-ab76-0a0e2d080000" name="Employee Full Name" isDerived="true" isWriteable="false">
+<Description><![CDATA[First Name Space Last Name format]]></Description>
+<Expr mdsid="m00000001-01f4-0000-3dd3-e31d00000000" name="Expr">
+<ExprText><![CDATA["%1" || ' ' || "%2" ]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Dim - Related Employee"."Employee First Name" || ' ' || "Core 2"."Dim - Related Employee"."Employee Last Name" ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-3dd3-e31d00000000-m80ca6087-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80ca6001-07f3-0000-714b-e31d00000000.xml#m80ca6087-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000001-01f4-0000-3dd3-e31d00000000-m80ca608b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80ca6001-07f3-0000-714b-e31d00000000.xml#m80ca608b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="mc000002b-e77d-158b-806e-0a0e2d540000" name="AD_3900:1436661445961207">
+<Expr mdsid="m00000002-01f4-0000-4855-03f900000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca608d-07d6-0000-714b-e31d00000000" name="Employee Name" isWriteable="false">
+<AttrDefn mdsid="m80ca61b3-0f3c-0000-714b-e31d00000000" name="AD_3900:7917931353680404">
+<Expr mdsid="m00000003-01f4-0000-f59c-35fd00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_EMPLOYEE_D_Related"."FULL_NAME"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-f59c-35fd00000000-m80ca373a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca3735-0bb9-0000-714b-e31d00000000.xml#m80ca373a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca6117-07d6-0000-714b-e31d00000000" name="Employee Job Title" isWriteable="false">
+<AttrDefn mdsid="m80ca623d-0f3c-0000-714b-e31d00000000" name="AD_3900:7918621353680404">
+<Expr mdsid="m00000004-01f4-0000-dd0a-c35000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_EMPLOYEE_D_Related"."JOB_TITLE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-dd0a-c35000000000-m80ca377f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca3735-0bb9-0000-714b-e31d00000000.xml#m80ca377f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca6121-07d6-0000-714b-e31d00000000" name="Employee Primary Position" isWriteable="false">
+<AttrDefn mdsid="m80ca6247-0f3c-0000-714b-e31d00000000" name="AD_3900:7918671353680404">
+<Expr mdsid="m00000005-01f4-0000-e6bb-9e8200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_EMPLOYEE_D_Related"."PR_POSTN"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-e6bb-9e8200000000-m80ca3784-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca3735-0bb9-0000-714b-e31d00000000.xml#m80ca3784-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca635c-07d6-0000-714b-e31d00000000" name="Employee Position" isWriteable="false">
+<AttrDefn mdsid="m80ca635e-0f3c-0000-714b-e31d00000000" name="AD_3900:7920091353681007">
+<Expr mdsid="m00000006-01f4-0000-4f14-6b0f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_EMPLOYEE_D_Related"."HELD_POSTN"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-4f14-6b0f00000000-m80ca377a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca3735-0bb9-0000-714b-e31d00000000.xml#m80ca377a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca611f-07d6-0000-714b-e31d00000000" name="Manager of Employee" isWriteable="false">
+<AttrDefn mdsid="m80ca6245-0f3c-0000-714b-e31d00000000" name="AD_3900:7918661353680404">
+<Expr mdsid="m00000007-01f4-0000-9462-324600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_EMPLOYEE_D_Related"."PAR_HELD_POSTN"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-9462-324600000000-m80ca3783-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca3735-0bb9-0000-714b-e31d00000000.xml#m80ca3783-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca6087-07d6-0000-714b-e31d00000000" name="Employee First Name" isWriteable="false">
+<AttrDefn mdsid="m80ca61ad-0f3c-0000-714b-e31d00000000" name="AD_3900:7917901353680404">
+<Expr mdsid="m00000008-01f4-0000-12c5-ed3900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_EMPLOYEE_D_Related"."FST_NAME"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-12c5-ed3900000000-m80ca3737-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca3735-0bb9-0000-714b-e31d00000000.xml#m80ca3737-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca608b-07d6-0000-714b-e31d00000000" name="Employee Last Name" isWriteable="false">
+<AttrDefn mdsid="m80ca61b1-0f3c-0000-714b-e31d00000000" name="AD_3900:7917921353680404">
+<Expr mdsid="m00000009-01f4-0000-6c9b-e46e00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_EMPLOYEE_D_Related"."LAST_NAME"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-6c9b-e46e00000000-m80ca3739-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca3735-0bb9-0000-714b-e31d00000000.xml#m80ca3739-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca6119-07d6-0000-714b-e31d00000000" name="Employee Login" isWriteable="false">
+<AttrDefn mdsid="m80ca623f-0f3c-0000-714b-e31d00000000" name="AD_3900:7918631353680404">
+<Expr mdsid="m0000000a-01f4-0000-16e2-bc4100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_EMPLOYEE_D_Related"."LOGIN"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-16e2-bc4100000000-m80ca3780-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca3735-0bb9-0000-714b-e31d00000000.xml#m80ca3780-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca6085-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80ca61ab-0f3c-0000-714b-e31d00000000" name="AD_3900:7917891353680404">
+<Expr mdsid="m0000000b-01f4-0000-6068-e92900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_EMPLOYEE_D_Related"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-6068-e92900000000-m80ca3736-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca3735-0bb9-0000-714b-e31d00000000.xml#m80ca3736-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca607b-07d6-0000-714b-e31d00000000" name="Team" isWriteable="false">
+<AttrDefn mdsid="m80ca6345-0f3c-0000-714b-e31d00000000" name="AD_3900:7919941353680404">
+<Expr mdsid="m0000000c-01f4-0000-59a7-db9f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_EMPLOYEE_D_Related"."X_SRM_CANVASSER_TEAM"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-59a7-db9f00000000-m80ca3803-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca3735-0bb9-0000-714b-e31d00000000.xml#m80ca3803-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca6083-07d6-0000-714b-e31d00000000" name="Department" isWriteable="false">
+<AttrDefn mdsid="m80ca634d-0f3c-0000-714b-e31d00000000" name="AD_3900:7919981353680404">
+<Expr mdsid="m0000000d-01f4-0000-446f-ebdb00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_EMPLOYEE_D_Related"."OFFICE_BLDG_CD"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-446f-ebdb00000000-m80ca3807-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca3735-0bb9-0000-714b-e31d00000000.xml#m80ca3807-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80ca61a9-07d8-0000-714b-e31d00000000" name="ROW_WID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80ca61a9-07d8-0000-714b-e31d00000000-m80ca6085-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80ca6001-07f3-0000-714b-e31d00000000.xml#m80ca6085-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80ca6001-07f3-0000-714b-e31d00000000-m80ca634f-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80ca634f-07f5-0000-714b-e31d00000000.xml#m80ca634f-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

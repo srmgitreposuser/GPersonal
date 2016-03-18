@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c89a87-07f3-0000-714b-e31d00000000" name="Fact - Marketing - Segmentation Account Cache" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1264" y="54" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55249-07d0-0000-714b-e31d00000000.xml#m80c55249-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c89a89-07d6-0000-714b-e31d00000000" name="GUID" isWriteable="false">
+<AttrDefn mdsid="m80c89a91-0f3c-0000-714b-e31d00000000" name="AD_3900:7177371338390200">
+<Expr mdsid="m00000001-01f4-0000-55c4-029100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."M_C_ACCOUNT"."GUID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-55c4-029100000000-m80c5ec36-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfa9-0bb9-0000-714b-e31d00000000.xml#m80c5ec36-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c89a8b-07d6-0000-714b-e31d00000000" name="Account ID" isWriteable="false">
+<Description><![CDATA[This the list of IDs saved in the Cache]]></Description>
+<AttrDefn mdsid="m80c89a93-0f3c-0000-714b-e31d00000000" name="AD_3900:7177381338390200">
+<Expr mdsid="m00000002-01f4-0000-609a-7b5400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."M_C_ACCOUNT"."QUALIFIED_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-609a-7b5400000000-m80c5ec37-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfa9-0bb9-0000-714b-e31d00000000.xml#m80c5ec37-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c89a8f-07d8-0000-714b-e31d00000000" name="QUALIFIED_ID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c89a8f-07d8-0000-714b-e31d00000000-m80c89a8b-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c89a87-07f3-0000-714b-e31d00000000.xml#m80c89a8b-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c89a87-07f3-0000-714b-e31d00000000-m80c89a95-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c89a95-07f5-0000-714b-e31d00000000.xml#m80c89a95-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

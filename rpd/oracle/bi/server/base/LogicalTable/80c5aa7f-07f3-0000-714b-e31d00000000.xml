@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5aa7f-07f3-0000-714b-e31d00000000" name="SRM - Dim - Campaign Event Relationship" iconIndex="93" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="422" y="1199" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c577e2-07d6-0000-714b-e31d00000000" name="Current Status" isWriteable="false">
+<AttrDefn mdsid="m80c69cf4-0f3c-0000-714b-e31d00000000" name="AD_3900:5727831268225013">
+<Expr mdsid="m00000001-01f4-0000-75a0-2c8400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Event_Reg_Status"."VAL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-75a0-2c8400000000-m80c64c31-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c10a-0bb9-0000-714b-e31d00000000.xml#m80c64c31-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c577e3-07d6-0000-714b-e31d00000000" name="Online/Offline Entry" isWriteable="false">
+<AttrDefn mdsid="m80c69cf5-0f3c-0000-714b-e31d00000000" name="AD_3900:5727911268225013">
+<Expr mdsid="m00000002-01f4-0000-ca31-e7ff00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IN ('Email', 'Web') THEN 'Online' ELSE 'Offline' END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Event_Reg_Status"."VAL" IN ('Email', 'Web') THEN 'Online' ELSE 'Offline' END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-ca31-e7ff00000000-m80c64c31-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c10a-0bb9-0000-714b-e31d00000000.xml#m80c64c31-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c577e4-07d6-0000-714b-e31d00000000" name="Event Registration Channel" isWriteable="false">
+<AttrDefn mdsid="m80c69cf6-0f3c-0000-714b-e31d00000000" name="AD_3900:5727951268225013">
+<Expr mdsid="m00000003-01f4-0000-cfb4-ee1a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact_WC_CAMP_EVENT_REG_F_CampaignEvent"."CONFIRM_CHNL_CD"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-cfb4-ee1a00000000-m80c64e36-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c11e-0bb9-0000-714b-e31d00000000.xml#m80c64e36-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c577e5-07d6-0000-714b-e31d00000000" name="Source" isWriteable="false">
+<AttrDefn mdsid="m80c69cf7-0f3c-0000-714b-e31d00000000" name="AD_3900:5727971268225013">
+<Expr mdsid="m00000004-01f4-0000-0cd4-d74400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact_WC_CAMP_EVENT_REG_F_CampaignEvent"."SOURCE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-0cd4-d74400000000-m80c64e38-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c11e-0bb9-0000-714b-e31d00000000.xml#m80c64e38-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c577e6-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80c69cf8-0f3c-0000-714b-e31d00000000" name="AD_3900:5731471268235570">
+<Expr mdsid="m00000005-01f4-0000-3f0c-36ac00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Event_Reg_Status"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-3f0c-36ac00000000-m80c64c2f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c10a-0bb9-0000-714b-e31d00000000.xml#m80c64c2f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58e3c-07d8-0000-714b-e31d00000000" name="ROW_WID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58e3c-07d8-0000-714b-e31d00000000-m80c577e6-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aa7f-07f3-0000-714b-e31d00000000.xml#m80c577e6-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5aa7f-07f3-0000-714b-e31d00000000-m80c5ace2-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ace2-07f5-0000-714b-e31d00000000.xml#m80c5ace2-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

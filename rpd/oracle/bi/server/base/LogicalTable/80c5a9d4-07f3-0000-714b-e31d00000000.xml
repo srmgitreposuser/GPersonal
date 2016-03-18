@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9d4-07f3-0000-714b-e31d00000000" name="Fact  Compound - Activity &amp; Revenue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="706" y="263" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c568b7-07d6-0000-714b-e31d00000000" name="Average Call Report Revenue" iconIndex="69" isDerived="true" isWriteable="false">
+<Description><![CDATA["Average opportunity revenue per call report, calculated as Total Opportunity Revenue divided by # Call Reports"]]></Description>
+<Expr mdsid="m00000001-01f4-0000-73ec-bb2f00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN  NULL  ELSE 1.0d * "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Activity"."# of Call Reports" = 0 THEN  NULL  ELSE 1.0d * "Core"."Fact - CRM - Revenue"."Opportunity Revenue" / "Core"."Fact - CRM - Activity"."# of Call Reports" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-73ec-bb2f00000000-m80c56868-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9cd-07f3-0000-714b-e31d00000000.xml#m80c56868-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000001-01f4-0000-73ec-bb2f00000000-m80c5653f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a5-07f3-0000-714b-e31d00000000.xml#m80c5653f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68c94-0f3c-0000-714b-e31d00000000" name="AD_3900:842641074282455">
+<Expr mdsid="m00000002-01f4-0000-9ec7-dea300000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568b8-07d6-0000-714b-e31d00000000" name="Average Call Report Expected Revenue" iconIndex="69" isDerived="true" isWriteable="false">
+<Description><![CDATA["Average expected revenue per call report, calculated as Total Expected Revenue divided by # Call Reports"]]></Description>
+<Expr mdsid="m00000003-01f4-0000-d246-3d2d00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN  NULL  ELSE 1.0d * "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Activity"."# of Call Reports" = 0 THEN  NULL  ELSE 1.0d * "Core"."Fact - CRM - Revenue"."Expected Revenue" / "Core"."Fact - CRM - Activity"."# of Call Reports" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-d246-3d2d00000000-m80c56868-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9cd-07f3-0000-714b-e31d00000000.xml#m80c56868-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000003-01f4-0000-d246-3d2d00000000-m80c56543-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a5-07f3-0000-714b-e31d00000000.xml#m80c56543-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68c95-0f3c-0000-714b-e31d00000000" name="AD_3900:842651074282455">
+<Expr mdsid="m00000004-01f4-0000-afbf-a06800000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568b9-07d6-0000-714b-e31d00000000" name="Average Call Report Closed Revenue" iconIndex="69" isDerived="true" isWriteable="false">
+<Description><![CDATA["Average closed revenue per call report, calculated as Total Closed Revenue divided by # Call Reports"]]></Description>
+<Expr mdsid="m00000005-01f4-0000-ecd8-a97700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN  NULL  ELSE 1.0d * "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Activity"."# of Call Reports" = 0 THEN  NULL  ELSE 1.0d * "Core"."Fact - CRM - Revenue"."Closed Revenue" / "Core"."Fact - CRM - Activity"."# of Call Reports" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-ecd8-a97700000000-m80c56868-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9cd-07f3-0000-714b-e31d00000000.xml#m80c56868-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000005-01f4-0000-ecd8-a97700000000-m80c5653b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a5-07f3-0000-714b-e31d00000000.xml#m80c5653b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68c96-0f3c-0000-714b-e31d00000000" name="AD_3900:842661074282455">
+<Expr mdsid="m00000006-01f4-0000-6f7a-310000000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+</LogicalTable>

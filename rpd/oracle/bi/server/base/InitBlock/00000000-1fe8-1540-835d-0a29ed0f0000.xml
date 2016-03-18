@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<InitBlock mdsid="m00000000-1fe8-1540-835d-0a29ed0f0000" name="CRUK Display Name" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isSessionVar="true" isRowWiseCacheEnabled="false" refreshPeriod="86400" connectionPoolRef="/oracle/bi/server/base/ConnectionPool/80c67bc0-0bd5-0000-714b-e31d00000000.xml#m80c67bc0-0bd5-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT P.NAME
+FROM S_PARTY P, S_USER U
+WHERE U.LOGIN=UPPER(':USER') AND
+U.PAR_ROW_ID=P.ROW_ID
+GROUP BY P.NAME
+UNION
+SELECT ':USER' FROM DUAL;]]></Value>
+</DBMapItem>
+<InitString><![CDATA[SELECT P.NAME
+FROM S_PARTY P, S_USER U
+WHERE U.LOGIN=UPPER(':USER') AND
+U.PAR_ROW_ID=P.ROW_ID
+GROUP BY P.NAME
+UNION
+SELECT ':USER' FROM DUAL;]]></InitString>
+</InitBlock>

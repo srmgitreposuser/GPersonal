@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80cb5218-07f3-0000-714b-e31d00000000" name="Dim - Sales Order Item" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1187" y="191" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80cb52ec-07d6-0000-714b-e31d00000000" name="Sales Order Item Created" isWriteable="false">
+<Description><![CDATA[The date the Sales Order Item record was created in Siebel]]></Description>
+<AttrDefn mdsid="m80cb5316-0f3c-0000-714b-e31d00000000" name="AD_3900:8320061373282736">
+<Expr mdsid="m00000001-01f4-0000-0342-463300000000" name="Expr">
+<ExprText><![CDATA[ EVALUATE('TRUNC(%1)' AS  DATE , "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ EVALUATE('TRUNC(%1)' AS  DATE , "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SALES_ORDER_ITEM_F"."CREATED")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-0342-463300000000-m80cb4b41-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb4b11-0bb9-0000-714b-e31d00000000.xml#m80cb4b41-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb52f4-07d6-0000-714b-e31d00000000" name="Sales Order Item Row Id" isWriteable="false">
+<Description><![CDATA[The Siebel row id of the Sales Order Item]]></Description>
+<AttrDefn mdsid="m80cb531e-0f3c-0000-714b-e31d00000000" name="AD_3900:8320101373282736">
+<Expr mdsid="m00000002-01f4-0000-368b-d24f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SALES_ORDER_ITEM_F"."INTEGRATION_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-368b-d24f00000000-m80cb4b49-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb4b11-0bb9-0000-714b-e31d00000000.xml#m80cb4b49-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb530a-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80cb5334-0f3c-0000-714b-e31d00000000" name="AD_3900:8320211373282736">
+<Expr mdsid="m00000003-01f4-0000-2c8a-edd200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SALES_ORDER_ITEM_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-2c8a-edd200000000-m80cb4b5f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb4b11-0bb9-0000-714b-e31d00000000.xml#m80cb4b5f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb530e-07d6-0000-714b-e31d00000000" name="External Order Item Id" isWriteable="false">
+<Description><![CDATA[External system unique identifier for the Sales Order Item]]></Description>
+<AttrDefn mdsid="m80cb5338-0f3c-0000-714b-e31d00000000" name="AD_3900:8320231373282736">
+<Expr mdsid="m00000004-01f4-0000-9d36-afa400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SALES_ORDER_ITEM_F"."SBL_INTEGRATION_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-9d36-afa400000000-m80cb4b63-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb4b11-0bb9-0000-714b-e31d00000000.xml#m80cb4b63-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80cb5312-07d8-0000-714b-e31d00000000" name="Fact_WC_SALES_ORDER_ITEM_F_Key" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80cb5312-07d8-0000-714b-e31d00000000-m80cb530a-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb5218-07f3-0000-714b-e31d00000000.xml#m80cb530a-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80cb5218-07f3-0000-714b-e31d00000000-m80cb533c-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cb533c-07f5-0000-714b-e31d00000000.xml#m80cb533c-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

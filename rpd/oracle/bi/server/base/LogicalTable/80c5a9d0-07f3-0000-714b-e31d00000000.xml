@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9d0-07f3-0000-714b-e31d00000000" name="Fact  Compound - Order Item &amp; Campaign History" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="632" y="440" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c5689e-07d6-0000-714b-e31d00000000" name="Actual Net Margin per Order" isDerived="true" isWriteable="false">
+<Description><![CDATA[Total net margin earned from the orders booked  (includes deducting marketing cost) divided by the # of Orders]]></Description>
+<Expr mdsid="m00000001-01f4-0000-1162-e7cf00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN  NULL  ELSE 1.0d * ( IFNULL("%2", 0) -  IFNULL("%3", 0)) / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Order Item"."# of Orders" = 0 THEN  NULL  ELSE 1.0d * ( IFNULL("Core"."Fact - CRM - Order Item"."Total Order Margin", 0) -  IFNULL("Core"."Fact - Marketing - Goal"."Total Expenses (Predicted)", 0)) / "Core"."Fact - CRM - Order Item"."# of Orders" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-1162-e7cf00000000-m80c57adc-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8c-07f3-0000-714b-e31d00000000.xml#m80c57adc-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000001-01f4-0000-1162-e7cf00000000-m80c57b20-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8c-07f3-0000-714b-e31d00000000.xml#m80c57b20-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000001-01f4-0000-1162-e7cf00000000-m80c569cc-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9f2-07f3-0000-714b-e31d00000000.xml#m80c569cc-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68c7b-0f3c-0000-714b-e31d00000000" name="AD_3900:842361074282455">
+<Expr mdsid="m00000002-01f4-0000-afec-e35300000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5689f-07d6-0000-714b-e31d00000000" name="Campaign Actual Cost per Order" isDerived="true" isWriteable="false">
+<Description><![CDATA[Total Marketing Cost for a Campaign Plan divided by the # of Orders for the campaign plan]]></Description>
+<Expr mdsid="m00000003-01f4-0000-da27-76ae00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN  NULL  ELSE 1.0d * "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact  Compound - Marketing Goals Achieved"."# of Orders" = 0 THEN  NULL  ELSE 1.0d * "Core"."Fact  Compound - Marketing Goals Achieved"."Actual Expenses" / "Core"."Fact  Compound - Marketing Goals Achieved"."# of Orders" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-da27-76ae00000000-m80c56ac4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa00-07f3-0000-714b-e31d00000000.xml#m80c56ac4-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000003-01f4-0000-da27-76ae00000000-m80c56aac-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa00-07f3-0000-714b-e31d00000000.xml#m80c56aac-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68c7c-0f3c-0000-714b-e31d00000000" name="AD_3900:842371074282455">
+<Expr mdsid="m00000004-01f4-0000-e048-848700000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568a0-07d6-0000-714b-e31d00000000" name="Purchase Rate (Contacts)" isDerived="true" isWriteable="false">
+<Description><![CDATA[The ratio of campaign contacts who placed an order to the total # of contacts targeted by the campaign]]></Description>
+<Expr mdsid="m00000005-01f4-0000-9f10-65bf00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN  NULL  WHEN "%2" IS NULL  THEN 0 ELSE 100.0d * "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Campaign History"."# Targeted (Individuals)" = 0 THEN  NULL  WHEN "Core"."Fact - CRM - Order Item"."# of Contacts with Orders" IS NULL  THEN 0 ELSE 100.0d * "Core"."Fact - CRM - Order Item"."# of Contacts with Orders" / "Core"."Fact - CRM - Campaign History"."# Targeted (Individuals)" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-9f10-65bf00000000-m80c56801-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ca-07f3-0000-714b-e31d00000000.xml#m80c56801-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000005-01f4-0000-9f10-65bf00000000-m80c57ada-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8c-07f3-0000-714b-e31d00000000.xml#m80c57ada-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68c7d-0f3c-0000-714b-e31d00000000" name="AD_3900:842381074282455">
+<Expr mdsid="m00000006-01f4-0000-6872-17e600000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568a2-07d6-0000-714b-e31d00000000" name="Purchase Rate (Accounts)" isDerived="true" isWriteable="false">
+<Description><![CDATA[The ratio of campaign contacts who placed an order to the total # of contacts targeted by the campaign]]></Description>
+<Expr mdsid="m00000007-01f4-0000-327f-325900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN  NULL  WHEN "%2" IS NULL  THEN 0 ELSE 100.0d * "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Campaign History"."# Targeted (Accounts)" = 0 THEN  NULL  WHEN "Core"."Fact - CRM - Order Item"."# of Contacts with Orders" IS NULL  THEN 0 ELSE 100.0d * "Core"."Fact - CRM - Order Item"."# of Contacts with Orders" / "Core"."Fact - CRM - Campaign History"."# Targeted (Accounts)" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-327f-325900000000-m80c56806-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ca-07f3-0000-714b-e31d00000000.xml#m80c56806-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000007-01f4-0000-327f-325900000000-m80c57ada-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8c-07f3-0000-714b-e31d00000000.xml#m80c57ada-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68c7f-0f3c-0000-714b-e31d00000000" name="AD_3900:842401074282455">
+<Expr mdsid="m00000008-01f4-0000-744a-122500000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568a3-07d6-0000-714b-e31d00000000" name="Actual Cost per Order" isDerived="true" isWriteable="false">
+<Description><![CDATA[Total Marketing Cost for a Campaign Plan divided by the # of Orders for the campaign plan]]></Description>
+<Expr mdsid="m00000009-01f4-0000-da40-ce3100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN  NULL  ELSE 1.0d * "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact  Compound - Marketing Goals Achieved"."# of Orders" = 0 THEN  NULL  ELSE 1.0d * "Core"."Fact  Compound - Marketing Goals Achieved"."Actual Expenses" / "Core"."Fact  Compound - Marketing Goals Achieved"."# of Orders" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-da40-ce3100000000-m80c56ac4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa00-07f3-0000-714b-e31d00000000.xml#m80c56ac4-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000009-01f4-0000-da40-ce3100000000-m80c56aac-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa00-07f3-0000-714b-e31d00000000.xml#m80c56aac-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68c80-0f3c-0000-714b-e31d00000000" name="AD_3900:842411074282455">
+<Expr mdsid="m0000000a-01f4-0000-3af3-23cb00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+</LogicalTable>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5c119-0bb9-0000-714b-e31d00000000" name="A_SIEBEL_CAMP_CON_HSHLD" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" isCacheable="false" x="540" y="812" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb1-0bd3-0000-714b-e31d00000000.xml#m80c67bb1-0bd3-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT
+CAMP.CON_PER_ID CONTACT_ID, CAMP.ORGGRP_ID HOUSEHOLD_ID,
+CAMP.SRC_ID SOURCE_ID,
+OFFER.OFFER_NUM  OFFER_CODE,
+CAMPWAVE.ROW_ID CAMPWAVE_ID
+from S_CAMP_CON@OBI_SIEBEL CAMP,S_DMND_CRTN_PRG@OBI_SIEBEL OFFER,S_CAMP_LD_WAVE@OBI_SIEBEL CAMPWAVE
+where CAMP.DCP_ID = OFFER.ROW_ID and CAMP.CAMP_LD_WAVE_ID = CAMPWAVE.ROW_ID
+]]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c64d19-0bbb-0000-714b-e31d00000000" name="CONTACT_ID" dataType="VARCHAR" precision="30" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c64d1a-0bbb-0000-714b-e31d00000000" name="SOURCE_ID" dataType="VARCHAR" precision="30" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c64d1b-0bbb-0000-714b-e31d00000000" name="OFFER_CODE" dataType="VARCHAR" precision="30" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c64d1c-0bbb-0000-714b-e31d00000000" name="CAMPWAVE_ID" dataType="VARCHAR" precision="30" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c64d1d-0bbb-0000-714b-e31d00000000" name="HOUSEHOLD_ID" dataType="VARCHAR" precision="30" nullable="true" specialType="none">
+</PhysicalColumn>
+</PhysicalTable>

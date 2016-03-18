@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80ca58f2-07f3-0000-714b-e31d00000000" name="Dim - Owning Party Relationship" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="274" y="918" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80ca591e-07d6-0000-714b-e31d00000000" name="End Date" isWriteable="false">
+<AttrDefn mdsid="m80ca5932-0f3c-0000-714b-e31d00000000" name="AD_3900:7903331353602265">
+<Expr mdsid="m00000001-01f4-0000-640e-b76500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_RELATIONAL_HIER_F"."END_DT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-640e-b76500000000-m80ca3645-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca3640-0bb9-0000-714b-e31d00000000.xml#m80ca3645-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca5900-07d6-0000-714b-e31d00000000" name="Relationship Type" isWriteable="false">
+<Description><![CDATA[The relationship type which the owning party has with the related party. If you searched for the Owning party URN in Siebel, this is the relationship you would see in the relationship hierarchy screen.  If this is displayed as unknown, it is usually because the relationship has been recorded against the related party's Siebel record & not the owning party's. Relationships are not automatically created 2 ways in Siebel]]></Description>
+<AttrDefn mdsid="m80ca5948-0f3c-0000-714b-e31d00000000" name="AD_3900:7903441353602265">
+<Expr mdsid="m00000002-01f4-0000-4a84-595200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_RELATIONAL_HIER_F"."RELATION_CD"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-4a84-595200000000-m80ca3650-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca3640-0bb9-0000-714b-e31d00000000.xml#m80ca3650-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca6971-07d6-0000-714b-e31d00000000" name="Reciprocal Relationship Type" isWriteable="false">
+<Description><![CDATA[The relationship which the related party has with the owning party. If you searched for the Related Party URN in Siebel, this is the relationship you would see in the relationship hierarchy screen. If this is displayed as unknown, it is usually because the relationship has been recorded against the owning party's Siebel record & not the related party's. Relationships are not automatically created 2 ways in Siebel]]></Description>
+<AttrDefn mdsid="m80ca6973-0f3c-0000-714b-e31d00000000" name="AD_3900:7930261354024361">
+<Expr mdsid="m00000003-01f4-0000-93d7-5bd900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_RELATIONAL_HIER_F"."X_SRM_RECPRCL_CD"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-93d7-5bd900000000-m80ca365a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca3640-0bb9-0000-714b-e31d00000000.xml#m80ca365a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca5904-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80ca594c-0f3c-0000-714b-e31d00000000" name="AD_3900:7903461353602265">
+<Expr mdsid="m00000004-01f4-0000-c850-7f2900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_RELATIONAL_HIER_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-c850-7f2900000000-m80ca3652-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca3640-0bb9-0000-714b-e31d00000000.xml#m80ca3652-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca5906-07d6-0000-714b-e31d00000000" name="Start Date" isWriteable="false">
+<AttrDefn mdsid="m80ca594e-0f3c-0000-714b-e31d00000000" name="AD_3900:7903471353602265">
+<Expr mdsid="m00000005-01f4-0000-972e-e4c600000000" name="Expr">
+<ExprText><![CDATA[ EVALUATE('TRUNC(%1)' AS  DATE , "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ EVALUATE('TRUNC(%1)' AS  DATE , "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_RELATIONAL_HIER_F"."START_DT")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-972e-e4c600000000-m80ca3653-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca3640-0bb9-0000-714b-e31d00000000.xml#m80ca3653-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca5912-07d6-0000-714b-e31d00000000" name="Primary Flag" isWriteable="false">
+<AttrDefn mdsid="m80ca595a-0f3c-0000-714b-e31d00000000" name="AD_3900:7903531353602265">
+<Expr mdsid="m00000006-01f4-0000-fc40-d96500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_RELATIONAL_HIER_F"."X_SRM_PRI_REL_FLG"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-fc40-d96500000000-m80ca3659-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca3640-0bb9-0000-714b-e31d00000000.xml#m80ca3659-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca6883-07d6-0000-714b-e31d00000000" name="Reciprocal Relationship Flag" isWriteable="false">
+<Description><![CDATA[If this is set to Y, it means the relationship in Siebel is stored against the Related Party's record & not the Owning Party's. If this is set to N, it means the relationship in Siebel is stored against the Owning Party's record.]]></Description>
+<AttrDefn mdsid="m80ca6885-0f3c-0000-714b-e31d00000000" name="AD_3900:7928911353683650">
+<Expr mdsid="m00000007-01f4-0000-a552-d6b800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_RELATIONAL_HIER_F"."RECIPROCAL_REL_FLG"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-a552-d6b800000000-m80ca687f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca3640-0bb9-0000-714b-e31d00000000.xml#m80ca687f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80ca5961-07d8-0000-714b-e31d00000000" name="ROW_WID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80ca5961-07d8-0000-714b-e31d00000000-m80ca5904-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80ca58f2-07f3-0000-714b-e31d00000000.xml#m80ca5904-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80ca58f2-07f3-0000-714b-e31d00000000-m80ca595e-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80ca595e-07f5-0000-714b-e31d00000000.xml#m80ca595e-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<InitBlock mdsid="m80c67c7a-0bd9-0000-714b-e31d00000000" name="Campaign ID" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isSessionVar="true" refreshPeriod="86400" connectionPoolRef="/oracle/bi/server/base/ConnectionPool/80c67bc0-0bd5-0000-714b-e31d00000000.xml#m80c67bc0-0bd5-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT
+SRC.ROW_ID
+FROM
+S_SRC SRC,S_USER U
+WHERE
+SRC.LAST_UPD_BY= U.ROW_ID AND SRC.TEST_FLG = 'Y' AND
+U.LOGIN=Upper(':USER') AND
+SRC.LAST_UPD=(SELECT MAX(S.LAST_UPD) FROM S_SRC S,S_USER U WHERE S.LAST_UPD_BY= U.ROW_ID AND S.TEST_FLG = 'Y' and  U.LOGIN=Upper(':USER'))
+GROUP BY SRC.ROW_ID]]></Value>
+</DBMapItem>
+<RefPredecessors>
+<RefInitBlock refId="m80c67c7a-0bd9-0000-714b-e31d00000000-m80c67c4e-0bd9-0000-714b-e31d00000000" predecessorRef="/oracle/bi/server/base/InitBlock/80c67c4e-0bd9-0000-714b-e31d00000000.xml#m80c67c4e-0bd9-0000-714b-e31d00000000"/>
+</RefPredecessors>
+<RefVariables>
+<RefVariable refId="m80c67c7a-0bd9-0000-714b-e31d00000000-m80c67c3d-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c3d-0bd7-0000-714b-e31d00000000.xml#m80c67c3d-0bd7-0000-714b-e31d00000000"/>
+</RefVariables>
+<InitString><![CDATA[SELECT
+SRC.ROW_ID
+FROM
+S_SRC SRC,S_USER U
+WHERE
+SRC.LAST_UPD_BY= U.ROW_ID AND SRC.TEST_FLG = 'Y' AND
+U.LOGIN=Upper(':USER') AND
+SRC.LAST_UPD=(SELECT MAX(S.LAST_UPD) FROM S_SRC S,S_USER U WHERE S.LAST_UPD_BY= U.ROW_ID AND S.TEST_FLG = 'Y' and  U.LOGIN=Upper(':USER'))
+GROUP BY SRC.ROW_ID]]></InitString>
+</InitBlock>

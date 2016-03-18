@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5aa5f-07f3-0000-714b-e31d00000000" name="Fact - Marketing Goals KPIs" iconIndex="74" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="467" y="657" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55248-07d0-0000-714b-e31d00000000.xml#m80c55248-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c57621-07d6-0000-714b-e31d00000000" name="Income" iconIndex="74" isWriteable="false">
+<MeasureDefn mdsid="m80c5b427-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb52-0802-0000-714b-e31d00000000" name="AggRule_2050:5382171254922549" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-eaec-994300000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Siebel OLTP"."Fact - Marketing Goals KPIs"."Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-eaec-994300000000-m80c57621-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa5f-07f3-0000-714b-e31d00000000.xml#m80c57621-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69b33-0f3c-0000-714b-e31d00000000" name="AD_3900:5381961254918246">
+<Expr mdsid="m00000002-01f4-0000-aa05-4c8500000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Income' THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Fact - Marketing Goals KPIs"."X_SRM_GOAL_SUB" = 'Income' THEN "Real Time OLTP".""."SIEBEL"."Fact - Marketing Goals KPIs"."GOAL_OTHER" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-aa05-4c8500000000-m80c641fc-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0e5-0bb9-0000-714b-e31d00000000.xml#m80c641fc-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-aa05-4c8500000000-m80c641ec-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0e5-0bb9-0000-714b-e31d00000000.xml#m80c641ec-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57622-07d6-0000-714b-e31d00000000" name="Targeted Volume" iconIndex="74" isWriteable="false">
+<MeasureDefn mdsid="m80c5b428-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb60-0802-0000-714b-e31d00000000" name="AggRule_2050:5412391257524795" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-af91-e38200000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Siebel OLTP"."Fact - Marketing Goals KPIs"."Targeted Volume")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-af91-e38200000000-m80c57622-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa5f-07f3-0000-714b-e31d00000000.xml#m80c57622-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69b34-0f3c-0000-714b-e31d00000000" name="AD_3900:5381981254918246">
+<Expr mdsid="m00000004-01f4-0000-082d-cb5800000000" name="Expr">
+<ExprText><![CDATA[ CAST ( CASE  WHEN "%1" = 'Targeted Volume' THEN "%2" ELSE 0 END  AS INTEGER )]]></ExprText>
+<ExprTextDesc><![CDATA[ CAST ( CASE  WHEN "Real Time OLTP".""."SIEBEL"."Fact - Marketing Goals KPIs"."X_SRM_GOAL_SUB" = 'Targeted Volume' THEN "Real Time OLTP".""."SIEBEL"."Fact - Marketing Goals KPIs"."GOAL_OTHER" ELSE 0 END  AS INTEGER )]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-082d-cb5800000000-m80c641fc-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0e5-0bb9-0000-714b-e31d00000000.xml#m80c641fc-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-082d-cb5800000000-m80c641ec-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0e5-0bb9-0000-714b-e31d00000000.xml#m80c641ec-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57623-07d6-0000-714b-e31d00000000" name="ROI" iconIndex="74" isWriteable="false">
+<MeasureDefn mdsid="m80c5b429-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb51-0802-0000-714b-e31d00000000" name="AggRule_2050:5382061254918246" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-60a7-87d900000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Siebel OLTP"."Fact - Marketing Goals KPIs"."ROI")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-60a7-87d900000000-m80c57623-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa5f-07f3-0000-714b-e31d00000000.xml#m80c57623-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69b35-0f3c-0000-714b-e31d00000000" name="AD_3900:5382001254918246">
+<Expr mdsid="m00000006-01f4-0000-b20b-971400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'ROI' THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Fact - Marketing Goals KPIs"."X_SRM_GOAL_SUB" = 'ROI' THEN "Real Time OLTP".""."SIEBEL"."Fact - Marketing Goals KPIs"."GOAL_OTHER" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-b20b-971400000000-m80c641fc-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0e5-0bb9-0000-714b-e31d00000000.xml#m80c641fc-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-b20b-971400000000-m80c641ec-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0e5-0bb9-0000-714b-e31d00000000.xml#m80c641ec-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5aa5f-07f3-0000-714b-e31d00000000-m80c5acb0-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5acb0-07f5-0000-714b-e31d00000000.xml#m80c5acb0-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

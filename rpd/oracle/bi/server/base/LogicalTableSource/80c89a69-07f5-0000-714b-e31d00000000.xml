@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTableSource mdsid="m80c89a69-07f5-0000-714b-e31d00000000" name="W_ACCNT_TXN_F" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isActive="true" logicalTableRef="/oracle/bi/server/base/LogicalTable/80c899ef-07f3-0000-714b-e31d00000000.xml#m80c899ef-07f3-0000-714b-e31d00000000">
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000001-01f4-0000-3ae3-663d00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - CRM - Account Transaction Last 6 Months"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-3ae3-663d00000000-m80c899f1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c899ef-07f3-0000-714b-e31d00000000.xml#m80c899f1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000002-01f4-0000-7328-94a000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-7328-94a000000000-m80c5e8f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000003-01f4-0000-68e3-63b700000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - CRM - Account Transaction Last 6 Months"."INTEGRATION_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-68e3-63b700000000-m80c899f3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c899ef-07f3-0000-714b-e31d00000000.xml#m80c899f3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000004-01f4-0000-d387-f60600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."INTEGRATION_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-d387-f60600000000-m80c5e8f4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000005-01f4-0000-817e-cb8600000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - CRM - Account Transaction Last 6 Months"."Total Transaction Amount Last 6 Months"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-817e-cb8600000000-m80c899f5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c899ef-07f3-0000-714b-e31d00000000.xml#m80c899f5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000006-01f4-0000-8111-bc2d00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Debit' THEN -("%2") WHEN "%1" = 'Credit' THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_TYPE_I" = 'Debit' THEN -("Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_AMT") WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_TYPE_I" = 'Credit' THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_AMT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-8111-bc2d00000000-m80c5e8e8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8e8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-8111-bc2d00000000-m80c5e8f7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000007-01f4-0000-84ff-051100000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - CRM - Account Transaction Last 6 Months"."Total Transaction Fee Last 6 Months"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-84ff-051100000000-m80c899f7-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c899ef-07f3-0000-714b-e31d00000000.xml#m80c899f7-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000008-01f4-0000-7965-9c4900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_FEE_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-7965-9c4900000000-m80c5e8f9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f9-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000009-01f4-0000-3b5b-d57a00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - CRM - Account Transaction Last 6 Months"."Account Balance"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-3b5b-d57a00000000-m80c899f9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c899ef-07f3-0000-714b-e31d00000000.xml#m80c899f9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000a-01f4-0000-cf24-bb4f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."BALANCE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-cf24-bb4f00000000-m80c5e8f8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f8-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000000b-01f4-0000-dc82-c46900000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs Last 6 Months"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-dc82-c46900000000-m80c899fb-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c899ef-07f3-0000-714b-e31d00000000.xml#m80c899fb-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000c-01f4-0000-4d77-7d3800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-4d77-7d3800000000-m80c5e8f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000000d-01f4-0000-339a-90fd00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 1 Month Ago"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-339a-90fd00000000-m80c899fd-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c899ef-07f3-0000-714b-e31d00000000.xml#m80c899fd-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000e-01f4-0000-da49-b7c400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "%1",  CURRENT_DATE ) = 1 THEN  CASE  WHEN "%2" = 'Debit' THEN -("%3") WHEN "%2" = 'Credit' THEN "%3" ELSE 0 END  ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 1 THEN  CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_TYPE_I" = 'Debit' THEN -("Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_AMT") WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_TYPE_I" = 'Credit' THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_AMT" ELSE 0 END  ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-da49-b7c400000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-da49-b7c400000000-m80c5e8e8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8e8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-da49-b7c400000000-m80c5e8f7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000000f-01f4-0000-9d16-98dc00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 2 Months Ago"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-9d16-98dc00000000-m80c899ff-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c899ef-07f3-0000-714b-e31d00000000.xml#m80c899ff-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000010-01f4-0000-968e-bfa100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "%1",  CURRENT_DATE ) = 2 THEN  CASE  WHEN "%2" = 'Debit' THEN -("%3") WHEN "%2" = 'Credit' THEN "%3" ELSE 0 END  ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 2 THEN  CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_TYPE_I" = 'Debit' THEN -("Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_AMT") WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_TYPE_I" = 'Credit' THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_AMT" ELSE 0 END  ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-968e-bfa100000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-968e-bfa100000000-m80c5e8e8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8e8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-968e-bfa100000000-m80c5e8f7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000011-01f4-0000-f118-f86d00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 3 Months Ago"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-f118-f86d00000000-m80c89a01-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c899ef-07f3-0000-714b-e31d00000000.xml#m80c89a01-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000012-01f4-0000-48ff-28dd00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "%1",  CURRENT_DATE ) = 3 THEN  CASE  WHEN "%2" = 'Debit' THEN -("%3") WHEN "%2" = 'Credit' THEN "%3" ELSE 0 END  ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 3 THEN  CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_TYPE_I" = 'Debit' THEN -("Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_AMT") WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_TYPE_I" = 'Credit' THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_AMT" ELSE 0 END  ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-48ff-28dd00000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000012-01f4-0000-48ff-28dd00000000-m80c5e8e8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8e8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000012-01f4-0000-48ff-28dd00000000-m80c5e8f7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000013-01f4-0000-2ce2-828e00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - CRM - Account Transaction Last 6 Months"."# of POS TXNs Last 6 Months"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-2ce2-828e00000000-m80c89a03-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c899ef-07f3-0000-714b-e31d00000000.xml#m80c89a03-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000014-01f4-0000-cc58-213900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'POS' THEN 1 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_CATGRY_I" = 'POS' THEN 1 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-cc58-213900000000-m80c5e8ea-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8ea-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000015-01f4-0000-373e-a72000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - CRM - Account Transaction Last 6 Months"."# of POS TXNs 1 Month Ago"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-373e-a72000000000-m80c89a05-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c899ef-07f3-0000-714b-e31d00000000.xml#m80c89a05-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000016-01f4-0000-3a4a-c14600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'POS' AND  TIMESTAMPDIFF( SQL_TSI_MONTH , "%2",  CURRENT_DATE ) = 1 THEN 1 ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_CATGRY_I" = 'POS' AND  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 1 THEN 1 ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000016-01f4-0000-3a4a-c14600000000-m80c5e8ea-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8ea-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000016-01f4-0000-3a4a-c14600000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000017-01f4-0000-7eb8-810800000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - CRM - Account Transaction Last 6 Months"."# of POS TXNs 2 Months Ago"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-7eb8-810800000000-m80c89a07-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c899ef-07f3-0000-714b-e31d00000000.xml#m80c89a07-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000018-01f4-0000-2417-9c0500000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'POS' AND  TIMESTAMPDIFF( SQL_TSI_MONTH , "%2",  CURRENT_DATE ) = 2 THEN 1 ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_CATGRY_I" = 'POS' AND  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 2 THEN 1 ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000018-01f4-0000-2417-9c0500000000-m80c5e8ea-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8ea-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-2417-9c0500000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000019-01f4-0000-210b-e29e00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - CRM - Account Transaction Last 6 Months"."# of POS TXNs 3 Months Ago"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-210b-e29e00000000-m80c89a09-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c899ef-07f3-0000-714b-e31d00000000.xml#m80c89a09-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000001a-01f4-0000-2ac5-ee9300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'POS' AND  TIMESTAMPDIFF( SQL_TSI_MONTH , "%2",  CURRENT_DATE ) = 3 THEN 1 ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_CATGRY_I" = 'POS' AND  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 3 THEN 1 ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001a-01f4-0000-2ac5-ee9300000000-m80c5e8ea-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8ea-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001a-01f4-0000-2ac5-ee9300000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000001b-01f4-0000-d012-261300000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 1 Month Ago"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001b-01f4-0000-d012-261300000000-m80c89a13-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c899ef-07f3-0000-714b-e31d00000000.xml#m80c89a13-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000001c-01f4-0000-f711-6b8700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "%1",  CURRENT_DATE ) = 1 THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 1 THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_FEE_AMT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001c-01f4-0000-f711-6b8700000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001c-01f4-0000-f711-6b8700000000-m80c5e8f9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f9-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000001d-01f4-0000-09f7-1b7500000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 3 Months Ago"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001d-01f4-0000-09f7-1b7500000000-m80c89a15-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c899ef-07f3-0000-714b-e31d00000000.xml#m80c89a15-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000001e-01f4-0000-3144-147300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "%1",  CURRENT_DATE ) = 3 THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 3 THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_FEE_AMT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001e-01f4-0000-3144-147300000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001e-01f4-0000-3144-147300000000-m80c5e8f9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f9-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000001f-01f4-0000-9e1a-547700000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 6 Months Ago"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001f-01f4-0000-9e1a-547700000000-m80c89a17-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c899ef-07f3-0000-714b-e31d00000000.xml#m80c89a17-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000020-01f4-0000-2148-820b00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "%1",  CURRENT_DATE ) = 6 THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 6 THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_FEE_AMT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000020-01f4-0000-2148-820b00000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000020-01f4-0000-2148-820b00000000-m80c5e8f9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f9-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000021-01f4-0000-3770-2ac000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - CRM - Account Transaction Last 6 Months"."Total Penalties Last 6 Months"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000021-01f4-0000-3770-2ac000000000-m80c89a19-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c899ef-07f3-0000-714b-e31d00000000.xml#m80c89a19-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000022-01f4-0000-c903-00ad00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Penalty' THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_CATGRY_I" = 'Penalty' THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_AMT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000022-01f4-0000-c903-00ad00000000-m80c5e8ea-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8ea-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000022-01f4-0000-c903-00ad00000000-m80c5e8f7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000023-01f4-0000-736c-0ee800000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 1 Month Ago"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000023-01f4-0000-736c-0ee800000000-m80c89a1b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c899ef-07f3-0000-714b-e31d00000000.xml#m80c89a1b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000024-01f4-0000-8239-5a9400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Penalty' AND  TIMESTAMPDIFF( SQL_TSI_MONTH , "%2",  CURRENT_DATE ) = 1 THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_CATGRY_I" = 'Penalty' AND  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 1 THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_AMT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000024-01f4-0000-8239-5a9400000000-m80c5e8ea-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8ea-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000024-01f4-0000-8239-5a9400000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000024-01f4-0000-8239-5a9400000000-m80c5e8f7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000025-01f4-0000-8b91-f29000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 2 Months Ago"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000025-01f4-0000-8b91-f29000000000-m80c89a1d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c899ef-07f3-0000-714b-e31d00000000.xml#m80c89a1d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000026-01f4-0000-ce5e-117e00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Penalty' AND  TIMESTAMPDIFF( SQL_TSI_MONTH , "%2",  CURRENT_DATE ) = 2 THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_CATGRY_I" = 'Penalty' AND  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 2 THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_AMT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000026-01f4-0000-ce5e-117e00000000-m80c5e8ea-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8ea-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000026-01f4-0000-ce5e-117e00000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000026-01f4-0000-ce5e-117e00000000-m80c5e8f7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000027-01f4-0000-54e0-842c00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 3 Months Ago"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000027-01f4-0000-54e0-842c00000000-m80c89a1f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c899ef-07f3-0000-714b-e31d00000000.xml#m80c89a1f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000028-01f4-0000-3822-e3c000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Penalty' AND  TIMESTAMPDIFF( SQL_TSI_MONTH , "%2",  CURRENT_DATE ) = 3 THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_CATGRY_I" = 'Penalty' AND  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 3 THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_F"."TRANS_AMT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000028-01f4-0000-3822-e3c000000000-m80c5e8ea-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8ea-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000028-01f4-0000-3822-e3c000000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000028-01f4-0000-3822-e3c000000000-m80c5e8f7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5e8f7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000029-01f4-0000-2ecd-6f5f00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - CRM - Account Transaction Last 6 Months"."# of ATM TXNs Last 6 Months"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000029-01f4-0000-2ecd-6f5f00000000-m80c89a21-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c899ef-07f3-0000-714b-e31d00000000.xml#m80c89a21-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000002a-01f4-0000-ac19-44cb00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'ATM' THEN 1 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ACCNT_TXN_D"."TXN_CATGRY_I" = 'ATM' THEN 1 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002a-01f4-0000-ac19-44cb00000000-m80c5e8ea-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5e8ea-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000002b-01f4-0000-6b4d-1da600000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 1 Month Ago"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002b-01f4-0000-6b4d-1da600000000-m80c89a25-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c899ef-07f3-0000-714b-e31d00000000.xml#m80c89a25-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000002c-01f4-0000-954e-7f4500000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "%1",  CURRENT_DATE ) = 1 THEN 1 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 1 THEN 1 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002c-01f4-0000-954e-7f4500000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000002d-01f4-0000-aad5-acf000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 2 Months Ago"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002d-01f4-0000-aad5-acf000000000-m80c89a27-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c899ef-07f3-0000-714b-e31d00000000.xml#m80c89a27-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000002e-01f4-0000-03c0-6c2c00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "%1",  CURRENT_DATE ) = 2 THEN 1 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 2 THEN 1 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002e-01f4-0000-03c0-6c2c00000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000002f-01f4-0000-f480-0f9e00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Marketing Contact List"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 3 Months Ago"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002f-01f4-0000-f480-0f9e00000000-m80c89a29-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c899ef-07f3-0000-714b-e31d00000000.xml#m80c89a29-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000030-01f4-0000-f70e-63a600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "%1",  CURRENT_DATE ) = 3 THEN 1 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT",  CURRENT_DATE ) = 3 THEN 1 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000030-01f4-0000-f70e-63a600000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5bf40-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5bf40-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5bf87-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c673b2-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5bf86-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5bf86-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5bf87-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c673b3-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5bf87-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5bf87-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5bf40-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c673b2-0bbe-0000-714b-e31d00000000"/>
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c5bf87-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5bf86-0bb9-0000-714b-e31d00000000.xml#m80c5bf86-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5bf87-0bb9-0000-714b-e31d00000000.xml#m80c673b3-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<WhereClause mdsid="m00000031-01f4-0000-aff7-97b100000000" name="WhereClause">
+<ExprText><![CDATA["%1" >  TIMESTAMPADD( SQL_TSI_MONTH , -(7),  CURRENT_DATE )]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Transaction_Date"."DAY_DT" >  TIMESTAMPADD( SQL_TSI_MONTH , -(7),  CURRENT_DATE )]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000031-01f4-0000-aff7-97b100000000-m80c5dee5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf40-0bb9-0000-714b-e31d00000000.xml#m80c5dee5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</WhereClause>
+<GroupBy mdsid="m00000032-01f4-0000-1645-775200000000" name="GroupBy">
+<ExprText><![CDATA[ GROUPBYLEVEL("%1", "%2")]]></ExprText>
+<ExprTextDesc><![CDATA[ GROUPBYLEVEL("Marketing Contact List"."Customer"."Account Detail", "Marketing Contact List"."Account Transactions"."Detail")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000032-01f4-0000-1645-775200000000-m80c8a52f-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c8a3e0-07e3-0000-714b-e31d00000000.xml#m80c8a52f-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000032-01f4-0000-1645-775200000000-m80c8a608-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c8a602-07e3-0000-714b-e31d00000000.xml#m80c8a608-07e9-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</GroupBy>
+<FragmentContent mdsid="m00000033-01f4-0000-7b3c-115f00000000" name="FragmentContent">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</FragmentContent>
+</LogicalTableSource>

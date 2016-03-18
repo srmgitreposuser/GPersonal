@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTableSource mdsid="m80000002-fee0-157e-9bbc-0a0e2d3b0000" name="Fact_WC_OP_ADDR_F" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isActive="true" logicalTableRef="/oracle/bi/server/base/LogicalTable/80000000-fee0-157e-9bbc-0a0e2d3b0000.xml#m80000000-fee0-157e-9bbc-0a0e2d3b0000">
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000001-01f4-0000-306e-567200000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Owning Party - Addresses"."# of Addresses"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-306e-567200000000-m80000008-fee0-157e-9bbc-0a0e2d3b0000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80000000-fee0-157e-9bbc-0a0e2d3b0000.xml#m80000008-fee0-157e-9bbc-0a0e2d3b0000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000002-01f4-0000-29dd-8bb300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OP_ADDR_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-29dd-8bb300000000-mc0000006-fb5a-157e-9bbc-0a0e2d3b0000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000000-fb5a-157e-9bbc-0a0e2d3b0000.xml#mc0000006-fb5a-157e-9bbc-0a0e2d3b0000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/c0000000-fb5a-157e-9bbc-0a0e2d3b0000.xml#mc0000000-fb5a-157e-9bbc-0a0e2d3b0000">
+</Link>
+<WhereClause mdsid="m00000003-01f4-0000-729d-acc600000000" name="WhereClause">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</WhereClause>
+<GroupBy mdsid="m00000004-01f4-0000-f2bc-691400000000" name="GroupBy">
+<ExprText><![CDATA[ GROUPBYLEVEL("%1", "%2", "%3", "%4", "%5")]]></ExprText>
+<ExprTextDesc><![CDATA[ GROUPBYLEVEL("Core 2"."Dim - Owning PartyDim"."Detail", "Core 2"."Dim - Owning Party AddressesDim"."Detail", "Core 2"."Dim - Address TypeDim"."Dim - Address Type Detail", "Core 2"."Dim - Addresses End DateDim"."Dim - Addresses End Date Detail", "Core 2"."Dim - Addresses Start DateDim"."Dim - Addresses Start Date Detail")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-f2bc-691400000000-m80c9b7ac-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c940f4-07e3-0000-714b-e31d00000000.xml#m80c9b7ac-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-f2bc-691400000000-mc0000001-ff7a-157e-9bbc-0a0e2d3b0000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/c0000000-ff7a-157e-9bbc-0a0e2d3b0000.xml#mc0000001-ff7a-157e-9bbc-0a0e2d3b0000"/>
+<RefObject refId="m00000004-01f4-0000-f2bc-691400000000-m80000001-8b0a-158e-806e-0a0e2d6d0000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80000000-8b0a-158e-806e-0a0e2d6d0000.xml#m80000001-8b0a-158e-806e-0a0e2d6d0000"/>
+<RefObject refId="m00000004-01f4-0000-f2bc-691400000000-mc0000001-e1c4-1587-806e-0a0e2d080000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/c0000000-e1c4-1587-806e-0a0e2d080000.xml#mc0000001-e1c4-1587-806e-0a0e2d080000"/>
+<RefObject refId="m00000004-01f4-0000-f2bc-691400000000-m40000001-e425-1587-806e-0a0e2d080000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/40000000-e425-1587-806e-0a0e2d080000.xml#m40000001-e425-1587-806e-0a0e2d080000"/>
+</ObjectRefList>
+</GroupBy>
+<FragmentContent mdsid="m00000005-01f4-0000-c0d7-a19400000000" name="FragmentContent">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</FragmentContent>
+</LogicalTableSource>

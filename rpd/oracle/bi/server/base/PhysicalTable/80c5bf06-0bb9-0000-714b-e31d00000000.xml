@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5bf06-0bb9-0000-714b-e31d00000000" name="Dim_W_ORDER_ITEM_F_Contact_First_and_Last_Order_Dates" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" x="1294" y="30" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb1-0bd3-0000-714b-e31d00000000.xml#m80c67bb1-0bd3-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT 
+DISTINCT
+X.C1 AS CONTACT_WID, 
+X.C2 AS FIRST_DT_WID, 
+X.C3 AS RECENT_DT_WID, 
+D.DAY_DT AS FIRST_ORDER_DT, 
+N.DAY_DT AS RECENT_ORDER_DT,
+PROD.X_SRM_DESC AS PROD_DESC,
+PROD.X_SRM_CALC_GROUP AS PROD_GROUP,
+PROD.X_SRM_CATEGORY_CD AS PROD_CAT
+FROM 
+(select CONTACT_WID AS C1, min(ORDER_DT_WID) AS C2, max(ORDER_DT_WID)AS C3 from W_ORDERITEM_F WHERE 
+CONTACT_WID=16752007 GROUP BY CONTACT_WID) X, 
+W_DAY_D D, W_DAY_D N, W_PRODUCT_D PROD,W_ORDERITEM_F F
+WHERE D.ROW_WID = X.C2 AND N.ROW_WID = X.C3 AND 
+PROD.ROW_WID=F.root_ln_prod_wid AND X.C2=F.ORDER_DT_WID AND F.CONTACT_WID=X.C1]]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c5d361-0bbb-0000-714b-e31d00000000" name="CONTACT_WID" dataType="INT" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5d362-0bbb-0000-714b-e31d00000000" name="FIRST_DT_WID" dataType="INT" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5d363-0bbb-0000-714b-e31d00000000" name="RECENT_DT_WID" dataType="INT" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5d364-0bbb-0000-714b-e31d00000000" name="FIRST_ORDER_DT" dataType="DATETIME" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5d365-0bbb-0000-714b-e31d00000000" name="RECENT_ORDER_DT" dataType="DATETIME" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c63998-0bbb-0000-714b-e31d00000000" name="PROD_DESC" dataType="VARCHAR" precision="50" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c63999-0bbb-0000-714b-e31d00000000" name="PROD_GROUP" dataType="VARCHAR" precision="50" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c6399a-0bbb-0000-714b-e31d00000000" name="PROD_CAT" dataType="VARCHAR" precision="50" specialType="none">
+</PhysicalColumn>
+<PhysicalKey mdsid="m80c6792e-0bc0-0000-714b-e31d00000000" name="CONTACT_WID">
+<RefColumns>
+<RefColumn refId="m80c6792e-0bc0-0000-714b-e31d00000000-m80c5d361-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bf06-0bb9-0000-714b-e31d00000000.xml#m80c5d361-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+</PhysicalTable>

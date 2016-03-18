@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5bf27-0bb9-0000-714b-e31d00000000" name="Fact_W_ACTIVITY_F_First_Opty_Activity_Response_TS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" x="1319" y="642" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb1-0bd3-0000-714b-e31d00000000.xml#m80c67bb1-0bd3-0000-714b-e31d00000000">
+<Description><![CDATA[The purpose of this query is to extend W_REVN_F fact table]]></Description>
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT A.OPTY_WID AS OPTY_WID, MIN(A.ACTUAL_START_DT) AS FIRST_ACT_TS 
+FROM VALUEOF(OLAPTBO).W_ACTIVITY_F A, VALUEOF(OLAPTBO).W_OPTY_D O
+WHERE A.OPTY_WID = O.ROW_WID and O.OPEN_DT < A.ACTUAL_START_DT
+GROUP BY A.OPTY_WID]]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c5d829-0bbb-0000-714b-e31d00000000" name="FIRST_ACT_TS" dataType="DATETIME" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5d82a-0bbb-0000-714b-e31d00000000" name="OPTY_WID" dataType="DOUBLE" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalKey mdsid="m80c67959-0bc0-0000-714b-e31d00000000" name="First Claim Activity Response Date_Key">
+<RefColumns>
+<RefColumn refId="m80c67959-0bc0-0000-714b-e31d00000000-m80c5d82a-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bf27-0bb9-0000-714b-e31d00000000.xml#m80c5d82a-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+</PhysicalTable>

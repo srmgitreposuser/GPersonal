@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5aa16-07f3-0000-714b-e31d00000000" name="Fact - Marketing - Count" iconIndex="93" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="701" y="502" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c56bbd-07d6-0000-714b-e31d00000000" name="# of Campaigns" isWriteable="false">
+<Description><![CDATA[# of Campaign Plans]]></Description>
+<MeasureDefn mdsid="m80c5b2a2-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b983-0802-0000-714b-e31d00000000" name="AggRule_2050:1222401076375824" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-230a-b50100000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - Marketing - Count"."# of Campaigns")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-230a-b50100000000-m80c56bbd-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bbd-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68f99-0f3c-0000-714b-e31d00000000" name="AD_3900:1222011076375613">
+<Expr mdsid="m00000002-01f4-0000-c35a-9b7100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  NOT "%1" IS NULL  THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  NOT "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."CAMP_ID" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."CAMP_ID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-c35a-9b7100000000-m80c5ea72-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5ea72-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bbe-07d6-0000-714b-e31d00000000" name="# of Stages" isWriteable="false">
+<Description><![CDATA[# of Campaign Plans]]></Description>
+<MeasureDefn mdsid="m80c5b2a3-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b984-0802-0000-714b-e31d00000000" name="AggRule_2050:1222431076375886" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-fd99-8af000000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - Marketing - Count"."# of Stages")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-fd99-8af000000000-m80c56bbe-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bbe-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68f9a-0f3c-0000-714b-e31d00000000" name="AD_3900:1222111076375613">
+<Expr mdsid="m00000004-01f4-0000-2687-f32e00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  NOT "%1" IS NULL  THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  NOT "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."STG_ID" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."STG_ID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-2687-f32e00000000-m80c5ea7e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5ea7e-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bbf-07d6-0000-714b-e31d00000000" name="# of Programs" isWriteable="false">
+<Description><![CDATA[# of Campaign Plans]]></Description>
+<MeasureDefn mdsid="m80c5b2a4-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb20-0802-0000-714b-e31d00000000" name="AggRule_2050:5020161235127472" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-6f89-020000000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - Marketing - Count"."# of Programs")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-6f89-020000000000-m80c56bbf-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bbf-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68f9b-0f3c-0000-714b-e31d00000000" name="AD_3900:1222191076375614">
+<Expr mdsid="m00000006-01f4-0000-eb87-75e700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  NOT "%1" IS NULL  THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  NOT "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."PROG_ID" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."PROG_ID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-eb87-75e700000000-m80c5ea87-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5ea87-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bc0-07d6-0000-714b-e31d00000000" name="# of Marketing Plans" isWriteable="false">
+<Description><![CDATA[# of Campaign Plans]]></Description>
+<MeasureDefn mdsid="m80c5b2a5-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b985-0802-0000-714b-e31d00000000" name="AggRule_2050:1222471076375972" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-78e6-46ef00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - Marketing - Count"."# of Marketing Plans")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-78e6-46ef00000000-m80c56bc0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bc0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68f9c-0f3c-0000-714b-e31d00000000" name="AD_3900:1222271076375615">
+<Expr mdsid="m00000008-01f4-0000-5cae-40e600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."MKTPLN_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-5cae-40e600000000-m80c5eab7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5eab7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bc1-07d6-0000-714b-e31d00000000" name="# Stand Alone Campaigns" isWriteable="false">
+<Description><![CDATA[# of Stand Alone Campaigns]]></Description>
+<MeasureDefn mdsid="m80c5b2a6-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b986-0802-0000-714b-e31d00000000" name="AggRule_2050:1222491076376021" isDefault="true">
+<Expr mdsid="m00000009-01f4-0000-f8b0-bd2800000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - Marketing - Count"."# Stand Alone Campaigns")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-f8b0-bd2800000000-m80c56bc1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bc1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68f9d-0f3c-0000-714b-e31d00000000" name="AD_3900:1222351076375616">
+<Expr mdsid="m0000000a-01f4-0000-850e-d42400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."SA_CAMP_FLG" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."CAMP_ID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-850e-d42400000000-m80c5ea7d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5ea7d-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000a-01f4-0000-850e-d42400000000-m80c5ea72-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5ea72-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bc2-07d6-0000-714b-e31d00000000" name="# of Tactics" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000000b-01f4-0000-24f5-606d00000000" name="Expr">
+<ExprText><![CDATA["%1" + "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - Marketing - Count"."# of Programs" + "Core"."Fact - Marketing - Count"."# Stand Alone Campaigns"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-24f5-606d00000000-m80c56bbf-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bbf-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000b-01f4-0000-24f5-606d00000000-m80c56bc1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bc1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68f9e-0f3c-0000-714b-e31d00000000" name="AD_3900:1222511076376060">
+<Expr mdsid="m0000000c-01f4-0000-5632-357b00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bc3-07d6-0000-714b-e31d00000000" name="# of Events" isWriteable="false">
+<Description><![CDATA[# of Events]]></Description>
+<MeasureDefn mdsid="m80c5b2a7-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b987-0802-0000-714b-e31d00000000" name="AggRule_2050:1222791076376761" isDefault="true">
+<Expr mdsid="m0000000d-01f4-0000-11df-7eec00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - Marketing - Count"."# of Events")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-11df-7eec00000000-m80c56bc3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bc3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68f9f-0f3c-0000-714b-e31d00000000" name="AD_3900:1222671076376384">
+<Expr mdsid="m0000000e-01f4-0000-603c-c17200000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  NOT "%1" IS NULL  THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  NOT "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."EVT_ID" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."EVT_ID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-603c-c17200000000-m80c5eaa1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5eaa1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bc4-07d6-0000-714b-e31d00000000" name="# of Event Plans" isWriteable="false">
+<Description><![CDATA[# of Event Plans]]></Description>
+<MeasureDefn mdsid="m80c5b2a8-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b988-0802-0000-714b-e31d00000000" name="AggRule_2050:1222821076376832" isDefault="true">
+<Expr mdsid="m0000000f-01f4-0000-e6f9-97c700000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - Marketing - Count"."# of Event Plans")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-e6f9-97c700000000-m80c56bc4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bc4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68fa0-0f3c-0000-714b-e31d00000000" name="AD_3900:1222711076376384">
+<Expr mdsid="m00000010-01f4-0000-84b9-021a00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  NOT "%1" IS NULL  THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  NOT "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."EVTPLN_ID" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."EVTPLN_ID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-84b9-021a00000000-m80c5eaac-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5eaac-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bc5-07d6-0000-714b-e31d00000000" name="# of Sessions" isWriteable="false">
+<MeasureDefn mdsid="m80c5b2a9-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b989-0802-0000-714b-e31d00000000" name="AggRule_2050:1222851076376879" isDefault="true">
+<Expr mdsid="m00000011-01f4-0000-c8c5-866e00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - Marketing - Count"."# of Sessions")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-c8c5-866e00000000-m80c56bc5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bc5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68fa1-0f3c-0000-714b-e31d00000000" name="AD_3900:1222751076376384">
+<Expr mdsid="m00000012-01f4-0000-bfc9-6d3e00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  NOT "%1" IS NULL  THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  NOT "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."SESN_ID" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."SESN_ID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-bfc9-6d3e00000000-m80c5ea96-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5ea96-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bca-07d6-0000-714b-e31d00000000" name="Campaign Budget Requested" isWriteable="false">
+<Description><![CDATA[Initial budget requested for a campaign]]></Description>
+<MeasureDefn mdsid="m80c5b2ac-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b999-0802-0000-714b-e31d00000000" name="AggRule_2050:1573751080411649" isDefault="true">
+<Expr mdsid="m00000013-01f4-0000-63b4-a8c400000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Marketing - Count"."Campaign Budget Requested")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-63b4-a8c400000000-m80c56bca-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bca-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68fa6-0f3c-0000-714b-e31d00000000" name="AD_3900:1225251077044278">
+<Expr mdsid="m00000014-01f4-0000-1199-41b700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Campaign' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."SRC_TYPE" = 'Campaign' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."BUDGET_REQ" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-1199-41b700000000-m80c5eabf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5eabf-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000014-01f4-0000-1199-41b700000000-m80c5eac2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5eac2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bd1-07d6-0000-714b-e31d00000000" name="Program Budget Requested" isWriteable="false">
+<Description><![CDATA[Initial budget requested for a Program]]></Description>
+<MeasureDefn mdsid="m80c5b2ae-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b98b-0802-0000-714b-e31d00000000" name="AggRule_2050:1402161077846014" isDefault="true">
+<Expr mdsid="m00000015-01f4-0000-86b0-9d8900000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Marketing - Count"."Program Budget Requested")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-86b0-9d8900000000-m80c56bd1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bd1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68fad-0f3c-0000-714b-e31d00000000" name="AD_3900:1401931077839114">
+<Expr mdsid="m00000016-01f4-0000-f91d-b0cf00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'PROGRAM CONTAINER' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."SRC_TYPE" = 'PROGRAM CONTAINER' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."BUDGET_REQ" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000016-01f4-0000-f91d-b0cf00000000-m80c5eabf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5eabf-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000016-01f4-0000-f91d-b0cf00000000-m80c5eac2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5eac2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bd2-07d6-0000-714b-e31d00000000" name="Event Plan Budget Requested" isWriteable="false">
+<MeasureDefn mdsid="m80c5b2af-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb61-0802-0000-714b-e31d00000000" name="AggRule_2050:5432841258569326" isDefault="true">
+<Expr mdsid="m00000017-01f4-0000-46cc-db3900000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Marketing - Count"."Event Plan Budget Requested")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-46cc-db3900000000-m80c56bd2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bd2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68fae-0f3c-0000-714b-e31d00000000" name="AD_3900:1402401077846303">
+<Expr mdsid="m00000018-01f4-0000-9419-7ba800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'PAREVENT' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."SRC_TYPE" = 'PAREVENT' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."BUDGET_REQ" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000018-01f4-0000-9419-7ba800000000-m80c5eabf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5eabf-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-9419-7ba800000000-m80c5eac2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5eac2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bd3-07d6-0000-714b-e31d00000000" name="Event Budget Requested" isWriteable="false">
+<Description><![CDATA[Initial budget requested for an Event]]></Description>
+<MeasureDefn mdsid="m80c5b2b0-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb62-0802-0000-714b-e31d00000000" name="AggRule_2050:5432851258569326" isDefault="true">
+<Expr mdsid="m00000019-01f4-0000-0d9e-19b200000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Marketing - Count"."Event Budget Requested")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-0d9e-19b200000000-m80c56bd3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bd3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68faf-0f3c-0000-714b-e31d00000000" name="AD_3900:1402481077846303">
+<Expr mdsid="m0000001a-01f4-0000-f8fa-455400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'EVENT' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."SRC_TYPE" = 'EVENT' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."BUDGET_REQ" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001a-01f4-0000-f8fa-455400000000-m80c5eabf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5eabf-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001a-01f4-0000-f8fa-455400000000-m80c5eac2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5eac2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bd4-07d6-0000-714b-e31d00000000" name="Session Budget Requested" isWriteable="false">
+<MeasureDefn mdsid="m80c5b2b1-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b98c-0802-0000-714b-e31d00000000" name="AggRule_2050:1402551077846341" isDefault="true">
+<Expr mdsid="m0000001b-01f4-0000-3b7b-a61800000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Marketing - Count"."Session Budget Requested")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001b-01f4-0000-3b7b-a61800000000-m80c56bd4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bd4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68fb0-0f3c-0000-714b-e31d00000000" name="AD_3900:1402561077846341">
+<Expr mdsid="m0000001c-01f4-0000-8203-a2f900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'SESSION' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."SRC_TYPE" = 'SESSION' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."BUDGET_REQ" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001c-01f4-0000-8203-a2f900000000-m80c5eabf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5eabf-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001c-01f4-0000-8203-a2f900000000-m80c5eac2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5eac2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bd5-07d6-0000-714b-e31d00000000" name="# of Tactics - including Event Plans" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000001d-01f4-0000-5bbe-3bc200000000" name="Expr">
+<ExprText><![CDATA["%1" + "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - Marketing - Count"."# of Tactics" + "Core"."Fact - Marketing - Count"."# of Event Plans"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001d-01f4-0000-5bbe-3bc200000000-m80c56bc2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bc2-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001d-01f4-0000-5bbe-3bc200000000-m80c56bc4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bc4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68fb1-0f3c-0000-714b-e31d00000000" name="AD_3900:1403131077848483">
+<Expr mdsid="m0000001e-01f4-0000-5df3-88ca00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bd9-07d6-0000-714b-e31d00000000" name="Campaign Authorised Spend" isWriteable="false">
+<Description><![CDATA[Approved budget for a Campaign (campaign.budget amount)]]></Description>
+<MeasureDefn mdsid="m80c5b2b6-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b998-0802-0000-714b-e31d00000000" name="AggRule_2050:1573741080411535" isDefault="true">
+<Expr mdsid="m0000001f-01f4-0000-d701-690b00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Marketing - Count"."Campaign Authorised Spend")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001f-01f4-0000-d701-690b00000000-m80c56bd9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bd9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68fb5-0f3c-0000-714b-e31d00000000" name="AD_3900:1573721080411485">
+<Expr mdsid="m00000020-01f4-0000-2759-91d700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Campaign' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."SRC_TYPE" = 'Campaign' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."BDGT_AMT" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000020-01f4-0000-2759-91d700000000-m80c5eabf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5eabf-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000020-01f4-0000-2759-91d700000000-m80c5f2c1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5f2c1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bda-07d6-0000-714b-e31d00000000" name="Program Budget Assigned" isWriteable="false">
+<Description><![CDATA[Approved budget for a Program]]></Description>
+<MeasureDefn mdsid="m80c5b2b7-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b99a-0802-0000-714b-e31d00000000" name="AggRule_2050:1573841080411722" isDefault="true">
+<Expr mdsid="m00000021-01f4-0000-94a3-cd1300000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Marketing - Count"."Program Budget Assigned")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000021-01f4-0000-94a3-cd1300000000-m80c56bda-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bda-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68fb6-0f3c-0000-714b-e31d00000000" name="AD_3900:1573831080411661">
+<Expr mdsid="m00000022-01f4-0000-06fd-0adf00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'PROGRAM CONTAINER' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."SRC_TYPE" = 'PROGRAM CONTAINER' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."BDGT_AMT" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000022-01f4-0000-06fd-0adf00000000-m80c5eabf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5eabf-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000022-01f4-0000-06fd-0adf00000000-m80c5f2c1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5f2c1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bdb-07d6-0000-714b-e31d00000000" name="Event Plan Budget Assigned" isWriteable="false">
+<MeasureDefn mdsid="m80c5b2b8-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb63-0802-0000-714b-e31d00000000" name="AggRule_2050:5432861258569326" isDefault="true">
+<Expr mdsid="m00000023-01f4-0000-d977-73ae00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Marketing - Count"."Event Plan Budget Assigned")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000023-01f4-0000-d977-73ae00000000-m80c56bdb-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bdb-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68fb7-0f3c-0000-714b-e31d00000000" name="AD_3900:1573941080411798">
+<Expr mdsid="m00000024-01f4-0000-e0f5-1ae600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'PAREVENT' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."SRC_TYPE" = 'PAREVENT' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."BDGT_AMT" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000024-01f4-0000-e0f5-1ae600000000-m80c5eabf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5eabf-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000024-01f4-0000-e0f5-1ae600000000-m80c5f2c1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5f2c1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bdc-07d6-0000-714b-e31d00000000" name="Event Budget Assigned" isWriteable="false">
+<Description><![CDATA[Approved budget for an Event]]></Description>
+<MeasureDefn mdsid="m80c5b2b9-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb64-0802-0000-714b-e31d00000000" name="AggRule_2050:5432871258569326" isDefault="true">
+<Expr mdsid="m00000025-01f4-0000-fc77-c7ec00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Marketing - Count"."Event Budget Assigned")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000025-01f4-0000-fc77-c7ec00000000-m80c56bdc-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bdc-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68fb8-0f3c-0000-714b-e31d00000000" name="AD_3900:1574031080411870">
+<Expr mdsid="m00000026-01f4-0000-9532-7ca800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'EVENT' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."SRC_TYPE" = 'EVENT' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."BDGT_AMT" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000026-01f4-0000-9532-7ca800000000-m80c5eabf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5eabf-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000026-01f4-0000-9532-7ca800000000-m80c5f2c1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5f2c1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bdd-07d6-0000-714b-e31d00000000" name="Session Budget Assigned" isWriteable="false">
+<MeasureDefn mdsid="m80c5b2ba-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b99b-0802-0000-714b-e31d00000000" name="AggRule_2050:1574131080412057" isDefault="true">
+<Expr mdsid="m00000027-01f4-0000-a824-264400000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Marketing - Count"."Session Budget Assigned")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000027-01f4-0000-a824-264400000000-m80c56bdd-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bdd-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68fb9-0f3c-0000-714b-e31d00000000" name="AD_3900:1574121080411958">
+<Expr mdsid="m00000028-01f4-0000-be11-ed7b00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'SESSION' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."SRC_TYPE" = 'SESSION' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."BDGT_AMT" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000028-01f4-0000-be11-ed7b00000000-m80c5eabf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5eabf-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000028-01f4-0000-be11-ed7b00000000-m80c5f2c1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5f2c1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bde-07d6-0000-714b-e31d00000000" name="SA Campaign Budget Requested" isWriteable="false">
+<MeasureDefn mdsid="m80c5b2bb-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b99c-0802-0000-714b-e31d00000000" name="AggRule_2050:1574441080576018" isDefault="true">
+<Expr mdsid="m00000029-01f4-0000-0e9b-9f5a00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Marketing - Count"."SA Campaign Budget Requested")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000029-01f4-0000-0e9b-9f5a00000000-m80c56bde-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bde-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68fba-0f3c-0000-714b-e31d00000000" name="AD_3900:1574431080575932">
+<Expr mdsid="m0000002a-01f4-0000-2725-3f9300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Campaign' AND "%2" = 'Y' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."SRC_TYPE" = 'Campaign' AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."SA_CAMP_FLG" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."BUDGET_REQ" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002a-01f4-0000-2725-3f9300000000-m80c5eabf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5eabf-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002a-01f4-0000-2725-3f9300000000-m80c5ea7d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5ea7d-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002a-01f4-0000-2725-3f9300000000-m80c5eac2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5eac2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bdf-07d6-0000-714b-e31d00000000" name="Marketing Plan Budget Requested" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000002b-01f4-0000-5501-ae9200000000" name="Expr">
+<ExprText><![CDATA["%1" + "%2" + "%3"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - Marketing - Count"."SA Campaign Budget Requested" + "Core"."Fact - Marketing - Count"."Event Plan Budget Requested" + "Core"."Fact - Marketing - Count"."Program Budget Requested"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002b-01f4-0000-5501-ae9200000000-m80c56bde-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bde-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002b-01f4-0000-5501-ae9200000000-m80c56bd2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bd2-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002b-01f4-0000-5501-ae9200000000-m80c56bd1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bd1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68fbb-0f3c-0000-714b-e31d00000000" name="AD_3900:1574521080576031">
+<Expr mdsid="m0000002c-01f4-0000-b0f4-aadc00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56be0-07d6-0000-714b-e31d00000000" name="SA Campaign Budget Assigned" isWriteable="false">
+<MeasureDefn mdsid="m80c5b2bc-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b99d-0802-0000-714b-e31d00000000" name="AggRule_2050:1574621080576178" isDefault="true">
+<Expr mdsid="m0000002d-01f4-0000-5958-dc0d00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Marketing - Count"."SA Campaign Budget Assigned")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002d-01f4-0000-5958-dc0d00000000-m80c56be0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56be0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68fbc-0f3c-0000-714b-e31d00000000" name="AD_3900:1574611080576133">
+<Expr mdsid="m0000002e-01f4-0000-7b80-fcfd00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Campaign' AND "%2" = 'Y' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."SRC_TYPE" = 'Campaign' AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."SA_CAMP_FLG" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."BDGT_AMT" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002e-01f4-0000-7b80-fcfd00000000-m80c5eabf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5eabf-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002e-01f4-0000-7b80-fcfd00000000-m80c5ea7d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5ea7d-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002e-01f4-0000-7b80-fcfd00000000-m80c5f2c1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5f2c1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56be1-07d6-0000-714b-e31d00000000" name="Marketing Plan Budget Assigned" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000002f-01f4-0000-23e0-a14a00000000" name="Expr">
+<ExprText><![CDATA["%1" + "%2" + "%3"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - Marketing - Count"."SA Campaign Budget Assigned" + "Core"."Fact - Marketing - Count"."Event Plan Budget Assigned" + "Core"."Fact - Marketing - Count"."Program Budget Assigned"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002f-01f4-0000-23e0-a14a00000000-m80c56be0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56be0-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002f-01f4-0000-23e0-a14a00000000-m80c56bdb-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bdb-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002f-01f4-0000-23e0-a14a00000000-m80c56bda-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bda-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68fbd-0f3c-0000-714b-e31d00000000" name="AD_3900:1574701080576189">
+<Expr mdsid="m00000030-01f4-0000-5577-e80d00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5726e-07d6-0000-714b-e31d00000000" name="Campaign Budgets YTD" iconIndex="62" isWriteable="false">
+<Description><![CDATA[Sum of campaign budgets calendar year to date (if campaign.startdate < today then campaign.budget)]]></Description>
+<MeasureDefn mdsid="m80c5b383-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb1d-0802-0000-714b-e31d00000000" name="AggRule_2050:5013911235069207" isDefault="true">
+<Expr mdsid="m00000031-01f4-0000-b353-ef2c00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Marketing - Count"."Campaign Budgets YTD")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000031-01f4-0000-b353-ef2c00000000-m80c5726e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c5726e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69780-0f3c-0000-714b-e31d00000000" name="AD_3900:4917861225124596">
+<Expr mdsid="m00000032-01f4-0000-4e6c-223f00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" BETWEEN  VALUEOF("%2") AND  CURRENT_DATE  AND "%3" = 'Campaign' THEN "%4" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."CAMP_START_DT" BETWEEN  VALUEOF("CRUK Dates"."CRUK_START_OF_CURRYEAR") AND  CURRENT_DATE  AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."SRC_TYPE" = 'Campaign' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."BDGT_AMT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000032-01f4-0000-4e6c-223f00000000-m80c5ea6a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5ea6a-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000032-01f4-0000-4e6c-223f00000000-m80c67c3c-0bd7-0000-714b-e31d00000000" objectRef="/oracle/bi/server/base/Variable/80c67c3c-0bd7-0000-714b-e31d00000000.xml#m80c67c3c-0bd7-0000-714b-e31d00000000"/>
+<RefObject refId="m00000032-01f4-0000-4e6c-223f00000000-m80c5eabf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5eabf-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000032-01f4-0000-4e6c-223f00000000-m80c5f2c1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5f2c1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57309-07d6-0000-714b-e31d00000000" name="Campaign Budget Assigned" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b3bc-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bada-0802-0000-714b-e31d00000000" name="AggRule_2050:4929861227279771" isDefault="true">
+<Expr mdsid="m00000033-01f4-0000-3a9b-499000000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Marketing - Count"."Campaign Budget Assigned")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000033-01f4-0000-3a9b-499000000000-m80c57309-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c57309-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6981b-0f3c-0000-714b-e31d00000000" name="AD_3900:4929881227279773">
+<Expr mdsid="m00000034-01f4-0000-0a4a-84fc00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Campaign' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."SRC_TYPE" = 'Campaign' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Campaign"."BDGT_AMT" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000034-01f4-0000-0a4a-84fc00000000-m80c5eabf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5eabf-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000034-01f4-0000-0a4a-84fc00000000-m80c5f2c1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c5f2c1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5aa16-07f3-0000-714b-e31d00000000-m80c5ac2a-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ac2a-07f5-0000-714b-e31d00000000.xml#m80c5ac2a-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c5aa16-07f3-0000-714b-e31d00000000-m80c5acb8-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5acb8-07f5-0000-714b-e31d00000000.xml#m80c5acb8-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c5aa16-07f3-0000-714b-e31d00000000-m80c6e338-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c6e338-07f5-0000-714b-e31d00000000.xml#m80c6e338-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

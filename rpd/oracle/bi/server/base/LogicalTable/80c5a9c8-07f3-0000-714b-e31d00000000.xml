@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9c8-07f3-0000-714b-e31d00000000" name="Fact - CRM - Next Order Same Account" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="613" y="375" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c567f3-07d6-0000-714b-e31d00000000" name="# Purchasers of Next Product (Accounts)" isWriteable="false">
+<Description><![CDATA[This metric measures the # of Accounts for a given Product that were immediately followed by the purchase of a given Next Product Purchased by the same Account.]]></Description>
+<MeasureDefn mdsid="m80c5b1c4-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b8ce-0802-0000-714b-e31d00000000" name="AggRule_2050:182601074282429" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-b6e7-313a00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - CRM - Next Order Same Account"."# Purchasers of Next Product (Accounts)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-b6e7-313a00000000-m80c567f3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9c8-07f3-0000-714b-e31d00000000.xml#m80c567f3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68bd0-0f3c-0000-714b-e31d00000000" name="AD_3900:840411074282455">
+<Expr mdsid="m00000002-01f4-0000-5757-4ffa00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ORDERITEM_F_PRODUCTS_SAME_ACCOUNT_OV_F"."ACCT_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-5757-4ffa00000000-m80c5e017-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf47-0bb9-0000-714b-e31d00000000.xml#m80c5e017-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c567f4-07d6-0000-714b-e31d00000000" name="PROD_WID" isWriteable="false">
+<AttrDefn mdsid="m80c68bd1-0f3c-0000-714b-e31d00000000" name="AD_3900:840421074282455">
+<Expr mdsid="m00000003-01f4-0000-f8c9-c0f100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ORDERITEM_F_PRODUCTS_SAME_ACCOUNT_OV_F"."PROD_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-f8c9-c0f100000000-m80c5e015-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf47-0bb9-0000-714b-e31d00000000.xml#m80c5e015-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c567f5-07d6-0000-714b-e31d00000000" name="NEXTORDER_PROD_WID" isWriteable="false">
+<AttrDefn mdsid="m80c68bd2-0f3c-0000-714b-e31d00000000" name="AD_3900:840431074282455">
+<Expr mdsid="m00000004-01f4-0000-4e56-d56c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ORDERITEM_F_PRODUCTS_SAME_ACCOUNT_OV_F"."NEXTORDER_PROD_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-4e56-d56c00000000-m80c5e016-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf47-0bb9-0000-714b-e31d00000000.xml#m80c5e016-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c567f6-07d6-0000-714b-e31d00000000" name="ORDER_WID" isWriteable="false">
+<AttrDefn mdsid="m80c68bd3-0f3c-0000-714b-e31d00000000" name="AD_3900:840441074282455">
+<Expr mdsid="m00000005-01f4-0000-e297-8de400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ORDERITEM_F_PRODUCTS_SAME_ACCOUNT_OV_F"."ORDER_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-e297-8de400000000-m80c5e018-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf47-0bb9-0000-714b-e31d00000000.xml#m80c5e018-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c567f7-07d6-0000-714b-e31d00000000" name="NEXTORDER_WID" isWriteable="false">
+<AttrDefn mdsid="m80c68bd4-0f3c-0000-714b-e31d00000000" name="AD_3900:840451074282455">
+<Expr mdsid="m00000006-01f4-0000-b782-37aa00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ORDERITEM_F_PRODUCTS_SAME_ACCOUNT_OV_F"."NEXTORDER_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-b782-37aa00000000-m80c5e019-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf47-0bb9-0000-714b-e31d00000000.xml#m80c5e019-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58c93-07d8-0000-714b-e31d00000000" name="PROD_WID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58c93-07d8-0000-714b-e31d00000000-m80c567f4-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9c8-07f3-0000-714b-e31d00000000.xml#m80c567f4-07d6-0000-714b-e31d00000000"/>
+<RefLogicalColumn refId="m80c58c93-07d8-0000-714b-e31d00000000-m80c567f5-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9c8-07f3-0000-714b-e31d00000000.xml#m80c567f5-07d6-0000-714b-e31d00000000"/>
+<RefLogicalColumn refId="m80c58c93-07d8-0000-714b-e31d00000000-m80c567f6-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9c8-07f3-0000-714b-e31d00000000.xml#m80c567f6-07d6-0000-714b-e31d00000000"/>
+<RefLogicalColumn refId="m80c58c93-07d8-0000-714b-e31d00000000-m80c567f7-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9c8-07f3-0000-714b-e31d00000000.xml#m80c567f7-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5a9c8-07f3-0000-714b-e31d00000000-m80c5abf0-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5abf0-07f5-0000-714b-e31d00000000.xml#m80c5abf0-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

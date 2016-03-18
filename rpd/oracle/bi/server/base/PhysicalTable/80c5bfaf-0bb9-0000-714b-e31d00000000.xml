@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5bfaf-0bb9-0000-714b-e31d00000000" name="Fact_W_INS_CLAIM_F_Claim_Header" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" x="242" y="437" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb1-0bd3-0000-714b-e31d00000000.xml#m80c67bb1-0bd3-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT  
+CLAIM_WID as CLAIM_WID,
+ACCNT_WID as ACCNT_WID,
+ASSET_WID as ASSET_WID,
+CONTACT_WID as CONTACT_WID,
+INDUST_WID as INDUST_WID,
+PROD_WID as PROD_WID,
+DATASOURCE_NUM_ID as DATASOURCE_NUM_ID,
+ETL_PROC_WID as ETL_PROC_WID,
+LOSS_DT_WID as LOSS_DT_WID,  
+PAID_DT_WID as PAID_DT_WID, 
+RECEIVED_DT_WID as RECEIVED_DT_WID, 
+REPORTED_DT_WID as REPORTED_DT_WID, 
+SERVICE_DT_WID as SERVICE_DT_WID,
+SUM (PAID_AMT) AS PAID_AMT, 
+SUM (RECV_AMT_SLVGE) AS RECV_AMT_SLVGE, 
+SUM (RECV_AMT_SUBROG) AS RECV_AMT_SUBROG, 
+SUM (RESERVE_AMT) AS RESERVE_AMT
+FROM W_INS_CLAIM_F
+GROUP BY
+CLAIM_WID,
+ACCNT_WID,
+ASSET_WID,
+CONTACT_WID,
+INDUST_WID,
+PROD_WID,
+DATASOURCE_NUM_ID,
+ETL_PROC_WID,
+LOSS_DT_WID,  
+PAID_DT_WID, 
+RECEIVED_DT_WID, 
+REPORTED_DT_WID, 
+SERVICE_DT_WID]]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c5ec72-0bbb-0000-714b-e31d00000000" name="ACCNT_WID" dataType="DOUBLE" precision="10" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5ec73-0bbb-0000-714b-e31d00000000" name="ASSET_WID" dataType="DOUBLE" precision="10" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5ec74-0bbb-0000-714b-e31d00000000" name="CLAIM_WID" dataType="DOUBLE" precision="10" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5ec75-0bbb-0000-714b-e31d00000000" name="CONTACT_WID" dataType="DOUBLE" precision="10" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5ec76-0bbb-0000-714b-e31d00000000" name="DATASOURCE_NUM_ID" dataType="DOUBLE" precision="10" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5ec77-0bbb-0000-714b-e31d00000000" name="ETL_PROC_WID" dataType="DOUBLE" precision="10" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5ec78-0bbb-0000-714b-e31d00000000" name="INDUST_WID" dataType="DOUBLE" precision="10" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5ec79-0bbb-0000-714b-e31d00000000" name="LOSS_DT_WID" dataType="DOUBLE" precision="10" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5ec7a-0bbb-0000-714b-e31d00000000" name="PAID_DT_WID" dataType="DOUBLE" precision="10" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5ec7b-0bbb-0000-714b-e31d00000000" name="PROD_WID" dataType="DOUBLE" precision="10" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5ec7c-0bbb-0000-714b-e31d00000000" name="RECEIVED_DT_WID" dataType="DOUBLE" precision="10" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5ec7d-0bbb-0000-714b-e31d00000000" name="REPORTED_DT_WID" dataType="DOUBLE" precision="10" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5ec7e-0bbb-0000-714b-e31d00000000" name="SERVICE_DT_WID" dataType="DOUBLE" precision="10" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5ec7f-0bbb-0000-714b-e31d00000000" name="PAID_AMT" dataType="DOUBLE" scale="7" precision="22" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5ec80-0bbb-0000-714b-e31d00000000" name="RESERVE_AMT" dataType="DOUBLE" scale="7" precision="22" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5ec81-0bbb-0000-714b-e31d00000000" name="RECV_AMT_SLVGE" dataType="DOUBLE" scale="7" precision="22" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5ec82-0bbb-0000-714b-e31d00000000" name="RECV_AMT_SUBROG" dataType="DOUBLE" scale="7" precision="22" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalForeignKey mdsid="m80c673de-0bbe-0000-714b-e31d00000000" name="W_INS_CLAIM_F_FKey" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5beaa-0bb9-0000-714b-e31d00000000.xml#m80c678ac-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c673de-0bbe-0000-714b-e31d00000000-m80c5ec72-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bfaf-0bb9-0000-714b-e31d00000000.xml#m80c5ec72-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m80c673df-0bbe-0000-714b-e31d00000000" name="W_INS_CLAIM_F_FKey1" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c6789a-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c673df-0bbe-0000-714b-e31d00000000-m80c5ec73-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bfaf-0bb9-0000-714b-e31d00000000.xml#m80c5ec73-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m80c673e0-0bbe-0000-714b-e31d00000000" name="W_INS_CLAIM_F_FKey3" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5bef2-0bb9-0000-714b-e31d00000000.xml#m80c67915-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c673e0-0bbe-0000-714b-e31d00000000-m80c5ec74-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bfaf-0bb9-0000-714b-e31d00000000.xml#m80c5ec74-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m80c673e1-0bbe-0000-714b-e31d00000000" name="W_INS_CLAIM_F_FKey5" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5bea1-0bb9-0000-714b-e31d00000000.xml#m80c678a3-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c673e1-0bbe-0000-714b-e31d00000000-m80c5ec78-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bfaf-0bb9-0000-714b-e31d00000000.xml#m80c5ec78-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m80c673e2-0bbe-0000-714b-e31d00000000" name="W_INS_CLAIM_F_FKey6" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80c678b0-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c673e2-0bbe-0000-714b-e31d00000000-m80c5ec7b-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bfaf-0bb9-0000-714b-e31d00000000.xml#m80c5ec7b-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m80c673e3-0bbe-0000-714b-e31d00000000" name="W_INS_CLAIM_F_FKey8" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5bef5-0bb9-0000-714b-e31d00000000.xml#m80c67917-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c673e3-0bbe-0000-714b-e31d00000000-m80c5ec75-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bfaf-0bb9-0000-714b-e31d00000000.xml#m80c5ec75-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m80c673e4-0bbe-0000-714b-e31d00000000" name="W_INS_CLAIM_F_FKey13" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5bef8-0bb9-0000-714b-e31d00000000.xml#m80c6791c-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c673e4-0bbe-0000-714b-e31d00000000-m80c5ec7a-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bfaf-0bb9-0000-714b-e31d00000000.xml#m80c5ec7a-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m80c673e5-0bbe-0000-714b-e31d00000000" name="W_INS_CLAIM_F_FKey14" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5bef9-0bb9-0000-714b-e31d00000000.xml#m80c6791e-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c673e5-0bbe-0000-714b-e31d00000000-m80c5ec7c-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bfaf-0bb9-0000-714b-e31d00000000.xml#m80c5ec7c-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m80c673e6-0bbe-0000-714b-e31d00000000" name="W_INS_CLAIM_F_FKey15" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5befa-0bb9-0000-714b-e31d00000000.xml#m80c67920-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c673e6-0bbe-0000-714b-e31d00000000-m80c5ec7e-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bfaf-0bb9-0000-714b-e31d00000000.xml#m80c5ec7e-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m80c673e7-0bbe-0000-714b-e31d00000000" name="W_INS_CLAIM_F_FKey16" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5bef7-0bb9-0000-714b-e31d00000000.xml#m80c6791a-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c673e7-0bbe-0000-714b-e31d00000000-m80c5ec79-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bfaf-0bb9-0000-714b-e31d00000000.xml#m80c5ec79-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m80c673e8-0bbe-0000-714b-e31d00000000" name="W_INS_CLAIM_F_FKey19" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5bf1d-0bb9-0000-714b-e31d00000000.xml#m80c67946-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c673e8-0bbe-0000-714b-e31d00000000-m80c5ec74-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bfaf-0bb9-0000-714b-e31d00000000.xml#m80c5ec74-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m80c673e9-0bbe-0000-714b-e31d00000000" name="W_INS_CLAIM_F_FKey#1" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5bf63-0bb9-0000-714b-e31d00000000.xml#m80c6799b-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c673e9-0bbe-0000-714b-e31d00000000-m80c5ec73-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bfaf-0bb9-0000-714b-e31d00000000.xml#m80c5ec73-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+</PhysicalTable>

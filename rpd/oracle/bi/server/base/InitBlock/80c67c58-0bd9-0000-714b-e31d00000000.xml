@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<InitBlock mdsid="m80c67c58-0bd9-0000-714b-e31d00000000" name="Primary Owner ID" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isSessionVar="true" isRowWiseCacheEnabled="false" isEnabled="false" refreshPeriod="86400" connectionPoolRef="/oracle/bi/server/base/ConnectionPool/80c67bc0-0bd5-0000-714b-e31d00000000.xml#m80c67bc0-0bd5-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[select PAR_ROW_ID
+from VALUEOF(TBO).S_USER
+where LOGIN = ':USER']]></Value>
+</DBMapItem>
+<RefPredecessors>
+<RefInitBlock refId="m80c67c58-0bd9-0000-714b-e31d00000000-m80c67c4e-0bd9-0000-714b-e31d00000000" predecessorRef="/oracle/bi/server/base/InitBlock/80c67c4e-0bd9-0000-714b-e31d00000000.xml#m80c67c4e-0bd9-0000-714b-e31d00000000"/>
+</RefPredecessors>
+<RefVariables>
+<RefVariable refId="m80c67c58-0bd9-0000-714b-e31d00000000-m80c67bd0-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67bd0-0bd7-0000-714b-e31d00000000.xml#m80c67bd0-0bd7-0000-714b-e31d00000000"/>
+</RefVariables>
+<InitString><![CDATA[select PAR_ROW_ID
+from VALUEOF(TBO).S_USER
+where LOGIN = ':USER']]></InitString>
+</InitBlock>

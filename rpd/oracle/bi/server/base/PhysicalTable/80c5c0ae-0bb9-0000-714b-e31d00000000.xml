@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5c0ae-0bb9-0000-714b-e31d00000000" name="WC_CHANNEL_AVAIL_F" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" x="1113" y="494" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb1-0bd3-0000-714b-e31d00000000.xml#m80c67bb1-0bd3-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT   B.MONTH_WID, B.MEDIA_TYPE_CD, A.TOTAL_CONTACTS_BY_CHANNEL,
+         B.UNAVALIABLE_SUPPORTERS,
+           A.TOTAL_CONTACTS_BY_CHANNEL
+         - B.UNAVALIABLE_SUPPORTERS AVAILABLE_SUPPORTERS
+    FROM (SELECT CHANNEL_CD,
+                 ((SELECT COUNT (*)
+                     FROM W_PERSON_D) - (A + B)) TOTAL_CONTACTS_BY_CHANNEL
+            FROM (SELECT   CHANNEL_CD,
+                           (SELECT COUNT (DISTINCT CONTACT_WID)
+                              FROM WC_SUPPRESSIONS_D
+                             WHERE TYPE_CD = 'Suppression (Opt-Out)'
+                               AND CHANNEL_CD = 'Contact') A,
+                           COUNT (DISTINCT CONTACT_WID) B
+                      FROM WC_SUPPRESSIONS_D
+                     WHERE TYPE_CD = 'Suppression (Opt-Out)'
+                       AND CHANNEL_CD != 'Contact'
+                  GROUP BY CHANNEL_CD)) A,
+         (SELECT   C.MONTH_WID,
+                   B.MEDIA_TYPE_CD,
+                   COUNT (A.CONTACT_WID) UNAVALIABLE_SUPPORTERS
+              FROM W_CAMP_HIST_F A, W_SOURCE_D B , W_DAY_D C
+             WHERE A.SOURCE_WID = B.ROW_WID AND A.CAMP_ST_DT_WID = C.ROW_WID AND CAMP_ST_DT_WID != 0
+          GROUP BY B.MEDIA_TYPE_CD, C.MONTH_WID
+          ORDER BY 1, 2) B
+   WHERE A.CHANNEL_CD = B.MEDIA_TYPE_CD
+ORDER BY 1, 2]]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c63901-0bbb-0000-714b-e31d00000000" name="MONTH_WID" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c63902-0bbb-0000-714b-e31d00000000" name="MEDIA_TYPE_CD" dataType="VARCHAR" precision="50" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c63903-0bbb-0000-714b-e31d00000000" name="TOTAL_CONTACTS_BY_CHANNEL" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c63904-0bbb-0000-714b-e31d00000000" name="UNAVALIABLE_SUPPORTERS" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c63905-0bbb-0000-714b-e31d00000000" name="AVAILABLE_SUPPORTERS" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalKey mdsid="m80c67a9a-0bc0-0000-714b-e31d00000000" name="MONTH_WID">
+<RefColumns>
+<RefColumn refId="m80c67a9a-0bc0-0000-714b-e31d00000000-m80c63901-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5c0ae-0bb9-0000-714b-e31d00000000.xml#m80c63901-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+<PhysicalForeignKey mdsid="m80c6764a-0bbe-0000-714b-e31d00000000" name="WC_CHANNEL_AVAIL_F_FKey" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5bfe3-0bb9-0000-714b-e31d00000000.xml#m80c67a4d-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c6764a-0bbe-0000-714b-e31d00000000-m80c63901-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5c0ae-0bb9-0000-714b-e31d00000000.xml#m80c63901-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+</PhysicalTable>

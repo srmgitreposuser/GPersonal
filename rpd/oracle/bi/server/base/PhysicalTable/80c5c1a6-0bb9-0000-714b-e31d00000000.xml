@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5c1a6-0bb9-0000-714b-e31d00000000" name="LAST_RAFFLE_PURCHASE" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" x="708" y="480" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb5-0bd3-0000-714b-e31d00000000.xml#m80c67bb5-0bd3-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT /*+ FULL(PYM) PARALLEL(PYM,8)*/ TEMP.CONTACT_WID,
+MAX(CASE WHEN PROD.PROD_NAME = 'CRRAFFLE' THEN 1 ELSE 0 END) CRRAFLE_FLG, 
+MAX(CASE WHEN PROD.PROD_NAME = 'CRWDON' THEN 1 ELSE 0 END) CRWDON_FLG,
+SUM(CASE WHEN PROD.PROD_NAME = 'CRRAFFLE' THEN TEMP.PAY_AMT ELSE 0 END) CRRAFLE_AMT, 
+SUM(CASE WHEN PROD.PROD_NAME = 'CRWDON' THEN TEMP.PAY_AMT ELSE 0 END) CRWDON_AMT
+FROM
+(SELECT /*+ FULL(PYMT) PARALLEL(PYMT,8)*/ PYMT.CONTACT_WID, PYMT.ROW_WID, SRC.ROW_WID AS SOURCE_WID, PYMT.PAY_AMT, PYMT.PROD_WID, PYMT.ACTL_PAY_DT_WID ,
+ROW_NUMBER() OVER (PARTITION BY PYMT.CONTACT_WID ORDER BY PYMT.ACTL_PAY_DT_WID DESC, PYMT.ROW_WID DESC) AS ROW_NUM
+FROM WC_PAYMENT_F PYMT, W_SOURCE_D SRC
+WHERE SRC.CAMP_SRC_NUM LIKE '%MRF%' AND SRC.ROW_WID = PYMT.SOURCE_WID  ) TEMP, WC_PAYMENT_F PYM, W_PRODUCT_D PROD
+WHERE PYM.SOURCE_WID = TEMP.SOURCE_WID
+AND PYM.CONTACT_WID = TEMP.CONTACT_WID
+AND PROD.ROW_WID = PYM.PROD_WID
+AND TEMP.ROW_NUM = 1 GROUP BY TEMP.CONTACT_WID]]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c66cb6-0bbb-0000-714b-e31d00000000" name="CONTACT_WID" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c66cb7-0bbb-0000-714b-e31d00000000" name="CRRAFLE_AMT" dataType="DOUBLE" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c66cb8-0bbb-0000-714b-e31d00000000" name="CRRAFLE_FLG" dataType="CHAR" precision="2" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c66cb9-0bbb-0000-714b-e31d00000000" name="CRWDON_FLG" dataType="CHAR" precision="2" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c66cba-0bbb-0000-714b-e31d00000000" name="CRWDON_AMT" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalForeignKey mdsid="m80c6787b-0bbe-0000-714b-e31d00000000" name="Raffle_Table_FKey" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5bef5-0bb9-0000-714b-e31d00000000.xml#m80c67917-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c6787b-0bbe-0000-714b-e31d00000000-m80c66cb6-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5c1a6-0bb9-0000-714b-e31d00000000.xml#m80c66cb6-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+</PhysicalTable>

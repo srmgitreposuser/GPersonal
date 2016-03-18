@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5bfca-0bb9-0000-714b-e31d00000000" name="Fact_W_MKTG_COST_F_Campaign_Contact_Cost" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" x="391" y="461" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb1-0bd3-0000-714b-e31d00000000.xml#m80c67bb1-0bd3-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT
+	   CAMP_CON.CONTACT_WID,
+	   CAMP_CON.SOURCE_WID as SOURCE_WID,
+	   CAMP_CON.ACCNT_WID,
+	   (COST.ACTL_COST/CON.NUM_CONTACTS) as CON_ACTL_COST,
+	   (COST.ACTL_COST/CON.NUM_ACCOUNTS) AS ACCT_ACTL_COST,
+	   CON.NUM_CONTACTS,
+	   CON.NUM_ACCOUNTS
+FROM
+			(SELECT 
+				   SRC_WID AS SRC_WID, 
+				   SUM(W_MKTG_COST_F.ACTL_COST) AS ACTL_COST 
+			FROM 
+				 W_MKTG_COST_F 
+			WHERE 
+				  SRC_WID > 0
+			GROUP BY 
+				  	 W_MKTG_COST_F.SRC_WID) 
+		COST,
+			(SELECT 
+				   SOURCE_WID, 
+				   COUNT(DISTINCT CONTACT_WID) as NUM_CONTACTS,
+				   COUNT (DISTINCT CASE WHEN ACCNT_WID > 0 THEN ACCNT_WID END) as NUM_ACCOUNTS
+	   		FROM  
+				  W_CAMP_HIST_F
+	   		WHERE 
+				  SOURCE_WID > 0 AND LAUNCH_DT_WID > 0 
+			GROUP BY 
+				  SOURCE_WID)
+		CON,
+			(SELECT DISTINCT 
+					 CONTACT_WID,
+					 ACCNT_WID,
+					 SOURCE_WID
+			 FROM 
+			     W_CAMP_HIST_F
+				 WHERE 
+				  SOURCE_WID > 0 AND LAUNCH_DT_WID > 0)
+		CAMP_CON
+WHERE
+	 CAMP_CON.SOURCE_WID = COST.SRC_WID
+	 AND 
+	 CAMP_CON.SOURCE_WID = CON.SOURCE_WID]]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c5f0bc-0bbb-0000-714b-e31d00000000" name="ACCNT_WID" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5f0bd-0bbb-0000-714b-e31d00000000" name="CON_ACTL_COST" dataType="DOUBLE" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5f0be-0bbb-0000-714b-e31d00000000" name="CONTACT_WID" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5f0bf-0bbb-0000-714b-e31d00000000" name="SOURCE_WID" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5f1cc-0bbb-0000-714b-e31d00000000" name="NUM_CONTACTS" dataType="DOUBLE" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5f1cd-0bbb-0000-714b-e31d00000000" name="NUM_ACCOUNTS" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5f284-0bbb-0000-714b-e31d00000000" name="ACCT_ACTL_COST" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalKey mdsid="m80c67a0d-0bc0-0000-714b-e31d00000000" name="CONTACT_WID">
+<RefColumns>
+<RefColumn refId="m80c67a0d-0bc0-0000-714b-e31d00000000-m80c5f0be-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bfca-0bb9-0000-714b-e31d00000000.xml#m80c5f0be-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+<PhysicalKey mdsid="m80c67a0e-0bc0-0000-714b-e31d00000000" name="SOURCE_WID">
+<RefColumns>
+<RefColumn refId="m80c67a0e-0bc0-0000-714b-e31d00000000-m80c5f0bf-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bfca-0bb9-0000-714b-e31d00000000.xml#m80c5f0bf-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+<PhysicalForeignKey mdsid="m80c6740d-0bbe-0000-714b-e31d00000000" name="Campaign Contact Cost_FKey" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5bf99-0bb9-0000-714b-e31d00000000.xml#m80c679da-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c6740d-0bbe-0000-714b-e31d00000000-m80c5f0bf-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bfca-0bb9-0000-714b-e31d00000000.xml#m80c5f0bf-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m80c6740e-0bbe-0000-714b-e31d00000000" name="Campaign Contact Cost_FKey#1" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5beaa-0bb9-0000-714b-e31d00000000.xml#m80c678ac-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c6740e-0bbe-0000-714b-e31d00000000-m80c5f0bc-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bfca-0bb9-0000-714b-e31d00000000.xml#m80c5f0bc-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m80c6740f-0bbe-0000-714b-e31d00000000" name="Campaign Contact Cost_FKey#2" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5bef5-0bb9-0000-714b-e31d00000000.xml#m80c67917-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c6740f-0bbe-0000-714b-e31d00000000-m80c5f0be-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bfca-0bb9-0000-714b-e31d00000000.xml#m80c5f0be-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+</PhysicalTable>

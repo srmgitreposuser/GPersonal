@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTableSource mdsid="m80cb9e08-07f5-0000-714b-e31d00000000" name="Fact_WC_SOURCE_F" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isActive="true" logicalTableRef="/oracle/bi/server/base/LogicalTable/80cb7544-07f3-0000-714b-e31d00000000.xml#m80cb7544-07f3-0000-714b-e31d00000000">
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000001-01f4-0000-165c-6d2400000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Campaign Metrics"."Target Audience Volume"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-165c-6d2400000000-m80cb9e0d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb7544-07f3-0000-714b-e31d00000000.xml#m80cb9e0d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000002-01f4-0000-02a5-08a600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_SOURCE_F"."X_SRM_AUD_EST_VOL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-02a5-08a600000000-m80c6674e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c11f-0bb9-0000-714b-e31d00000000.xml#m80c6674e-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5c11f-0bb9-0000-714b-e31d00000000.xml#m80c5c11f-0bb9-0000-714b-e31d00000000">
+</Link>
+<WhereClause mdsid="m00000003-01f4-0000-95b0-b5c400000000" name="WhereClause">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</WhereClause>
+<GroupBy mdsid="m00000004-01f4-0000-2ce0-cc3a00000000" name="GroupBy">
+<ExprText><![CDATA[ GROUPBYLEVEL("%1", "%2", "%3")]]></ExprText>
+<ExprTextDesc><![CDATA[ GROUPBYLEVEL("Core 2"."Dim - CampaignDim"."Dim - Campaign Detail", "Core 2"."Dim - Campaign End DateDim"."Dim - Campaign End Date Detail", "Core 2"."Dim - Campaign Start DateDim"."Dim - Campaign Start Date Detail")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-2ce0-cc3a00000000-m80cb0555-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cb0554-07e3-0000-714b-e31d00000000.xml#m80cb0555-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-2ce0-cc3a00000000-m80cb6ed0-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cb6ecf-07e3-0000-714b-e31d00000000.xml#m80cb6ed0-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-2ce0-cc3a00000000-m80cb6ed4-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cb6ed3-07e3-0000-714b-e31d00000000.xml#m80cb6ed4-07e9-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</GroupBy>
+<FragmentContent mdsid="m00000005-01f4-0000-f799-dd2900000000" name="FragmentContent">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</FragmentContent>
+</LogicalTableSource>

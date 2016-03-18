@@ -1,0 +1,1050 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5aa6f-07f3-0000-714b-e31d00000000" name="SRM - Fact Event Sponsorship" iconIndex="63" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1110" y="825" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<Description><![CDATA[Thinned Donation Table created exclusively for Event Sponsorship]]></Description>
+<LogicalColumn mdsid="m80c57725-07d6-0000-714b-e31d00000000" name="Total Donation" iconIndex="91" isWriteable="false">
+<Description><![CDATA[All Donations Linked to Events]]></Description>
+<MeasureDefn mdsid="m80c5b44f-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c8c6cc-0802-0000-714b-e31d00000000" name="AggRule_2050:7231991340125450" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-fc25-6afe00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Event Sponsorship"."Total Donation")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-fc25-6afe00000000-m80c57725-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57725-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69c37-0f3c-0000-714b-e31d00000000" name="AD_3900:5591971263313978">
+<Expr mdsid="m00000002-01f4-0000-25af-753e00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."UNIT_PRI"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-25af-753e00000000-m80c649a7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649a7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57727-07d6-0000-714b-e31d00000000" name="Number of Returners" iconIndex="91" isWriteable="false">
+<Description><![CDATA[Distinct Supporters - with Sponsorship]]></Description>
+<MeasureDefn mdsid="m80c5b450-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb78-0802-0000-714b-e31d00000000" name="AggRule_2050:5592631263320378" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-ac98-de3500000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."SRM - Fact Event Sponsorship"."Number of Returners")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-ac98-de3500000000-m80c57727-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57727-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69c39-0f3c-0000-714b-e31d00000000" name="AD_3900:5592491263320378">
+<Expr mdsid="m00000004-01f4-0000-17a5-ec8600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."CONTACT_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-17a5-ec8600000000-m80c649a2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649a2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57728-07d6-0000-714b-e31d00000000" name="Total Donation - Previous Year" iconIndex="91" isWriteable="false">
+<Description><![CDATA[All Donations Linked to Events]]></Description>
+<MeasureDefn mdsid="m80c5b451-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb7a-0802-0000-714b-e31d00000000" name="AggRule_2050:5594011263381711" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-40b8-e0e800000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Event Sponsorship"."Total Donation - Previous Year")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-40b8-e0e800000000-m80c57728-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57728-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69c3a-0f3c-0000-714b-e31d00000000" name="AD_3900:5593901263381711">
+<Expr mdsid="m00000006-01f4-0000-0b46-f6d300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship - Last Event"."UNIT_PRI"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-0b46-f6d300000000-m80c649c3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c101-0bb9-0000-714b-e31d00000000.xml#m80c649c3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57729-07d6-0000-714b-e31d00000000" name="Number of Returners - Previous Year" iconIndex="91" isWriteable="false">
+<Description><![CDATA[Distinct Supporters - with Sponsorship]]></Description>
+<MeasureDefn mdsid="m80c5b452-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb7b-0802-0000-714b-e31d00000000" name="AggRule_2050:5594021263381711" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-b9d0-2d3500000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."SRM - Fact Event Sponsorship"."Number of Returners - Previous Year")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-b9d0-2d3500000000-m80c57729-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57729-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69c3b-0f3c-0000-714b-e31d00000000" name="AD_3900:5593981263381711">
+<Expr mdsid="m00000008-01f4-0000-d19f-3ea000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship - Last Event"."CONTACT_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-d19f-3ea000000000-m80c649be-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c101-0bb9-0000-714b-e31d00000000.xml#m80c649be-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57726-07d6-0000-714b-e31d00000000" name="Total Sponsorship" iconIndex="74" isDerived="true" isWriteable="false">
+<Description><![CDATA[Sponsorship for Events]]></Description>
+<Expr mdsid="m00000009-01f4-0000-051d-e15f00000000" name="Expr">
+<ExprText><![CDATA[ FILTER("%1" USING "%2" = 'Y')]]></ExprText>
+<ExprTextDesc><![CDATA[ FILTER("Core"."SRM - Fact Event Sponsorship"."Total Donation" USING "Core"."Dim - Product"."Event Sponsorship Flag" = 'Y')]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-051d-e15f00000000-m80c57725-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57725-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000009-01f4-0000-051d-e15f00000000-m80c57724-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a930-07f3-0000-714b-e31d00000000.xml#m80c57724-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69c38-0f3c-0000-714b-e31d00000000" name="AD_3900:5592021263313978">
+<Expr mdsid="m0000000a-01f4-0000-7bd2-507200000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5772a-07d6-0000-714b-e31d00000000" name="Sponsorship - Previous Year" iconIndex="74" isDerived="true" isWriteable="false">
+<Description><![CDATA[Sponsorship for Events]]></Description>
+<Expr mdsid="m0000000b-01f4-0000-82fa-944000000000" name="Expr">
+<ExprText><![CDATA[ FILTER("%1" USING "%2" = 'Y')]]></ExprText>
+<ExprTextDesc><![CDATA[ FILTER("Core"."SRM - Fact Event Sponsorship"."Total Donation - Previous Year" USING "Core"."Dim - Product"."Event Sponsorship Flag" = 'Y')]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-82fa-944000000000-m80c57728-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57728-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000b-01f4-0000-82fa-944000000000-m80c57724-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a930-07f3-0000-714b-e31d00000000.xml#m80c57724-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69c3c-0f3c-0000-714b-e31d00000000" name="AD_3900:5594061263381711">
+<Expr mdsid="m0000000c-01f4-0000-955b-89a400000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57751-07d6-0000-714b-e31d00000000" name="Donation Channel" iconIndex="73" isWriteable="false">
+<Description><![CDATA[Donation Channel]]></Description>
+<AttrDefn mdsid="m80c69c63-0f3c-0000-714b-e31d00000000" name="AD_3900:5624091264114803">
+<Expr mdsid="m0000000d-01f4-0000-11ec-11d000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship - Last Event"."DONATION_CHANNEL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-11ec-11d000000000-m80c649ce-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c101-0bb9-0000-714b-e31d00000000.xml#m80c649ce-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57752-07d6-0000-714b-e31d00000000" name="Payment Medium" iconIndex="73" isWriteable="false">
+<Description><![CDATA[Payment Reference Channel]]></Description>
+<AttrDefn mdsid="m80c69c64-0f3c-0000-714b-e31d00000000" name="AD_3900:5624291264114803">
+<Expr mdsid="m0000000e-01f4-0000-c73b-a86a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship - Last Event"."PAYMENT_MEDIUM"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-c73b-a86a00000000-m80c64c67-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c101-0bb9-0000-714b-e31d00000000.xml#m80c64c67-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57756-07d6-0000-714b-e31d00000000" name="Sponsorship Amount" iconIndex="73" isDerived="true" isWriteable="false">
+<Description><![CDATA[Sum of the Sponsorship raised for Events]]></Description>
+<Expr mdsid="m0000000f-01f4-0000-2851-6a6c00000000" name="Expr">
+<ExprText><![CDATA[ FILTER("%1" USING "%2" = 'Y')]]></ExprText>
+<ExprTextDesc><![CDATA[ FILTER("Core"."SRM - Fact Event Sponsorship"."Total Donation" USING "Core"."Dim - Product"."Event Sponsorship Flag" = 'Y')]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-2851-6a6c00000000-m80c57725-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57725-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000f-01f4-0000-2851-6a6c00000000-m80c57724-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a930-07f3-0000-714b-e31d00000000.xml#m80c57724-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69c68-0f3c-0000-714b-e31d00000000" name="AD_3900:5625761264384136">
+<Expr mdsid="m00000010-01f4-0000-74f8-cffc00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c587f4-07d6-0000-714b-e31d00000000" name="Sponsorship Amount with Gift Aid" iconIndex="73" isDerived="true" isWriteable="false">
+<Description><![CDATA[Sum of the Sponsorship raised for Events]]></Description>
+<Expr mdsid="m00000011-01f4-0000-0a89-e87f00000000" name="Expr">
+<ExprText><![CDATA[ FILTER("%1" USING "%2" = 'Y') +  FILTER("%3" USING "%2" = 'Y') * 0.28d]]></ExprText>
+<ExprTextDesc><![CDATA[ FILTER("Core"."SRM - Fact Event Sponsorship"."Total Donation" USING "Core"."Dim - Product"."Event Sponsorship Flag" = 'Y') +  FILTER("Core"."SRM - Fact Event Sponsorship"."Total Gift Aidable Donation" USING "Core"."Dim - Product"."Event Sponsorship Flag" = 'Y') * 0.28d]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-0a89-e87f00000000-m80c57725-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57725-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000011-01f4-0000-0a89-e87f00000000-m80c57724-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a930-07f3-0000-714b-e31d00000000.xml#m80c57724-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000011-01f4-0000-0a89-e87f00000000-m80c57962-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57962-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c6ad06-0f3c-0000-714b-e31d00000000" name="AD_3900:6206811287394830">
+<Expr mdsid="m00000012-01f4-0000-6727-cf3600000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57757-07d6-0000-714b-e31d00000000" name="# Returners" iconIndex="73" isDerived="true" isWriteable="false">
+<Description><![CDATA[Count of Supporters who have Returned Sponsorships for the Event]]></Description>
+<Expr mdsid="m00000013-01f4-0000-74d0-ee4b00000000" name="Expr">
+<ExprText><![CDATA[ FILTER("%1" USING "%2" = 'Y')]]></ExprText>
+<ExprTextDesc><![CDATA[ FILTER("Core"."SRM - Fact Event Sponsorship"."Number of Returners" USING "Core"."Dim - Product"."Event Sponsorship Flag" = 'Y')]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-74d0-ee4b00000000-m80c57727-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57727-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000013-01f4-0000-74d0-ee4b00000000-m80c57724-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a930-07f3-0000-714b-e31d00000000.xml#m80c57724-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69c69-0f3c-0000-714b-e31d00000000" name="AD_3900:5625801264384136">
+<Expr mdsid="m00000014-01f4-0000-b006-652b00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57758-07d6-0000-714b-e31d00000000" name="Sponsorship Amount - Previous Year" iconIndex="73" isDerived="true" isWriteable="false">
+<Description><![CDATA[Sum of the Sponsorship raised for the same Event in the previous Event Series]]></Description>
+<Expr mdsid="m00000015-01f4-0000-9381-590a00000000" name="Expr">
+<ExprText><![CDATA[ FILTER("%1" USING "%2" = 'Y')]]></ExprText>
+<ExprTextDesc><![CDATA[ FILTER("Core"."SRM - Fact Event Sponsorship"."Total Donation - Previous Year" USING "Core"."Dim - Product"."Event Sponsorship Flag" = 'Y')]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-9381-590a00000000-m80c57728-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57728-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000015-01f4-0000-9381-590a00000000-m80c57724-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a930-07f3-0000-714b-e31d00000000.xml#m80c57724-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69c6a-0f3c-0000-714b-e31d00000000" name="AD_3900:5625841264384136">
+<Expr mdsid="m00000016-01f4-0000-3185-d6f700000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57759-07d6-0000-714b-e31d00000000" name="# Returners  - Previous Year" iconIndex="73" isDerived="true" isWriteable="false">
+<Description><![CDATA[Count of Supporters who have Returned Sponsorships for the same Event in the previous Event Series]]></Description>
+<Expr mdsid="m00000017-01f4-0000-bc23-664800000000" name="Expr">
+<ExprText><![CDATA[ FILTER("%1" USING "%2" = 'Y')]]></ExprText>
+<ExprTextDesc><![CDATA[ FILTER("Core"."SRM - Fact Event Sponsorship"."Number of Returners - Previous Year" USING "Core"."Dim - Product"."Event Sponsorship Flag" = 'Y')]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-bc23-664800000000-m80c57729-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57729-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000017-01f4-0000-bc23-664800000000-m80c57724-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a930-07f3-0000-714b-e31d00000000.xml#m80c57724-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69c6b-0f3c-0000-714b-e31d00000000" name="AD_3900:5625881264384136">
+<Expr mdsid="m00000018-01f4-0000-4cc2-2dc900000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57956-07d6-0000-714b-e31d00000000" name="Online Income" iconIndex="98" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000019-01f4-0000-6867-e78e00000000" name="Expr">
+<ExprText><![CDATA[ FILTER("%1" USING "%2" = 'Online')]]></ExprText>
+<ExprTextDesc><![CDATA[ FILTER("Core"."SRM - Fact Event Sponsorship"."Total Donation" USING "Core"."SRM - Fact Event Sponsorship"."Online/Offline Sponsorship" = 'Online')]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-6867-e78e00000000-m80c57725-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57725-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000019-01f4-0000-6867-e78e00000000-m80c766b5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c766b5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69e68-0f3c-0000-714b-e31d00000000" name="AD_3900:5786471272282429">
+<Expr mdsid="m0000001a-01f4-0000-5e53-af3b00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57957-07d6-0000-714b-e31d00000000" name="Offline Income" iconIndex="98" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000001b-01f4-0000-6177-884800000000" name="Expr">
+<ExprText><![CDATA[ FILTER("%1" USING "%2" = 'Offline')]]></ExprText>
+<ExprTextDesc><![CDATA[ FILTER("Core"."SRM - Fact Event Sponsorship"."Total Donation" USING "Core"."SRM - Fact Event Sponsorship"."Online/Offline Sponsorship" = 'Offline')]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001b-01f4-0000-6177-884800000000-m80c57725-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57725-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001b-01f4-0000-6177-884800000000-m80c766b5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c766b5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69e69-0f3c-0000-714b-e31d00000000" name="AD_3900:5786511272282429">
+<Expr mdsid="m0000001c-01f4-0000-15e8-2f8600000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57958-07d6-0000-714b-e31d00000000" name="Average Sponsorship" iconIndex="98" isDerived="true" isWriteable="false">
+<Description><![CDATA[Sponsorship for Events]]></Description>
+<Expr mdsid="m0000001d-01f4-0000-2508-0f3e00000000" name="Expr">
+<ExprText><![CDATA["%1" / "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."SRM - Fact Event Sponsorship"."Sponsorship Amount" / "Core"."SRM - Fact Event Sponsorship"."# Returners"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001d-01f4-0000-2508-0f3e00000000-m80c57756-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57756-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001d-01f4-0000-2508-0f3e00000000-m80c57757-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57757-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69e6a-0f3c-0000-714b-e31d00000000" name="AD_3900:5786701272282429">
+<Expr mdsid="m0000001e-01f4-0000-ae25-515900000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c587f5-07d6-0000-714b-e31d00000000" name="Average Sponsorship with Gift Aid" iconIndex="98" isDerived="true" isWriteable="false">
+<Description><![CDATA[Sponsorship for Events]]></Description>
+<Expr mdsid="m0000001f-01f4-0000-505d-309300000000" name="Expr">
+<ExprText><![CDATA["%1" / "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."SRM - Fact Event Sponsorship"."Sponsorship Amount" / "Core"."SRM - Fact Event Sponsorship"."# Returners"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001f-01f4-0000-505d-309300000000-m80c57756-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57756-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001f-01f4-0000-505d-309300000000-m80c57757-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57757-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c6ad07-0f3c-0000-714b-e31d00000000" name="AD_3900:6206871287395260">
+<Expr mdsid="m00000020-01f4-0000-0996-f79c00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57959-07d6-0000-714b-e31d00000000" name="Online Average Sponsorship" iconIndex="98" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000021-01f4-0000-c6ec-4b8400000000" name="Expr">
+<ExprText><![CDATA[ FILTER("%1" USING "%2" IN ('Just Giving', 'Golden Bond', 'Donation', 'Race Online', 'Virgin Money'))]]></ExprText>
+<ExprTextDesc><![CDATA[ FILTER("Core"."SRM - Fact Event Sponsorship"."Average Sponsorship" USING "Core"."SRM - Fact Event Sponsorship"."Donation Channel" IN ('Just Giving', 'Golden Bond', 'Donation', 'Race Online', 'Virgin Money'))]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000021-01f4-0000-c6ec-4b8400000000-m80c57958-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57958-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000021-01f4-0000-c6ec-4b8400000000-m80c57751-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57751-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69e6b-0f3c-0000-714b-e31d00000000" name="AD_3900:5786741272282429">
+<Expr mdsid="m00000022-01f4-0000-54cb-2e2400000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5795a-07d6-0000-714b-e31d00000000" name="Offline Average Sponsorship" iconIndex="98" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000023-01f4-0000-a045-f60500000000" name="Expr">
+<ExprText><![CDATA[ FILTER("%1" USING "%2" IN ('Race Offline', 'Event Offline'))]]></ExprText>
+<ExprTextDesc><![CDATA[ FILTER("Core"."SRM - Fact Event Sponsorship"."Average Sponsorship" USING "Core"."SRM - Fact Event Sponsorship"."Donation Channel" IN ('Race Offline', 'Event Offline'))]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000023-01f4-0000-a045-f60500000000-m80c57958-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57958-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000023-01f4-0000-a045-f60500000000-m80c57751-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57751-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69e6c-0f3c-0000-714b-e31d00000000" name="AD_3900:5786781272282429">
+<Expr mdsid="m00000024-01f4-0000-a53f-515800000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58806-07d6-0000-714b-e31d00000000" name="Number of Offline Returners" iconIndex="91" isDerived="true" isWriteable="false">
+<Description><![CDATA[Distinct Supporters - with Sponsorship]]></Description>
+<Expr mdsid="m00000025-01f4-0000-5437-f0e200000000" name="Expr">
+<ExprText><![CDATA[ FILTER("%1" USING "%2" IN ('Race Offline', 'Event Offline'))]]></ExprText>
+<ExprTextDesc><![CDATA[ FILTER("Core"."SRM - Fact Event Sponsorship"."Number of Returners" USING "Core"."SRM - Fact Event Sponsorship"."Donation Channel" IN ('Race Offline', 'Event Offline'))]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000025-01f4-0000-5437-f0e200000000-m80c57727-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57727-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000025-01f4-0000-5437-f0e200000000-m80c57751-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57751-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c6ad18-0f3c-0000-714b-e31d00000000" name="AD_3900:6213821289820218">
+<Expr mdsid="m00000026-01f4-0000-3f68-cd0700000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58807-07d6-0000-714b-e31d00000000" name="Number of Online Returners" iconIndex="91" isDerived="true" isWriteable="false">
+<Description><![CDATA[Distinct Supporters - with Sponsorship]]></Description>
+<Expr mdsid="m00000027-01f4-0000-bd1b-c2db00000000" name="Expr">
+<ExprText><![CDATA[ FILTER("%1" USING "%2" IN ('Just Giving', 'Golden Bond', 'Donation', 'Race Online', 'Virgin Money'))]]></ExprText>
+<ExprTextDesc><![CDATA[ FILTER("Core"."SRM - Fact Event Sponsorship"."Number of Returners" USING "Core"."SRM - Fact Event Sponsorship"."Donation Channel" IN ('Just Giving', 'Golden Bond', 'Donation', 'Race Online', 'Virgin Money'))]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000027-01f4-0000-bd1b-c2db00000000-m80c57727-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57727-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000027-01f4-0000-bd1b-c2db00000000-m80c57751-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57751-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c6ad19-0f3c-0000-714b-e31d00000000" name="AD_3900:6213881289820218">
+<Expr mdsid="m00000028-01f4-0000-69f0-e86100000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5795b-07d6-0000-714b-e31d00000000" name="Online Return Rate %" iconIndex="98" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000029-01f4-0000-633d-c78d00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  OR "%1" = 0 THEN  NULL  ELSE  FILTER("%1" USING "%2" IN ('Just Giving', 'Golden Bond', 'Donation', 'Race Online', 'Virgin Money')) / "%3" * 100 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."SRM - Fact Event Sponsorship"."# Returners" IS NULL  OR "Core"."SRM - Fact Event Sponsorship"."# Returners" = 0 THEN  NULL  ELSE  FILTER("Core"."SRM - Fact Event Sponsorship"."# Returners" USING "Core"."SRM - Fact Event Sponsorship"."Donation Channel" IN ('Just Giving', 'Golden Bond', 'Donation', 'Race Online', 'Virgin Money')) / "Core"."Fact - Event Attendance"."# Confirmed" * 100 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000029-01f4-0000-633d-c78d00000000-m80c57757-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57757-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000029-01f4-0000-633d-c78d00000000-m80c57751-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57751-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000029-01f4-0000-633d-c78d00000000-m80c57304-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c57304-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69e6d-0f3c-0000-714b-e31d00000000" name="AD_3900:5786941272288888">
+<Expr mdsid="m0000002a-01f4-0000-1a5a-2e6800000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5795c-07d6-0000-714b-e31d00000000" name="Offline Return Rate %" iconIndex="98" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000002b-01f4-0000-811f-cbf800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  OR "%1" = 0 THEN  NULL  ELSE  FILTER("%1" USING "%2" IN ('Race Offline', 'Event Offline')) / "%3" * 100 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."SRM - Fact Event Sponsorship"."# Returners" IS NULL  OR "Core"."SRM - Fact Event Sponsorship"."# Returners" = 0 THEN  NULL  ELSE  FILTER("Core"."SRM - Fact Event Sponsorship"."# Returners" USING "Core"."SRM - Fact Event Sponsorship"."Donation Channel" IN ('Race Offline', 'Event Offline')) / "Core"."Fact - Event Attendance"."# Confirmed" * 100 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002b-01f4-0000-811f-cbf800000000-m80c57757-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57757-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002b-01f4-0000-811f-cbf800000000-m80c57751-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57751-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002b-01f4-0000-811f-cbf800000000-m80c57304-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa35-07f3-0000-714b-e31d00000000.xml#m80c57304-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69e6e-0f3c-0000-714b-e31d00000000" name="AD_3900:5786981272288888">
+<Expr mdsid="m0000002c-01f4-0000-8adf-12c300000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57962-07d6-0000-714b-e31d00000000" name="Total Gift Aidable Donation" iconIndex="98" isWriteable="false">
+<Description><![CDATA[All Donations Linked to Events]]></Description>
+<MeasureDefn mdsid="m80c5b470-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c72557-0802-0000-714b-e31d00000000" name="AggRule_2050:6554631315498929" isDefault="true">
+<Expr mdsid="m0000002d-01f4-0000-6020-216800000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Event Sponsorship"."Total Gift Aidable Donation")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002d-01f4-0000-6020-216800000000-m80c57962-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57962-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69e74-0f3c-0000-714b-e31d00000000" name="AD_3900:5787821272384637">
+<Expr mdsid="m0000002e-01f4-0000-eefb-95c300000000" name="Expr">
+<ExprText><![CDATA[ IFNULL( CASE  WHEN "%1" = 'Y' OR "%2" = 'Y' THEN "%3" END , 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL( CASE  WHEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."TAX_INC_FLG" = 'Y' OR "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."PROCESSED_FLG" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."UNIT_PRI" END , 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002e-01f4-0000-eefb-95c300000000-m80c6521d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c6521d-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002e-01f4-0000-eefb-95c300000000-m80c6521a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c6521a-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002e-01f4-0000-eefb-95c300000000-m80c649a7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649a7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57963-07d6-0000-714b-e31d00000000" name="Sponsorship Gift Aidable Amount" iconIndex="98" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000002f-01f4-0000-ecf6-2d4700000000" name="Expr">
+<ExprText><![CDATA[ FILTER("%1" USING "%2" = 'Y')]]></ExprText>
+<ExprTextDesc><![CDATA[ FILTER("Core"."SRM - Fact Event Sponsorship"."Total Gift Aidable Donation" USING "Core"."Dim - Product"."Event Sponsorship Flag" = 'Y')]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002f-01f4-0000-ecf6-2d4700000000-m80c57962-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57962-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002f-01f4-0000-ecf6-2d4700000000-m80c57724-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a930-07f3-0000-714b-e31d00000000.xml#m80c57724-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69e75-0f3c-0000-714b-e31d00000000" name="AD_3900:5787861272384637">
+<Expr mdsid="m00000030-01f4-0000-ab69-e7b800000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57964-07d6-0000-714b-e31d00000000" name="Online Gift Aid" iconIndex="98" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000031-01f4-0000-f2f6-4d8000000000" name="Expr">
+<ExprText><![CDATA[ FILTER("%1" USING "%2" IN ('Just Giving', 'Golden Bond', 'Donation', 'Race Online', 'Virgin Money'))]]></ExprText>
+<ExprTextDesc><![CDATA[ FILTER("Core"."SRM - Fact Event Sponsorship"."Sponsorship Gift Aidable Amount" USING "Core"."SRM - Fact Event Sponsorship"."Donation Channel" IN ('Just Giving', 'Golden Bond', 'Donation', 'Race Online', 'Virgin Money'))]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000031-01f4-0000-f2f6-4d8000000000-m80c57963-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57963-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000031-01f4-0000-f2f6-4d8000000000-m80c57751-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57751-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69e76-0f3c-0000-714b-e31d00000000" name="AD_3900:5787911272384637">
+<Expr mdsid="m00000032-01f4-0000-44b9-a0e100000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57965-07d6-0000-714b-e31d00000000" name="Offline Gift Aid" iconIndex="98" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000033-01f4-0000-a848-aed000000000" name="Expr">
+<ExprText><![CDATA[ FILTER("%1" USING "%2" IN ('Race Offline', 'Event Offline'))]]></ExprText>
+<ExprTextDesc><![CDATA[ FILTER("Core"."SRM - Fact Event Sponsorship"."Sponsorship Gift Aidable Amount" USING "Core"."SRM - Fact Event Sponsorship"."Donation Channel" IN ('Race Offline', 'Event Offline'))]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000033-01f4-0000-a848-aed000000000-m80c57963-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57963-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000033-01f4-0000-a848-aed000000000-m80c57751-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57751-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69e77-0f3c-0000-714b-e31d00000000" name="AD_3900:5787951272384637">
+<Expr mdsid="m00000034-01f4-0000-b6b8-e96b00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57c1f-07d6-0000-714b-e31d00000000" name="Entry Fee Income" isWriteable="false">
+<MeasureDefn mdsid="m80c5b560-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bc8a-0802-0000-714b-e31d00000000" name="AggRule_2050:5983301281025291" isDefault="true">
+<Expr mdsid="m00000035-01f4-0000-6b4b-235c00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Event Sponsorship"."Entry Fee Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000035-01f4-0000-6b4b-235c00000000-m80c57c1f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c1f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a131-0f3c-0000-714b-e31d00000000" name="AD_3900:5983121281023844">
+<Expr mdsid="m00000036-01f4-0000-358a-6a5600000000" name="Expr">
+<ExprText><![CDATA[ IFNULL( CASE  WHEN "%1" = 'Entry Fee' THEN "%2" ELSE 0 END , 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL( CASE  WHEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."DONATION_CHANNEL" = 'Entry Fee' THEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."UNIT_PRI" ELSE 0 END , 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000036-01f4-0000-358a-6a5600000000-m80c649b2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649b2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000036-01f4-0000-358a-6a5600000000-m80c649a7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649a7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57c20-07d6-0000-714b-e31d00000000" name="Number of Sponsorships" isWriteable="false">
+<MeasureDefn mdsid="m80c5b561-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bc8b-0802-0000-714b-e31d00000000" name="AggRule_2050:5983471281351216" isDefault="true">
+<Expr mdsid="m00000037-01f4-0000-c749-ed2500000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."SRM - Fact Event Sponsorship"."Number of Sponsorships")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000037-01f4-0000-c749-ed2500000000-m80c57c20-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c20-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a132-0f3c-0000-714b-e31d00000000" name="AD_3900:5983451281351216">
+<Expr mdsid="m00000038-01f4-0000-7201-3bcb00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000038-01f4-0000-7201-3bcb00000000-m80c649a5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649a5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57c21-07d6-0000-714b-e31d00000000" name="Number of Gift Aided Sponsorships" isWriteable="false">
+<MeasureDefn mdsid="m80c5b562-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bc8c-0802-0000-714b-e31d00000000" name="AggRule_2050:5983511281351216" isDefault="true">
+<Expr mdsid="m00000039-01f4-0000-a965-b56a00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."SRM - Fact Event Sponsorship"."Number of Gift Aided Sponsorships")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000039-01f4-0000-a965-b56a00000000-m80c57c21-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c21-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a133-0f3c-0000-714b-e31d00000000" name="AD_3900:5983491281351216">
+<Expr mdsid="m0000003a-01f4-0000-6ef3-b4e000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" ELSE  NULL  END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."PROCESSED_FLG" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."ROW_WID" ELSE  NULL  END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003a-01f4-0000-6ef3-b4e000000000-m80c6521a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c6521a-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003a-01f4-0000-6ef3-b4e000000000-m80c649a5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649a5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57c22-07d6-0000-714b-e31d00000000" name="Number of Online Sponsorships" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000003b-01f4-0000-2323-6d2c00000000" name="Expr">
+<ExprText><![CDATA[ FILTER("%1" USING "%2" IN ('Just Giving', 'Golden Bond', 'Donation', 'Race Online', 'Virgin Money'))]]></ExprText>
+<ExprTextDesc><![CDATA[ FILTER("Core"."SRM - Fact Event Sponsorship"."Number of Sponsorships" USING "Core"."SRM - Fact Event Sponsorship"."Donation Channel" IN ('Just Giving', 'Golden Bond', 'Donation', 'Race Online', 'Virgin Money'))]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003b-01f4-0000-2323-6d2c00000000-m80c57c20-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c20-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003b-01f4-0000-2323-6d2c00000000-m80c57751-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57751-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c6a134-0f3c-0000-714b-e31d00000000" name="AD_3900:5983581281351216">
+<Expr mdsid="m0000003c-01f4-0000-483e-bfef00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57c23-07d6-0000-714b-e31d00000000" name="Number of Offline Sponsorships" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000003d-01f4-0000-7439-700f00000000" name="Expr">
+<ExprText><![CDATA[ FILTER("%1" USING "%2" IN ('Race Offline', 'Event Offline'))]]></ExprText>
+<ExprTextDesc><![CDATA[ FILTER("Core"."SRM - Fact Event Sponsorship"."Number of Sponsorships" USING "Core"."SRM - Fact Event Sponsorship"."Donation Channel" IN ('Race Offline', 'Event Offline'))]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003d-01f4-0000-7439-700f00000000-m80c57c20-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c20-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003d-01f4-0000-7439-700f00000000-m80c57751-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57751-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c6a135-0f3c-0000-714b-e31d00000000" name="AD_3900:5983621281351216">
+<Expr mdsid="m0000003e-01f4-0000-3a89-d3bf00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57c3e-07d6-0000-714b-e31d00000000" name="Number of Online GA Sponsorships" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000003f-01f4-0000-36c1-2f7d00000000" name="Expr">
+<ExprText><![CDATA[ FILTER("%1" USING "%2" IN ('Just Giving', 'Golden Bond', 'Donation', 'Race Online', 'Virgin Money'))]]></ExprText>
+<ExprTextDesc><![CDATA[ FILTER("Core"."SRM - Fact Event Sponsorship"."Number of Gift Aided Sponsorships" USING "Core"."SRM - Fact Event Sponsorship"."Donation Channel" IN ('Just Giving', 'Golden Bond', 'Donation', 'Race Online', 'Virgin Money'))]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003f-01f4-0000-36c1-2f7d00000000-m80c57c21-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c21-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003f-01f4-0000-36c1-2f7d00000000-m80c57751-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57751-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c6a150-0f3c-0000-714b-e31d00000000" name="AD_3900:5993061281544943">
+<Expr mdsid="m00000040-01f4-0000-5c3d-a82600000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57c3f-07d6-0000-714b-e31d00000000" name="Number of Offline GA Sponsorships" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000041-01f4-0000-b171-95d400000000" name="Expr">
+<ExprText><![CDATA[ FILTER("%1" USING "%2" IN ('Race Offline', 'Event Offline'))]]></ExprText>
+<ExprTextDesc><![CDATA[ FILTER("Core"."SRM - Fact Event Sponsorship"."Number of Gift Aided Sponsorships" USING "Core"."SRM - Fact Event Sponsorship"."Donation Channel" IN ('Race Offline', 'Event Offline'))]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000041-01f4-0000-b171-95d400000000-m80c57c21-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c21-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000041-01f4-0000-b171-95d400000000-m80c57751-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57751-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c6a151-0f3c-0000-714b-e31d00000000" name="AD_3900:5993101281544943">
+<Expr mdsid="m00000042-01f4-0000-f95d-a57b00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57c4e-07d6-0000-714b-e31d00000000" name="------------------Event Income Metrics (Special Events)--------------------------" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000043-01f4-0000-cecd-0f9f00000000" name="Expr">
+<ExprText><![CDATA[0]]></ExprText>
+<ExprTextDesc><![CDATA[0]]></ExprTextDesc>
+</Expr>
+<AttrDefn mdsid="m80c6a160-0f3c-0000-714b-e31d00000000" name="AD_3900:5997111282044203">
+<Expr mdsid="m00000044-01f4-0000-27e1-30b900000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57c45-07d6-0000-714b-e31d00000000" name="Live Auction Income" isWriteable="false">
+<MeasureDefn mdsid="m80c5b5aa-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bd12-0802-0000-714b-e31d00000000" name="AggRule_2050:6042801282822089" isDefault="true">
+<Expr mdsid="m00000045-01f4-0000-4c0f-f1a300000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Event Sponsorship"."Live Auction Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000045-01f4-0000-4c0f-f1a300000000-m80c57c45-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c45-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a157-0f3c-0000-714b-e31d00000000" name="AD_3900:5996731282044203">
+<Expr mdsid="m00000046-01f4-0000-23e0-b69400000000" name="Expr">
+<ExprText><![CDATA[ IFNULL( CASE  WHEN "%1" = 'Live Auction' THEN "%2" ELSE 0 END , 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL( CASE  WHEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."DONATION_CHANNEL" = 'Live Auction' THEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."UNIT_PRI" ELSE 0 END , 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000046-01f4-0000-23e0-b69400000000-m80c649b2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649b2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000046-01f4-0000-23e0-b69400000000-m80c649a7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649a7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57c46-07d6-0000-714b-e31d00000000" name="Silent Auction Income" isWriteable="false">
+<MeasureDefn mdsid="m80c5b5ab-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bcdb-0802-0000-714b-e31d00000000" name="AggRule_2050:6023171282230026" isDefault="true">
+<Expr mdsid="m00000047-01f4-0000-c602-487a00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Event Sponsorship"."Silent Auction Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000047-01f4-0000-c602-487a00000000-m80c57c46-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c46-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a158-0f3c-0000-714b-e31d00000000" name="AD_3900:5996751282044203">
+<Expr mdsid="m00000048-01f4-0000-3531-cde100000000" name="Expr">
+<ExprText><![CDATA[ IFNULL( CASE  WHEN "%1" = 'Silent Auction' THEN "%2" ELSE 0 END , 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL( CASE  WHEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."DONATION_CHANNEL" = 'Silent Auction' THEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."UNIT_PRI" ELSE 0 END , 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000048-01f4-0000-3531-cde100000000-m80c649b2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649b2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000048-01f4-0000-3531-cde100000000-m80c649a7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649a7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57c47-07d6-0000-714b-e31d00000000" name="Raffle Income" isWriteable="false">
+<MeasureDefn mdsid="m80c5b5ac-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bcdc-0802-0000-714b-e31d00000000" name="AggRule_2050:6023191282230026" isDefault="true">
+<Expr mdsid="m00000049-01f4-0000-e753-38dc00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Event Sponsorship"."Raffle Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000049-01f4-0000-e753-38dc00000000-m80c57c47-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c47-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a159-0f3c-0000-714b-e31d00000000" name="AD_3900:5996771282044203">
+<Expr mdsid="m0000004a-01f4-0000-5670-0c7a00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL( CASE  WHEN "%1" = 'Raffle' THEN "%2" ELSE 0 END , 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL( CASE  WHEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."DONATION_CHANNEL" = 'Raffle' THEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."UNIT_PRI" ELSE 0 END , 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000004a-01f4-0000-5670-0c7a00000000-m80c649b2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649b2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000004a-01f4-0000-5670-0c7a00000000-m80c649a7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649a7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57c48-07d6-0000-714b-e31d00000000" name="Pledge Income" isWriteable="false">
+<MeasureDefn mdsid="m80c5b5ad-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bcdd-0802-0000-714b-e31d00000000" name="AggRule_2050:6023211282230026" isDefault="true">
+<Expr mdsid="m0000004b-01f4-0000-5218-ddb600000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Event Sponsorship"."Pledge Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000004b-01f4-0000-5218-ddb600000000-m80c57c48-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c48-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a15a-0f3c-0000-714b-e31d00000000" name="AD_3900:5996791282044203">
+<Expr mdsid="m0000004c-01f4-0000-86a2-d46f00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL( CASE  WHEN "%1" = 'Pledge' THEN "%2" ELSE 0 END , 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL( CASE  WHEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."DONATION_CHANNEL" = 'Pledge' THEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."UNIT_PRI" ELSE 0 END , 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000004c-01f4-0000-86a2-d46f00000000-m80c649b2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649b2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000004c-01f4-0000-86a2-d46f00000000-m80c649a7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649a7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57c49-07d6-0000-714b-e31d00000000" name="Donation Income" isWriteable="false">
+<MeasureDefn mdsid="m80c5b5ae-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bcde-0802-0000-714b-e31d00000000" name="AggRule_2050:6023231282230026" isDefault="true">
+<Expr mdsid="m0000004d-01f4-0000-6ee5-9aec00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Event Sponsorship"."Donation Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000004d-01f4-0000-6ee5-9aec00000000-m80c57c49-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c49-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a15b-0f3c-0000-714b-e31d00000000" name="AD_3900:5996811282044203">
+<Expr mdsid="m0000004e-01f4-0000-3a5f-fff500000000" name="Expr">
+<ExprText><![CDATA[ IFNULL( CASE  WHEN "%1" IN ('Donation', 'Cold Donation') THEN "%2" ELSE 0 END , 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL( CASE  WHEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."DONATION_CHANNEL" IN ('Donation', 'Cold Donation') THEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."UNIT_PRI" ELSE 0 END , 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000004e-01f4-0000-3a5f-fff500000000-m80c649b2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649b2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000004e-01f4-0000-3a5f-fff500000000-m80c649a7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649a7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57c4a-07d6-0000-714b-e31d00000000" name="Third Party Sponsorship Income" isWriteable="false">
+<MeasureDefn mdsid="m80c5b5d8-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bd07-0802-0000-714b-e31d00000000" name="AggRule_2050:6027021282307759" isDefault="true">
+<Expr mdsid="m0000004f-01f4-0000-c385-10ec00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Event Sponsorship"."Third Party Sponsorship Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000004f-01f4-0000-c385-10ec00000000-m80c57c4a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c4a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a15c-0f3c-0000-714b-e31d00000000" name="AD_3900:5996831282044203">
+<Expr mdsid="m00000050-01f4-0000-f1ff-f23b00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL( CASE  WHEN "%1" = 'Third Party' THEN "%2" ELSE 0 END , 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL( CASE  WHEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."DONATION_CHANNEL" = 'Third Party' THEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."UNIT_PRI" ELSE 0 END , 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000050-01f4-0000-f1ff-f23b00000000-m80c649b2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649b2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000050-01f4-0000-f1ff-f23b00000000-m80c649a7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649a7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57c4b-07d6-0000-714b-e31d00000000" name="Ticket Sales/Registration Income" isWriteable="false">
+<MeasureDefn mdsid="m80c5b5af-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bcdf-0802-0000-714b-e31d00000000" name="AggRule_2050:6023251282230026" isDefault="true">
+<Expr mdsid="m00000051-01f4-0000-c8b3-aac600000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Event Sponsorship"."Ticket Sales/Registration Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000051-01f4-0000-c8b3-aac600000000-m80c57c4b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c4b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a15d-0f3c-0000-714b-e31d00000000" name="AD_3900:5996851282044203">
+<Expr mdsid="m00000052-01f4-0000-b6c7-8def00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL( CASE  WHEN "%1" = 'Entry Fee' THEN "%2" ELSE 0 END , 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL( CASE  WHEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."DONATION_CHANNEL" = 'Entry Fee' THEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."UNIT_PRI" ELSE 0 END , 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000052-01f4-0000-b6c7-8def00000000-m80c649b2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649b2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000052-01f4-0000-b6c7-8def00000000-m80c649a7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649a7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57c4c-07d6-0000-714b-e31d00000000" name="CRM Income" isWriteable="false">
+<MeasureDefn mdsid="m80c5b5d9-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bd08-0802-0000-714b-e31d00000000" name="AggRule_2050:6027041282308581" isDefault="true">
+<Expr mdsid="m00000053-01f4-0000-61bb-c42700000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Event Sponsorship"."CRM Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000053-01f4-0000-61bb-c42700000000-m80c57c4c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c4c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a15e-0f3c-0000-714b-e31d00000000" name="AD_3900:5996871282044203">
+<Expr mdsid="m00000054-01f4-0000-5213-0b4f00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL( CASE  WHEN "%1" = 'CRM' THEN "%2" ELSE 0 END , 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL( CASE  WHEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."DONATION_CHANNEL" = 'CRM' THEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."UNIT_PRI" ELSE 0 END , 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000054-01f4-0000-5213-0b4f00000000-m80c649b2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649b2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000054-01f4-0000-5213-0b4f00000000-m80c649a7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649a7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57c4d-07d6-0000-714b-e31d00000000" name="Other Income" isWriteable="false">
+<MeasureDefn mdsid="m80c5b578-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bce0-0802-0000-714b-e31d00000000" name="AggRule_2050:6023261282230026" isDefault="true">
+<Expr mdsid="m00000055-01f4-0000-8c99-768300000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Event Sponsorship"."Other Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000055-01f4-0000-8c99-768300000000-m80c57c4d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c4d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a15f-0f3c-0000-714b-e31d00000000" name="AD_3900:5997091282044203">
+<Expr mdsid="m00000056-01f4-0000-05c3-0dfd00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL( CASE  WHEN "%1" = "%2" THEN "%3" ELSE 0 END , 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL( CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_EVENT_D"."X_SRM_EVENT_SRC_NUM" = "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."X_SRM_SRC_CD" THEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."UNIT_PRI" ELSE 0 END , 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000056-01f4-0000-05c3-0dfd00000000-m80c64670-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0f4-0bb9-0000-714b-e31d00000000.xml#m80c64670-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000056-01f4-0000-05c3-0dfd00000000-m80c649b0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649b0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000056-01f4-0000-05c3-0dfd00000000-m80c649a7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649a7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57c4f-07d6-0000-714b-e31d00000000" name="Pool Shot Income" isWriteable="false">
+<MeasureDefn mdsid="m80c5b5b0-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bce1-0802-0000-714b-e31d00000000" name="AggRule_2050:6023281282230026" isDefault="true">
+<Expr mdsid="m00000057-01f4-0000-ae82-801f00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Event Sponsorship"."Pool Shot Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000057-01f4-0000-ae82-801f00000000-m80c57c4f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c4f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a161-0f3c-0000-714b-e31d00000000" name="AD_3900:5997131282044203">
+<Expr mdsid="m00000058-01f4-0000-5d95-f61300000000" name="Expr">
+<ExprText><![CDATA[ IFNULL( CASE  WHEN "%1" = 'Pool Shot' THEN "%2" ELSE 0 END , 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL( CASE  WHEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."DONATION_CHANNEL" = 'Pool Shot' THEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."UNIT_PRI" ELSE 0 END , 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000058-01f4-0000-5d95-f61300000000-m80c649b2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649b2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000058-01f4-0000-5d95-f61300000000-m80c649a7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649a7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57c50-07d6-0000-714b-e31d00000000" name="Red Yellow Income" isWriteable="false">
+<MeasureDefn mdsid="m80c5b5b1-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bce2-0802-0000-714b-e31d00000000" name="AggRule_2050:6023301282230026" isDefault="true">
+<Expr mdsid="m00000059-01f4-0000-c3c6-b19a00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Event Sponsorship"."Red Yellow Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000059-01f4-0000-c3c6-b19a00000000-m80c57c50-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c50-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a162-0f3c-0000-714b-e31d00000000" name="AD_3900:5997151282044203">
+<Expr mdsid="m0000005a-01f4-0000-d8eb-519c00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL( CASE  WHEN "%1" = 'Red Yellow' THEN "%2" ELSE 0 END , 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL( CASE  WHEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."DONATION_CHANNEL" = 'Red Yellow' THEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."UNIT_PRI" ELSE 0 END , 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000005a-01f4-0000-d8eb-519c00000000-m80c649b2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649b2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000005a-01f4-0000-d8eb-519c00000000-m80c649a7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649a7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57c51-07d6-0000-714b-e31d00000000" name="Sweepstake Income" isWriteable="false">
+<MeasureDefn mdsid="m80c5b5b2-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bce3-0802-0000-714b-e31d00000000" name="AggRule_2050:6023321282232354" isDefault="true">
+<Expr mdsid="m0000005b-01f4-0000-a021-189c00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Event Sponsorship"."Sweepstake Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000005b-01f4-0000-a021-189c00000000-m80c57c51-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c51-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a163-0f3c-0000-714b-e31d00000000" name="AD_3900:5997171282044203">
+<Expr mdsid="m0000005c-01f4-0000-c90e-77f700000000" name="Expr">
+<ExprText><![CDATA[ IFNULL( CASE  WHEN "%1" = 'Sweepstakes' THEN "%2" ELSE 0 END , 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL( CASE  WHEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."DONATION_CHANNEL" = 'Sweepstakes' THEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."UNIT_PRI" ELSE 0 END , 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000005c-01f4-0000-c90e-77f700000000-m80c649b2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649b2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000005c-01f4-0000-c90e-77f700000000-m80c649a7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649a7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57c52-07d6-0000-714b-e31d00000000" name="Deposit Income" isWriteable="false">
+<MeasureDefn mdsid="m80c5b5b3-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bce4-0802-0000-714b-e31d00000000" name="AggRule_2050:6023341282232354" isDefault="true">
+<Expr mdsid="m0000005d-01f4-0000-b2cf-7b5300000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Event Sponsorship"."Deposit Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000005d-01f4-0000-b2cf-7b5300000000-m80c57c52-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c52-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a164-0f3c-0000-714b-e31d00000000" name="AD_3900:5997191282044203">
+<Expr mdsid="m0000005e-01f4-0000-bba7-465600000000" name="Expr">
+<ExprText><![CDATA[ IFNULL( CASE  WHEN "%1" = 'Deposit' THEN "%2" ELSE 0 END , 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL( CASE  WHEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."DONATION_CHANNEL" = 'Deposit' THEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."UNIT_PRI" ELSE 0 END , 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000005e-01f4-0000-bba7-465600000000-m80c649b2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649b2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000005e-01f4-0000-bba7-465600000000-m80c649a7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649a7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57c53-07d6-0000-714b-e31d00000000" name="Merchandise Income" isWriteable="false">
+<MeasureDefn mdsid="m80c5b5b4-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bce5-0802-0000-714b-e31d00000000" name="AggRule_2050:6023361282232354" isDefault="true">
+<Expr mdsid="m0000005f-01f4-0000-4a87-039e00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Event Sponsorship"."Merchandise Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000005f-01f4-0000-4a87-039e00000000-m80c57c53-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c53-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a165-0f3c-0000-714b-e31d00000000" name="AD_3900:5997261282044203">
+<Expr mdsid="m00000060-01f4-0000-7d32-f59d00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL( CASE  WHEN "%1" = 'Merchandise' THEN "%2" ELSE 0 END , 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL( CASE  WHEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."DONATION_CHANNEL" = 'Merchandise' THEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."UNIT_PRI" ELSE 0 END , 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000060-01f4-0000-7d32-f59d00000000-m80c649b2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649b2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000060-01f4-0000-7d32-f59d00000000-m80c649a7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649a7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57c87-07d6-0000-714b-e31d00000000" name="Online Income (Special Events)" isWriteable="false">
+<MeasureDefn mdsid="m80c5b5b5-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bce6-0802-0000-714b-e31d00000000" name="AggRule_2050:6023381282232354" isDefault="true">
+<Expr mdsid="m00000061-01f4-0000-13b5-974400000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Event Sponsorship"."Online Income (Special Events)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000061-01f4-0000-13b5-974400000000-m80c57c87-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c87-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a199-0f3c-0000-714b-e31d00000000" name="AD_3900:6001671282129731">
+<Expr mdsid="m00000062-01f4-0000-0604-b51b00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL( CASE  WHEN "%1" IN ('Virgin Money', 'Just Giving', 'BM (Online Income)') THEN "%2" ELSE 0 END , 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL( CASE  WHEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."DONATION_CHANNEL" IN ('Virgin Money', 'Just Giving', 'BM (Online Income)') THEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."UNIT_PRI" ELSE 0 END , 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000062-01f4-0000-0604-b51b00000000-m80c649b2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649b2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000062-01f4-0000-0604-b51b00000000-m80c649a7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649a7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57c88-07d6-0000-714b-e31d00000000" name="Total Income" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000063-01f4-0000-c2d1-4f4f00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) +  IFNULL("%2", 0) +  IFNULL("%3", 0) +  IFNULL("%4", 0) +  IFNULL("%5", 0) +  IFNULL("%6", 0) +  IFNULL("%7", 0) +  IFNULL("%8", 0) +  IFNULL("%9", 0) +  IFNULL("%10", 0) +  IFNULL("%11", 0) +  IFNULL("%12", 0) +  IFNULL("%13", 0) +  IFNULL("%14", 0) +  IFNULL("%15", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."SRM - Fact Event Sponsorship"."Live Auction Income", 0) +  IFNULL("Core"."SRM - Fact Event Sponsorship"."Silent Auction Income", 0) +  IFNULL("Core"."SRM - Fact Event Sponsorship"."Raffle Income", 0) +  IFNULL("Core"."SRM - Fact Event Sponsorship"."Pledge Income", 0) +  IFNULL("Core"."SRM - Fact Event Sponsorship"."Donation Income", 0) +  IFNULL("Core"."SRM - Fact Event Sponsorship"."Ticket Sales/Registration Income", 0) +  IFNULL("Core"."SRM - Fact Event Sponsorship"."Other Income", 0) +  IFNULL("Core"."SRM - Fact Event Sponsorship"."Pool Shot Income", 0) +  IFNULL("Core"."SRM - Fact Event Sponsorship"."Red Yellow Income", 0) +  IFNULL("Core"."SRM - Fact Event Sponsorship"."Sweepstake Income", 0) +  IFNULL("Core"."SRM - Fact Event Sponsorship"."Deposit Income", 0) +  IFNULL("Core"."SRM - Fact Event Sponsorship"."Merchandise Income", 0) +  IFNULL("Core"."SRM - Fact Event Sponsorship"."Online Income (Special Events)", 0) +  IFNULL("Core"."SRM - Fact Event Sponsorship"."CRM Income", 0) +  IFNULL("Core"."SRM - Fact Event Sponsorship"."Third Party Sponsorship Income", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000063-01f4-0000-c2d1-4f4f00000000-m80c57c45-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c45-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-c2d1-4f4f00000000-m80c57c46-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c46-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-c2d1-4f4f00000000-m80c57c47-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c47-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-c2d1-4f4f00000000-m80c57c48-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c48-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-c2d1-4f4f00000000-m80c57c49-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c49-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-c2d1-4f4f00000000-m80c57c4b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c4b-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-c2d1-4f4f00000000-m80c57c4d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c4d-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-c2d1-4f4f00000000-m80c57c4f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c4f-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-c2d1-4f4f00000000-m80c57c50-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c50-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-c2d1-4f4f00000000-m80c57c51-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c51-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-c2d1-4f4f00000000-m80c57c52-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c52-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-c2d1-4f4f00000000-m80c57c53-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c53-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-c2d1-4f4f00000000-m80c57c87-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c87-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-c2d1-4f4f00000000-m80c57c4c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c4c-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000063-01f4-0000-c2d1-4f4f00000000-m80c57c4a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57c4a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c6a19a-0f3c-0000-714b-e31d00000000" name="AD_3900:6001731282131591">
+<Expr mdsid="m00000064-01f4-0000-ae29-f0cf00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57da8-07d6-0000-714b-e31d00000000" name="Gift Aid Income" isWriteable="false">
+<MeasureDefn mdsid="m80c5b5b6-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bce7-0802-0000-714b-e31d00000000" name="AggRule_2050:6023431282233252" isDefault="true">
+<Expr mdsid="m00000065-01f4-0000-261e-69b300000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."SRM - Fact Event Sponsorship"."Gift Aid Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000065-01f4-0000-261e-69b300000000-m80c57da8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6f-07f3-0000-714b-e31d00000000.xml#m80c57da8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a2ba-0f3c-0000-714b-e31d00000000" name="AD_3900:6017261282152457">
+<Expr mdsid="m00000066-01f4-0000-46dd-b9b100000000" name="Expr">
+<ExprText><![CDATA[ IFNULL( CASE  WHEN ("%1" = 'Y' OR "%2" = 'Y') AND "%3" IN ('Pledge', 'Donation', 'Cold Donation') THEN "%4" * 22 / 78 ELSE 0 END , 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL( CASE  WHEN ("Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."PROCESSED_FLG" = 'Y' OR "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."TAX_INC_FLG" = 'Y') AND "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."DONATION_CHANNEL" IN ('Pledge', 'Donation', 'Cold Donation') THEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."UNIT_PRI" * 22 / 78 ELSE 0 END , 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000066-01f4-0000-46dd-b9b100000000-m80c6521a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c6521a-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000066-01f4-0000-46dd-b9b100000000-m80c6521d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c6521d-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000066-01f4-0000-46dd-b9b100000000-m80c649b2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649b2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000066-01f4-0000-46dd-b9b100000000-m80c649a7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649a7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c748ed-07d6-0000-714b-e31d00000000" name="Sponsorship Amount (Not Aggregated)" isWriteable="false">
+<AttrDefn mdsid="m80c748ef-0f3c-0000-714b-e31d00000000" name="AD_3900:6612371328193586">
+<Expr mdsid="m00000067-01f4-0000-71cd-e66c00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" LIKE 'CRNE%SPON%' THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."PROD_NAME" LIKE 'CRNE%SPON%' THEN "Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."UNIT_PRI" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000067-01f4-0000-71cd-e66c00000000-m80c5c5c3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80c5c5c3-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000067-01f4-0000-71cd-e66c00000000-m80c649a7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c649a7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c766b5-07d6-0000-714b-e31d00000000" name="Online/Offline Sponsorship" isWriteable="false">
+<AttrDefn mdsid="m80c766b6-0f3c-0000-714b-e31d00000000" name="AD_3900:6677451336572819">
+<Expr mdsid="m00000068-01f4-0000-5517-849700000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Fact - WC_Sponsorship"."ON_OFF_SPONS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000068-01f4-0000-5517-849700000000-m80c64ce4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0ff-0bb9-0000-714b-e31d00000000.xml#m80c64ce4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5aa6f-07f3-0000-714b-e31d00000000-m80c5accb-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5accb-07f5-0000-714b-e31d00000000.xml#m80c5accb-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c5aa6f-07f3-0000-714b-e31d00000000-m80c5accc-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5accc-07f5-0000-714b-e31d00000000.xml#m80c5accc-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

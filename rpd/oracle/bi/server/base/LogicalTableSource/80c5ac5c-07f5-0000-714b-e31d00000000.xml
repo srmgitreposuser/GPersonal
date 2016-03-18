@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTableSource mdsid="m80c5ac5c-07f5-0000-714b-e31d00000000" name="Fact_W_PIPELINE_Prior" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isActive="true" allowUnmappedTable="true" logicalTableRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c5a9ae-07f3-0000-714b-e31d00000000">
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000001-01f4-0000-0453-ce5800000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Pipeline"."Prior Historical Expected Revenue"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-0453-ce5800000000-m80c56ebf-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c56ebf-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000002-01f4-0000-b340-12d000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PIPELINE_F_Prior"."EXPECT_REVN"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-b340-12d000000000-m80c5fd06-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bffa-0bb9-0000-714b-e31d00000000.xml#m80c5fd06-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5bf5c-0bb9-0000-714b-e31d00000000.xml#m80c5bf5c-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5bf5c-0bb9-0000-714b-e31d00000000.xml#m80c5bf5c-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5bffa-0bb9-0000-714b-e31d00000000.xml#m80c5bffa-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/ComplexJoin/80c67b8a-0bc4-0000-714b-e31d00000000.xml#m80c67b8a-0bc4-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5bffa-0bb9-0000-714b-e31d00000000.xml#m80c5bffa-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5bffa-0bb9-0000-714b-e31d00000000.xml#m80c5bffa-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5bf5c-0bb9-0000-714b-e31d00000000.xml#m80c5bf5c-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/ComplexJoin/80c67b8a-0bc4-0000-714b-e31d00000000.xml#m80c67b8a-0bc4-0000-714b-e31d00000000"/>
+</Link>
+<WhereClause mdsid="m00000003-01f4-0000-521e-300800000000" name="WhereClause">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</WhereClause>
+<GroupBy mdsid="m00000004-01f4-0000-652d-81fa00000000" name="GroupBy">
+<ExprText><![CDATA[ GROUPBYLEVEL("%1", "%2", "%3")]]></ExprText>
+<ExprTextDesc><![CDATA[ GROUPBYLEVEL("Core"."Opportunity Close Date"."Detail", "Core"."Security Dimension"."Security Detail", "Core"."Position"."Detail")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-652d-81fa00000000-m80c5a3df-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a111-07e3-0000-714b-e31d00000000.xml#m80c5a3df-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-652d-81fa00000000-m80c5a426-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a11a-07e3-0000-714b-e31d00000000.xml#m80c5a426-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-652d-81fa00000000-m80c5a439-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a11b-07e3-0000-714b-e31d00000000.xml#m80c5a439-07e9-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</GroupBy>
+<FragmentContent mdsid="m00000005-01f4-0000-e1b2-441900000000" name="FragmentContent">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</FragmentContent>
+</LogicalTableSource>

@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9ed-07f3-0000-714b-e31d00000000" name="Fact  Compound - Account Transactions Time Series" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="342" y="69" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c56926-07d6-0000-714b-e31d00000000" name="Chg 2 Months Ago # TXNs" isDerived="true" isWriteable="false">
+<Description><![CDATA[This column calculates the change between the # of Transactions on all accounts of the customer that were incurred 2 Months ago and 1 month ago.]]></Description>
+<Expr mdsid="m00000001-01f4-0000-1dd0-7d7d00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 1 Month Ago", 0) -  IFNULL("Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 2 Months Ago", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-1dd0-7d7d00000000-m80c56907-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56907-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000001-01f4-0000-1dd0-7d7d00000000-m80c56908-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56908-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68d02-0f3c-0000-714b-e31d00000000" name="AD_3900:843881074282455">
+<Expr mdsid="m00000002-01f4-0000-f73d-973f00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56927-07d6-0000-714b-e31d00000000" name="% Chg 2 Months Ago # TXNs" isDerived="true" isWriteable="false">
+<Description><![CDATA[This column calculates % change between the # of Transactions on all accounts of the customer that were incurred 2 Months ago and 1 month ago.]]></Description>
+<Expr mdsid="m00000003-01f4-0000-d97e-35c100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 2 Months Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 2 Months Ago" = 0) AND  NOT "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 1 Month Ago" IS NULL  AND "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 1 Month Ago" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 2 Months Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 2 Months Ago" = 0) AND ("Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 1 Month Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 1 Month Ago" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 1 Month Ago" IS NULL  AND  NOT "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 2 Months Ago" IS NULL  AND "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 2 Months Ago" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 1 Month Ago" - "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 2 Months Ago") / "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 2 Months Ago" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-d97e-35c100000000-m80c56908-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56908-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000003-01f4-0000-d97e-35c100000000-m80c56907-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56907-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68d03-0f3c-0000-714b-e31d00000000" name="AD_3900:843891074282455">
+<Expr mdsid="m00000004-01f4-0000-7b3e-8e9100000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56928-07d6-0000-714b-e31d00000000" name="Chg 3 Months Ago # TXNs" isDerived="true" isWriteable="false">
+<Description><![CDATA[This column calculates the change between the # of Transactions on all accounts of the customer that were incurred 3 Months ago and 1 month ago.]]></Description>
+<Expr mdsid="m00000005-01f4-0000-bae1-d83e00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 1 Month Ago", 0) -  IFNULL("Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 3 Months Ago", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-bae1-d83e00000000-m80c56907-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56907-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000005-01f4-0000-bae1-d83e00000000-m80c56909-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56909-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68d04-0f3c-0000-714b-e31d00000000" name="AD_3900:843901074282455">
+<Expr mdsid="m00000006-01f4-0000-43c8-eaac00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56929-07d6-0000-714b-e31d00000000" name="% Chg 3 Months Ago # TXNs" isDerived="true" isWriteable="false">
+<Description><![CDATA[This column calculates % change between the # of Transactions on all accounts of the customer that were incurred 3 Months ago and 1 month ago.]]></Description>
+<Expr mdsid="m00000007-01f4-0000-3309-6c3b00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 3 Months Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 3 Months Ago" = 0) AND  NOT "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 1 Month Ago" IS NULL  AND "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 1 Month Ago" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 3 Months Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 3 Months Ago" = 0) AND ("Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 1 Month Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 1 Month Ago" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 1 Month Ago" IS NULL  AND  NOT "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 3 Months Ago" IS NULL  AND "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 3 Months Ago" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 1 Month Ago" - "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 3 Months Ago") / "Core"."Fact - CRM - Account Transaction Last 6 Months"."# TXNs 3 Months Ago" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-3309-6c3b00000000-m80c56909-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56909-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000007-01f4-0000-3309-6c3b00000000-m80c56907-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56907-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68d05-0f3c-0000-714b-e31d00000000" name="AD_3900:843911074282455">
+<Expr mdsid="m00000008-01f4-0000-b596-1ffe00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5692a-07d6-0000-714b-e31d00000000" name="Chg 2 Months Ago TXN Amount StdDev" isDerived="true" isWriteable="false">
+<Description><![CDATA[The Standard deviation is the transaction amount for given month shows the variability in the usage of the product. This column gives the difference between the standard deviations calculated for 2 months ago and the standard deviation for 1 month ago.]]></Description>
+<Expr mdsid="m00000009-01f4-0000-d985-7fca00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 1 Month Ago", 0) -  IFNULL("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 2 Months Ago", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-d985-7fca00000000-m80c568f3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568f3-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000009-01f4-0000-d985-7fca00000000-m80c568f4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568f4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68d06-0f3c-0000-714b-e31d00000000" name="AD_3900:843921074282455">
+<Expr mdsid="m0000000a-01f4-0000-67e1-5b9300000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5692b-07d6-0000-714b-e31d00000000" name="% Chg 2 Months Ago TXN Amount StdDev" isDerived="true" isWriteable="false">
+<Description><![CDATA[The Standard deviation is the transaction amount for given month shows the variability in the usage of the product. This column gives the % Change between the standard deviation calculated for 2 months ago and the standard deviation for 1 month ago.]]></Description>
+<Expr mdsid="m0000000b-01f4-0000-cf0a-395b00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 2 Months Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 2 Months Ago" = 0) AND  NOT "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 1 Month Ago" IS NULL  AND "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 1 Month Ago" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 2 Months Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 2 Months Ago" = 0) AND ("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 1 Month Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 1 Month Ago" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 1 Month Ago" IS NULL  AND  NOT "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 2 Months Ago" IS NULL  AND "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 2 Months Ago" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 1 Month Ago" - "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 2 Months Ago") / "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 2 Months Ago" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-cf0a-395b00000000-m80c568f4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568f4-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000b-01f4-0000-cf0a-395b00000000-m80c568f3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568f3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68d07-0f3c-0000-714b-e31d00000000" name="AD_3900:843931074282455">
+<Expr mdsid="m0000000c-01f4-0000-37b1-0dac00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5692c-07d6-0000-714b-e31d00000000" name="Chg 3 Months Ago TXN Amount StdDev" isDerived="true" isWriteable="false">
+<Description><![CDATA[The Standard deviation is the transaction amount for given month shows the variability in the usage of the product. This column gives the difference between the standard deviations calculated for 3 months ago and the standard deviation for 1 month ago.]]></Description>
+<Expr mdsid="m0000000d-01f4-0000-35f8-be8d00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 1 Month Ago", 0) -  IFNULL("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 3 Months Ago", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-35f8-be8d00000000-m80c568f3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568f3-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000d-01f4-0000-35f8-be8d00000000-m80c568f5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568f5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68d08-0f3c-0000-714b-e31d00000000" name="AD_3900:843941074282455">
+<Expr mdsid="m0000000e-01f4-0000-ae45-ad3100000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5692d-07d6-0000-714b-e31d00000000" name="% Chg 3 Months Ago TXN Amount StdDev" isDerived="true" isWriteable="false">
+<Description><![CDATA[The Standard deviation is the transaction amount for given month shows the variability in the usage of the product. This column gives the % Change between the standard deviations calculated for 2 months ago and the standard deviation for 1 month ago.]]></Description>
+<Expr mdsid="m0000000f-01f4-0000-d390-3d5300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 3 Months Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 3 Months Ago" = 0) AND  NOT "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 1 Month Ago" IS NULL  AND "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 1 Month Ago" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 3 Months Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 3 Months Ago" = 0) AND ("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 1 Month Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 1 Month Ago" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 1 Month Ago" IS NULL  AND  NOT "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 3 Months Ago" IS NULL  AND "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 3 Months Ago" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 1 Month Ago" - "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 3 Months Ago") / "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Amount StdDev 3 Months Ago" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-d390-3d5300000000-m80c568f5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568f5-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000f-01f4-0000-d390-3d5300000000-m80c568f3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568f3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68d09-0f3c-0000-714b-e31d00000000" name="AD_3900:843951074282455">
+<Expr mdsid="m00000010-01f4-0000-6571-c3c600000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5692e-07d6-0000-714b-e31d00000000" name="Chg 2 Months Ago % of POS TXNs" isDerived="true" isWriteable="false">
+<Description><![CDATA[This column calculates the difference between the % POS transactions as of 2 months ago and as of 1 month ago thereby indicating a trend.]]></Description>
+<Expr mdsid="m00000011-01f4-0000-63ff-059000000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 1 Month Ago", 0) -  IFNULL("Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 2 Months Ago", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-63ff-059000000000-m80c568fb-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568fb-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000011-01f4-0000-63ff-059000000000-m80c568fc-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568fc-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68d0a-0f3c-0000-714b-e31d00000000" name="AD_3900:843961074282455">
+<Expr mdsid="m00000012-01f4-0000-2b7f-600300000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5692f-07d6-0000-714b-e31d00000000" name="% Chg 2 Months Ago % of POS TXNs" isDerived="true" isWriteable="false">
+<Description><![CDATA[This column calculates the % change in % of POS transactions between that as of 2 months ago and that as of 1 month ago thereby indicating a trend.]]></Description>
+<Expr mdsid="m00000013-01f4-0000-3269-81c800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 2 Months Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 2 Months Ago" = 0) AND  NOT "Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 1 Month Ago" IS NULL  AND "Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 1 Month Ago" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 2 Months Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 2 Months Ago" = 0) AND ("Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 1 Month Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 1 Month Ago" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 1 Month Ago" IS NULL  AND  NOT "Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 2 Months Ago" IS NULL  AND "Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 2 Months Ago" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 1 Month Ago" - "Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 2 Months Ago") / "Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 2 Months Ago" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-3269-81c800000000-m80c568fc-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568fc-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000013-01f4-0000-3269-81c800000000-m80c568fb-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568fb-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68d0b-0f3c-0000-714b-e31d00000000" name="AD_3900:843971074282455">
+<Expr mdsid="m00000014-01f4-0000-fbec-b2bc00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56930-07d6-0000-714b-e31d00000000" name="Chg 3 Months Ago % of POS TXNs" isDerived="true" isWriteable="false">
+<Description><![CDATA[This column calculates the difference between the % POS transactions as of 3 months ago and as of 1 month ago thereby indicating a trend.]]></Description>
+<Expr mdsid="m00000015-01f4-0000-e774-6fd500000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 1 Month Ago", 0) -  IFNULL("Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 3 Months Ago", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-e774-6fd500000000-m80c568fb-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568fb-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000015-01f4-0000-e774-6fd500000000-m80c568fd-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568fd-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68d0c-0f3c-0000-714b-e31d00000000" name="AD_3900:843981074282455">
+<Expr mdsid="m00000016-01f4-0000-8577-f55200000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56931-07d6-0000-714b-e31d00000000" name="% Chg 3 Months Ago % of POS TXNs" isDerived="true" isWriteable="false">
+<Description><![CDATA[This column calculates the % change in % of POS transactions between that as of 3 months ago and that as of 1 month ago thereby indicating a trend.]]></Description>
+<Expr mdsid="m00000017-01f4-0000-16d0-a86000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 3 Months Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 3 Months Ago" = 0) AND  NOT "Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 1 Month Ago" IS NULL  AND "Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 1 Month Ago" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 3 Months Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 3 Months Ago" = 0) AND ("Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 1 Month Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 1 Month Ago" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 1 Month Ago" IS NULL  AND  NOT "Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 3 Months Ago" IS NULL  AND "Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 3 Months Ago" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 1 Month Ago" - "Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 3 Months Ago") / "Core"."Fact - CRM - Account Transaction Last 6 Months"."% of POS Transactions 3 Months Ago" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-16d0-a86000000000-m80c568fd-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568fd-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000017-01f4-0000-16d0-a86000000000-m80c568fb-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568fb-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68d0d-0f3c-0000-714b-e31d00000000" name="AD_3900:843991074282455">
+<Expr mdsid="m00000018-01f4-0000-542e-de7700000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56932-07d6-0000-714b-e31d00000000" name="Chg 3 Months Ago TXN Fee" isDerived="true" isWriteable="false">
+<Description><![CDATA[This column calculates the difference between the fee paid by the customer on all transactions as of 3 Months ago and as of 1 month ago.]]></Description>
+<Expr mdsid="m00000019-01f4-0000-6f77-067b00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 1 Month Ago", 0) -  IFNULL("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 3 Months Ago", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-6f77-067b00000000-m80c568fe-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568fe-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000019-01f4-0000-6f77-067b00000000-m80c568ff-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568ff-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68d0e-0f3c-0000-714b-e31d00000000" name="AD_3900:844001074282455">
+<Expr mdsid="m0000001a-01f4-0000-0108-1cba00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56933-07d6-0000-714b-e31d00000000" name="% Chg 3 Months Ago TXN Fee" isDerived="true" isWriteable="false">
+<Description><![CDATA[This column calculates the % change in the fee paid by the customer on all transactions as of 3 Months ago and those as of 1 month ago.]]></Description>
+<Expr mdsid="m0000001b-01f4-0000-65f0-26c100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 3 Months Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 3 Months Ago" = 0) AND  NOT "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 1 Month Ago" IS NULL  AND "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 1 Month Ago" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 3 Months Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 3 Months Ago" = 0) AND ("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 1 Month Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 1 Month Ago" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 1 Month Ago" IS NULL  AND  NOT "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 3 Months Ago" IS NULL  AND "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 3 Months Ago" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 1 Month Ago" - "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 3 Months Ago") / "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 3 Months Ago" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001b-01f4-0000-65f0-26c100000000-m80c568ff-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568ff-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001b-01f4-0000-65f0-26c100000000-m80c568fe-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568fe-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68d0f-0f3c-0000-714b-e31d00000000" name="AD_3900:844011074282455">
+<Expr mdsid="m0000001c-01f4-0000-f99d-9d3c00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56934-07d6-0000-714b-e31d00000000" name="Chg 6 Months Ago TXN Fee" isDerived="true" isWriteable="false">
+<Description><![CDATA[This column calculates the difference between the fee paid by the customer on all transactions as of 6 Months ago and as of 1 month ago.]]></Description>
+<Expr mdsid="m0000001d-01f4-0000-c7a4-7af100000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 1 Month Ago", 0) -  IFNULL("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 6 Months Ago", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001d-01f4-0000-c7a4-7af100000000-m80c568fe-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568fe-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001d-01f4-0000-c7a4-7af100000000-m80c56900-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56900-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68d10-0f3c-0000-714b-e31d00000000" name="AD_3900:844021074282455">
+<Expr mdsid="m0000001e-01f4-0000-edcc-4ad400000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56935-07d6-0000-714b-e31d00000000" name="% Chg 6 Months Ago TXN Fee" isDerived="true" isWriteable="false">
+<Description><![CDATA[This column calculates the % change in the fee paid by the customer on all transactions as of 6 Months ago and those as of 1 month ago.]]></Description>
+<Expr mdsid="m0000001f-01f4-0000-5e62-4b7f00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 6 Months Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 6 Months Ago" = 0) AND  NOT "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 1 Month Ago" IS NULL  AND "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 1 Month Ago" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 6 Months Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 6 Months Ago" = 0) AND ("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 1 Month Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 1 Month Ago" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 1 Month Ago" IS NULL  AND  NOT "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 6 Months Ago" IS NULL  AND "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 6 Months Ago" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 1 Month Ago" - "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 6 Months Ago") / "Core"."Fact - CRM - Account Transaction Last 6 Months"."TXN Fee 6 Months Ago" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001f-01f4-0000-5e62-4b7f00000000-m80c56900-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56900-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001f-01f4-0000-5e62-4b7f00000000-m80c568fe-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c568fe-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68d11-0f3c-0000-714b-e31d00000000" name="AD_3900:844031074282455">
+<Expr mdsid="m00000020-01f4-0000-afb5-266500000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56936-07d6-0000-714b-e31d00000000" name="Chg 2 Months Ago Penalties" isDerived="true" isWriteable="false">
+<Description><![CDATA[The change in the penalties paid as of 2 months ago to those paid as of 1 month ago.]]></Description>
+<Expr mdsid="m00000021-01f4-0000-a90c-948b00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 1 Month Ago", 0) -  IFNULL("Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 2 Months Ago", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000021-01f4-0000-a90c-948b00000000-m80c56902-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56902-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000021-01f4-0000-a90c-948b00000000-m80c56903-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56903-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68d12-0f3c-0000-714b-e31d00000000" name="AD_3900:844041074282455">
+<Expr mdsid="m00000022-01f4-0000-399a-85a000000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56937-07d6-0000-714b-e31d00000000" name="% Chg 2 Months Ago Penalties" isDerived="true" isWriteable="false">
+<Description><![CDATA[The % change in the penalties paid as of 2 months ago to those paid as of 1 month ago.]]></Description>
+<Expr mdsid="m00000023-01f4-0000-6a2c-a2e000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 2 Months Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 2 Months Ago" = 0) AND  NOT "Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 1 Month Ago" IS NULL  AND "Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 1 Month Ago" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 2 Months Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 2 Months Ago" = 0) AND ("Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 1 Month Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 1 Month Ago" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 1 Month Ago" IS NULL  AND  NOT "Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 2 Months Ago" IS NULL  AND "Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 2 Months Ago" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 1 Month Ago" - "Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 2 Months Ago") / "Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 2 Months Ago" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000023-01f4-0000-6a2c-a2e000000000-m80c56903-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56903-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000023-01f4-0000-6a2c-a2e000000000-m80c56902-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56902-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68d13-0f3c-0000-714b-e31d00000000" name="AD_3900:844051074282455">
+<Expr mdsid="m00000024-01f4-0000-31fc-d51200000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56938-07d6-0000-714b-e31d00000000" name="Chg 3 Months Ago Penalties" isDerived="true" isWriteable="false">
+<Description><![CDATA[The change in the penalties paid as of 3 months ago to those paid as of 1 month ago.]]></Description>
+<Expr mdsid="m00000025-01f4-0000-9c9e-4e8b00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 1 Month Ago", 0) -  IFNULL("Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 3 Months Ago", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000025-01f4-0000-9c9e-4e8b00000000-m80c56902-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56902-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000025-01f4-0000-9c9e-4e8b00000000-m80c56904-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56904-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68d14-0f3c-0000-714b-e31d00000000" name="AD_3900:844061074282455">
+<Expr mdsid="m00000026-01f4-0000-87f8-a5e900000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56939-07d6-0000-714b-e31d00000000" name="% Chg 3 Months Ago Penalties" isDerived="true" isWriteable="false">
+<Description><![CDATA[The % change in the penalties paid as of 3 months ago to those paid as of 1 month ago.]]></Description>
+<Expr mdsid="m00000027-01f4-0000-d33a-98a100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN ("%1" IS NULL  OR "%1" = 0) AND  NOT "%2" IS NULL  AND "%2" <> 0 THEN 100.0d WHEN ("%1" IS NULL  OR "%1" = 0) AND ("%2" IS NULL  OR "%2" = 0) THEN 0.0d WHEN "%2" IS NULL  AND  NOT "%1" IS NULL  AND "%1" <> 0 THEN -(100.0d) ELSE 100.0d * ("%2" - "%1") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN ("Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 3 Months Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 3 Months Ago" = 0) AND  NOT "Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 1 Month Ago" IS NULL  AND "Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 1 Month Ago" <> 0 THEN 100.0d WHEN ("Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 3 Months Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 3 Months Ago" = 0) AND ("Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 1 Month Ago" IS NULL  OR "Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 1 Month Ago" = 0) THEN 0.0d WHEN "Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 1 Month Ago" IS NULL  AND  NOT "Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 3 Months Ago" IS NULL  AND "Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 3 Months Ago" <> 0 THEN -(100.0d) ELSE 100.0d * ("Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 1 Month Ago" - "Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 3 Months Ago") / "Core"."Fact - CRM - Account Transaction Last 6 Months"."Penalties 3 Months Ago" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000027-01f4-0000-d33a-98a100000000-m80c56904-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56904-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000027-01f4-0000-d33a-98a100000000-m80c56902-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ea-07f3-0000-714b-e31d00000000.xml#m80c56902-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68d15-0f3c-0000-714b-e31d00000000" name="AD_3900:844071074282455">
+<Expr mdsid="m00000028-01f4-0000-7343-304300000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+</LogicalTable>

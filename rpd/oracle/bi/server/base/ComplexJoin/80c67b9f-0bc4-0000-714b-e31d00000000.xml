@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ComplexJoin mdsid="m80c67b9f-0bc4-0000-714b-e31d00000000" name="Dim_WC_LAST_EVENT_D_Last_Year_Event_Dim_WC_EVENT_D" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" table1Ref="/oracle/bi/server/base/PhysicalTable/80c5c105-0bb9-0000-714b-e31d00000000.xml#m80c5c105-0bb9-0000-714b-e31d00000000" table2Ref="/oracle/bi/server/base/PhysicalTable/80c5c0f4-0bb9-0000-714b-e31d00000000.xml#m80c5c0f4-0bb9-0000-714b-e31d00000000">
+<Expr mdsid="m00000001-01f4-0000-a48e-766700000000" name="Expr">
+<ExprText><![CDATA["%1" =  CASE  WHEN "%2" IS NULL  THEN '0' ELSE "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."SRM Custom Tables"."Dim_WC_LAST_EVENT_D_Last_Year_Event"."INTEGRATION_ID" =  CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_EVENT_D"."RLTD_SRC_ID" IS NULL  THEN '0' ELSE "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_EVENT_D"."RLTD_SRC_ID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-a48e-766700000000-m80c64a28-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c105-0bb9-0000-714b-e31d00000000.xml#m80c64a28-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000001-01f4-0000-a48e-766700000000-m80c66197-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0f4-0bb9-0000-714b-e31d00000000.xml#m80c66197-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ComplexJoin>

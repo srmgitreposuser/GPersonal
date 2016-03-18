@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9c4-07f3-0000-714b-e31d00000000" name="Fact - CRM - Campaign Overlap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1689" y="329" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<Description><![CDATA[This fact gives count of Contacts and Accounts that overlap any two UNLAUNCHED campaigns.
+Grain: Campaign-Overlap Campaign]]></Description>
+<LogicalColumn mdsid="m80c567e5-07d6-0000-714b-e31d00000000" name="# Overlapping Contacts in Campaigns" isWriteable="false">
+<Description><![CDATA[# of Accounts that Overlap between two specified unlaunched campaigns.]]></Description>
+<MeasureDefn mdsid="m80c5b1ba-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b9b8-0802-0000-714b-e31d00000000" name="AggRule_2050:1596621082392537" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-e0dc-69d000000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Campaign Overlap"."# Overlapping Contacts in Campaigns")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-e0dc-69d000000000-m80c567e5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9c4-07f3-0000-714b-e31d00000000.xml#m80c567e5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68bc2-0f3c-0000-714b-e31d00000000" name="AD_3900:840251074282455">
+<Expr mdsid="m00000002-01f4-0000-3eee-57c300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_OVR_CMPCON_A"."NUM_OVRLP_CONS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-3eee-57c300000000-m80c5ec35-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfa8-0bb9-0000-714b-e31d00000000.xml#m80c5ec35-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c567e6-07d6-0000-714b-e31d00000000" name="# Overlapping Accounts by Campaigns" isWriteable="false">
+<Description><![CDATA["# of Accounts that Overlap between two specified campaigns. Please see report on Customer Insight (B2B) dashboard, Interaction tab"]]></Description>
+<MeasureDefn mdsid="m80c5b1bb-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b8c9-0802-0000-714b-e31d00000000" name="AggRule_2050:182501074282429" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-e27d-262200000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Campaign Overlap"."# Overlapping Accounts by Campaigns")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-e27d-262200000000-m80c567e6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9c4-07f3-0000-714b-e31d00000000.xml#m80c567e6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68bc3-0f3c-0000-714b-e31d00000000" name="AD_3900:840261074282455">
+<Expr mdsid="m00000004-01f4-0000-b981-966200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_OVR_CMPACNT_A"."NUM_OVRLP_ACNTS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-b981-966200000000-m80c5ec32-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfa7-0bb9-0000-714b-e31d00000000.xml#m80c5ec32-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c567e7-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80c68bc4-0f3c-0000-714b-e31d00000000" name="AD_3900:840271074282455">
+<Expr mdsid="m00000005-01f4-0000-e50a-9cf200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_W_OVR_CMPCON_A"."CAMP_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-e50a-9cf200000000-m80c5ec33-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfa8-0bb9-0000-714b-e31d00000000.xml#m80c5ec33-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57307-07d6-0000-714b-e31d00000000" name="CAMP_START_DT" isWriteable="false">
+<AttrDefn mdsid="m80c69819-0f3c-0000-714b-e31d00000000" name="AD_3900:4929661227090452">
+<Expr mdsid="m00000006-01f4-0000-7f33-1dae00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_SOURCE_D_Overlapping_Source"."CAMP_START_DT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-7f33-1dae00000000-m80c5eb3a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfa1-0bb9-0000-714b-e31d00000000.xml#m80c5eb3a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58c8f-07d8-0000-714b-e31d00000000" name="W_CAMP_HIST_F_KEY" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58c8f-07d8-0000-714b-e31d00000000-m80c567e7-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9c4-07f3-0000-714b-e31d00000000.xml#m80c567e7-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5a9c4-07f3-0000-714b-e31d00000000-m80c5abeb-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5abeb-07f5-0000-714b-e31d00000000.xml#m80c5abeb-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c5a9c4-07f3-0000-714b-e31d00000000-m80c5abec-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5abec-07f5-0000-714b-e31d00000000.xml#m80c5abec-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

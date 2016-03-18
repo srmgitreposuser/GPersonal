@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5aa69-07f3-0000-714b-e31d00000000" name="SRM - Derived KPI" iconIndex="74" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1509" y="927" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c576b3-07d6-0000-714b-e31d00000000" name="Actual Income" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000001-01f4-0000-ccc3-d65000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Payment"."Donation Amount"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-ccc3-d65000000000-m80c57077-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c57077-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bc5-0f3c-0000-714b-e31d00000000" name="AD_3900:5471511259075285">
+<Expr mdsid="m00000002-01f4-0000-7e00-ae8400000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576ba-07d6-0000-714b-e31d00000000" name="Actual Audience Volume" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000003-01f4-0000-e010-f96f00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Acquisition' THEN  IFNULL("%2", 0) +  IFNULL("%3", 0) ELSE  IFNULL("%3", 0) END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Dim - Marketing Source"."Primary Purpose" = 'Acquisition' THEN  IFNULL("Core"."SRM - Cold Campaign Targetted Volume"."Acquisition Targetted Volume", 0) +  IFNULL("Core"."Fact - CRM - Campaign History"."# Total of Supporters Passed Data Cleanse", 0) ELSE  IFNULL("Core"."Fact - CRM - Campaign History"."# Total of Supporters Passed Data Cleanse", 0) END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-e010-f96f00000000-m80c571ca-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9f0-07f3-0000-714b-e31d00000000.xml#m80c571ca-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000003-01f4-0000-e010-f96f00000000-m80c5769c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa67-07f3-0000-714b-e31d00000000.xml#m80c5769c-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000003-01f4-0000-e010-f96f00000000-m80c57577-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ca-07f3-0000-714b-e31d00000000.xml#m80c57577-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bcc-0f3c-0000-714b-e31d00000000" name="AD_3900:5472321259088715">
+<Expr mdsid="m00000004-01f4-0000-e02f-6aff00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576bb-07d6-0000-714b-e31d00000000" name="Actual Response Volume" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000005-01f4-0000-8a20-72aa00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) +  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Payment"."# of Cash Payments", 0) +  IFNULL("Core"."Fact - CRM - Payment"."# of COG Orders", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-8a20-72aa00000000-m80c5739a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c5739a-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000005-01f4-0000-8a20-72aa00000000-m80c573ba-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c573ba-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bcd-0f3c-0000-714b-e31d00000000" name="AD_3900:5473591259097789">
+<Expr mdsid="m00000006-01f4-0000-558c-34f200000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576bc-07d6-0000-714b-e31d00000000" name="Actual Cost/Unit" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000007-01f4-0000-6d92-1fc600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 OR "%1" IS NULL  THEN  NULL  ELSE "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."SRM - Derived KPI"."Actual Audience Volume" = 0 OR "Core"."SRM - Derived KPI"."Actual Audience Volume" IS NULL  THEN  NULL  ELSE "Core"."SRM - Campaign KPI"."Actual Expenditure" / "Core"."SRM - Derived KPI"."Actual Audience Volume" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-6d92-1fc600000000-m80c576ba-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa69-07f3-0000-714b-e31d00000000.xml#m80c576ba-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000007-01f4-0000-6d92-1fc600000000-m80c576b2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa66-07f3-0000-714b-e31d00000000.xml#m80c576b2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bce-0f3c-0000-714b-e31d00000000" name="AD_3900:5473911259097789">
+<Expr mdsid="m00000008-01f4-0000-6210-089a00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576bd-07d6-0000-714b-e31d00000000" name="Actual Response Rate" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000009-01f4-0000-9a72-745b00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 OR "%1" IS NULL  THEN  NULL  ELSE "%2" / "%1" END  * 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."SRM - Derived KPI"."Actual Audience Volume" = 0 OR "Core"."SRM - Derived KPI"."Actual Audience Volume" IS NULL  THEN  NULL  ELSE "Core"."SRM - Derived KPI"."Actual Response Volume" / "Core"."SRM - Derived KPI"."Actual Audience Volume" END  * 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-9a72-745b00000000-m80c576ba-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa69-07f3-0000-714b-e31d00000000.xml#m80c576ba-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000009-01f4-0000-9a72-745b00000000-m80c576bb-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa69-07f3-0000-714b-e31d00000000.xml#m80c576bb-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bcf-0f3c-0000-714b-e31d00000000" name="AD_3900:5473951259097789">
+<Expr mdsid="m0000000a-01f4-0000-3977-d91600000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576be-07d6-0000-714b-e31d00000000" name="Actual ROI" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000000b-01f4-0000-ec82-947100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 OR "%1" IS NULL  THEN  NULL  ELSE "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."SRM - Campaign KPI"."Actual Expenditure" = 0 OR "Core"."SRM - Campaign KPI"."Actual Expenditure" IS NULL  THEN  NULL  ELSE "Core"."SRM - Derived KPI"."Actual Income" / "Core"."SRM - Campaign KPI"."Actual Expenditure" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-ec82-947100000000-m80c576b2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa66-07f3-0000-714b-e31d00000000.xml#m80c576b2-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000b-01f4-0000-ec82-947100000000-m80c576b3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa69-07f3-0000-714b-e31d00000000.xml#m80c576b3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bd0-0f3c-0000-714b-e31d00000000" name="AD_3900:5473991259097789">
+<Expr mdsid="m0000000c-01f4-0000-b07d-f33c00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576bf-07d6-0000-714b-e31d00000000" name="Budgeted Cost/Unit" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000000d-01f4-0000-06ee-04f200000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 OR "%1" IS NULL  THEN  NULL  ELSE "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."SRM - Campaign KPI"."Budgeted Audience Volume" = 0 OR "Core"."SRM - Campaign KPI"."Budgeted Audience Volume" IS NULL  THEN  NULL  ELSE "Core"."SRM - Campaign KPI"."Budgeted Expenditure" / "Core"."SRM - Campaign KPI"."Budgeted Audience Volume" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-06ee-04f200000000-m80c576b6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa66-07f3-0000-714b-e31d00000000.xml#m80c576b6-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000d-01f4-0000-06ee-04f200000000-m80c576b0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa66-07f3-0000-714b-e31d00000000.xml#m80c576b0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bd1-0f3c-0000-714b-e31d00000000" name="AD_3900:5474051259097789">
+<Expr mdsid="m0000000e-01f4-0000-9d3b-5bb300000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576c0-07d6-0000-714b-e31d00000000" name="Budgeted Response Rate" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000000f-01f4-0000-6f9c-250900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 OR "%1" IS NULL  THEN  NULL  ELSE "%2" / "%1" END  * 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."SRM - Campaign KPI"."Budgeted Audience Volume" = 0 OR "Core"."SRM - Campaign KPI"."Budgeted Audience Volume" IS NULL  THEN  NULL  ELSE "Core"."SRM - Campaign KPI"."Budgeted Response Volume" / "Core"."SRM - Campaign KPI"."Budgeted Audience Volume" END  * 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-6f9c-250900000000-m80c576b6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa66-07f3-0000-714b-e31d00000000.xml#m80c576b6-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000f-01f4-0000-6f9c-250900000000-m80c576b8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa66-07f3-0000-714b-e31d00000000.xml#m80c576b8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bd2-0f3c-0000-714b-e31d00000000" name="AD_3900:5474091259097789">
+<Expr mdsid="m00000010-01f4-0000-fe24-52c300000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576c1-07d6-0000-714b-e31d00000000" name="Budgeted ROI" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000011-01f4-0000-e32d-0b5000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 OR "%1" IS NULL  THEN  NULL  ELSE "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."SRM - Campaign KPI"."Budgeted Expenditure" = 0 OR "Core"."SRM - Campaign KPI"."Budgeted Expenditure" IS NULL  THEN  NULL  ELSE "Core"."SRM - Campaign KPI"."Budgeted Income" / "Core"."SRM - Campaign KPI"."Budgeted Expenditure" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-e32d-0b5000000000-m80c576b0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa66-07f3-0000-714b-e31d00000000.xml#m80c576b0-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000011-01f4-0000-e32d-0b5000000000-m80c576b4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa66-07f3-0000-714b-e31d00000000.xml#m80c576b4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bd3-0f3c-0000-714b-e31d00000000" name="AD_3900:5474131259097789">
+<Expr mdsid="m00000012-01f4-0000-6f3b-3e6d00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576c2-07d6-0000-714b-e31d00000000" name="Forecast Cost/Unit" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000013-01f4-0000-c1a1-aacb00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 OR "%1" IS NULL  THEN  NULL  ELSE "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."SRM - Campaign KPI"."Forecast Audience Volume" = 0 OR "Core"."SRM - Campaign KPI"."Forecast Audience Volume" IS NULL  THEN  NULL  ELSE "Core"."SRM - Campaign KPI"."Forecast Expenditure" / "Core"."SRM - Campaign KPI"."Forecast Audience Volume" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-c1a1-aacb00000000-m80c576b7-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa66-07f3-0000-714b-e31d00000000.xml#m80c576b7-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000013-01f4-0000-c1a1-aacb00000000-m80c576b1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa66-07f3-0000-714b-e31d00000000.xml#m80c576b1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bd4-0f3c-0000-714b-e31d00000000" name="AD_3900:5474171259097789">
+<Expr mdsid="m00000014-01f4-0000-371a-5c1400000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576c3-07d6-0000-714b-e31d00000000" name="Forecast Response Rate" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000015-01f4-0000-4dc3-c93800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 OR "%1" IS NULL  THEN  NULL  ELSE "%2" / "%1" END  * 100]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."SRM - Campaign KPI"."Forecast Audience Volume" = 0 OR "Core"."SRM - Campaign KPI"."Forecast Audience Volume" IS NULL  THEN  NULL  ELSE "Core"."SRM - Campaign KPI"."Forecast Response Volume" / "Core"."SRM - Campaign KPI"."Forecast Audience Volume" END  * 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-4dc3-c93800000000-m80c576b7-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa66-07f3-0000-714b-e31d00000000.xml#m80c576b7-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000015-01f4-0000-4dc3-c93800000000-m80c576b9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa66-07f3-0000-714b-e31d00000000.xml#m80c576b9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bd5-0f3c-0000-714b-e31d00000000" name="AD_3900:5474211259097789">
+<Expr mdsid="m00000016-01f4-0000-d6e5-e99b00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576c4-07d6-0000-714b-e31d00000000" name="Forecast ROI" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000017-01f4-0000-801e-b44400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 OR "%1" IS NULL  THEN  NULL  ELSE "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."SRM - Campaign KPI"."Forecast Expenditure" = 0 OR "Core"."SRM - Campaign KPI"."Forecast Expenditure" IS NULL  THEN  NULL  ELSE "Core"."SRM - Campaign KPI"."Forecast Income" / "Core"."SRM - Campaign KPI"."Forecast Expenditure" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-801e-b44400000000-m80c576b1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa66-07f3-0000-714b-e31d00000000.xml#m80c576b1-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000017-01f4-0000-801e-b44400000000-m80c576b5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa66-07f3-0000-714b-e31d00000000.xml#m80c576b5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bd6-0f3c-0000-714b-e31d00000000" name="AD_3900:5474251259097789">
+<Expr mdsid="m00000018-01f4-0000-000c-176300000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576c5-07d6-0000-714b-e31d00000000" name="Actual-Budget Expenditure Variance" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000019-01f4-0000-4b0f-739f00000000" name="Expr">
+<ExprText><![CDATA["%1" - "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."SRM - Campaign KPI"."Actual Expenditure" - "Core"."SRM - Campaign KPI"."Budgeted Expenditure"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-4b0f-739f00000000-m80c576b2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa66-07f3-0000-714b-e31d00000000.xml#m80c576b2-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000019-01f4-0000-4b0f-739f00000000-m80c576b0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa66-07f3-0000-714b-e31d00000000.xml#m80c576b0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bd7-0f3c-0000-714b-e31d00000000" name="AD_3900:5474391259097789">
+<Expr mdsid="m0000001a-01f4-0000-719b-418200000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576c6-07d6-0000-714b-e31d00000000" name="Actual-Budget Income Variance" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000001b-01f4-0000-b2bc-930800000000" name="Expr">
+<ExprText><![CDATA["%1" - "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."SRM - Derived KPI"."Actual Income" - "Core"."SRM - Campaign KPI"."Budgeted Income"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001b-01f4-0000-b2bc-930800000000-m80c576b3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa69-07f3-0000-714b-e31d00000000.xml#m80c576b3-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001b-01f4-0000-b2bc-930800000000-m80c576b4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa66-07f3-0000-714b-e31d00000000.xml#m80c576b4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bd8-0f3c-0000-714b-e31d00000000" name="AD_3900:5474431259097789">
+<Expr mdsid="m0000001c-01f4-0000-3f68-bc8d00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576c7-07d6-0000-714b-e31d00000000" name="Actual-Budget Response Volume Variance" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000001d-01f4-0000-34b7-a3e700000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) +  IFNULL("%2", 0) -  IFNULL("%3", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Payment"."# of Cash Payments", 0) +  IFNULL("Core"."Fact - CRM - Payment"."# of COG Orders", 0) -  IFNULL("Core"."SRM - Campaign KPI"."Budgeted Response Volume", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001d-01f4-0000-34b7-a3e700000000-m80c5739a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c5739a-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001d-01f4-0000-34b7-a3e700000000-m80c573ba-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c573ba-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001d-01f4-0000-34b7-a3e700000000-m80c576b8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa66-07f3-0000-714b-e31d00000000.xml#m80c576b8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bd9-0f3c-0000-714b-e31d00000000" name="AD_3900:5474471259097789">
+<Expr mdsid="m0000001e-01f4-0000-e5ba-f25d00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576c8-07d6-0000-714b-e31d00000000" name="Actual-Budget Audience Volume Variance" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000001f-01f4-0000-b8c5-fbc600000000" name="Expr">
+<ExprText><![CDATA["%1" - "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."SRM - Derived KPI"."Actual Audience Volume" - "Core"."SRM - Campaign KPI"."Budgeted Audience Volume"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001f-01f4-0000-b8c5-fbc600000000-m80c576ba-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa69-07f3-0000-714b-e31d00000000.xml#m80c576ba-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001f-01f4-0000-b8c5-fbc600000000-m80c576b6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa66-07f3-0000-714b-e31d00000000.xml#m80c576b6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bda-0f3c-0000-714b-e31d00000000" name="AD_3900:5474511259097789">
+<Expr mdsid="m00000020-01f4-0000-f8f9-c74000000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576c9-07d6-0000-714b-e31d00000000" name="Forecast-Actual Expenditure Variance" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000021-01f4-0000-0bc6-9fb300000000" name="Expr">
+<ExprText><![CDATA["%1" - "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."SRM - Campaign KPI"."Forecast Expenditure" - "Core"."SRM - Campaign KPI"."Actual Expenditure"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000021-01f4-0000-0bc6-9fb300000000-m80c576b1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa66-07f3-0000-714b-e31d00000000.xml#m80c576b1-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000021-01f4-0000-0bc6-9fb300000000-m80c576b2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa66-07f3-0000-714b-e31d00000000.xml#m80c576b2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bdb-0f3c-0000-714b-e31d00000000" name="AD_3900:5474551259097789">
+<Expr mdsid="m00000022-01f4-0000-b4f9-610d00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576ca-07d6-0000-714b-e31d00000000" name="Forecast-Actual Income Variance" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000023-01f4-0000-17ee-59e700000000" name="Expr">
+<ExprText><![CDATA["%1" - "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."SRM - Campaign KPI"."Forecast Income" - "Core"."SRM - Derived KPI"."Actual Income"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000023-01f4-0000-17ee-59e700000000-m80c576b5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa66-07f3-0000-714b-e31d00000000.xml#m80c576b5-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000023-01f4-0000-17ee-59e700000000-m80c576b3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa69-07f3-0000-714b-e31d00000000.xml#m80c576b3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bdc-0f3c-0000-714b-e31d00000000" name="AD_3900:5474591259097789">
+<Expr mdsid="m00000024-01f4-0000-541c-5eb200000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576cb-07d6-0000-714b-e31d00000000" name="Forecast-Actual Response Volume Variance" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000025-01f4-0000-336d-3d0300000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) -  IFNULL("%2", 0) -  IFNULL("%3", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."SRM - Campaign KPI"."Forecast Response Volume", 0) -  IFNULL("Core"."Fact - CRM - Payment"."# of Cash Payments", 0) -  IFNULL("Core"."Fact - CRM - Payment"."# of COG Orders", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000025-01f4-0000-336d-3d0300000000-m80c576b9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa66-07f3-0000-714b-e31d00000000.xml#m80c576b9-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000025-01f4-0000-336d-3d0300000000-m80c5739a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c5739a-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000025-01f4-0000-336d-3d0300000000-m80c573ba-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c573ba-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bdd-0f3c-0000-714b-e31d00000000" name="AD_3900:5474631259097789">
+<Expr mdsid="m00000026-01f4-0000-81cd-a84900000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576cc-07d6-0000-714b-e31d00000000" name="Forecast-Actual Audience Volume Variance" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000027-01f4-0000-e334-608800000000" name="Expr">
+<ExprText><![CDATA["%1" - "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."SRM - Campaign KPI"."Forecast Audience Volume" - "Core"."SRM - Derived KPI"."Actual Audience Volume"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000027-01f4-0000-e334-608800000000-m80c576b7-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa66-07f3-0000-714b-e31d00000000.xml#m80c576b7-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000027-01f4-0000-e334-608800000000-m80c576ba-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa69-07f3-0000-714b-e31d00000000.xml#m80c576ba-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bde-0f3c-0000-714b-e31d00000000" name="AD_3900:5474671259097789">
+<Expr mdsid="m00000028-01f4-0000-d0ec-16fb00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57960-07d6-0000-714b-e31d00000000" name="Old Cold/Warm Actual Audience Volume" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000029-01f4-0000-5bd4-686f00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Acquisition' THEN  IFNULL("%2", 0) ELSE "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Dim - Marketing Source"."Primary Purpose" = 'Acquisition' THEN  IFNULL("Core"."SRM - Cold Campaign Targetted Volume"."Acquisition Targetted Volume", 0) ELSE "Core"."Fact - CRM - Campaign History"."# Total of Supporters Passed Data Cleanse" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000029-01f4-0000-5bd4-686f00000000-m80c571ca-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9f0-07f3-0000-714b-e31d00000000.xml#m80c571ca-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000029-01f4-0000-5bd4-686f00000000-m80c5769c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa67-07f3-0000-714b-e31d00000000.xml#m80c5769c-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000029-01f4-0000-5bd4-686f00000000-m80c57577-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ca-07f3-0000-714b-e31d00000000.xml#m80c57577-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69e72-0f3c-0000-714b-e31d00000000" name="AD_3900:5787521272376210">
+<Expr mdsid="m0000002a-01f4-0000-6691-9a3400000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c70127-07d6-0000-714b-e31d00000000" name="Actual Audience Volume (Excluding Households)" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000002b-01f4-0000-1268-f63c00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Acquisition' THEN  IFNULL("%2", 0) +  IFNULL("%3", 0) ELSE  IFNULL("%3", 0) END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Dim - Marketing Source"."Primary Purpose" = 'Acquisition' THEN  IFNULL("Core"."SRM - Cold Campaign Targetted Volume"."Acquisition Targetted Volume", 0) +  IFNULL("Core"."Fact - CRM - Campaign History"."# Total of Supporters Passed Data Cleanse (Excluding Households)", 0) ELSE  IFNULL("Core"."Fact - CRM - Campaign History"."# Total of Supporters Passed Data Cleanse (Excluding Households)", 0) END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002b-01f4-0000-1268-f63c00000000-m80c571ca-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9f0-07f3-0000-714b-e31d00000000.xml#m80c571ca-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002b-01f4-0000-1268-f63c00000000-m80c5769c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa67-07f3-0000-714b-e31d00000000.xml#m80c5769c-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002b-01f4-0000-1268-f63c00000000-m80c7012b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ca-07f3-0000-714b-e31d00000000.xml#m80c7012b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c7012f-0f3c-0000-714b-e31d00000000" name="AD_3900:6484431310398904">
+<Expr mdsid="m0000002c-01f4-0000-0272-580300000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c70128-07d6-0000-714b-e31d00000000" name="Actual Audience Volume (Households)" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000002d-01f4-0000-b637-a9ca00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Acquisition' THEN  IFNULL("%2", 0) +  IFNULL("%3", 0) ELSE  IFNULL("%3", 0) END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Dim - Marketing Source"."Primary Purpose" = 'Acquisition' THEN  IFNULL("Core"."SRM - Cold Campaign Targetted Volume"."Acquisition Targetted Volume", 0) +  IFNULL("Core"."Fact - CRM - Campaign History"."# Total of Households Passed Data Cleanse", 0) ELSE  IFNULL("Core"."Fact - CRM - Campaign History"."# Total of Households Passed Data Cleanse", 0) END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002d-01f4-0000-b637-a9ca00000000-m80c571ca-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9f0-07f3-0000-714b-e31d00000000.xml#m80c571ca-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002d-01f4-0000-b637-a9ca00000000-m80c5769c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa67-07f3-0000-714b-e31d00000000.xml#m80c5769c-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002d-01f4-0000-b637-a9ca00000000-m80c7012a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ca-07f3-0000-714b-e31d00000000.xml#m80c7012a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c70130-0f3c-0000-714b-e31d00000000" name="AD_3900:6484441310398904">
+<Expr mdsid="m0000002e-01f4-0000-422b-989f00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+</LogicalTable>

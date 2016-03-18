@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<InitBlock mdsid="m80c67c6d-0bd9-0000-714b-e31d00000000" name="PREVIOUS_FSCL_MONTH" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isRowWiseCacheEnabled="false" refreshPeriod="3600" baseTime="2003-01-01 00:00:00" connectionPoolRef="/oracle/bi/server/base/ConnectionPool/80c67bbe-0bd5-0000-714b-e31d00000000.xml#m80c67bbe-0bd5-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT PRV.PER_NAME_FSCL_MNTH FROM VALUEOF(OLAPTBO).W_DAY_D PRV , VALUEOF(OLAPTBO).W_DAY_D CUR WHERE 
+to_char(PRV.DAY_DT,'yyyymmdd')=to_char(CUR.MONTH_AGO_DT - VALUEOF(TIME_OFFSET),'yyyymmdd')
+and to_char(CUR.DAY_DT,'yyyymmdd')=to_char(SYSDATE - VALUEOF(TIME_OFFSET),'yyyymmdd')]]></Value>
+</DBMapItem>
+<RefVariables>
+<RefVariable refId="m80c67c6d-0bd9-0000-714b-e31d00000000-m80c67c07-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c07-0bd7-0000-714b-e31d00000000.xml#m80c67c07-0bd7-0000-714b-e31d00000000"/>
+</RefVariables>
+<InitString><![CDATA[SELECT PRV.PER_NAME_FSCL_MNTH FROM VALUEOF(OLAPTBO).W_DAY_D PRV , VALUEOF(OLAPTBO).W_DAY_D CUR WHERE 
+to_char(PRV.DAY_DT,'yyyymmdd')=to_char(CUR.MONTH_AGO_DT - VALUEOF(TIME_OFFSET),'yyyymmdd')
+and to_char(CUR.DAY_DT,'yyyymmdd')=to_char(SYSDATE - VALUEOF(TIME_OFFSET),'yyyymmdd')]]></InitString>
+</InitBlock>

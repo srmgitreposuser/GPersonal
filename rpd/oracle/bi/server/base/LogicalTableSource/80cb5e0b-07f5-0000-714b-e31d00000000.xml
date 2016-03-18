@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTableSource mdsid="m80cb5e0b-07f5-0000-714b-e31d00000000" name="Fact_WC_CASE_F" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isActive="true" logicalTableRef="/oracle/bi/server/base/LogicalTable/80cb5dfa-07f3-0000-714b-e31d00000000.xml#m80cb5dfa-07f3-0000-714b-e31d00000000">
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000001-01f4-0000-74c8-f17700000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Owning Party - Due Diligence"."# Due Diligence Cases"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-74c8-f17700000000-m80cb5dff-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb5dfa-07f3-0000-714b-e31d00000000.xml#m80cb5dff-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000002-01f4-0000-4364-85d100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_CASE_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-4364-85d100000000-m80cb5dbe-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb5dad-0bb9-0000-714b-e31d00000000.xml#m80cb5dbe-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000003-01f4-0000-ecbb-ff4300000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Owning Party - Due Diligence"."Implicit Fact Constant"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-ecbb-ff4300000000-m80cb5e17-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb5dfa-07f3-0000-714b-e31d00000000.xml#m80cb5e17-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000004-01f4-0000-dbed-6e5400000000" name="Expr">
+<ExprText><![CDATA[1]]></ExprText>
+<ExprTextDesc><![CDATA[1]]></ExprTextDesc>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000005-01f4-0000-1867-954c00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Owning Party - Due Diligence"."# of Owning Parties (Distinct)"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-1867-954c00000000-m80cbc602-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb5dfa-07f3-0000-714b-e31d00000000.xml#m80cbc602-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000006-01f4-0000-20b2-85d500000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_CASE_F"."OWN_PARTY_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_CASE_F"."OWN_PARTY_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-20b2-85d500000000-m80cb5dbd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb5dad-0bb9-0000-714b-e31d00000000.xml#m80cb5dbd-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80cb5dad-0bb9-0000-714b-e31d00000000.xml#m80cb5dad-0bb9-0000-714b-e31d00000000">
+</Link>
+<WhereClause mdsid="m00000007-01f4-0000-cc3e-cc6d00000000" name="WhereClause">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</WhereClause>
+<GroupBy mdsid="m00000008-01f4-0000-47cf-f4a500000000" name="GroupBy">
+<ExprText><![CDATA[ GROUPBYLEVEL("%1", "%2", "%3", "%4", "%5")]]></ExprText>
+<ExprTextDesc><![CDATA[ GROUPBYLEVEL("Core 2"."Dim - Due Diligence DateDim"."Dim - Due Diligence Date Detail", "Core 2"."Dim - Due Diligence OwnerDim"."Dim - Due Diligence Owner Detail", "Core 2"."Dim - Due DiligenceDim"."Dim - Due Diligence Detail", "Core 2"."Dim - LOV - Due Diligence StatusDim"."Dim - LOV - Due Diligence Status Detail", "Core 2"."Dim - Owning PartyDim"."Detail")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-47cf-f4a500000000-m80cb6794-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cb6793-07e3-0000-714b-e31d00000000.xml#m80cb6794-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-47cf-f4a500000000-mc0000001-2dd5-1591-a39c-0a0e2d680000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/c0000000-2dd5-1591-a39c-0a0e2d680000.xml#mc0000001-2dd5-1591-a39c-0a0e2d680000"/>
+<RefObject refId="m00000008-01f4-0000-47cf-f4a500000000-m80cb5ea5-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cb5ea4-07e3-0000-714b-e31d00000000.xml#m80cb5ea5-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-47cf-f4a500000000-m80cb5ea9-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cb5ea8-07e3-0000-714b-e31d00000000.xml#m80cb5ea9-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-47cf-f4a500000000-m80c9b7ac-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c940f4-07e3-0000-714b-e31d00000000.xml#m80c9b7ac-07e9-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</GroupBy>
+<FragmentContent mdsid="m00000009-01f4-0000-f23c-96c000000000" name="FragmentContent">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</FragmentContent>
+</LogicalTableSource>

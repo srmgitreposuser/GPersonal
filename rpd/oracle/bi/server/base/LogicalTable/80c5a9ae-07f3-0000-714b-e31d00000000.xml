@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9ae-07f3-0000-714b-e31d00000000" name="Fact - CRM - Pipeline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1111" y="1644" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c5663e-07d6-0000-714b-e31d00000000" name="Historical Opportunity Revenue" isWriteable="false">
+<Description><![CDATA[This metric displays historical Opportunity Revenue from the W_PIPELINE_F table.]]></Description>
+<MeasureDefn mdsid="m80c5b0fc-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b9fc-0802-0000-714b-e31d00000000" name="AggRule_2050:3578971146531176" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-cb10-577300000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Pipeline"."Historical Opportunity Revenue")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-cb10-577300000000-m80c5663e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c5663e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+<AggrRule mdsid="m80c5b9fd-0802-0000-714b-e31d00000000" name="AggRule_2050:3578981146531176" basedOnDimensionRef="/oracle/bi/server/base/Dimension/80c5a098-07e3-0000-714b-e31d00000000.xml#m80c5a098-07e3-0000-714b-e31d00000000">
+<Expr mdsid="m00000002-01f4-0000-14b6-4ec300000000" name="Expr">
+<ExprText><![CDATA[ LAST("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ LAST("Core"."Fact - CRM - Pipeline"."Historical Opportunity Revenue")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-14b6-4ec300000000-m80c5663e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c5663e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68a1b-0f3c-0000-714b-e31d00000000" name="AD_3900:834151074282455">
+<Expr mdsid="m00000003-01f4-0000-0671-800500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PIPELINE_F"."REVN"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-0671-800500000000-m80c5d4b4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf11-0bb9-0000-714b-e31d00000000.xml#m80c5d4b4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5663f-07d6-0000-714b-e31d00000000" name="Historical Expected Revenue" isWriteable="false">
+<Description><![CDATA[This metric displays historical Expected Revenue from the W_PIPELINE_F table.]]></Description>
+<MeasureDefn mdsid="m80c5b0fd-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b9fe-0802-0000-714b-e31d00000000" name="AggRule_2050:3578991146531176" isDefault="true">
+<Expr mdsid="m00000004-01f4-0000-649e-5a5c00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Pipeline"."Historical Expected Revenue")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-649e-5a5c00000000-m80c5663f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c5663f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+<AggrRule mdsid="m80c5b9ff-0802-0000-714b-e31d00000000" name="AggRule_2050:3579001146531176" basedOnDimensionRef="/oracle/bi/server/base/Dimension/80c5a098-07e3-0000-714b-e31d00000000.xml#m80c5a098-07e3-0000-714b-e31d00000000">
+<Expr mdsid="m00000005-01f4-0000-28ab-22c300000000" name="Expr">
+<ExprText><![CDATA[ LAST("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ LAST("Core"."Fact - CRM - Pipeline"."Historical Expected Revenue")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-28ab-22c300000000-m80c5663f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c5663f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68a1c-0f3c-0000-714b-e31d00000000" name="AD_3900:834161074282455">
+<Expr mdsid="m00000006-01f4-0000-88ff-910200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PIPELINE_F"."EXPECT_REVN"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-88ff-910200000000-m80c5d4b6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf11-0bb9-0000-714b-e31d00000000.xml#m80c5d4b6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56640-07d6-0000-714b-e31d00000000" name="Historical Closed Revenue" isWriteable="false">
+<Description><![CDATA[This metric displays historical Closed Revenue from the W_PIPELINE_F table.]]></Description>
+<MeasureDefn mdsid="m80c5b0fe-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5ba00-0802-0000-714b-e31d00000000" name="AggRule_2050:3579011146531176" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-8331-50aa00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Pipeline"."Historical Closed Revenue")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-8331-50aa00000000-m80c56640-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c56640-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+<AggrRule mdsid="m80c5ba01-0802-0000-714b-e31d00000000" name="AggRule_2050:3579021146531176" basedOnDimensionRef="/oracle/bi/server/base/Dimension/80c5a098-07e3-0000-714b-e31d00000000.xml#m80c5a098-07e3-0000-714b-e31d00000000">
+<Expr mdsid="m00000008-01f4-0000-98a3-087500000000" name="Expr">
+<ExprText><![CDATA[ LAST("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ LAST("Core"."Fact - CRM - Pipeline"."Historical Closed Revenue")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-98a3-087500000000-m80c56640-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c56640-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68a1d-0f3c-0000-714b-e31d00000000" name="AD_3900:834171074282455">
+<Expr mdsid="m00000009-01f4-0000-d40e-e60200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PIPELINE_F"."CLOSED_REVN"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-d40e-e60200000000-m80c5d4b5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf11-0bb9-0000-714b-e31d00000000.xml#m80c5d4b5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56641-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80c68a1e-0f3c-0000-714b-e31d00000000" name="AD_3900:834181074282455">
+<Expr mdsid="m0000000a-01f4-0000-1562-f8ca00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PIPELINE_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-1562-f8ca00000000-m80c5d49a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf11-0bb9-0000-714b-e31d00000000.xml#m80c5d49a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c566a3-07d6-0000-714b-e31d00000000" name="Quarter Ago Historical Opportunity Revenue" isWriteable="false">
+<Description><![CDATA[This metric displays historical Opportunity Revenue from the W_PIPELINE_F table for a Pipeline Snapshot Date one quarter prior to a given Pipeline Snapshot Date.]]></Description>
+<MeasureDefn mdsid="m80c5b12c-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<Description><![CDATA[Generated by Time Series Wizard]]></Description>
+<AggrRule mdsid="m80c5ba02-0802-0000-714b-e31d00000000" name="AggRule_2050:3579031146531176" isDefault="true">
+<Expr mdsid="m0000000b-01f4-0000-54f9-90af00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Pipeline"."Quarter Ago Historical Opportunity Revenue")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-54f9-90af00000000-m80c566a3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c566a3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+<AggrRule mdsid="m80c5ba03-0802-0000-714b-e31d00000000" name="AggRule_2050:3579041146531176" basedOnDimensionRef="/oracle/bi/server/base/Dimension/80c5a098-07e3-0000-714b-e31d00000000.xml#m80c5a098-07e3-0000-714b-e31d00000000">
+<Expr mdsid="m0000000c-01f4-0000-cf17-a73100000000" name="Expr">
+<ExprText><![CDATA[ LAST("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ LAST("Core"."Fact - CRM - Pipeline"."Quarter Ago Historical Opportunity Revenue")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-cf17-a73100000000-m80c566a3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c566a3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68a80-0f3c-0000-714b-e31d00000000" name="AD_3900:835701074282455">
+<Expr mdsid="m0000000d-01f4-0000-e476-158200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PIPELINE_F_Quarter_Ago"."REVN"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-e476-158200000000-m80c5dbfe-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf34-0bb9-0000-714b-e31d00000000.xml#m80c5dbfe-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c566a4-07d6-0000-714b-e31d00000000" name="Quarter Ago Historical Expected Revenue" isWriteable="false">
+<Description><![CDATA[This metric displays historical Expected Revenue from the W_PIPELINE_F table for a Pipeline Snapshot Date one quarter prior to a given Pipeline Snapshot Date.]]></Description>
+<MeasureDefn mdsid="m80c5b12d-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<Description><![CDATA[Generated by Time Series Wizard]]></Description>
+<AggrRule mdsid="m80c5b9f0-0802-0000-714b-e31d00000000" name="AggRule_2050:3578851146531176" isDefault="true">
+<Expr mdsid="m0000000e-01f4-0000-3889-27e900000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Pipeline"."Quarter Ago Historical Expected Revenue")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-3889-27e900000000-m80c566a4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c566a4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+<AggrRule mdsid="m80c5b9f1-0802-0000-714b-e31d00000000" name="AggRule_2050:3578861146531176" basedOnDimensionRef="/oracle/bi/server/base/Dimension/80c5a098-07e3-0000-714b-e31d00000000.xml#m80c5a098-07e3-0000-714b-e31d00000000">
+<Expr mdsid="m0000000f-01f4-0000-886c-59a600000000" name="Expr">
+<ExprText><![CDATA[ LAST("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ LAST("Core"."Fact - CRM - Pipeline"."Quarter Ago Historical Expected Revenue")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-886c-59a600000000-m80c566a4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c566a4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68a81-0f3c-0000-714b-e31d00000000" name="AD_3900:835711074282455">
+<Expr mdsid="m00000010-01f4-0000-1cac-bac700000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PIPELINE_F_Quarter_Ago"."EXPECT_REVN"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-1cac-bac700000000-m80c5dc00-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf34-0bb9-0000-714b-e31d00000000.xml#m80c5dc00-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56669-07d6-0000-714b-e31d00000000" name="Rollup Historical Expected Revenue" isWriteable="false">
+<Description><![CDATA[This metric displays the historical combined Expected Revenue stored in W_PIPELINE_F for a given employee and all her positional subordinates as defined in W_POSITION_H.]]></Description>
+<MeasureDefn mdsid="m80c5b11a-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b9f2-0802-0000-714b-e31d00000000" name="AggRule_2050:3578871146531176" isDefault="true">
+<Expr mdsid="m00000011-01f4-0000-665e-7f3900000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Pipeline"."Rollup Historical Expected Revenue")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-665e-7f3900000000-m80c56669-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c56669-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+<AggrRule mdsid="m80c5b9f3-0802-0000-714b-e31d00000000" name="AggRule_2050:3578881146531176" basedOnDimensionRef="/oracle/bi/server/base/Dimension/80c5a098-07e3-0000-714b-e31d00000000.xml#m80c5a098-07e3-0000-714b-e31d00000000">
+<Expr mdsid="m00000012-01f4-0000-1025-02a400000000" name="Expr">
+<ExprText><![CDATA[ LAST("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ LAST("Core"."Fact - CRM - Pipeline"."Rollup Historical Expected Revenue")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-1025-02a400000000-m80c56669-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c56669-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68a46-0f3c-0000-714b-e31d00000000" name="AD_3900:834601074282455">
+<Expr mdsid="m00000013-01f4-0000-377b-3c4500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PIPELINE_F_Rollup"."EXPECT_REVN"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-377b-3c4500000000-m80c5e2da-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf5a-0bb9-0000-714b-e31d00000000.xml#m80c5e2da-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5666a-07d6-0000-714b-e31d00000000" name="Rollup Prior Historical Expected Revenue" isWriteable="false">
+<Description><![CDATA[This metric displays the historical combined Expected Revenue stored in W_PIPELINE_F for a given employee and all her positional subordinates as defined in W_POSITION_H for a Pipeline Sanpshot Date immediately preceeding a given Snapshot Date.]]></Description>
+<MeasureDefn mdsid="m80c5b11b-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b9f4-0802-0000-714b-e31d00000000" name="AggRule_2050:3578891146531176" isDefault="true">
+<Expr mdsid="m00000014-01f4-0000-702c-7d7900000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Pipeline"."Rollup Prior Historical Expected Revenue")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-702c-7d7900000000-m80c5666a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c5666a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+<AggrRule mdsid="m80c5b9f5-0802-0000-714b-e31d00000000" name="AggRule_2050:3578901146531176" basedOnDimensionRef="/oracle/bi/server/base/Dimension/80c5a098-07e3-0000-714b-e31d00000000.xml#m80c5a098-07e3-0000-714b-e31d00000000">
+<Expr mdsid="m00000015-01f4-0000-7556-aadf00000000" name="Expr">
+<ExprText><![CDATA[ LAST("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ LAST("Core"."Fact - CRM - Pipeline"."Rollup Prior Historical Expected Revenue")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-7556-aadf00000000-m80c5666a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c5666a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68a47-0f3c-0000-714b-e31d00000000" name="AD_3900:834621074282455">
+<Expr mdsid="m00000016-01f4-0000-eec2-badf00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PIPELINE_F_Rollup_Prior"."EXPECT_REVN"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000016-01f4-0000-eec2-badf00000000-m80c5e301-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf5b-0bb9-0000-714b-e31d00000000.xml#m80c5e301-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c566a5-07d6-0000-714b-e31d00000000" name="Year Ago Historical Opportunity Revenue" isWriteable="false">
+<Description><![CDATA[This metric displays historical Opportunity Revenue from the W_PIPELINE_F table for a Pipeline Snapshot Date one year prior to a given Pipeline Snapshot Date.]]></Description>
+<MeasureDefn mdsid="m80c5b12e-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<Description><![CDATA[Generated by Time Series Wizard]]></Description>
+<AggrRule mdsid="m80c5b9f6-0802-0000-714b-e31d00000000" name="AggRule_2050:3578911146531176" isDefault="true">
+<Expr mdsid="m00000017-01f4-0000-77dd-dbf900000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Pipeline"."Year Ago Historical Opportunity Revenue")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-77dd-dbf900000000-m80c566a5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c566a5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+<AggrRule mdsid="m80c5b9f7-0802-0000-714b-e31d00000000" name="AggRule_2050:3578921146531176" basedOnDimensionRef="/oracle/bi/server/base/Dimension/80c5a098-07e3-0000-714b-e31d00000000.xml#m80c5a098-07e3-0000-714b-e31d00000000">
+<Expr mdsid="m00000018-01f4-0000-32a7-8df800000000" name="Expr">
+<ExprText><![CDATA[ LAST("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ LAST("Core"."Fact - CRM - Pipeline"."Year Ago Historical Opportunity Revenue")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000018-01f4-0000-32a7-8df800000000-m80c566a5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c566a5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68a82-0f3c-0000-714b-e31d00000000" name="AD_3900:835951074282455">
+<Expr mdsid="m00000019-01f4-0000-3237-945f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PIPELINE_F_Year_Ago"."REVN"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-3237-945f00000000-m80c5dbd7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf33-0bb9-0000-714b-e31d00000000.xml#m80c5dbd7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c566a6-07d6-0000-714b-e31d00000000" name="Year Ago Historical Expected Revenue" isWriteable="false">
+<Description><![CDATA[This metric displays historical Expected Revenue from the W_PIPELINE_F table for a Pipeline Snapshot Date one year prior to a given Pipeline Snapshot Date.]]></Description>
+<MeasureDefn mdsid="m80c5b12f-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<Description><![CDATA[Generated by Time Series Wizard]]></Description>
+<AggrRule mdsid="m80c5b9f8-0802-0000-714b-e31d00000000" name="AggRule_2050:3578931146531176" isDefault="true">
+<Expr mdsid="m0000001a-01f4-0000-8ae8-cd4f00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Pipeline"."Year Ago Historical Expected Revenue")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001a-01f4-0000-8ae8-cd4f00000000-m80c566a6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c566a6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+<AggrRule mdsid="m80c5b9f9-0802-0000-714b-e31d00000000" name="AggRule_2050:3578941146531176" basedOnDimensionRef="/oracle/bi/server/base/Dimension/80c5a098-07e3-0000-714b-e31d00000000.xml#m80c5a098-07e3-0000-714b-e31d00000000">
+<Expr mdsid="m0000001b-01f4-0000-d1b6-2d5400000000" name="Expr">
+<ExprText><![CDATA[ LAST("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ LAST("Core"."Fact - CRM - Pipeline"."Year Ago Historical Expected Revenue")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001b-01f4-0000-d1b6-2d5400000000-m80c566a6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c566a6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68a83-0f3c-0000-714b-e31d00000000" name="AD_3900:835961074282455">
+<Expr mdsid="m0000001c-01f4-0000-d175-4e3200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PIPELINE_F_Year_Ago"."EXPECT_REVN"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001c-01f4-0000-d175-4e3200000000-m80c5dbd9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf33-0bb9-0000-714b-e31d00000000.xml#m80c5dbd9-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56ebf-07d6-0000-714b-e31d00000000" name="Prior Historical Expected Revenue" isWriteable="false">
+<Description><![CDATA[This metric displays the historical combined Expected Revenue stored in W_PIPELINE_F for a given employee and for a Pipeline Sanpshot Date immediately preceeding a given Snapshot Date.]]></Description>
+<MeasureDefn mdsid="m80c5b2cf-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b9fa-0802-0000-714b-e31d00000000" name="AggRule_2050:3578951146531176" isDefault="true">
+<Expr mdsid="m0000001d-01f4-0000-7f1f-7b6900000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Pipeline"."Prior Historical Expected Revenue")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001d-01f4-0000-7f1f-7b6900000000-m80c56ebf-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c56ebf-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+<AggrRule mdsid="m80c5b9fb-0802-0000-714b-e31d00000000" name="AggRule_2050:3578961146531176" basedOnDimensionRef="/oracle/bi/server/base/Dimension/80c5a098-07e3-0000-714b-e31d00000000.xml#m80c5a098-07e3-0000-714b-e31d00000000">
+<Expr mdsid="m0000001e-01f4-0000-6cb5-be1800000000" name="Expr">
+<ExprText><![CDATA[ LAST("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ LAST("Core"."Fact - CRM - Pipeline"."Prior Historical Expected Revenue")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001e-01f4-0000-6cb5-be1800000000-m80c56ebf-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c56ebf-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c693d1-0f3c-0000-714b-e31d00000000" name="AD_3900:3453221145639506">
+<Expr mdsid="m0000001f-01f4-0000-4c11-1cb500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PIPELINE_F_Prior"."EXPECT_REVN"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001f-01f4-0000-4c11-1cb500000000-m80c5fd06-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bffa-0bb9-0000-714b-e31d00000000.xml#m80c5fd06-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58c7f-07d8-0000-714b-e31d00000000" name="ROW_WID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58c7f-07d8-0000-714b-e31d00000000-m80c56641-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9ae-07f3-0000-714b-e31d00000000.xml#m80c56641-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5a9ae-07f3-0000-714b-e31d00000000-m80c5abd6-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5abd6-07f5-0000-714b-e31d00000000.xml#m80c5abd6-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c5a9ae-07f3-0000-714b-e31d00000000-m80c5ac48-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ac48-07f5-0000-714b-e31d00000000.xml#m80c5ac48-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c5a9ae-07f3-0000-714b-e31d00000000-m80c5ac49-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ac49-07f5-0000-714b-e31d00000000.xml#m80c5ac49-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c5a9ae-07f3-0000-714b-e31d00000000-m80c5ac4a-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ac4a-07f5-0000-714b-e31d00000000.xml#m80c5ac4a-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c5a9ae-07f3-0000-714b-e31d00000000-m80c5ac4b-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ac4b-07f5-0000-714b-e31d00000000.xml#m80c5ac4b-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c5a9ae-07f3-0000-714b-e31d00000000-m80c5ac5c-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ac5c-07f5-0000-714b-e31d00000000.xml#m80c5ac5c-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

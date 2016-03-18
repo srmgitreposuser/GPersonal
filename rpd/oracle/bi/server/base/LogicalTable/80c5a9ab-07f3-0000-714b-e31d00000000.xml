@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9ab-07f3-0000-714b-e31d00000000" name="Fact - CRM - Agree Item" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="407" y="690" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c56608-07d6-0000-714b-e31d00000000" name="# of Accounts with Agreements" isWriteable="false">
+<Description><![CDATA[Number of accounts with agreements]]></Description>
+<MeasureDefn mdsid="m80c5b0db-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b7fb-0802-0000-714b-e31d00000000" name="AggRule_2050:179821074282429" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-d876-a77f00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - CRM - Agree Item"."# of Accounts with Agreements")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-d876-a77f00000000-m80c56608-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ab-07f3-0000-714b-e31d00000000.xml#m80c56608-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689e5-0f3c-0000-714b-e31d00000000" name="AD_3900:833421074282455">
+<Expr mdsid="m00000002-01f4-0000-243d-d28a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AGREE_F"."ACCOUNT_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-243d-d28a00000000-m80c5d41d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf0d-0bb9-0000-714b-e31d00000000.xml#m80c5d41d-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56609-07d6-0000-714b-e31d00000000" name="# of Agreement Line Items" isWriteable="false">
+<Description><![CDATA[Number of agreement line items]]></Description>
+<MeasureDefn mdsid="m80c5b0dc-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5ba0a-0802-0000-714b-e31d00000000" name="AggRule_2050:3829201162940863" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-7711-a42c00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Agree Item"."# of Agreement Line Items")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-7711-a42c00000000-m80c56609-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ab-07f3-0000-714b-e31d00000000.xml#m80c56609-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689e6-0f3c-0000-714b-e31d00000000" name="AD_3900:833431074282455">
+<Expr mdsid="m00000004-01f4-0000-6d80-0ede00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AGREE_F"."NUM_OF_ITEMS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-6d80-0ede00000000-m80c5d42f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf0d-0bb9-0000-714b-e31d00000000.xml#m80c5d42f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bea-07d6-0000-714b-e31d00000000" name="# of NRC Agreement Line Items" isWriteable="false">
+<Description><![CDATA[Number of agreement line items]]></Description>
+<MeasureDefn mdsid="m80c5b2c1-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b9db-0802-0000-714b-e31d00000000" name="AggRule_2050:1602251092854398" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-83c6-f65e00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Agree Item"."# of NRC Agreement Line Items")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-83c6-f65e00000000-m80c56bea-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ab-07f3-0000-714b-e31d00000000.xml#m80c56bea-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68fc5-0f3c-0000-714b-e31d00000000" name="AD_3900:1602201092854268">
+<Expr mdsid="m00000006-01f4-0000-5c38-026d00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AGREE_F"."NUM_NRC_ITEMS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-5c38-026d00000000-m80c5f2e3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf0d-0bb9-0000-714b-e31d00000000.xml#m80c5f2e3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5660a-07d6-0000-714b-e31d00000000" name="Agreement Line Item Quantity" isWriteable="false">
+<Description><![CDATA[Agreement line item quantity]]></Description>
+<MeasureDefn mdsid="m80c5b0dd-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b9da-0802-0000-714b-e31d00000000" name="AggRule_2050:1602101092854235" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-20c4-0e1600000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Agree Item"."Agreement Line Item Quantity")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-20c4-0e1600000000-m80c5660a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ab-07f3-0000-714b-e31d00000000.xml#m80c5660a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689e7-0f3c-0000-714b-e31d00000000" name="AD_3900:833441074282455">
+<Expr mdsid="m00000008-01f4-0000-7046-591100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' AND "%2" = 'N' THEN "%3" * "%4" ELSE 0.0d END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AGREEITEM_F"."TOP_LVL_IND" = 'Y' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AGREEITEM_F"."EXISTING_FLG" = 'N' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AGREEITEM_F"."REQUESTED_QTY" * "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AGREEITEM_F"."NRC_IND" ELSE 0.0d END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-7046-591100000000-m80c5d460-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf0e-0bb9-0000-714b-e31d00000000.xml#m80c5d460-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-7046-591100000000-m80c5d46f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf0e-0bb9-0000-714b-e31d00000000.xml#m80c5d46f-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-7046-591100000000-m80c5d452-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf0e-0bb9-0000-714b-e31d00000000.xml#m80c5d452-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-7046-591100000000-m80c5f2de-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf0e-0bb9-0000-714b-e31d00000000.xml#m80c5f2de-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5660b-07d6-0000-714b-e31d00000000" name="Agreement Amount" isWriteable="false">
+<Description><![CDATA[Agreement line item price]]></Description>
+<MeasureDefn mdsid="m80c5b0de-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b7fc-0802-0000-714b-e31d00000000" name="AggRule_2050:179851074282429" isDefault="true">
+<Expr mdsid="m00000009-01f4-0000-90a0-284500000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Agree Item"."Agreement Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-90a0-284500000000-m80c5660b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ab-07f3-0000-714b-e31d00000000.xml#m80c5660b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689e8-0f3c-0000-714b-e31d00000000" name="AD_3900:833451074282455">
+<Expr mdsid="m0000000a-01f4-0000-ae0b-313700000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AGREE_F"."AGREE_NRC"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-ae0b-313700000000-m80c5f2f1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf0d-0bb9-0000-714b-e31d00000000.xml#m80c5f2f1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5660c-07d6-0000-714b-e31d00000000" name="Agreement Cost" isWriteable="false">
+<Description><![CDATA[Agreement line item cost]]></Description>
+<MeasureDefn mdsid="m80c5b0df-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b7fd-0802-0000-714b-e31d00000000" name="AggRule_2050:179861074282429" isDefault="true">
+<Expr mdsid="m0000000b-01f4-0000-3a51-c67700000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Agree Item"."Agreement Cost")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-3a51-c67700000000-m80c5660c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ab-07f3-0000-714b-e31d00000000.xml#m80c5660c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689e9-0f3c-0000-714b-e31d00000000" name="AD_3900:833461074282455">
+<Expr mdsid="m0000000c-01f4-0000-9ac2-f1fc00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AGREE_F"."TOTAL_COST"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-9ac2-f1fc00000000-m80c5d43c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf0d-0bb9-0000-714b-e31d00000000.xml#m80c5d43c-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5660d-07d6-0000-714b-e31d00000000" name="internal - Agreement Discount Amount" isWriteable="false">
+<MeasureDefn mdsid="m80c5b0e0-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b7fe-0802-0000-714b-e31d00000000" name="AggRule_2050:179871074282429" isDefault="true">
+<Expr mdsid="m0000000d-01f4-0000-d18c-73c800000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Agree Item"."internal - Agreement Discount Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-d18c-73c800000000-m80c5660d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ab-07f3-0000-714b-e31d00000000.xml#m80c5660d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689ea-0f3c-0000-714b-e31d00000000" name="AD_3900:833471074282455">
+<Expr mdsid="m0000000e-01f4-0000-ad73-8be800000000" name="Expr">
+<ExprText><![CDATA["%1" *  CASE  WHEN "%2" = 'Y' THEN "%3" ELSE 0.0d END  * "%4" * "%5"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AGREEITEM_F"."DISCNT_AMT" *  CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AGREEITEM_F"."TOP_LVL_IND" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AGREEITEM_F"."REQUESTED_QTY" ELSE 0.0d END  * "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AGREEITEM_F"."INCL_CALC_IND" * "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AGREEITEM_F"."NRC_IND"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-ad73-8be800000000-m80c5d459-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf0e-0bb9-0000-714b-e31d00000000.xml#m80c5d459-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-ad73-8be800000000-m80c5d460-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf0e-0bb9-0000-714b-e31d00000000.xml#m80c5d460-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-ad73-8be800000000-m80c5d452-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf0e-0bb9-0000-714b-e31d00000000.xml#m80c5d452-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-ad73-8be800000000-m80c5d45f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf0e-0bb9-0000-714b-e31d00000000.xml#m80c5d45f-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-ad73-8be800000000-m80c5f2de-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf0e-0bb9-0000-714b-e31d00000000.xml#m80c5f2de-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5660e-07d6-0000-714b-e31d00000000" name="internal - Agreement Start Price" isWriteable="false">
+<MeasureDefn mdsid="m80c5b0e1-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b7ff-0802-0000-714b-e31d00000000" name="AggRule_2050:179881074282429" isDefault="true">
+<Expr mdsid="m0000000f-01f4-0000-ed33-51af00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Agree Item"."internal - Agreement Start Price")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-ed33-51af00000000-m80c5660e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ab-07f3-0000-714b-e31d00000000.xml#m80c5660e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689eb-0f3c-0000-714b-e31d00000000" name="AD_3900:833481074282455">
+<Expr mdsid="m00000010-01f4-0000-6287-dad200000000" name="Expr">
+<ExprText><![CDATA["%1" *  CASE  WHEN "%2" = 'Y' THEN "%3" ELSE 0.0d END  * "%4" * "%5"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AGREEITEM_F"."START_PRI" *  CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AGREEITEM_F"."TOP_LVL_IND" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AGREEITEM_F"."REQUESTED_QTY" ELSE 0.0d END  * "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AGREEITEM_F"."INCL_CALC_IND" * "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AGREEITEM_F"."NRC_IND"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-6287-dad200000000-m80c5d454-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf0e-0bb9-0000-714b-e31d00000000.xml#m80c5d454-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-6287-dad200000000-m80c5d460-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf0e-0bb9-0000-714b-e31d00000000.xml#m80c5d460-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-6287-dad200000000-m80c5d452-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf0e-0bb9-0000-714b-e31d00000000.xml#m80c5d452-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-6287-dad200000000-m80c5d45f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf0e-0bb9-0000-714b-e31d00000000.xml#m80c5d45f-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-6287-dad200000000-m80c5f2de-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf0e-0bb9-0000-714b-e31d00000000.xml#m80c5f2de-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5660f-07d6-0000-714b-e31d00000000" name="Average # of Agreement Line Items" isDerived="true" isWriteable="false">
+<Description><![CDATA[Average number of agreement line items]]></Description>
+<Expr mdsid="m00000011-01f4-0000-878c-71b900000000" name="Expr">
+<ExprText><![CDATA[1.0d * "%1" / "%2"]]></ExprText>
+<ExprTextDesc><![CDATA[1.0d * "Core"."Fact - CRM - Agree Item"."# of Agreement Line Items" / "Core"."Fact - CRM - Agree - DEPRECATED"."# of Agreements"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-878c-71b900000000-m80c56609-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ab-07f3-0000-714b-e31d00000000.xml#m80c56609-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000011-01f4-0000-878c-71b900000000-m80c56601-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9aa-07f3-0000-714b-e31d00000000.xml#m80c56601-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c689ec-0f3c-0000-714b-e31d00000000" name="AD_3900:833491074282455">
+<Expr mdsid="m00000012-01f4-0000-8e0c-fb0a00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56beb-07d6-0000-714b-e31d00000000" name="Average # of NRC Agreement Line Items" isDerived="true" isWriteable="false">
+<Description><![CDATA[Average number of agreement line items]]></Description>
+<Expr mdsid="m00000013-01f4-0000-b8f2-395600000000" name="Expr">
+<ExprText><![CDATA[1.0d * "%1" / "%2"]]></ExprText>
+<ExprTextDesc><![CDATA[1.0d * "Core"."Fact - CRM - Agree Item"."# of NRC Agreement Line Items" / "Core"."Fact - CRM - Agree - DEPRECATED"."# of Agreements"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-b8f2-395600000000-m80c56bea-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ab-07f3-0000-714b-e31d00000000.xml#m80c56bea-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000013-01f4-0000-b8f2-395600000000-m80c56601-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9aa-07f3-0000-714b-e31d00000000.xml#m80c56601-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68fc6-0f3c-0000-714b-e31d00000000" name="AD_3900:1602301092854425">
+<Expr mdsid="m00000014-01f4-0000-5e0d-951600000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56610-07d6-0000-714b-e31d00000000" name="Average Agreement Line Item Cost" isDerived="true" isWriteable="false">
+<Description><![CDATA[Average agreement line item cost]]></Description>
+<Expr mdsid="m00000015-01f4-0000-8a60-221b00000000" name="Expr">
+<ExprText><![CDATA[1.0d * "%1" / "%2"]]></ExprText>
+<ExprTextDesc><![CDATA[1.0d * "Core"."Fact - CRM - Agree Item"."Agreement Cost" / "Core"."Fact - CRM - Agree Item"."# of NRC Agreement Line Items"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-8a60-221b00000000-m80c5660c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ab-07f3-0000-714b-e31d00000000.xml#m80c5660c-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000015-01f4-0000-8a60-221b00000000-m80c56bea-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ab-07f3-0000-714b-e31d00000000.xml#m80c56bea-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c689ed-0f3c-0000-714b-e31d00000000" name="AD_3900:833501074282455">
+<Expr mdsid="m00000016-01f4-0000-b11e-eb9900000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56611-07d6-0000-714b-e31d00000000" name="Agreement Gross Margin" isDerived="true" isWriteable="false">
+<Description><![CDATA[Agreement line item gross margin]]></Description>
+<Expr mdsid="m00000017-01f4-0000-72fb-884e00000000" name="Expr">
+<ExprText><![CDATA["%1" - "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Agree Item"."Agreement Amount" - "Core"."Fact - CRM - Agree Item"."Agreement Cost"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-72fb-884e00000000-m80c5660b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ab-07f3-0000-714b-e31d00000000.xml#m80c5660b-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000017-01f4-0000-72fb-884e00000000-m80c5660c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ab-07f3-0000-714b-e31d00000000.xml#m80c5660c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c689ee-0f3c-0000-714b-e31d00000000" name="AD_3900:833511074282455">
+<Expr mdsid="m00000018-01f4-0000-25f8-057200000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56612-07d6-0000-714b-e31d00000000" name="Agreement % Margin" isDerived="true" isWriteable="false">
+<Description><![CDATA[Percentage margin on each agreement line item]]></Description>
+<Expr mdsid="m00000019-01f4-0000-4cf6-63a500000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN  NULL  ELSE 100.0d * ("%1" - "%2") / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Agree Item"."Agreement Amount" = 0 THEN  NULL  ELSE 100.0d * ("Core"."Fact - CRM - Agree Item"."Agreement Amount" - "Core"."Fact - CRM - Agree Item"."Agreement Cost") / "Core"."Fact - CRM - Agree Item"."Agreement Amount" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-4cf6-63a500000000-m80c5660b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ab-07f3-0000-714b-e31d00000000.xml#m80c5660b-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000019-01f4-0000-4cf6-63a500000000-m80c5660c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ab-07f3-0000-714b-e31d00000000.xml#m80c5660c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c689ef-0f3c-0000-714b-e31d00000000" name="AD_3900:833521074282455">
+<Expr mdsid="m0000001a-01f4-0000-f7dc-075f00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56613-07d6-0000-714b-e31d00000000" name="Agreement Discount %" isDerived="true" isWriteable="false">
+<Description><![CDATA[Agreement line item discount percentage]]></Description>
+<Expr mdsid="m0000001b-01f4-0000-7658-17ec00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN  NULL  ELSE 100.0d * "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Agree Item"."internal - Agreement Start Price" = 0 THEN  NULL  ELSE 100.0d * "Core"."Fact - CRM - Agree Item"."internal - Agreement Discount Amount" / "Core"."Fact - CRM - Agree Item"."internal - Agreement Start Price" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001b-01f4-0000-7658-17ec00000000-m80c5660e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ab-07f3-0000-714b-e31d00000000.xml#m80c5660e-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001b-01f4-0000-7658-17ec00000000-m80c5660d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ab-07f3-0000-714b-e31d00000000.xml#m80c5660d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c689f0-0f3c-0000-714b-e31d00000000" name="AD_3900:833531074282455">
+<Expr mdsid="m0000001c-01f4-0000-0672-fcf900000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56614-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80c689f1-0f3c-0000-714b-e31d00000000" name="AD_3900:833541074282455">
+<Expr mdsid="m0000001d-01f4-0000-e474-1d1200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AGREEITEM_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001d-01f4-0000-e474-1d1200000000-m80c5d43f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf0e-0bb9-0000-714b-e31d00000000.xml#m80c5d43f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56c47-07d6-0000-714b-e31d00000000" name="Implicit Constant Fact" isWriteable="false">
+<Description><![CDATA[Implicit constant fact to identify this fact table as the join path between two conforming dimensions.   ]]></Description>
+<MeasureDefn mdsid="m80c5b2d4-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5ba09-0802-0000-714b-e31d00000000" name="AggRule_2050:3829191162940863" isDefault="true">
+<Expr mdsid="m0000001e-01f4-0000-0fb9-f03100000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Agree Item"."Implicit Constant Fact")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001e-01f4-0000-0fb9-f03100000000-m80c56c47-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ab-07f3-0000-714b-e31d00000000.xml#m80c56c47-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68fe4-0f3c-0000-714b-e31d00000000" name="AD_3900:1683531118800619">
+<Expr mdsid="m0000001f-01f4-0000-a08e-9d4d00000000" name="Expr">
+<ExprText><![CDATA[1]]></ExprText>
+<ExprTextDesc><![CDATA[1]]></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56f09-07d6-0000-714b-e31d00000000" name="# of Agreements" isWriteable="false">
+<Description><![CDATA[Number of agreements]]></Description>
+<MeasureDefn mdsid="m80c5b2d3-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5ba08-0802-0000-714b-e31d00000000" name="AggRule_2050:3829091162940863" isDefault="true">
+<Expr mdsid="m00000020-01f4-0000-2306-14d100000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Agree Item"."# of Agreements")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000020-01f4-0000-2306-14d100000000-m80c56f09-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ab-07f3-0000-714b-e31d00000000.xml#m80c56f09-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6941b-0f3c-0000-714b-e31d00000000" name="AD_3900:3829211162940864">
+<Expr mdsid="m00000021-01f4-0000-2ccc-fbab00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_AGREE_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000021-01f4-0000-2ccc-fbab00000000-m80c5d418-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf0d-0bb9-0000-714b-e31d00000000.xml#m80c5d418-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56f0a-07d6-0000-714b-e31d00000000" name="Average Agreement Gross Margin" isDerived="true" isWriteable="false">
+<Description><![CDATA[Average agreement gross margin]]></Description>
+<Expr mdsid="m00000022-01f4-0000-a3f7-ee4400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN  NULL  ELSE 1.0d * "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Agree Item"."# of Agreements" = 0 THEN  NULL  ELSE 1.0d * "Core"."Fact - CRM - Agree Item"."Agreement Gross Margin" / "Core"."Fact - CRM - Agree Item"."# of Agreements" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000022-01f4-0000-a3f7-ee4400000000-m80c56f09-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ab-07f3-0000-714b-e31d00000000.xml#m80c56f09-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000022-01f4-0000-a3f7-ee4400000000-m80c56611-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ab-07f3-0000-714b-e31d00000000.xml#m80c56611-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c6941c-0f3c-0000-714b-e31d00000000" name="AD_3900:3829221162940864">
+<Expr mdsid="m00000023-01f4-0000-219b-afd500000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58c7c-07d8-0000-714b-e31d00000000" name="ROW_WID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58c7c-07d8-0000-714b-e31d00000000-m80c56614-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9ab-07f3-0000-714b-e31d00000000.xml#m80c56614-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5a9ab-07f3-0000-714b-e31d00000000-m80c5abd1-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5abd1-07f5-0000-714b-e31d00000000.xml#m80c5abd1-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c5a9ab-07f3-0000-714b-e31d00000000-m80c5ac64-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ac64-07f5-0000-714b-e31d00000000.xml#m80c5ac64-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80cb6c9c-07f3-0000-714b-e31d00000000" name="Fact - Owning Party - Campaign History" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1241" y="433" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80cb6ca0-07d6-0000-714b-e31d00000000" name="# of Parties Targeted" isWriteable="false">
+<Description><![CDATA[All campaign parties targeted for a campaign]]></Description>
+<MeasureDefn mdsid="m80cb6d5b-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb999c-0802-0000-714b-e31d00000000" name="AggRule_2050:8439131389608166" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-213c-6ea100000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Owning Party - Campaign History"."# of Parties Targeted")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-213c-6ea100000000-m80cb6ca0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6c9c-07f3-0000-714b-e31d00000000.xml#m80cb6ca0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+<OverrideAggrRule mdsid="m80cb6d5e-0806-0000-714b-e31d00000000" name="OvAggRule_2054:8364721387280624" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cb6ccc-07f5-0000-714b-e31d00000000.xml#m80cb6ccc-07f5-0000-714b-e31d00000000">
+<Expr mdsid="m00000002-01f4-0000-b8cb-908200000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core 2"."Fact - Owning Party - Campaign History"."# of Parties Targeted")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-b8cb-908200000000-m80cb6ca0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6c9c-07f3-0000-714b-e31d00000000.xml#m80cb6ca0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</OverrideAggrRule>
+<OverrideAggrRule mdsid="m80cb6d5d-0806-0000-714b-e31d00000000" name="OvAggRule_2054:8364731387280624" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cb6d53-07f5-0000-714b-e31d00000000.xml#m80cb6d53-07f5-0000-714b-e31d00000000">
+<Expr mdsid="m00000003-01f4-0000-9aa6-fa2000000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Campaign History"."# of Parties Targeted")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-9aa6-fa2000000000-m80cb6ca0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6c9c-07f3-0000-714b-e31d00000000.xml#m80cb6ca0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</OverrideAggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb6cc0-0f3c-0000-714b-e31d00000000" name="AD_3900:8363711387209608">
+<Expr mdsid="m00000004-01f4-0000-ee09-dfbd00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_WC_CAMP_HIST_A"."CAMP_CON_CNT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-ee09-dfbd00000000-m80cb6916-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb6915-0bb9-0000-714b-e31d00000000.xml#m80cb6916-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb6ca2-07d6-0000-714b-e31d00000000" name="# Parties Contacted - Passed" isWriteable="false">
+<Description><![CDATA[The total number of Supporters that were associated to the Campaign and passed data cleanse]]></Description>
+<MeasureDefn mdsid="m80cb6cae-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb77ab-0802-0000-714b-e31d00000000" name="AggRule_2050:8381841387379277" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-ae1e-389e00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Campaign History"."# Parties Contacted - Passed")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-ae1e-389e00000000-m80cb6ca2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6c9c-07f3-0000-714b-e31d00000000.xml#m80cb6ca2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb6cc2-0f3c-0000-714b-e31d00000000" name="AD_3900:8363721387209608">
+<Expr mdsid="m00000006-01f4-0000-1f66-d97400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Passed' THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Contact_Outcome"."VAL" = 'Passed' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_WC_CAMP_HIST_A"."CAMP_CON_CNT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-1f66-d97400000000-m80c5f2bd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfd3-0bb9-0000-714b-e31d00000000.xml#m80c5f2bd-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-1f66-d97400000000-m80cb6916-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb6915-0bb9-0000-714b-e31d00000000.xml#m80cb6916-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb77b7-07d6-0000-714b-e31d00000000" name="# Distinct Parties Contacted - Passed" isWriteable="false">
+<Description><![CDATA[The total number of Supporters that were associated to the Campaign and passed data cleanse]]></Description>
+<MeasureDefn mdsid="m80cb77b9-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb7812-0802-0000-714b-e31d00000000" name="AggRule_2050:8382531387379733" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-94a6-c69b00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Owning Party - Campaign History"."# Distinct Parties Contacted - Passed")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-94a6-c69b00000000-m80cb77b7-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6c9c-07f3-0000-714b-e31d00000000.xml#m80cb77b7-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb77bd-0f3c-0000-714b-e31d00000000" name="AD_3900:8381971387379343">
+<Expr mdsid="m00000008-01f4-0000-8f05-a52000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Passed' THEN "%2" ELSE  NULL  END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Contact_Outcome"."VAL" = 'Passed' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_CAMP_HIST_F"."X_SRM_OWN_PARTY_WID" ELSE  NULL  END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-8f05-a52000000000-m80c5f2bd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfd3-0bb9-0000-714b-e31d00000000.xml#m80c5f2bd-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-8f05-a52000000000-m80cb1a8f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9d-0bb9-0000-714b-e31d00000000.xml#m80cb1a8f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb77c8-07d6-0000-714b-e31d00000000" name="# Parties Contacted - Failed" isWriteable="false">
+<Description><![CDATA[All campaign parties for a campaign who have Campaign Outcome as 'Failed']]></Description>
+<MeasureDefn mdsid="m80cb77ca-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb9990-0802-0000-714b-e31d00000000" name="AggRule_2050:8439161389608166" isDefault="true">
+<Expr mdsid="m00000009-01f4-0000-1af8-e13d00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Campaign History"."# Parties Contacted - Failed")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-1af8-e13d00000000-m80cb77c8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6c9c-07f3-0000-714b-e31d00000000.xml#m80cb77c8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb77ce-0f3c-0000-714b-e31d00000000" name="AD_3900:8382081387379478">
+<Expr mdsid="m0000000a-01f4-0000-59f8-055100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Failed' THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Contact_Outcome"."VAL" = 'Failed' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_WC_CAMP_HIST_A"."CAMP_CON_CNT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-59f8-055100000000-m80c5f2bd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfd3-0bb9-0000-714b-e31d00000000.xml#m80c5f2bd-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000a-01f4-0000-59f8-055100000000-m80cb6916-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb6915-0bb9-0000-714b-e31d00000000.xml#m80cb6916-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb77e6-07d6-0000-714b-e31d00000000" name="# Parties Contacted - Unable to reach contact" isWriteable="false">
+<Description><![CDATA[All campaign parties for a campaign who have Campaign Outcome as 'Unable to reach contact']]></Description>
+<MeasureDefn mdsid="m80cb77e8-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb9991-0802-0000-714b-e31d00000000" name="AggRule_2050:8439171389608166" isDefault="true">
+<Expr mdsid="m0000000b-01f4-0000-b330-b74200000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Campaign History"."# Parties Contacted - Unable to reach contact")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-b330-b74200000000-m80cb77e6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6c9c-07f3-0000-714b-e31d00000000.xml#m80cb77e6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb77ec-0f3c-0000-714b-e31d00000000" name="AD_3900:8382281387379548">
+<Expr mdsid="m0000000c-01f4-0000-9dec-285600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Unable to reach contact' THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Contact_Outcome"."VAL" = 'Unable to reach contact' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_WC_CAMP_HIST_A"."CAMP_CON_CNT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-9dec-285600000000-m80c5f2bd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfd3-0bb9-0000-714b-e31d00000000.xml#m80c5f2bd-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-9dec-285600000000-m80cb6916-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb6915-0bb9-0000-714b-e31d00000000.xml#m80cb6916-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb77f4-07d6-0000-714b-e31d00000000" name="# Parties Contacted - Awaiting Data Cleansing" isWriteable="false">
+<Description><![CDATA[All campaign parties for a campaign who have Campaign Outcome as 'Awaiting Data Cleansing']]></Description>
+<MeasureDefn mdsid="m80cb77f6-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb9992-0802-0000-714b-e31d00000000" name="AggRule_2050:8439181389608166" isDefault="true">
+<Expr mdsid="m0000000d-01f4-0000-46b6-873900000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Campaign History"."# Parties Contacted - Awaiting Data Cleansing")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-46b6-873900000000-m80cb77f4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6c9c-07f3-0000-714b-e31d00000000.xml#m80cb77f4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb77fa-0f3c-0000-714b-e31d00000000" name="AD_3900:8382371387379601">
+<Expr mdsid="m0000000e-01f4-0000-436d-eefb00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Awaiting External Cleansing' THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Contact_Outcome"."VAL" = 'Awaiting External Cleansing' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_Agg_WC_CAMP_HIST_A"."CAMP_CON_CNT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-436d-eefb00000000-m80c5f2bd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfd3-0bb9-0000-714b-e31d00000000.xml#m80c5f2bd-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-436d-eefb00000000-m80cb6916-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb6915-0bb9-0000-714b-e31d00000000.xml#m80cb6916-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbc618-07d6-0000-714b-e31d00000000" name="# of Parties Targeted (Distinct)" isWriteable="false">
+<MeasureDefn mdsid="m80cbc630-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbc631-0802-0000-714b-e31d00000000" name="AggRule_2050:8517111404314539" isDefault="true">
+<Expr mdsid="m0000000f-01f4-0000-a7f7-ab8900000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Owning Party - Campaign History"."# of Parties Targeted (Distinct)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-a7f7-ab8900000000-m80cbc618-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6c9c-07f3-0000-714b-e31d00000000.xml#m80cbc618-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbc661-0f3c-0000-714b-e31d00000000" name="AD_3900:8517061404314539">
+<Expr mdsid="m00000010-01f4-0000-2447-d16800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_CAMP_HIST_F"."X_SRM_OWN_PARTY_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_CAMP_HIST_F"."X_SRM_OWN_PARTY_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-2447-d16800000000-m80cb1a8f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9d-0bb9-0000-714b-e31d00000000.xml#m80cb1a8f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80cb6c9c-07f3-0000-714b-e31d00000000-m80cb6ccc-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cb6ccc-07f5-0000-714b-e31d00000000.xml#m80cb6ccc-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80cb6c9c-07f3-0000-714b-e31d00000000-m80cb6d53-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cb6d53-07f5-0000-714b-e31d00000000.xml#m80cb6d53-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

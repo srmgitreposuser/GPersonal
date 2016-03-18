@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTableSource mdsid="m80000000-47f0-15a6-806e-0a0e2d820000" name="Fact_WC_PROD_CROSSOVER_VOL_FA" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isActive="true" logicalTableRef="/oracle/bi/server/base/LogicalTable/80cb595c-07f3-0000-714b-e31d00000000.xml#m80cb595c-07f3-0000-714b-e31d00000000">
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000001-01f4-0000-4d34-094200000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Crossover Volume"."Audience Count (Crossover)"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-4d34-094200000000-m80cb596b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb595c-07f3-0000-714b-e31d00000000.xml#m80cb596b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000002-01f4-0000-e281-ad3600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PROD_CROSSOVER_VOL_FA"."NUM_ROWS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-e281-ad3600000000-m00000003-46c4-15a6-806e-0a0e2d820000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-46c4-15a6-806e-0a0e2d820000.xml#m00000003-46c4-15a6-806e-0a0e2d820000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000003-01f4-0000-b95f-6e9f00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Crossover Volume"."Distinct Audience Count (Crossover)"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-b95f-6e9f00000000-m40000000-4802-15a6-806e-0a0e2d820000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb595c-07f3-0000-714b-e31d00000000.xml#m40000000-4802-15a6-806e-0a0e2d820000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000004-01f4-0000-6f6c-19c100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PROD_CROSSOVER_VOL_FA"."DISTINCT_ROWS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-6f6c-19c100000000-m00000004-46c4-15a6-806e-0a0e2d820000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-46c4-15a6-806e-0a0e2d820000.xml#m00000004-46c4-15a6-806e-0a0e2d820000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/00000000-46c4-15a6-806e-0a0e2d820000.xml#m00000000-46c4-15a6-806e-0a0e2d820000">
+</Link>
+<WhereClause mdsid="m00000005-01f4-0000-422f-620e00000000" name="WhereClause">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</WhereClause>
+<GroupBy mdsid="m00000006-01f4-0000-5c2a-df5400000000" name="GroupBy">
+<ExprText><![CDATA[ GROUPBYLEVEL("%1", "%2", "%3", "%4")]]></ExprText>
+<ExprTextDesc><![CDATA[ GROUPBYLEVEL("Core 2"."Dim - ChannelDim"."Dim - Channel Total", "Core 2"."Dim - Owning PartyDim"."All", "Core 2"."Dim - Product Area CrossoverDim"."Dim - Product Area Crossover Detail", "Core 2"."Dim - Product AreaDim"."Dim - Product Area Detail")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-5c2a-df5400000000-m80cb597a-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cb5958-07e3-0000-714b-e31d00000000.xml#m80cb597a-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-5c2a-df5400000000-m80c9b7ae-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c940f4-07e3-0000-714b-e31d00000000.xml#m80c9b7ae-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-5c2a-df5400000000-m80cb5977-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cb5957-07e3-0000-714b-e31d00000000.xml#m80cb5977-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-5c2a-df5400000000-m80cb5975-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cb5956-07e3-0000-714b-e31d00000000.xml#m80cb5975-07e9-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</GroupBy>
+<FragmentContent mdsid="m00000007-01f4-0000-420f-30de00000000" name="FragmentContent">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</FragmentContent>
+</LogicalTableSource>

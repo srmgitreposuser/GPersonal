@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9a9-07f3-0000-714b-e31d00000000" name="Fact - CRM - Balance History" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="663" y="637" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c565f8-07d6-0000-714b-e31d00000000" name="Average Historical Balance" iconIndex="69" isWriteable="false">
+<Description><![CDATA[This is the average of average periodic balances tracked in the balance history fact table. To be used in combination with End date period date information]]></Description>
+<MeasureDefn mdsid="m80c5b0cf-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b7f0-0802-0000-714b-e31d00000000" name="AggRule_2050:179661074282429" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-9ade-db5200000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Balance History"."Average Historical Balance")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-9ade-db5200000000-m80c565f8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a9-07f3-0000-714b-e31d00000000.xml#m80c565f8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+<AggrRule mdsid="m80c5b96c-0802-0000-714b-e31d00000000" name="AggRule_2050:1161771074294808" basedOnDimensionRef="/oracle/bi/server/base/Dimension/80c5a098-07e3-0000-714b-e31d00000000.xml#m80c5a098-07e3-0000-714b-e31d00000000">
+<Expr mdsid="m00000002-01f4-0000-c9d8-6ae900000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core"."Fact - CRM - Balance History"."Average Historical Balance")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-c9d8-6ae900000000-m80c565f8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a9-07f3-0000-714b-e31d00000000.xml#m80c565f8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689d5-0f3c-0000-714b-e31d00000000" name="AD_3900:833261074282455">
+<Expr mdsid="m00000003-01f4-0000-1414-59f400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_BALHSTRY_F"."AVG_BALANCE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-1414-59f400000000-m80c5d559-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf16-0bb9-0000-714b-e31d00000000.xml#m80c5d559-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c565f9-07d6-0000-714b-e31d00000000" name="Ending Balance" iconIndex="69" isWriteable="false">
+<Description><![CDATA["This is the balance at the end of a given period. For Balance history object, use in combination with End date period date information"]]></Description>
+<MeasureDefn mdsid="m80c5b0d0-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b7f1-0802-0000-714b-e31d00000000" name="AggRule_2050:179681074282429" isDefault="true">
+<Expr mdsid="m00000004-01f4-0000-034e-9dbe00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Balance History"."Ending Balance")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-034e-9dbe00000000-m80c565f9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a9-07f3-0000-714b-e31d00000000.xml#m80c565f9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+<AggrRule mdsid="m80c5b7f2-0802-0000-714b-e31d00000000" name="AggRule_2050:179691074282429" basedOnDimensionRef="/oracle/bi/server/base/Dimension/80c5a098-07e3-0000-714b-e31d00000000.xml#m80c5a098-07e3-0000-714b-e31d00000000">
+<Expr mdsid="m00000005-01f4-0000-44d6-bb5100000000" name="Expr">
+<ExprText><![CDATA[ LAST("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ LAST("Core"."Fact - CRM - Balance History"."Ending Balance")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-44d6-bb5100000000-m80c565f9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a9-07f3-0000-714b-e31d00000000.xml#m80c565f9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689d6-0f3c-0000-714b-e31d00000000" name="AD_3900:833271074282455">
+<Expr mdsid="m00000006-01f4-0000-0d27-5bf200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_BALHSTRY_F"."END_BALANCE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-0d27-5bf200000000-m80c5d55a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf16-0bb9-0000-714b-e31d00000000.xml#m80c5d55a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c565fa-07d6-0000-714b-e31d00000000" name="High Balance" iconIndex="69" isWriteable="false">
+<Description><![CDATA[This is the high balance within a given period. To be used in combination with End date period date information]]></Description>
+<MeasureDefn mdsid="m80c5b0d1-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b7f3-0802-0000-714b-e31d00000000" name="AggRule_2050:179701074282429" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-a84b-b03400000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Balance History"."High Balance")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-a84b-b03400000000-m80c565fa-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a9-07f3-0000-714b-e31d00000000.xml#m80c565fa-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+<AggrRule mdsid="m80c5b96d-0802-0000-714b-e31d00000000" name="AggRule_2050:1161781074294879" basedOnDimensionRef="/oracle/bi/server/base/Dimension/80c5a098-07e3-0000-714b-e31d00000000.xml#m80c5a098-07e3-0000-714b-e31d00000000">
+<Expr mdsid="m00000008-01f4-0000-708b-a82900000000" name="Expr">
+<ExprText><![CDATA[ MAX("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ MAX("Core"."Fact - CRM - Balance History"."High Balance")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-708b-a82900000000-m80c565fa-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a9-07f3-0000-714b-e31d00000000.xml#m80c565fa-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689d7-0f3c-0000-714b-e31d00000000" name="AD_3900:833281074282455">
+<Expr mdsid="m00000009-01f4-0000-b0f4-347200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_BALHSTRY_F"."HIGH_BALANCE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-b0f4-347200000000-m80c5d55b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf16-0bb9-0000-714b-e31d00000000.xml#m80c5d55b-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c565fb-07d6-0000-714b-e31d00000000" name="Low Balance" iconIndex="69" isWriteable="false">
+<Description><![CDATA[This is the low balance within a given period. To be used in combination with End date period date information]]></Description>
+<MeasureDefn mdsid="m80c5b0d2-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b7f4-0802-0000-714b-e31d00000000" name="AggRule_2050:179721074282429" isDefault="true">
+<Expr mdsid="m0000000a-01f4-0000-8856-ff7600000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Balance History"."Low Balance")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-8856-ff7600000000-m80c565fb-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a9-07f3-0000-714b-e31d00000000.xml#m80c565fb-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+<AggrRule mdsid="m80c5b96e-0802-0000-714b-e31d00000000" name="AggRule_2050:1161791074294931" basedOnDimensionRef="/oracle/bi/server/base/Dimension/80c5a098-07e3-0000-714b-e31d00000000.xml#m80c5a098-07e3-0000-714b-e31d00000000">
+<Expr mdsid="m0000000b-01f4-0000-4172-21c600000000" name="Expr">
+<ExprText><![CDATA[ MIN("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ MIN("Core"."Fact - CRM - Balance History"."Low Balance")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-4172-21c600000000-m80c565fb-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a9-07f3-0000-714b-e31d00000000.xml#m80c565fb-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689d8-0f3c-0000-714b-e31d00000000" name="AD_3900:833291074282455">
+<Expr mdsid="m0000000c-01f4-0000-0b77-cf7a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_BALHSTRY_F"."LOW_BALANCE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-0b77-cf7a00000000-m80c5d55c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf16-0bb9-0000-714b-e31d00000000.xml#m80c5d55c-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c565fc-07d6-0000-714b-e31d00000000" name="Total Interest Paid" iconIndex="69" isWriteable="false">
+<Description><![CDATA[This is the toal interest paid during a given peiod]]></Description>
+<MeasureDefn mdsid="m80c5b0d3-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b7f5-0802-0000-714b-e31d00000000" name="AggRule_2050:179741074282429" isDefault="true">
+<Expr mdsid="m0000000d-01f4-0000-cfe0-5a1e00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Balance History"."Total Interest Paid")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-cfe0-5a1e00000000-m80c565fc-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a9-07f3-0000-714b-e31d00000000.xml#m80c565fc-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689d9-0f3c-0000-714b-e31d00000000" name="AD_3900:833301074282455">
+<Expr mdsid="m0000000e-01f4-0000-2ecc-722600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_BALHSTRY_F"."INTEREST_PAID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-2ecc-722600000000-m80c5d55d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf16-0bb9-0000-714b-e31d00000000.xml#m80c5d55d-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c565fd-07d6-0000-714b-e31d00000000" name="Average Interest Paid" iconIndex="69" isWriteable="false">
+<Description><![CDATA[This is the average amount of interest paid by a customer over a given period of time]]></Description>
+<MeasureDefn mdsid="m80c5b0d4-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b7f6-0802-0000-714b-e31d00000000" name="AggRule_2050:179751074282429" isDefault="true">
+<Expr mdsid="m0000000f-01f4-0000-258b-4d6d00000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core"."Fact - CRM - Balance History"."Average Interest Paid")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-258b-4d6d00000000-m80c565fd-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a9-07f3-0000-714b-e31d00000000.xml#m80c565fd-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689da-0f3c-0000-714b-e31d00000000" name="AD_3900:833311074282455">
+<Expr mdsid="m00000010-01f4-0000-f110-a95a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_BALHSTRY_F"."INTEREST_PAID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-f110-a95a00000000-m80c5d55d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf16-0bb9-0000-714b-e31d00000000.xml#m80c5d55d-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c565fe-07d6-0000-714b-e31d00000000" name="Total Fee Paid" iconIndex="69" isWriteable="false">
+<Description><![CDATA[This is the total fee amount paid during a given peiod]]></Description>
+<MeasureDefn mdsid="m80c5b0d5-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b7f7-0802-0000-714b-e31d00000000" name="AggRule_2050:179761074282429" isDefault="true">
+<Expr mdsid="m00000011-01f4-0000-237a-55d900000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Balance History"."Total Fee Paid")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-237a-55d900000000-m80c565fe-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a9-07f3-0000-714b-e31d00000000.xml#m80c565fe-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689db-0f3c-0000-714b-e31d00000000" name="AD_3900:833321074282455">
+<Expr mdsid="m00000012-01f4-0000-6bc6-c1fa00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_BALHSTRY_F"."FEE_PAID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-6bc6-c1fa00000000-m80c5d55e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf16-0bb9-0000-714b-e31d00000000.xml#m80c5d55e-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c565ff-07d6-0000-714b-e31d00000000" name="Average Fee Paid" iconIndex="69" isWriteable="false">
+<Description><![CDATA[This is the average fee paid paid by a customer over a given period of time]]></Description>
+<MeasureDefn mdsid="m80c5b0d6-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b7f8-0802-0000-714b-e31d00000000" name="AggRule_2050:179771074282429" isDefault="true">
+<Expr mdsid="m00000013-01f4-0000-a719-f3ce00000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core"."Fact - CRM - Balance History"."Average Fee Paid")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-a719-f3ce00000000-m80c565ff-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a9-07f3-0000-714b-e31d00000000.xml#m80c565ff-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c689dc-0f3c-0000-714b-e31d00000000" name="AD_3900:833331074282455">
+<Expr mdsid="m00000014-01f4-0000-94d6-776c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_BALHSTRY_F"."FEE_PAID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-94d6-776c00000000-m80c5d55e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf16-0bb9-0000-714b-e31d00000000.xml#m80c5d55e-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56600-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80c689dd-0f3c-0000-714b-e31d00000000" name="AD_3900:833341074282455">
+<Expr mdsid="m00000015-01f4-0000-4088-8c8b00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_BALHSTRY_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-4088-8c8b00000000-m80c5d543-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf16-0bb9-0000-714b-e31d00000000.xml#m80c5d543-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58c7a-07d8-0000-714b-e31d00000000" name="ROW_WID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58c7a-07d8-0000-714b-e31d00000000-m80c56600-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9a9-07f3-0000-714b-e31d00000000.xml#m80c56600-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5a9a9-07f3-0000-714b-e31d00000000-m80c5abcf-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5abcf-07f5-0000-714b-e31d00000000.xml#m80c5abcf-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

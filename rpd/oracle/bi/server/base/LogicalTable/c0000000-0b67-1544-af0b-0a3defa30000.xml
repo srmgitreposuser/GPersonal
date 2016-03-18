@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="mc0000000-0b67-1544-af0b-0a3defa30000" name="Fact - Owning Party - FWS Invoice" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="mc0000005-0b67-1544-af0b-0a3defa30000" name="Gross Amount" isWriteable="false">
+<Description><![CDATA[Gross amount from the solicitor invoice]]></Description>
+<MeasureDefn mdsid="mc0000000-0bcf-1544-af0b-0a3defa30000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80000000-0afd-1561-9e03-0a3ddf680000" name="AggRule_2050:8712261434725591" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-75f4-937100000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - FWS Invoice"."Gross Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-75f4-937100000000-mc0000005-0b67-1544-af0b-0a3defa30000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/c0000000-0b67-1544-af0b-0a3defa30000.xml#mc0000005-0b67-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="mc0000002-4c81-1547-835d-0a3defa30000" name="AD_3900:8687981427976711">
+<Expr mdsid="m00000002-01f4-0000-4c96-fbc900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_INVOICE_F"."GROSS_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-4c96-fbc900000000-m00000003-00f9-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-00f9-1544-af0b-0a3defa30000.xml#m00000003-00f9-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc000000a-0b67-1544-af0b-0a3defa30000" name="Net Amount" isWriteable="false">
+<Description><![CDATA[Net amount from the solicitor invoice]]></Description>
+<MeasureDefn mdsid="m80000000-0bd0-1544-af0b-0a3defa30000" name="Measure" isCommutative="false">
+<AggrRule mdsid="mc0000000-0b01-1561-9e03-0a3ddf680000" name="AggRule_2050:8712271434725591" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-b7f9-f79b00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - FWS Invoice"."Net Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-b7f9-f79b00000000-mc000000a-0b67-1544-af0b-0a3defa30000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/c0000000-0b67-1544-af0b-0a3defa30000.xml#mc000000a-0b67-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="mc0000003-4c81-1547-835d-0a3defa30000" name="AD_3900:8687991427976711">
+<Expr mdsid="m00000004-01f4-0000-9177-2d8500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_INVOICE_F"."NET_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-9177-2d8500000000-m00000008-00f9-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-00f9-1544-af0b-0a3defa30000.xml#m00000008-00f9-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc0000010-0b67-1544-af0b-0a3defa30000" name="VAT Amount" isWriteable="false">
+<Description><![CDATA[VAT amount from the solicitor invoice]]></Description>
+<MeasureDefn mdsid="m80000000-0bd1-1544-af0b-0a3defa30000" name="Measure" isCommutative="false">
+<AggrRule mdsid="mc0000000-0b08-1561-9e03-0a3ddf680000" name="AggRule_2050:8712281434725591" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-f4b6-e5f900000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - FWS Invoice"."VAT Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-f4b6-e5f900000000-mc0000010-0b67-1544-af0b-0a3defa30000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/c0000000-0b67-1544-af0b-0a3defa30000.xml#mc0000010-0b67-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="mc0000004-4c81-1547-835d-0a3defa30000" name="AD_3900:8688001427976711">
+<Expr mdsid="m00000006-01f4-0000-8e34-54cb00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_INVOICE_F"."VAT_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-8e34-54cb00000000-m0000000e-00f9-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-00f9-1544-af0b-0a3defa30000.xml#m0000000e-00f9-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc0000001-51a0-1546-b306-0a3defa30000" name="# Invoices" isWriteable="false">
+<MeasureDefn mdsid="m00000000-51a5-1546-b306-0a3defa30000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m40000000-0b0d-1561-9e03-0a3ddf680000" name="AggRule_2050:8712291434725591" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-64e0-561400000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core 2"."Fact - Owning Party - FWS Invoice"."# Invoices")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-64e0-561400000000-mc0000001-51a0-1546-b306-0a3defa30000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/c0000000-0b67-1544-af0b-0a3defa30000.xml#mc0000001-51a0-1546-b306-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="mc0000005-4c81-1547-835d-0a3defa30000" name="AD_3900:8688011427976711">
+<Expr mdsid="m00000008-01f4-0000-76cc-081c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_INVOICE_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-76cc-081c00000000-m0000000c-00f9-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-00f9-1544-af0b-0a3defa30000.xml#m0000000c-00f9-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m00000001-a2b6-1567-8c48-0a3ddf680000" name="# Opportunities" isWriteable="false">
+<MeasureDefn mdsid="m40000000-a2cc-1567-8c48-0a3ddf680000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m40000001-a2cc-1567-8c48-0a3ddf680000" name="AggRule_2050:8843561436453833" isDefault="true">
+<Expr mdsid="m00000009-01f4-0000-6537-a04200000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Owning Party - FWS Invoice"."# Opportunities")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-6537-a04200000000-m00000001-a2b6-1567-8c48-0a3ddf680000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/c0000000-0b67-1544-af0b-0a3defa30000.xml#m00000001-a2b6-1567-8c48-0a3ddf680000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m00000002-a2b6-1567-8c48-0a3ddf680000" name="AD_3900:8843541436453833">
+<Expr mdsid="m0000000a-01f4-0000-b81b-193c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_INVOICE_F"."OPTY_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-b81b-193c00000000-m0000000a-00f9-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-00f9-1544-af0b-0a3defa30000.xml#m0000000a-00f9-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m00000000-e554-1567-8c48-0a3ddf680000" name="# Solicitors" isWriteable="false">
+<Description><![CDATA[Number of Solicitors who have filed an Invoice for the Free Will Service]]></Description>
+<MeasureDefn mdsid="mc0000000-e575-1567-8c48-0a3ddf680000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m00000000-e579-1567-8c48-0a3ddf680000" name="AggRule_2050:8843771436522049" isDefault="true">
+<Expr mdsid="m0000000b-01f4-0000-3998-b6b400000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Owning Party - FWS Invoice"."# Solicitors")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-3998-b6b400000000-m00000000-e554-1567-8c48-0a3ddf680000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/c0000000-0b67-1544-af0b-0a3defa30000.xml#m00000000-e554-1567-8c48-0a3ddf680000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m00000001-e554-1567-8c48-0a3ddf680000" name="AD_3900:8843741436522049">
+<Expr mdsid="m0000000c-01f4-0000-71c3-f0f100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_INVOICE_F"."SOLICITOR_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-71c3-f0f100000000-m0000000d-00f9-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-00f9-1544-af0b-0a3defa30000.xml#m0000000d-00f9-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="mc0000000-0b67-1544-af0b-0a3defa30000-mc0000002-0b67-1544-af0b-0a3defa30000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/c0000002-0b67-1544-af0b-0a3defa30000.xml#mc0000002-0b67-1544-af0b-0a3defa30000"/>
+</RefTableSources>
+</LogicalTable>

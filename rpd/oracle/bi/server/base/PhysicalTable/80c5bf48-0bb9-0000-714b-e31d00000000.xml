@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5bf48-0bb9-0000-714b-e31d00000000" name="Dim_W_QUOTEITEM_F_QUOTE_Size" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" x="1786" y="172" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb1-0bd3-0000-714b-e31d00000000.xml#m80c67bb1-0bd3-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[select QUOTE_WID as QUOTE_WID, sum(NRC_IND * INCL_CALC_IND * QTY_REQUESTED * QUOTED_NET_PRI - ADJUSTMENT + FREIGHT_AMT + TAX_AMT) as QUOTE_REVN
+from VALUEOF(OLAPTBO).W_QUOTEITEM_F
+group by QUOTE_WID]]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c5e01a-0bbb-0000-714b-e31d00000000" name="QUOTE_WID" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5e01b-0bbb-0000-714b-e31d00000000" name="QUOTE_REVN" dataType="DOUBLE" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalKey mdsid="m80c67984-0bc0-0000-714b-e31d00000000" name="QUOTE Size_Key">
+<RefColumns>
+<RefColumn refId="m80c67984-0bc0-0000-714b-e31d00000000-m80c5e01a-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bf48-0bb9-0000-714b-e31d00000000.xml#m80c5e01a-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+</PhysicalTable>

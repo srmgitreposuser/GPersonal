@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTableSource mdsid="m80c5ad19-07f5-0000-714b-e31d00000000" name="Event_Metrics_Series_Level_Metrics" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isActive="true" logicalTableRef="/oracle/bi/server/base/LogicalTable/80c5aa9e-07f3-0000-714b-e31d00000000.xml#m80c5aa9e-07f3-0000-714b-e31d00000000">
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000001-01f4-0000-69c7-c99f00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Event_Series_Metrics_Real_Time"."SRC_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-69c7-c99f00000000-m80c57bf5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa9e-07f3-0000-714b-e31d00000000.xml#m80c57bf5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000002-01f4-0000-0456-d8f400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Real Time OLTP".""."SIEBEL"."Event_Series_Metrics_Real_Time"."SRC_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-0456-d8f400000000-m80c66156-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c169-0bb9-0000-714b-e31d00000000.xml#m80c66156-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000003-01f4-0000-d5ec-166000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Event_Series_Metrics_Real_Time"."Standard Gift Aid Rate"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-d5ec-166000000000-m80c57c11-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa9e-07f3-0000-714b-e31d00000000.xml#m80c57c11-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000004-01f4-0000-39af-677200000000" name="Expr">
+<ExprText><![CDATA[22.0 / 78]]></ExprText>
+<ExprTextDesc><![CDATA[22.0 / 78]]></ExprTextDesc>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000005-01f4-0000-3988-2a2f00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Event_Series_Metrics_Real_Time"."Event Id"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-3988-2a2f00000000-m80c57c16-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa9e-07f3-0000-714b-e31d00000000.xml#m80c57c16-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000006-01f4-0000-4a1f-ed1b00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Real Time OLTP".""."SIEBEL"."S_SRC_Event Base Table"."ROW_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-4a1f-ed1b00000000-m80c65dbd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c164-0bb9-0000-714b-e31d00000000.xml#m80c65dbd-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000007-01f4-0000-0671-fb3e00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Siebel OLTP"."Event_Series_Metrics_Real_Time"."Budgeted Series Drop Off Rate"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-0671-fb3e00000000-m80c57c0d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa9e-07f3-0000-714b-e31d00000000.xml#m80c57c0d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000008-01f4-0000-1442-3c7a00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Response' AND "%2" = 'Series Drop Off Rate' THEN "%3" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Real Time OLTP".""."SIEBEL"."Event_Series_Metrics_Real_Time"."X_SRM_TYPE" = 'Response' AND "Real Time OLTP".""."SIEBEL"."Event_Series_Metrics_Real_Time"."X_SRM_GOAL_SUB" = 'Series Drop Off Rate' THEN "Real Time OLTP".""."SIEBEL"."Event_Series_Metrics_Real_Time"."GOAL_OTHER" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-1442-3c7a00000000-m80c66170-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c169-0bb9-0000-714b-e31d00000000.xml#m80c66170-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-1442-3c7a00000000-m80c6616f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c169-0bb9-0000-714b-e31d00000000.xml#m80c6616f-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-1442-3c7a00000000-m80c6615f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c169-0bb9-0000-714b-e31d00000000.xml#m80c6615f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5c164-0bb9-0000-714b-e31d00000000.xml#m80c5c164-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5c164-0bb9-0000-714b-e31d00000000.xml#m80c5c164-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5c165-0bb9-0000-714b-e31d00000000.xml#m80c5c165-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5c165-0bb9-0000-714b-e31d00000000.xml#m80c677f4-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5c165-0bb9-0000-714b-e31d00000000.xml#m80c5c165-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5c165-0bb9-0000-714b-e31d00000000.xml#m80c5c165-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5c164-0bb9-0000-714b-e31d00000000.xml#m80c5c164-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5c165-0bb9-0000-714b-e31d00000000.xml#m80c677f4-0bbe-0000-714b-e31d00000000"/>
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5c165-0bb9-0000-714b-e31d00000000.xml#m80c5c165-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5c169-0bb9-0000-714b-e31d00000000.xml#m80c5c169-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5c169-0bb9-0000-714b-e31d00000000.xml#m80c677f8-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5c169-0bb9-0000-714b-e31d00000000.xml#m80c5c169-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5c169-0bb9-0000-714b-e31d00000000.xml#m80c5c169-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5c165-0bb9-0000-714b-e31d00000000.xml#m80c5c165-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5c169-0bb9-0000-714b-e31d00000000.xml#m80c677f8-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<WhereClause mdsid="m00000009-01f4-0000-24f2-210b00000000" name="WhereClause">
+<ExprText><![CDATA["%1" IN ('EVENT')]]></ExprText>
+<ExprTextDesc><![CDATA["Real Time OLTP".""."SIEBEL"."S_SRC_Event Base Table"."SUB_TYPE" IN ('EVENT')]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-24f2-210b00000000-m80c65de3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c164-0bb9-0000-714b-e31d00000000.xml#m80c65de3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</WhereClause>
+<GroupBy mdsid="m0000000a-01f4-0000-976e-df1e00000000" name="GroupBy">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</GroupBy>
+<FragmentContent mdsid="m0000000b-01f4-0000-24f9-ac1200000000" name="FragmentContent">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</FragmentContent>
+</LogicalTableSource>

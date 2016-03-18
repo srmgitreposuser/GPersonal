@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5aa8d-07f3-0000-714b-e31d00000000" name="Fact - Non-Campaign Communication" iconIndex="93" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="876" y="358" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c57b3e-07d6-0000-714b-e31d00000000" name="# Received Activities" isWriteable="false">
+<MeasureDefn mdsid="m80c5b536-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bc6b-0802-0000-714b-e31d00000000" name="AggRule_2050:5858731276699942" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-1eb5-58b700000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - Non-Campaign Communication"."# Received Activities")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-1eb5-58b700000000-m80c57b3e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8d-07f3-0000-714b-e31d00000000.xml#m80c57b3e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a050-0f3c-0000-714b-e31d00000000" name="AD_3900:5858711276699942">
+<Expr mdsid="m00000002-01f4-0000-478a-040500000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'N' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication"."COMPLETED_FLG" = 'N' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-478a-040500000000-m80c6555b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c13f-0bb9-0000-714b-e31d00000000.xml#m80c6555b-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-478a-040500000000-m80c6554a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c13f-0bb9-0000-714b-e31d00000000.xml#m80c6554a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57b3f-07d6-0000-714b-e31d00000000" name="# Completed Activities" isWriteable="false">
+<MeasureDefn mdsid="m80c5b537-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bc6c-0802-0000-714b-e31d00000000" name="AggRule_2050:5858821276699942" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-73ce-3e4600000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - Non-Campaign Communication"."# Completed Activities")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-73ce-3e4600000000-m80c57b3f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8d-07f3-0000-714b-e31d00000000.xml#m80c57b3f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a051-0f3c-0000-714b-e31d00000000" name="AD_3900:5858811276699942">
+<Expr mdsid="m00000004-01f4-0000-3a4f-fa7f00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication"."COMPLETED_FLG" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-3a4f-fa7f00000000-m80c6555b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c13f-0bb9-0000-714b-e31d00000000.xml#m80c6555b-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-3a4f-fa7f00000000-m80c6554a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c13f-0bb9-0000-714b-e31d00000000.xml#m80c6554a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57b40-07d6-0000-714b-e31d00000000" name="Turnaround Days" isWriteable="false">
+<MeasureDefn mdsid="m80c5b538-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5be08-0802-0000-714b-e31d00000000" name="AggRule_2050:6148971286288642" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-3c6c-f9e500000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Non-Campaign Communication"."Turnaround Days")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-3c6c-f9e500000000-m80c57b40-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8d-07f3-0000-714b-e31d00000000.xml#m80c57b40-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a052-0f3c-0000-714b-e31d00000000" name="AD_3900:5858841276700275">
+<Expr mdsid="m00000006-01f4-0000-14ae-497800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication"."COMPLETED_FLG" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication"."TURNAROUND_DAYS" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-14ae-497800000000-m80c6555b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c13f-0bb9-0000-714b-e31d00000000.xml#m80c6555b-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-14ae-497800000000-m80c655ec-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c13f-0bb9-0000-714b-e31d00000000.xml#m80c655ec-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57b41-07d6-0000-714b-e31d00000000" name="Average Turnaround Days" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000007-01f4-0000-56f4-7a4400000000" name="Expr">
+<ExprText><![CDATA["%1" / "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - Non-Campaign Communication"."Turnaround Days" / "Core"."Fact - Non-Campaign Communication"."# Completed Activities"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-56f4-7a4400000000-m80c57b40-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8d-07f3-0000-714b-e31d00000000.xml#m80c57b40-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000007-01f4-0000-56f4-7a4400000000-m80c57b3f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8d-07f3-0000-714b-e31d00000000.xml#m80c57b3f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c6a053-0f3c-0000-714b-e31d00000000" name="AD_3900:5858881276700275">
+<Expr mdsid="m00000008-01f4-0000-9ff6-145700000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57b42-07d6-0000-714b-e31d00000000" name="SLA" isWriteable="false">
+<MeasureDefn mdsid="m80c5b539-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5be0b-0802-0000-714b-e31d00000000" name="AggRule_2050:6182321286448841" isDefault="true">
+<Expr mdsid="m00000009-01f4-0000-189e-6ac800000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Non-Campaign Communication"."SLA")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-189e-6ac800000000-m80c57b42-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8d-07f3-0000-714b-e31d00000000.xml#m80c57b42-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a054-0f3c-0000-714b-e31d00000000" name="AD_3900:5871161276702087">
+<Expr mdsid="m0000000a-01f4-0000-3168-698d00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'N' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication"."COMPLETED_FLG" = 'N' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication"."SLA" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-3168-698d00000000-m80c6555b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c13f-0bb9-0000-714b-e31d00000000.xml#m80c6555b-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000a-01f4-0000-3168-698d00000000-m80c65555-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c13f-0bb9-0000-714b-e31d00000000.xml#m80c65555-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c58789-07d6-0000-714b-e31d00000000" name="Average SLA" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000000b-01f4-0000-8f10-fc9000000000" name="Expr">
+<ExprText><![CDATA["%1" / "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - Non-Campaign Communication"."SLA" / "Core"."Fact - Non-Campaign Communication"."# Received Activities"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-8f10-fc9000000000-m80c57b42-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8d-07f3-0000-714b-e31d00000000.xml#m80c57b42-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000b-01f4-0000-8f10-fc9000000000-m80c57b3e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8d-07f3-0000-714b-e31d00000000.xml#m80c57b3e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c6ac9b-0f3c-0000-714b-e31d00000000" name="AD_3900:6182241286384643">
+<Expr mdsid="m0000000c-01f4-0000-80d9-f12300000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57b4b-07d6-0000-714b-e31d00000000" name="# Received Activities - Calendar Year Ago" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000000d-01f4-0000-c942-4f3b00000000" name="Expr">
+<ExprText><![CDATA[ AGO("%1", "%2", 1)]]></ExprText>
+<ExprTextDesc><![CDATA[ AGO("Core"."Fact - Non-Campaign Communication"."# Received Activities", "Core"."Date"."Year", 1)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-c942-4f3b00000000-m80c57b3e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8d-07f3-0000-714b-e31d00000000.xml#m80c57b3e-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000d-01f4-0000-c942-4f3b00000000-m80c5a1b5-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a098-07e3-0000-714b-e31d00000000.xml#m80c5a1b5-07e9-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c6a05d-0f3c-0000-714b-e31d00000000" name="AD_3900:5874591276707744">
+<Expr mdsid="m0000000e-01f4-0000-8ecc-7e8300000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57b4c-07d6-0000-714b-e31d00000000" name="# Completed Activities - Calendar Year Ago" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000000f-01f4-0000-06da-9c9600000000" name="Expr">
+<ExprText><![CDATA[ AGO("%1", "%2", 1)]]></ExprText>
+<ExprTextDesc><![CDATA[ AGO("Core"."Fact - Non-Campaign Communication"."# Completed Activities", "Core"."Date"."Year", 1)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-06da-9c9600000000-m80c57b3f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8d-07f3-0000-714b-e31d00000000.xml#m80c57b3f-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000f-01f4-0000-06da-9c9600000000-m80c5a1b5-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a098-07e3-0000-714b-e31d00000000.xml#m80c5a1b5-07e9-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c6a05e-0f3c-0000-714b-e31d00000000" name="AD_3900:5874671276707744">
+<Expr mdsid="m00000010-01f4-0000-c7cf-038200000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57b4d-07d6-0000-714b-e31d00000000" name="# Received Activities - Fiscal Year Ago" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000011-01f4-0000-0f54-5f8000000000" name="Expr">
+<ExprText><![CDATA[ AGO("%1", "%2", 1)]]></ExprText>
+<ExprTextDesc><![CDATA[ AGO("Core"."Fact - Non-Campaign Communication"."# Received Activities", "Core"."Date"."Fiscal Year", 1)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-0f54-5f8000000000-m80c57b3e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8d-07f3-0000-714b-e31d00000000.xml#m80c57b3e-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000011-01f4-0000-0f54-5f8000000000-m80c5a1b9-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a098-07e3-0000-714b-e31d00000000.xml#m80c5a1b9-07e9-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c6a05f-0f3c-0000-714b-e31d00000000" name="AD_3900:5874751276707744">
+<Expr mdsid="m00000012-01f4-0000-21ef-d8a900000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57b4e-07d6-0000-714b-e31d00000000" name="# Completed Activities - Fiscal Year Ago" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000013-01f4-0000-d5fa-5db900000000" name="Expr">
+<ExprText><![CDATA[ AGO("%1", "%2", 1)]]></ExprText>
+<ExprTextDesc><![CDATA[ AGO("Core"."Fact - Non-Campaign Communication"."# Completed Activities", "Core"."Date"."Fiscal Year", 1)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-d5fa-5db900000000-m80c57b3f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8d-07f3-0000-714b-e31d00000000.xml#m80c57b3f-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000013-01f4-0000-d5fa-5db900000000-m80c5a1b9-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a098-07e3-0000-714b-e31d00000000.xml#m80c5a1b9-07e9-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c6a060-0f3c-0000-714b-e31d00000000" name="AD_3900:5874831276707744">
+<Expr mdsid="m00000014-01f4-0000-99cc-980500000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57b4f-07d6-0000-714b-e31d00000000" name="# Outstanding Activities - Day Ending" isWriteable="false">
+<MeasureDefn mdsid="m80c5b53a-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bc71-0802-0000-714b-e31d00000000" name="AggRule_2050:5881641277200852" isDefault="true">
+<Expr mdsid="m00000015-01f4-0000-89d4-269f00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - Non-Campaign Communication"."# Outstanding Activities - Day Ending")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-89d4-269f00000000-m80c57b4f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8d-07f3-0000-714b-e31d00000000.xml#m80c57b4f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a061-0f3c-0000-714b-e31d00000000" name="AD_3900:5876231276767083">
+<Expr mdsid="m00000016-01f4-0000-f90d-abaa00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'N' AND ("%2" < "%3" OR "%3" = 0) THEN "%4" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication_ITD"."COMPLETED_FLG" = 'N' AND ("Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Common"."ROW_WID" < "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Completed_Date"."ROW_WID" OR "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Completed_Date"."ROW_WID" = 0) THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication_ITD"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000016-01f4-0000-f90d-abaa00000000-m80c65572-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c140-0bb9-0000-714b-e31d00000000.xml#m80c65572-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000016-01f4-0000-f90d-abaa00000000-m80c5c30e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9e-0bb9-0000-714b-e31d00000000.xml#m80c5c30e-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000016-01f4-0000-f90d-abaa00000000-m80c5c970-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beca-0bb9-0000-714b-e31d00000000.xml#m80c5c970-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000016-01f4-0000-f90d-abaa00000000-m80c65561-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c140-0bb9-0000-714b-e31d00000000.xml#m80c65561-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57b50-07d6-0000-714b-e31d00000000" name="# Outstanding Activities - Fiscal Year Ending" isWriteable="false">
+<MeasureDefn mdsid="m80c5b53b-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bc6d-0802-0000-714b-e31d00000000" name="AggRule_2050:5881471276781298" isDefault="true">
+<Expr mdsid="m00000017-01f4-0000-282a-940f00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - Non-Campaign Communication"."# Outstanding Activities - Fiscal Year Ending")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-282a-940f00000000-m80c57b50-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8d-07f3-0000-714b-e31d00000000.xml#m80c57b50-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a062-0f3c-0000-714b-e31d00000000" name="AD_3900:5876421276771735">
+<Expr mdsid="m00000018-01f4-0000-f5ad-b80b00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'N' AND ("%2" < "%3" OR "%4" = 0) THEN "%5" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication_YTD"."COMPLETED_FLG" = 'N' AND ("Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_FSCL_YEAR_D"."FSCL_YEAR" < "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Completed_Date"."FSCL_YEAR" OR "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Completed_Date"."ROW_WID" = 0) THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication_YTD"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000018-01f4-0000-f5ad-b80b00000000-m80c65589-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c141-0bb9-0000-714b-e31d00000000.xml#m80c65589-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-f5ad-b80b00000000-m80c5f51f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfe7-0bb9-0000-714b-e31d00000000.xml#m80c5f51f-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-f5ad-b80b00000000-m80c5c97e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beca-0bb9-0000-714b-e31d00000000.xml#m80c5c97e-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-f5ad-b80b00000000-m80c5c970-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beca-0bb9-0000-714b-e31d00000000.xml#m80c5c970-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-f5ad-b80b00000000-m80c65578-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c141-0bb9-0000-714b-e31d00000000.xml#m80c65578-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57b51-07d6-0000-714b-e31d00000000" name="# Outstanding Activities - Fiscal Quarter Ending" isWriteable="false">
+<MeasureDefn mdsid="m80c5b53c-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bc6e-0802-0000-714b-e31d00000000" name="AggRule_2050:5881481276781298" isDefault="true">
+<Expr mdsid="m00000019-01f4-0000-6268-c38a00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - Non-Campaign Communication"."# Outstanding Activities - Fiscal Quarter Ending")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-6268-c38a00000000-m80c57b51-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8d-07f3-0000-714b-e31d00000000.xml#m80c57b51-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a063-0f3c-0000-714b-e31d00000000" name="AD_3900:5881161276780513">
+<Expr mdsid="m0000001a-01f4-0000-e94f-672300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'N' AND ("%2" < "%3" * 100 + "%4" OR "%5" = 0) THEN "%6" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication_QTD"."COMPLETED_FLG" = 'N' AND ("Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_FSCL_QTR_D"."ROW_WID" < "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Completed_Date"."FSCL_YEAR" * 100 + "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Completed_Date"."FSCL_QTR" OR "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Completed_Date"."ROW_WID" = 0) THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication_QTD"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001a-01f4-0000-e94f-672300000000-m80c655a0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c142-0bb9-0000-714b-e31d00000000.xml#m80c655a0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001a-01f4-0000-e94f-672300000000-m80c5f4f8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfe5-0bb9-0000-714b-e31d00000000.xml#m80c5f4f8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001a-01f4-0000-e94f-672300000000-m80c5c97e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beca-0bb9-0000-714b-e31d00000000.xml#m80c5c97e-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001a-01f4-0000-e94f-672300000000-m80c5c97c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beca-0bb9-0000-714b-e31d00000000.xml#m80c5c97c-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001a-01f4-0000-e94f-672300000000-m80c5c970-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beca-0bb9-0000-714b-e31d00000000.xml#m80c5c970-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001a-01f4-0000-e94f-672300000000-m80c6558f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c142-0bb9-0000-714b-e31d00000000.xml#m80c6558f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57b52-07d6-0000-714b-e31d00000000" name="# Outstanding Activities - Fiscal Month Ending" isWriteable="false">
+<MeasureDefn mdsid="m80c5b53d-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bc6f-0802-0000-714b-e31d00000000" name="AggRule_2050:5881491276781298" isDefault="true">
+<Expr mdsid="m0000001b-01f4-0000-877e-fdde00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - Non-Campaign Communication"."# Outstanding Activities - Fiscal Month Ending")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001b-01f4-0000-877e-fdde00000000-m80c57b52-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8d-07f3-0000-714b-e31d00000000.xml#m80c57b52-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a064-0f3c-0000-714b-e31d00000000" name="AD_3900:5881241276780513">
+<Expr mdsid="m0000001c-01f4-0000-f02e-7a7600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'N' AND ("%2" < "%3" * 100 + "%4" OR "%5" = 0) THEN "%6" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication_MTD"."COMPLETED_FLG" = 'N' AND ("Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_FSCL_MONTH_D"."ROW_WID" < "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Completed_Date"."FSCL_YEAR" * 100 + "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Completed_Date"."FSCL_MONTH" OR "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Completed_Date"."ROW_WID" = 0) THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication_MTD"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001c-01f4-0000-f02e-7a7600000000-m80c655b7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c143-0bb9-0000-714b-e31d00000000.xml#m80c655b7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001c-01f4-0000-f02e-7a7600000000-m80c5f4e7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfe4-0bb9-0000-714b-e31d00000000.xml#m80c5f4e7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001c-01f4-0000-f02e-7a7600000000-m80c5c97e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beca-0bb9-0000-714b-e31d00000000.xml#m80c5c97e-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001c-01f4-0000-f02e-7a7600000000-m80c5c97b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beca-0bb9-0000-714b-e31d00000000.xml#m80c5c97b-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001c-01f4-0000-f02e-7a7600000000-m80c5c970-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beca-0bb9-0000-714b-e31d00000000.xml#m80c5c970-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001c-01f4-0000-f02e-7a7600000000-m80c655a6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c143-0bb9-0000-714b-e31d00000000.xml#m80c655a6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57b53-07d6-0000-714b-e31d00000000" name="# Outstanding Activities - Fiscal Week Ending" isWriteable="false">
+<MeasureDefn mdsid="m80c5b53e-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bc70-0802-0000-714b-e31d00000000" name="AggRule_2050:5881511276781298" isDefault="true">
+<Expr mdsid="m0000001d-01f4-0000-fbdc-85ac00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - Non-Campaign Communication"."# Outstanding Activities - Fiscal Week Ending")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001d-01f4-0000-fbdc-85ac00000000-m80c57b53-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8d-07f3-0000-714b-e31d00000000.xml#m80c57b53-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a065-0f3c-0000-714b-e31d00000000" name="AD_3900:5881321276780513">
+<Expr mdsid="m0000001e-01f4-0000-ed8f-673f00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'N' AND ("%2" < "%3" * 100 + "%4" OR "%5" = 0) THEN "%6" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication_WTD"."COMPLETED_FLG" = 'N' AND ("Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_FSCL_WEEK_D"."ROW_WID" < "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Completed_Date"."FSCL_YEAR" * 100 + "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Completed_Date"."FSCL_WEEK" OR "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Completed_Date"."ROW_WID" = 0) THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication_WTD"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001e-01f4-0000-ed8f-673f00000000-m80c655ce-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c144-0bb9-0000-714b-e31d00000000.xml#m80c655ce-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001e-01f4-0000-ed8f-673f00000000-m80c5f507-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfe6-0bb9-0000-714b-e31d00000000.xml#m80c5f507-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001e-01f4-0000-ed8f-673f00000000-m80c5c97e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beca-0bb9-0000-714b-e31d00000000.xml#m80c5c97e-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001e-01f4-0000-ed8f-673f00000000-m80c5c97d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beca-0bb9-0000-714b-e31d00000000.xml#m80c5c97d-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001e-01f4-0000-ed8f-673f00000000-m80c5c970-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beca-0bb9-0000-714b-e31d00000000.xml#m80c5c970-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001e-01f4-0000-ed8f-673f00000000-m80c655bd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c144-0bb9-0000-714b-e31d00000000.xml#m80c655bd-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57b5b-07d6-0000-714b-e31d00000000" name="# Outstanding Activities over SLA" isWriteable="false">
+<MeasureDefn mdsid="m80c5b53f-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bc77-0802-0000-714b-e31d00000000" name="AggRule_2050:5882801277478557" isDefault="true">
+<Expr mdsid="m0000001f-01f4-0000-e25e-4b1000000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - Non-Campaign Communication"."# Outstanding Activities over SLA")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001f-01f4-0000-e25e-4b1000000000-m80c57b5b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8d-07f3-0000-714b-e31d00000000.xml#m80c57b5b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a06d-0f3c-0000-714b-e31d00000000" name="AD_3900:5882661277476889">
+<Expr mdsid="m00000020-01f4-0000-429e-739f00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  CURRENT_DATE  > "%1" AND "%2" = 0 THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  CURRENT_DATE  > "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Due_Date"."DAY_DT" AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication"."COMPLETION_DT_WID" = 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000020-01f4-0000-429e-739f00000000-m80c5c8b5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bec5-0bb9-0000-714b-e31d00000000.xml#m80c5c8b5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000020-01f4-0000-429e-739f00000000-m80c65553-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c13f-0bb9-0000-714b-e31d00000000.xml#m80c65553-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000020-01f4-0000-429e-739f00000000-m80c6554a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c13f-0bb9-0000-714b-e31d00000000.xml#m80c6554a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57b5c-07d6-0000-714b-e31d00000000" name="# Completed Activities over SLA" isWriteable="false">
+<MeasureDefn mdsid="m80c5b540-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bc76-0802-0000-714b-e31d00000000" name="AggRule_2050:5882771277477557" isDefault="true">
+<Expr mdsid="m00000021-01f4-0000-0ed6-cf4e00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - Non-Campaign Communication"."# Completed Activities over SLA")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000021-01f4-0000-0ed6-cf4e00000000-m80c57b5c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8d-07f3-0000-714b-e31d00000000.xml#m80c57b5c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c6a06e-0f3c-0000-714b-e31d00000000" name="AD_3900:5882741277477557">
+<Expr mdsid="m00000022-01f4-0000-c516-be8700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" < "%2" AND "%3" = 'Y' THEN "%4" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Due_Date"."DAY_DT" < "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Completed_Date"."DAY_DT" AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication"."COMPLETED_FLG" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000022-01f4-0000-c516-be8700000000-m80c5c8b5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bec5-0bb9-0000-714b-e31d00000000.xml#m80c5c8b5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000022-01f4-0000-c516-be8700000000-m80c5c976-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beca-0bb9-0000-714b-e31d00000000.xml#m80c5c976-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000022-01f4-0000-c516-be8700000000-m80c6555b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c13f-0bb9-0000-714b-e31d00000000.xml#m80c6555b-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000022-01f4-0000-c516-be8700000000-m80c6554a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c13f-0bb9-0000-714b-e31d00000000.xml#m80c6554a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57b5d-07d6-0000-714b-e31d00000000" name="Days over SLA" isWriteable="false">
+<AttrDefn mdsid="m80c6a06f-0f3c-0000-714b-e31d00000000" name="AD_3900:5882821277480611">
+<Expr mdsid="m00000023-01f4-0000-4ef0-586500000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'N' AND "%2" = 0 THEN  TIMESTAMPDIFF( SQL_TSI_DAY , "%3",  CURRENT_DATE ) WHEN "%1" = 'N' AND "%2" > 0 THEN  TIMESTAMPDIFF( SQL_TSI_DAY , "%3", "%4") END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication"."COMPLETED_FLG" = 'N' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication"."COMPLETION_DT_WID" = 0 THEN  TIMESTAMPDIFF( SQL_TSI_DAY , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Due_Date"."DAY_DT",  CURRENT_DATE ) WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication"."COMPLETED_FLG" = 'N' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_NONCAMP_COMM_F_NonCampaign_Communication"."COMPLETION_DT_WID" > 0 THEN  TIMESTAMPDIFF( SQL_TSI_DAY , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Due_Date"."DAY_DT", "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Completed_Date"."DAY_DT") END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000023-01f4-0000-4ef0-586500000000-m80c6555b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c13f-0bb9-0000-714b-e31d00000000.xml#m80c6555b-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000023-01f4-0000-4ef0-586500000000-m80c65553-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c13f-0bb9-0000-714b-e31d00000000.xml#m80c65553-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000023-01f4-0000-4ef0-586500000000-m80c5c8b5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bec5-0bb9-0000-714b-e31d00000000.xml#m80c5c8b5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000023-01f4-0000-4ef0-586500000000-m80c5c976-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beca-0bb9-0000-714b-e31d00000000.xml#m80c5c976-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5876a-07d6-0000-714b-e31d00000000" name="# Forwarded Activities" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000024-01f4-0000-a94e-416000000000" name="Expr">
+<ExprText><![CDATA[ FILTER("%1" USING "%2" = 'Forwarded To')]]></ExprText>
+<ExprTextDesc><![CDATA[ FILTER("Core"."Fact - Non-Campaign Communication"."# Received Activities" USING "Core"."Dim - LOV - Action Code"."Action Performed" = 'Forwarded To')]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000024-01f4-0000-a94e-416000000000-m80c57b3e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8d-07f3-0000-714b-e31d00000000.xml#m80c57b3e-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000024-01f4-0000-a94e-416000000000-m80c58767-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aafe-07f3-0000-714b-e31d00000000.xml#m80c58767-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c6ac7c-0f3c-0000-714b-e31d00000000" name="AD_3900:6148531286185217">
+<Expr mdsid="m00000025-01f4-0000-cda5-829400000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5aa8d-07f3-0000-714b-e31d00000000-m80c5acf7-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5acf7-07f5-0000-714b-e31d00000000.xml#m80c5acf7-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c5aa8d-07f3-0000-714b-e31d00000000-m80c5acfc-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5acfc-07f5-0000-714b-e31d00000000.xml#m80c5acfc-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c5aa8d-07f3-0000-714b-e31d00000000-m80c5acfd-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5acfd-07f5-0000-714b-e31d00000000.xml#m80c5acfd-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c5aa8d-07f3-0000-714b-e31d00000000-m80c5acfe-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5acfe-07f5-0000-714b-e31d00000000.xml#m80c5acfe-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c5aa8d-07f3-0000-714b-e31d00000000-m80c5acff-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5acff-07f5-0000-714b-e31d00000000.xml#m80c5acff-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c5aa8d-07f3-0000-714b-e31d00000000-m80c5ad00-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ad00-07f5-0000-714b-e31d00000000.xml#m80c5ad00-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<InitBlock mdsid="m80c72c4a-0bd9-0000-714b-e31d00000000" name="High Profile User" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isSessionVar="true" isEnabled="false" refreshPeriod="86400" connectionPoolRef="/oracle/bi/server/base/ConnectionPool/80c67bc0-0bd5-0000-714b-e31d00000000.xml#m80c67bc0-0bd5-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT 
+CASE WHEN INSTR('VALUEOF(NQ_SESSION.GROUP)','SRM High Profile Support') >0 
+THEN 'Y' ELSE 'N' END FROM DUAL
+
+]]></Value>
+</DBMapItem>
+<RefPredecessors>
+<RefInitBlock refId="m80c72c4a-0bd9-0000-714b-e31d00000000-m80c67c50-0bd9-0000-714b-e31d00000000" predecessorRef="/oracle/bi/server/base/InitBlock/80c67c50-0bd9-0000-714b-e31d00000000.xml#m80c67c50-0bd9-0000-714b-e31d00000000"/>
+</RefPredecessors>
+<InitString><![CDATA[SELECT 
+CASE WHEN INSTR('VALUEOF(NQ_SESSION.GROUP)','SRM High Profile Support') >0 
+THEN 'Y' ELSE 'N' END FROM DUAL
+
+]]></InitString>
+</InitBlock>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5aa6c-07f3-0000-714b-e31d00000000" name="Fact - CRM - Payment Archived + Current" iconIndex="74" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="219" y="50" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c576e7-07d6-0000-714b-e31d00000000" name="Actual Income" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000001-01f4-0000-8049-e35a00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) +  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Payment"."Donation Amount", 0) +  IFNULL("Core"."Fact - CRM - Payment Archived"."Actual Income", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-8049-e35a00000000-m80c57077-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c57077-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000001-01f4-0000-8049-e35a00000000-m80c576de-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6b-07f3-0000-714b-e31d00000000.xml#m80c576de-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bf9-0f3c-0000-714b-e31d00000000" name="AD_3900:5574941262099145">
+<Expr mdsid="m00000002-01f4-0000-35b3-ec3400000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576e8-07d6-0000-714b-e31d00000000" name="Max Donation Amount" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000003-01f4-0000-fcd0-5e7a00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > "%2" THEN "%1" ELSE "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Payment"."Max Donation Amount" > "Core"."Fact - CRM - Payment Archived"."Max Donation Amount" THEN "Core"."Fact - CRM - Payment"."Max Donation Amount" ELSE "Core"."Fact - CRM - Payment Archived"."Max Donation Amount" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-fcd0-5e7a00000000-m80c570ee-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c570ee-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000003-01f4-0000-fcd0-5e7a00000000-m80c576dd-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6b-07f3-0000-714b-e31d00000000.xml#m80c576dd-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bfa-0f3c-0000-714b-e31d00000000" name="AD_3900:5575241262101543">
+<Expr mdsid="m00000004-01f4-0000-cd43-c9d300000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576e9-07d6-0000-714b-e31d00000000" name="# Gift Aidable" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000005-01f4-0000-f9ae-454900000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) +  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Payment"."# Gift Aidable", 0) +  IFNULL("Core"."Fact - CRM - Payment Archived"."# Gift Aidable", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-f9ae-454900000000-m80c57078-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c57078-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000005-01f4-0000-f9ae-454900000000-m80c576df-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6b-07f3-0000-714b-e31d00000000.xml#m80c576df-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bfb-0f3c-0000-714b-e31d00000000" name="AD_3900:5575301262101543">
+<Expr mdsid="m00000006-01f4-0000-f3c1-bee500000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576ea-07d6-0000-714b-e31d00000000" name="Max Cash Gift" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000007-01f4-0000-1d34-d63800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > "%2" THEN "%1" ELSE "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Payment"."Max Cash Gift" > "Core"."Fact - CRM - Payment Archived"."Max Cash Gift" THEN "Core"."Fact - CRM - Payment"."Max Cash Gift" ELSE "Core"."Fact - CRM - Payment Archived"."Max Cash Gift" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-1d34-d63800000000-m80c570b6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c570b6-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000007-01f4-0000-1d34-d63800000000-m80c576e1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6b-07f3-0000-714b-e31d00000000.xml#m80c576e1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bfc-0f3c-0000-714b-e31d00000000" name="AD_3900:5575361262101543">
+<Expr mdsid="m00000008-01f4-0000-6e27-513200000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576eb-07d6-0000-714b-e31d00000000" name="Donation Amount Inc. Giftaid" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000009-01f4-0000-bb87-c7e900000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) +  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Payment"."Donation Amount Inc. Giftaid", 0) +  IFNULL("Core"."Fact - CRM - Payment Archived"."Donation Amount Inc. Giftaid", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-bb87-c7e900000000-m80c5727f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c5727f-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000009-01f4-0000-bb87-c7e900000000-m80c576e2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6b-07f3-0000-714b-e31d00000000.xml#m80c576e2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bfd-0f3c-0000-714b-e31d00000000" name="AD_3900:5575411262101543">
+<Expr mdsid="m0000000a-01f4-0000-459f-454600000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576ec-07d6-0000-714b-e31d00000000" name="Gift Aid Amount" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000000b-01f4-0000-9785-021c00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) +  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Payment"."Gift Aid Amount", 0) +  IFNULL("Core"."Fact - CRM - Payment Archived"."Gift Aid Amount", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-9785-021c00000000-m80c572bb-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c572bb-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000b-01f4-0000-9785-021c00000000-m80c576e3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6b-07f3-0000-714b-e31d00000000.xml#m80c576e3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bfe-0f3c-0000-714b-e31d00000000" name="AD_3900:5575461262101543">
+<Expr mdsid="m0000000c-01f4-0000-f207-0b7900000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576ed-07d6-0000-714b-e31d00000000" name="Gift Aid Processed" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000000d-01f4-0000-0cf1-e90e00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) +  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Payment"."Gift Aid Processed", 0) +  IFNULL("Core"."Fact - CRM - Payment Archived"."Gift Aid Processed", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-0cf1-e90e00000000-m80c572bf-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c572bf-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000d-01f4-0000-0cf1-e90e00000000-m80c576e4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6b-07f3-0000-714b-e31d00000000.xml#m80c576e4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69bff-0f3c-0000-714b-e31d00000000" name="AD_3900:5575511262101543">
+<Expr mdsid="m0000000e-01f4-0000-65e7-a72a00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576ee-07d6-0000-714b-e31d00000000" name="# of Cash Payments" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000000f-01f4-0000-c995-1d5d00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) +  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Payment"."# of Cash Payments", 0) +  IFNULL("Core"."Fact - CRM - Payment Archived"."# of Cash Payments", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-c995-1d5d00000000-m80c5739a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c5739a-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000f-01f4-0000-c995-1d5d00000000-m80c576e5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6b-07f3-0000-714b-e31d00000000.xml#m80c576e5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69c00-0f3c-0000-714b-e31d00000000" name="AD_3900:5575591262101543">
+<Expr mdsid="m00000010-01f4-0000-9d1f-19ad00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576ef-07d6-0000-714b-e31d00000000" name="Value Cash Payments" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000011-01f4-0000-bd99-73b000000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) +  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Payment"."Value Cash Payments", 0) +  IFNULL("Core"."Fact - CRM - Payment Archived"."Value Cash Payments", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-bd99-73b000000000-m80c5739b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c5739b-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000011-01f4-0000-bd99-73b000000000-m80c576e6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6b-07f3-0000-714b-e31d00000000.xml#m80c576e6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69c01-0f3c-0000-714b-e31d00000000" name="AD_3900:5575641262101543">
+<Expr mdsid="m00000012-01f4-0000-6f62-a89400000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57754-07d6-0000-714b-e31d00000000" name="# of Donations" iconIndex="74" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000013-01f4-0000-2a8e-70b200000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) +  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Payment"."# of Donations", 0) +  IFNULL("Core"."Fact - CRM - Payment Archived"."# of Donations", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-2a8e-70b200000000-m80c56498-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a2-07f3-0000-714b-e31d00000000.xml#m80c56498-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000013-01f4-0000-2a8e-70b200000000-m80c57753-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6b-07f3-0000-714b-e31d00000000.xml#m80c57753-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69c66-0f3c-0000-714b-e31d00000000" name="AD_3900:5624391264183391">
+<Expr mdsid="m00000014-01f4-0000-8b1c-344f00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+</LogicalTable>

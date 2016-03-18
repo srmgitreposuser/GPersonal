@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5aa10-07f3-0000-714b-e31d00000000" name="Fact - Marketing - Segmentation Opportunity Competitor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="664" y="125" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c56b88-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80c68f66-0f3c-0000-714b-e31d00000000" name="AD_3900:1165171074383121">
+<Expr mdsid="m00000001-01f4-0000-3303-008800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_OPTY_CMPT_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-3303-008800000000-m80c5eefb-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfbf-0bb9-0000-714b-e31d00000000.xml#m80c5eefb-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56b89-07d6-0000-714b-e31d00000000" name="# of Competitors" isWriteable="false">
+<MeasureDefn mdsid="m80c5b289-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b970-0802-0000-714b-e31d00000000" name="AggRule_2050:1165581074383193" isDefault="true">
+<Expr mdsid="m00000002-01f4-0000-c7f8-ae1b00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - Marketing - Segmentation Opportunity Competitor"."# of Competitors")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-c7f8-ae1b00000000-m80c56b89-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa10-07f3-0000-714b-e31d00000000.xml#m80c56b89-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68f64-0f3c-0000-714b-e31d00000000" name="AD_3900:1165121074383121">
+<Expr mdsid="m00000003-01f4-0000-0753-d7d600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_OPTY_CMPT_F"."COMPETITOR_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-0753-d7d600000000-m80c5eef6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfbf-0bb9-0000-714b-e31d00000000.xml#m80c5eef6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56b8a-07d6-0000-714b-e31d00000000" name="# of Opportunities" isWriteable="false">
+<MeasureDefn mdsid="m80c5b28a-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b978-0802-0000-714b-e31d00000000" name="AggRule_2050:1193871074448513" isDefault="true">
+<Expr mdsid="m00000004-01f4-0000-bfab-8bb800000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - Marketing - Segmentation Opportunity Competitor"."# of Opportunities")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-bfab-8bb800000000-m80c56b8a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa10-07f3-0000-714b-e31d00000000.xml#m80c56b8a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68f65-0f3c-0000-714b-e31d00000000" name="AD_3900:1165161074383121">
+<Expr mdsid="m00000005-01f4-0000-479f-f2c600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_OPTY_CMPT_F"."OPTY_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-479f-f2c600000000-m80c5eefa-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfbf-0bb9-0000-714b-e31d00000000.xml#m80c5eefa-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56b99-07d6-0000-714b-e31d00000000" name="Implicit Fact Count Row Wids" isWriteable="false">
+<MeasureDefn mdsid="m80c5b294-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b979-0802-0000-714b-e31d00000000" name="AggRule_2050:1193931074448556" isDefault="true">
+<Expr mdsid="m00000006-01f4-0000-a0ee-79b900000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - Marketing - Segmentation Opportunity Competitor"."Implicit Fact Count Row Wids")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-a0ee-79b900000000-m80c56b99-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa10-07f3-0000-714b-e31d00000000.xml#m80c56b99-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68f75-0f3c-0000-714b-e31d00000000" name="AD_3900:1193911074448517">
+<Expr mdsid="m00000007-01f4-0000-f30f-a69a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_OPTY_CMPT_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-f30f-a69a00000000-m80c5eefb-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfbf-0bb9-0000-714b-e31d00000000.xml#m80c5eefb-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56c4e-07d6-0000-714b-e31d00000000" name="Implicit Fact Column" isWriteable="false">
+<Description><![CDATA[Implicit constant fact to identify this fact table as the join path between two conforming dimensions.]]></Description>
+<AttrDefn mdsid="m80c68feb-0f3c-0000-714b-e31d00000000" name="AD_3900:1683601118800619">
+<Expr mdsid="m00000008-01f4-0000-fb61-1e7300000000" name="Expr">
+<ExprText><![CDATA[1]]></ExprText>
+<ExprTextDesc><![CDATA[1]]></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58ccd-07d8-0000-714b-e31d00000000" name="ROW_WID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58ccd-07d8-0000-714b-e31d00000000-m80c56b88-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aa10-07f3-0000-714b-e31d00000000.xml#m80c56b88-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5aa10-07f3-0000-714b-e31d00000000-m80c5ac21-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ac21-07f5-0000-714b-e31d00000000.xml#m80c5ac21-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

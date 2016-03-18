@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<InitBlock mdsid="m80c67c4f-0bd9-0000-714b-e31d00000000" name="LOGIN Properties" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isSessionVar="true" isRowWiseCacheEnabled="false" isEnabled="false" refreshPeriod="86400" connectionPoolRef="/oracle/bi/server/base/ConnectionPool/80c67bc0-0bd5-0000-714b-e31d00000000.xml#m80c67bc0-0bd5-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT P.NAME, CAST(MAX((CASE WHEN R.NAME IN ('Query Logging in OBI') THEN 5 ELSE 0 END)) AS Integer)
+FROM S_PARTY P, S_USER U , S_RESP R ,S_PER_RESP PR
+WHERE U.LOGIN=UPPER(':USER') AND
+U.PAR_ROW_ID=P.ROW_ID AND
+R.ROW_ID = PR.RESP_ID AND
+U.ROW_ID = PR.PER_ID
+GROUP BY P.NAME
+UNION
+SELECT 'Non Siebel User', 5 FROM DUAL;]]></Value>
+</DBMapItem>
+<InitString><![CDATA[SELECT P.NAME, CAST(MAX((CASE WHEN R.NAME IN ('Query Logging in OBI') THEN 5 ELSE 0 END)) AS Integer)
+FROM S_PARTY P, S_USER U , S_RESP R ,S_PER_RESP PR
+WHERE U.LOGIN=UPPER(':USER') AND
+U.PAR_ROW_ID=P.ROW_ID AND
+R.ROW_ID = PR.RESP_ID AND
+U.ROW_ID = PR.PER_ID
+GROUP BY P.NAME
+UNION
+SELECT 'Non Siebel User', 5 FROM DUAL;]]></InitString>
+</InitBlock>

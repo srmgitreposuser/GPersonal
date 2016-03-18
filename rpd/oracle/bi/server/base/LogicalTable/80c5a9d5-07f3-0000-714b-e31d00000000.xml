@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9d5-07f3-0000-714b-e31d00000000" name="Fact  Compound - Active Customer History &amp; Customer Attrition" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="613" y="314" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c568ba-07d6-0000-714b-e31d00000000" name="Customer Attrition Rate %" iconIndex="69" isDerived="true" isWriteable="false">
+<Description><![CDATA[This is no. of lost customers expressed as a % of no. of active customers]]></Description>
+<Expr mdsid="m00000001-01f4-0000-b9fd-409b00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN  NULL  ELSE 100.0d * "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Active Customer History"."# Active Customers" = 0 THEN  NULL  ELSE 100.0d * "Core"."Fact - CRM - Customer Attrition"."# Customers Lost" / "Core"."Fact - CRM - Active Customer History"."# Active Customers" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-b9fd-409b00000000-m80c5676f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9bc-07f3-0000-714b-e31d00000000.xml#m80c5676f-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000001-01f4-0000-b9fd-409b00000000-m80c56667-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b1-07f3-0000-714b-e31d00000000.xml#m80c56667-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68c97-0f3c-0000-714b-e31d00000000" name="AD_3900:842671074282455">
+<Expr mdsid="m00000002-01f4-0000-0eb6-24d200000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568bb-07d6-0000-714b-e31d00000000" name="Customer Retention %" iconIndex="69" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000003-01f4-0000-53d8-97b800000000" name="Expr">
+<ExprText><![CDATA[100.0d - "%1"]]></ExprText>
+<ExprTextDesc><![CDATA[100.0d - "Core"."Fact  Compound - Active Customer History & Customer Attrition"."Customer Attrition Rate %"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-53d8-97b800000000-m80c568ba-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9d5-07f3-0000-714b-e31d00000000.xml#m80c568ba-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68c98-0f3c-0000-714b-e31d00000000" name="AD_3900:842681074282455">
+<Expr mdsid="m00000004-01f4-0000-3d81-18e600000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+</LogicalTable>

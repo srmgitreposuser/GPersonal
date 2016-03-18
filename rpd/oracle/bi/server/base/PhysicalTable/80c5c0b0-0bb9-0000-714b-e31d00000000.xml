@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5c0b0-0bb9-0000-714b-e31d00000000" name="WC_SEG_OVERLAP_F" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" isCacheable="false" x="295" y="210" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb1-0bd3-0000-714b-e31d00000000.xml#m80c67bb1-0bd3-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT Y.CAMP_NAME,X.MONTH_WID,X.OVERLAP_SUPPORTERS,Y.SEGMENT_NAME,Y.TARGETED_SUPPORTERS FROM
+(SELECT   A.MONTH_WID, A.CAMP_WID, A.SEG_WID , SUM (A.NUM_OVRLP_ACCNTS) OVERLAP_SUPPORTERS
+    FROM (SELECT   OVERLAP.MONTH_WID, OVERLAP.CAMP_WID,OVERLAP.SEG_WID,
+                   COUNT (DISTINCT OVERLAP.CONTACT_WID) AS NUM_OVRLP_ACCNTS
+              FROM (SELECT DISTINCT CHF.MONTH_WID,
+                                    CHF.CONTACT_WID AS CONTACT_WID,
+                                    SRC.ROW_WID AS CAMP_WID,
+                                    OSRC.ROW_WID AS OVRLP_CAMP_WID,
+									SEG.ROW_WID AS SEG_WID,
+									OSEG.ROW_WID AS 
+
+OVRLP_SEG_WID
+                               FROM (SELECT   A.CONTACT_WID, A.SOURCE_WID,C.ROW_WID SEGMENT_WID,
+                                              B.MONTH_WID
+                                         FROM W_CAMP_HIST_F A, W_DAY_D  B , W_SEGMENT_D C
+                                        WHERE A.CAMP_ST_DT_WID = B.ROW_WID
+										  AND 
+
+A.LAUNCH_DT_WID = 0
+                                          AND A.SOURCE_WID > 0
+                                          AND A.CONTACT_WID > 0
+                                          AND A.CAMP_ST_DT_WID != 0
+										  AND 
+
+A.SEGMENT_WID = C.ROW_WID
+										  AND C.TREE_FLG  
+
+= 'Y'
+                                     GROUP BY A.CONTACT_WID,
+                                              A.SOURCE_WID,
+                                              B.MONTH_WID,
+                                              C.ROW_WID       ) CHF,
+                                    (SELECT   A.CONTACT_WID, A.SOURCE_WID,C.ROW_WID SEGMENT_WID,
+                                              B.MONTH_WID
+                                         FROM W_CAMP_HIST_F A, W_DAY_D  B , W_SEGMENT_D C
+                                        WHERE 
+										  
+
+A.CAMP_ST_DT_WID = B.ROW_WID
+										  AND 
+
+A.LAUNCH_DT_WID = 0
+                                          AND A.SOURCE_WID > 0
+                                          AND A.CONTACT_WID > 0
+                                          AND A.CAMP_ST_DT_WID != 0
+										  AND 
+
+A.SEGMENT_WID = C.ROW_WID
+										  AND C.TREE_FLG  
+
+= 'Y'
+                                     GROUP BY A.CONTACT_WID,
+                                              A.SOURCE_WID,
+                                              B.MONTH_WID,
+											  
+
+C.ROW_WID ) OCHF,
+                                    W_SOURCE_D SRC,
+                                    W_SOURCE_D OSRC,
+									 W_SEGMENT_D SEG, 
+                					 W_SEGMENT_D OSEG
+                              WHERE CHF.SEGMENT_WID = SEG.ROW_WID
+                         	  	AND OCHF.SEGMENT_WID = OSEG.ROW_WID  
+                         		AND CHF.SEGMENT_WID <> OCHF.SEGMENT_WID
+                                AND CHF.CONTACT_WID = OCHF.CONTACT_WID
+                                AND CHF.MONTH_WID = OCHF.MONTH_WID
+								AND CHF.SOURCE_WID = SRC.ROW_WID 
+                        		AND OCHF.SOURCE_WID = OSRC.ROW_WID 
+                                AND SRC.SRC_TYPE = 'Campaign'
+                                AND OSRC.SRC_TYPE = 'Campaign') OVERLAP
+          GROUP BY OVERLAP.MONTH_WID, OVERLAP.CAMP_WID,OVERLAP.SEG_WID) A
+GROUP BY A.MONTH_WID, A.CAMP_WID,A.SEG_WID ) X ,
+(SELECT SOURCE_WID,MONTH_WID,CAMP_NAME,SEGMENT_WID,SGMT_NAME SEGMENT_NAME,D.NUM_CONTACTS 
+
+TARGETED_SUPPORTERS,COUNT(CONTACT_WID) NO_SUPP_IN_CAMPAIGN  FROM W_CAMP_HIST_F A , W_SOURCE_D B , 
+
+W_DAY_D C , W_SEGMENT_D D
+WHERE A.SOURCE_WID = B.ROW_WID AND A.CAMP_ST_DT_WID = C.ROW_WID AND A.CAMP_ST_DT_WID != 0 AND 
+
+D.ROW_WID = A.SEGMENT_WID AND D.TREE_FLG  = 'Y'
+GROUP BY SOURCE_WID,MONTH_WID,CAMP_NAME,SEGMENT_WID,SGMT_NAME,NUM_CONTACTS ) Y
+WHERE 
+X.CAMP_WID = Y.SOURCE_WID AND
+X.MONTH_WID = Y.MONTH_WID AND
+X.SEG_WID = Y.SEGMENT_WID
+ORDER BY 1, 2 ,3]]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c6398a-0bbb-0000-714b-e31d00000000" name="CAMP_NAME" dataType="VARCHAR" precision="100" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c6398b-0bbb-0000-714b-e31d00000000" name="MONTH_WID" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c6398c-0bbb-0000-714b-e31d00000000" name="OVERLAP_SUPPORTERS" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c6398d-0bbb-0000-714b-e31d00000000" name="SEGMENT_NAME" dataType="VARCHAR" precision="100" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c6398e-0bbb-0000-714b-e31d00000000" name="TARGETED_SUPPORTERS" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalKey mdsid="m80c67a9c-0bc0-0000-714b-e31d00000000" name="MONTH_WID">
+<RefColumns>
+<RefColumn refId="m80c67a9c-0bc0-0000-714b-e31d00000000-m80c6398b-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5c0b0-0bb9-0000-714b-e31d00000000.xml#m80c6398b-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+<PhysicalForeignKey mdsid="m80c6764c-0bbe-0000-714b-e31d00000000" name="WC_SEG_OVERLAP_F_FKey" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5bfe3-0bb9-0000-714b-e31d00000000.xml#m80c67a4d-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c6764c-0bbe-0000-714b-e31d00000000-m80c6398b-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5c0b0-0bb9-0000-714b-e31d00000000.xml#m80c6398b-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+</PhysicalTable>

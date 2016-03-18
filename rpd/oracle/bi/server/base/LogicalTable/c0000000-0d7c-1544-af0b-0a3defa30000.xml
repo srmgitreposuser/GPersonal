@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="mc0000000-0d7c-1544-af0b-0a3defa30000" name="Dim - Income (FWS)" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m40000005-0d82-1544-af0b-0a3defa30000" name="Income Banding" isWriteable="false">
+<Description><![CDATA[Banded currency amount eg, £5k - £25k]]></Description>
+<AttrDefn mdsid="m40000007-0d82-1544-af0b-0a3defa30000" name="AD_3900:8604821427125769">
+<Expr mdsid="m00000001-01f4-0000-9f54-6a6300000000" name="Expr">
+<ExprText><![CDATA[CASE WHEN 
+	"%1" = 0
+THEN
+	'0'
+ELSE
+	CASE WHEN 
+		"%1" < 100
+	THEN
+		'<£100'
+	ELSE
+		CASE WHEN
+			"%1" < 5000
+		THEN
+			'£100 - £5k'
+		ELSE
+			CASE WHEN
+				"%1" < 25000
+			THEN
+				'£5k - £25k'
+			ELSE
+				CASE WHEN
+					"%1" < 100000
+				THEN
+					'£25k - £100k'
+				ELSE
+					CASE WHEN
+						"%1" < 500000
+					THEN
+						'£100k - £500k'
+					ELSE
+						CASE WHEN
+							"%1" < 1000000
+						THEN
+							'£500k - £1m'
+						ELSE
+							CASE WHEN
+								"%1" >= 1000000
+							THEN
+								'>£1m'
+							END
+						END
+					END
+				END
+			END
+		END
+	END
+END]]></ExprText>
+<ExprTextDesc><![CDATA[CASE WHEN 
+	"Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_INCOME_F"."AMOUNT" = 0
+THEN
+	'0'
+ELSE
+	CASE WHEN 
+		"Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_INCOME_F"."AMOUNT" < 100
+	THEN
+		'<£100'
+	ELSE
+		CASE WHEN
+			"Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_INCOME_F"."AMOUNT" < 5000
+		THEN
+			'£100 - £5k'
+		ELSE
+			CASE WHEN
+				"Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_INCOME_F"."AMOUNT" < 25000
+			THEN
+				'£5k - £25k'
+			ELSE
+				CASE WHEN
+					"Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_INCOME_F"."AMOUNT" < 100000
+				THEN
+					'£25k - £100k'
+				ELSE
+					CASE WHEN
+						"Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_INCOME_F"."AMOUNT" < 500000
+					THEN
+						'£100k - £500k'
+					ELSE
+						CASE WHEN
+							"Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_INCOME_F"."AMOUNT" < 1000000
+						THEN
+							'£500k - £1m'
+						ELSE
+							CASE WHEN
+								"Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_INCOME_F"."AMOUNT" >= 1000000
+							THEN
+								'>£1m'
+							END
+						END
+					END
+				END
+			END
+		END
+	END
+END]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-9f54-6a6300000000-m00000001-00c7-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-00c7-1544-af0b-0a3defa30000.xml#m00000001-00c7-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m40000006-0d82-1544-af0b-0a3defa30000" name="Income Date" isWriteable="false">
+<Description><![CDATA[Date that the income was entered into SRM]]></Description>
+<AttrDefn mdsid="m40000008-0d82-1544-af0b-0a3defa30000" name="AD_3900:8604831427125769">
+<Expr mdsid="m00000002-01f4-0000-d76d-fec500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_INCOME_F"."INCOME_DT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-d76d-fec500000000-m00000004-00c7-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-00c7-1544-af0b-0a3defa30000.xml#m00000004-00c7-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m40000002-0df3-1544-af0b-0a3defa30000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m40000003-0df3-1544-af0b-0a3defa30000" name="AD_3900:8605101427126221">
+<Expr mdsid="m00000003-01f4-0000-8079-c59b00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_INCOME_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-8079-c59b00000000-m0000000b-00c7-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-00c7-1544-af0b-0a3defa30000.xml#m0000000b-00c7-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="mc0000000-0df7-1544-af0b-0a3defa30000" name="PK" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="mc0000000-0df7-1544-af0b-0a3defa30000-m40000002-0df3-1544-af0b-0a3defa30000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000000-0d7c-1544-af0b-0a3defa30000.xml#m40000002-0df3-1544-af0b-0a3defa30000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="mc0000000-0d7c-1544-af0b-0a3defa30000-m40000009-0d82-1544-af0b-0a3defa30000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/40000009-0d82-1544-af0b-0a3defa30000.xml#m40000009-0d82-1544-af0b-0a3defa30000"/>
+</RefTableSources>
+</LogicalTable>

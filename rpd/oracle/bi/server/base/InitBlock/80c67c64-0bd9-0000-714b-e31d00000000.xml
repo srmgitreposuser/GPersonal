@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<InitBlock mdsid="m80c67c64-0bd9-0000-714b-e31d00000000" name="Current Date Variables" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isRowWiseCacheEnabled="false" refreshPeriod="3600" baseTime="2003-01-01 00:00:00" connectionPoolRef="/oracle/bi/server/base/ConnectionPool/80c67bbe-0bd5-0000-714b-e31d00000000.xml#m80c67bbe-0bd5-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[select JULIAN_DAY_NUM, YEAR_AGO_DT , ROW_WID, CAL_WEEK, DAY_OF_YEAR 
+from VALUEOF(OLAPTBO).W_DAY_D WHERE
+to_char(DAY_DT,'yyyymmdd')=to_char(SYSDATE - VALUEOF(TIME_OFFSET) ,'yyyymmdd')]]></Value>
+</DBMapItem>
+<RefVariables>
+<RefVariable refId="m80c67c64-0bd9-0000-714b-e31d00000000-m80c67c0e-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c0e-0bd7-0000-714b-e31d00000000.xml#m80c67c0e-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c64-0bd9-0000-714b-e31d00000000-m80c67c13-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c13-0bd7-0000-714b-e31d00000000.xml#m80c67c13-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c64-0bd9-0000-714b-e31d00000000-m80c67c1d-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80c67c1d-0bd7-0000-714b-e31d00000000.xml#m80c67c1d-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c64-0bd9-0000-714b-e31d00000000-m80caa7de-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80caa7de-0bd7-0000-714b-e31d00000000.xml#m80caa7de-0bd7-0000-714b-e31d00000000"/>
+<RefVariable refId="m80c67c64-0bd9-0000-714b-e31d00000000-m80caa7df-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80caa7df-0bd7-0000-714b-e31d00000000.xml#m80caa7df-0bd7-0000-714b-e31d00000000"/>
+</RefVariables>
+<InitString><![CDATA[select JULIAN_DAY_NUM, YEAR_AGO_DT , ROW_WID, CAL_WEEK, DAY_OF_YEAR 
+from VALUEOF(OLAPTBO).W_DAY_D WHERE
+to_char(DAY_DT,'yyyymmdd')=to_char(SYSDATE - VALUEOF(TIME_OFFSET) ,'yyyymmdd')]]></InitString>
+</InitBlock>

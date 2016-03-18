@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80cbd50a-07f3-0000-714b-e31d00000000" name="Fact - Direct Debits and Standing Orders" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="916" y="534" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80cbd526-07d6-0000-714b-e31d00000000" name="# of Orders" isWriteable="false">
+<Description><![CDATA[Number of orders]]></Description>
+<MeasureDefn mdsid="m80cbd52b-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbd52c-0802-0000-714b-e31d00000000" name="AggRule_2050:8546861414587122" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-8803-f84b00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core 2"."Fact - Direct Debits and Standing Orders"."# of Orders")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-8803-f84b00000000-m80cbd526-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd50a-07f3-0000-714b-e31d00000000.xml#m80cbd526-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbd528-0f3c-0000-714b-e31d00000000" name="AD_3900:8546841414587095">
+<Expr mdsid="m00000002-01f4-0000-9955-ad4100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DD_SO_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-9955-ad4100000000-m80cbd502-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbd4f1-0bb9-0000-714b-e31d00000000.xml#m80cbd502-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbd514-07d6-0000-714b-e31d00000000" name="Order Total Amount" isWriteable="false">
+<Description><![CDATA[Total amount paid by order till date]]></Description>
+<MeasureDefn mdsid="m80cbd521-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbd522-0802-0000-714b-e31d00000000" name="AggRule_2050:8546801414587087" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-859c-909e00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Direct Debits and Standing Orders"."Order Total Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-859c-909e00000000-m80cbd514-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd50a-07f3-0000-714b-e31d00000000.xml#m80cbd514-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbd518-0f3c-0000-714b-e31d00000000" name="AD_3900:8546751414587028">
+<Expr mdsid="m00000004-01f4-0000-2784-27e300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DD_SO_F"."TOTAL_ORDER_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-2784-27e300000000-m80cbd4f4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbd4f1-0bb9-0000-714b-e31d00000000.xml#m80cbd4f4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbd512-07d6-0000-714b-e31d00000000" name="12 Month Order Revenue" isWriteable="false">
+<Description><![CDATA[Estimated order amount for a period of 12 months based on current order amount]]></Description>
+<MeasureDefn mdsid="m80cbd51d-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbd51e-0802-0000-714b-e31d00000000" name="AggRule_2050:8546781414587064" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-c208-c37600000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Direct Debits and Standing Orders"."12 Month Order Revenue")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-c208-c37600000000-m80cbd512-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd50a-07f3-0000-714b-e31d00000000.xml#m80cbd512-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbd516-0f3c-0000-714b-e31d00000000" name="AD_3900:8546741414587028">
+<Expr mdsid="m00000006-01f4-0000-987c-c20200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DD_SO_F"."EST_ANNUAL_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-987c-c20200000000-m80cbd4f8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbd4f1-0bb9-0000-714b-e31d00000000.xml#m80cbd4f8-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbd544-07d6-0000-714b-e31d00000000" name="Order Amount" isWriteable="false">
+<MeasureDefn mdsid="m80cbd549-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbd54a-0802-0000-714b-e31d00000000" name="AggRule_2050:8547081414587447" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-9dad-719400000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Direct Debits and Standing Orders"."Order Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-9dad-719400000000-m80cbd544-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cbd50a-07f3-0000-714b-e31d00000000.xml#m80cbd544-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbd546-0f3c-0000-714b-e31d00000000" name="AD_3900:8547061414587435">
+<Expr mdsid="m00000008-01f4-0000-ff06-3cdb00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DD_SO_F"."ORDER_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-ff06-3cdb00000000-m80cbd4fd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbd4f1-0bb9-0000-714b-e31d00000000.xml#m80cbd4fd-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80cbd50a-07f3-0000-714b-e31d00000000-m80cbd51a-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cbd51a-07f5-0000-714b-e31d00000000.xml#m80cbd51a-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

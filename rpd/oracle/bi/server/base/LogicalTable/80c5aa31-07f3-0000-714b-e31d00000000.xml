@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5aa31-07f3-0000-714b-e31d00000000" name="Dim - Supporter Contact Details" iconIndex="93" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1535" y="546" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c57030-07d6-0000-714b-e31d00000000" name="CONTACT_WID" isWriteable="false">
+<AttrDefn mdsid="m80c69542-0f3c-0000-714b-e31d00000000" name="AD_3900:4815321216736154">
+<Expr mdsid="m00000001-01f4-0000-47d4-698700000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_CONTACT_DETAILS_Person"."CONTACT_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-47d4-698700000000-m80c62f80-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c082-0bb9-0000-714b-e31d00000000.xml#m80c62f80-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57ba1-07d6-0000-714b-e31d00000000" name="Primary Flag" isWriteable="false">
+<AttrDefn mdsid="m80c6a0b3-0f3c-0000-714b-e31d00000000" name="AD_3900:5928961279553888">
+<Expr mdsid="m00000002-01f4-0000-a6e4-5dbf00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_CONTACT_DETAILS_Person"."PRIMARY_FLG"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-a6e4-5dbf00000000-m80c65c77-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c082-0bb9-0000-714b-e31d00000000.xml#m80c65c77-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57ba2-07d6-0000-714b-e31d00000000" name="Invalid Number Flag" isWriteable="false">
+<AttrDefn mdsid="m80c6a0b4-0f3c-0000-714b-e31d00000000" name="AD_3900:5928981279553888">
+<Expr mdsid="m00000003-01f4-0000-a3cd-5b2c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_CONTACT_DETAILS_Person"."INVALID_PH_NO_FLG"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-a3cd-5b2c00000000-m80c65c76-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c082-0bb9-0000-714b-e31d00000000.xml#m80c65c76-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57b9e-07d6-0000-714b-e31d00000000" name="Communication SubType" isWriteable="false">
+<AttrDefn mdsid="m80c6a0b0-0f3c-0000-714b-e31d00000000" name="AD_3900:5928901279553888">
+<Expr mdsid="m00000004-01f4-0000-71a9-9b4500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_CONTACT_DETAILS_Person"."COMM_TYPE_CD"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-71a9-9b4500000000-m80c62dad-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c082-0bb9-0000-714b-e31d00000000.xml#m80c62dad-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57b9f-07d6-0000-714b-e31d00000000" name="Communication Value" isWriteable="false">
+<AttrDefn mdsid="m80c6a0b1-0f3c-0000-714b-e31d00000000" name="AD_3900:5928921279553888">
+<Expr mdsid="m00000005-01f4-0000-a648-318c00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  VALUEOF(NQ_SESSION."%1") = 'N' AND "%2" = 'Y' THEN 'XXXXXXX' ELSE "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  VALUEOF(NQ_SESSION."HIGH_PROFILE") = 'N' AND "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PERSON_D_Contact"."MEMBER_FLG" = 'Y' THEN 'XXXXXXX' ELSE "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_CONTACT_DETAILS_Person"."COMM_VAL" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-a648-318c00000000-m80c72c49-0bd7-0000-714b-e31d00000000" objectRef="/oracle/bi/server/base/Variable/80c72c49-0bd7-0000-714b-e31d00000000.xml#m80c72c49-0bd7-0000-714b-e31d00000000"/>
+<RefObject refId="m00000005-01f4-0000-a648-318c00000000-m80c72c5f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bef5-0bb9-0000-714b-e31d00000000.xml#m80c72c5f-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000005-01f4-0000-a648-318c00000000-m80c65c78-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c082-0bb9-0000-714b-e31d00000000.xml#m80c65c78-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57ba0-07d6-0000-714b-e31d00000000" name="Communication Type" isWriteable="false">
+<AttrDefn mdsid="m80c6a0b2-0f3c-0000-714b-e31d00000000" name="AD_3900:5928941279553888">
+<Expr mdsid="m00000006-01f4-0000-5c95-b06300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_CONTACT_DETAILS_Person"."COMM_MEDIUM_CD"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-5c95-b06300000000-m80c630f4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c082-0bb9-0000-714b-e31d00000000.xml#m80c630f4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58dc6-07d8-0000-714b-e31d00000000" name="Dim_WC_CONTACT_DETAILS_Person_Key" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58dc6-07d8-0000-714b-e31d00000000-m80c57030-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aa31-07f3-0000-714b-e31d00000000.xml#m80c57030-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5aa31-07f3-0000-714b-e31d00000000-m80c5ac70-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ac70-07f5-0000-714b-e31d00000000.xml#m80c5ac70-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<InitBlock mdsid="m80cac182-0bd9-0000-714b-e31d00000000" name="Current Giftaid Tax Rate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" refreshPeriod="3600" baseTime="2013-01-28 10:28:10" connectionPoolRef="/oracle/bi/server/base/ConnectionPool/80c67bb8-0bd5-0000-714b-e31d00000000.xml#m80c67bb8-0bd5-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT X_SRM_GA_RATE 
+FROM W_DAY_D
+WHERE TRUNC(CALENDAR_DATE) = TRUNC(SYSDATE)]]></Value>
+</DBMapItem>
+<RefVariables>
+<RefVariable refId="m80cac182-0bd9-0000-714b-e31d00000000-m80cac181-0bd7-0000-714b-e31d00000000" variableRef="/oracle/bi/server/base/Variable/80cac181-0bd7-0000-714b-e31d00000000.xml#m80cac181-0bd7-0000-714b-e31d00000000"/>
+</RefVariables>
+<InitString><![CDATA[SELECT X_SRM_GA_RATE 
+FROM W_DAY_D
+WHERE TRUNC(CALENDAR_DATE) = TRUNC(SYSDATE)]]></InitString>
+</InitBlock>

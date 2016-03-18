@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5bf75-0bb9-0000-714b-e31d00000000" name="Dim_W_DAY_D_Relationship_Period_Year" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" x="1480" y="414" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb1-0bd3-0000-714b-e31d00000000.xml#m80c67bb1-0bd3-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[select 
+CAL_YEAR, 
+JULIAN_YEAR_NUM, 
+PER_NAME_YEAR, 
+min(DAY_DT) YEAR_START_DT,
+max(DAY_DT) YEAR_END_DT
+from VALUEOF(OLAPTBO).W_DAY_D
+group by 
+CAL_YEAR, 
+JULIAN_YEAR_NUM, 
+PER_NAME_YEAR]]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c5e7bb-0bbb-0000-714b-e31d00000000" name="CAL_YEAR" dataType="SMALLINT" precision="4" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5e7bc-0bbb-0000-714b-e31d00000000" name="JULIAN_YEAR_NUM" dataType="DOUBLE" precision="10" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5e7bd-0bbb-0000-714b-e31d00000000" name="PER_NAME_YEAR" dataType="VARCHAR" precision="50" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5e7be-0bbb-0000-714b-e31d00000000" name="YEAR_END_DT" dataType="DATETIME" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5e7bf-0bbb-0000-714b-e31d00000000" name="YEAR_START_DT" dataType="DATETIME" specialType="none">
+</PhysicalColumn>
+</PhysicalTable>

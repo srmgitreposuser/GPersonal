@@ -1,0 +1,1509 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTableSource mdsid="m80c5abdf-07f5-0000-714b-e31d00000000" name="Fact_W_ASSET_F_FINS" iconIndex="69" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isActive="true" logicalTableRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c5a9b6-07f3-0000-714b-e31d00000000">
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000001-01f4-0000-bc95-c3ee00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# of Assets"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-bc95-c3ee00000000-m80c566a7-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566a7-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000002-01f4-0000-a4e1-51d600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-a4e1-51d600000000-m80c5c2ab-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2ab-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000003-01f4-0000-f1c7-29b700000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Average Age Based on Install Date"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-f1c7-29b700000000-m80c566a8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566a8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000004-01f4-0000-2aef-c74a00000000" name="Expr">
+<ExprText><![CDATA[ TIMESTAMPDIFF( SQL_TSI_DAY , "%1",  VALUEOF("%2"))]]></ExprText>
+<ExprTextDesc><![CDATA[ TIMESTAMPDIFF( SQL_TSI_DAY , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Common"."DAY_DT",  VALUEOF("Warehouse Refresh Date"."LAST_REFRESH_DT"))]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-2aef-c74a00000000-m80c5c314-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9e-0bb9-0000-714b-e31d00000000.xml#m80c5c314-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-2aef-c74a00000000-m80c67bd7-0bd7-0000-714b-e31d00000000" objectRef="/oracle/bi/server/base/Variable/80c67bd7-0bd7-0000-714b-e31d00000000.xml#m80c67bd7-0bd7-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000005-01f4-0000-6fd7-e5c700000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Average Value of Assets"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-6fd7-e5c700000000-m80c566a9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566a9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000006-01f4-0000-b8df-6bed00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."VALUE_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-b8df-6bed00000000-m80c5c2b1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2b1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000007-01f4-0000-b4b2-537b00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Average Original Cost"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-b4b2-537b00000000-m80c566aa-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566aa-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000008-01f4-0000-f965-0d6e00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."ORIG_COST"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-f965-0d6e00000000-m80c5c2af-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2af-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000009-01f4-0000-9cc7-55b700000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Quantity of Assets"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-9cc7-55b700000000-m80c566ab-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566ab-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000a-01f4-0000-468a-3ad300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."QTY"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-468a-3ad300000000-m80c5c2b0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2b0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000000b-01f4-0000-b6cc-93f600000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# Contacts with Assets"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-b6cc-93f600000000-m80c566ac-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566ac-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000c-01f4-0000-003b-b90700000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CONTACT_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-003b-b90700000000-m80c5c29f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c29f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000000d-01f4-0000-db61-ccf000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# Companies with Assets"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-db61-ccf000000000-m80c566ad-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566ad-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000e-01f4-0000-40f7-e84a00000000" name="Expr">
+<ExprText><![CDATA[ CASE "%1" WHEN 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_ORG_D_Account"."ACCNT_FLG" WHEN 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_ORG_D_Account"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-40f7-e84a00000000-m80c5c4cf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beaa-0bb9-0000-714b-e31d00000000.xml#m80c5c4cf-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-40f7-e84a00000000-m80c5c4ce-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beaa-0bb9-0000-714b-e31d00000000.xml#m80c5c4ce-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000000f-01f4-0000-92b1-505600000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Average Days Left in Warranty"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-92b1-505600000000-m80c566ae-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566ae-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000010-01f4-0000-52a1-0aff00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  VALUEOF("%1") < "%2" THEN  TIMESTAMPDIFF( SQL_TSI_DAY ,  VALUEOF("%1"), "%2") ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  VALUEOF("Warehouse Refresh Date"."LAST_REFRESH_DT") < "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Warranty_End_Date"."DAY_DT" THEN  TIMESTAMPDIFF( SQL_TSI_DAY ,  VALUEOF("Warehouse Refresh Date"."LAST_REFRESH_DT"), "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Warranty_End_Date"."DAY_DT") ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-52a1-0aff00000000-m80c67bd7-0bd7-0000-714b-e31d00000000" objectRef="/oracle/bi/server/base/Variable/80c67bd7-0bd7-0000-714b-e31d00000000.xml#m80c67bd7-0bd7-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-52a1-0aff00000000-m80c5c91a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bec8-0bb9-0000-714b-e31d00000000.xml#m80c5c91a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000011-01f4-0000-ebeb-cd7b00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# of Products as Assets"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-ebeb-cd7b00000000-m80c566af-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566af-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000012-01f4-0000-035b-201f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."PROD_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-035b-201f00000000-m80c5c2a7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2a7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000013-01f4-0000-e9b7-11a600000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# Employees with Assets"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-e9b7-11a600000000-m80c566b0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566b0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000014-01f4-0000-6444-776300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."PR_EMP_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-6444-776300000000-m80c5c2a8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2a8-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000015-01f4-0000-421a-fca300000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# of Assets Under Warranty"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-421a-fca300000000-m80c566b1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566b1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000016-01f4-0000-66dd-280c00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  NOT "%1" IS NULL  AND "%2" >=  CURRENT_DATE  THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  NOT "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."WRNTY_NAME" IS NULL  AND "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."WRNTY_END_DT" >=  CURRENT_DATE  THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000016-01f4-0000-66dd-280c00000000-m80c5c23c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c23c-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000016-01f4-0000-66dd-280c00000000-m80c5c22a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c22a-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000016-01f4-0000-66dd-280c00000000-m80c5c223-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c223-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000017-01f4-0000-30b6-741900000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Total Value of Assets"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-30b6-741900000000-m80c566b2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566b2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000018-01f4-0000-fddb-aeb400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."VALUE_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000018-01f4-0000-fddb-aeb400000000-m80c5c2b1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2b1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000019-01f4-0000-ab91-cdba00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# Partner Accounts with Assets"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-ab91-cdba00000000-m80c566b3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566b3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000001a-01f4-0000-235c-f98100000000" name="Expr">
+<ExprText><![CDATA[ CASE "%1" WHEN 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_ORG_D_Account"."ORG_PRTNR_FLG" WHEN 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."ACCNT_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001a-01f4-0000-235c-f98100000000-m80c5c4d8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beaa-0bb9-0000-714b-e31d00000000.xml#m80c5c4d8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001a-01f4-0000-235c-f98100000000-m80c5c29d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c29d-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000001b-01f4-0000-b816-50bf00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Total Original Cost"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001b-01f4-0000-b816-50bf00000000-m80c566b4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566b4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000001c-01f4-0000-c0bf-5c9000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."ORIG_COST"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001c-01f4-0000-c0bf-5c9000000000-m80c5c2af-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2af-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000001d-01f4-0000-f5b2-81ae00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Available Cash Limit"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001d-01f4-0000-f5b2-81ae00000000-m80c566b5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566b5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000001e-01f4-0000-322a-5edc00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."AVAIL_CASH_LMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001e-01f4-0000-322a-5edc00000000-m80c5c2ba-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2ba-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000001f-01f4-0000-2d1f-d5f000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# of Overdrafts per Month"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001f-01f4-0000-2d1f-d5f000000000-m80c566b6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566b6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000020-01f4-0000-3540-2cab00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CA_OVERDRAFTS_MM"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000020-01f4-0000-3540-2cab00000000-m80c5c2bb-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2bb-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000021-01f4-0000-49f0-0f9c00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Credit Limit"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000021-01f4-0000-49f0-0f9c00000000-m80c566b7-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566b7-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000022-01f4-0000-8abf-559000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CREDIT_LIMIT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000022-01f4-0000-8abf-559000000000-m80c5c2bd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2bd-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000023-01f4-0000-f98a-44ca00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Current Account Balance"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000023-01f4-0000-f98a-44ca00000000-m80c566b8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566b8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000024-01f4-0000-9a12-622000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CURRENT_BAL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000024-01f4-0000-9a12-622000000000-m80c5c2be-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2be-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000025-01f4-0000-f5bf-256c00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Average Balance"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000025-01f4-0000-f5bf-256c00000000-m80c566b9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566b9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000026-01f4-0000-4979-cf9d00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CURRENT_BAL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000026-01f4-0000-4979-cf9d00000000-m80c5c2be-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2be-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000027-01f4-0000-d8b3-b25c00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Insured Amount"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000027-01f4-0000-d8b3-b25c00000000-m80c566ba-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566ba-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000028-01f4-0000-28ab-3e8300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."INSURED_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000028-01f4-0000-28ab-3e8300000000-m80c5c2bf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2bf-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000029-01f4-0000-3245-1ea100000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Premium"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000029-01f4-0000-3245-1ea100000000-m80c566bb-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566bb-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000002a-01f4-0000-765e-a54a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."PREMIUM"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002a-01f4-0000-765e-a54a00000000-m80c5c2c0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2c0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000002b-01f4-0000-9429-298200000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Profit"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002b-01f4-0000-9429-298200000000-m80c566bc-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566bc-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000002c-01f4-0000-dd2a-5b9300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."PROFIT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002c-01f4-0000-dd2a-5b9300000000-m80c5c2c1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2c1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000002d-01f4-0000-617a-020d00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Revenue"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002d-01f4-0000-617a-020d00000000-m80c566bd-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566bd-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000002e-01f4-0000-5707-17a400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."REVENUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002e-01f4-0000-5707-17a400000000-m80c5c2c2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2c2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000002f-01f4-0000-c977-53b900000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Committed Amount"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002f-01f4-0000-c977-53b900000000-m80c566be-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566be-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000030-01f4-0000-ba4c-bff800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."COMMIT_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000030-01f4-0000-ba4c-bff800000000-m80c5c2bc-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2bc-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000031-01f4-0000-018d-f40300000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Balance Aggregation Accounts"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000031-01f4-0000-018d-f40300000000-m80c566bf-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566bf-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000032-01f4-0000-91bd-f1ab00000000" name="Expr">
+<ExprText><![CDATA[ CASE "%1" WHEN 'AAG Account' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."ASSET_TYPE_I" WHEN 'AAG Account' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CURRENT_BAL" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000032-01f4-0000-91bd-f1ab00000000-m80c5c257-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c257-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000032-01f4-0000-91bd-f1ab00000000-m80c5c2be-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2be-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000033-01f4-0000-fcd2-77d200000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Balance Financial Accounts"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000033-01f4-0000-fcd2-77d200000000-m80c566c0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566c0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000034-01f4-0000-f0cb-4c3400000000" name="Expr">
+<ExprText><![CDATA[ CASE "%1" WHEN 'Fin Account' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."ASSET_TYPE_I" WHEN 'Fin Account' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CURRENT_BAL" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000034-01f4-0000-f0cb-4c3400000000-m80c5c257-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c257-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000034-01f4-0000-f0cb-4c3400000000-m80c5c2be-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2be-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000035-01f4-0000-c0c5-4a3b00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# Financial Accounts"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000035-01f4-0000-c0c5-4a3b00000000-m80c566c1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566c1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000036-01f4-0000-ad5f-6a1500000000" name="Expr">
+<ExprText><![CDATA[ CASE "%1" WHEN 'Fin Account' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."ASSET_TYPE_I" WHEN 'Fin Account' THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000036-01f4-0000-ad5f-6a1500000000-m80c5c257-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c257-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000036-01f4-0000-ad5f-6a1500000000-m80c5c223-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c223-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000037-01f4-0000-3116-68fc00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# Aggregation Accounts"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000037-01f4-0000-3116-68fc00000000-m80c566c2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566c2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000038-01f4-0000-260e-918600000000" name="Expr">
+<ExprText><![CDATA[ CASE "%1" WHEN 'AAG Account' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."ASSET_TYPE_I" WHEN 'AAG Account' THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000038-01f4-0000-260e-918600000000-m80c5c257-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c257-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000038-01f4-0000-260e-918600000000-m80c5c223-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c223-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000039-01f4-0000-c598-110c00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Partner Revenue"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000039-01f4-0000-c598-110c00000000-m80c566c3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566c3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000003a-01f4-0000-5626-5e9a00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."PR_VIS_ORG_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."REVENUE" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003a-01f4-0000-5626-5e9a00000000-m80c5c2a9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2a9-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003a-01f4-0000-5626-5e9a00000000-m80c5c2c2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2c2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000003b-01f4-0000-bfd7-0fb800000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Partner Profit"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003b-01f4-0000-bfd7-0fb800000000-m80c566c4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566c4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000003c-01f4-0000-af61-82b500000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."PR_VIS_ORG_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."PROFIT" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003c-01f4-0000-af61-82b500000000-m80c5c2a9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2a9-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003c-01f4-0000-af61-82b500000000-m80c5c2c1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2c1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000003d-01f4-0000-174e-399b00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# Partners with Assets (Primary Visibility)"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003d-01f4-0000-174e-399b00000000-m80c566c5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566c5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000003e-01f4-0000-1fc2-b2af00000000" name="Expr">
+<ExprText><![CDATA[ CASE "%1" WHEN 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_INT_ORG_D_Partner_Primary_Visibility_Org"."PRTNR_FLG" WHEN 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."PR_VIS_ORG_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003e-01f4-0000-1fc2-b2af00000000-m80c5d3da-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf0a-0bb9-0000-714b-e31d00000000.xml#m80c5d3da-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003e-01f4-0000-1fc2-b2af00000000-m80c5c2a9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2a9-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000003f-01f4-0000-2436-7caa00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# Insurance Policies"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003f-01f4-0000-2436-7caa00000000-m80c566c6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566c6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000040-01f4-0000-c60d-4f5600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IN ('Auto', 'Auto Policy', 'Group', 'Health', 'Life', 'Property', 'Umbrella') THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."ASSET_TYPE_I" IN ('Auto', 'Auto Policy', 'Group', 'Health', 'Life', 'Property', 'Umbrella') THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000040-01f4-0000-c60d-4f5600000000-m80c5c257-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c257-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000040-01f4-0000-c60d-4f5600000000-m80c5c223-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c223-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000041-01f4-0000-d5d7-1b1f00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Total Aggregate and Financial Account Balance"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000041-01f4-0000-d5d7-1b1f00000000-m80c566c7-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566c7-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000042-01f4-0000-fa2e-648600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IN ('AAG Account', 'Fin Account') THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."ASSET_TYPE_I" IN ('AAG Account', 'Fin Account') THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CURRENT_BAL" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000042-01f4-0000-fa2e-648600000000-m80c5c257-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c257-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000042-01f4-0000-fa2e-648600000000-m80c5c2be-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2be-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000043-01f4-0000-3215-378c00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."AAG Service Balance"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000043-01f4-0000-3215-378c00000000-m80c566c8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566c8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000044-01f4-0000-3adf-fec300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IN ('AAG Account', 'Fin Account') THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."ASSET_TYPE_I" IN ('AAG Account', 'Fin Account') THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CURRENT_BAL" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000044-01f4-0000-3adf-fec300000000-m80c5c257-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c257-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000044-01f4-0000-3adf-fec300000000-m80c5c2be-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2be-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000045-01f4-0000-9d4c-531e00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."APR Weighted Outstanding Balance"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000045-01f4-0000-9d4c-531e00000000-m80c566c9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566c9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000046-01f4-0000-3c98-751900000000" name="Expr">
+<ExprText><![CDATA["%1" * "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."APR" * "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CC_OUTSTND_BAL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000046-01f4-0000-3c98-751900000000-m80c5c2ca-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2ca-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000046-01f4-0000-3c98-751900000000-m80c5c2cc-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2cc-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000047-01f4-0000-77e0-8b7400000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Weighted Loan Term Outstanding Balance"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000047-01f4-0000-77e0-8b7400000000-m80c566ca-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566ca-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000048-01f4-0000-5951-93ab00000000" name="Expr">
+<ExprText><![CDATA["%1" * "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."ORGNL_LOAN_TERM" * "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CC_OUTSTND_BAL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000048-01f4-0000-5951-93ab00000000-m80c5c2c9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2c9-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000048-01f4-0000-5951-93ab00000000-m80c5c2cc-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2cc-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000049-01f4-0000-682a-ab6600000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."APY Weighted Current Balance"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000049-01f4-0000-682a-ab6600000000-m80c566cb-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566cb-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000004a-01f4-0000-e929-30f600000000" name="Expr">
+<ExprText><![CDATA["%1" * "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."APY" * "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CURRENT_BAL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000004a-01f4-0000-e929-30f600000000-m80c5c2cb-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2cb-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000004a-01f4-0000-e929-30f600000000-m80c5c2be-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2be-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000004b-01f4-0000-18d4-713b00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Remaining Term Weighted Outstanding Balance"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000004b-01f4-0000-18d4-713b00000000-m80c566cc-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566cc-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000004c-01f4-0000-bd6f-dcfc00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  VALUEOF("%1") >= "%2" THEN 0 ELSE  TIMESTAMPDIFF( SQL_TSI_YEAR , "%2",  VALUEOF("%1")) END  * "%3"]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  VALUEOF("Warehouse Refresh Date"."LAST_REFRESH_DT") >= "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."MATURITY_DT" THEN 0 ELSE  TIMESTAMPDIFF( SQL_TSI_YEAR , "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."MATURITY_DT",  VALUEOF("Warehouse Refresh Date"."LAST_REFRESH_DT")) END  * "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CC_OUTSTND_BAL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000004c-01f4-0000-bd6f-dcfc00000000-m80c67bd7-0bd7-0000-714b-e31d00000000" objectRef="/oracle/bi/server/base/Variable/80c67bd7-0bd7-0000-714b-e31d00000000.xml#m80c67bd7-0bd7-0000-714b-e31d00000000"/>
+<RefObject refId="m0000004c-01f4-0000-bd6f-dcfc00000000-m80c5c249-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c249-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000004c-01f4-0000-bd6f-dcfc00000000-m80c5c2cc-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2cc-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000004d-01f4-0000-cd56-646a00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Initial Loan Amount Weighted Balance"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000004d-01f4-0000-cd56-646a00000000-m80c566cd-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566cd-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000004e-01f4-0000-1df4-d29a00000000" name="Expr">
+<ExprText><![CDATA["%1" * "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."COMMIT_AMT" * "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CC_OUTSTND_BAL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000004e-01f4-0000-1df4-d29a00000000-m80c5c2bc-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2bc-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000004e-01f4-0000-1df4-d29a00000000-m80c5c2cc-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2cc-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000004f-01f4-0000-1769-467600000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Teaser % Weighted by Outstanding Balance"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000004f-01f4-0000-1769-467600000000-m80c566ce-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566ce-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000050-01f4-0000-9136-a20f00000000" name="Expr">
+<ExprText><![CDATA["%1" * "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."TEASER_PCT" * "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CC_OUTSTND_BAL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000050-01f4-0000-9136-a20f00000000-m80c5c2d7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2d7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000050-01f4-0000-9136-a20f00000000-m80c5c2cc-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2cc-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000051-01f4-0000-ccda-605a00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Teaser Duration Weighted by Oustanding Balance"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000051-01f4-0000-ccda-605a00000000-m80c566cf-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566cf-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000052-01f4-0000-4bfb-4b1400000000" name="Expr">
+<ExprText><![CDATA[ TIMESTAMPDIFF( SQL_TSI_DAY , "%1", "%2") * "%3"]]></ExprText>
+<ExprTextDesc><![CDATA[ TIMESTAMPDIFF( SQL_TSI_DAY , "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."START_DT", "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Teaser_End_Date"."DAY_DT") * "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CC_OUTSTND_BAL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000052-01f4-0000-4bfb-4b1400000000-m80c5c251-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c251-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000052-01f4-0000-4bfb-4b1400000000-m80c5d5b2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf19-0bb9-0000-714b-e31d00000000.xml#m80c5d5b2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000052-01f4-0000-4bfb-4b1400000000-m80c5c2cc-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2cc-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000053-01f4-0000-1ec4-1d7200000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# Lines of Business"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000053-01f4-0000-1ec4-1d7200000000-m80c566d0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566d0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000054-01f4-0000-8a56-4d6400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."ASSET_LOB_I"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000054-01f4-0000-8a56-4d6400000000-m80c5c255-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c255-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000055-01f4-0000-bdab-52b500000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Total Asset Amount"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000055-01f4-0000-bdab-52b500000000-m80c566d1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566d1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000056-01f4-0000-daaf-7ec300000000" name="Expr">
+<ExprText><![CDATA[ CASE "%1" WHEN 'Asset' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."SUB_TYPE_I" WHEN 'Asset' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CURRENT_BAL" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000056-01f4-0000-daaf-7ec300000000-m80c5c5e2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80c5c5e2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000056-01f4-0000-daaf-7ec300000000-m80c5c2be-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2be-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000057-01f4-0000-e071-f31200000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# Asset Accounts"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000057-01f4-0000-e071-f31200000000-m80c566d2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566d2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000058-01f4-0000-8cfb-bb1200000000" name="Expr">
+<ExprText><![CDATA[ CASE "%1" WHEN 'Asset' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."SUB_TYPE_I" WHEN 'Asset' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."ASSET_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000058-01f4-0000-8cfb-bb1200000000-m80c5c5e2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80c5c5e2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000058-01f4-0000-8cfb-bb1200000000-m80c5c29e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c29e-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000059-01f4-0000-d1b1-d03000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Total Liability Amount"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000059-01f4-0000-d1b1-d03000000000-m80c566d3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566d3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000005a-01f4-0000-a764-e9db00000000" name="Expr">
+<ExprText><![CDATA[ CASE "%1" WHEN 'Liability' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."SUB_TYPE_I" WHEN 'Liability' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CC_OUTSTND_BAL" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000005a-01f4-0000-a764-e9db00000000-m80c5c5e2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80c5c5e2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000005a-01f4-0000-a764-e9db00000000-m80c5c2cc-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2cc-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000005b-01f4-0000-55ba-fc2600000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# Liability Accounts"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000005b-01f4-0000-55ba-fc2600000000-m80c566d4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566d4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000005c-01f4-0000-d4f2-49f200000000" name="Expr">
+<ExprText><![CDATA[ CASE "%1" WHEN 'Liability' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."SUB_TYPE_I" WHEN 'Liability' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."ASSET_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000005c-01f4-0000-d4f2-49f200000000-m80c5c5e2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80c5c5e2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000005c-01f4-0000-d4f2-49f200000000-m80c5c29e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c29e-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000005d-01f4-0000-a660-da1e00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Total Credit Card Credit Line"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000005d-01f4-0000-a660-da1e00000000-m80c566d5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566d5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000005e-01f4-0000-b84f-169200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CC_CREDIT_LINE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000005e-01f4-0000-b84f-169200000000-m80c5c2c5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2c5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000005f-01f4-0000-b4cf-dfaf00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Average Credit Card Credit Line"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000005f-01f4-0000-b4cf-dfaf00000000-m80c566d6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566d6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000060-01f4-0000-90b2-519900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CC_CREDIT_LINE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000060-01f4-0000-90b2-519900000000-m80c5c2c5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2c5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000061-01f4-0000-6a56-341200000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Total Cash Value"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000061-01f4-0000-6a56-341200000000-m80c566d7-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566d7-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000062-01f4-0000-18d7-0e8300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CASH_VALUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000062-01f4-0000-18d7-0e8300000000-m80c5c2c8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2c8-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000063-01f4-0000-a2da-31ef00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Average Cash Value"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000063-01f4-0000-a2da-31ef00000000-m80c566d8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566d8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000064-01f4-0000-dee5-e22c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CASH_VALUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000064-01f4-0000-dee5-e22c00000000-m80c5c2c8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2c8-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000065-01f4-0000-7e45-28af00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Total Outstanding Balance"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000065-01f4-0000-7e45-28af00000000-m80c566d9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566d9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000066-01f4-0000-bee5-0e9200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CC_OUTSTND_BAL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000066-01f4-0000-bee5-0e9200000000-m80c5c2cc-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2cc-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000067-01f4-0000-d790-bf9e00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Average Outstanding Balance"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000067-01f4-0000-d790-bf9e00000000-m80c566da-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566da-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000068-01f4-0000-48e8-a54600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CC_OUTSTND_BAL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000068-01f4-0000-48e8-a54600000000-m80c5c2cc-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2cc-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000069-01f4-0000-cbfc-b3b500000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Total Proj Balance"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000069-01f4-0000-cbfc-b3b500000000-m80c566db-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566db-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000006a-01f4-0000-96c5-e49300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CP_PROJ_BALANCE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000006a-01f4-0000-96c5-e49300000000-m80c5c2d2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2d2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000006b-01f4-0000-50f9-b05f00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Avg Proj Balance"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000006b-01f4-0000-50f9-b05f00000000-m80c566dc-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566dc-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000006c-01f4-0000-d62a-6c4600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CP_PROJ_BALANCE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000006c-01f4-0000-d62a-6c4600000000-m80c5c2d2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2d2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000006d-01f4-0000-3bfe-57ae00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Avg Credit Card Usage %"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000006d-01f4-0000-3bfe-57ae00000000-m80c566dd-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566dd-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000006e-01f4-0000-dc3b-eaa700000000" name="Expr">
+<ExprText><![CDATA[ CASE "%1" WHEN 'Credit Card' THEN 100.0d * "%2" / "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."DETAIL_TYPE_I" WHEN 'Credit Card' THEN 100.0d * "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CC_OUTSTND_BAL" / "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."AVAIL_CREDIT_LMT" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000006e-01f4-0000-dc3b-eaa700000000-m80c5c5da-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80c5c5da-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000006e-01f4-0000-dc3b-eaa700000000-m80c5c2cc-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2cc-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000006e-01f4-0000-dc3b-eaa700000000-m80c5c2c6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2c6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000006f-01f4-0000-4275-ae9800000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Available Credit Limit"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000006f-01f4-0000-4275-ae9800000000-m80c566de-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566de-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000070-01f4-0000-2b24-99db00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."AVAIL_CREDIT_LMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000070-01f4-0000-2b24-99db00000000-m80c5c2c6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2c6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000071-01f4-0000-4662-789000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Average Original Loan Term"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000071-01f4-0000-4662-789000000000-m80c566df-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566df-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000072-01f4-0000-a37d-a80900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."ORGNL_LOAN_TERM"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000072-01f4-0000-a37d-a80900000000-m80c5c2c9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2c9-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000073-01f4-0000-6bb7-d89800000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Average APR"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000073-01f4-0000-6bb7-d89800000000-m80c566e0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566e0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000074-01f4-0000-f419-3c0400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."APR"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000074-01f4-0000-f419-3c0400000000-m80c5c2ca-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2ca-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000075-01f4-0000-45da-83f100000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Average APY"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000075-01f4-0000-45da-83f100000000-m80c566e1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566e1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000076-01f4-0000-6199-ee7e00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."APY"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000076-01f4-0000-6199-ee7e00000000-m80c5c2cb-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2cb-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000077-01f4-0000-e7d5-884000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Affinity Points Earned"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000077-01f4-0000-e7d5-884000000000-m80c566e2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566e2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000078-01f4-0000-4094-1ef400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CC_MM_AFF_POINTS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000078-01f4-0000-4094-1ef400000000-m80c5c2ce-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2ce-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000079-01f4-0000-6fb1-7b5c00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Average Affinity Points Earned"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000079-01f4-0000-6fb1-7b5c00000000-m80c566e3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566e3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000007a-01f4-0000-8358-41a700000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CC_MM_AFF_POINTS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000007a-01f4-0000-8358-41a700000000-m80c5c2ce-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2ce-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000007b-01f4-0000-e739-154200000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."New Credit Card Balance"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000007b-01f4-0000-e739-154200000000-m80c566e4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566e4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000007c-01f4-0000-0856-a51b00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CC_NEW_BAL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000007c-01f4-0000-0856-a51b00000000-m80c5c2cf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2cf-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000007d-01f4-0000-09ca-084000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Average New Credit Card Balance"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000007d-01f4-0000-09ca-084000000000-m80c566e5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566e5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000007e-01f4-0000-c308-1d1c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CC_NEW_BAL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000007e-01f4-0000-c308-1d1c00000000-m80c5c2cf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2cf-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000007f-01f4-0000-894c-785e00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# Days Delinquent"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000007f-01f4-0000-894c-785e00000000-m80c566e6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566e6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000080-01f4-0000-5e5c-147800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."NUM_DLQUNT_DAYS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000080-01f4-0000-5e5c-147800000000-m80c5c2d6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2d6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000081-01f4-0000-bf84-832000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Average # Days Delinquent"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000081-01f4-0000-bf84-832000000000-m80c566e7-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566e7-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000082-01f4-0000-2bc6-e0fa00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."NUM_DLQUNT_DAYS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000082-01f4-0000-2bc6-e0fa00000000-m80c5c2d6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2d6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000083-01f4-0000-2599-3dc500000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Balance Delinquent Accounts"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000083-01f4-0000-2599-3dc500000000-m80c566e8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566e8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000084-01f4-0000-8576-2f8900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  NOT "%1" IS NULL  THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  NOT "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CP_DAYS_PAST_DUE" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CC_OUTSTND_BAL" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000084-01f4-0000-8576-2f8900000000-m80c5c2d0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2d0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000084-01f4-0000-8576-2f8900000000-m80c5c2cc-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2cc-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000085-01f4-0000-1a05-161200000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# Delinquent Accounts"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000085-01f4-0000-1a05-161200000000-m80c566e9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566e9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000086-01f4-0000-c2a6-66bd00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  NOT "%1" IS NULL  THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  NOT "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CP_DAYS_PAST_DUE" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."ASSET_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000086-01f4-0000-c2a6-66bd00000000-m80c5c2d0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2d0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000086-01f4-0000-c2a6-66bd00000000-m80c5c29e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c29e-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000087-01f4-0000-22af-5bc200000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# Accounts Charged Off"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000087-01f4-0000-22af-5bc200000000-m80c566ea-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566ea-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000088-01f4-0000-4088-52a000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 180 THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CP_DAYS_PAST_DUE" > 180 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."ASSET_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000088-01f4-0000-4088-52a000000000-m80c5c2d0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2d0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000088-01f4-0000-4088-52a000000000-m80c5c29e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c29e-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000089-01f4-0000-8a9a-784b00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Charge Off"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000089-01f4-0000-8a9a-784b00000000-m80c566eb-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566eb-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000008a-01f4-0000-b713-4a2800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 180 THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CP_DAYS_PAST_DUE" > 180 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CC_OUTSTND_BAL" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000008a-01f4-0000-b713-4a2800000000-m80c5c2d0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2d0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000008a-01f4-0000-b713-4a2800000000-m80c5c2cc-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2cc-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000008b-01f4-0000-4f32-002400000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Teaser %"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000008b-01f4-0000-4f32-002400000000-m80c566ec-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566ec-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000008c-01f4-0000-fb17-444c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."TEASER_PCT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000008c-01f4-0000-fb17-444c00000000-m80c5c2d7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2d7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000008d-01f4-0000-1d3e-6a8800000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Secured Amount"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000008d-01f4-0000-1d3e-6a8800000000-m80c566ed-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566ed-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000008e-01f4-0000-8fc7-22ca00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."SECURED_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000008e-01f4-0000-8fc7-22ca00000000-m80c5c2d9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2d9-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000008f-01f4-0000-c10d-716e00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Total Days Payment Past Due"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000008f-01f4-0000-c10d-716e00000000-m80c566ee-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566ee-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000090-01f4-0000-3d1b-6bee00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CP_DAYS_PAST_DUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000090-01f4-0000-3d1b-6bee00000000-m80c5c2d0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2d0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000091-01f4-0000-19b2-909c00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Average Days Payment Past Due"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000091-01f4-0000-19b2-909c00000000-m80c566ef-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566ef-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000092-01f4-0000-ae43-35ca00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CP_DAYS_PAST_DUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000092-01f4-0000-ae43-35ca00000000-m80c5c2d0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2d0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000093-01f4-0000-b59d-933600000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# Insurance Quotes"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000093-01f4-0000-b59d-933600000000-m80c566f0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566f0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000094-01f4-0000-cbd2-049200000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  NOT "%1" LIKE '%Account%' AND "%2" LIKE '%Quote%' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  NOT "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."ASSET_TYPE_I" LIKE '%Account%' AND "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."SUB_TYPE_I" LIKE '%Quote%' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000094-01f4-0000-cbd2-049200000000-m80c5c257-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c257-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000094-01f4-0000-cbd2-049200000000-m80c5c268-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c268-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000094-01f4-0000-cbd2-049200000000-m80c5c2ab-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2ab-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000095-01f4-0000-5ee4-534600000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Average Tenure"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000095-01f4-0000-5ee4-534600000000-m80c566f1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566f1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000096-01f4-0000-9259-be2d00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" <  VALUEOF("%2") THEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "%3", "%1") ELSE  TIMESTAMPDIFF( SQL_TSI_MONTH , "%3",  VALUEOF("%2")) END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."END_DT" <  VALUEOF("Warehouse Refresh Date"."LAST_REFRESH_DT") THEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."INCEPTION_DT", "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."END_DT") ELSE  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."INCEPTION_DT",  VALUEOF("Warehouse Refresh Date"."LAST_REFRESH_DT")) END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000096-01f4-0000-9259-be2d00000000-m80c5c244-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c244-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000096-01f4-0000-9259-be2d00000000-m80c67bd7-0bd7-0000-714b-e31d00000000" objectRef="/oracle/bi/server/base/Variable/80c67bd7-0bd7-0000-714b-e31d00000000.xml#m80c67bd7-0bd7-0000-714b-e31d00000000"/>
+<RefObject refId="m00000096-01f4-0000-9259-be2d00000000-m80c5c245-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c245-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000097-01f4-0000-1a01-e0b800000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# Renewed Policies"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000097-01f4-0000-1a01-e0b800000000-m80c566f2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566f2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000098-01f4-0000-b792-aabc00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Renewal' AND "%2" = 'Renewed' THEN 1 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."STATUS_I" = 'Renewal' AND "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."SUB_STATUS_I" = 'Renewed' THEN 1 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000098-01f4-0000-b792-aabc00000000-m80c5c237-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c237-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000098-01f4-0000-b792-aabc00000000-m80c5c266-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c266-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000099-01f4-0000-6b42-765600000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# Policies Offered Renewal"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000099-01f4-0000-6b42-765600000000-m80c566f3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566f3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000009a-01f4-0000-d3fe-e59f00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Renewal' THEN 1 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."STATUS_I" = 'Renewal' THEN 1 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000009a-01f4-0000-d3fe-e59f00000000-m80c5c237-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c237-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000009b-01f4-0000-a0b5-6d2a00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# Insurance Agents"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000009b-01f4-0000-a0b5-6d2a00000000-m80c566f4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566f4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000009c-01f4-0000-591e-ff8d00000000" name="Expr">
+<ExprText><![CDATA[ CASE "%1" WHEN 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_EMPLOYEE_D_Asset_Manager"."AGENT_FLG" WHEN 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."AGENT_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000009c-01f4-0000-591e-ff8d00000000-m80c5d673-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf20-0bb9-0000-714b-e31d00000000.xml#m80c5d673-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000009c-01f4-0000-591e-ff8d00000000-m80c5c2d4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2d4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000009d-01f4-0000-868c-512900000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# Agencies"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000009d-01f4-0000-868c-512900000000-m80c566f5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566f5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000009e-01f4-0000-ae6a-f58200000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."PR_VIS_ORG_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."PR_VIS_ORG_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000009e-01f4-0000-ae6a-f58200000000-m80c5c2a9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2a9-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000009f-01f4-0000-d66b-d62100000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Average Revenue"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000009f-01f4-0000-d66b-d62100000000-m80c566f6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566f6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m000000a0-01f4-0000-7193-2b0800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."REVENUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m000000a0-01f4-0000-7193-2b0800000000-m80c5c2c2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2c2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m000000a1-01f4-0000-f7e7-819b00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."Average Premium"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m000000a1-01f4-0000-f7e7-819b00000000-m80c566f7-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566f7-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m000000a2-01f4-0000-7dda-bb8c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."PREMIUM"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m000000a2-01f4-0000-7dda-bb8c00000000-m80c5c2c0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2c0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m000000a3-01f4-0000-cf15-103a00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# Assets Classes Held"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m000000a3-01f4-0000-cf15-103a00000000-m80c566f8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566f8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m000000a4-01f4-0000-4d75-5baa00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PRODUCT_D"."SUB_TYPE_I"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m000000a4-01f4-0000-4d75-5baa00000000-m80c5c5e2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80c5c5e2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m000000a5-01f4-0000-dcd4-5b4200000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# of Policies In Force"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m000000a5-01f4-0000-dcd4-5b4200000000-m80c566f9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566f9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m000000a6-01f4-0000-c92a-1d0f00000000" name="Expr">
+<ExprText><![CDATA[ CASE "%1" WHEN 'Inforce' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."STATUS_I" WHEN 'Inforce' THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m000000a6-01f4-0000-c92a-1d0f00000000-m80c5c237-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c237-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m000000a6-01f4-0000-c92a-1d0f00000000-m80c5c223-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c223-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m000000a7-01f4-0000-c08d-e85900000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# Asset Managers"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m000000a7-01f4-0000-c08d-e85900000000-m80c566fa-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566fa-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m000000a8-01f4-0000-fcf5-c33300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."AGENT_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."AGENT_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m000000a8-01f4-0000-fcf5-c33300000000-m80c5c2d4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2d4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m000000a9-01f4-0000-c2ac-d8ad00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."# Non Renewed Policies"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m000000a9-01f4-0000-c2ac-d8ad00000000-m80c566fc-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c566fc-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m000000aa-01f4-0000-941f-837a00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Renewal' AND "%2" = 'Non Renewed' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."STATUS_I" = 'Renewal' AND "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."SUB_STATUS_I" = 'Non Renewed' THEN "Oracle Data Warehouse"."Catalog"."dbo"."W_ASSET_D"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m000000aa-01f4-0000-941f-837a00000000-m80c5c237-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c237-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m000000aa-01f4-0000-941f-837a00000000-m80c5c266-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c266-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m000000aa-01f4-0000-941f-837a00000000-m80c5c223-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5c223-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m000000ab-01f4-0000-1e50-86fe00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m000000ab-01f4-0000-1e50-86fe00000000-m80c56746-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b6-07f3-0000-714b-e31d00000000.xml#m80c56746-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m000000ac-01f4-0000-f741-726a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_INT_ORG_D_Partner_Primary_Owner_Org"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m000000ac-01f4-0000-f741-726a00000000-m80c5d3a1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf09-0bb9-0000-714b-e31d00000000.xml#m80c5d3a1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5be9b-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5be9b-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5be9c-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c66ee7-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5be9c-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5be9c-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80c5beae-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c66ee6-0bbe-0000-714b-e31d00000000"/>
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5be9c-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5be9b-0bb9-0000-714b-e31d00000000.xml#m80c5be9b-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c66ee7-0bbe-0000-714b-e31d00000000"/>
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5be9c-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5be9e-0bb9-0000-714b-e31d00000000.xml#m80c5be9e-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c66ee9-0bbe-0000-714b-e31d00000000"/>
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5be9c-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5bec8-0bb9-0000-714b-e31d00000000.xml#m80c5bec8-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c66eed-0bbe-0000-714b-e31d00000000"/>
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5be9c-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5beaa-0bb9-0000-714b-e31d00000000.xml#m80c5beaa-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c66eef-0bbe-0000-714b-e31d00000000"/>
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5be9c-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5bf0a-0bb9-0000-714b-e31d00000000.xml#m80c5bf0a-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c66ef5-0bbe-0000-714b-e31d00000000"/>
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5be9c-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5bf19-0bb9-0000-714b-e31d00000000.xml#m80c5bf19-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c66ef8-0bbe-0000-714b-e31d00000000"/>
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5be9c-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5bf20-0bb9-0000-714b-e31d00000000.xml#m80c5bf20-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c66efa-0bbe-0000-714b-e31d00000000"/>
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5be9c-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5bf09-0bb9-0000-714b-e31d00000000.xml#m80c5bf09-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c66f03-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5be9e-0bb9-0000-714b-e31d00000000.xml#m80c5be9e-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5be9e-0bb9-0000-714b-e31d00000000.xml#m80c5be9e-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5be9c-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c66ee9-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5beaa-0bb9-0000-714b-e31d00000000.xml#m80c5beaa-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5beaa-0bb9-0000-714b-e31d00000000.xml#m80c5beaa-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5be9c-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c66eef-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80c5beae-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80c5beae-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5be9c-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c66ee6-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5bec8-0bb9-0000-714b-e31d00000000.xml#m80c5bec8-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5bec8-0bb9-0000-714b-e31d00000000.xml#m80c5bec8-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5be9c-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c66eed-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5bf09-0bb9-0000-714b-e31d00000000.xml#m80c5bf09-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5bf09-0bb9-0000-714b-e31d00000000.xml#m80c5bf09-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5be9c-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c66f03-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5bf0a-0bb9-0000-714b-e31d00000000.xml#m80c5bf0a-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5bf0a-0bb9-0000-714b-e31d00000000.xml#m80c5bf0a-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5be9c-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c66ef5-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5bf19-0bb9-0000-714b-e31d00000000.xml#m80c5bf19-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5bf19-0bb9-0000-714b-e31d00000000.xml#m80c5bf19-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5be9c-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c66ef8-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5bf20-0bb9-0000-714b-e31d00000000.xml#m80c5bf20-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5bf20-0bb9-0000-714b-e31d00000000.xml#m80c5bf20-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5be9c-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c66efa-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<WhereClause mdsid="m000000ad-01f4-0000-f6be-7a8300000000" name="WhereClause">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</WhereClause>
+<GroupBy mdsid="m000000ae-01f4-0000-1216-7fbe00000000" name="GroupBy">
+<ExprText><![CDATA[ GROUPBYLEVEL("%1", "%2", "%3", "%4", "%5", "%6", "%7", "%8", "%9", "%10", "%11", "%12", "%13", "%14", "%15", "%16", "%17", "%18", "%19", "%20", "%21", "%22", "%23", "%24", "%25", "%26", "%27", "%28", "%29", "%30", "%31", "%32", "%33", "%34")]]></ExprText>
+<ExprTextDesc><![CDATA[ GROUPBYLEVEL("Core"."Asset"."Asset Detail", "Core"."Ship Date Dim"."Detail", "Core"."Relationship Period"."Day Detail", "Core"."Claim: Paid Date"."Date", "Core"."Security Dimension"."Security Detail", "Core"."Registration Date"."Day Detail", "Core"."Partner Primary Visibility Organization"."Detail", "Core"."Installed Date Dim"."Detail", "Core"."Warranty Start Date"."Day Detail", "Core"."Branch"."Branch Detail", "Core"."Warranty End Date"."Day Detail", "Core"."Position"."Detail", "Core"."Account Geography"."Postal Code Detail", "Core"."Claim: Service Date"."Day", "Core"."Contact (W_PERSON_D)"."Detail", "Core"."Annuity Time"."Day Detail", "Core"."Primary Owner Business Unit"."Detail", "Core"."Person Geography"."Postal Code Detail", "Core"."Employee"."Employee Detail", "Core"."Product"."Product Detail", "Core"."Claim Open Date"."Day Detail", "Core"."Primary Visibility Organization"."Detail", "Core"."Teaser End Date"."Day Detail", "Core"."Created by Organization"."Created by Org Detail", "Core"."Date"."Day Detail", "Core"."Industry"."Industry Detail", "Core"."Open Date"."Day Detail", "Core"."End Date Dim"."Detail", "Core"."Position - DEPRECATED"."Detail", "Core"."W_DAY_D (Maturity Date Consumer Accounts)"."Detail", "Core"."Asset Manager"."Detail", "Core"."InceptionDate Dim"."InceptionDate Day", "Core"."Customer"."Account Detail", "Core"."Start Date FINS Asset Dim"."Detail")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a22b-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0b3-07e3-0000-714b-e31d00000000.xml#m80c5a22b-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a327-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0e9-07e3-0000-714b-e31d00000000.xml#m80c5a327-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a2f5-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0e0-07e3-0000-714b-e31d00000000.xml#m80c5a2f5-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a296-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0ca-07e3-0000-714b-e31d00000000.xml#m80c5a296-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a426-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a11a-07e3-0000-714b-e31d00000000.xml#m80c5a426-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a235-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0b4-07e3-0000-714b-e31d00000000.xml#m80c5a235-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a2ce-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0d8-07e3-0000-714b-e31d00000000.xml#m80c5a2ce-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a332-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0eb-07e3-0000-714b-e31d00000000.xml#m80c5a332-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a23a-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0b5-07e3-0000-714b-e31d00000000.xml#m80c5a23a-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a303-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0e2-07e3-0000-714b-e31d00000000.xml#m80c5a303-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a23f-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0b6-07e3-0000-714b-e31d00000000.xml#m80c5a23f-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a439-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a11b-07e3-0000-714b-e31d00000000.xml#m80c5a439-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a1a3-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a095-07e3-0000-714b-e31d00000000.xml#m80c5a1a3-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a2a6-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0cc-07e3-0000-714b-e31d00000000.xml#m80c5a2a6-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a278-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0c7-07e3-0000-714b-e31d00000000.xml#m80c5a278-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a2db-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0db-07e3-0000-714b-e31d00000000.xml#m80c5a2db-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a465-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a11e-07e3-0000-714b-e31d00000000.xml#m80c5a465-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a1ab-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a096-07e3-0000-714b-e31d00000000.xml#m80c5a1ab-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a214-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0ab-07e3-0000-714b-e31d00000000.xml#m80c5a214-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a1af-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a097-07e3-0000-714b-e31d00000000.xml#m80c5a1af-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a378-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0f9-07e3-0000-714b-e31d00000000.xml#m80c5a378-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a1e4-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a09e-07e3-0000-714b-e31d00000000.xml#m80c5a1e4-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a2e5-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0dc-07e3-0000-714b-e31d00000000.xml#m80c5a2e5-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a1ea-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0a1-07e3-0000-714b-e31d00000000.xml#m80c5a1ea-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a1b8-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a098-07e3-0000-714b-e31d00000000.xml#m80c5a1b8-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a1ec-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0a2-07e3-0000-714b-e31d00000000.xml#m80c5a1ec-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a221-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0b0-07e3-0000-714b-e31d00000000.xml#m80c5a221-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a2bc-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0d4-07e3-0000-714b-e31d00000000.xml#m80c5a2bc-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a2ed-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0de-07e3-0000-714b-e31d00000000.xml#m80c5a2ed-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a382-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0fc-07e3-0000-714b-e31d00000000.xml#m80c5a382-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a2ef-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0df-07e3-0000-714b-e31d00000000.xml#m80c5a2ef-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a2c1-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0d5-07e3-0000-714b-e31d00000000.xml#m80c5a2c1-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a1be-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a099-07e3-0000-714b-e31d00000000.xml#m80c5a1be-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m000000ae-01f4-0000-1216-7fbe00000000-m80c5a387-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0fd-07e3-0000-714b-e31d00000000.xml#m80c5a387-07e9-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</GroupBy>
+<FragmentContent mdsid="m000000af-01f4-0000-3fd6-800900000000" name="FragmentContent">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</FragmentContent>
+</LogicalTableSource>

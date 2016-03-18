@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9cf-07f3-0000-714b-e31d00000000" name="Fact  Compound - Agree Activity &amp; Order Item" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="624" y="411" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c5689c-07d6-0000-714b-e31d00000000" name="Total Cost" isDerived="true" isWriteable="false">
+<Description><![CDATA["Total cost of all service requests, activities and orders"]]></Description>
+<Expr mdsid="m00000001-01f4-0000-06e3-62d200000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) +  IFNULL("%2", 0) +  IFNULL("%3", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Agree - DEPRECATED"."Agreement Cost", 0) +  IFNULL("Core"."Fact - CRM - Activity"."Activity Costs", 0) +  IFNULL("Core"."Fact - CRM - Order Item"."Total Order Costs", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-06e3-62d200000000-m80c56602-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9aa-07f3-0000-714b-e31d00000000.xml#m80c56602-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000001-01f4-0000-06e3-62d200000000-m80c56870-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9cd-07f3-0000-714b-e31d00000000.xml#m80c56870-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000001-01f4-0000-06e3-62d200000000-m80c57b22-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8c-07f3-0000-714b-e31d00000000.xml#m80c57b22-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68c79-0f3c-0000-714b-e31d00000000" name="AD_3900:842341074282455">
+<Expr mdsid="m00000002-01f4-0000-5c82-0b1500000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5689d-07d6-0000-714b-e31d00000000" name="Total Amounts" isDerived="true" isWriteable="false">
+<Description><![CDATA["Total revenue generated from all agreements, all activities and all orders"]]></Description>
+<Expr mdsid="m00000003-01f4-0000-1cbd-a13a00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) +  IFNULL("%2", 0) +  IFNULL("%3", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Agree - DEPRECATED"."Agreement Amount", 0) +  IFNULL("Core"."Fact - CRM - Activity"."Activity Price", 0) +  IFNULL("Core"."Fact - CRM - Order Item"."Total Order Revenue", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-1cbd-a13a00000000-m80c56603-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9aa-07f3-0000-714b-e31d00000000.xml#m80c56603-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000003-01f4-0000-1cbd-a13a00000000-m80c56871-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9cd-07f3-0000-714b-e31d00000000.xml#m80c56871-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000003-01f4-0000-1cbd-a13a00000000-m80c57b01-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8c-07f3-0000-714b-e31d00000000.xml#m80c57b01-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68c7a-0f3c-0000-714b-e31d00000000" name="AD_3900:842351074282455">
+<Expr mdsid="m00000004-01f4-0000-060f-09a500000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+</LogicalTable>

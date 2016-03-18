@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5c0d6-0bb9-0000-714b-e31d00000000" name="WC_PROFILING (HVC)" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" isCacheable="false" x="178" y="50" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb1-0bd3-0000-714b-e31d00000000.xml#m80c67bb1-0bd3-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT CONTACT_WID, X_SRM_DESC_TEXT FROM WC_PRFL_INFO_D WHERE NAME='FRP' AND X_SRM_DESC_TEXT LIKE 'Canvasser%']]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c63efd-0bbb-0000-714b-e31d00000000" name="CONTACT_WID" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c63efe-0bbb-0000-714b-e31d00000000" name="X_SRM_DESC_TEXT" dataType="VARCHAR" precision="100" specialType="none">
+</PhysicalColumn>
+<PhysicalKey mdsid="m80c67ab6-0bc0-0000-714b-e31d00000000" name="WC_PROFILING (HVC)_Key">
+<RefColumns>
+<RefColumn refId="m80c67ab6-0bc0-0000-714b-e31d00000000-m80c63efd-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5c0d6-0bb9-0000-714b-e31d00000000.xml#m80c63efd-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+<PhysicalForeignKey mdsid="m80c67681-0bbe-0000-714b-e31d00000000" name="WC_PROFILING (HVC)_FKey" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5bef5-0bb9-0000-714b-e31d00000000.xml#m80c67917-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c67681-0bbe-0000-714b-e31d00000000-m80c63efd-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5c0d6-0bb9-0000-714b-e31d00000000.xml#m80c63efd-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+</PhysicalTable>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTableSource mdsid="m80c6e338-07f5-0000-714b-e31d00000000" name="Fact_W_MKTG_GOAL_F_Events" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isActive="true" allowUnmappedTable="true" logicalTableRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c5aa16-07f3-0000-714b-e31d00000000">
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5c0f4-0bb9-0000-714b-e31d00000000.xml#m80c5c0f4-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5c0f4-0bb9-0000-714b-e31d00000000.xml#m80c5c0f4-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5c161-0bb9-0000-714b-e31d00000000.xml#m80c5c161-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5c161-0bb9-0000-714b-e31d00000000.xml#m80c677f2-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5c161-0bb9-0000-714b-e31d00000000.xml#m80c5c161-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5c161-0bb9-0000-714b-e31d00000000.xml#m80c5c161-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5c0f4-0bb9-0000-714b-e31d00000000.xml#m80c5c0f4-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80c5c161-0bb9-0000-714b-e31d00000000.xml#m80c677f2-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<WhereClause mdsid="m00000001-01f4-0000-c6aa-0b1600000000" name="WhereClause">
+<ExprText><![CDATA["%1" = 'EVENT']]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_EVENT_D"."SRC_TYPE" = 'EVENT']]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-c6aa-0b1600000000-m80c6466a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0f4-0bb9-0000-714b-e31d00000000.xml#m80c6466a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</WhereClause>
+<GroupBy mdsid="m00000002-01f4-0000-7b62-bdbb00000000" name="GroupBy">
+<ExprText><![CDATA[ GROUPBYLEVEL("%1", "%2", "%3", "%4", "%5", "%6", "%7", "%8")]]></ExprText>
+<ExprTextDesc><![CDATA[ GROUPBYLEVEL("Core"."Date"."Day Detail", "Core"."Campaign Start Date"."Day Detail", "Core"."Event"."Detail", "Core"."Start Date Dim"."Detail", "Core"."Marketing Goal"."Detail Goal", "Core"."Marketing Goal Type"."Detail Goal Type", "Core"."Dim - Volunteer Role Sub TypeDim"."Dim - Volunteer Role Sub Type Total", "Core"."Dim - Volunteer RoleDim"."Dim - Volunteer Role Total")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-7b62-bdbb00000000-m80c5a1b8-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a098-07e3-0000-714b-e31d00000000.xml#m80c5a1b8-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-7b62-bdbb00000000-m80c5a3d5-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a10d-07e3-0000-714b-e31d00000000.xml#m80c5a3d5-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-7b62-bdbb00000000-m80c5a4b9-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a134-07e3-0000-714b-e31d00000000.xml#m80c5a4b9-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-7b62-bdbb00000000-m80c5a322-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a0e8-07e3-0000-714b-e31d00000000.xml#m80c5a322-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-7b62-bdbb00000000-m80c5a490-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a124-07e3-0000-714b-e31d00000000.xml#m80c5a490-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-7b62-bdbb00000000-m80c5a3cb-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a10b-07e3-0000-714b-e31d00000000.xml#m80c5a3cb-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-7b62-bdbb00000000-m80c5a501-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a155-07e3-0000-714b-e31d00000000.xml#m80c5a501-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-7b62-bdbb00000000-m80c5a4ff-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c5a154-07e3-0000-714b-e31d00000000.xml#m80c5a4ff-07e9-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</GroupBy>
+<FragmentContent mdsid="m00000003-01f4-0000-1475-222c00000000" name="FragmentContent">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</FragmentContent>
+</LogicalTableSource>

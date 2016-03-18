@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTableSource mdsid="m00005c7d-07f5-0000-714b-e31d00000000" name="Fact_WC_DI_EXCEPTION_F_Error" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isActive="true" logicalTableRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m00005169-07f3-0000-714b-e31d00000000">
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000001-01f4-0000-2b50-390700000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Files with Exceptions(First Pass)"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-2b50-390700000000-m80cbf3da-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbf3da-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000002-01f4-0000-2964-4a1700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."FIRST_PASS_IND" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."EVENT_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-2964-4a1700000000-m000005a7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-2964-4a1700000000-m000005a2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000003-01f4-0000-5072-b85a00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Files with Errors(First Pass)"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-5072-b85a00000000-m80cbf3e6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbf3e6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000004-01f4-0000-9f7f-ed6400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'ERROR' AND "%2" = 'Y' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'ERROR' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."FIRST_PASS_IND" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."EVENT_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-9f7f-ed6400000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-9f7f-ed6400000000-m000005a7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-9f7f-ed6400000000-m000005a2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000005-01f4-0000-ffbc-f47300000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Files with Warnings(First Pass)"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-ffbc-f47300000000-m80cbf3f2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbf3f2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000006-01f4-0000-b2b4-686300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'WARNING' AND "%2" = 'Y' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'WARNING' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."FIRST_PASS_IND" = 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."EVENT_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-b2b4-686300000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-b2b4-686300000000-m000005a7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-b2b4-686300000000-m000005a2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000007-01f4-0000-d5cb-8fd300000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Files with Exceptions"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-d5cb-8fd300000000-m80cbe9e6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbe9e6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000008-01f4-0000-ab17-6c6400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."EVENT_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-ab17-6c6400000000-m000005a2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000009-01f4-0000-0f7d-05b800000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Files with Errors"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-0f7d-05b800000000-m80cbea12-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbea12-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000a-01f4-0000-e10f-c73100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'ERROR' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'ERROR' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."EVENT_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-e10f-c73100000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000a-01f4-0000-e10f-c73100000000-m000005a2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000000b-01f4-0000-35cd-c0e700000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Files with Warnings"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-35cd-c0e700000000-m80cbea20-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbea20-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000c-01f4-0000-7373-7ac500000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'WARNING' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'WARNING' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."EVENT_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-7373-7ac500000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-7373-7ac500000000-m000005a2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000000d-01f4-0000-fc84-886a00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."Avg Validation Score"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-fc84-886a00000000-m000056ad-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m000056ad-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000e-01f4-0000-0c96-787000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."VALIDATION_SCORE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-0c96-787000000000-m000005a8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a8-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000000f-01f4-0000-8d7e-f35800000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Exceptions"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-8d7e-f35800000000-m80cbd8b8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbd8b8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000010-01f4-0000-b894-779c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-b894-779c00000000-m000005aa-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005aa-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000011-01f4-0000-22fe-f24700000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Errors"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-22fe-f24700000000-m80cbd8c6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbd8c6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000012-01f4-0000-74b9-286400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'ERROR' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'ERROR' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-74b9-286400000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000012-01f4-0000-74b9-286400000000-m000005aa-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005aa-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000013-01f4-0000-f24e-1e0400000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Transactions with Errors"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-f24e-1e0400000000-m80cbf987-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbf987-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000014-01f4-0000-056a-b85100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'ERROR' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'ERROR' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."DI_TRANSACTION_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-056a-b85100000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000014-01f4-0000-056a-b85100000000-m000005a0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000015-01f4-0000-4d52-d00000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Entities with Errors"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-4d52-d00000000000-m80cbf998-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbf998-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000016-01f4-0000-7a4e-828b00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'ERROR' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'ERROR' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."DI_ENTITY" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000016-01f4-0000-7a4e-828b00000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000016-01f4-0000-7a4e-828b00000000-m000005a5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000017-01f4-0000-c5ad-6e2d00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Warnings"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-c5ad-6e2d00000000-m80cbd8d4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbd8d4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000018-01f4-0000-77e1-e2d500000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'WARNING' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'WARNING' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000018-01f4-0000-77e1-e2d500000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-77e1-e2d500000000-m000005aa-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005aa-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000019-01f4-0000-3196-2aae00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Address Errors"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-3196-2aae00000000-m80cbd8e2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbd8e2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000001a-01f4-0000-b9d4-5bea00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'ERROR' AND "%2" = 'DI_ADDRESS_STG' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'ERROR' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."DI_ENTITY" = 'DI_ADDRESS_STG' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001a-01f4-0000-b9d4-5bea00000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001a-01f4-0000-b9d4-5bea00000000-m000005a5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001a-01f4-0000-b9d4-5bea00000000-m000005aa-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005aa-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000001b-01f4-0000-b4b1-e1bb00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Donations Errors"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001b-01f4-0000-b4b1-e1bb00000000-m80cbd8f2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbd8f2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000001c-01f4-0000-c642-62fd00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'ERROR' AND "%2" = 'DI_PAYMENT_STG' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'ERROR' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."DI_ENTITY" = 'DI_PAYMENT_STG' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001c-01f4-0000-c642-62fd00000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001c-01f4-0000-c642-62fd00000000-m000005a5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001c-01f4-0000-c642-62fd00000000-m000005aa-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005aa-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000001d-01f4-0000-a585-947c00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# GAD Errors"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001d-01f4-0000-a585-947c00000000-m80cbd8fe-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbd8fe-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000001e-01f4-0000-42cc-07c700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'ERROR' AND "%2" = 'DI_GAD_STG' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'ERROR' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."DI_ENTITY" = 'DI_GAD_STG' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001e-01f4-0000-42cc-07c700000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001e-01f4-0000-42cc-07c700000000-m000005a5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001e-01f4-0000-42cc-07c700000000-m000005aa-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005aa-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000001f-01f4-0000-b151-23ed00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Direct Debit Errors"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001f-01f4-0000-b151-23ed00000000-m80cbd90a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbd90a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000020-01f4-0000-a8be-370500000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'ERROR' AND "%2" = 'DI_DIRECT_DEBIT_STG' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'ERROR' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."DI_ENTITY" = 'DI_DIRECT_DEBIT_STG' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000020-01f4-0000-a8be-370500000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000020-01f4-0000-a8be-370500000000-m000005a5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000020-01f4-0000-a8be-370500000000-m000005aa-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005aa-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000021-01f4-0000-2bf9-624a00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Contact Info Errors"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000021-01f4-0000-2bf9-624a00000000-m80cbd916-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbd916-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000022-01f4-0000-8506-7d6600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'ERROR' AND "%2" = 'DI_CONTACT_INFO_STG' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'ERROR' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."DI_ENTITY" = 'DI_CONTACT_INFO_STG' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000022-01f4-0000-8506-7d6600000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000022-01f4-0000-8506-7d6600000000-m000005a5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000022-01f4-0000-8506-7d6600000000-m000005aa-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005aa-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000023-01f4-0000-1bc6-607100000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Suppressions Errors"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000023-01f4-0000-1bc6-607100000000-m80cbd922-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbd922-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000024-01f4-0000-208e-280800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'ERROR' AND "%2" = 'DI_SUPP_PREF_STG' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'ERROR' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."DI_ENTITY" = 'DI_SUPP_PREF_STG' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000024-01f4-0000-208e-280800000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000024-01f4-0000-208e-280800000000-m000005a5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000024-01f4-0000-208e-280800000000-m000005aa-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005aa-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000025-01f4-0000-e480-7bb800000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Campaign Membership Errors"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000025-01f4-0000-e480-7bb800000000-m80cbd92e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbd92e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000026-01f4-0000-15a9-e4a200000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'ERROR' AND "%2" = 'DI_CAMPAIGN_MEMBER_STG' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'ERROR' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."DI_ENTITY" = 'DI_CAMPAIGN_MEMBER_STG' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000026-01f4-0000-15a9-e4a200000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000026-01f4-0000-15a9-e4a200000000-m000005a5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000026-01f4-0000-15a9-e4a200000000-m000005aa-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005aa-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000027-01f4-0000-18b2-279b00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Address Warnings"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000027-01f4-0000-18b2-279b00000000-m80cbd946-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbd946-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000028-01f4-0000-721a-2adc00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'WARNING' AND "%2" = 'DI_ADDRESS_STG' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'WARNING' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."DI_ENTITY" = 'DI_ADDRESS_STG' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000028-01f4-0000-721a-2adc00000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000028-01f4-0000-721a-2adc00000000-m000005a5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000028-01f4-0000-721a-2adc00000000-m000005aa-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005aa-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000029-01f4-0000-6b10-3b6d00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Donations Warnings"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000029-01f4-0000-6b10-3b6d00000000-m80cbd952-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbd952-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000002a-01f4-0000-8028-952f00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'WARNING' AND "%2" = 'DI_PAYMENT_STG' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'WARNING' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."DI_ENTITY" = 'DI_PAYMENT_STG' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002a-01f4-0000-8028-952f00000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002a-01f4-0000-8028-952f00000000-m000005a5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002a-01f4-0000-8028-952f00000000-m000005aa-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005aa-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000002b-01f4-0000-bfe6-fe5200000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# GAD Warnings"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002b-01f4-0000-bfe6-fe5200000000-m80cbd95e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbd95e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000002c-01f4-0000-8bfb-b01700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'WARNING' AND "%2" = 'DI_GAD_STG' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'WARNING' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."DI_ENTITY" = 'DI_GAD_STG' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002c-01f4-0000-8bfb-b01700000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002c-01f4-0000-8bfb-b01700000000-m000005a5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002c-01f4-0000-8bfb-b01700000000-m000005aa-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005aa-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000002d-01f4-0000-b7cd-ecc500000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Direct Debit Warnings"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002d-01f4-0000-b7cd-ecc500000000-m80cbd96a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbd96a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000002e-01f4-0000-75b5-6cee00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'WARNING' AND "%2" = 'DI_DIRECT_DEBIT_STG' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'WARNING' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."DI_ENTITY" = 'DI_DIRECT_DEBIT_STG' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002e-01f4-0000-75b5-6cee00000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002e-01f4-0000-75b5-6cee00000000-m000005a5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000002e-01f4-0000-75b5-6cee00000000-m000005aa-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005aa-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000002f-01f4-0000-cfea-9a0b00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Contact Info Warnings"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002f-01f4-0000-cfea-9a0b00000000-m80cbd976-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbd976-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000030-01f4-0000-06e8-13b100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'WARNING' AND "%2" = 'DI_CONTACT_INFO_STG' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'WARNING' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."DI_ENTITY" = 'DI_CONTACT_INFO_STG' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000030-01f4-0000-06e8-13b100000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000030-01f4-0000-06e8-13b100000000-m000005a5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000030-01f4-0000-06e8-13b100000000-m000005aa-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005aa-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000031-01f4-0000-5c74-36c000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Suppressions Warnings"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000031-01f4-0000-5c74-36c000000000-m80cbd982-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbd982-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000032-01f4-0000-f958-ff9600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'WARNING' AND "%2" = 'DI_SUPP_PREF_STG' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'WARNING' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."DI_ENTITY" = 'DI_SUPP_PREF_STG' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000032-01f4-0000-f958-ff9600000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000032-01f4-0000-f958-ff9600000000-m000005a5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000032-01f4-0000-f958-ff9600000000-m000005aa-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005aa-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000033-01f4-0000-a67d-896b00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Campaign Membership Warnings"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000033-01f4-0000-a67d-896b00000000-m80cbd98e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbd98e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000034-01f4-0000-c2e7-967c00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'WARNING' AND "%2" = 'DI_CAMPAIGN_MEMBER_STG' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'WARNING' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."DI_ENTITY" = 'DI_CAMPAIGN_MEMBER_STG' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000034-01f4-0000-c2e7-967c00000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000034-01f4-0000-c2e7-967c00000000-m000005a5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a5-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000034-01f4-0000-c2e7-967c00000000-m000005aa-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005aa-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000035-01f4-0000-eae5-c2d600000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Attributes with Errors"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000035-01f4-0000-eae5-c2d600000000-m80cbf9a9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbf9a9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000036-01f4-0000-2d28-067600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'ERROR' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'ERROR' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."ATTRIBUTE" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000036-01f4-0000-2d28-067600000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000036-01f4-0000-2d28-067600000000-m000005a6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000037-01f4-0000-75d5-ec7a00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Transactions with Warnings"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000037-01f4-0000-75d5-ec7a00000000-m80cbf9bd-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbf9bd-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000038-01f4-0000-af7f-64a000000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'WARNING' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'WARNING' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."DI_TRANSACTION_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000038-01f4-0000-af7f-64a000000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000038-01f4-0000-af7f-64a000000000-m000005a0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000039-01f4-0000-bf34-e63a00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Entities with Warnings"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000039-01f4-0000-bf34-e63a00000000-m80cbf9c9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbf9c9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000003a-01f4-0000-d95d-606700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'WARNING' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'WARNING' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."DI_ENTITY" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003a-01f4-0000-d95d-606700000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003a-01f4-0000-d95d-606700000000-m000005a5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000003b-01f4-0000-4ff0-8d5400000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Attributes with Warnings"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003b-01f4-0000-4ff0-8d5400000000-m80cbf9d5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbf9d5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000003c-01f4-0000-98bf-1c7600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'WARNING' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'WARNING' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError"."ATTRIBUTE" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003c-01f4-0000-98bf-1c7600000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003c-01f4-0000-98bf-1c7600000000-m000005a6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m000005a6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m00000524-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m00000524-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m0000059e-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m00000d66-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m0000059e-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m0000059e-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m00000524-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/0000059e-0bb9-0000-714b-e31d00000000.xml#m00000d66-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<WhereClause mdsid="m0000003d-01f4-0000-6286-fe1b00000000" name="WhereClause">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</WhereClause>
+<GroupBy mdsid="m0000003e-01f4-0000-93a5-94da00000000" name="GroupBy">
+<ExprText><![CDATA[ GROUPBYLEVEL("%1", "%2", "%3", "%4", "%5", "%6", "%7", "%8", "%9", "%10", "%11")]]></ExprText>
+<ExprTextDesc><![CDATA[ GROUPBYLEVEL("Data Integration Reporting"."Hier - Date"."Detail", "Data Integration Reporting"."Hier - Processed Date"."Detail", "Data Integration Reporting"."Hier - Received Date"."Detail", "Data Integration Reporting"."Hier - Partner Account"."Partner Account Detail", "Data Integration Reporting"."Hier - Processing Batch"."Processing Batch Detail", "Data Integration Reporting"."Hier - Received File"."Received File Detail", "Data Integration Reporting"."Hier - Received File Transaction"."Received File Transaction Detail", "Data Integration Reporting"."Hier - Rectification User"."Rectification User Detail", "Data Integration Reporting"."Hier - Validation Result Details"."Validation Result Details Detail", "Data Integration Reporting"."Hier - Validation Rule"."Validation Rule Detail", "Data Integration Reporting"."Hier - Clock"."Minute")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000003e-01f4-0000-93a5-94da00000000-m80cbfeab-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cbfc64-07e3-0000-714b-e31d00000000.xml#m80cbfeab-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003e-01f4-0000-93a5-94da00000000-m80cbdbe3-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cbdbb7-07e3-0000-714b-e31d00000000.xml#m80cbdbe3-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003e-01f4-0000-93a5-94da00000000-m80cbdc3f-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cbdc13-07e3-0000-714b-e31d00000000.xml#m80cbdc3f-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003e-01f4-0000-93a5-94da00000000-m80cbfeb9-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cbd566-07e3-0000-714b-e31d00000000.xml#m80cbfeb9-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003e-01f4-0000-93a5-94da00000000-m80cbd9aa-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cbd9a9-07e3-0000-714b-e31d00000000.xml#m80cbd9aa-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003e-01f4-0000-93a5-94da00000000-m80cbd9b2-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cbd9b1-07e3-0000-714b-e31d00000000.xml#m80cbd9b2-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003e-01f4-0000-93a5-94da00000000-m80cbd9b6-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cbd9b5-07e3-0000-714b-e31d00000000.xml#m80cbd9b6-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003e-01f4-0000-93a5-94da00000000-m80cbe353-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cbe352-07e3-0000-714b-e31d00000000.xml#m80cbe353-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003e-01f4-0000-93a5-94da00000000-m80cbd9ba-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cbd9b9-07e3-0000-714b-e31d00000000.xml#m80cbd9ba-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003e-01f4-0000-93a5-94da00000000-m80cbd9be-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cbd9bd-07e3-0000-714b-e31d00000000.xml#m80cbd9be-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m0000003e-01f4-0000-93a5-94da00000000-m80cbf609-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cbf602-07e3-0000-714b-e31d00000000.xml#m80cbf609-07e9-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</GroupBy>
+<FragmentContent mdsid="m0000003f-01f4-0000-9b20-e76000000000" name="FragmentContent">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</FragmentContent>
+</LogicalTableSource>

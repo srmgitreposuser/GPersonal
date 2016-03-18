@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="mc0000000-07de-1544-af0b-0a3defa30000" name="Fact - Owning Party - FWS Income" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="mc0000003-07de-1544-af0b-0a3defa30000" name="Amount" isWriteable="false">
+<Description><![CDATA[Total amount from donations linked to the opportunity]]></Description>
+<MeasureDefn mdsid="m00000000-0804-1544-af0b-0a3defa30000" name="Measure" isCommutative="false">
+<AggrRule mdsid="mc0000000-0af6-1561-9e03-0a3ddf680000" name="AggRule_2050:8712251434725591" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-a6fb-4a0a00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - FWS Income"."Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-a6fb-4a0a00000000-mc0000003-07de-1544-af0b-0a3defa30000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/c0000000-07de-1544-af0b-0a3defa30000.xml#mc0000003-07de-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="mc0000001-4c81-1547-835d-0a3defa30000" name="AD_3900:8687971427976711">
+<Expr mdsid="m00000002-01f4-0000-ceb7-003b00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_INCOME_F"."AMOUNT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-ceb7-003b00000000-m00000001-00c7-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-00c7-1544-af0b-0a3defa30000.xml#m00000001-00c7-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m40000000-a3b6-1567-8c48-0a3ddf680000" name="# Opportunities" isWriteable="false">
+<Description><![CDATA[Number of Opportunities that have recieved Income]]></Description>
+<MeasureDefn mdsid="m80000000-a3bc-1567-8c48-0a3ddf680000" name="Measure" isCommutative="false">
+<AggrRule mdsid="mc0000000-e53b-1567-8c48-0a3ddf680000" name="AggRule_2050:8843681436522049" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-e573-867700000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Owning Party - FWS Income"."# Opportunities")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-e573-867700000000-m40000000-a3b6-1567-8c48-0a3ddf680000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/c0000000-07de-1544-af0b-0a3defa30000.xml#m40000000-a3b6-1567-8c48-0a3ddf680000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m40000001-a3b6-1567-8c48-0a3ddf680000" name="AD_3900:8843611436454677">
+<Expr mdsid="m00000004-01f4-0000-b6f0-689c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_INCOME_F"."OPTY_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-b6f0-689c00000000-m00000008-00c7-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-00c7-1544-af0b-0a3defa30000.xml#m00000008-00c7-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80000000-e53f-1567-8c48-0a3ddf680000" name="# Solicitors" isWriteable="false">
+<Description><![CDATA[Number of Solicitors who have income from a FWS Opportunity]]></Description>
+<MeasureDefn mdsid="mc0000000-e54b-1567-8c48-0a3ddf680000" name="Measure" isCommutative="false">
+<AggrRule mdsid="mc0000001-e54b-1567-8c48-0a3ddf680000" name="AggRule_2050:8843721436522049" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-f423-18d600000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Owning Party - FWS Income"."# Solicitors")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-f423-18d600000000-m80000000-e53f-1567-8c48-0a3ddf680000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/c0000000-07de-1544-af0b-0a3defa30000.xml#m80000000-e53f-1567-8c48-0a3ddf680000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="mc0000000-e53f-1567-8c48-0a3ddf680000" name="AD_3900:8843701436522049">
+<Expr mdsid="m00000006-01f4-0000-0d8e-180c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_FWS_INCOME_F"."SOLICITOR_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-0d8e-180c00000000-m0000000c-00c7-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-00c7-1544-af0b-0a3defa30000.xml#m0000000c-00c7-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m40000000-7cc5-15af-806e-0a0e2d8d0000" name="Income Banding" isDerived="true" isWriteable="false">
+<Description><![CDATA[Dynamic Income Banding - calculated based on the Amount fact/measure. Changes based on the columns in the report.
+The banding values are:
+0
+1. <£100
+2. £100 - <£5k
+3. £5k - <£25k
+4. £25k - <£100k
+5. £100k - <£500k
+6. £500k - <£1m
+7. ≥£1m]]></Description>
+<Expr mdsid="m00000007-01f4-0000-5694-e9af00000000" name="Expr">
+<ExprText><![CDATA[CASE WHEN 
+	"%1"  = 0
+THEN
+	'0'
+ELSE
+	CASE WHEN 
+		"%1" < 100
+	THEN
+		'1. <£100'
+	ELSE
+		CASE WHEN
+			"%1" < 5000
+		THEN
+			'2. £100 - <£5k'
+		ELSE
+			CASE WHEN
+				"%1" < 25000
+			THEN
+				'3. £5k - <£25k'
+			ELSE
+				CASE WHEN
+					"%1" < 100000
+				THEN
+					'4. £25k - <£100k'
+				ELSE
+					CASE WHEN
+						"%1" < 500000
+					THEN
+						'5. £100k - <£500k'
+					ELSE
+						CASE WHEN
+							"%1" < 1000000
+						THEN
+							'6. £500k - <£1m'
+						ELSE
+							CASE WHEN
+								"%1" >= 1000000
+							THEN
+								'7. ≥£1m'
+							END
+						END
+					END
+				END
+			END
+		END
+	END
+END
+]]></ExprText>
+<ExprTextDesc><![CDATA[CASE WHEN 
+	"Core 2"."Fact - Owning Party - FWS Income"."Amount"  = 0
+THEN
+	'0'
+ELSE
+	CASE WHEN 
+		"Core 2"."Fact - Owning Party - FWS Income"."Amount" < 100
+	THEN
+		'1. <£100'
+	ELSE
+		CASE WHEN
+			"Core 2"."Fact - Owning Party - FWS Income"."Amount" < 5000
+		THEN
+			'2. £100 - <£5k'
+		ELSE
+			CASE WHEN
+				"Core 2"."Fact - Owning Party - FWS Income"."Amount" < 25000
+			THEN
+				'3. £5k - <£25k'
+			ELSE
+				CASE WHEN
+					"Core 2"."Fact - Owning Party - FWS Income"."Amount" < 100000
+				THEN
+					'4. £25k - <£100k'
+				ELSE
+					CASE WHEN
+						"Core 2"."Fact - Owning Party - FWS Income"."Amount" < 500000
+					THEN
+						'5. £100k - <£500k'
+					ELSE
+						CASE WHEN
+							"Core 2"."Fact - Owning Party - FWS Income"."Amount" < 1000000
+						THEN
+							'6. £500k - <£1m'
+						ELSE
+							CASE WHEN
+								"Core 2"."Fact - Owning Party - FWS Income"."Amount" >= 1000000
+							THEN
+								'7. ≥£1m'
+							END
+						END
+					END
+				END
+			END
+		END
+	END
+END
+]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-5694-e9af00000000-mc0000003-07de-1544-af0b-0a3defa30000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/c0000000-07de-1544-af0b-0a3defa30000.xml#mc0000003-07de-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m40000001-7cc5-15af-806e-0a0e2d8d0000" name="AD_3900:1478521455289116">
+<Expr mdsid="m00000008-01f4-0000-97a3-e72a00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="mc0000000-07de-1544-af0b-0a3defa30000-mc0000002-07de-1544-af0b-0a3defa30000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/c0000002-07de-1544-af0b-0a3defa30000.xml#mc0000002-07de-1544-af0b-0a3defa30000"/>
+</RefTableSources>
+</LogicalTable>

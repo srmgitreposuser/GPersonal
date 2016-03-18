@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5aa0b-07f3-0000-714b-e31d00000000" name="Users" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1169" y="626" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55246-07d0-0000-714b-e31d00000000.xml#m80c55246-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c56b0d-07d6-0000-714b-e31d00000000" name="User Name" isWriteable="false">
+<AttrDefn mdsid="m80c68ee9-0f3c-0000-714b-e31d00000000" name="AD_3900:855371074282455">
+<Expr mdsid="m00000001-01f4-0000-dfdb-fba400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Analytics Usage"."Catalog"."dbo"."Dim_NQ_User"."LOGIN"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-dfdb-fba400000000-m80cada0d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cada0c-0bb9-0000-714b-e31d00000000.xml#m80cada0d-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56b0e-07d6-0000-714b-e31d00000000" name="Group Name" isWriteable="false">
+<Description><![CDATA[It is the Primary Group of the User which he belongs to and not all the Group/Responsibilities the user is having.]]></Description>
+<AttrDefn mdsid="m80c68eea-0f3c-0000-714b-e31d00000000" name="AD_3900:855381074282455">
+<Expr mdsid="m00000002-01f4-0000-83e3-51f700000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Analytics Usage"."Catalog"."dbo"."Dim_NQ_User"."RESP"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-83e3-51f700000000-m80cada0e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cada0c-0bb9-0000-714b-e31d00000000.xml#m80cada0e-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58cc7-07d8-0000-714b-e31d00000000" name="Users_Key" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58cc7-07d8-0000-714b-e31d00000000-m80c56b0d-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aa0b-07f3-0000-714b-e31d00000000.xml#m80c56b0d-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5aa0b-07f3-0000-714b-e31d00000000-m80cada21-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cada21-07f5-0000-714b-e31d00000000.xml#m80cada21-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9b1-07f3-0000-714b-e31d00000000" name="Fact - CRM - Customer Attrition" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="869" y="587" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c56667-07d6-0000-714b-e31d00000000" name="# Customers Lost" iconIndex="69" isWriteable="false">
+<Description><![CDATA["This is the count of customers that were lost  during a period, I.e, their ""Customer End Date"" lies in the period."]]></Description>
+<MeasureDefn mdsid="m80c5b119-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b832-0802-0000-714b-e31d00000000" name="AggRule_2050:180621074282429" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-569d-f0fc00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - CRM - Customer Attrition"."# Customers Lost")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-569d-f0fc00000000-m80c56667-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9b1-07f3-0000-714b-e31d00000000.xml#m80c56667-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68a44-0f3c-0000-714b-e31d00000000" name="AD_3900:834561074282455">
+<Expr mdsid="m00000002-01f4-0000-8a61-68ba00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  NOT "%1" IS NULL  THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  NOT "Oracle Data Warehouse"."Catalog"."dbo"."Fact_Secondary_W_PERSON_D_Customer Attrition_wrt Assets"."CUSTOMER_END_DT" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_Secondary_W_PERSON_D_Customer Attrition_wrt Assets"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-8a61-68ba00000000-m80c5d1f0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bef4-0bb9-0000-714b-e31d00000000.xml#m80c5d1f0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-8a61-68ba00000000-m80c5d143-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bef4-0bb9-0000-714b-e31d00000000.xml#m80c5d143-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56668-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80c68a45-0f3c-0000-714b-e31d00000000" name="AD_3900:834571074282455">
+<Expr mdsid="m00000003-01f4-0000-bb87-28f400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_Secondary_W_PERSON_D_Customer Attrition_wrt Assets"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-bb87-28f400000000-m80c5d143-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bef4-0bb9-0000-714b-e31d00000000.xml#m80c5d143-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58c82-07d8-0000-714b-e31d00000000" name="ROW_WID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58c82-07d8-0000-714b-e31d00000000-m80c56668-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9b1-07f3-0000-714b-e31d00000000.xml#m80c56668-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5a9b1-07f3-0000-714b-e31d00000000-m80c5abd9-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5abd9-07f5-0000-714b-e31d00000000.xml#m80c5abd9-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

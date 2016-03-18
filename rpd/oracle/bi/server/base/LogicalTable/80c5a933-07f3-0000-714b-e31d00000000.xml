@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a933-07f3-0000-714b-e31d00000000" name="Dim - Opportunity Hierarchy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1834" y="601" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c558e6-07d6-0000-714b-e31d00000000" name="Fixed Opportunity Hierarchy Level" isWriteable="false">
+<AttrDefn mdsid="m80c67d9f-0f3c-0000-714b-e31d00000000" name="AD_3900:796371074282455">
+<Expr mdsid="m00000001-01f4-0000-d485-98db00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."FIXED_HIER_LEVEL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-d485-98db00000000-m80c5c425-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c425-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c558e7-07d6-0000-714b-e31d00000000" name="Parent Opportunity Name" isWriteable="false">
+<AttrDefn mdsid="m80c67da0-0f3c-0000-714b-e31d00000000" name="AD_3900:796381074282455">
+<Expr mdsid="m00000002-01f4-0000-975d-de6300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN "%2" WHEN "%1" = 1 THEN "%3" WHEN "%1" = 2 THEN "%4" WHEN "%1" = 3 THEN "%5" WHEN "%1" = 4 THEN "%6" WHEN "%1" = 5 THEN "%7" WHEN "%1" = 6 THEN "%8" WHEN "%1" = 7 THEN "%9" WHEN "%1" = 8 THEN "%10" WHEN "%1" = 7 THEN "%10" ELSE "%10" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."FIXED_HIER_LEVEL" = 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."LVL1ANC_OPTY_NAME" WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."FIXED_HIER_LEVEL" = 1 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."LVL2ANC_OPTY_NAME" WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."FIXED_HIER_LEVEL" = 2 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."LVL3ANC_OPTY_NAME" WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."FIXED_HIER_LEVEL" = 3 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."LVL4ANC_OPTY_NAME" WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."FIXED_HIER_LEVEL" = 4 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."LVL5ANC_OPTY_NAME" WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."FIXED_HIER_LEVEL" = 5 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."LVL6ANC_OPTY_NAME" WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."FIXED_HIER_LEVEL" = 6 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."LVL7ANC_OPTY_NAME" WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."FIXED_HIER_LEVEL" = 7 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."LVL8ANC_OPTY_NAME" WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."FIXED_HIER_LEVEL" = 8 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."TOP_LVL_OPTY_NAME" WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."FIXED_HIER_LEVEL" = 7 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."TOP_LVL_OPTY_NAME" ELSE "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."TOP_LVL_OPTY_NAME" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-975d-de6300000000-m80c5c425-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c425-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-975d-de6300000000-m80c5c427-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c427-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-975d-de6300000000-m80c5c429-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c429-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-975d-de6300000000-m80c5c42b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c42b-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-975d-de6300000000-m80c5c42d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c42d-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-975d-de6300000000-m80c5c42f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c42f-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-975d-de6300000000-m80c5c431-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c431-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-975d-de6300000000-m80c5c433-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c433-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-975d-de6300000000-m80c5c435-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c435-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-975d-de6300000000-m80c5c438-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c438-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c558e8-07d6-0000-714b-e31d00000000" name="Level 1 Opportunity Id" isWriteable="false">
+<AttrDefn mdsid="m80c67da1-0f3c-0000-714b-e31d00000000" name="AD_3900:796391074282455">
+<Expr mdsid="m00000003-01f4-0000-8c8d-934600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."LVL1ANC_OPTY_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-8c8d-934600000000-m80c5c426-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c426-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c558e9-07d6-0000-714b-e31d00000000" name="Level 1 Opportunity Name" isWriteable="false">
+<AttrDefn mdsid="m80c67da2-0f3c-0000-714b-e31d00000000" name="AD_3900:796401074282455">
+<Expr mdsid="m00000004-01f4-0000-0690-5d9900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."LVL1ANC_OPTY_NAME"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-0690-5d9900000000-m80c5c427-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c427-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c558ea-07d6-0000-714b-e31d00000000" name="Level 2 Opportunity Id" isWriteable="false">
+<AttrDefn mdsid="m80c67da3-0f3c-0000-714b-e31d00000000" name="AD_3900:796411074282455">
+<Expr mdsid="m00000005-01f4-0000-d4a1-c52d00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."LVL2ANC_OPTY_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-d4a1-c52d00000000-m80c5c428-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c428-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c558eb-07d6-0000-714b-e31d00000000" name="Level 2 Opportunity Name" isWriteable="false">
+<AttrDefn mdsid="m80c67da4-0f3c-0000-714b-e31d00000000" name="AD_3900:796421074282455">
+<Expr mdsid="m00000006-01f4-0000-f91b-94a100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."LVL2ANC_OPTY_NAME"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-f91b-94a100000000-m80c5c429-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c429-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c558ec-07d6-0000-714b-e31d00000000" name="Level 3 Opportunity Id" isWriteable="false">
+<AttrDefn mdsid="m80c67da5-0f3c-0000-714b-e31d00000000" name="AD_3900:796431074282455">
+<Expr mdsid="m00000007-01f4-0000-bb00-9f8500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."LVL3ANC_OPTY_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-bb00-9f8500000000-m80c5c42a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c42a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c558ed-07d6-0000-714b-e31d00000000" name="Level 3 Opportunity Name" isWriteable="false">
+<AttrDefn mdsid="m80c67da6-0f3c-0000-714b-e31d00000000" name="AD_3900:796441074282455">
+<Expr mdsid="m00000008-01f4-0000-adcb-928400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."LVL3ANC_OPTY_NAME"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-adcb-928400000000-m80c5c42b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c42b-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c558ee-07d6-0000-714b-e31d00000000" name="Level 4 Opportunity Id" isWriteable="false">
+<AttrDefn mdsid="m80c67da7-0f3c-0000-714b-e31d00000000" name="AD_3900:796451074282455">
+<Expr mdsid="m00000009-01f4-0000-9f20-d61a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."LVL4ANC_OPTY_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-9f20-d61a00000000-m80c5c42c-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c42c-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c558ef-07d6-0000-714b-e31d00000000" name="Level 4 Opportunity Name" isWriteable="false">
+<AttrDefn mdsid="m80c67da8-0f3c-0000-714b-e31d00000000" name="AD_3900:796461074282455">
+<Expr mdsid="m0000000a-01f4-0000-2e7c-753c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."LVL4ANC_OPTY_NAME"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-2e7c-753c00000000-m80c5c42d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c42d-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c558f0-07d6-0000-714b-e31d00000000" name="Level 5 Opportunity Id" isWriteable="false">
+<AttrDefn mdsid="m80c67da9-0f3c-0000-714b-e31d00000000" name="AD_3900:796471074282455">
+<Expr mdsid="m0000000b-01f4-0000-2b07-146d00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."LVL5ANC_OPTY_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-2b07-146d00000000-m80c5c42e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c42e-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c558f1-07d6-0000-714b-e31d00000000" name="Level 5 Opportunity Name" isWriteable="false">
+<AttrDefn mdsid="m80c67daa-0f3c-0000-714b-e31d00000000" name="AD_3900:796481074282455">
+<Expr mdsid="m0000000c-01f4-0000-b5ad-154300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."LVL5ANC_OPTY_NAME"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-b5ad-154300000000-m80c5c42f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c42f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c558f2-07d6-0000-714b-e31d00000000" name="Level 6 Opportunity Id" isWriteable="false">
+<AttrDefn mdsid="m80c67dab-0f3c-0000-714b-e31d00000000" name="AD_3900:796491074282455">
+<Expr mdsid="m0000000d-01f4-0000-3515-911f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."LVL6ANC_OPTY_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-3515-911f00000000-m80c5c430-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c430-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c558f3-07d6-0000-714b-e31d00000000" name="Level 6 Opportunity Name" isWriteable="false">
+<AttrDefn mdsid="m80c67dac-0f3c-0000-714b-e31d00000000" name="AD_3900:796501074282455">
+<Expr mdsid="m0000000e-01f4-0000-4556-4cbd00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."LVL6ANC_OPTY_NAME"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-4556-4cbd00000000-m80c5c431-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c431-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c558f4-07d6-0000-714b-e31d00000000" name="Level 7 Opportunity Id" isWriteable="false">
+<AttrDefn mdsid="m80c67dad-0f3c-0000-714b-e31d00000000" name="AD_3900:796511074282455">
+<Expr mdsid="m0000000f-01f4-0000-f5c7-3fb900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."LVL7ANC_OPTY_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-f5c7-3fb900000000-m80c5c432-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c432-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c558f5-07d6-0000-714b-e31d00000000" name="Level 7 Opportunity Name" isWriteable="false">
+<AttrDefn mdsid="m80c67dae-0f3c-0000-714b-e31d00000000" name="AD_3900:796521074282455">
+<Expr mdsid="m00000010-01f4-0000-de1b-ad3d00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."LVL7ANC_OPTY_NAME"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-de1b-ad3d00000000-m80c5c433-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c433-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c558f6-07d6-0000-714b-e31d00000000" name="Level 8 Opportunity Id" isWriteable="false">
+<AttrDefn mdsid="m80c67daf-0f3c-0000-714b-e31d00000000" name="AD_3900:796531074282455">
+<Expr mdsid="m00000011-01f4-0000-92fa-8d0200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."LVL8ANC_OPTY_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-92fa-8d0200000000-m80c5c434-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c434-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c558f7-07d6-0000-714b-e31d00000000" name="Level 8 Opportunity Name" isWriteable="false">
+<AttrDefn mdsid="m80c67db0-0f3c-0000-714b-e31d00000000" name="AD_3900:796541074282455">
+<Expr mdsid="m00000012-01f4-0000-9e73-4f0c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."LVL8ANC_OPTY_NAME"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-9e73-4f0c00000000-m80c5c435-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c435-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c558f8-07d6-0000-714b-e31d00000000" name="Top Level Opportunity Id" isWriteable="false">
+<AttrDefn mdsid="m80c67db1-0f3c-0000-714b-e31d00000000" name="AD_3900:796551074282455">
+<Expr mdsid="m00000013-01f4-0000-6641-2b0800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."TOP_LVL_OPTY_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-6641-2b0800000000-m80c5c437-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c437-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c558f9-07d6-0000-714b-e31d00000000" name="Top Level Opportunity Name" isWriteable="false">
+<AttrDefn mdsid="m80c67db2-0f3c-0000-714b-e31d00000000" name="AD_3900:796561074282455">
+<Expr mdsid="m00000014-01f4-0000-23cb-32ee00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."TOP_LVL_OPTY_NAME"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-23cb-32ee00000000-m80c5c438-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c438-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c558fa-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80c67db3-0f3c-0000-714b-e31d00000000" name="AD_3900:796571074282455">
+<Expr mdsid="m00000015-01f4-0000-ef77-7f7a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_DH"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-ef77-7f7a00000000-m80c5c436-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea7-0bb9-0000-714b-e31d00000000.xml#m80c5c436-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56ec1-07d6-0000-714b-e31d00000000" name="Base Opportunity Name" isWriteable="false">
+<AttrDefn mdsid="m80c693d3-0f3c-0000-714b-e31d00000000" name="AD_3900:3454381145667119">
+<Expr mdsid="m00000016-01f4-0000-ca21-5fd800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_OPTY_D"."OPTY_NAME"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000016-01f4-0000-ca21-5fd800000000-m80c5c3dd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea6-0bb9-0000-714b-e31d00000000.xml#m80c5c3dd-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58be5-07d8-0000-714b-e31d00000000" name="W_OPTY_DH_Key" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58be5-07d8-0000-714b-e31d00000000-m80c558fa-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a933-07f3-0000-714b-e31d00000000.xml#m80c558fa-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5a933-07f3-0000-714b-e31d00000000-m80c5ab38-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ab38-07f5-0000-714b-e31d00000000.xml#m80c5ab38-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

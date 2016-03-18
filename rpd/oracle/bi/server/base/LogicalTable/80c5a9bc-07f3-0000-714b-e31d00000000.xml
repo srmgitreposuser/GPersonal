@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9bc-07f3-0000-714b-e31d00000000" name="Fact - CRM - Active Customer History" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="665" y="310" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c5676f-07d6-0000-714b-e31d00000000" name="# Active Customers" iconIndex="69" isWriteable="false">
+<Description><![CDATA[This is the count of customers that are active at any time during a specified period. To be used in combination with Relationship period date information. This will work only with attributes from Contact folder]]></Description>
+<MeasureDefn mdsid="m80c5b1a5-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b8b4-0802-0000-714b-e31d00000000" name="AggRule_2050:182151074282429" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-8385-de4000000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Active Customer History"."# Active Customers")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-8385-de4000000000-m80c5676f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9bc-07f3-0000-714b-e31d00000000.xml#m80c5676f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68b4c-0f3c-0000-714b-e31d00000000" name="AD_3900:838351074282455">
+<Expr mdsid="m00000002-01f4-0000-b68a-f45a00000000" name="Expr">
+<ExprText><![CDATA[1]]></ExprText>
+<ExprTextDesc><![CDATA[1]]></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56770-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80c68b4d-0f3c-0000-714b-e31d00000000" name="AD_3900:838361074282455">
+<Expr mdsid="m00000003-01f4-0000-13f0-938000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_PERSON_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-13f0-938000000000-m80c5c5a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beac-0bb9-0000-714b-e31d00000000.xml#m80c5c5a4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58c8b-07d8-0000-714b-e31d00000000" name="ROW_WID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58c8b-07d8-0000-714b-e31d00000000-m80c56770-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9bc-07f3-0000-714b-e31d00000000.xml#m80c56770-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5a9bc-07f3-0000-714b-e31d00000000-m80c5abe7-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5abe7-07f5-0000-714b-e31d00000000.xml#m80c5abe7-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

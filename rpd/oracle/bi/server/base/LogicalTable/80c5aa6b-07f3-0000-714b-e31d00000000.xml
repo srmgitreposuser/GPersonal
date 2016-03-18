@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5aa6b-07f3-0000-714b-e31d00000000" name="Fact - CRM - Payment Archived" iconIndex="74" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1814" y="154" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c576db-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80c69bed-0f3c-0000-714b-e31d00000000" name="AD_3900:5571481262089231">
+<Expr mdsid="m00000001-01f4-0000-914a-15f000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ORDER_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-914a-15f000000000-m80c5e7d8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf76-0bb9-0000-714b-e31d00000000.xml#m80c5e7d8-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576dc-07d6-0000-714b-e31d00000000" name="---------------------New Metrics-------------------------" isWriteable="false">
+<AttrDefn mdsid="m80c69bee-0f3c-0000-714b-e31d00000000" name="AD_3900:5571591262089231">
+<Expr mdsid="m00000002-01f4-0000-b6ea-f15e00000000" name="Expr">
+<ExprText><![CDATA[1]]></ExprText>
+<ExprTextDesc><![CDATA[1]]></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576dd-07d6-0000-714b-e31d00000000" name="Max Donation Amount" iconIndex="93" isWriteable="false">
+<Description><![CDATA[This metric takes the max donation across all products]]></Description>
+<MeasureDefn mdsid="m80c5b445-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb6f-0802-0000-714b-e31d00000000" name="AggRule_2050:5569611262089231" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-5d27-54de00000000" name="Expr">
+<ExprText><![CDATA[ MAX("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ MAX("Core"."Fact - CRM - Payment Archived"."Max Donation Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-5d27-54de00000000-m80c576dd-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6b-07f3-0000-714b-e31d00000000.xml#m80c576dd-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69bef-0f3c-0000-714b-e31d00000000" name="AD_3900:5571601262089231">
+<Expr mdsid="m00000004-01f4-0000-53cd-013a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PAYMENT_F_ARCH"."PAY_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-53cd-013a00000000-m80c6489b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0fa-0bb9-0000-714b-e31d00000000.xml#m80c6489b-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576de-07d6-0000-714b-e31d00000000" name="Actual Income" iconIndex="93" isWriteable="false">
+<Description><![CDATA[This metric sums the value of individual donations (donation.amount)]]></Description>
+<MeasureDefn mdsid="m80c5b446-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb71-0802-0000-714b-e31d00000000" name="AggRule_2050:5575011262101543" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-182e-397400000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Payment Archived"."Actual Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-182e-397400000000-m80c576de-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6b-07f3-0000-714b-e31d00000000.xml#m80c576de-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69bf0-0f3c-0000-714b-e31d00000000" name="AD_3900:5571611262089231">
+<Expr mdsid="m00000006-01f4-0000-4c50-9c8900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PAYMENT_F_ARCH"."PAY_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-4c50-9c8900000000-m80c6489b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0fa-0bb9-0000-714b-e31d00000000.xml#m80c6489b-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576df-07d6-0000-714b-e31d00000000" name="# Gift Aidable" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b447-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb72-0802-0000-714b-e31d00000000" name="AggRule_2050:5575021262101543" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-a126-12f500000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Payment Archived"."# Gift Aidable")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-a126-12f500000000-m80c576df-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6b-07f3-0000-714b-e31d00000000.xml#m80c576df-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69bf1-0f3c-0000-714b-e31d00000000" name="AD_3900:5571621262089231">
+<Expr mdsid="m00000008-01f4-0000-cdec-8eb700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Cash Gift Aidable' OR "%1" = 'CoG Gift Aidable' THEN 1 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PAYMENT_F_ARCH"."DONATION_GA_STATUS" = 'Cash Gift Aidable' OR "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PAYMENT_F_ARCH"."DONATION_GA_STATUS" = 'CoG Gift Aidable' THEN 1 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-cdec-8eb700000000-m80c655e0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0fa-0bb9-0000-714b-e31d00000000.xml#m80c655e0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576e0-07d6-0000-714b-e31d00000000" name="Last Donation (All Products)" iconIndex="93" isWriteable="false">
+<Description><![CDATA[This metric calculates the last donation across all products]]></Description>
+<MeasureDefn mdsid="m80c5b448-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb73-0802-0000-714b-e31d00000000" name="AggRule_2050:5575311262101543" isDefault="true">
+<Expr mdsid="m00000009-01f4-0000-9269-ec2a00000000" name="Expr">
+<ExprText><![CDATA[ MAX("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ MAX("Core"."Fact - CRM - Payment Archived"."Last Donation (All Products)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-9269-ec2a00000000-m80c576e0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6b-07f3-0000-714b-e31d00000000.xml#m80c576e0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69bf2-0f3c-0000-714b-e31d00000000" name="AD_3900:5571661262089231">
+<Expr mdsid="m0000000a-01f4-0000-ae52-21be00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_DAY_D_Donation_Date"."DAY_DT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-ae52-21be00000000-m80c62fe7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c092-0bb9-0000-714b-e31d00000000.xml#m80c62fe7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576e1-07d6-0000-714b-e31d00000000" name="Max Cash Gift" iconIndex="62" isWriteable="false">
+<MeasureDefn mdsid="m80c5b449-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb70-0802-0000-714b-e31d00000000" name="AggRule_2050:5569701262089231" isDefault="true">
+<Expr mdsid="m0000000b-01f4-0000-09f5-7e2c00000000" name="Expr">
+<ExprText><![CDATA[ MAX("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ MAX("Core"."Fact - CRM - Payment Archived"."Max Cash Gift")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-09f5-7e2c00000000-m80c576e1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6b-07f3-0000-714b-e31d00000000.xml#m80c576e1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69bf3-0f3c-0000-714b-e31d00000000" name="AD_3900:5571691262089231">
+<Expr mdsid="m0000000c-01f4-0000-df39-519f00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Cash' THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PAYMENT_F_ARCH"."DONATION_TYPE" = 'Cash' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PAYMENT_F_ARCH"."PAY_AMT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-df39-519f00000000-m80c655e2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0fa-0bb9-0000-714b-e31d00000000.xml#m80c655e2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-df39-519f00000000-m80c6489b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0fa-0bb9-0000-714b-e31d00000000.xml#m80c6489b-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576e2-07d6-0000-714b-e31d00000000" name="Donation Amount Inc. Giftaid" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b44a-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb74-0802-0000-714b-e31d00000000" name="AggRule_2050:5575371262101543" isDefault="true">
+<Expr mdsid="m0000000d-01f4-0000-6626-06f800000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Payment Archived"."Donation Amount Inc. Giftaid")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-6626-06f800000000-m80c576e2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6b-07f3-0000-714b-e31d00000000.xml#m80c576e2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69bf4-0f3c-0000-714b-e31d00000000" name="AD_3900:5571841262089231">
+<Expr mdsid="m0000000e-01f4-0000-fdc7-df3e00000000" name="Expr">
+<ExprText><![CDATA["%1" + "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PAYMENT_F_ARCH"."PAY_AMT" + "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PAYMENT_F_ARCH"."AMT_EARN_TD"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-fdc7-df3e00000000-m80c6489b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0fa-0bb9-0000-714b-e31d00000000.xml#m80c6489b-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-fdc7-df3e00000000-m80c64852-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0fa-0bb9-0000-714b-e31d00000000.xml#m80c64852-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576e3-07d6-0000-714b-e31d00000000" name="Gift Aid Amount" iconIndex="93" isWriteable="false">
+<Description><![CDATA[This metric calculates the amount of gift aid associated with donations (donation.gift aid amount)]]></Description>
+<MeasureDefn mdsid="m80c5b44b-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb75-0802-0000-714b-e31d00000000" name="AggRule_2050:5575421262101543" isDefault="true">
+<Expr mdsid="m0000000f-01f4-0000-6970-2f3200000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Payment Archived"."Gift Aid Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-6970-2f3200000000-m80c576e3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6b-07f3-0000-714b-e31d00000000.xml#m80c576e3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69bf5-0f3c-0000-714b-e31d00000000" name="AD_3900:5571971262089231">
+<Expr mdsid="m00000010-01f4-0000-7247-5c1700000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PAYMENT_F_ARCH"."AMT_EARN_TD"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-7247-5c1700000000-m80c64852-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0fa-0bb9-0000-714b-e31d00000000.xml#m80c64852-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576e4-07d6-0000-714b-e31d00000000" name="Gift Aid Processed" iconIndex="68" isWriteable="false">
+<Description><![CDATA[This metric calculates the total amount of gift aid processed. This metric relys on information bought over from CC / RE and uses a proccessed flag (IF donation.gift aid proccessed flag = Y then donation.gift aid amount)]]></Description>
+<MeasureDefn mdsid="m80c5b44c-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb76-0802-0000-714b-e31d00000000" name="AggRule_2050:5575471262101543" isDefault="true">
+<Expr mdsid="m00000011-01f4-0000-a5cc-6a3c00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Payment Archived"."Gift Aid Processed")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-a5cc-6a3c00000000-m80c576e4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6b-07f3-0000-714b-e31d00000000.xml#m80c576e4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69bf6-0f3c-0000-714b-e31d00000000" name="AD_3900:5572011262089231">
+<Expr mdsid="m00000012-01f4-0000-34f6-34dc00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IN ('Cash Gift Aided', 'Other Gift Aided', 'CoG Gift Aided') THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PAYMENT_F_ARCH"."DONATION_GA_STATUS" IN ('Cash Gift Aided', 'Other Gift Aided', 'CoG Gift Aided') THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PAYMENT_F_ARCH"."AMT_EARN_TD" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-34f6-34dc00000000-m80c655e0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0fa-0bb9-0000-714b-e31d00000000.xml#m80c655e0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000012-01f4-0000-34f6-34dc00000000-m80c64852-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0fa-0bb9-0000-714b-e31d00000000.xml#m80c64852-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576e5-07d6-0000-714b-e31d00000000" name="# of Cash Payments" iconIndex="93" isWriteable="false">
+<Description><![CDATA[This metric counts the number of cash donations recieved.]]></Description>
+<MeasureDefn mdsid="m80c5b44d-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb77-0802-0000-714b-e31d00000000" name="AggRule_2050:5575551262101543" isDefault="true">
+<Expr mdsid="m00000013-01f4-0000-1745-66c500000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Payment Archived"."# of Cash Payments")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-1745-66c500000000-m80c576e5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6b-07f3-0000-714b-e31d00000000.xml#m80c576e5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69bf7-0f3c-0000-714b-e31d00000000" name="AD_3900:5572291262089231">
+<Expr mdsid="m00000014-01f4-0000-5f73-748d00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Cash' THEN 1 ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PAYMENT_F_ARCH"."DONATION_TYPE" = 'Cash' THEN 1 ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-5f73-748d00000000-m80c655e2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0fa-0bb9-0000-714b-e31d00000000.xml#m80c655e2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c576e6-07d6-0000-714b-e31d00000000" name="Value Cash Payments" iconIndex="93" isWriteable="false">
+<Description><![CDATA[This metric sums the value of cash donations made.]]></Description>
+<MeasureDefn mdsid="m80c5b44e-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bc74-0802-0000-714b-e31d00000000" name="AggRule_2050:5882561277222403" isDefault="true">
+<Expr mdsid="m00000015-01f4-0000-a4a9-716800000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - CRM - Payment Archived"."Value Cash Payments")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-a4a9-716800000000-m80c576e6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6b-07f3-0000-714b-e31d00000000.xml#m80c576e6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69bf8-0f3c-0000-714b-e31d00000000" name="AD_3900:5572301262089231">
+<Expr mdsid="m00000016-01f4-0000-e74f-3bb700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Cash' THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PAYMENT_F_ARCH"."DONATION_TYPE" = 'Cash' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PAYMENT_F_ARCH"."PAY_AMT" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000016-01f4-0000-e74f-3bb700000000-m80c655e2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0fa-0bb9-0000-714b-e31d00000000.xml#m80c655e2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000016-01f4-0000-e74f-3bb700000000-m80c6489b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0fa-0bb9-0000-714b-e31d00000000.xml#m80c6489b-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57753-07d6-0000-714b-e31d00000000" name="# of Donations" iconIndex="93" isWriteable="false">
+<MeasureDefn mdsid="m80c5b455-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb7c-0802-0000-714b-e31d00000000" name="AggRule_2050:5624361264183391" isDefault="true">
+<Expr mdsid="m00000017-01f4-0000-0234-0cc000000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Payment Archived"."# of Donations")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-0234-0cc000000000-m80c57753-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa6b-07f3-0000-714b-e31d00000000.xml#m80c57753-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69c65-0f3c-0000-714b-e31d00000000" name="AD_3900:5624341264183391">
+<Expr mdsid="m00000018-01f4-0000-314c-024800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PAYMENT_F_ARCH"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000018-01f4-0000-314c-024800000000-m80c64839-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c0fa-0bb9-0000-714b-e31d00000000.xml#m80c64839-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58e20-07d8-0000-714b-e31d00000000" name="W_ORDERITEM_F_KEY" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58e20-07d8-0000-714b-e31d00000000-m80c576db-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aa6b-07f3-0000-714b-e31d00000000.xml#m80c576db-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5aa6b-07f3-0000-714b-e31d00000000-m80c5acc5-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5acc5-07f5-0000-714b-e31d00000000.xml#m80c5acc5-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c5aa6b-07f3-0000-714b-e31d00000000-m80c5acc6-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5acc6-07f5-0000-714b-e31d00000000.xml#m80c5acc6-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

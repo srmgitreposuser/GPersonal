@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<InitBlock mdsid="m80c67c57-0bd9-0000-714b-e31d00000000" name="Orgs for Org-Based Security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isSessionVar="true" isRowWiseInit="true" isRowWiseCacheEnabled="false" isEnabled="false" refreshPeriod="86400" connectionPoolRef="/oracle/bi/server/base/ConnectionPool/80c67bc0-0bd5-0000-714b-e31d00000000.xml#m80c67bc0-0bd5-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[select distinct 
+   'ORGANIZATION', 
+   PRR.SUB_PARTY_ID
+from 
+   VALUEOF(TBO).S_POSTN P, 
+   VALUEOF(TBO).S_USER U, 
+   VALUEOF(TBO).S_PARTY_PER PP, 
+   VALUEOF(TBO).S_PARTY_RPT_REL PRR
+where  
+   U.ROW_ID=PP.PERSON_ID and P.ROW_ID=PP.PARTY_ID and 
+   PRR.PARTY_ID = P.BU_ID  and PRR.PARTY_TYPE_CD = 'Organization' and 
+   U.LOGIN = ':USER']]></Value>
+</DBMapItem>
+<RefPredecessors>
+<RefInitBlock refId="m80c67c57-0bd9-0000-714b-e31d00000000-m80c67c4e-0bd9-0000-714b-e31d00000000" predecessorRef="/oracle/bi/server/base/InitBlock/80c67c4e-0bd9-0000-714b-e31d00000000.xml#m80c67c4e-0bd9-0000-714b-e31d00000000"/>
+</RefPredecessors>
+<InitString><![CDATA[select distinct 
+   'ORGANIZATION', 
+   PRR.SUB_PARTY_ID
+from 
+   VALUEOF(TBO).S_POSTN P, 
+   VALUEOF(TBO).S_USER U, 
+   VALUEOF(TBO).S_PARTY_PER PP, 
+   VALUEOF(TBO).S_PARTY_RPT_REL PRR
+where  
+   U.ROW_ID=PP.PERSON_ID and P.ROW_ID=PP.PARTY_ID and 
+   PRR.PARTY_ID = P.BU_ID  and PRR.PARTY_TYPE_CD = 'Organization' and 
+   U.LOGIN = ':USER']]></InitString>
+</InitBlock>

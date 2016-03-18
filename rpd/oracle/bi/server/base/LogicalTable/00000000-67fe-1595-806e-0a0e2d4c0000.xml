@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m00000000-67fe-1595-806e-0a0e2d4c0000" name="Fact - From Stage Transition - Campaign History" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80000000-68c4-1595-806e-0a0e2d4c0000" name="Audience Volume" isWriteable="false">
+<Description><![CDATA[The total number of Supporters that were associated to the Campaign and passed data cleanse]]></Description>
+<MeasureDefn mdsid="m40000015-e9c8-15a9-806e-0a0e2da00000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m40000016-e9c8-15a9-806e-0a0e2da00000" name="AggRule_2050:1473951453827873" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-6c39-2a2b00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - From Stage Transition - Campaign History"."Audience Volume")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-6c39-2a2b00000000-m80000000-68c4-1595-806e-0a0e2d4c0000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00000000-67fe-1595-806e-0a0e2d4c0000.xml#m80000000-68c4-1595-806e-0a0e2d4c0000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m000000f9-e9ca-15a9-806e-0a0e2da00000" name="AD_3900:1476941453827880">
+<Expr mdsid="m00000002-01f4-0000-873b-1ef500000000" name="Expr">
+<ExprText><![CDATA[CASE  WHEN "%1" = 'Passed' THEN   "%2"   ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Contact_Outcome"."VAL" = 'Passed' THEN   "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_CAMP_HIST_A_StageTransFrom"."CAMP_CON_PARTY_CNT"   ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-873b-1ef500000000-m80c5f2bd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfd3-0bb9-0000-714b-e31d00000000.xml#m80c5f2bd-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-873b-1ef500000000-mc0000001-573b-155e-a39c-0a0e0f1b0000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80000000-573b-155e-a39c-0a0e0f1b0000.xml#mc0000001-573b-155e-a39c-0a0e0f1b0000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m00000000-67fe-1595-806e-0a0e2d4c0000-m800000c9-687f-1595-806e-0a0e2d4c0000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/800000c9-687f-1595-806e-0a0e2d4c0000.xml#m800000c9-687f-1595-806e-0a0e2d4c0000"/>
+<RefLogicalTableSource refId="m00000000-67fe-1595-806e-0a0e2d4c0000-m80000015-68b0-1595-806e-0a0e2d4c0000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80000015-68b0-1595-806e-0a0e2d4c0000.xml#m80000015-68b0-1595-806e-0a0e2d4c0000"/>
+</RefTableSources>
+</LogicalTable>

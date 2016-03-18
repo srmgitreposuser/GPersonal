@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80cb7427-07f3-0000-714b-e31d00000000" name="Fact - Version Metrics" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1178" y="259" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80cb7798-07d6-0000-714b-e31d00000000" name="-- For Donations Subject Area" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000001-01f4-0000-e847-413200000000" name="Expr">
+<ExprText><![CDATA[1]]></ExprText>
+<ExprTextDesc><![CDATA[1]]></ExprTextDesc>
+</Expr>
+<AttrDefn mdsid="m80cb7799-0f3c-0000-714b-e31d00000000" name="AD_3900:8381721387378955">
+<Expr mdsid="m00000002-01f4-0000-361b-ff8b00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb7479-07d6-0000-714b-e31d00000000" name="Actual Total Cost" isWriteable="false">
+<Description><![CDATA[The total actual cost associated with the version.]]></Description>
+<MeasureDefn mdsid="m80cb747b-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb747d-0802-0000-714b-e31d00000000" name="AggRule_2050:8376321387292180" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-c819-483b00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Version Metrics"."Actual Total Cost")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-c819-483b00000000-m80cb7479-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb7427-07f3-0000-714b-e31d00000000.xml#m80cb7479-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb747f-0f3c-0000-714b-e31d00000000" name="AD_3900:8376331387292180">
+<Expr mdsid="m00000004-01f4-0000-b116-f50000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OFFER_F_OwningPartyVersionMetrics"."X_SRM_ACT_TCOST"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-b116-f50000000000-m80cb5b35-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb5b2b-0bb9-0000-714b-e31d00000000.xml#m80cb5b35-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb7485-07d6-0000-714b-e31d00000000" name="Forecast Total Cost" isWriteable="false">
+<Description><![CDATA[The total forecast cost associated with the version.]]></Description>
+<MeasureDefn mdsid="m80cb7487-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb7489-0802-0000-714b-e31d00000000" name="AggRule_2050:8376401387292180" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-a712-5ac100000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Version Metrics"."Forecast Total Cost")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-a712-5ac100000000-m80cb7485-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb7427-07f3-0000-714b-e31d00000000.xml#m80cb7485-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb748b-0f3c-0000-714b-e31d00000000" name="AD_3900:8376411387292180">
+<Expr mdsid="m00000006-01f4-0000-59f0-d95100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OFFER_F_OwningPartyVersionMetrics"."X_SRM_FCT_TCOST"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-59f0-d95100000000-m80cb5b36-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb5b2b-0bb9-0000-714b-e31d00000000.xml#m80cb5b36-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb7491-07d6-0000-714b-e31d00000000" name="Budget Total Cost" isWriteable="false">
+<Description><![CDATA[The total budget cost associated with the version.]]></Description>
+<MeasureDefn mdsid="m80cb7493-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb7495-0802-0000-714b-e31d00000000" name="AggRule_2050:8376481387292180" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-c56b-d0f600000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Version Metrics"."Budget Total Cost")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-c56b-d0f600000000-m80cb7491-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb7427-07f3-0000-714b-e31d00000000.xml#m80cb7491-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb7497-0f3c-0000-714b-e31d00000000" name="AD_3900:8376491387292180">
+<Expr mdsid="m00000008-01f4-0000-2652-3b4700000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OFFER_F_OwningPartyVersionMetrics"."X_SRM_BGT_TCOST"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-2652-3b4700000000-m80cb5b37-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb5b2b-0bb9-0000-714b-e31d00000000.xml#m80cb5b37-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb777e-07d6-0000-714b-e31d00000000" name="-- Budgeted Version Metrics" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000009-01f4-0000-88fb-8e3600000000" name="Expr">
+<ExprText><![CDATA[1]]></ExprText>
+<ExprTextDesc><![CDATA[1]]></ExprTextDesc>
+</Expr>
+<AttrDefn mdsid="m80cb777f-0f3c-0000-714b-e31d00000000" name="AD_3900:8381571387378729">
+<Expr mdsid="m0000000a-01f4-0000-6c92-1a1800000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb7765-07d6-0000-714b-e31d00000000" name="Budgeted Expenditure" isWriteable="false">
+<MeasureDefn mdsid="m80cb7774-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb7785-0802-0000-714b-e31d00000000" name="AggRule_2050:8381601387378765" isDefault="true">
+<Expr mdsid="m0000000b-01f4-0000-13b1-e22400000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Version Metrics"."Budgeted Expenditure")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-13b1-e22400000000-m80cb7765-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb7427-07f3-0000-714b-e31d00000000.xml#m80cb7765-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb7766-0f3c-0000-714b-e31d00000000" name="AD_3900:8381401387378676">
+<Expr mdsid="m0000000c-01f4-0000-3dfb-1bde00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OFFER_F_OwningPartyVersionMetrics"."X_SRM_BGT_TCOST"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-3dfb-1bde00000000-m80cb5b37-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb5b2b-0bb9-0000-714b-e31d00000000.xml#m80cb5b37-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb776a-07d6-0000-714b-e31d00000000" name="Budgeted Income" isWriteable="false">
+<MeasureDefn mdsid="m80cb7776-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb7777-0802-0000-714b-e31d00000000" name="AggregationRule" isDefault="true">
+<Expr mdsid="m0000000d-01f4-0000-8981-148900000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Version Metrics"."Budgeted Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-8981-148900000000-m80cb776a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb7427-07f3-0000-714b-e31d00000000.xml#m80cb776a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb776b-0f3c-0000-714b-e31d00000000" name="AD_3900:8381431387378688">
+<Expr mdsid="m0000000e-01f4-0000-9839-e51300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OFFER_F_OwningPartyVersionMetrics"."X_SRM_BGT_INCME"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-9839-e51300000000-m80cb5b34-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb5b2b-0bb9-0000-714b-e31d00000000.xml#m80cb5b34-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb7782-07d6-0000-714b-e31d00000000" name="-- Forecasted Version Metrics" isDerived="true" isWriteable="false">
+<Expr mdsid="m0000000f-01f4-0000-244c-0a5900000000" name="Expr">
+<ExprText><![CDATA[1]]></ExprText>
+<ExprTextDesc><![CDATA[1]]></ExprTextDesc>
+</Expr>
+<AttrDefn mdsid="m80cb7783-0f3c-0000-714b-e31d00000000" name="AD_3900:8381591387378737">
+<Expr mdsid="m00000010-01f4-0000-0a01-07b400000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb776e-07d6-0000-714b-e31d00000000" name="Forecasted Expenditure" isWriteable="false">
+<Description><![CDATA[Forecasted Version Expenditure]]></Description>
+<MeasureDefn mdsid="m80cb7778-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb999a-0802-0000-714b-e31d00000000" name="AggRule_2050:8439111389608166" isDefault="true">
+<Expr mdsid="m00000011-01f4-0000-3016-cf0800000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Version Metrics"."Forecasted Expenditure")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-3016-cf0800000000-m80cb776e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb7427-07f3-0000-714b-e31d00000000.xml#m80cb776e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb776f-0f3c-0000-714b-e31d00000000" name="AD_3900:8381451387378696">
+<Expr mdsid="m00000012-01f4-0000-3765-4af000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OFFER_F_OwningPartyVersionMetrics"."X_SRM_FCT_TCOST"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-3765-4af000000000-m80cb5b36-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb5b2b-0bb9-0000-714b-e31d00000000.xml#m80cb5b36-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb7772-07d6-0000-714b-e31d00000000" name="Forecasted Income" isWriteable="false">
+<Description><![CDATA[Forecasted Version Income]]></Description>
+<MeasureDefn mdsid="m80cb777a-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb999b-0802-0000-714b-e31d00000000" name="AggRule_2050:8439121389608166" isDefault="true">
+<Expr mdsid="m00000013-01f4-0000-cbc2-4e4700000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Version Metrics"."Forecasted Income")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-cbc2-4e4700000000-m80cb7772-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb7427-07f3-0000-714b-e31d00000000.xml#m80cb7772-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb7773-0f3c-0000-714b-e31d00000000" name="AD_3900:8381471387378709">
+<Expr mdsid="m00000014-01f4-0000-f7b7-203300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OFFER_F_OwningPartyVersionMetrics"."X_SRM_FCT_INCME"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-f7b7-203300000000-m80cb5b33-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb5b2b-0bb9-0000-714b-e31d00000000.xml#m80cb5b33-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb778a-07d6-0000-714b-e31d00000000" name="-- Actual Version Metrics" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000015-01f4-0000-3415-755800000000" name="Expr">
+<ExprText><![CDATA[1]]></ExprText>
+<ExprTextDesc><![CDATA[1]]></ExprTextDesc>
+</Expr>
+<AttrDefn mdsid="m80cb778c-0f3c-0000-714b-e31d00000000" name="AD_3900:8381651387378840">
+<Expr mdsid="m00000016-01f4-0000-c0a2-3f6200000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb778f-07d6-0000-714b-e31d00000000" name="Actual Expenditure" isWriteable="false">
+<MeasureDefn mdsid="m80cb7794-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb7795-0802-0000-714b-e31d00000000" name="AggRule_2050:8381701387378866" isDefault="true">
+<Expr mdsid="m00000017-01f4-0000-38d7-d7ea00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Version Metrics"."Actual Expenditure")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-38d7-d7ea00000000-m80cb778f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb7427-07f3-0000-714b-e31d00000000.xml#m80cb778f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb7790-0f3c-0000-714b-e31d00000000" name="AD_3900:8381671387378857">
+<Expr mdsid="m00000018-01f4-0000-f0d7-ac7a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OFFER_F_OwningPartyVersionMetrics"."X_SRM_ACT_TCOST"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000018-01f4-0000-f0d7-ac7a00000000-m80cb5b35-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb5b2b-0bb9-0000-714b-e31d00000000.xml#m80cb5b35-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb9b46-07d6-0000-714b-e31d00000000" name="Budgeted Audience Volume" isWriteable="false">
+<MeasureDefn mdsid="m80cb9b47-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb9bb0-0802-0000-714b-e31d00000000" name="AggRule_2050:8442681393597105" isDefault="true">
+<Expr mdsid="m00000019-01f4-0000-bed1-049100000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Version Metrics"."Budgeted Audience Volume")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-bed1-049100000000-m80cb9b46-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb7427-07f3-0000-714b-e31d00000000.xml#m80cb9b46-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb9b49-0f3c-0000-714b-e31d00000000" name="AD_3900:8442061393589132">
+<Expr mdsid="m0000001a-01f4-0000-2a3c-b62500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OFFER_F_OwningPartyVersionMetrics"."X_SRM_BGT_VVOL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001a-01f4-0000-2a3c-b62500000000-m80cb5b3a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb5b2b-0bb9-0000-714b-e31d00000000.xml#m80cb5b3a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb9b4c-07d6-0000-714b-e31d00000000" name="Forecast Audience Volume" isWriteable="false">
+<MeasureDefn mdsid="m80cb9b50-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb9b51-0802-0000-714b-e31d00000000" name="AggRule_2050:8442121393589333" isDefault="true">
+<Expr mdsid="m0000001b-01f4-0000-5d25-2ead00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Version Metrics"."Forecast Audience Volume")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001b-01f4-0000-5d25-2ead00000000-m80cb9b4c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb7427-07f3-0000-714b-e31d00000000.xml#m80cb9b4c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb9b4d-0f3c-0000-714b-e31d00000000" name="AD_3900:8442101393589302">
+<Expr mdsid="m0000001c-01f4-0000-0159-92cd00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OFFER_F_OwningPartyVersionMetrics"."X_SRM_FCT_VVOL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001c-01f4-0000-0159-92cd00000000-m80cb5b39-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb5b2b-0bb9-0000-714b-e31d00000000.xml#m80cb5b39-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb9b56-07d6-0000-714b-e31d00000000" name="Actual Audience Volume" isWriteable="false">
+<MeasureDefn mdsid="m80cb9b57-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb9b58-0802-0000-714b-e31d00000000" name="AggRule_2050:8442161393589451" isDefault="true">
+<Expr mdsid="m0000001d-01f4-0000-2184-8daf00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Version Metrics"."Actual Audience Volume")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001d-01f4-0000-2184-8daf00000000-m80cb9b56-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb7427-07f3-0000-714b-e31d00000000.xml#m80cb9b56-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb9b59-0f3c-0000-714b-e31d00000000" name="AD_3900:8442141393589451">
+<Expr mdsid="m0000001e-01f4-0000-980c-e82700000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OFFER_F_OwningPartyVersionMetrics"."X_SRM_ACT_VVOL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001e-01f4-0000-980c-e82700000000-m80cb5b38-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb5b2b-0bb9-0000-714b-e31d00000000.xml#m80cb5b38-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb9b5f-07d6-0000-714b-e31d00000000" name="Budgeted Response Rate" isWriteable="false">
+<MeasureDefn mdsid="m80cb9b63-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb9b64-0802-0000-714b-e31d00000000" name="AggRule_2050:8442231393589735" isDefault="true">
+<Expr mdsid="m0000001f-01f4-0000-dd7f-f9d600000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core 2"."Fact - Version Metrics"."Budgeted Response Rate")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001f-01f4-0000-dd7f-f9d600000000-m80cb9b5f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb7427-07f3-0000-714b-e31d00000000.xml#m80cb9b5f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb9b60-0f3c-0000-714b-e31d00000000" name="AD_3900:8442181393589536">
+<Expr mdsid="m00000020-01f4-0000-75b8-0e3600000000" name="Expr">
+<ExprText><![CDATA["%1" / "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OFFER_F_OwningPartyVersionMetrics"."X_SRM_BGT_VVOL" / "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OFFER_F_OwningPartyVersionMetrics"."X_SRM_BGT_RVOL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000020-01f4-0000-75b8-0e3600000000-m80cb5b3a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb5b2b-0bb9-0000-714b-e31d00000000.xml#m80cb5b3a-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000020-01f4-0000-75b8-0e3600000000-m80cb5b31-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb5b2b-0bb9-0000-714b-e31d00000000.xml#m80cb5b31-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb9b69-07d6-0000-714b-e31d00000000" name="Forecast Response Rate" isWriteable="false">
+<MeasureDefn mdsid="m80cb9b6a-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb9b6b-0802-0000-714b-e31d00000000" name="AggRule_2050:8442271393589839" isDefault="true">
+<Expr mdsid="m00000021-01f4-0000-a5e7-181e00000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core 2"."Fact - Version Metrics"."Forecast Response Rate")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000021-01f4-0000-a5e7-181e00000000-m80cb9b69-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb7427-07f3-0000-714b-e31d00000000.xml#m80cb9b69-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb9b6c-0f3c-0000-714b-e31d00000000" name="AD_3900:8442251393589839">
+<Expr mdsid="m00000022-01f4-0000-6906-822900000000" name="Expr">
+<ExprText><![CDATA["%1" / "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OFFER_F_OwningPartyVersionMetrics"."X_SRM_FCT_VVOL" / "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OFFER_F_OwningPartyVersionMetrics"."X_SRM_FCT_RVOL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000022-01f4-0000-6906-822900000000-m80cb5b39-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb5b2b-0bb9-0000-714b-e31d00000000.xml#m80cb5b39-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000022-01f4-0000-6906-822900000000-m80cb5b30-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb5b2b-0bb9-0000-714b-e31d00000000.xml#m80cb5b30-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb9b71-07d6-0000-714b-e31d00000000" name="Actual Response Rate" isWriteable="false">
+<MeasureDefn mdsid="m80cb9b72-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb9b73-0802-0000-714b-e31d00000000" name="AggRule_2050:8442311393589950" isDefault="true">
+<Expr mdsid="m00000023-01f4-0000-7bbd-7e9300000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core 2"."Fact - Version Metrics"."Actual Response Rate")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000023-01f4-0000-7bbd-7e9300000000-m80cb9b71-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb7427-07f3-0000-714b-e31d00000000.xml#m80cb9b71-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb9b74-0f3c-0000-714b-e31d00000000" name="AD_3900:8442291393589950">
+<Expr mdsid="m00000024-01f4-0000-fc56-54cf00000000" name="Expr">
+<ExprText><![CDATA["%1" / "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OFFER_F_OwningPartyVersionMetrics"."X_SRM_ACT_VVOL" / "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OFFER_F_OwningPartyVersionMetrics"."X_SRM_ACT_RVOL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000024-01f4-0000-fc56-54cf00000000-m80cb5b38-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb5b2b-0bb9-0000-714b-e31d00000000.xml#m80cb5b38-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000024-01f4-0000-fc56-54cf00000000-m80cb5b2f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb5b2b-0bb9-0000-714b-e31d00000000.xml#m80cb5b2f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb9b79-07d6-0000-714b-e31d00000000" name="Budgeted Response Volume" isWriteable="false">
+<MeasureDefn mdsid="m80cb9b7a-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb9b7b-0802-0000-714b-e31d00000000" name="AggRule_2050:8442351393590010" isDefault="true">
+<Expr mdsid="m00000025-01f4-0000-de38-f40b00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Version Metrics"."Budgeted Response Volume")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000025-01f4-0000-de38-f40b00000000-m80cb9b79-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb7427-07f3-0000-714b-e31d00000000.xml#m80cb9b79-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb9b7c-0f3c-0000-714b-e31d00000000" name="AD_3900:8442331393590010">
+<Expr mdsid="m00000026-01f4-0000-5801-6dd500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OFFER_F_OwningPartyVersionMetrics"."X_SRM_BGT_RVOL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000026-01f4-0000-5801-6dd500000000-m80cb5b31-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb5b2b-0bb9-0000-714b-e31d00000000.xml#m80cb5b31-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb9b81-07d6-0000-714b-e31d00000000" name="Forecast Response Volume" isWriteable="false">
+<MeasureDefn mdsid="m80cb9b82-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb9b83-0802-0000-714b-e31d00000000" name="AggRule_2050:8442391393590080" isDefault="true">
+<Expr mdsid="m00000027-01f4-0000-dc7c-0e2000000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Version Metrics"."Forecast Response Volume")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000027-01f4-0000-dc7c-0e2000000000-m80cb9b81-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb7427-07f3-0000-714b-e31d00000000.xml#m80cb9b81-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb9b84-0f3c-0000-714b-e31d00000000" name="AD_3900:8442371393590080">
+<Expr mdsid="m00000028-01f4-0000-2791-ece400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OFFER_F_OwningPartyVersionMetrics"."X_SRM_FCT_RVOL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000028-01f4-0000-2791-ece400000000-m80cb5b30-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb5b2b-0bb9-0000-714b-e31d00000000.xml#m80cb5b30-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb9b89-07d6-0000-714b-e31d00000000" name="Actual Response Volume" isWriteable="false">
+<MeasureDefn mdsid="m80cb9b8a-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cb9b8b-0802-0000-714b-e31d00000000" name="AggRule_2050:8442431393590148" isDefault="true">
+<Expr mdsid="m00000029-01f4-0000-9a0f-3bf600000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Version Metrics"."Actual Response Volume")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000029-01f4-0000-9a0f-3bf600000000-m80cb9b89-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb7427-07f3-0000-714b-e31d00000000.xml#m80cb9b89-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb9b8c-0f3c-0000-714b-e31d00000000" name="AD_3900:8442411393590148">
+<Expr mdsid="m0000002a-01f4-0000-1f31-fff500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_OFFER_F_OwningPartyVersionMetrics"."X_SRM_ACT_RVOL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000002a-01f4-0000-1f31-fff500000000-m80cb5b2f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb5b2b-0bb9-0000-714b-e31d00000000.xml#m80cb5b2f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80cb7427-07f3-0000-714b-e31d00000000-m80cb7473-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cb7473-07f5-0000-714b-e31d00000000.xml#m80cb7473-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

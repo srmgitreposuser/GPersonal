@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80cba6a5-07f3-0000-714b-e31d00000000" name="Fact - Owning Party - Volunteer Activity" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="562" y="382" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80cba6ca-07d6-0000-714b-e31d00000000" name="# of Applications" isWriteable="false">
+<MeasureDefn mdsid="m80cba6d0-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cba6d5-0802-0000-714b-e31d00000000" name="AggRule_2050:8467611400851436" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-8792-e7f500000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core 2"."Fact - Owning Party - Volunteer Activity"."# of Applications")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-8792-e7f500000000-m80cba6ca-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cba6a5-07f3-0000-714b-e31d00000000.xml#m80cba6ca-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cba8a2-0f3c-0000-714b-e31d00000000" name="AD_3900:8467571400851436">
+<Expr mdsid="m00000002-01f4-0000-df7a-fa8c00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Applied' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_VOL_ACT_D"."VOL_ACT_STATUS" = 'Applied' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_VOL_ACT_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-df7a-fa8c00000000-m80cba7b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cba6fc-0bb9-0000-714b-e31d00000000.xml#m80cba7b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-df7a-fa8c00000000-m80cba7c2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cba6fd-0bb9-0000-714b-e31d00000000.xml#m80cba7c2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cba6cb-07d6-0000-714b-e31d00000000" name="# of Volunteer Activities" isWriteable="false">
+<MeasureDefn mdsid="m80cba6d1-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbc313-0802-0000-714b-e31d00000000" name="AggRule_2050:8512701401715576" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-4a36-3a4600000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core 2"."Fact - Owning Party - Volunteer Activity"."# of Volunteer Activities")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-4a36-3a4600000000-m80cba6cb-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cba6a5-07f3-0000-714b-e31d00000000.xml#m80cba6cb-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cba8a3-0f3c-0000-714b-e31d00000000" name="AD_3900:8467631400851436">
+<Expr mdsid="m00000004-01f4-0000-1d10-6b3100000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IN ('Active', 'Lapsed') THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_VOL_ACT_D"."VOL_ACT_STATUS" IN ('Active', 'Lapsed') THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_VOL_ACT_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-1d10-6b3100000000-m80cba7b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cba6fc-0bb9-0000-714b-e31d00000000.xml#m80cba7b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-1d10-6b3100000000-m80cba7c2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cba6fd-0bb9-0000-714b-e31d00000000.xml#m80cba7c2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cba6cc-07d6-0000-714b-e31d00000000" name="# of Volunteer Records" isWriteable="false">
+<MeasureDefn mdsid="m80cba6d4-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cba6d9-0802-0000-714b-e31d00000000" name="AggRule_2050:8467781400851436" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-193b-361300000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Owning Party - Volunteer Activity"."# of Volunteer Records")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-193b-361300000000-m80cba6cc-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cba6a5-07f3-0000-714b-e31d00000000.xml#m80cba6cc-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cba8a4-0f3c-0000-714b-e31d00000000" name="AD_3900:8467671400851436">
+<Expr mdsid="m00000006-01f4-0000-0d9e-49ab00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_VOL_ACT_F"."VOL_REC_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_VOL_ACT_F"."VOL_REC_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-0d9e-49ab00000000-m80cba7c8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cba6fd-0bb9-0000-714b-e31d00000000.xml#m80cba7c8-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cba6ce-07d6-0000-714b-e31d00000000" name="# of Estimated Hours" isWriteable="false">
+<MeasureDefn mdsid="m80cba6d2-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cba6d7-0802-0000-714b-e31d00000000" name="AggRule_2050:8467731400851436" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-c92b-383600000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core 2"."Fact - Owning Party - Volunteer Activity"."# of Estimated Hours")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-c92b-383600000000-m80cba6ce-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cba6a5-07f3-0000-714b-e31d00000000.xml#m80cba6ce-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cba8a6-0f3c-0000-714b-e31d00000000" name="AD_3900:8467711400851436">
+<Expr mdsid="m00000008-01f4-0000-4f7c-3c2900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_VOL_ACT_F"."NUM_EST_HRS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-4f7c-3c2900000000-m80cba7d1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cba6fd-0bb9-0000-714b-e31d00000000.xml#m80cba7d1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbc26c-07d6-0000-714b-e31d00000000" name="# of Active Volunteer Activities" isWriteable="false">
+<MeasureDefn mdsid="m80cbc310-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbc314-0802-0000-714b-e31d00000000" name="AggRule_2050:8512651401715576" isDefault="true">
+<Expr mdsid="m00000009-01f4-0000-df41-bf7b00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core 2"."Fact - Owning Party - Volunteer Activity"."# of Active Volunteer Activities")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-df41-bf7b00000000-m80cbc26c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cba6a5-07f3-0000-714b-e31d00000000.xml#m80cbc26c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbc2fe-0f3c-0000-714b-e31d00000000" name="AD_3900:8512551401715452">
+<Expr mdsid="m0000000a-01f4-0000-96eb-d0fb00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Active' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_VOL_ACT_D"."VOL_ACT_STATUS" = 'Active' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_VOL_ACT_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-96eb-d0fb00000000-m80cba7b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cba6fc-0bb9-0000-714b-e31d00000000.xml#m80cba7b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000a-01f4-0000-96eb-d0fb00000000-m80cba7c2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cba6fd-0bb9-0000-714b-e31d00000000.xml#m80cba7c2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbc26d-07d6-0000-714b-e31d00000000" name="# of Lapsed Volunteer Activities" isWriteable="false">
+<MeasureDefn mdsid="m80cbc311-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbc312-0802-0000-714b-e31d00000000" name="AggRule_2050:8512691401715576" isDefault="true">
+<Expr mdsid="m0000000b-01f4-0000-3b4d-0afa00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core 2"."Fact - Owning Party - Volunteer Activity"."# of Lapsed Volunteer Activities")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-3b4d-0afa00000000-m80cbc26d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cba6a5-07f3-0000-714b-e31d00000000.xml#m80cbc26d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbc2ff-0f3c-0000-714b-e31d00000000" name="AD_3900:8512571401715452">
+<Expr mdsid="m0000000c-01f4-0000-5d58-c5b300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Lapsed' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_VOL_ACT_D"."VOL_ACT_STATUS" = 'Lapsed' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_VOL_ACT_F"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-5d58-c5b300000000-m80cba7b8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cba6fc-0bb9-0000-714b-e31d00000000.xml#m80cba7b8-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-5d58-c5b300000000-m80cba7c2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cba6fd-0bb9-0000-714b-e31d00000000.xml#m80cba7c2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbc613-07d6-0000-714b-e31d00000000" name="# of Volunteers (Distinct) (Volunteer Activity)" isWriteable="false">
+<MeasureDefn mdsid="m80cbc62b-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbc645-0802-0000-714b-e31d00000000" name="AggRule_2050:8518751404314539" isDefault="true">
+<Expr mdsid="m0000000d-01f4-0000-32fe-fd3500000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Owning Party - Volunteer Activity"."# of Volunteers (Distinct) (Volunteer Activity)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-32fe-fd3500000000-m80cbc613-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cba6a5-07f3-0000-714b-e31d00000000.xml#m80cbc613-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbc65c-0f3c-0000-714b-e31d00000000" name="AD_3900:8518691404314539">
+<Expr mdsid="m0000000e-01f4-0000-c0db-c6fc00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_VOL_ACT_F"."OWN_PARTY_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_VOL_ACT_F"."OWN_PARTY_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-c0db-c6fc00000000-m80cba7cb-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cba6fd-0bb9-0000-714b-e31d00000000.xml#m80cba7cb-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbc614-07d6-0000-714b-e31d00000000" name="# of Volunteers (Distinct) (Volunteer Records)" isWriteable="false">
+<MeasureDefn mdsid="m80cbc62c-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbc646-0802-0000-714b-e31d00000000" name="AggRule_2050:8518851404314539" isDefault="true">
+<Expr mdsid="m0000000f-01f4-0000-e4db-b5be00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Owning Party - Volunteer Activity"."# of Volunteers (Distinct) (Volunteer Records)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-e4db-b5be00000000-m80cbc614-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cba6a5-07f3-0000-714b-e31d00000000.xml#m80cbc614-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbc65d-0f3c-0000-714b-e31d00000000" name="AD_3900:8518801404314539">
+<Expr mdsid="m00000010-01f4-0000-02d5-ed7900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_VOL_REC_D"."ROW_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_VOL_REC_D"."INTEGRATION_ID_OP" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-02d5-ed7900000000-m80cba7db-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cba6ff-0bb9-0000-714b-e31d00000000.xml#m80cba7db-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-02d5-ed7900000000-m80cba7dc-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cba6ff-0bb9-0000-714b-e31d00000000.xml#m80cba7dc-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80cba6a5-07f3-0000-714b-e31d00000000-m80cba8af-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cba8af-07f5-0000-714b-e31d00000000.xml#m80cba8af-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9c7-07f3-0000-714b-e31d00000000" name="Fact - CRM - Asset Churn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="657" y="182" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c567ef-07d6-0000-714b-e31d00000000" name="# Closed Assets" iconIndex="69" isWriteable="false">
+<Description><![CDATA[This is the count of assets (Insurance Policies/ Financial Accounts) that were closed in the specified period. This column will only show the assets owned for a particular product when the Product column is used in the query.]]></Description>
+<MeasureDefn mdsid="m80c5b1c1-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b8cb-0802-0000-714b-e31d00000000" name="AggRule_2050:182561074282429" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-8c24-1a5700000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - CRM - Asset Churn"."# Closed Assets")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-8c24-1a5700000000-m80c567ef-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9c7-07f3-0000-714b-e31d00000000.xml#m80c567ef-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68bcc-0f3c-0000-714b-e31d00000000" name="AD_3900:840351074282455">
+<Expr mdsid="m00000002-01f4-0000-e2c0-383400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  NOT "%1" IS NULL  THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  NOT "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_ASSET_D_Asset_Churn"."END_DT" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_ASSET_D_Asset_Churn"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-e2c0-383400000000-m80c5e5e7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf6b-0bb9-0000-714b-e31d00000000.xml#m80c5e5e7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-e2c0-383400000000-m80c5e5c6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf6b-0bb9-0000-714b-e31d00000000.xml#m80c5e5c6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c567f0-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80c68bcd-0f3c-0000-714b-e31d00000000" name="AD_3900:840361074282455">
+<Expr mdsid="m00000003-01f4-0000-71a2-5ff200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_ASSET_D_Asset_Churn"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-71a2-5ff200000000-m80c5e5c6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf6b-0bb9-0000-714b-e31d00000000.xml#m80c5e5c6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c567f1-07d6-0000-714b-e31d00000000" name="# Closed Assets Across all Products" iconIndex="69" isDerived="true" isWriteable="false">
+<Description><![CDATA[This column will always give total number of discontinued/closed assets that were owned by the customer regardless of the Product selected in the query.]]></Description>
+<Expr mdsid="m00000004-01f4-0000-7f4a-ae2b00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset Churn"."# Closed Assets"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-7f4a-ae2b00000000-m80c567ef-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9c7-07f3-0000-714b-e31d00000000.xml#m80c567ef-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<MeasureDefn mdsid="m80c5b1c2-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b8cc-0802-0000-714b-e31d00000000" name="AggRule_2050:182571074282429" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-0e84-0bf700000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - CRM - Asset Churn"."# Closed Assets Across all Products")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-0e84-0bf700000000-m80c567f1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9c7-07f3-0000-714b-e31d00000000.xml#m80c567f1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68bce-0f3c-0000-714b-e31d00000000" name="AD_3900:840371074282455">
+<Expr mdsid="m00000006-01f4-0000-d1e3-418300000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c567f2-07d6-0000-714b-e31d00000000" name="Total # Closed Assets Last Month" iconIndex="69" isWriteable="false">
+<Description><![CDATA[This column gives the number of assets discontinued/closed by the customer in the last month. This assumes that the information in the database has been refreshed earlier. This column can be used to identify customers who closed the accounts recently and can be targeted with a win-back campaign.]]></Description>
+<MeasureDefn mdsid="m80c5b1c3-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b8cd-0802-0000-714b-e31d00000000" name="AggRule_2050:182581074282429" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-1b5c-902b00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - CRM - Asset Churn"."Total # Closed Assets Last Month")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-1b5c-902b00000000-m80c567f2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9c7-07f3-0000-714b-e31d00000000.xml#m80c567f2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68bcf-0f3c-0000-714b-e31d00000000" name="AD_3900:840381074282455">
+<Expr mdsid="m00000008-01f4-0000-8d3a-2ced00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "%1",  CURRENT_DATE ) < 2 THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_MONTH , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_ASSET_D_Asset_Churn"."END_DT",  CURRENT_DATE ) < 2 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_ASSET_D_Asset_Churn"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-8d3a-2ced00000000-m80c5e5e7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf6b-0bb9-0000-714b-e31d00000000.xml#m80c5e5e7-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-8d3a-2ced00000000-m80c5e5c6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf6b-0bb9-0000-714b-e31d00000000.xml#m80c5e5c6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58c92-07d8-0000-714b-e31d00000000" name="W_ASSET_D_Key" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58c92-07d8-0000-714b-e31d00000000-m80c567f0-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9c7-07f3-0000-714b-e31d00000000.xml#m80c567f0-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5a9c7-07f3-0000-714b-e31d00000000-m80c5abef-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5abef-07f5-0000-714b-e31d00000000.xml#m80c5abef-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

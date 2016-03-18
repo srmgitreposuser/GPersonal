@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5bf5c-0bb9-0000-714b-e31d00000000" name="Fact_Secondary_W_PIPELINE_F_Previous_Snapshot_Date" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" x="1145" y="209" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb1-0bd3-0000-714b-e31d00000000.xml#m80c67bb1-0bd3-0000-714b-e31d00000000">
+<Description><![CDATA[This alias is used to extend the W_PIPELINE_F table to add the Previous Snapshot Date Wid.]]></Description>
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT DISTINCT P.SNAPSHOT_DT_WID, (SELECT MAX(Q.SNAPSHOT_DT_WID)
+ FROM VALUEOF(OLAPTBO).W_PIPELINE_F Q
+WHERE Q.SNAPSHOT_DT_WID <P.SNAPSHOT_DT_WID) AS PRIOR_SNAP_DT_WID
+ FROM VALUEOF(OLAPTBO).W_PIPELINE_F P]]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c5e30c-0bbb-0000-714b-e31d00000000" name="SNAPSHOT_DT_WID" dataType="INT" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5e30d-0bbb-0000-714b-e31d00000000" name="PRIOR_SNAP_DT_WID" dataType="INT" specialType="none">
+</PhysicalColumn>
+<PhysicalForeignKey mdsid="m80c672e5-0bbe-0000-714b-e31d00000000" name="PreviousSnapshotDate_FKey" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5bf32-0bb9-0000-714b-e31d00000000.xml#m80c67964-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c672e5-0bbe-0000-714b-e31d00000000-m80c5e30c-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bf5c-0bb9-0000-714b-e31d00000000.xml#m80c5e30c-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m80c6754d-0bbe-0000-714b-e31d00000000" name="Fact_Secondary_W_PIPELINE_F_Previous_Snapshot_Date_FKey" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5be9e-0bb9-0000-714b-e31d00000000.xml#m80c6789d-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c6754d-0bbe-0000-714b-e31d00000000-m80c5e30c-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bf5c-0bb9-0000-714b-e31d00000000.xml#m80c5e30c-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+</PhysicalTable>

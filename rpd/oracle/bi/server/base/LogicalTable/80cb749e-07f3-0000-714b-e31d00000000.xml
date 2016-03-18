@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80cb749e-07f3-0000-714b-e31d00000000" name="Fact Compound - Donations - Version Metrics" iconIndex="91" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="232" y="50" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80cb74ac-07d6-0000-714b-e31d00000000" name="Actual Version ROI" isDerived="true" isWriteable="false">
+<Description><![CDATA[The Actual ROI of the Version. 
+Calculation formula = Net Donation Amount/Actual Cost]]></Description>
+<Expr mdsid="m00000001-01f4-0000-98db-cea800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  OR "%2" IS NULL  THEN 0 ELSE "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core 2"."Fact - Version Metrics"."Actual Total Cost" IS NULL  OR "Core 2"."Fact - Owning Party - Donations"."Net Donation Amount" IS NULL  THEN 0 ELSE "Core 2"."Fact - Owning Party - Donations"."Net Donation Amount" / "Core 2"."Fact - Version Metrics"."Actual Total Cost" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-98db-cea800000000-m80cb7479-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb7427-07f3-0000-714b-e31d00000000.xml#m80cb7479-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000001-01f4-0000-98db-cea800000000-m80c9931a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c99318-07f3-0000-714b-e31d00000000.xml#m80c9931a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80cb74ae-0f3c-0000-714b-e31d00000000" name="AD_3900:8376821387292579">
+<Expr mdsid="m00000002-01f4-0000-4f1e-ec7f00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb74b2-07d6-0000-714b-e31d00000000" name="Budget Version ROI" isDerived="true" isWriteable="false">
+<Description><![CDATA[The Budget ROI of the Version. 
+Calculation formula = Net Donation Amount /Budget Cost]]></Description>
+<Expr mdsid="m00000003-01f4-0000-48bd-e20400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  OR "%2" IS NULL  THEN 0 ELSE "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core 2"."Fact - Version Metrics"."Budget Total Cost" IS NULL  OR "Core 2"."Fact - Owning Party - Donations"."Net Donation Amount" IS NULL  THEN 0 ELSE "Core 2"."Fact - Owning Party - Donations"."Net Donation Amount" / "Core 2"."Fact - Version Metrics"."Budget Total Cost" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-48bd-e20400000000-m80cb7491-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb7427-07f3-0000-714b-e31d00000000.xml#m80cb7491-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000003-01f4-0000-48bd-e20400000000-m80c9931a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c99318-07f3-0000-714b-e31d00000000.xml#m80c9931a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80cb74b4-0f3c-0000-714b-e31d00000000" name="AD_3900:8376861387292579">
+<Expr mdsid="m00000004-01f4-0000-96b8-b8c400000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb74b8-07d6-0000-714b-e31d00000000" name="Forecast Version ROI" isDerived="true" isWriteable="false">
+<Description><![CDATA[The Forecast ROI of the Version. 
+Calculation formula = Net Donation Amount/Forecast Cost]]></Description>
+<Expr mdsid="m00000005-01f4-0000-76e4-672300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  OR "%2" IS NULL  THEN 0 ELSE "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core 2"."Fact - Version Metrics"."Forecast Total Cost" IS NULL  OR "Core 2"."Fact - Owning Party - Donations"."Net Donation Amount" IS NULL  THEN 0 ELSE "Core 2"."Fact - Owning Party - Donations"."Net Donation Amount" / "Core 2"."Fact - Version Metrics"."Forecast Total Cost" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-76e4-672300000000-m80cb7485-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb7427-07f3-0000-714b-e31d00000000.xml#m80cb7485-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000005-01f4-0000-76e4-672300000000-m80c9931a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c99318-07f3-0000-714b-e31d00000000.xml#m80c9931a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80cb74ba-0f3c-0000-714b-e31d00000000" name="AD_3900:8376901387292579">
+<Expr mdsid="m00000006-01f4-0000-72cc-06cf00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+</LogicalTable>

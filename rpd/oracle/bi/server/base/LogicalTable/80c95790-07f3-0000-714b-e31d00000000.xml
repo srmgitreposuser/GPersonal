@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c95790-07f3-0000-714b-e31d00000000" name="Dim - Donation Attributes" iconIndex="93" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1400" y="839" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c957a6-07d6-0000-714b-e31d00000000" name="Siebel Donation Id" iconIndex="32768" isWriteable="false">
+<Description><![CDATA[A unique Siebel identifier for the donation obtained by highlighting the donation record in Siebel, right clicking and selecting 'About Record'. The Row # shows this ID]]></Description>
+<AttrDefn mdsid="m80c9e270-0f3c-0000-714b-e31d00000000" name="AD_3900:7733721350385392">
+<Expr mdsid="m00000001-01f4-0000-8a4f-5d5400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."INTEGRATION_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-8a4f-5d5400000000-m80cbb5c4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m80cbb5c4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c957ec-07d6-0000-714b-e31d00000000" name="Created" iconIndex="32768" isWriteable="false">
+<Description><![CDATA[The date the donation was entered onto Siebel]]></Description>
+<AttrDefn mdsid="m80c9e2b6-0f3c-0000-714b-e31d00000000" name="AD_3900:7734071350385392">
+<Expr mdsid="m00000002-01f4-0000-f094-2b8f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."CREATED"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-f094-2b8f00000000-m80cbb5e8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m80cbb5e8-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c957de-07d6-0000-714b-e31d00000000" name="CR-UK Bank Account Code" iconIndex="32768" isWriteable="false">
+<AttrDefn mdsid="m80c9e2a8-0f3c-0000-714b-e31d00000000" name="AD_3900:7734001350385392">
+<Expr mdsid="m00000003-01f4-0000-a5a8-be5e00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."X_SRM_BNK_NUM_CD"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-a5a8-be5e00000000-m80cbb5d5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m80cbb5d5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c957fe-07d6-0000-714b-e31d00000000" name="Do Not Transfer To Agresso" iconIndex="32768" isWriteable="false">
+<AttrDefn mdsid="m80c9e2c8-0f3c-0000-714b-e31d00000000" name="AD_3900:7734161350385392">
+<Expr mdsid="m00000004-01f4-0000-b6b9-27b400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."X_SRM_AGRESSO_FLG"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-b6b9-27b400000000-m80cbb5d3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m80cbb5d3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c957c2-07d6-0000-714b-e31d00000000" name="Donation Source Code" iconIndex="32768" isWriteable="false">
+<Description><![CDATA[These are required so that income can be reported on at a lower level than products. Depending on which department you work in, this source code will either be an event, appeal, campaign or just a generic source code]]></Description>
+<AttrDefn mdsid="m80c9e28c-0f3c-0000-714b-e31d00000000" name="AD_3900:7733861350385392">
+<Expr mdsid="m00000005-01f4-0000-b7ee-d20800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."X_SRM_SRC_CD"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-b7ee-d20800000000-m80cbb5e2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m80cbb5e2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c957c0-07d6-0000-714b-e31d00000000" name="Personal Gift Aid Flag" iconIndex="32768" isWriteable="false">
+<Description><![CDATA[Taken directly from the ‘Personal Gift Aid’ flag in Siebel.
+Please refer to the Gift Aid Reporting Guidelines for details on how to use this field (available from Data.Help).]]></Description>
+<AttrDefn mdsid="m80c9e28a-0f3c-0000-714b-e31d00000000" name="AD_3900:7733851350385392">
+<Expr mdsid="m00000006-01f4-0000-17ea-955b00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."X_SRM_ELEGIBLE_GA_FLG"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-17ea-955b00000000-m80cbb5d9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m80cbb5d9-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c957ce-07d6-0000-714b-e31d00000000" name="Gift Aided Flag" iconIndex="32768" isWriteable="false">
+<Description><![CDATA[This OBI Field is being phased out, please instead use ‘Processed Gift Aid Flag’ (new Gift Aid fields can be found at the bottom of the lists).]]></Description>
+<AttrDefn mdsid="m80c9e298-0f3c-0000-714b-e31d00000000" name="AD_3900:7733921350385392">
+<Expr mdsid="m00000007-01f4-0000-0ee6-3e6a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."X_SRM_GIFT_AID_FLG"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-0ee6-3e6a00000000-m80cbb5da-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m80cbb5da-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c957f4-07d6-0000-714b-e31d00000000" name="Historic Cost Centre" iconIndex="32768" isWriteable="false">
+<Description><![CDATA[For donations migrated from Raisers Edge, this shows the cost centre. This will not be populated for any donations created on Siebel, only for historic migrated donations]]></Description>
+<AttrDefn mdsid="m80c9e2be-0f3c-0000-714b-e31d00000000" name="AD_3900:7734111350385392">
+<Expr mdsid="m00000008-01f4-0000-eca4-b7ee00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."BANK_ACCNT_NUM"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-eca4-b7ee00000000-m80cbb5e6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m80cbb5e6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c957f6-07d6-0000-714b-e31d00000000" name="Historic Fund code" iconIndex="32768" isWriteable="false">
+<Description><![CDATA[For donations migrated from Raisers Edge, this shows the fund code. This will not be populated for any donations created on Siebel, only for historic migrated donations]]></Description>
+<AttrDefn mdsid="m80c9e2c0-0f3c-0000-714b-e31d00000000" name="AD_3900:7734121350385392">
+<Expr mdsid="m00000009-01f4-0000-8e8a-ee4600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."PROMO_NAME"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-8e8a-ee4600000000-m80cbb5c9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m80cbb5c9-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c957e0-07d6-0000-714b-e31d00000000" name="Restricted Code" iconIndex="32768" isWriteable="false">
+<AttrDefn mdsid="m80c9e2aa-0f3c-0000-714b-e31d00000000" name="AD_3900:7734011350385392">
+<Expr mdsid="m0000000a-01f4-0000-d920-90f200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."X_SRM_RSTRCT_CD"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-d920-90f200000000-m80cbb5e0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m80cbb5e0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c957e2-07d6-0000-714b-e31d00000000" name="Restricted Description" iconIndex="32768" isWriteable="false">
+<AttrDefn mdsid="m80c9e2ac-0f3c-0000-714b-e31d00000000" name="AD_3900:7734021350385392">
+<Expr mdsid="m0000000b-01f4-0000-0382-73ff00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."X_SRM_RSTRCT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-0382-73ff00000000-m80cbb5df-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m80cbb5df-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca6910-07d6-0000-714b-e31d00000000" name="Net Donation Amount" isWriteable="false">
+<Description><![CDATA[Donation amount excluding gift aid at the item level (does not aggregate).]]></Description>
+<AttrDefn mdsid="m80ca6911-0f3c-0000-714b-e31d00000000" name="AD_3900:7929621353921992">
+<Expr mdsid="m0000000c-01f4-0000-b8cf-c05500000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PAYMENT_F"."PAY_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-b8cf-c05500000000-m80c62fbf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea8-0bb9-0000-714b-e31d00000000.xml#m80c62fbf-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca6918-07d6-0000-714b-e31d00000000" name="Gross Donation Amount" isWriteable="false">
+<Description><![CDATA[Donation amount including gift aid at the item level (does not aggregate).]]></Description>
+<AttrDefn mdsid="m80ca6919-0f3c-0000-714b-e31d00000000" name="AD_3900:7929661353922086">
+<Expr mdsid="m0000000d-01f4-0000-9265-e1f400000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) +  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PAYMENT_F"."PAY_AMT", 0) +  IFNULL("Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PAYMENT_F"."X_SRM_GIFTAID_AMT", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-9265-e1f400000000-m80c62fbf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea8-0bb9-0000-714b-e31d00000000.xml#m80c62fbf-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000d-01f4-0000-9265-e1f400000000-m80c6673a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea8-0bb9-0000-714b-e31d00000000.xml#m80c6673a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca691c-07d6-0000-714b-e31d00000000" name="Gross Donation Gift Band" isDerived="true" isWriteable="false">
+<Description><![CDATA[A banding for the gross donation amount (inclusive of any Gift Aid claimed) e.g. £10k-£99k]]></Description>
+<Expr mdsid="m0000000e-01f4-0000-78a5-7e8300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" < 10000 THEN 'Under £10k' WHEN "%1" < 100000 THEN '£10k-£99k' WHEN "%1" < 250000 THEN '£100k-£249k' WHEN "%1" < 500000 THEN '£250k-£499k' WHEN "%1" < 1000000 THEN '£500k-£999k' WHEN "%1" >= 1000000 THEN '£1m+' ELSE '' END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core 2"."Fact - Owning Party - Donations"."Gross Donation Amount" < 10000 THEN 'Under £10k' WHEN "Core 2"."Fact - Owning Party - Donations"."Gross Donation Amount" < 100000 THEN '£10k-£99k' WHEN "Core 2"."Fact - Owning Party - Donations"."Gross Donation Amount" < 250000 THEN '£100k-£249k' WHEN "Core 2"."Fact - Owning Party - Donations"."Gross Donation Amount" < 500000 THEN '£250k-£499k' WHEN "Core 2"."Fact - Owning Party - Donations"."Gross Donation Amount" < 1000000 THEN '£500k-£999k' WHEN "Core 2"."Fact - Owning Party - Donations"."Gross Donation Amount" >= 1000000 THEN '£1m+' ELSE '' END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-78a5-7e8300000000-m80ca80f8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c99318-07f3-0000-714b-e31d00000000.xml#m80ca80f8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80ca691d-0f3c-0000-714b-e31d00000000" name="AD_3900:7929681353922731">
+<Expr mdsid="m0000000f-01f4-0000-656e-11bb00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca6914-07d6-0000-714b-e31d00000000" name="Gift Aid Processed" isWriteable="false">
+<Description><![CDATA[Gift aid processed for the donation at the item level (does not aggregate).]]></Description>
+<AttrDefn mdsid="m80ca6915-0f3c-0000-714b-e31d00000000" name="AD_3900:7929641353922066">
+<Expr mdsid="m00000010-01f4-0000-8a7d-bcb400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PAYMENT_F"."X_SRM_GIFTAID_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-8a7d-bcb400000000-m80c6673a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea8-0bb9-0000-714b-e31d00000000.xml#m80c6673a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb5c7d-07d6-0000-714b-e31d00000000" name="Gift Aid Draft Flag" iconIndex="32768" isWriteable="false">
+<Description><![CDATA[Indicates whether a donation has had Gift Aid allocated to it (is in a Draft Claim)]]></Description>
+<AttrDefn mdsid="m80cb5c7f-0f3c-0000-714b-e31d00000000" name="AD_3900:8337811385654777">
+<Expr mdsid="m00000011-01f4-0000-d5a8-c2d300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."X_GIFT_AID_DRAFT_FLG"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-d5a8-c2d300000000-m80cbb5d1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m80cbb5d1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca8072-07d6-0000-714b-e31d00000000" name="Gift Aidable Flag" isWriteable="false">
+<Description><![CDATA[Indicates whether the donation is eligible for Gift Aid.]]></Description>
+<AttrDefn mdsid="m80ca8074-0f3c-0000-714b-e31d00000000" name="AD_3900:7972691358787311">
+<Expr mdsid="m00000012-01f4-0000-b71d-1d7600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."X_GIFT_AIDABLE_FLG"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-b71d-1d7600000000-m80cbb5d0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m80cbb5d0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca8096-07d6-0000-714b-e31d00000000" name="Valid GAD Indicator" isWriteable="false">
+<Description><![CDATA[Supporter has a valid GAD that covers this donation.]]></Description>
+<AttrDefn mdsid="m80ca8098-0f3c-0000-714b-e31d00000000" name="AD_3900:7972971358789055">
+<Expr mdsid="m00000013-01f4-0000-140c-59e700000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PAYMENT_F"."X_SRM_VLD_GAD"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-140c-59e700000000-m80ca7dbc-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea8-0bb9-0000-714b-e31d00000000.xml#m80ca7dbc-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca8078-07d6-0000-714b-e31d00000000" name="Gift Aid Processed Flag" iconIndex="32768" isWriteable="false">
+<Description><![CDATA[Indicates whether a donation has had Gift Aid processed (is in an Actual Claim)]]></Description>
+<AttrDefn mdsid="m80ca807a-0f3c-0000-714b-e31d00000000" name="AD_3900:7972731358787317">
+<Expr mdsid="m00000014-01f4-0000-373a-4b8e00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PAYMENT_F"."X_GIFT_AID_PROCESSED_FLG"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-373a-4b8e00000000-m80ca7da8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bea8-0bb9-0000-714b-e31d00000000.xml#m80ca7da8-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca80ae-07d6-0000-714b-e31d00000000" name="Cost Centre" isWriteable="false">
+<AttrDefn mdsid="m80ca80b0-0f3c-0000-714b-e31d00000000" name="AD_3900:7973131358789198">
+<Expr mdsid="m00000015-01f4-0000-e4a8-033000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."COST_CENTRE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-e4a8-033000000000-m80cbb5e7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m80cbb5e7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80ca80b4-07d6-0000-714b-e31d00000000" name="Region" isWriteable="false">
+<Description><![CDATA[Do not use – field no longer updated]]></Description>
+<AttrDefn mdsid="m80ca80b6-0f3c-0000-714b-e31d00000000" name="AD_3900:7973171358789211">
+<Expr mdsid="m00000016-01f4-0000-cb73-d91000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."REGION"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000016-01f4-0000-cb73-d91000000000-m80cbb5ca-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m80cbb5ca-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb9a10-07d6-0000-714b-e31d00000000" name="Financial Payment Reference" isWriteable="false">
+<Description><![CDATA[Financial Payment Reference]]></Description>
+<AttrDefn mdsid="m80cb9a12-0f3c-0000-714b-e31d00000000" name="AD_3900:8440091390842533">
+<Expr mdsid="m00000017-01f4-0000-48ff-81dc00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."INVOICE_NUM"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-48ff-81dc00000000-m80cbb5c5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m80cbb5c5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbd205-07d6-0000-714b-e31d00000000" name="Gift Aid Opt In" isWriteable="false">
+<Description><![CDATA[Indicates if Supporter opted in for Gift Aid while making this donation]]></Description>
+<AttrDefn mdsid="m80cbd207-0f3c-0000-714b-e31d00000000" name="AD_3900:8542351414583909">
+<Expr mdsid="m00000018-01f4-0000-682c-a78300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."GIFT_AID_OPT_IN_FLG"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000018-01f4-0000-682c-a78300000000-m80cbd0ee-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m80cbd0ee-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbd206-07d6-0000-714b-e31d00000000" name="Payment Provider Transaction Id" isWriteable="false">
+<Description><![CDATA[The Unique Transaction Id from Payment Provider like Paypal, World Pay etc]]></Description>
+<AttrDefn mdsid="m80cbd208-0f3c-0000-714b-e31d00000000" name="AD_3900:8542371414583909">
+<Expr mdsid="m00000019-01f4-0000-0fdf-345800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."PAY_PROVIDER_TRANS_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-0fdf-345800000000-m80cbd0f3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m80cbd0f3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbcab5-07d6-0000-714b-e31d00000000" name="Motivation" isWriteable="false">
+<Description><![CDATA[Motivation for making the donation]]></Description>
+<AttrDefn mdsid="m80cbcab7-0f3c-0000-714b-e31d00000000" name="AD_3900:8526551413463219">
+<Expr mdsid="m0000001a-01f4-0000-3587-534300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."X_SRM_MOTIVATION"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001a-01f4-0000-3587-534300000000-m80cbcaa8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m80cbcaa8-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbcab6-07d6-0000-714b-e31d00000000" name="In Memory Name" isWriteable="false">
+<Description><![CDATA[The name of the person in memory of whom the donation was made]]></Description>
+<AttrDefn mdsid="m80cbcab8-0f3c-0000-714b-e31d00000000" name="AD_3900:8526571413463219">
+<Expr mdsid="m0000001b-01f4-0000-895e-e9bd00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."X_SRM_IN_MEMORY"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001b-01f4-0000-895e-e9bd00000000-m80cbcaa6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m80cbcaa6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cc09d8-07d6-0000-714b-e31d00000000" name="CR-UK Bank Account Description" isWriteable="false">
+<AttrDefn mdsid="m80cc09da-0f3c-0000-714b-e31d00000000" name="AD_3900:8584161419010105">
+<Expr mdsid="m0000001c-01f4-0000-3aec-ee7f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."X_SRM_BNK_NUM"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001c-01f4-0000-3aec-ee7f00000000-m80cbb5d4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m80cbb5d4-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cc09ee-07d6-0000-714b-e31d00000000" name="Data Source" isWriteable="false">
+<AttrDefn mdsid="m80cc09f4-0f3c-0000-714b-e31d00000000" name="AD_3900:8584281420449893">
+<Expr mdsid="m0000001d-01f4-0000-fa8e-b2b100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."X_SRM_DATASOURCE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001d-01f4-0000-fa8e-b2b100000000-m80cbb5d8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m80cbb5d8-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cc09f0-07d6-0000-714b-e31d00000000" name="Thanking Status" isWriteable="false">
+<AttrDefn mdsid="m80cc09f6-0f3c-0000-714b-e31d00000000" name="AD_3900:8584291420449893">
+<Expr mdsid="m0000001e-01f4-0000-6806-d3a000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."X_SRM_THANKS_STAT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001e-01f4-0000-6806-d3a000000000-m80cbb5e3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m80cbb5e3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cc09f2-07d6-0000-714b-e31d00000000" name="Web Page ID" isWriteable="false">
+<AttrDefn mdsid="m80cc09f8-0f3c-0000-714b-e31d00000000" name="AD_3900:8584301420449893">
+<Expr mdsid="m0000001f-01f4-0000-034a-1f3600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."X_SRM_WEB_PAGEID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001f-01f4-0000-034a-1f3600000000-m80cbb5e5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m80cbb5e5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m00000000-1652-1540-835d-0a3defa30000" name="Short Code" isWriteable="false">
+<Description><![CDATA[This is the SMS number code that is used for the donation service]]></Description>
+<AttrDefn mdsid="m00000001-1652-1540-835d-0a3defa30000" name="AD_3900:8587801426086408">
+<Expr mdsid="m00000020-01f4-0000-5b01-4ad100000000" name="Expr">
+<ExprText><![CDATA["%1" ]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."X_SHORT_CODE" ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000020-01f4-0000-5b01-4ad100000000-m00000001-163e-1540-835d-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m00000001-163e-1540-835d-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80000000-1659-1540-835d-0a3defa30000" name="Mobile Operator" isWriteable="false">
+<Description><![CDATA[The actual mobile operator used to make the donation]]></Description>
+<AttrDefn mdsid="m80000001-1659-1540-835d-0a3defa30000" name="AD_3900:8587821426086408">
+<Expr mdsid="m00000021-01f4-0000-15a4-5e7200000000" name="Expr">
+<ExprText><![CDATA["%1" ]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."X_MOBILE_OPERATOR" ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000021-01f4-0000-15a4-5e7200000000-m00000003-163e-1540-835d-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m00000003-163e-1540-835d-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc0000000-1660-1540-835d-0a3defa30000" name="Keyword" isWriteable="false">
+<Description><![CDATA[The actual text used in the SMS to make the donation]]></Description>
+<AttrDefn mdsid="mc0000001-1660-1540-835d-0a3defa30000" name="AD_3900:8587841426086408">
+<Expr mdsid="m00000022-01f4-0000-82db-35ac00000000" name="Expr">
+<ExprText><![CDATA["%1" ]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."X_KEYWORD" ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000022-01f4-0000-82db-35ac00000000-m00000000-163e-1540-835d-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m00000000-163e-1540-835d-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m40000003-7b73-1559-a0f3-0a3ddf680000" name="Time Received" isWriteable="false">
+<AttrDefn mdsid="m40000004-7b73-1559-a0f3-0a3ddf680000" name="AD_3900:8710471432744143">
+<Expr mdsid="m00000023-01f4-0000-c7bc-7f4d00000000" name="Expr">
+<ExprText><![CDATA[EVALUATE('TO_CHAR(%1,%2)' AS  VARCHAR(8) , "%1"
+, 'HH24:MI:SS')
+]]></ExprText>
+<ExprTextDesc><![CDATA[EVALUATE('TO_CHAR(%1,%2)' AS  VARCHAR(8) , "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."X_SMS_RECEIVED_DT"
+, 'HH24:MI:SS')
+]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000023-01f4-0000-c7bc-7f4d00000000-m00000002-163e-1540-835d-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m00000002-163e-1540-835d-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m40000002-4d4c-1564-a287-0a3ddf680000" name="Comments" isWriteable="false">
+<AttrDefn mdsid="m40000003-4d4c-1564-a287-0a3ddf680000" name="AD_3900:8715061435580107">
+<Expr mdsid="m00000024-01f4-0000-fb63-7a1200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."DON_COMMENTS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000024-01f4-0000-fb63-7a1200000000-m00000003-4d2b-1564-a287-0a3ddf680000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m00000003-4d2b-1564-a287-0a3ddf680000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m40000000-9c6d-1580-806e-0a0e295b0000" name="Parent Payment Id" isWriteable="false">
+<Description><![CDATA[Reference on reversal or refunded payments. It points to the Siebel Donation ID of the originating (positive) payment]]></Description>
+<AttrDefn mdsid="mc0000040-f5a5-1582-8e4f-0a5ba8790000" name="AD_3900:1429811443616407">
+<Expr mdsid="m00000025-01f4-0000-5cd2-f81e00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."PAR_PAY_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000025-01f4-0000-5cd2-f81e00000000-m40000000-9c5d-1580-806e-0a0e295b0000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m40000000-9c5d-1580-806e-0a0e295b0000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m00000000-312f-1591-806e-0a0e2d680000" name="Special Modified Date" isWriteable="false">
+<Description><![CDATA[The date the Special Modified Amount field was last updated]]></Description>
+<AttrDefn mdsid="m000000eb-e9ca-15a9-806e-0a0e2da00000" name="AD_3900:1476801453827880">
+<Expr mdsid="m00000026-01f4-0000-d605-76cd00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."SPEC_MOD_DT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000026-01f4-0000-d605-76cd00000000-m00000000-3114-1591-806e-0a0e2d680000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m00000000-3114-1591-806e-0a0e2d680000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m40000000-676c-15b1-806e-0a0e2d8d0000" name="Keyword Cleansed" isWriteable="false">
+<AttrDefn mdsid="m40000001-676c-15b1-806e-0a0e2d8d0000" name="AD_3900:1478541455791547">
+<Expr mdsid="m00000027-01f4-0000-28ea-72f700000000" name="Expr">
+<ExprText><![CDATA[EVALUATE('UPPER(%1)' AS VARCHAR(140),"%1")]]></ExprText>
+<ExprTextDesc><![CDATA[EVALUATE('UPPER(%1)' AS VARCHAR(140),"Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_PAYMENT_D"."X_KEYWORD")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000027-01f4-0000-28ea-72f700000000-m00000000-163e-1540-835d-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbb5c2-0bb9-0000-714b-e31d00000000.xml#m00000000-163e-1540-835d-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c9c9ca-07d8-0000-714b-e31d00000000" name="INTEGRATION_ID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c9c9ca-07d8-0000-714b-e31d00000000-m80c957a6-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c95790-07f3-0000-714b-e31d00000000.xml#m80c957a6-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c95790-07f3-0000-714b-e31d00000000-m80ca1d54-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80ca1d54-07f5-0000-714b-e31d00000000.xml#m80ca1d54-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c95790-07f3-0000-714b-e31d00000000-m80cbbaa1-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cbbaa1-07f5-0000-714b-e31d00000000.xml#m80cbbaa1-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

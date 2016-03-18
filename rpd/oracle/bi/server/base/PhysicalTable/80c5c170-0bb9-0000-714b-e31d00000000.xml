@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5c170-0bb9-0000-714b-e31d00000000" name="Venue Communication" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" isCacheable="false" x="919" y="208" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb3-0bd3-0000-714b-e31d00000000.xml#m80c67bb3-0bd3-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT S_EVTLOC.ROW_ID ROW_ID,
+VENUE_COMMUNICATION.NOTE NOTE
+FROM S_EVTLOC
+LEFT OUTER JOIN S_NOTE VENUE_COMMUNICATION ON
+S_EVTLOC.ROW_ID = VENUE_COMMUNICATION.SRC_ROW_ID AND
+VENUE_COMMUNICATION.NOTE_TYPE = 'VENUE COMMUNICATION'
+
+]]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c6629c-0bbb-0000-714b-e31d00000000" name="ROW_ID" dataType="VARCHAR" precision="30" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c6629d-0bbb-0000-714b-e31d00000000" name="NOTE" dataType="LONGVARCHAR" precision="250" specialType="none">
+</PhysicalColumn>
+<PhysicalKey mdsid="m80c67b28-0bc0-0000-714b-e31d00000000" name="ROW_ID">
+<RefColumns>
+<RefColumn refId="m80c67b28-0bc0-0000-714b-e31d00000000-m80c6629c-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5c170-0bb9-0000-714b-e31d00000000.xml#m80c6629c-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+</PhysicalTable>

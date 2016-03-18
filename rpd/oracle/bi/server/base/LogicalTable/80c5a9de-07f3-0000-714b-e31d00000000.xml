@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9de-07f3-0000-714b-e31d00000000" name="Fact  Compound - Active Asset Hist &amp; Asset FINS Cancelled" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="686" y="153" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c568c8-07d6-0000-714b-e31d00000000" name="Persistency (Policies)" iconIndex="69" isDerived="true" isWriteable="false">
+<Description><![CDATA[The ratio of the number of in-force policies that have not been cancelled by the end of a period to the number of in-force policies at the beginning of a period.]]></Description>
+<Expr mdsid="m00000001-01f4-0000-8cf0-841d00000000" name="Expr">
+<ExprText><![CDATA[100.0d - 100.0d * "%1" / "%2"]]></ExprText>
+<ExprTextDesc><![CDATA[100.0d - 100.0d * "Core"."Fact - CRM - Asset FINS Cancelled Policy"."# Cancelled Policies" / "Core"."Fact - CRM - Active Asset History"."# Active Assets"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-8cf0-841d00000000-m80c56768-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ba-07f3-0000-714b-e31d00000000.xml#m80c56768-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000001-01f4-0000-8cf0-841d00000000-m80c567e8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9c5-07f3-0000-714b-e31d00000000.xml#m80c567e8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68ca5-0f3c-0000-714b-e31d00000000" name="AD_3900:842841074282455">
+<Expr mdsid="m00000002-01f4-0000-3d2e-29ba00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568c9-07d6-0000-714b-e31d00000000" name="Policy Churn %" iconIndex="69" isDerived="true" isWriteable="false">
+<Description><![CDATA["This is the % change in # of insurance policies currently and previously held by your customers (Contacts, Companies or Households) "]]></Description>
+<Expr mdsid="m00000003-01f4-0000-a859-e13300000000" name="Expr">
+<ExprText><![CDATA[100.0d * "%1" / "%2"]]></ExprText>
+<ExprTextDesc><![CDATA[100.0d * "Core"."Fact - CRM - Asset FINS Cancelled Policy"."# Churned Policies" / "Core"."Fact - CRM - Active Asset History"."# Active Assets"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-a859-e13300000000-m80c56769-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ba-07f3-0000-714b-e31d00000000.xml#m80c56769-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000003-01f4-0000-a859-e13300000000-m80c567e8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9c5-07f3-0000-714b-e31d00000000.xml#m80c567e8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68ca6-0f3c-0000-714b-e31d00000000" name="AD_3900:842851074282455">
+<Expr mdsid="m00000004-01f4-0000-0d38-d43300000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+</LogicalTable>

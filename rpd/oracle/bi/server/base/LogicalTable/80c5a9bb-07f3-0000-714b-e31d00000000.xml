@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9bb-07f3-0000-714b-e31d00000000" name="Fact - CRM - Asset FINS Contact" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1037" y="1210" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c5676b-07d6-0000-714b-e31d00000000" name="# Households with Assets" iconIndex="69" isWriteable="false">
+<Description><![CDATA[Count of Households that own at least one asset (Insurance Policy / Financial Account)]]></Description>
+<MeasureDefn mdsid="m80c5b1a4-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b9ee-0802-0000-714b-e31d00000000" name="AggRule_2050:3330981142556548" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-a1e7-57dd00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - CRM - Asset FINS Contact"."# Households with Assets")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-a1e7-57dd00000000-m80c5676b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9bb-07f3-0000-714b-e31d00000000.xml#m80c5676b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68b48-0f3c-0000-714b-e31d00000000" name="AD_3900:838291074282455">
+<Expr mdsid="m00000002-01f4-0000-221b-524400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."CONTACT_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_PERSON_D_Contact"."PR_HOUSEHOLD_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-221b-524400000000-m80c5c29f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c29f-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-221b-524400000000-m80c5f5ee-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bef5-0bb9-0000-714b-e31d00000000.xml#m80c5f5ee-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5676c-07d6-0000-714b-e31d00000000" name="# Asset Manager Household Assets" iconIndex="69" isDerived="true" isWriteable="false">
+<Expr mdsid="m00000003-01f4-0000-ec4e-d4ff00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - CRM - Asset FINS Contact"."# Households with Assets"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-ec4e-d4ff00000000-m80c5676b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9bb-07f3-0000-714b-e31d00000000.xml#m80c5676b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b49-0f3c-0000-714b-e31d00000000" name="AD_3900:838321074282455">
+<Expr mdsid="m00000004-01f4-0000-83c4-34c700000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5676d-07d6-0000-714b-e31d00000000" name="# Households with Assets Range" iconIndex="69" isDerived="true" isWriteable="false">
+<Description><![CDATA["Ranges based on # Households with Assets (* Can only be used with ""# Financial Account Managers"" object."]]></Description>
+<Expr mdsid="m00000005-01f4-0000-64c9-e5b400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" IS NULL  OR "%1" <= 49 THEN 'A: 0-49' WHEN "%1" <= 149 THEN 'B: 50-149' WHEN "%1" <= 299 THEN 'C: 150-299' WHEN "%1" <= 499 THEN 'D: 300-499' ELSE 'E: 500+' END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Asset FINS Contact"."# Asset Manager Household Assets" IS NULL  OR "Core"."Fact - CRM - Asset FINS Contact"."# Asset Manager Household Assets" <= 49 THEN 'A: 0-49' WHEN "Core"."Fact - CRM - Asset FINS Contact"."# Asset Manager Household Assets" <= 149 THEN 'B: 50-149' WHEN "Core"."Fact - CRM - Asset FINS Contact"."# Asset Manager Household Assets" <= 299 THEN 'C: 150-299' WHEN "Core"."Fact - CRM - Asset FINS Contact"."# Asset Manager Household Assets" <= 499 THEN 'D: 300-499' ELSE 'E: 500+' END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-64c9-e5b400000000-m80c5676c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9bb-07f3-0000-714b-e31d00000000.xml#m80c5676c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68b4a-0f3c-0000-714b-e31d00000000" name="AD_3900:838331074282455">
+<Expr mdsid="m00000006-01f4-0000-6e21-da2500000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5676e-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80c68b4b-0f3c-0000-714b-e31d00000000" name="AD_3900:838341074282455">
+<Expr mdsid="m00000007-01f4-0000-7d5e-c41400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ASSET_F_FINS"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-7d5e-c41400000000-m80c5c2ab-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5be9c-0bb9-0000-714b-e31d00000000.xml#m80c5c2ab-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58c8a-07d8-0000-714b-e31d00000000" name="ROW_WID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58c8a-07d8-0000-714b-e31d00000000-m80c5676e-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9bb-07f3-0000-714b-e31d00000000.xml#m80c5676e-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5a9bb-07f3-0000-714b-e31d00000000-m80c5abe6-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5abe6-07f5-0000-714b-e31d00000000.xml#m80c5abe6-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

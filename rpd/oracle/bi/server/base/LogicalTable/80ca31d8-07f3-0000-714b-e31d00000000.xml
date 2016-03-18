@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80ca31d8-07f3-0000-714b-e31d00000000" name="Fact - Owning Party - Profiling Info" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1163" y="1081" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80ca31fe-07d6-0000-714b-e31d00000000" name="# Profiles" isWriteable="false">
+<MeasureDefn mdsid="m80ca3252-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80ca3255-0802-0000-714b-e31d00000000" name="AggRule_2050:7840361353586207" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-eafb-7cf200000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core 2"."Fact - Owning Party - Profiling Info"."# Profiles")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-eafb-7cf200000000-m80ca31fe-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80ca31d8-07f3-0000-714b-e31d00000000.xml#m80ca31fe-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80ca321a-0f3c-0000-714b-e31d00000000" name="AD_3900:7840011353585858">
+<Expr mdsid="m00000002-01f4-0000-5aeb-96cd00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PROFILE_INFO_D"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-5aeb-96cd00000000-m80ca301a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca3008-0bb9-0000-714b-e31d00000000.xml#m80ca301a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbc60c-07d6-0000-714b-e31d00000000" name="# of Owning Parties (Distinct)" isWriteable="false">
+<MeasureDefn mdsid="m80cbc624-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbc63e-0802-0000-714b-e31d00000000" name="AggRule_2050:8518171404314539" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-7a2c-aac800000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Owning Party - Profiling Info"."# of Owning Parties (Distinct)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-7a2c-aac800000000-m80cbc60c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80ca31d8-07f3-0000-714b-e31d00000000.xml#m80cbc60c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbc655-0f3c-0000-714b-e31d00000000" name="AD_3900:8518111404314539">
+<Expr mdsid="m00000004-01f4-0000-f21d-9f6900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PROFILE_INFO_D"."OWNPARTY_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_PROFILE_INFO_D"."OWNPARTY_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-f21d-9f6900000000-m80ca3018-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca3008-0bb9-0000-714b-e31d00000000.xml#m80ca3018-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80ca31d8-07f3-0000-714b-e31d00000000-m80ca324c-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80ca324c-07f5-0000-714b-e31d00000000.xml#m80ca324c-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

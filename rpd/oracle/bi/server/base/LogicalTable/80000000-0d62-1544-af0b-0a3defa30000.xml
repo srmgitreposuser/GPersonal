@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80000000-0d62-1544-af0b-0a3defa30000" name="Dim - Invoice (FWS)" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80000005-0d6f-1544-af0b-0a3defa30000" name="Invoice Date" isWriteable="false">
+<Description><![CDATA[The date on the solicitor invoice]]></Description>
+<AttrDefn mdsid="m80000007-0d6f-1544-af0b-0a3defa30000" name="AD_3900:8604701427125694">
+<Expr mdsid="m00000001-01f4-0000-ffc0-ec6200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_INVOICE_F"."INVOICE_DT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-ffc0-ec6200000000-m00000005-00f9-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-00f9-1544-af0b-0a3defa30000.xml#m00000005-00f9-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80000006-0d6f-1544-af0b-0a3defa30000" name="Invoice Number" isWriteable="false">
+<Description><![CDATA[The number on the solicitor invoice]]></Description>
+<AttrDefn mdsid="m80000008-0d6f-1544-af0b-0a3defa30000" name="AD_3900:8604711427125694">
+<Expr mdsid="m00000002-01f4-0000-687e-e2d800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_INVOICE_F"."INVOICE_NUM"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-687e-e2d800000000-m00000006-00f9-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-00f9-1544-af0b-0a3defa30000.xml#m00000006-00f9-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc0000002-0df1-1544-af0b-0a3defa30000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="mc0000003-0df1-1544-af0b-0a3defa30000" name="AD_3900:8605061427126215">
+<Expr mdsid="m00000003-01f4-0000-682c-959100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_INVOICE_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-682c-959100000000-m0000000c-00f9-1544-af0b-0a3defa30000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000000-00f9-1544-af0b-0a3defa30000.xml#m0000000c-00f9-1544-af0b-0a3defa30000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80000000-0dfa-1544-af0b-0a3defa30000" name="PK" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80000000-0dfa-1544-af0b-0a3defa30000-mc0000002-0df1-1544-af0b-0a3defa30000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80000000-0d62-1544-af0b-0a3defa30000.xml#mc0000002-0df1-1544-af0b-0a3defa30000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80000000-0d62-1544-af0b-0a3defa30000-m80000009-0d6f-1544-af0b-0a3defa30000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80000009-0d6f-1544-af0b-0a3defa30000.xml#m80000009-0d6f-1544-af0b-0a3defa30000"/>
+</RefTableSources>
+</LogicalTable>

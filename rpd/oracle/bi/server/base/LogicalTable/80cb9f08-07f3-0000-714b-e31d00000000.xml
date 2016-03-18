@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80cb9f08-07f3-0000-714b-e31d00000000" name="Fact - Owning Party - Event Volunteers" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="978" y="882" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80cb9f10-07d6-0000-714b-e31d00000000" name="# of Events (Distinct)" isWriteable="false">
+<Description><![CDATA[# of Events (Distinct): Unique count of the events.]]></Description>
+<MeasureDefn mdsid="m80cb9f37-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbc7a6-0802-0000-714b-e31d00000000" name="AggRule_2050:8520871404823485" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-3e34-6d9f00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Owning Party - Event Volunteers"."# of Events (Distinct)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-3e34-6d9f00000000-m80cb9f10-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb9f08-07f3-0000-714b-e31d00000000.xml#m80cb9f10-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb9f14-0f3c-0000-714b-e31d00000000" name="AD_3900:8448541400172357">
+<Expr mdsid="m00000002-01f4-0000-418a-7a6200000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVT_VOL_F"."X_SRM_EVT_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-418a-7a6200000000-m80c6642f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c17b-0bb9-0000-714b-e31d00000000.xml#m80c6642f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb9f12-07d6-0000-714b-e31d00000000" name="# of Event Volunteers (Distinct)" isWriteable="false">
+<Description><![CDATA[# of Volunteers (Distinct): Unique count of the volunteers linked to events.]]></Description>
+<MeasureDefn mdsid="m80cb9f33-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbc7a8-0802-0000-714b-e31d00000000" name="AggRule_2050:8520881404823494" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-72b2-e02a00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Owning Party - Event Volunteers"."# of Event Volunteers (Distinct)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-72b2-e02a00000000-m80cb9f12-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb9f08-07f3-0000-714b-e31d00000000.xml#m80cb9f12-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cb9f16-0f3c-0000-714b-e31d00000000" name="AD_3900:8448551400172357">
+<Expr mdsid="m00000004-01f4-0000-5cfe-2a3a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_EVT_VOL_F"."OWN_PARTY_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-5cfe-2a3a00000000-m80cb9eb8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5c17b-0bb9-0000-714b-e31d00000000.xml#m80cb9eb8-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80cb9f08-07f3-0000-714b-e31d00000000-m80cb9f18-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cb9f18-07f5-0000-714b-e31d00000000.xml#m80cb9f18-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

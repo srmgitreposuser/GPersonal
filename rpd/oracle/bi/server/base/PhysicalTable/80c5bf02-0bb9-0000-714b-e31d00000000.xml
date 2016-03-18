@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5bf02-0bb9-0000-714b-e31d00000000" name="Dim_Agg_W_PERSON_D_CONTACT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" x="1669" y="212" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb1-0bd3-0000-714b-e31d00000000.xml#m80c67bb1-0bd3-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[select distinct C.ROW_WID as ROW_WID, 'Y' as SAMPLE_FLG 
+from VALUEOF(OLAPTBO).W_ASSET_D A, VALUEOF(OLAPTBO).W_ASSET_F AF, VALUEOF(OLAPTBO).W_PERSON_D C
+where A.ASSET_TYPE_I = 'AAG Account' and A.ROW_WID = AF.ASSET_WID 
+          and AF.CONTACT_WID = C.ROW_WID and C.EMP_FLG = 'N']]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c5d332-0bbb-0000-714b-e31d00000000" name="ROW_WID" dataType="DOUBLE" precision="10" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5d333-0bbb-0000-714b-e31d00000000" name="SAMPLE_FLG" dataType="VARCHAR" precision="1" specialType="none">
+</PhysicalColumn>
+<PhysicalKey mdsid="m80c6792a-0bc0-0000-714b-e31d00000000" name="ROW_WID">
+<RefColumns>
+<RefColumn refId="m80c6792a-0bc0-0000-714b-e31d00000000-m80c5d332-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bf02-0bb9-0000-714b-e31d00000000.xml#m80c5d332-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+</PhysicalTable>

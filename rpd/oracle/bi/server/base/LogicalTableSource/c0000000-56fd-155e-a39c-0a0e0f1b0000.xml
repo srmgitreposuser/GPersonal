@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTableSource mdsid="mc0000000-56fd-155e-a39c-0a0e0f1b0000" name="Fact_WC_CAMP_HIST_A_StageTransTo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isActive="true" logicalTableRef="/oracle/bi/server/base/LogicalTable/80000000-9568-1550-8b73-0a3defa30000.xml#m80000000-9568-1550-8b73-0a3defa30000">
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000001-01f4-0000-8d80-954a00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Core 2"."Fact - Owning Party - To Stage Transition - Campaign History"."Audience Volume"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-8d80-954a00000000-mc0000003-9596-1550-8b73-0a3defa30000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80000000-9568-1550-8b73-0a3defa30000.xml#mc0000003-9596-1550-8b73-0a3defa30000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000002-01f4-0000-79ef-70c200000000" name="Expr">
+<ExprText><![CDATA[CASE  WHEN "%1" = 'Passed' THEN   "%2"   ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Contact_Outcome"."VAL" = 'Passed' THEN   "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_CAMP_HIST_A_StageTransTo"."CAMP_CON_PARTY_CNT"   ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-79ef-70c200000000-m80c5f2bd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfd3-0bb9-0000-714b-e31d00000000.xml#m80c5f2bd-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-79ef-70c200000000-m40000002-56f3-155e-a39c-0a0e0f1b0000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/40000000-56f3-155e-a39c-0a0e0f1b0000.xml#m40000002-56f3-155e-a39c-0a0e0f1b0000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/40000000-56f3-155e-a39c-0a0e0f1b0000.xml#m40000000-56f3-155e-a39c-0a0e0f1b0000">
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/40000000-56f3-155e-a39c-0a0e0f1b0000.xml#m40000000-56f3-155e-a39c-0a0e0f1b0000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80c5bfd3-0bb9-0000-714b-e31d00000000.xml#m80c5bfd3-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/40000000-56f3-155e-a39c-0a0e0f1b0000.xml#m80000000-89c6-1589-806e-0a0e2da60000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80c5bfd3-0bb9-0000-714b-e31d00000000.xml#m80c5bfd3-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80c5bfd3-0bb9-0000-714b-e31d00000000.xml#m80c5bfd3-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/40000000-56f3-155e-a39c-0a0e0f1b0000.xml#m40000000-56f3-155e-a39c-0a0e0f1b0000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/40000000-56f3-155e-a39c-0a0e0f1b0000.xml#m80000000-89c6-1589-806e-0a0e2da60000"/>
+</Link>
+<WhereClause mdsid="m00000003-01f4-0000-183c-2a1500000000" name="WhereClause">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</WhereClause>
+<GroupBy mdsid="m00000004-01f4-0000-3706-4d1100000000" name="GroupBy">
+<ExprText><![CDATA[ GROUPBYLEVEL("%1", "%2", "%3", "%4", "%5", "%6", "%7", "%8", "%9", "%10")]]></ExprText>
+<ExprTextDesc><![CDATA[ GROUPBYLEVEL("Core 2"."Dim - Version (From Stage Transition)Dim"."Dim - Version (From Stage Transition) Total", "Core 2"."Dim - Owning PartyDim"."All", "Core 2"."Dim - Opportunity CanvasserDim"."All", "Core 2"."Dim - Version (To Stage Transition)Dim"."Dim - Version (To Stage Transition) Detail", "Core 2"."Dim - OpportunityDim"."All", "Core 2"."Dim - Opportunity Start DateDim"."All Start Date", "Core 2"."Dim - Campaign (To Stage Transition)Dim"."Dim - Campaign (To Stage Transition) Detail", "Core 2"."Dim - Campaign (From Stage Transition)Dim"."Dim - Campaign (From Stage Transition) Total", "Core 2"."Dim - Opportunity End DateDim"."All", "Core 2"."Dim - Opportunity Stage TransitionDim"."Dim - Opportunity Stage Transition Total")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-3706-4d1100000000-mc0000003-5960-1544-b306-0a3defa30000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/c0000000-5960-1544-b306-0a3defa30000.xml#mc0000003-5960-1544-b306-0a3defa30000"/>
+<RefObject refId="m00000004-01f4-0000-3706-4d1100000000-m80c9b7ae-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c940f4-07e3-0000-714b-e31d00000000.xml#m80c9b7ae-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-3706-4d1100000000-m80c9b7ba-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c940fa-07e3-0000-714b-e31d00000000.xml#m80c9b7ba-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-3706-4d1100000000-mc0000008-5960-1544-b306-0a3defa30000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/c0000007-5960-1544-b306-0a3defa30000.xml#mc0000008-5960-1544-b306-0a3defa30000"/>
+<RefObject refId="m00000004-01f4-0000-3706-4d1100000000-m80c9b0f6-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c93f4a-07e3-0000-714b-e31d00000000.xml#m80c9b0f6-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-3706-4d1100000000-m80c9b79c-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80c940f0-07e3-0000-714b-e31d00000000.xml#m80c9b79c-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-3706-4d1100000000-m40000001-593d-1544-b306-0a3defa30000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/40000000-593d-1544-b306-0a3defa30000.xml#m40000001-593d-1544-b306-0a3defa30000"/>
+<RefObject refId="m00000004-01f4-0000-3706-4d1100000000-m40000003-5922-1544-b306-0a3defa30000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/40000000-5922-1544-b306-0a3defa30000.xml#m40000003-5922-1544-b306-0a3defa30000"/>
+<RefObject refId="m00000004-01f4-0000-3706-4d1100000000-m80cb9521-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cb950f-07e3-0000-714b-e31d00000000.xml#m80cb9521-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-3706-4d1100000000-m40000002-582e-155b-ab76-0a0e0f2c0000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/40000000-582e-155b-ab76-0a0e0f2c0000.xml#m40000002-582e-155b-ab76-0a0e0f2c0000"/>
+</ObjectRefList>
+</GroupBy>
+<FragmentContent mdsid="m00000005-01f4-0000-e6bf-1a6e00000000" name="FragmentContent">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</FragmentContent>
+</LogicalTableSource>

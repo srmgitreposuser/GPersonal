@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5bf08-0bb9-0000-714b-e31d00000000" name="Fact_W_ORDERITEM_F_PROD_AFFINITY_OV_F" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" x="528" y="859" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb1-0bd3-0000-714b-e31d00000000.xml#m80c67bb1-0bd3-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[SELECT child.ORDER_WID, child.LN_NUM, child.PAR_LN_NUM, 
+childproduct.ROW_WID CHILD_ROW_WID,
+parentproduct.ROW_WID  PAR_ROW_WID,
+contact.ROW_WID  CONTACT_WID,
+time.ROW_WID  DT_WID,
+sum(child.QTY_REQ)  CHILD_QTY,
+sum(parent.QTY_REQ)  PARENT_QTY
+From
+VALUEOF(OLAPTBO).W_ORDERITEM_F child,
+VALUEOF(OLAPTBO).W_ORDERITEM_F parent,
+VALUEOF(OLAPTBO).W_PERSON_D contact,
+VALUEOF(OLAPTBO).W_PRODUCT_D childproduct,
+VALUEOF(OLAPTBO).W_PRODUCT_D parentproduct,
+VALUEOF(OLAPTBO).W_DAY_D  time
+Where
+child.ORDER_WID =  parent.ORDER_WID  AND
+child.PAR_LN_NUM   = parent.LN_NUM   AND
+child.PAR_LN_NUM IS NOT NULL    AND 
+parent.TOP_LVL_LN_FLG  = 'Y' AND
+child.PROD_WID  = childproduct.ROW_WID  AND
+parent.PROD_WID  = parentproduct.ROW_WID  AND
+child.CONTACT_WID = contact.ROW_WID  AND
+child.ORDER_DT_WID = time.ROW_WID
+Group by
+childproduct.ROW_WID,
+parentproduct.ROW_WID, 
+contact.ROW_WID,
+time.ROW_WID,
+child.ORDER_WID,
+child.LN_NUM, 
+child.PAR_LN_NUM]]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c5d394-0bbb-0000-714b-e31d00000000" name="ORDER_WID" dataType="INT" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5d395-0bbb-0000-714b-e31d00000000" name="LN_NUM" dataType="INT" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5d396-0bbb-0000-714b-e31d00000000" name="PAR_LN_NUM" dataType="INT" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5d397-0bbb-0000-714b-e31d00000000" name="CHILD_ROW_WID" dataType="INT" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5d398-0bbb-0000-714b-e31d00000000" name="PAR_ROW_WID" dataType="INT" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5d399-0bbb-0000-714b-e31d00000000" name="CONTACT_WID" dataType="INT" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5d39a-0bbb-0000-714b-e31d00000000" name="DT_WID" dataType="INT" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5d39b-0bbb-0000-714b-e31d00000000" name="CHILD_QTY" dataType="DOUBLE" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5d39c-0bbb-0000-714b-e31d00000000" name="PARENT_QTY" dataType="INT" specialType="none">
+</PhysicalColumn>
+<PhysicalKey mdsid="m80c67933-0bc0-0000-714b-e31d00000000" name="ORDER_WID">
+<RefColumns>
+<RefColumn refId="m80c67933-0bc0-0000-714b-e31d00000000-m80c5d394-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bf08-0bb9-0000-714b-e31d00000000.xml#m80c5d394-0bbb-0000-714b-e31d00000000"/>
+<RefColumn refId="m80c67933-0bc0-0000-714b-e31d00000000-m80c5d395-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bf08-0bb9-0000-714b-e31d00000000.xml#m80c5d395-0bbb-0000-714b-e31d00000000"/>
+<RefColumn refId="m80c67933-0bc0-0000-714b-e31d00000000-m80c5d396-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bf08-0bb9-0000-714b-e31d00000000.xml#m80c5d396-0bbb-0000-714b-e31d00000000"/>
+<RefColumn refId="m80c67933-0bc0-0000-714b-e31d00000000-m80c5d399-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bf08-0bb9-0000-714b-e31d00000000.xml#m80c5d399-0bbb-0000-714b-e31d00000000"/>
+<RefColumn refId="m80c67933-0bc0-0000-714b-e31d00000000-m80c5d39a-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bf08-0bb9-0000-714b-e31d00000000.xml#m80c5d39a-0bbb-0000-714b-e31d00000000"/>
+<RefColumn refId="m80c67933-0bc0-0000-714b-e31d00000000-m80c5d397-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bf08-0bb9-0000-714b-e31d00000000.xml#m80c5d397-0bbb-0000-714b-e31d00000000"/>
+<RefColumn refId="m80c67933-0bc0-0000-714b-e31d00000000-m80c5d398-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bf08-0bb9-0000-714b-e31d00000000.xml#m80c5d398-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+<PhysicalForeignKey mdsid="m80c67032-0bbe-0000-714b-e31d00000000" name="W_PROD_AFFINITY_OV_F_FKey" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5bea9-0bb9-0000-714b-e31d00000000.xml#m80c678ab-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c67032-0bbe-0000-714b-e31d00000000-m80c5d394-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bf08-0bb9-0000-714b-e31d00000000.xml#m80c5d394-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m80c67033-0bbe-0000-714b-e31d00000000" name="W_PROD_AFFINITY_OV_F_FKey1" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5be9e-0bb9-0000-714b-e31d00000000.xml#m80c6789d-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c67033-0bbe-0000-714b-e31d00000000-m80c5d39a-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bf08-0bb9-0000-714b-e31d00000000.xml#m80c5d39a-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m80c67034-0bbe-0000-714b-e31d00000000" name="W_PROD_AFFINITY_OV_F_FKey2" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5bef5-0bb9-0000-714b-e31d00000000.xml#m80c67917-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c67034-0bbe-0000-714b-e31d00000000-m80c5d399-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bf08-0bb9-0000-714b-e31d00000000.xml#m80c5d399-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m80c67035-0bbe-0000-714b-e31d00000000" name="W_PROD_AFFINITY_OV_F_FKey4" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5bedb-0bb9-0000-714b-e31d00000000.xml#m80c678f5-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c67035-0bbe-0000-714b-e31d00000000-m80c5d398-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bf08-0bb9-0000-714b-e31d00000000.xml#m80c5d398-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m80c67036-0bbe-0000-714b-e31d00000000" name="W_PROD_AFFINITY_OV_F_FKey5" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80c5beae-0bb9-0000-714b-e31d00000000.xml#m80c678b0-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80c67036-0bbe-0000-714b-e31d00000000-m80c5d397-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bf08-0bb9-0000-714b-e31d00000000.xml#m80c5d397-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+</PhysicalTable>

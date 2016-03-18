@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5aa19-07f3-0000-714b-e31d00000000" name="Fact - CRM - Account" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="398" y="1601" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c56bd6-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80c68fb2-0f3c-0000-714b-e31d00000000" name="AD_3900:1420471078191664">
+<Expr mdsid="m00000001-01f4-0000-d745-e3df00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ORG_D_Account"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-d745-e3df00000000-m80c5f1d2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfd0-0bb9-0000-714b-e31d00000000.xml#m80c5f1d2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56bd7-07d6-0000-714b-e31d00000000" name="# of Accounts" isWriteable="false">
+<MeasureDefn mdsid="m80c5b2b3-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c8ed89-0802-0000-714b-e31d00000000" name="AggRule_2050:7309181341686748" isDefault="true">
+<Expr mdsid="m00000002-01f4-0000-1797-47ba00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Account"."# of Accounts")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-1797-47ba00000000-m80c56bd7-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa19-07f3-0000-714b-e31d00000000.xml#m80c56bd7-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68fb3-0f3c-0000-714b-e31d00000000" name="AD_3900:1422481078191796">
+<Expr mdsid="m00000003-01f4-0000-e342-c6bc00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_ORG_D_Account"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-e342-c6bc00000000-m80c5f1d2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfd0-0bb9-0000-714b-e31d00000000.xml#m80c5f1d2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58ce1-07d8-0000-714b-e31d00000000" name="W_ORG_D_Key" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58ce1-07d8-0000-714b-e31d00000000-m80c56bd6-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5aa19-07f3-0000-714b-e31d00000000.xml#m80c56bd6-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5aa19-07f3-0000-714b-e31d00000000-m80c5ac2f-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ac2f-07f5-0000-714b-e31d00000000.xml#m80c5ac2f-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

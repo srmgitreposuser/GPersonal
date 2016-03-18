@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTableSource mdsid="m80cbef23-07f5-0000-714b-e31d00000000" name="Fact_WC_DI_EXCEPTION_F_Error_QuarterAgo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isActive="true" logicalTableRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m00005169-07f3-0000-714b-e31d00000000">
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000001-01f4-0000-4b61-915b00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."Avg Validation Score Quarter Ago"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-4b61-915b00000000-m80cbef29-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbef29-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000002-01f4-0000-971f-eb0300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError_QuarterAgo"."VALIDATION_SCORE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-971f-eb0300000000-m80cbe807-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbe7e3-0bb9-0000-714b-e31d00000000.xml#m80cbe807-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000003-01f4-0000-70f1-95d500000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Exceptions Quarter Ago"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-70f1-95d500000000-m80cbef35-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbef35-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000004-01f4-0000-a3a5-3f6800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError_QuarterAgo"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-a3a5-3f6800000000-m80cbe7e5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbe7e3-0bb9-0000-714b-e31d00000000.xml#m80cbe7e5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000005-01f4-0000-b26b-ce7e00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Errors Quarter Ago"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-b26b-ce7e00000000-m80cbef41-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbef41-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000006-01f4-0000-b472-473200000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'ERROR' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'ERROR' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError_QuarterAgo"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-b472-473200000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-b472-473200000000-m80cbe7e5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbe7e3-0bb9-0000-714b-e31d00000000.xml#m80cbe7e5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000007-01f4-0000-d65f-8fab00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Warnings Quarter Ago"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-d65f-8fab00000000-m80cbef4d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbef4d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000008-01f4-0000-d82a-2e9300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'WARNING' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'WARNING' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError_QuarterAgo"."ROW_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-d82a-2e9300000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-d82a-2e9300000000-m80cbe7e5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbe7e3-0bb9-0000-714b-e31d00000000.xml#m80cbe7e5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000009-01f4-0000-8b17-96aa00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Files with Exceptions Quarter Ago"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-8b17-96aa00000000-m80cbf001-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbf001-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000a-01f4-0000-4590-605800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError_QuarterAgo"."EVENT_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-4590-605800000000-m80cbe7fb-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbe7e3-0bb9-0000-714b-e31d00000000.xml#m80cbe7fb-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000000b-01f4-0000-2066-970600000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Files with Errors Quarter Ago"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-2066-970600000000-m80cbf00d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbf00d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000c-01f4-0000-a88f-35c400000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'ERROR' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'ERROR' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError_QuarterAgo"."EVENT_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-a88f-35c400000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-a88f-35c400000000-m80cbe7fb-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbe7e3-0bb9-0000-714b-e31d00000000.xml#m80cbe7fb-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m0000000d-01f4-0000-3e67-e55700000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Data Integration Reporting"."Fact  - Validation"."# Files with Warnings Quarter Ago"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-3e67-e55700000000-m80cbf019-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/00005169-07f3-0000-714b-e31d00000000.xml#m80cbf019-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000e-01f4-0000-134c-f8e300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'WARNING' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_WC_DI_VLD_RULE_D_DIValidationRule"."VALIDATION_TYPE" = 'WARNING' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_DI_EXCEPTION_F_DIError_QuarterAgo"."EVENT_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-134c-f8e300000000-m80cbfad0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m80cbfad0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-134c-f8e300000000-m80cbe7fb-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cbe7e3-0bb9-0000-714b-e31d00000000.xml#m80cbe7fb-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m00000524-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality=" ONE TO MANY" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m00000524-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/80cbe7e3-0bb9-0000-714b-e31d00000000.xml#m80cbe7e3-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80cbe7e3-0bb9-0000-714b-e31d00000000.xml#m80cbe817-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/80cbe7e3-0bb9-0000-714b-e31d00000000.xml#m80cbe7e3-0bb9-0000-714b-e31d00000000">
+<Join type="Inner" cardinality="MANY TO ONE" physicalTable1Ref="/oracle/bi/server/base/PhysicalTable/80cbe7e3-0bb9-0000-714b-e31d00000000.xml#m80cbe7e3-0bb9-0000-714b-e31d00000000" physicalTable2Ref="/oracle/bi/server/base/PhysicalTable/00000524-0bb9-0000-714b-e31d00000000.xml#m00000524-0bb9-0000-714b-e31d00000000" physicalJoinRef="/oracle/bi/server/base/PhysicalTable/80cbe7e3-0bb9-0000-714b-e31d00000000.xml#m80cbe817-0bbe-0000-714b-e31d00000000"/>
+</Link>
+<WhereClause mdsid="m0000000f-01f4-0000-404e-415300000000" name="WhereClause">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</WhereClause>
+<GroupBy mdsid="m00000010-01f4-0000-ec0c-d30500000000" name="GroupBy">
+<ExprText><![CDATA[ GROUPBYLEVEL("%1", "%2", "%3", "%4", "%5", "%6", "%7", "%8", "%9", "%10", "%11")]]></ExprText>
+<ExprTextDesc><![CDATA[ GROUPBYLEVEL("Data Integration Reporting"."Hier - Date"."Detail", "Data Integration Reporting"."Hier - Processed Date"."Detail", "Data Integration Reporting"."Hier - Received Date"."Detail", "Data Integration Reporting"."Hier - Partner Account"."Partner Account Detail", "Data Integration Reporting"."Hier - Processing Batch"."Processing Batch Detail", "Data Integration Reporting"."Hier - Received File"."Received File Detail", "Data Integration Reporting"."Hier - Received File Transaction"."Received File Transaction Detail", "Data Integration Reporting"."Hier - Rectification User"."Rectification User Detail", "Data Integration Reporting"."Hier - Validation Result Details"."Validation Result Details Detail", "Data Integration Reporting"."Hier - Validation Rule"."Validation Rule Detail", "Data Integration Reporting"."Hier - Clock"."Minute")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-ec0c-d30500000000-m80cbfeab-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cbfc64-07e3-0000-714b-e31d00000000.xml#m80cbfeab-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-ec0c-d30500000000-m80cbdbe3-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cbdbb7-07e3-0000-714b-e31d00000000.xml#m80cbdbe3-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-ec0c-d30500000000-m80cbdc3f-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cbdc13-07e3-0000-714b-e31d00000000.xml#m80cbdc3f-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-ec0c-d30500000000-m80cbfeb9-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cbd566-07e3-0000-714b-e31d00000000.xml#m80cbfeb9-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-ec0c-d30500000000-m80cbd9aa-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cbd9a9-07e3-0000-714b-e31d00000000.xml#m80cbd9aa-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-ec0c-d30500000000-m80cbd9b2-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cbd9b1-07e3-0000-714b-e31d00000000.xml#m80cbd9b2-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-ec0c-d30500000000-m80cbd9b6-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cbd9b5-07e3-0000-714b-e31d00000000.xml#m80cbd9b6-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-ec0c-d30500000000-m80cbe353-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cbe352-07e3-0000-714b-e31d00000000.xml#m80cbe353-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-ec0c-d30500000000-m80cbd9ba-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cbd9b9-07e3-0000-714b-e31d00000000.xml#m80cbd9ba-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-ec0c-d30500000000-m80cbd9be-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cbd9bd-07e3-0000-714b-e31d00000000.xml#m80cbd9be-07e9-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-ec0c-d30500000000-m80cbf609-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cbf602-07e3-0000-714b-e31d00000000.xml#m80cbf609-07e9-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</GroupBy>
+<FragmentContent mdsid="m00000011-01f4-0000-2461-563e00000000" name="FragmentContent">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</FragmentContent>
+</LogicalTableSource>

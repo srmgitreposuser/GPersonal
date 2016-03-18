@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9e1-07f3-0000-714b-e31d00000000" name="Fact  Compound - Order Item &amp; Next Order Same Contact" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="321" y="50" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c568cd-07d6-0000-714b-e31d00000000" name="% of Next Product Purchased (Contacts)" isDerived="true" isWriteable="false">
+<Description><![CDATA[This metric is used in the Next Product Purchased Report]]></Description>
+<Expr mdsid="m00000001-01f4-0000-0e85-05c500000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN  NULL  ELSE 100.0d * "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Order Item"."# of Purchasers of Selected Product" = 0 THEN  NULL  ELSE 100.0d * "Core"."Fact - CRM - Next Order Same Contact"."# of Purchasers of Next Product" / "Core"."Fact - CRM - Order Item"."# of Purchasers of Selected Product" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-0e85-05c500000000-m80c57af8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa8c-07f3-0000-714b-e31d00000000.xml#m80c57af8-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000001-01f4-0000-0e85-05c500000000-m80c567f8-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9c9-07f3-0000-714b-e31d00000000.xml#m80c567f8-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68caa-0f3c-0000-714b-e31d00000000" name="AD_3900:842931074282455">
+<Expr mdsid="m00000002-01f4-0000-c4ee-e3eb00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+</LogicalTable>

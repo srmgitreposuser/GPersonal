@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9af-07f3-0000-714b-e31d00000000" name="Fact - CRM - Survey" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="325" y="600" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c56642-07d6-0000-714b-e31d00000000" name="Average Service Accessibility" isWriteable="false">
+<Description><![CDATA[Average Service Accessibility Score (number from 0 to 20). This information is only available for a customer as provided through a survey. Hence this column should not be used when Product, Account or Asset is part of the query.]]></Description>
+<MeasureDefn mdsid="m80c5b0ff-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b819-0802-0000-714b-e31d00000000" name="AggRule_2050:180361074282429" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-bf4c-c70700000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core"."Fact - CRM - Survey"."Average Service Accessibility")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-bf4c-c70700000000-m80c56642-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9af-07f3-0000-714b-e31d00000000.xml#m80c56642-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68a1f-0f3c-0000-714b-e31d00000000" name="AD_3900:834191074282455">
+<Expr mdsid="m00000002-01f4-0000-5461-eb9800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_SURVEY_F"."ACCESSIBLE_SCORE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-5461-eb9800000000-m80c5c7cd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beba-0bb9-0000-714b-e31d00000000.xml#m80c5c7cd-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56643-07d6-0000-714b-e31d00000000" name="Average Service Rep Knowledge Level" isWriteable="false">
+<Description><![CDATA[Average Service Rep Knowledge Level Score (number from 0 to 20) as reported by the customer. This column should not be used when Product, Account or Asset is part of the query.]]></Description>
+<MeasureDefn mdsid="m80c5b100-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b81a-0802-0000-714b-e31d00000000" name="AggRule_2050:180371074282429" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-53cf-97d000000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core"."Fact - CRM - Survey"."Average Service Rep Knowledge Level")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-53cf-97d000000000-m80c56643-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9af-07f3-0000-714b-e31d00000000.xml#m80c56643-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68a20-0f3c-0000-714b-e31d00000000" name="AD_3900:834201074282455">
+<Expr mdsid="m00000004-01f4-0000-424e-e37c00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_SURVEY_F"."KNOWLEDGE_SCORE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-424e-e37c00000000-m80c5c7ce-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beba-0bb9-0000-714b-e31d00000000.xml#m80c5c7ce-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56644-07d6-0000-714b-e31d00000000" name="Average Service Quality" isWriteable="false">
+<Description><![CDATA[Average Service Quality Score (number from 0 to 20) as reported by the customer in a survey. This column should not be used when Product, Account or Asset is part of the query.]]></Description>
+<MeasureDefn mdsid="m80c5b101-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b81b-0802-0000-714b-e31d00000000" name="AggRule_2050:180381074282429" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-7280-cc4600000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core"."Fact - CRM - Survey"."Average Service Quality")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-7280-cc4600000000-m80c56644-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9af-07f3-0000-714b-e31d00000000.xml#m80c56644-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68a21-0f3c-0000-714b-e31d00000000" name="AD_3900:834211074282455">
+<Expr mdsid="m00000006-01f4-0000-922d-12da00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_SURVEY_F"."OVERALL_SCORE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-922d-12da00000000-m80c5c7cf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beba-0bb9-0000-714b-e31d00000000.xml#m80c5c7cf-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56645-07d6-0000-714b-e31d00000000" name="Average Service Resolution Satisfaction" isWriteable="false">
+<Description><![CDATA[Average Service Resolution Satisfaction Score (number from 0 to 20) for a customer as reported through a survey. This column should not be used when Product, Account or Asset is part of the query.]]></Description>
+<MeasureDefn mdsid="m80c5b102-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b81c-0802-0000-714b-e31d00000000" name="AggRule_2050:180391074282429" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-2bb3-a04d00000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core"."Fact - CRM - Survey"."Average Service Resolution Satisfaction")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-2bb3-a04d00000000-m80c56645-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9af-07f3-0000-714b-e31d00000000.xml#m80c56645-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68a22-0f3c-0000-714b-e31d00000000" name="AD_3900:834221074282455">
+<Expr mdsid="m00000008-01f4-0000-8502-d5ed00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_SURVEY_F"."RESOLVE_SCORE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-8502-d5ed00000000-m80c5c7d0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beba-0bb9-0000-714b-e31d00000000.xml#m80c5c7d0-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56646-07d6-0000-714b-e31d00000000" name="Average Service Resolution Timeliness Score" isWriteable="false">
+<Description><![CDATA[Average Service Resolution Timeliness Score (number from 0 to 20) for a customer as reported through a survey. This column should not be used when Product, Account or Asset is part of the query.]]></Description>
+<MeasureDefn mdsid="m80c5b103-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b81d-0802-0000-714b-e31d00000000" name="AggRule_2050:180401074282429" isDefault="true">
+<Expr mdsid="m00000009-01f4-0000-aa85-8bac00000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core"."Fact - CRM - Survey"."Average Service Resolution Timeliness Score")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-aa85-8bac00000000-m80c56646-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9af-07f3-0000-714b-e31d00000000.xml#m80c56646-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68a23-0f3c-0000-714b-e31d00000000" name="AD_3900:834231074282455">
+<Expr mdsid="m0000000a-01f4-0000-e0af-23cc00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_SURVEY_F"."TIMELY_SCORE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-e0af-23cc00000000-m80c5c7d1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beba-0bb9-0000-714b-e31d00000000.xml#m80c5c7d1-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56647-07d6-0000-714b-e31d00000000" name="Average Survey Score" isWriteable="false">
+<Description><![CDATA[Average Survey Score (number from 0 to 100) for a customer as reported through a survey. This column should not be used when Product, Account or Asset is part of the query.]]></Description>
+<MeasureDefn mdsid="m80c5b104-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b81e-0802-0000-714b-e31d00000000" name="AggRule_2050:180411074282429" isDefault="true">
+<Expr mdsid="m0000000b-01f4-0000-cdf3-62fd00000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core"."Fact - CRM - Survey"."Average Survey Score")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-cdf3-62fd00000000-m80c56647-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9af-07f3-0000-714b-e31d00000000.xml#m80c56647-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68a24-0f3c-0000-714b-e31d00000000" name="AD_3900:834241074282455">
+<Expr mdsid="m0000000c-01f4-0000-f91f-dc5a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_SURVEY_F"."TOTAL_SCORE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-f91f-dc5a00000000-m80c5c7d2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beba-0bb9-0000-714b-e31d00000000.xml#m80c5c7d2-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56648-07d6-0000-714b-e31d00000000" name="# of Surveys" isWriteable="false">
+<Description><![CDATA[Number of customer satisfaction surveys carried out]]></Description>
+<MeasureDefn mdsid="m80c5b105-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b81f-0802-0000-714b-e31d00000000" name="AggRule_2050:180421074282429" isDefault="true">
+<Expr mdsid="m0000000d-01f4-0000-be56-e24c00000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core"."Fact - CRM - Survey"."# of Surveys")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-be56-e24c00000000-m80c56648-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9af-07f3-0000-714b-e31d00000000.xml#m80c56648-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68a25-0f3c-0000-714b-e31d00000000" name="AD_3900:834251074282455">
+<Expr mdsid="m0000000e-01f4-0000-4109-981d00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_SURVEY_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-4109-981d00000000-m80c5c7c6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beba-0bb9-0000-714b-e31d00000000.xml#m80c5c7c6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56649-07d6-0000-714b-e31d00000000" name="# of Surveyed Contacts" isWriteable="false">
+<Description><![CDATA[Number of contacts surveyed by customer satisfaction survey]]></Description>
+<MeasureDefn mdsid="m80c5b106-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b820-0802-0000-714b-e31d00000000" name="AggRule_2050:180431074282429" isDefault="true">
+<Expr mdsid="m0000000f-01f4-0000-a1c0-b6c600000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - CRM - Survey"."# of Surveyed Contacts")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-a1c0-b6c600000000-m80c56649-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9af-07f3-0000-714b-e31d00000000.xml#m80c56649-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68a26-0f3c-0000-714b-e31d00000000" name="AD_3900:834261074282455">
+<Expr mdsid="m00000010-01f4-0000-f9f4-f73900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_SURVEY_F"."CONTACT_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-f9f4-f73900000000-m80c5c7be-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beba-0bb9-0000-714b-e31d00000000.xml#m80c5c7be-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5664a-07d6-0000-714b-e31d00000000" name="# of Surveyed Accounts" isWriteable="false">
+<Description><![CDATA[Number of accounts surveyed by customer satisfaction survey]]></Description>
+<MeasureDefn mdsid="m80c5b107-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b821-0802-0000-714b-e31d00000000" name="AggRule_2050:180441074282429" isDefault="true">
+<Expr mdsid="m00000011-01f4-0000-c5f1-4e6200000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - CRM - Survey"."# of Surveyed Accounts")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-c5f1-4e6200000000-m80c5664a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9af-07f3-0000-714b-e31d00000000.xml#m80c5664a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68a27-0f3c-0000-714b-e31d00000000" name="AD_3900:834271074282455">
+<Expr mdsid="m00000012-01f4-0000-1c7a-b28600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_SURVEY_F"."ACCNT_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-1c7a-b28600000000-m80c5c7bd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beba-0bb9-0000-714b-e31d00000000.xml#m80c5c7bd-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5664b-07d6-0000-714b-e31d00000000" name="# of Surveyed Partners" isWriteable="false">
+<Description><![CDATA[Number of partners that have been surveyed where the organization of the service request owner is the ]]></Description>
+<MeasureDefn mdsid="m80c5b108-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b822-0802-0000-714b-e31d00000000" name="AggRule_2050:180451074282429" isDefault="true">
+<Expr mdsid="m00000013-01f4-0000-a480-85ad00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - CRM - Survey"."# of Surveyed Partners")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-a480-85ad00000000-m80c5664b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9af-07f3-0000-714b-e31d00000000.xml#m80c5664b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68a28-0f3c-0000-714b-e31d00000000" name="AD_3900:834281074282455">
+<Expr mdsid="m00000014-01f4-0000-c308-1f5400000000" name="Expr">
+<ExprText><![CDATA[ CASE "%1" WHEN 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_SURVEY_F"."OWN_ORG_PRTNR_FLG" WHEN 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_SURVEY_F"."SR_OWNER_ORG_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-c308-1f5400000000-m80c5c7da-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beba-0bb9-0000-714b-e31d00000000.xml#m80c5c7da-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000014-01f4-0000-c308-1f5400000000-m80c5c7c8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beba-0bb9-0000-714b-e31d00000000.xml#m80c5c7c8-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5664c-07d6-0000-714b-e31d00000000" name="# of Surveyed Partners (Primary Visibility)" isWriteable="false">
+<Description><![CDATA[Number of partners with service requests where customer satisfaction surveyed where submitted]]></Description>
+<MeasureDefn mdsid="m80c5b109-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b823-0802-0000-714b-e31d00000000" name="AggRule_2050:180461074282429" isDefault="true">
+<Expr mdsid="m00000015-01f4-0000-96b5-b76700000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - CRM - Survey"."# of Surveyed Partners (Primary Visibility)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-96b5-b76700000000-m80c5664c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9af-07f3-0000-714b-e31d00000000.xml#m80c5664c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68a29-0f3c-0000-714b-e31d00000000" name="AD_3900:834291074282455">
+<Expr mdsid="m00000016-01f4-0000-cf52-1f7800000000" name="Expr">
+<ExprText><![CDATA[ CASE "%1" WHEN 'Y' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_SURVEY_F"."VIS_ORG_PRTNR_FLG" WHEN 'Y' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_SURVEY_F"."PR_VIS_ORG_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000016-01f4-0000-cf52-1f7800000000-m80c5c7db-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beba-0bb9-0000-714b-e31d00000000.xml#m80c5c7db-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000016-01f4-0000-cf52-1f7800000000-m80c5c7d8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beba-0bb9-0000-714b-e31d00000000.xml#m80c5c7d8-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5664d-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80c68a2a-0f3c-0000-714b-e31d00000000" name="AD_3900:834301074282455">
+<Expr mdsid="m00000017-01f4-0000-cfd1-7a9b00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_SURVEY_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-cfd1-7a9b00000000-m80c5c7c6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5beba-0bb9-0000-714b-e31d00000000.xml#m80c5c7c6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56c56-07d6-0000-714b-e31d00000000" name="Implicit Fact Column" isWriteable="false">
+<Description><![CDATA[Implicit constant fact to identify this fact table as the join path between two conforming dimensions.]]></Description>
+<AttrDefn mdsid="m80c68ff3-0f3c-0000-714b-e31d00000000" name="AD_3900:1683731118800619">
+<Expr mdsid="m00000018-01f4-0000-ad3b-c9ff00000000" name="Expr">
+<ExprText><![CDATA[1]]></ExprText>
+<ExprTextDesc><![CDATA[1]]></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58c80-07d8-0000-714b-e31d00000000" name="W_SURVEY_F_KEY" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58c80-07d8-0000-714b-e31d00000000-m80c5664d-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9af-07f3-0000-714b-e31d00000000.xml#m80c5664d-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5a9af-07f3-0000-714b-e31d00000000-m80c5abd7-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5abd7-07f5-0000-714b-e31d00000000.xml#m80c5abd7-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

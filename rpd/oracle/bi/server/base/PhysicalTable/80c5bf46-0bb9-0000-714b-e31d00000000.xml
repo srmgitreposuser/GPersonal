@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5bf46-0bb9-0000-714b-e31d00000000" name="Dim_W_ORDER_ITEM_F_Order_Revenue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" x="224" y="50" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb1-0bd3-0000-714b-e31d00000000.xml#m80c67bb1-0bd3-0000-714b-e31d00000000">
+<Description><![CDATA[This alias is used to extend the Order Dimension to add Order Revenue as an attribute.]]></Description>
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[select ORDER_WID as ORDER_WID,  
+      sum(NET_PRI * QTY_REQ * INCL_CALC_IND * NRC_IND - (ADJUSTMENT + FREIGHT_AMT + TAX_AMT)) as ORDER_REV
+from VALUEOF(OLAPTBO).W_ORDERITEM_F
+group by ORDER_WID]]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c5e013-0bbb-0000-714b-e31d00000000" name="ORDER_WID" dataType="DOUBLE" precision="10" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80c5e014-0bbb-0000-714b-e31d00000000" name="ORDER_REV" dataType="DOUBLE" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalKey mdsid="m80c67983-0bc0-0000-714b-e31d00000000" name="ORDER_REVENUE_Key">
+<RefColumns>
+<RefColumn refId="m80c67983-0bc0-0000-714b-e31d00000000-m80c5e013-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5bf46-0bb9-0000-714b-e31d00000000.xml#m80c5e013-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+</PhysicalTable>

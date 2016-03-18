@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9f1-07f3-0000-714b-e31d00000000" name="Fact - Marketing - Cost" iconIndex="93" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="733" y="771" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c569c2-07d6-0000-714b-e31d00000000" name="Marketing Cost (Forecasted)" isWriteable="false">
+<Description><![CDATA[Forecasted Marketing Cost for individual item]]></Description>
+<MeasureDefn mdsid="m80c5b252-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b9ba-0802-0000-714b-e31d00000000" name="AggRule_2050:1596661082392690" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-0c55-33be00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Marketing - Cost"."Marketing Cost (Forecasted)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-0c55-33be00000000-m80c569c2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9f1-07f3-0000-714b-e31d00000000.xml#m80c569c2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68d9e-0f3c-0000-714b-e31d00000000" name="AD_3900:845481074282455">
+<Expr mdsid="m00000002-01f4-0000-a35e-085d00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_COST_F"."U_FCST_COST"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-a35e-085d00000000-m80c5ea06-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf95-0bb9-0000-714b-e31d00000000.xml#m80c5ea06-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c569c3-07d6-0000-714b-e31d00000000" name="Marketing Cost (Actual)" isWriteable="false">
+<Description><![CDATA[Actual Marketing Cost]]></Description>
+<MeasureDefn mdsid="m80c5b253-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bb4f-0802-0000-714b-e31d00000000" name="AggRule_2050:5340121254414319" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-3e33-27d900000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Marketing - Cost"."Marketing Cost (Actual)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-3e33-27d900000000-m80c569c3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9f1-07f3-0000-714b-e31d00000000.xml#m80c569c3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68d9f-0f3c-0000-714b-e31d00000000" name="AD_3900:845491074282455">
+<Expr mdsid="m00000004-01f4-0000-3c66-c68900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_COST_F"."ACTL_COST_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-3c66-c68900000000-m80c6315a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf95-0bb9-0000-714b-e31d00000000.xml#m80c6315a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c569c4-07d6-0000-714b-e31d00000000" name="Authorised Spend" isWriteable="false">
+<Description><![CDATA[Budget Assigned for individual marketing cost / expense (marketingcost.assigned budget amount)]]></Description>
+<MeasureDefn mdsid="m80c5b254-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b9bb-0802-0000-714b-e31d00000000" name="AggRule_2050:1596701082392754" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-0a69-f93600000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Marketing - Cost"."Authorised Spend")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-0a69-f93600000000-m80c569c4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9f1-07f3-0000-714b-e31d00000000.xml#m80c569c4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68da0-0f3c-0000-714b-e31d00000000" name="AD_3900:845511074282455">
+<Expr mdsid="m00000006-01f4-0000-23ae-4db600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_COST_F"."ASGN_BDGT_AMT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-23ae-4db600000000-m80c5ea10-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf95-0bb9-0000-714b-e31d00000000.xml#m80c5ea10-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c569c5-07d6-0000-714b-e31d00000000" name="Fixed Cost (Forecasted)" isWriteable="false">
+<Description><![CDATA[Fixed Cost (Forecasted)]]></Description>
+<MeasureDefn mdsid="m80c5b255-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b9bc-0802-0000-714b-e31d00000000" name="AggRule_2050:1596711082392767" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-55fc-957b00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Marketing - Cost"."Fixed Cost (Forecasted)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-55fc-957b00000000-m80c569c5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9f1-07f3-0000-714b-e31d00000000.xml#m80c569c5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68da1-0f3c-0000-714b-e31d00000000" name="AD_3900:845521074282455">
+<Expr mdsid="m00000008-01f4-0000-1fdd-bc9800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'FIXED COST' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Marketing_Cost_Type"."NAME" = 'FIXED COST' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_COST_F"."FCST_COST" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-1fdd-bc9800000000-m80c5eb10-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf9e-0bb9-0000-714b-e31d00000000.xml#m80c5eb10-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000008-01f4-0000-1fdd-bc9800000000-m80c5ea03-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf95-0bb9-0000-714b-e31d00000000.xml#m80c5ea03-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c569c6-07d6-0000-714b-e31d00000000" name="Fixed Cost (Actual)" isWriteable="false">
+<Description><![CDATA[Fixed Cost (Actual)]]></Description>
+<MeasureDefn mdsid="m80c5b256-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b9bd-0802-0000-714b-e31d00000000" name="AggRule_2050:1596721082392774" isDefault="true">
+<Expr mdsid="m00000009-01f4-0000-48d3-30ff00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Marketing - Cost"."Fixed Cost (Actual)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-48d3-30ff00000000-m80c569c6-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9f1-07f3-0000-714b-e31d00000000.xml#m80c569c6-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68da2-0f3c-0000-714b-e31d00000000" name="AD_3900:845531074282455">
+<Expr mdsid="m0000000a-01f4-0000-b7c0-fd2900000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'FIXED COST' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Dim_W_LOV_D_Marketing_Cost_Type"."NAME" = 'FIXED COST' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_COST_F"."ACTL_COST" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-b7c0-fd2900000000-m80c5eb10-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf9e-0bb9-0000-714b-e31d00000000.xml#m80c5eb10-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000a-01f4-0000-b7c0-fd2900000000-m80c5ea0b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf95-0bb9-0000-714b-e31d00000000.xml#m80c5ea0b-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c569c7-07d6-0000-714b-e31d00000000" name="Actual Number of Contacts" isWriteable="false">
+<MeasureDefn mdsid="m80c5b257-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b97e-0802-0000-714b-e31d00000000" name="AggRule_2050:1208451074546247" isDefault="true">
+<Expr mdsid="m0000000b-01f4-0000-a2ee-bf6800000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Marketing - Cost"."Actual Number of Contacts")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-a2ee-bf6800000000-m80c569c7-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9f1-07f3-0000-714b-e31d00000000.xml#m80c569c7-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68da3-0f3c-0000-714b-e31d00000000" name="AD_3900:845541074282455">
+<Expr mdsid="m0000000c-01f4-0000-a75d-5f5d00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_COST_F"."ACTL_NUM_CONTACTS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-a75d-5f5d00000000-m80c5ea09-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf95-0bb9-0000-714b-e31d00000000.xml#m80c5ea09-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c569c8-07d6-0000-714b-e31d00000000" name="ROW_WID" isWriteable="false">
+<AttrDefn mdsid="m80c68da4-0f3c-0000-714b-e31d00000000" name="AD_3900:845551074282455">
+<Expr mdsid="m0000000d-01f4-0000-45c4-8adb00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_COST_F"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-45c4-8adb00000000-m80c5e9fa-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf95-0bb9-0000-714b-e31d00000000.xml#m80c5e9fa-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56ba1-07d6-0000-714b-e31d00000000" name="Invoice Amount" isWriteable="false">
+<Description><![CDATA[Total invoiced amount  as  marketing expenses ]]></Description>
+<MeasureDefn mdsid="m80c5b299-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b9be-0802-0000-714b-e31d00000000" name="AggRule_2050:1596731082392857" isDefault="true">
+<Expr mdsid="m0000000e-01f4-0000-99fa-8cd400000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Marketing - Cost"."Invoice Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-99fa-8cd400000000-m80c56ba1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9f1-07f3-0000-714b-e31d00000000.xml#m80c56ba1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68f7d-0f3c-0000-714b-e31d00000000" name="AD_3900:1208341074546116">
+<Expr mdsid="m0000000f-01f4-0000-4bd9-d4e300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN  NOT "%1" IS NULL  THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN  NOT "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_COST_F"."INVOICE_NUM" IS NULL  THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_COST_F"."ACTL_COST" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-4bd9-d4e300000000-m80c5ea14-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf95-0bb9-0000-714b-e31d00000000.xml#m80c5ea14-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000f-01f4-0000-4bd9-d4e300000000-m80c5ea0b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf95-0bb9-0000-714b-e31d00000000.xml#m80c5ea0b-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56ba2-07d6-0000-714b-e31d00000000" name="# of Invoices" isWriteable="false">
+<Description><![CDATA[# of Invoices for marketing expenses]]></Description>
+<MeasureDefn mdsid="m80c5b29a-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b9bf-0802-0000-714b-e31d00000000" name="AggRule_2050:1596741082392876" isDefault="true">
+<Expr mdsid="m00000010-01f4-0000-0360-480a00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core"."Fact - Marketing - Cost"."# of Invoices")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-0360-480a00000000-m80c56ba2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9f1-07f3-0000-714b-e31d00000000.xml#m80c56ba2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68f7e-0f3c-0000-714b-e31d00000000" name="AD_3900:1208581074547446">
+<Expr mdsid="m00000011-01f4-0000-de60-62d800000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_COST_F"."INVOICE_NUM"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-de60-62d800000000-m80c5ea14-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf95-0bb9-0000-714b-e31d00000000.xml#m80c5ea14-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56ba3-07d6-0000-714b-e31d00000000" name="# of Payable Invoices" isDerived="true" isWriteable="false">
+<Description><![CDATA[# of Payable Invoices for marketing expenses]]></Description>
+<Expr mdsid="m00000012-01f4-0000-c3c8-c97700000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'Payable' THEN "%2" ELSE 0 END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Dim - Invoice"."Invoice Type I" = 'Payable' THEN "Core"."Fact - Marketing - Cost"."# of Invoices" ELSE 0 END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-c3c8-c97700000000-m80c568de-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9e7-07f3-0000-714b-e31d00000000.xml#m80c568de-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000012-01f4-0000-c3c8-c97700000000-m80c56ba2-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9f1-07f3-0000-714b-e31d00000000.xml#m80c56ba2-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68f7f-0f3c-0000-714b-e31d00000000" name="AD_3900:1208651074547524">
+<Expr mdsid="m00000013-01f4-0000-1248-df0b00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57270-07d6-0000-714b-e31d00000000" name="Number of Items (Forecasted)" iconIndex="93" isWriteable="false">
+<Description><![CDATA[The forecasted number of expense items for a campaign]]></Description>
+<MeasureDefn mdsid="m80c5b379-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5baa0-0802-0000-714b-e31d00000000" name="AggRule_2050:4917181225124595" isDefault="true">
+<Expr mdsid="m00000014-01f4-0000-df92-e87f00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Marketing - Cost"."Number of Items (Forecasted)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-df92-e87f00000000-m80c57270-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9f1-07f3-0000-714b-e31d00000000.xml#m80c57270-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69782-0f3c-0000-714b-e31d00000000" name="AD_3900:4917881225124596">
+<Expr mdsid="m00000015-01f4-0000-d036-4dd000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_COST_F"."PER_NUM_CONTACTS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-d036-4dd000000000-m80c5ea07-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf95-0bb9-0000-714b-e31d00000000.xml#m80c5ea07-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57271-07d6-0000-714b-e31d00000000" name="Number of Items (Actual)" iconIndex="93" isWriteable="false">
+<Description><![CDATA[The actual number of items recieved]]></Description>
+<MeasureDefn mdsid="m80c5b37a-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5baa1-0802-0000-714b-e31d00000000" name="AggRule_2050:4917201225124595" isDefault="true">
+<Expr mdsid="m00000016-01f4-0000-35a8-6cba00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Marketing - Cost"."Number of Items (Actual)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000016-01f4-0000-35a8-6cba00000000-m80c57271-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9f1-07f3-0000-714b-e31d00000000.xml#m80c57271-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69783-0f3c-0000-714b-e31d00000000" name="AD_3900:4917891225124596">
+<Expr mdsid="m00000017-01f4-0000-1514-3c8100000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_COST_F"."ACTL_NUM_CONTACTS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-1514-3c8100000000-m80c5ea09-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf95-0bb9-0000-714b-e31d00000000.xml#m80c5ea09-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57286-07d6-0000-714b-e31d00000000" name="Cost Per Item" iconIndex="93" isWriteable="false">
+<Description><![CDATA[This metric simply divides the number of items by the total marketing cost. Ideally this metric needs to be used with a cost centre / account code and a campaign to produce meaningful results (marketingcost.actual amount / # of items)]]></Description>
+<MeasureDefn mdsid="m80c5b37f-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5baa6-0802-0000-714b-e31d00000000" name="AggRule_2050:4918991225363258" isDefault="true">
+<Expr mdsid="m00000018-01f4-0000-9f30-f1ec00000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core"."Fact - Marketing - Cost"."Cost Per Item")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000018-01f4-0000-9f30-f1ec00000000-m80c57286-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9f1-07f3-0000-714b-e31d00000000.xml#m80c57286-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69798-0f3c-0000-714b-e31d00000000" name="AD_3900:4919121225363259">
+<Expr mdsid="m00000019-01f4-0000-8984-3c5300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_COST_F"."ACTL_UNIT_COST"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-8984-3c5300000000-m80c5ea0a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf95-0bb9-0000-714b-e31d00000000.xml#m80c5ea0a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c572b9-07d6-0000-714b-e31d00000000" name="Variance Campaign Authorised Spend" isDerived="true" isWriteable="false">
+<Description><![CDATA[This metric compares the actual marketing expenditure against the budget approved for a campaign. This metric is at the campaign level and should be used with a campaign.]]></Description>
+<Expr mdsid="m0000001a-01f4-0000-51ba-469f00000000" name="Expr">
+<ExprText><![CDATA[100 * ("%1" - "%2") / "%2"]]></ExprText>
+<ExprTextDesc><![CDATA[100 * ("Core"."Fact - Marketing - Cost"."Marketing Cost (Actual)" - "Core"."Fact - Marketing - Count"."Campaign Authorised Spend") / "Core"."Fact - Marketing - Count"."Campaign Authorised Spend"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001a-01f4-0000-51ba-469f00000000-m80c569c3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9f1-07f3-0000-714b-e31d00000000.xml#m80c569c3-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001a-01f4-0000-51ba-469f00000000-m80c56bd9-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5aa16-07f3-0000-714b-e31d00000000.xml#m80c56bd9-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c697ca-0f3c-0000-714b-e31d00000000" name="AD_3900:4921201225807856">
+<Expr mdsid="m0000001b-01f4-0000-c79e-402600000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57305-07d6-0000-714b-e31d00000000" name="Race Day Costs" iconIndex="68" isWriteable="false">
+<Description><![CDATA[this metric calculates the marketing costs associated with an event based on account code and cost centre. (IF Marketing cost.COST CENTRE = 'NE2001' then Marketing.actual cost )]]></Description>
+<MeasureDefn mdsid="m80c5b3bb-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5bad9-0802-0000-714b-e31d00000000" name="AggRule_2050:4929451227090451" isDefault="true">
+<Expr mdsid="m0000001c-01f4-0000-c18f-444400000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Marketing - Cost"."Race Day Costs")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001c-01f4-0000-c18f-444400000000-m80c57305-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9f1-07f3-0000-714b-e31d00000000.xml#m80c57305-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69817-0f3c-0000-714b-e31d00000000" name="AD_3900:4929641227090452">
+<Expr mdsid="m0000001d-01f4-0000-53c4-047300000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'NE2001' THEN "%2" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_COST_F"."X_SRM_COST_CENTRE" = 'NE2001' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_COST_F"."ACTL_COST_AMT" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001d-01f4-0000-53c4-047300000000-m80c6327b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf95-0bb9-0000-714b-e31d00000000.xml#m80c6327b-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001d-01f4-0000-53c4-047300000000-m80c6315a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf95-0bb9-0000-714b-e31d00000000.xml#m80c6315a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57311-07d6-0000-714b-e31d00000000" name="Pack Cost" iconIndex="68" isWriteable="false">
+<MeasureDefn mdsid="m80c5b3bf-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5badb-0802-0000-714b-e31d00000000" name="AggRule_2050:4930981227802344" isDefault="true">
+<Expr mdsid="m0000001e-01f4-0000-5a61-b6d200000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Core"."Fact - Marketing - Cost"."Pack Cost")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001e-01f4-0000-5a61-b6d200000000-m80c57311-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9f1-07f3-0000-714b-e31d00000000.xml#m80c57311-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c69823-0f3c-0000-714b-e31d00000000" name="AD_3900:4931041227802346">
+<Expr mdsid="m0000001f-01f4-0000-dcd5-168500000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 'NE2021' AND "%2" = '3615 FULFILMENT FEE' THEN "%3" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_COST_F"."X_SRM_COST_CENTRE" = 'NE2021' AND "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_COST_F"."X_SRM_ACCNT_CD" = '3615 FULFILMENT FEE' THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_W_MKTG_COST_F"."ACTL_COST_AMT" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001f-01f4-0000-dcd5-168500000000-m80c6327b-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf95-0bb9-0000-714b-e31d00000000.xml#m80c6327b-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001f-01f4-0000-dcd5-168500000000-m80c62f13-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf95-0bb9-0000-714b-e31d00000000.xml#m80c62f13-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001f-01f4-0000-dcd5-168500000000-m80c6315a-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf95-0bb9-0000-714b-e31d00000000.xml#m80c6315a-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c57312-07d6-0000-714b-e31d00000000" name="Price Per Pack" iconIndex="68" isDerived="true" isWriteable="false">
+<Description><![CDATA[This metric calculates the average pack cost based on the volume of packs (if marketingcost.account code = '3615 FULFILMENT FEE' and marketingcost.cost centre= 'NE2021' then marketingcost.actual amount)]]></Description>
+<Expr mdsid="m00000020-01f4-0000-efaa-59ab00000000" name="Expr">
+<ExprText><![CDATA["%1" / "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["Core"."Fact - Marketing - Cost"."Pack Cost" / "Core"."Fact - CRM - Campaign History"."# Targeted (Individuals)"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000020-01f4-0000-efaa-59ab00000000-m80c57311-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9f1-07f3-0000-714b-e31d00000000.xml#m80c57311-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000020-01f4-0000-efaa-59ab00000000-m80c56801-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ca-07f3-0000-714b-e31d00000000.xml#m80c56801-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c69824-0f3c-0000-714b-e31d00000000" name="AD_3900:4931051227802346">
+<Expr mdsid="m00000021-01f4-0000-eee4-71ea00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58ca3-07d8-0000-714b-e31d00000000" name="ROW_WID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58ca3-07d8-0000-714b-e31d00000000-m80c569c8-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9f1-07f3-0000-714b-e31d00000000.xml#m80c569c8-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5a9f1-07f3-0000-714b-e31d00000000-m80c5ac01-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ac01-07f5-0000-714b-e31d00000000.xml#m80c5ac01-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c5a9f1-07f3-0000-714b-e31d00000000-m80c5ac26-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ac26-07f5-0000-714b-e31d00000000.xml#m80c5ac26-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c5a9f1-07f3-0000-714b-e31d00000000-m80c5ac2c-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ac2c-07f5-0000-714b-e31d00000000.xml#m80c5ac2c-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

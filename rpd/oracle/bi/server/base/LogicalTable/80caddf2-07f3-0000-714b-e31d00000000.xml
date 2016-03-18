@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80caddf2-07f3-0000-714b-e31d00000000" name="Fact - Owning Party - Training Skills" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="875" y="334" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c93f3c-07d0-0000-714b-e31d00000000.xml#m80c93f3c-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80cade10-07d6-0000-714b-e31d00000000" name="# Training Courses / Skills" isWriteable="false">
+<MeasureDefn mdsid="m80cade7b-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cade7c-0802-0000-714b-e31d00000000" name="AggRule_2050:8129261364293852" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-bd26-09d500000000" name="Expr">
+<ExprText><![CDATA[ COUNT("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT("Core 2"."Fact - Owning Party - Training Skills"."# Training Courses / Skills")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-bd26-09d500000000-m80cade10-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caddf2-07f3-0000-714b-e31d00000000.xml#m80cade10-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cade2e-0f3c-0000-714b-e31d00000000" name="AD_3900:8128791364293683">
+<Expr mdsid="m00000002-01f4-0000-96b6-9eb400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_TRAIN_SKILL_D"."ROW_WID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-96b6-9eb400000000-m80caddcc-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80caddbe-0bb9-0000-714b-e31d00000000.xml#m80caddcc-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cbc612-07d6-0000-714b-e31d00000000" name="# of Owning Parties (Distinct)" isWriteable="false">
+<MeasureDefn mdsid="m80cbc62a-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80cbc644-0802-0000-714b-e31d00000000" name="AggRule_2050:8518671404314539" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-6113-e0bc00000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Core 2"."Fact - Owning Party - Training Skills"."# of Owning Parties (Distinct)")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-6113-e0bc00000000-m80cbc612-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80caddf2-07f3-0000-714b-e31d00000000.xml#m80cbc612-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80cbc65b-0f3c-0000-714b-e31d00000000" name="AD_3900:8518621404314539">
+<Expr mdsid="m00000004-01f4-0000-25d0-37a600000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" > 0 THEN "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_TRAIN_SKILL_D"."OWN_PARTY_WID" > 0 THEN "Oracle Data Warehouse"."Catalog"."dbo"."Fact_WC_TRAIN_SKILL_D"."OWN_PARTY_WID" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-25d0-37a600000000-m80caddca-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80caddbe-0bb9-0000-714b-e31d00000000.xml#m80caddca-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80caddf2-07f3-0000-714b-e31d00000000-m80cade32-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cade32-07f5-0000-714b-e31d00000000.xml#m80cade32-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

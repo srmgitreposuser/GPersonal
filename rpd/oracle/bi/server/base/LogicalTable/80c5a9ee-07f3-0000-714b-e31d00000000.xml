@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9ee-07f3-0000-714b-e31d00000000" name="Fact - CRM - Data Mining Score" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="525" y="163" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c5693a-07d6-0000-714b-e31d00000000" name="DOCUMENTID" isWriteable="false">
+<AttrDefn mdsid="m80c68d16-0f3c-0000-714b-e31d00000000" name="AD_3900:844081074282455">
+<Expr mdsid="m00000001-01f4-0000-dd0a-07b900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Data Mining Classifications"."DOCUMENTID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-dd0a-07b900000000-m80c5f2d5-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfd4-0bb9-0000-714b-e31d00000000.xml#m80c5f2d5-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5693b-07d6-0000-714b-e31d00000000" name="EXTERNALENTITYID" isWriteable="false">
+<AttrDefn mdsid="m80c68d17-0f3c-0000-714b-e31d00000000" name="AD_3900:844091074282455">
+<Expr mdsid="m00000002-01f4-0000-ca9f-3ebe00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Data Mining Classifications"."EXTERNALENTITYID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-ca9f-3ebe00000000-m80c5f2d6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfd4-0bb9-0000-714b-e31d00000000.xml#m80c5f2d6-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5693c-07d6-0000-714b-e31d00000000" name="Customer Score" isWriteable="false">
+<Description><![CDATA[This column gives the score for a given Predictive Model and-or Score Model. Depending on which entitiy is being scored Account,Contact, Claim etc. one score is returned for each entity.]]></Description>
+<MeasureDefn mdsid="m80c5b248-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b938-0802-0000-714b-e31d00000000" name="AggRule_2050:184361074282429" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-947d-522700000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core"."Fact - CRM - Data Mining Score"."Customer Score")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-947d-522700000000-m80c5693c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ee-07f3-0000-714b-e31d00000000.xml#m80c5693c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68d18-0f3c-0000-714b-e31d00000000" name="AD_3900:844101074282455">
+<Expr mdsid="m00000004-01f4-0000-1625-409a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Data Mining Scores"."SINGLESCOREVALUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-1625-409a00000000-m80c5e919-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf8a-0bb9-0000-714b-e31d00000000.xml#m80c5e919-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5693d-07d6-0000-714b-e31d00000000" name="Customer Score Decile" isWriteable="false">
+<Description><![CDATA[This column calculates the score decile for each entity being scored. This is based on the Customer Score Column]]></Description>
+<MeasureDefn mdsid="m80c5b249-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b939-0802-0000-714b-e31d00000000" name="AggRule_2050:184371074282429" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-f465-372200000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core"."Fact - CRM - Data Mining Score"."Customer Score Decile")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-f465-372200000000-m80c5693d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ee-07f3-0000-714b-e31d00000000.xml#m80c5693d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68d19-0f3c-0000-714b-e31d00000000" name="AD_3900:844111074282455">
+<Expr mdsid="m00000006-01f4-0000-ba16-8b8e00000000" name="Expr">
+<ExprText><![CDATA[ NTILE("%1", 10)]]></ExprText>
+<ExprTextDesc><![CDATA[ NTILE("Oracle Data Warehouse"."Catalog"."dbo"."Data Mining Scores"."SINGLESCOREVALUE", 10)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-ba16-8b8e00000000-m80c5e919-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf8a-0bb9-0000-714b-e31d00000000.xml#m80c5e919-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56be4-07d6-0000-714b-e31d00000000" name="Customer Class" isWriteable="false">
+<AttrDefn mdsid="m80c68fc0-0f3c-0000-714b-e31d00000000" name="AD_3900:1599481084322220">
+<Expr mdsid="m00000007-01f4-0000-29d9-97f900000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Data Mining Classifications"."CLASSIFICATION"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-29d9-97f900000000-m80c5f2d8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfd4-0bb9-0000-714b-e31d00000000.xml#m80c5f2d8-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5693e-07d6-0000-714b-e31d00000000" name="Account Score" isWriteable="false">
+<MeasureDefn mdsid="m80c5b24a-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b93a-0802-0000-714b-e31d00000000" name="AggRule_2050:184381074282429" isDefault="true">
+<Expr mdsid="m00000008-01f4-0000-c3a9-4c9500000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core"."Fact - CRM - Data Mining Score"."Account Score")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-c3a9-4c9500000000-m80c5693e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ee-07f3-0000-714b-e31d00000000.xml#m80c5693e-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68d1a-0f3c-0000-714b-e31d00000000" name="AD_3900:844121074282455">
+<Expr mdsid="m00000009-01f4-0000-3d64-083700000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Data Mining Scores"."SINGLESCOREVALUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-3d64-083700000000-m80c5e919-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf8a-0bb9-0000-714b-e31d00000000.xml#m80c5e919-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c5693f-07d6-0000-714b-e31d00000000" name="Account Score Decile" isWriteable="false">
+<MeasureDefn mdsid="m80c5b24b-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b93b-0802-0000-714b-e31d00000000" name="AggRule_2050:184391074282429" isDefault="true">
+<Expr mdsid="m0000000a-01f4-0000-e7ed-db4b00000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core"."Fact - CRM - Data Mining Score"."Account Score Decile")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-e7ed-db4b00000000-m80c5693f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ee-07f3-0000-714b-e31d00000000.xml#m80c5693f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68d1b-0f3c-0000-714b-e31d00000000" name="AD_3900:844131074282455">
+<Expr mdsid="m0000000b-01f4-0000-4039-039700000000" name="Expr">
+<ExprText><![CDATA[ NTILE("%1", 10)]]></ExprText>
+<ExprTextDesc><![CDATA[ NTILE("Oracle Data Warehouse"."Catalog"."dbo"."Data Mining Scores"."SINGLESCOREVALUE", 10)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-4039-039700000000-m80c5e919-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf8a-0bb9-0000-714b-e31d00000000.xml#m80c5e919-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56be6-07d6-0000-714b-e31d00000000" name="Account Class" isWriteable="false">
+<AttrDefn mdsid="m80c68fc2-0f3c-0000-714b-e31d00000000" name="AD_3900:1599851090005868">
+<Expr mdsid="m0000000c-01f4-0000-bb83-18c400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Data Mining Classifications"."CLASSIFICATION"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-bb83-18c400000000-m80c5f2d8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfd4-0bb9-0000-714b-e31d00000000.xml#m80c5f2d8-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56940-07d6-0000-714b-e31d00000000" name="Product Score" isWriteable="false">
+<MeasureDefn mdsid="m80c5b24c-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b93c-0802-0000-714b-e31d00000000" name="AggRule_2050:184401074282429" isDefault="true">
+<Expr mdsid="m0000000d-01f4-0000-7322-1e4300000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core"."Fact - CRM - Data Mining Score"."Product Score")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-7322-1e4300000000-m80c56940-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ee-07f3-0000-714b-e31d00000000.xml#m80c56940-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68d1c-0f3c-0000-714b-e31d00000000" name="AD_3900:844141074282455">
+<Expr mdsid="m0000000e-01f4-0000-7b63-b79400000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Data Mining Scores"."SINGLESCOREVALUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-7b63-b79400000000-m80c5e919-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf8a-0bb9-0000-714b-e31d00000000.xml#m80c5e919-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56941-07d6-0000-714b-e31d00000000" name="Product Score Decile" isWriteable="false">
+<MeasureDefn mdsid="m80c5b24d-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b93d-0802-0000-714b-e31d00000000" name="AggRule_2050:184411074282429" isDefault="true">
+<Expr mdsid="m0000000f-01f4-0000-4c7c-052300000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core"."Fact - CRM - Data Mining Score"."Product Score Decile")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-4c7c-052300000000-m80c56941-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ee-07f3-0000-714b-e31d00000000.xml#m80c56941-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68d1d-0f3c-0000-714b-e31d00000000" name="AD_3900:844151074282455">
+<Expr mdsid="m00000010-01f4-0000-8432-122e00000000" name="Expr">
+<ExprText><![CDATA[ NTILE("%1", 10)]]></ExprText>
+<ExprTextDesc><![CDATA[ NTILE("Oracle Data Warehouse"."Catalog"."dbo"."Data Mining Scores"."SINGLESCOREVALUE", 10)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-8432-122e00000000-m80c5e919-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf8a-0bb9-0000-714b-e31d00000000.xml#m80c5e919-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56942-07d6-0000-714b-e31d00000000" name="Program Score" isWriteable="false">
+<MeasureDefn mdsid="m80c5b24e-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b93e-0802-0000-714b-e31d00000000" name="AggRule_2050:184421074282429" isDefault="true">
+<Expr mdsid="m00000011-01f4-0000-b8b9-adcf00000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core"."Fact - CRM - Data Mining Score"."Program Score")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-b8b9-adcf00000000-m80c56942-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ee-07f3-0000-714b-e31d00000000.xml#m80c56942-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68d1e-0f3c-0000-714b-e31d00000000" name="AD_3900:844161074282455">
+<Expr mdsid="m00000012-01f4-0000-ebe8-6a2a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Data Mining Scores"."SINGLESCOREVALUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-ebe8-6a2a00000000-m80c5e919-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf8a-0bb9-0000-714b-e31d00000000.xml#m80c5e919-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56be7-07d6-0000-714b-e31d00000000" name="Product Class" isWriteable="false">
+<AttrDefn mdsid="m80c68fc3-0f3c-0000-714b-e31d00000000" name="AD_3900:1599891090005904">
+<Expr mdsid="m00000013-01f4-0000-a9d0-940000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Data Mining Classifications"."CLASSIFICATION"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-a9d0-940000000000-m80c5f2d8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfd4-0bb9-0000-714b-e31d00000000.xml#m80c5f2d8-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56943-07d6-0000-714b-e31d00000000" name="Program Score Decile" isWriteable="false">
+<MeasureDefn mdsid="m80c5b24f-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b93f-0802-0000-714b-e31d00000000" name="AggRule_2050:184431074282429" isDefault="true">
+<Expr mdsid="m00000014-01f4-0000-30d1-08ef00000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core"."Fact - CRM - Data Mining Score"."Program Score Decile")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-30d1-08ef00000000-m80c56943-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ee-07f3-0000-714b-e31d00000000.xml#m80c56943-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68d1f-0f3c-0000-714b-e31d00000000" name="AD_3900:844171074282455">
+<Expr mdsid="m00000015-01f4-0000-33d8-c3c100000000" name="Expr">
+<ExprText><![CDATA[ NTILE("%1", 10)]]></ExprText>
+<ExprTextDesc><![CDATA[ NTILE("Oracle Data Warehouse"."Catalog"."dbo"."Data Mining Scores"."SINGLESCOREVALUE", 10)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-33d8-c3c100000000-m80c5e919-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf8a-0bb9-0000-714b-e31d00000000.xml#m80c5e919-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56944-07d6-0000-714b-e31d00000000" name="Average Score" isWriteable="false">
+<Description><![CDATA[The Average score column calculates the average score based on the Column that precedes it in the query. This column can typically be used with Account and Contact attributes to find for example: Average Score by Gender or some such attribute.]]></Description>
+<MeasureDefn mdsid="m80c5b250-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b940-0802-0000-714b-e31d00000000" name="AggRule_2050:184441074282429" isDefault="true">
+<Expr mdsid="m00000016-01f4-0000-140f-22ab00000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core"."Fact - CRM - Data Mining Score"."Average Score")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000016-01f4-0000-140f-22ab00000000-m80c56944-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ee-07f3-0000-714b-e31d00000000.xml#m80c56944-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68d20-0f3c-0000-714b-e31d00000000" name="AD_3900:844181074282455">
+<Expr mdsid="m00000017-01f4-0000-9fd3-db5a00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Data Mining Scores"."SINGLESCOREVALUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-9fd3-db5a00000000-m80c5e919-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf8a-0bb9-0000-714b-e31d00000000.xml#m80c5e919-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56945-07d6-0000-714b-e31d00000000" name="Average Score Decile" isWriteable="false">
+<Description><![CDATA[This column calculates the average Score deciles for each entity being scored.  This column is not based on Score measure, but on the Score Decile measure, and it is aggregated using the Average
+function.]]></Description>
+<MeasureDefn mdsid="m80c5b251-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b941-0802-0000-714b-e31d00000000" name="AggRule_2050:184451074282429" isDefault="true">
+<Expr mdsid="m00000018-01f4-0000-0569-759b00000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core"."Fact - CRM - Data Mining Score"."Average Score Decile")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000018-01f4-0000-0569-759b00000000-m80c56945-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ee-07f3-0000-714b-e31d00000000.xml#m80c56945-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68d21-0f3c-0000-714b-e31d00000000" name="AD_3900:844191074282455">
+<Expr mdsid="m00000019-01f4-0000-9e5d-c29800000000" name="Expr">
+<ExprText><![CDATA[ NTILE("%1", 10)]]></ExprText>
+<ExprTextDesc><![CDATA[ NTILE("Oracle Data Warehouse"."Catalog"."dbo"."Data Mining Scores"."SINGLESCOREVALUE", 10)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-9e5d-c29800000000-m80c5e919-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bf8a-0bb9-0000-714b-e31d00000000.xml#m80c5e919-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56be5-07d6-0000-714b-e31d00000000" name="Classification Score" isWriteable="false">
+<MeasureDefn mdsid="m80c5b2bf-0800-0000-714b-e31d00000000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m80c5b9cc-0802-0000-714b-e31d00000000" name="AggRule_2050:1599571084325954" isDefault="true">
+<Expr mdsid="m0000001a-01f4-0000-ba47-b16c00000000" name="Expr">
+<ExprText><![CDATA[ AVG("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ AVG("Core"."Fact - CRM - Data Mining Score"."Classification Score")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001a-01f4-0000-ba47-b16c00000000-m80c56be5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ee-07f3-0000-714b-e31d00000000.xml#m80c56be5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttrDefn mdsid="m80c68fc1-0f3c-0000-714b-e31d00000000" name="AD_3900:1599501084322232">
+<Expr mdsid="m0000001b-01f4-0000-e84d-d0fb00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Oracle Data Warehouse"."Catalog"."dbo"."Data Mining Classifications"."SINGLESCOREVALUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001b-01f4-0000-e84d-d0fb00000000-m80c5f2d7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80c5bfd4-0bb9-0000-714b-e31d00000000.xml#m80c5f2d7-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c56c48-07d6-0000-714b-e31d00000000" name="Implicit Constant Fact" isWriteable="false">
+<Description><![CDATA[Implicit constant fact to identify this fact table as the join path between two conforming dimensions.   ]]></Description>
+<AttrDefn mdsid="m80c68fe5-0f3c-0000-714b-e31d00000000" name="AD_3900:1683541118800619">
+<Expr mdsid="m0000001c-01f4-0000-a215-91b600000000" name="Expr">
+<ExprText><![CDATA[1]]></ExprText>
+<ExprTextDesc><![CDATA[1]]></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalKey mdsid="m80c58ca0-07d8-0000-714b-e31d00000000" name="DOCUMENTID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="m80c58ca0-07d8-0000-714b-e31d00000000-m80c5693a-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9ee-07f3-0000-714b-e31d00000000.xml#m80c5693a-07d6-0000-714b-e31d00000000"/>
+<RefLogicalColumn refId="m80c58ca0-07d8-0000-714b-e31d00000000-m80c5693b-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80c5a9ee-07f3-0000-714b-e31d00000000.xml#m80c5693b-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="m80c5a9ee-07f3-0000-714b-e31d00000000-m80c5abfe-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5abfe-07f5-0000-714b-e31d00000000.xml#m80c5abfe-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80c5a9ee-07f3-0000-714b-e31d00000000-m80c5ac32-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80c5ac32-07f5-0000-714b-e31d00000000.xml#m80c5ac32-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

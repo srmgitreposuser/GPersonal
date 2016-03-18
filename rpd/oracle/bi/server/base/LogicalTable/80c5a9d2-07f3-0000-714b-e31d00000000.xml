@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80c5a9d2-07f3-0000-714b-e31d00000000" name="Fact  Compound - Campaign History" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1137" y="342" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80c55245-07d0-0000-714b-e31d00000000.xml#m80c55245-07d0-0000-714b-e31d00000000">
+<LogicalColumn mdsid="m80c568ab-07d6-0000-714b-e31d00000000" name="Rank of % of # Targeted by Campaign Plans" isDerived="true" isWriteable="false">
+<Description><![CDATA[Rank the values of a Dimensional attribute by Total # Targeted]]></Description>
+<Expr mdsid="m00000001-01f4-0000-507d-73fe00000000" name="Expr">
+<ExprText><![CDATA[ RANK("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ RANK("Core"."Fact  Compound - Campaign History Response"."Response Rate( % of # Targeted (Contacts))")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-507d-73fe00000000-m80c5684a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9cc-07f3-0000-714b-e31d00000000.xml#m80c5684a-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68c88-0f3c-0000-714b-e31d00000000" name="AD_3900:842491074282455">
+<Expr mdsid="m00000002-01f4-0000-a4c2-a73800000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568ac-07d6-0000-714b-e31d00000000" name="Actual Response Rate" isDerived="true" isWriteable="false">
+<Description><![CDATA[Total # of Response divided by the # Targeted for a Campaign plan]]></Description>
+<Expr mdsid="m00000003-01f4-0000-5175-0e8d00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN  NULL  ELSE 100.0d * "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Campaign History"."# Targeted (Individuals)" = 0 THEN  NULL  ELSE 100.0d * "Core"."Fact - CRM - Response"."# Responders (Contacts)" / "Core"."Fact - CRM - Campaign History"."# Targeted (Individuals)" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-5175-0e8d00000000-m80c56801-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ca-07f3-0000-714b-e31d00000000.xml#m80c56801-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000003-01f4-0000-5175-0e8d00000000-m80c5682f-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9cb-07f3-0000-714b-e31d00000000.xml#m80c5682f-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68c89-0f3c-0000-714b-e31d00000000" name="AD_3900:842501074282455">
+<Expr mdsid="m00000004-01f4-0000-ec8c-c22c00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568ad-07d6-0000-714b-e31d00000000" name="Actual Net Margin per Opportunity" isDerived="true" isWriteable="false">
+<Description><![CDATA[Total net margin earned from the closed opportunities (includes deducting marketing cost) divided by the # of Opportunities]]></Description>
+<Expr mdsid="m00000005-01f4-0000-6c6e-63a800000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN  NULL  ELSE 1.0d * "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Revenue"."# of Opportunities" = 0 THEN  NULL  ELSE 1.0d * "Core"."Fact  Compound - Campaign Compund Facts"."Opportunity Closed Net Margin" / "Core"."Fact - CRM - Revenue"."# of Opportunities" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-6c6e-63a800000000-m80c56552-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9a5-07f3-0000-714b-e31d00000000.xml#m80c56552-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000005-01f4-0000-6c6e-63a800000000-m80c568a4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9d1-07f3-0000-714b-e31d00000000.xml#m80c568a4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68c8a-0f3c-0000-714b-e31d00000000" name="AD_3900:842521074282455">
+<Expr mdsid="m00000006-01f4-0000-8a6e-6e3300000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568ae-07d6-0000-714b-e31d00000000" name="# of Outbound Interaction Activities" isDerived="true" isWriteable="false">
+<Description><![CDATA[# of outbound interactions with a contact]]></Description>
+<Expr mdsid="m00000007-01f4-0000-281f-e11b00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) +  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Activity"."# of Outbound Activities", 0) +  IFNULL("Core"."Fact - CRM - Campaign History"."# of Times Contacted in Campaign", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-281f-e11b00000000-m80c56866-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9cd-07f3-0000-714b-e31d00000000.xml#m80c56866-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000007-01f4-0000-281f-e11b00000000-m80c56805-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ca-07f3-0000-714b-e31d00000000.xml#m80c56805-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68c8b-0f3c-0000-714b-e31d00000000" name="AD_3900:842531074282455">
+<Expr mdsid="m00000008-01f4-0000-f317-5eae00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568af-07d6-0000-714b-e31d00000000" name="Outbound Interaction Decile" isDerived="true" isWriteable="false">
+<Description><![CDATA[# of interactions for a contact broken in buckets of ranging from highest to lowest. This helps identify contacts with high and low inetractions]]></Description>
+<Expr mdsid="m00000009-01f4-0000-e7bf-977700000000" name="Expr">
+<ExprText><![CDATA[ NTILE("%1", 10)]]></ExprText>
+<ExprTextDesc><![CDATA[ NTILE("Core"."Fact  Compound - Campaign History"."# of Outbound Contacts", 10)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-e7bf-977700000000-m80c568b0-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9d2-07f3-0000-714b-e31d00000000.xml#m80c568b0-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68c8c-0f3c-0000-714b-e31d00000000" name="AD_3900:842541074282455">
+<Expr mdsid="m0000000a-01f4-0000-1b0a-193600000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568b0-07d6-0000-714b-e31d00000000" name="# of Outbound Contacts" iconIndex="68" isDerived="true" isWriteable="false">
+<Description><![CDATA[# of times a supporter has been contacted as part of a campaign or a personal contact ((IF ActivityType.Name = ( 'Call - Outbound', 'Email - Outbound', 'Fax - Outbound' ) then 1 )+ (# of campaigns ))
+]]></Description>
+<Expr mdsid="m0000000b-01f4-0000-88d5-7bdc00000000" name="Expr">
+<ExprText><![CDATA[ IFNULL("%1", 0) +  IFNULL("%2", 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ IFNULL("Core"."Fact - CRM - Activity"."# of Outbound Activities", 0) +  IFNULL("Core"."Fact - CRM - Campaign History"."# of Campaigns", 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-88d5-7bdc00000000-m80c56866-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9cd-07f3-0000-714b-e31d00000000.xml#m80c56866-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000b-01f4-0000-88d5-7bdc00000000-m80c567fd-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ca-07f3-0000-714b-e31d00000000.xml#m80c567fd-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68c8d-0f3c-0000-714b-e31d00000000" name="AD_3900:842551074282455">
+<Expr mdsid="m0000000c-01f4-0000-45f4-b1f200000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568b1-07d6-0000-714b-e31d00000000" name="Propensity To Respond  to Promotions by Contact" isDerived="true" isWriteable="false">
+<Description><![CDATA[Total # of Responses for a contact divided by the # of times targeted in a campaign]]></Description>
+<Expr mdsid="m0000000d-01f4-0000-b7aa-c55d00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN  NULL  WHEN "%2" IS NULL  THEN 0 ELSE 1.0d * "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Campaign History"."# of Times Promoted To Customer (Contact)" = 0 THEN  NULL  WHEN "Core"."Fact - CRM - Response"."# Responses by Contact" IS NULL  THEN 0 ELSE 1.0d * "Core"."Fact - CRM - Response"."# Responses by Contact" / "Core"."Fact - CRM - Campaign History"."# of Times Promoted To Customer (Contact)" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-b7aa-c55d00000000-m80c56809-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ca-07f3-0000-714b-e31d00000000.xml#m80c56809-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000d-01f4-0000-b7aa-c55d00000000-m80c56836-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9cb-07f3-0000-714b-e31d00000000.xml#m80c56836-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68c8e-0f3c-0000-714b-e31d00000000" name="AD_3900:842571074282455">
+<Expr mdsid="m0000000e-01f4-0000-9dca-d44500000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568b2-07d6-0000-714b-e31d00000000" name="Propensity to Respond to Promotions by Contact (Tertile)" isDerived="true" isWriteable="false">
+<Description><![CDATA["See Metric ""Propensity to Respond to Promotions"". This metric breaks the range into three buckets based on range of values"]]></Description>
+<Expr mdsid="m0000000f-01f4-0000-f187-412e00000000" name="Expr">
+<ExprText><![CDATA[ NTILE("%1", 3)]]></ExprText>
+<ExprTextDesc><![CDATA[ NTILE("Core"."Fact  Compound - Campaign History"."Propensity To Respond  to Promotions by Contact", 3)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-f187-412e00000000-m80c568b1-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9d2-07f3-0000-714b-e31d00000000.xml#m80c568b1-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68c8f-0f3c-0000-714b-e31d00000000" name="AD_3900:842581074282455">
+<Expr mdsid="m00000010-01f4-0000-b923-8a4200000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568b3-07d6-0000-714b-e31d00000000" name="Propensity to Respond To Promotions by Account" isDerived="true" isWriteable="false">
+<Description><![CDATA[# of Responses by Accounts divided by # of times targeted in Campaigns]]></Description>
+<Expr mdsid="m00000011-01f4-0000-1031-815d00000000" name="Expr">
+<ExprText><![CDATA[ CASE  WHEN "%1" = 0 THEN  NULL  WHEN "%2" IS NULL  THEN 0 ELSE 1.0d * "%2" / "%1" END ]]></ExprText>
+<ExprTextDesc><![CDATA[ CASE  WHEN "Core"."Fact - CRM - Campaign History"."# of Times Promoted To Customer (Account)" = 0 THEN  NULL  WHEN "Core"."Fact - CRM - Response"."# Responses by Account" IS NULL  THEN 0 ELSE 1.0d * "Core"."Fact - CRM - Response"."# Responses by Account" / "Core"."Fact - CRM - Campaign History"."# of Times Promoted To Customer (Account)" END ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-1031-815d00000000-m80c5680a-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9ca-07f3-0000-714b-e31d00000000.xml#m80c5680a-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000011-01f4-0000-1031-815d00000000-m80c56837-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9cb-07f3-0000-714b-e31d00000000.xml#m80c56837-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68c90-0f3c-0000-714b-e31d00000000" name="AD_3900:842601074282455">
+<Expr mdsid="m00000012-01f4-0000-adf4-dade00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80c568b4-07d6-0000-714b-e31d00000000" name="Propensity to Respond to Promotions by Account (Tertile)" isDerived="true" isWriteable="false">
+<Description><![CDATA[Propensity to Respond by Account broken in three buckets based on value. ]]></Description>
+<Expr mdsid="m00000013-01f4-0000-1b64-bedf00000000" name="Expr">
+<ExprText><![CDATA[ CAST ( NTILE("%1", 3) AS CHARACTER ( 30 ))]]></ExprText>
+<ExprTextDesc><![CDATA[ CAST ( NTILE("Core"."Fact  Compound - Campaign History"."Propensity to Respond To Promotions by Account", 3) AS CHARACTER ( 30 ))]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-1b64-bedf00000000-m80c568b3-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80c5a9d2-07f3-0000-714b-e31d00000000.xml#m80c568b3-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+<AttrDefn mdsid="m80c68c91-0f3c-0000-714b-e31d00000000" name="AD_3900:842611074282455">
+<Expr mdsid="m00000014-01f4-0000-099c-c98e00000000" name="Expr">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</Expr>
+</AttrDefn>
+</LogicalColumn>
+</LogicalTable>

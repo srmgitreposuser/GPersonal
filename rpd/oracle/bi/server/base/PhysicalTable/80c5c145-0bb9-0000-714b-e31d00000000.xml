@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80c5c145-0bb9-0000-714b-e31d00000000" name="WC_DONATION_GA_STATUS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="select" isCacheable="false" x="1197" y="944" maxConn="0" containerRef="/oracle/bi/server/base/Schema/80c67bb1-0bd3-0000-714b-e31d00000000.xml#m80c67bb1-0bd3-0000-714b-e31d00000000">
+<DBMapItem name="DefaultMulDB">
+<Value><![CDATA[select 'Other Not Gift Aidable' X_DONATION_GA_STATUS from dual
+union
+select 'Cash Not Gift Aidable' X_DONATION_GA_STATUS from dual
+union
+select 'Cash Gift Aided' X_DONATION_GA_STATUS from dual
+union
+select 'Cash Gift Aidable' X_DONATION_GA_STATUS from dual
+union
+select 'Other Gift Aidable' X_DONATION_GA_STATUS from dual
+union
+select 'Other Gift Aided' X_DONATION_GA_STATUS from dual
+union
+select 'CoG Gift Aidable' X_DONATION_GA_STATUS from dual
+union
+select 'CoG Gift Aided' X_DONATION_GA_STATUS from dual
+union
+select 'CoG Not Gift Aidable' X_DONATION_GA_STATUS from dual]]></Value>
+</DBMapItem>
+<PhysicalColumn mdsid="m80c655e3-0bbb-0000-714b-e31d00000000" name="X_DONATION_GA_STATUS" dataType="VARCHAR" precision="30" nullable="true" specialType="none">
+</PhysicalColumn>
+<PhysicalKey mdsid="m80c67aff-0bc0-0000-714b-e31d00000000" name="X_DONATION_GA_STATUS">
+<RefColumns>
+<RefColumn refId="m80c67aff-0bc0-0000-714b-e31d00000000-m80c655e3-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80c5c145-0bb9-0000-714b-e31d00000000.xml#m80c655e3-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+</PhysicalTable>
